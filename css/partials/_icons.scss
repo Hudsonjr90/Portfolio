@@ -1,0 +1,311 @@
+.bg-icon-code {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+    @include responsive(xs){
+        width: 64px;
+        height: 64px;
+        margin-left: 72px !important;
+    }
+}
+.bg-icon-box {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+    @include responsive(xs){
+        width: 64px;
+        height: 64px;
+        margin-left: 72px !important;
+    }
+}
+.bg-icon-coffee {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+    @include responsive(xs){
+        width: 64px;
+        height: 64px;
+        margin-left: 72px !important;
+    }
+}
+.bg-icon-book {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+    @include responsive(xs){
+        width: 64px;
+        height: 64px;
+        margin-left: 72px !important;
+    }
+}
+.bg-icon-bolt {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+    @include responsive(xs){
+        width: 64px;
+        height: 64px;
+        margin-left: 72px !important;
+    }
+}
+
+.html5 {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 102.45px;
+        height: 130.91px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.css3 {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 102.45px;
+        height: 130.91px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.sass {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 102.45px;
+        height: 130.91px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.js {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        height: 130.91px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.github-card {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        height: 130.91px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.ingles {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 102.45px;
+        height: 130.91px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.figma {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 125.22px;
+        height: 160px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.react {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 140px;
+        height: 160px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.angular {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 125.22px;
+        height: 160px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.node {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 125.22px;
+        height: 160px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.bootstrap {
+    transition: .4s ease;
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    @include responsive(s){
+        width: 125.22px;
+        height: 160px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.bg-icon-instagram {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    p {
+        font-size: 3.2rem;
+        color: $darker-blue;
+        margin-left: 8px;
+
+        @include responsive(s) {
+            font-size: 2rem;
+            margin-top: 16px;
+        }
+    }
+
+    &::after {
+        @include responsive(xs){
+            width: 48px;
+            height: 48px;
+            margin-top: 16px;
+        }
+
+        background-image: url('../svg/Instagram.svg');
+        background-size: cover;
+        cursor: pointer;
+    }
+}
+
+.bg-icon-linkedin {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    p {
+        font-size: 3.2rem;
+        color: $darker-blue;
+        margin-left: 8px;
+
+        @include responsive(s) {
+            font-size: 2rem;
+            margin-top: 16px;
+        }
+    }
+
+    &::after {
+        @include responsive(xs){
+            width: 48px;
+            height: 48px;
+            margin-top: 16px;
+        }
+
+        background-image: url('../svg/Linkedin.svg');
+        background-size: cover;
+        cursor: pointer;
+    }
+}
+
+.bg-icon-github {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    p {
+        font-size: 3.2rem;
+        color: $darker-blue;
+        margin-left: 8px;
+
+        @include responsive(s) {
+            font-size: 2rem;
+            margin-top: 16px;
+        }
+    }
+
+    &::after {
+        @include responsive(xs){
+            width: 48px;
+            height: 48px;
+            margin-top: 16px;
+        }
+
+        background-image: url('../svg/Github.svg');
+        background-size: cover;
+        cursor: pointer;
+    }
+}
+
+.bg-icon-whatsapp {
+    filter: drop-shadow(0px 16px 16px rgba(95,184,252,0.4));
+
+    p {
+        font-size: 3.2rem;
+        color: $darker-blue;
+        margin-left: 8px;
+
+        @include responsive(s) {
+            font-size: 2rem;
+            margin-top: 16px;
+        }
+    }
+
+    &::after {
+        @include responsive(xs){
+            width: 48px;
+            height: 48px;
+            margin-top: 16px;
+        }
+
+        background-image: url('../svg/Whatsapp.svg');
+        background-size: cover;
+        cursor: pointer;
+    }
+}
