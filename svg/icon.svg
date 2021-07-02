@@ -1,0 +1,52 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon">
+<g id="Group 165">
+<g id="Group 140">
+<circle id="Ellipse 17" cx="20" cy="20" r="17" fill="white" stroke="url(#paint0_linear)" stroke-width="2"/>
+<circle id="Ellipse 18" cx="20" cy="20" r="14" fill="url(#paint1_linear)"/>
+</g>
+</g>
+<g id="Group 55" filter="url(#filter0_d)">
+<g id="Group 39">
+<path id="Vector" d="M26.314 14.0864H13.4782C13.1767 14.0864 12.9326 14.3245 12.9326 14.6187V23.0363C12.9326 23.3304 13.1767 23.5685 13.4782 23.5685H26.314C26.6156 23.5685 26.8596 23.3304 26.8596 23.0363V14.6327C26.874 14.3246 26.6156 14.0864 26.314 14.0864Z" fill="#DEDEDF"/>
+<path id="Vector_2" d="M26.0987 14.8147H13.708V22.8681H26.0987V14.8147Z" fill="#2D3436"/>
+<path id="Vector_3" d="M28.7691 26.6498L26.9313 23.6946C26.8882 23.6246 26.8164 23.5825 26.7303 23.5825H13.0617C12.9756 23.5825 12.9037 23.6245 12.8607 23.6946L11.0373 26.6498C10.9367 26.8039 11.0516 27 11.2383 27H28.5681C28.7547 27 28.8695 26.8039 28.7691 26.6498Z" fill="#BDBDBE"/>
+<g id="Group">
+<path id="Vector_4" d="M27.0316 24.9832H12.7744L13.2769 24.1008H26.5291L27.0316 24.9832Z" fill="white"/>
+<path id="Vector_5" d="M21.3318 26.4118H18.4746L18.5895 25.3334H21.2169L21.3318 26.4118Z" fill="white"/>
+</g>
+<path id="Vector_6" d="M29.2245 12H24.4721C24.0414 12 23.6968 12.3362 23.6968 12.7563V15.5575C23.6968 15.9777 24.0414 16.3139 24.4721 16.3139H24.5439V17.6304L25.8935 16.3139H29.2245C29.6552 16.3139 29.9998 15.9777 29.9998 15.5575V12.7563C29.9998 12.3362 29.6552 12 29.2245 12Z" fill="url(#paint2_linear)"/>
+<g id="Group 38">
+<g id="Group_2">
+<path id="Vector_7" d="M25.1597 14.6301C25.4531 14.6301 25.6909 14.3981 25.6909 14.1119C25.6909 13.8256 25.4531 13.5936 25.1597 13.5936C24.8663 13.5936 24.6284 13.8256 24.6284 14.1119C24.6284 14.3981 24.8663 14.6301 25.1597 14.6301Z" fill="#FCFCFD"/>
+<path id="Vector_8" d="M26.9253 14.6301C27.2187 14.6301 27.4565 14.3981 27.4565 14.1119C27.4565 13.8256 27.2187 13.5936 26.9253 13.5936C26.6319 13.5936 26.394 13.8256 26.394 14.1119C26.394 14.3981 26.6319 14.6301 26.9253 14.6301Z" fill="#FCFCFD"/>
+<path id="Vector_9" d="M28.6909 14.6301C28.9843 14.6301 29.2222 14.3981 29.2222 14.1119C29.2222 13.8256 28.9843 13.5936 28.6909 13.5936C28.3975 13.5936 28.1597 13.8256 28.1597 14.1119C28.1597 14.3981 28.3975 14.6301 28.6909 14.6301Z" fill="#FCFCFD"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" x="7" y="12" width="26.9998" height="23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear" x1="36" y1="21.7426" x2="4" y2="21.7426" gradientUnits="userSpaceOnUse">
+<stop stop-color="#538BF0"/>
+<stop offset="1" stop-color="#2DC7ED"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="20" y1="6" x2="20.1359" y2="32.6139" gradientUnits="userSpaceOnUse">
+<stop stop-color="#538BF0"/>
+<stop offset="1" stop-color="#2DC7ED"/>
+</linearGradient>
+<linearGradient id="paint2_linear" x1="26.8483" y1="12" x2="26.8727" y2="17.3517" gradientUnits="userSpaceOnUse">
+<stop stop-color="#538BF0"/>
+<stop offset="1" stop-color="#2DC7ED"/>
+</linearGradient>
+</defs>
+</svg>
