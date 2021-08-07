@@ -1,0 +1,82 @@
+#projects {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14rem 8rem 8rem;
+  
+  .projects-content  {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+    .carousel {
+      width: 100rem;
+      height: 35rem;
+      
+      .carousel-item {
+        display: flex;
+        justify-content:space-around;
+        flex-direction: column;
+        align-items: center;
+        width: 27rem;
+        height: 29rem;
+        border-radius: 10px 10px 0 0;
+        background-color: $background-color-dark;
+        border-bottom: 3px solid $color-theme;
+        
+        img {
+          border-radius: 10px 10px 0 0  ;
+          width: 100%;
+          height: 50%;
+          
+        }
+        h3 {
+          text-align: center;
+          margin: .5rem 0;
+          font-size: 2rem;
+          color: $color-theme;
+        }
+        p{
+          text-align: center;
+          color: $color-primary;
+        }
+
+        span {
+          font-size: 2rem;
+          align-items: center;
+          color: $color-secundary;
+          i {
+            padding: 1rem;
+          }
+        }
+
+        .pj-site {
+          display: inline-block;
+          font-size: 1.5rem;
+          border-bottom: 2px solid $color-theme;
+          margin-bottom: 1rem;
+        }
+
+        .pj-icon i {
+          font-size: 6rem;
+          color: $color-theme;
+        }
+
+        &:hover {
+          
+          i {
+            color: $color-theme;
+          }
+          .pj-icon i {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+
