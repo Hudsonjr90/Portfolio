@@ -1,257 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="svg/rock.svg" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <title>Hudson Kennedy</title>
-    <script src="js/svg-inject.min.js"></script>
-    <audio src="audio.mp3" autoplay></audio>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="icon" href="assets/img/rocket.png" />
+
+  <title>Hudson K.</title>
 </head>
 <body>
-    
-    <!--------------HEADER-------------->
-    <header id="header">
-        <!--------------Navbar Mobile-------------->
-        <nav class="navbar-mobile">
-            <div class="bx" id="bx"></div>
-            <div class="logo">
-                <a href=""><img src="svg/logo.svg" alt="" loading="lazy" onload="SVGInject(this)"></a>
-            </div>
-        </nav>
+  <header id="header">
+     <div id="logo">
+      <a href="">Hudson <span>Jr.</span>
+      </a>
+    </div>
 
-        <!--------------Navbar Desktop-------------->
-        <nav class="navbar-desktop">
-            <div class="navbar-desktop-item-1">
-                <div class="logo">
-                    <a href="">
-                        <img src="svg/logo.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                    </a>
-                </div>
-            </div>
-            <div class="navbar-desktop-item-2">
-                <ul class="menu-desktop">
-                    <li class="menu-item"><a class="navlink-desktop mr-2" href="#sobre">Sobre mim</a></li>
-                    <li class="menu-item"><a class="navlink-desktop mr-2" href="#habilidades">Habilidades</a></li>
-                    <li class="menu-item"><a class="navlink-desktop mr-2" href="#projetos">Projetos</a></li>
-                    <li class="menu-item"><a class="btn navlink-desktop mr-2" href="#contato">Contato</a></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <!--------------Menu Mobile-------------->
-        <nav class="menu-mobile" id="menu-mobile">
-            <nav class="nav-list-mobile">
-                <li class="mb-1"><a href="#sobre" class="nav-link-mobile">Sobre mim</a></li>
-                <li class="mb-1"><a href="#habilidades" class="nav-link-mobile">Habilidades</a></li>
-                <li class="mb-1"><a href="#projetos" class="nav-link-mobile">Projetos</a></li>
-                <li class="mb-1"><a href="#contato" class="nav-link-mobile">Contato</a></li>
-                <li class="mt-3 flex-center">
-                    <a class="mx-3" href="https://github.com/Hudsonjr90" target="_blank"><img src="svg/git.svg" alt="" loading="lazy" onload="SVGInject(this)"></a>
-                    <a class="mx-3" href="https://www.linkedin.com/in/hudsonkennedyjr/" target="_blank"><img src="svg/in.svg" alt="" loading="lazy" onload="SVGInject(this)"></a>
-                    <a class="mx-3" href="https://www.instagram.com/hudsonk.9/" target="_blank"><img src="svg/insta.svg" alt="" loading="lazy" onload="SVGInject(this)"></a>
-                </li>
-            </nav>
-        </nav>
+    <div id="nav">
+       <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
+          aria-expanded="false">
+          <span id="hamburguer"></span>
+       </button>
+       <ul id="menu" role="menu">
+          <li><a href="#home" class="link">Home</a></li>
+          <li><a href="#about" class="link">Sobre</a></li>
+          <li><a href="#services" class="link">Serviços</a></li>
+          <li><a href="#skill" class="link">Habilidades</a></li>
+          <li><a href="#projects" class="link">Projetos</a></li>
+          <li><a href="#contact" class="link">Contato</a></li>
+       </ul>
+      </div>
     </header>
-
-    <!--------------HERO-------------->
-
-    
-    <main class="container hero py-5">
-        <div class="flex-item-1 flex-column profile mr-5">
-            <div class="profile-photo mb-4">
-                <img src="" alt="" loading="lazy" onload="SVGInject(this)">
-            </div>
-            <div class="introduction mt-5">
-                <h2 class="intro effect"></h2></br>
-                <h2 class="intro">Hudson Kennedy</h2></br>
-                <h4 class="UI-phrase effect-2">UX/UI Designer / Front-end Developer / Software Engineer </h4>    
-            </div>
+<main> 
+   <section id="home">
+      <div class="home-content">
+         <div id="text">
+            <!-- <p class="text-1">Olá, me chamo</p> -->
+            <h1 class="text-2">Hudson Kennedy</h1>
+            <h3 class="text-3">Front-End Developer | UI/UX Designer | Software Engineer. </h3>
             
-            <div class="mt-4">
-                <a href="hk.pdf" target="_blank" class="button btn-1"><img src="svg/btn-1.svg" alt="" loading="lazy" onload="SVGInject(this)"></a>
-                
+            <div class="button">
+               <a href="assets/cv/hk.pdf" target="_blank">
+                  <span class="botao-likedin">Dowload CV</span>
+               </a>
+               
+               <div class="arrow-home">
+                  <a href="#about" >
+                     <i class="las la-angle-double-down"></i>
+                  </a>
+               </div>
             </div>
-        </div>
-        <div class="flex-item-1 flex-center rocket pt-5 mt-5 ml-5">
-            <img src="svg/fly.svg" alt="" loading="lazy" onload="SVGInject(this)">
-        </div>
-    </main>
-    <!-- <div class="bar"></div> -->
+         </div>
+      </div>
 
-    <!--------------SOBRE MIM-------------->
-    <section id="sobre" class="container" style="padding-bottom: 0;">
-        <div class="flex-item-2 mt-5 about-me">
-            <h1 class="mb-4">sobre mim</h1>
-            <h3 class="mt-5 mb-2">Desenvolvedor Web, </br> a cada dia em constante aprendizado, sempre disposto a novos desafios.</p>
-        </div>
-        <div class="flex-item-3 flex-column mt-5 figboy-1 about-me">
-            
-        </div>
-    </section>
-    <section class="container" style="padding-top: 0;">
-        <div class="flex-item-3 figboy-2 about-me">
-            <img src="svg/newer.svg" alt="" loading="lazy" onload="SVGInject(this)">
-        </div>
-        <div class="flex-item-1 text-center">
-            <img class="bg-icon-code my-2" src="svg/code.svg" alt="" loading="lazy" onload="SVGInject(this)">
-            <strong>Gosto de codar em HTML, CSS e JS.</strong>
-            <img class="bg-icon-box my-2" src="svg/box.svg" alt="" loading="lazy" onload="SVGInject(this)">
-            <strong>Sou organizado.</strong>
-            <img class="bg-icon-coffee my-2" src="svg/coffee.svg" alt="" loading="lazy" onload="SVGInject(this)">
-            <strong>Água é minha bebida favorita.</strong>
-            <img class="bg-icon-book my-2" src="svg/book.svg" alt="" loading="lazy" onload="SVGInject(this)">
-            <strong>Gosto de ler.</strong>
-            <img class="bg-icon-bolt my-2" src="svg/bolt.svg" alt="" loading="lazy" onload="SVGInject(this)">
-            <strong>Sou criativo, proativo e enérgico.</strong>
-        </div>
-    </section>
+      <div class="img-wrapper">
+         <img src="assets/img/3.svg" alt="background">
+      </div>
+   </section>
 
-    <!--------------Habilidades-------------->
-    <section id="habilidades" class="container mb-5 mt-5 pt-5">
-        <div class="flex-item-1 about-me">
-            <h1 class="mb-5">Habilidades</h1>
-            <h4 class="mt-5 mb-5">O que sei:</h4>
-            <div class="flex-center mt-5 mb-5 skill-cards">
-                <img class="css3" src="svg/css3.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                <img class="html5" src="svg/html5.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                <img class="js" src="svg/javascript.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                <img class="sass" src="svg/sass.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                <img class="github-card" src="svg/github-card.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                <img class="ingles" src="svg/ingles.svg" alt="" loading="lazy" onload="SVGInject(this)">
+   <section id="about">
+      </div>
+      <div class="about-container">
+         
+         <div class="about-content">
+            <div class="about-img">
+               <img src="assets/img/rockk.gif" alt="Hudson Kennedy">
             </div>
-            <h4 class="mt-5 mb-5">Estou aprendendo:</h4>
-            <div class="flex-center mt-5 skill-cards about-me">
-                <img class="react" src="svg/react.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                <img class="angular" src="svg/angular.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                <img class="node" src="svg/nodejs.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                <img class="bootstrap" src="svg/bootstrap.svg" alt="" loading="lazy" onload="SVGInject(this)">
-                
-            </div>
-        </div>
-    </section>
 
-    <!--------------PROJETOS-------------->
-    <section id="projetos" class="box mt-5 pt-5">
-        <div class="flex-item-1 about-me">
-            <h1 class="mb-3">PROJETOS</h1>
-            <h4 class="mt-3">Estes são alguns dos meus projetos realizados:</h4>
-        </div>
-    </section>
-    <section class="container-swiper">
-         <div class="swiper-container about-me">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <strong class="mb-2">Jogo Flappy Angry Birds</strong>
-                    <a href="https://hudsonjr90.github.io/Flappyangrybirds/" target="_blank" rel="noopener noreferrer"><img src="img/angry.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Jogo Naruto Go</strong>
-                    <a href="https://hudsonjr90.github.io/NarutoGo/" target="_blank" rel="noopener noreferrer"><img src="img/naruto.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Jogo da Cobrinha</strong>
-                    <a href="https://gosnake.netlify.app" target="_blank" rel="noopener noreferrer"><img src="img/snake.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Jogo do Corona Vírus</strong>
-                    <a href="https://hudsonjr90.github.io/Corona-Game/" target="_blank" rel="noopener noreferrer"><img src="img/corona.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Landing Page Olímpiadas</strong>
-                    <a href="https://olimpiadas2021.netlify.app" target="_blank" rel="noopener noreferrer"><img src="img/olimpic.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Landing Page DT3 Rhino</strong>
-                    <a href="https://hudsonjr90.github.io/DT3Rhino/" target="_blank" rel="noopener noreferrer"><img src="img/rhino.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Hotsite DT3 Ergonomia no trabalho</strong>
-                    <a href="https://worker.vercel.app" target="_blank" rel="noopener noreferrer"><img src="img/work.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Calculadora-IMC</strong>
-                    <a href="https://hudsonjr90.github.io/Calculadora-IMC/" target="_blank" rel="noopener noreferrer"><img src="img/calc.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Calculadora Matemática</strong>
-                    <a href="https://mathcalculator.vercel.app" target="_blank" rel="noopener noreferrer"><img src="img/math.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">Pokedex</strong>
-                    <a href="https://pokedex-hudsonjr90.vercel.app" target="_blank" rel="noopener noreferrer"><img src="img/poke.png" alt=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <strong class="mb-2">População Mundial</strong>
-                    <a href="https://worldsearch.vercel.app" target="_blank" rel="noopener noreferrer"><img src="img/world.png" alt=""></a>
-                </div> 
+            <div class="about-text">
+               <!-- <div class="arrow">
+                  <a href="#home" >
+                     <i class="las la-angle-double-up"></i>
+                  </a>
+               </div> -->
+               <h1>Sobre mim</h1>
+               <p>Olá, meu nome é Hudson, tenho 31 anos e moro no Rio de Janeiro-RJ. Atualmente estou cursando MBA - Engenharia de Software. Também tenho estudado bastante sozinho para aprender novas tecnologias.</p>
+               <p>No momento, estou procurando um estágio a fim de obter experiência e desenvolver meus conhecimentos na área.</p>
+               <!-- <div class="arrow">
+                  <a href="#services" >
+                     <i class="las la-angle-double-down"></i>
+                  </a>
+               </div> -->
+            </div>
+
+            <div class="about-link">
+               
+               <div class="links">
+                  <a href="https://github.com/Hudsonjr90" target="_blank"><i class="lab la-github" ></i></a>
+                  <a href="https://www.linkedin.com/in/hudsonkennedyjr/" target="_blank"><i class="lab la-linkedin-in"></i></a>
+                  <a href="https://www.facebook.com/Hudshow90/" target="_blank"><i class="lab la-facebook-f"></i></a>
+                  <a href="https://www.instagram.com/hudsonk.9/" target="_blank"><i class="lab la-instagram"></i></a>
+                  
+               </div>
+               <span></span>
+            </div>
+         </div>
+         
+      </div>
+      
+   </section>
+
+   <section id="services">
+      <div class="services-content">
+         <div class="titulo">
+            <h1>Serviços</h1>
+         </div>
+         <div class="services-cards">
+            <!-- <div class="arrow">
+               <a href="#about" >
+                  <i class="las la-angle-double-up"></i>
+               </a>
+            </div> -->
+            <div class="card">
+               <i class="las la-laptop"></i>
+               <h3>Web Designer</h3>
+               <p>Desenvolvimento de sites profissionais, sistemas web, blogs e lojas virtuais.</p>
+            </div>
+            <div class="card">
+               <i class="lab la-figma"></i>
+               <h3>UI/UX Design</h3>
+               <p>Desenho de layouts que se adequam ao seu negócio de forma profissional e fiel no desenvolvimento.</p>
+            </div>
+            <div class="card">
+               <i class="las la-laptop-code"></i>
+               <h3>Código Semântico</h3>
+               <p>Estratégia e monitoração para seu negócio, fazendo com que seu site apareça cada vez melhor nas buscas.</p>
+            </div>
+            <!-- <div class="arrow">
+               <a href="#skill" >
+                  <i class="las la-angle-double-down"></i>
+               </a>
+            </div> -->
+         </div>
+      </div>
+   </section>
+
+   <section id="skill" >
+       <!-- Conhecimentos -->
+       <div class="titulo">
+         <h1>Habilidades</h1>
+      </div>
+         
+         <div id="skills-container">
+           
+             <div class="skill-content">
+               <!-- <div class="arrow">
+                  <a href="#services" >
+                     <i class="las la-angle-double-up"></i>
+                  </a>
+               </div> -->
+
+               <div class="conhecimento">
+                  <i class="lab la-html5"></i>
+                  <i class="lab la-css3-alt"></i>
+                  <i class="lab la-js-square"></i>
+                  <h3>HTML / CSS / Javascript</h3>
+                  <!-- <h3>CSS</h3> -->
+                  <p>1 Ano de experiência.</p>
+              </div>
+              <div class="conhecimento">
+
+                  <i class="lab la-vuejs"></i>
+                  <i class="lab la-react"></i>
+                  <i class="lab la-angular"></i>
+                  <h3>Angular / React / Vue JS</h3>
+                  <p>6 meses de experiência.</p>
+               </div>
+              <div class="conhecimento">
+               <i class="lab la-php"></i>
+               <i class="lab la-node"></i>
+                  <h3>PHP / Node JS</h3>
+                  <p>6 Meses de experiência.</p>
+             
+           </div>
               
-                </div>
+             </div>
+             <div class="skill-content">
+               <!-- <div class="arrow">
+                  <a href="#projects" >
+                     <i class="las la-angle-double-down"></i>
+                  </a>
+               </div> -->
+
+               <div class="conhecimento">
+                  <i class="lab la-bootstrap"></i>
+                  <h3>Bootstrap</h3>
+                  <p>1 mês de experiência</p>
+              </div>
+               <div class="conhecimento">
+                  <i class="lab la-sass"></i>
+                  <h3>Sass</h3>
+                  <p>1 Mês de experiência.</p>
+              </div>
+                <div class="conhecimento">
+                  <i class="lab la-figma"></i>
+                  <h3>Figma</h3>
+                  <p>1 Mês de experiência.</p>
+              </div>
+         </div>
+     
+   </section>
+
+   <section id="projects">
+      <div class="titulo">
+         <h1>Projetos</h1>
+      </div>
+
+      <div class="projects-content">
+         <!-- <div class="arrow">
+            <a href="#skill" >
+               <i class="las la-angle-double-up"></i>
+            </a>
+         </div> -->
+         <div class="carousel carousel-fixed-item">
+            
+            <a class="carousel-item " href="https://angrybird.vercel.app" target="__blank" >
+               <img src="assets/img/angry.png" >
+               <h3>Jogo do angry bird</h3>
+               <p>baseado no famoso Flappy Bird, feito com Javascript, HTML e CSS</p>
+               
+            </a>
+            <a class="carousel-item" href="https://narutogo.vercel.app" target="__blank">
+               <img src="assets/img/naruto.png">
+               <h3>Jogo do Naruto</h3>
+               <p>baseado no dinossauro do google, feito com Javascript, HTML e CSS </p>
+ 
+               </a>
+               <a class="carousel-item" href="https://gosnake.netlify.app" target="__blank">
+                  <img src="assets/img/snake.png">
+                  <h3>Jogo da Cobrinha</h3>
+                  <p>feito com Javascript, CSS e HTML.</p>
+    
+                  </a>
+
+               </a>
+               <a class="carousel-item" href="https://hudsonjr90.github.io/Corona-Game/" target="__blank">
+                <img src="assets/img/corona.png">
+                <h3>Jogo do Corona Vírus</h3>
+                <p>baseado no jogo da cobrinha</p>
+  
+                </a>
+            <a class="carousel-item" href="https://calcimc.vercel.app" target="__blank">
+              <img src="assets/img/calc.png">
+              <h3>Calculadora IMC básica. </h3>
+              <p>feita com Javascript, CSS e HTML</p>
+
+              </a>
+
+              <a class="carousel-item" href="" target="__blank">
+               <img src="assets/img/math.png">
+               <h3>Calculadora Matemática</h3>
+               <p>feita com Jquery, Javascript, HTML e CSS, com o modo Light ou Dark de layout.</p>
+ 
+               </a>
+               <a class="carousel-item" href="https://worldsearch.vercel.app" target="__blank">
+                  <img src="assets/img/world.png">
+                  <h3>Pesquisa sobre a população mundial</h3>
+                  <p>feito com Javascript, HTML, CSS e requisição da API restworld para puxar os dados.</p>
+    
+                  </a>
+            <a class="carousel-item" href="https://dt3rhino.vercel.app" target="__blank">
+              <img src="assets/img/rhino.png">
+              <h3>Landing page DT3 Rhino </h3>
+              <p>a cadeira mais vendida do Brasil, feito com Javascript, HTML e CSS. </p>
+
+              </a>
+            <a class="carousel-item" href="https://worker.vercel.app" target="__blank">
+              <img src="assets/img/work.png">
+              <h3>Hotsite DT3 </h3>
+              <p>sobre o dia do trabalho e ergonomia no trabalho, feito com React JS.</p>
+
+              </a>
+
+              <a class="carousel-item" href="https://olimpiadas2021.netlify.app" target="__blank">
+               <img src="assets/img/olimpic.png">
+               <h3>Landing Page olímpiadas</h3>
+               <p>falando sobre as modalidades e etc...feito com HTML e CSS</p>
+ 
+               </a>
+             
+              <a class="carousel-item" href="https://pokedex1.vercel.app" target="__blank">
+               <img src="assets/img/poke.png">
+               <h3>Pokedex</h3>
+               <p>Card informativo dos Pokemóns e suas evoluções, feito com Javascript, Jquery, HTML e CSS.</p>
+               
+            <a class="carousel-item" href="#">
+               <div class="pj-icon">
+                  <i class="lab la-whmcs"></i>
+                 </div>
+               <h3>Em construção</h3>
+            </a>
+          </div>
+          <!-- <div class="arrow">
+            <a href="#contact" >
+               <i class="las la-angle-double-down"></i>
+            </a>
+         </div> -->
+      </div>
+   </section>
+
+   <section id="contact">
+      <div class="titulo">
+         <h1>Contato</h1>
+      </div>
+      
+      <div class="contact-content">
+         <div class="contact-box" >
+            <div class="contact-box-content">
+               <span>
+                  <a href="https://api.whatsapp.com/send?phone=5521969609121" target="__blank"><i class="lab la-whatsapp"></i></a>
+                  <p>(21)96960-9121</p>
+               </span>
+               <span>
+                  <a href="mailto:hudsonhugo90@gmail.com" target="__blank"><i class="las la-envelope"></i></a>                   
+                  <p>hudsonhugo90@gmail.com</p>
+               </span>
             </div>
-        </div>
-        <div class="button-next"></div>
-        <div class="button-prev"></div>
-    </section>
+         </div>
+      </div>
+      <footer>
+         <div class="footer-content">
+             <p>
+                 Coyright &copy; 2021, Hudson Kennedy
+             </p>
+             <div class="social-list">
+                 <!-- <ul>
+                     <li class="li"><a href=""><i class="lab la-facebook-f"></i></a></li>
+                     <li class="li"><a href=""><i class="lab la-instagram"></i></a></li>
+                     <li class="li"><a href=""><i class="lab la-twitter"></i></a></li>
+                 </ul> -->
+             </div>
+         </div>
+      </footer>
+   </section>  
+</main>
 
-    <!--------------CONTATO-------------->
-    <section id="contato" class="container mt-5 pt-5">
-        <div class="flex-item-4 contact about-me">
-            <h1 class="mb-5">Contato</h1>
-            <h4 class="mt-3 mb-5">Você pode me encontrar nas seguintes redes:</h4>
-            <ul class="mt-3">
-                <li class="list-item bg-icon-linkedin">
-                    <a href="https://www.linkedin.com/in/hudsonkennedyjr/" target="_blank" rel="noopener noreferrer"><p>Linkedin</p></a>
-                </li>
-                <li class="list-item bg-icon-instagram">
-                    <a href="https://www.instagram.com/hudsonk.9/" target="_blank" rel="noopener noreferrer"><p>Instagram</p></a>
-                </li>
-                <li class="list-item bg-icon-github">
-                    <a href="https://github.com/Hudsonjr90" target="_blank" rel="noopener noreferrer"><p>Github</p></a>
-                </li>
-                <li class="list-item bg-icon-whatsapp">
-                    <a href="https://api.whatsapp.com/send?phone=5521969609121" target="_blank" rel="noopener noreferrer"><p>Whatsapp</p></a>
-                </li>
-            </ul>
-        </div>
-        <div class="flex-item-2 contact about-me">
-            <img src="img/rokk.png" alt="" loading="lazy" onload="SVGInject(this)">
-        </div>
-    </section>
+<!--Botão que volta pro topo-->
+   <a href="#home" id="link-topo">
+      <i style="font-size: 23px" class="las la-chevron-up"></i>
+   </a>
 
-    <!--------------FOOTER-------------->
-    <footer>
-        <section class="container footer">
-            <p class="p-footer">@2021 Hudson Kennedy. All Rights Reserved.</p>
-        </section>
-    </footer>
-
-    <!--------------JS-------------->
-    <script src="js/app.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 'auto',
-            spaceBetween: 40,
-            grabCursos: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                type: 'progressbar',
-            },
-            navigation: {
-                nextEl: '.button-next',
-                prevEl: '.button-prev',
-            },
-        });
-    </script>
 </body>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="assets/js/scripts.js"></script>
+
 </html>
-
-
-
