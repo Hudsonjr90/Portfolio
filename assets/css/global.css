@@ -135,7 +135,7 @@ h1, h3 {
 #menu {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display:flex;
   gap: 1rem;
 }
 
@@ -958,7 +958,7 @@ footer {
     top: -0.7rem;
   }
   #home .img-wrapper {
-    display: none;
+    display:inline;
   }
   #home .home-content {
     display: -webkit-box;
@@ -1015,7 +1015,10 @@ footer {
     font-size: 2rem;
   }
   #about .about-container .about-content .about-img img {
-    display: none;
+    display:inline;
+    width: 90px;
+    height: 90px; 
+    
   }
   #about .about-container .about-content .about-link .links {
     -webkit-box-orient: horizontal;
