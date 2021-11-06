@@ -959,6 +959,9 @@ footer {
   }
   #home .img-wrapper {
     display:inline;
+    width: 500px;
+    height: 500px;
+  
   }
   #home .home-content {
     display: -webkit-box;
@@ -1015,11 +1018,14 @@ footer {
     font-size: 2rem;
   }
   #about .about-container .about-content .about-img img {
+    position: relative;
+    left: 60px;
     display:inline;
     width: 90px;
     height: 90px; 
     
   }
+
   #about .about-container .about-content .about-link .links {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
