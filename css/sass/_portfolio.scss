@@ -1,0 +1,348 @@
+.portfolio-section{
+   padding: 8rem 0 8rem;
+   min-height: 100vh;
+
+      .section-title {
+         margin-bottom: 4rem;
+      }
+
+      .portfolio-filter {
+         padding: 0 1.5rem;
+         flex: 0 0 100%;
+         max-width: 100%;
+         text-align: center;
+         margin-bottom: 2rem;
+            .filter-item {
+               display: inline-block;
+               margin: 0 .5rem 1rem;
+               padding: .5rem 1rem;
+               border-radius: 3rem;
+               cursor: pointer;
+               font-weight: 500;
+               color: $text-black-600;
+               text-transform: capitalize;
+               font-size: 1.6rem;
+               transition: all 0.3s ease;
+                  &:hover:not(.active) {
+                     opacity: 0.6;
+                  }
+                  &.active {
+                     color: $skin-color1;
+                  }
+            }
+      }
+
+      .portfolio-item {
+         flex: 0 0 33.33%;
+         max-width: 33.33%;
+         padding: 1.5rem;
+         display: flex;
+         flex-wrap: wrap;
+         &.hide {
+            display: none;
+         }
+         &.show {
+            display: block;
+            animation: fadeInTop 0.5s ease;
+         }
+         
+            .portfolio-item-inner {
+               padding: 1.5rem;
+               border-radius: .5rem;
+               cursor: pointer;
+               width: 100%;
+
+               .portfolio-item-img {
+                  position: relative;
+                  img {
+                     border-radius: .5rem;
+                     width: 100%;
+                     transition: all 0.3s ease;
+                  }
+                  .view-project {
+                     text-transform: capitalize;
+                     font-size: 1.6rem;
+                     font-weight: 500;
+                     color: $skin-color1;
+                     transition: all 0.3s ease;
+                     position: absolute;
+                     left: 0;
+                     bottom: -1px;
+                     z-index: -1;
+                     opacity: 0;
+                  }
+               }
+
+               .portfolio-item-details {
+                  display: none;
+               
+               }
+               
+               p {
+                  font-size: 1.6rem;
+                  margin: 1rem 0 0;
+                  color: $text-black-600;
+                  text-transform: capitalize; 
+               }
+            }
+            .portfolio-item-inner:hover  .portfolio-item-img img {
+               transform: translateY(-2.5rem);
+               transition: all 0.3s ease;
+            }
+            .portfolio-item-inner:hover  .view-project {
+               transform: translateY(0rem);
+               opacity: 1;
+            }
+      }
+}
+
+/*-------------portfolio popup-------------------*/
+.portfolio-popup {
+   background-color: $bg-black-50;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1000;
+   overflow-y: scroll;
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.3s ease;
+   &.open {
+      visibility: visible;
+      opacity: 1;
+   }
+   
+   .pp-details {
+      max-width: 1350px;
+      width: calc(65% + 3rem);
+      margin: auto;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+      &.active {
+         opacity: 1;
+      }
+
+         .pp-details-inner {
+            padding: 3rem 0;
+               .pp-project-details {
+                  h3 {
+                     font-size: 2rem;
+                     font-weight: 700;
+                     text-transform: capitalize;
+                     color: $text-black-700;
+                     margin: 0 0 1.5rem;
+                  }
+               }
+
+               .pp-title {
+                  padding: 0 1.5rem;
+                  h2 {
+                     font-size: 2.8rem;
+                     font-weight: 600;
+                     text-transform: capitalize;
+                     color: $text-black-900;
+                     margin: 0 0 .5rem;
+                  }
+                  p {
+                     font-size: 1.4rem;
+                     font-weight: 600;
+                     color: $text-black-600;
+                     margin: 0 0 1.5rem;
+                     border-bottom: .1rem solid $bg-black-100;
+                     padding-bottom: 1rem;
+                     span {
+                        font-weight: 400;
+                        text-transform: capitalize;
+                     }
+                  }
+               }
+
+               .description {
+                  flex: 0 0 65%;
+                  max-width: 65%;
+                  padding: 0 1.5rem;
+                  p {
+                     font-size: 1.6rem;
+                     color: $text-black-600;
+                     line-height: 2.6rem;
+                     margin: 0;
+                     padding-bottom: 3rem;
+                     span {
+                        font-weight: 400;
+                     }
+                  }
+               }
+
+               .info {
+                  flex: 0 0 35%;
+                  max-width: 35%;
+                  padding: 0 1.5rem;
+                  
+                     ul li {
+                        margin-bottom: 1rem;
+                        color: $text-black-600;
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        
+                        span {
+                           font-weight: 400;
+                           text-transform: capitalize;
+                        }
+                        a {
+                           text-transform: lowercase;
+                           color: $skin-color1;
+                        }
+                        &:last-child{
+                           margin-bottom: 0;
+                        }
+                     }
+               }
+         }   
+   }
+
+   .separator {
+      height: .1rem;
+      width: 100%;
+      display: block;
+      color: $bg-black-100;
+   }
+
+   .pp-main {
+      min-height: 100vh;
+      max-width: 1350px;
+      width: 65%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+         .pp-loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1005;
+            background-color: $bg-opacity;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            &.active {
+               visibility: visible;
+               opacity: 1;
+            }
+            div {
+               height: 4rem;
+               width: 4rem;
+               border: .3rem solid $skin-color1;
+               border-radius: 50%;
+               border-right: .3rem solid transparent;
+               animation: spin 2s linear infinite;
+            }
+         }
+
+         .pp-main-inner {
+            padding: 7rem 0 5rem;
+            position: relative;
+            .pp-img {
+               max-width: 100%;
+               width: auto;
+               height: auto;
+               padding: 1rem;
+               border-radius: .5rem;
+            }
+
+            .pp-projects-details-btn {
+               position: absolute;
+               left: 0;
+               border-radius: 3rem;
+               font-size: 1.6rem;
+               font-weight: 500;
+               color: $skin-color1;
+               cursor: pointer;
+               padding: 0 1.5rem;
+               top: 1.5rem;
+               height: 4rem;
+               line-height: 4rem;
+               transition: all 0.3s ease;
+                  i {
+                     margin-left: .4rem;
+                  }
+                  &::after {
+                     border-radius: 3rem;
+                  }
+            }
+
+            .pp-close {
+               position: absolute;
+               right: 0;
+               border-radius: 50%;
+               height: 4rem;
+               width: 4rem;
+               top: 1.5rem;
+               text-align: center;
+               line-height: 3.5rem;
+               font-size: 3.5rem;
+               color: $text-black-600;
+               cursor: pointer;
+               transition: all 0.3s ease;
+                  &:hover {
+                     color: rgb(212, 11, 11);
+                     transition: all 0.3s ease;
+                  }
+                  &::after {
+                     border-radius: 3rem;
+                  }
+               }
+
+               .pp-counter {
+                  position: absolute;
+                  right: 0;
+                  height: 4rem;
+                  line-height: 4rem;
+                  bottom: .5rem;
+                  font-size: 1.6rem;
+                  color: $text-black-600;
+               }
+         }
+
+      .pp-prev, .pp-next {
+         position: fixed;
+         top: 50%;
+         height: 4rem;
+         width: 4rem;
+         text-align: center;
+         font-size: 2rem;
+         cursor: pointer;
+         z-index: 1010;
+         color: $text-black-900;
+         transition: all 0.3s ease;
+         opacity: 0.6;
+            &:hover {
+               opacity: 1;
+               transition: all 0.3s ease;
+            }
+      }
+
+      .pp-prev {
+         left: 1.5rem;
+            i {
+               line-height: 4rem;
+               transform: rotate(180deg);
+            }
+      }
+
+      .pp-next {
+         right: 1.5rem;
+            i {
+               line-height: 4rem;
+            }
+      }
+   }
+}
