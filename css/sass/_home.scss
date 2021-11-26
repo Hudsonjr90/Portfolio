@@ -1,0 +1,232 @@
+/*--------------------HEADER-----------------*/
+.header {
+  padding: 2rem 1.5rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+    .logo a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $text-black-700;
+    
+      letter-spacing: 0.1rem;
+    
+      span {
+      color: $skin-color1;
+      
+      }
+    }
+
+    .hamburguer-btn {
+      height: 4rem;
+      width: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      &::after {
+        border-radius: 50%;
+      }
+        span {
+          display: block;
+          height: .3rem;
+          width: 1.4rem;
+          background-color: $bg-black-900;
+          position: relative;
+          &::before, &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $bg-black-900;
+          }
+          &::before {
+            top: -.6rem;
+          }
+          &::after {
+            top: .6rem;
+          }
+        }
+    }
+}
+ 
+
+ /*--------------------navegação menu-----------------*/
+
+.nav-menu{
+  position: fixed;
+  background-color: $bg-black-50;
+  padding: 0 1.5rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+
+    .close-nav-menu {
+      height: 4rem;
+      width: 4rem;
+      display: block;
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+      border-radius: 50%;
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+      cursor: pointer;
+      text-align: center;
+      color: $text-black-600;
+      transition: all 0.3s ease;
+      &::after {
+        border-radius: 50%;
+      }
+      &:hover {
+        color: red;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .nav-menu-inner {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        ul {
+          padding: 1.5rem;
+          li {
+            display: block;
+            margin-bottom: 2.0rem;
+            text-align: center;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+              display: inline-block;
+              font-size: 2.8rem;
+              font-weight: 700;
+              color: $text-black-700;
+              padding: .5rem 3.0rem;
+              border-radius: 3.0rem;
+              transition: all 0.3s ease;
+              &::after {
+                border-radius: 3.0rem;
+              }
+              &.active {
+                color: $skin-color1;
+              }
+            }
+          }
+        }
+    }
+}
+
+.nav-menu.open {
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+  transition: all 0.3s ease-in;
+}
+
+.fade-out-effect {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-black-50;
+  z-index: -1;
+  visibility: hidden;
+  &.active {
+    visibility: visible;
+    z-index: 1000;
+    animation: fadeOut 0.3s ease-out;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+ /*--------------------HOME SECTION-----------------*/
+.home-section {
+  position: relative;
+  .full-screen{
+    padding: 5rem 0;
+    min-height: 100vh;
+  }
+
+  .home-text, .home-img {
+    flex:0 0 50%;
+    max-width: 50%;
+    padding: 0 1.5rem;
+  }
+  .home-text p{
+    color: $text-black-300;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  .home-text h2 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    color: $text-black-900;
+    margin: 0;
+  }
+  .home-text h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $skin-color1;
+    margin: 0;
+    /* efeito maquina de escrever no h3 */
+    &::after {
+      content: "|";
+      opacity: 1;
+      margin-left: 5px;
+      display: inline-block;
+      white-space: nowrap;
+      animation: blink 0.7s infinite;
+    }
+  
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+  }
+  .home-text .btn-1 {
+    margin-top: 3rem;
+  }
+
+  .home-img .img-box {
+    max-width: 45rem;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    padding: 1.5rem;
+    img {
+      width: 100%;
+      border-radius: 50%;
+      border: 1rem solid transparent;
+    }
+  }
+}
