@@ -5,7 +5,7 @@ Meu portifolio criado com Javascript, Html e CSS( Sass)
 inseri alguns dos meus projetos e habilidades adquiridas nestes 3 anos de estudos.
 
 
-<p align="center"><img width=50% src=""></p>
+<p align="left"><img width=50% src="https://developers.redhat.com/sites/default/files/styles/share/public/red-hat-developer-program-2020-build-here-go-anywhere.png?itok=il5htjXQ"></p>
 
 ### tecnologias usadas 
 
