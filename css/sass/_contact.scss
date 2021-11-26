@@ -1,0 +1,83 @@
+.contact-section {
+   padding: 8rem 0 8rem;
+   min-height: 100vh;
+      .contact-item {
+         flex: 0 0 33.33%;
+         max-width: 33.33%;
+         padding: 1.5rem;
+         display: flex;
+            .contact-item-inner {
+               padding: 3rem 1.5rem;
+               text-align: center;
+               border-radius: .5rem;
+               width: 100%;
+               i {
+                  font-size: 3rem;
+                  color: $skin-color1;
+               }
+               span {
+                  display: block;
+                  font-size: 1.6rem;
+                  font-weight: 600;
+                  color: $text-black-700;
+                  margin: 1.5rem 0 1rem;
+                  text-transform: capitalize;
+               }
+               p {
+                  font-size: 1.6rem;
+                  color: $text-black-600;
+                  line-height: 2.6rem;
+                  margin: 0;
+                  word-break: break-word;
+               }
+            }
+      }
+
+      .contact-form {
+         flex: 0 0 100%;
+         max-width: 100%;
+         margin-top: 5rem;
+         
+
+         .submit-btn {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: right;
+            padding: 0 1.5rem;
+         }
+
+         .w-50 {
+            padding: 0 1.5rem;
+            flex: 0 0 50%;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .input-group {
+               margin: 0 0 2.5rem;
+               transition: all 0.3s ease;
+               border-radius: 3rem;
+               &::after {
+                  border-radius: 3rem;
+               }
+               .input-control {
+                  height: 4.5rem;
+                  display: block;
+                  width: 100%;
+                  border-radius: 3rem;
+                  border: none;
+                  background: transparent;
+                  font-size: 1.6rem;
+                  padding: 0 1.5rem;
+                  color: $text-black-700;
+                  
+               }
+            }
+            .input-group textarea.input-control {
+               height: 18.4rem;
+               padding-top: 1.5rem;
+               resize: none;
+            }
+         }
+      }   
+}
