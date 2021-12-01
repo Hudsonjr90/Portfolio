@@ -50,6 +50,8 @@
 }
 
 .header .logo a span {
+    margin: 5px;
+    margin-top: 20px;
     color: #04D361
 }
 
