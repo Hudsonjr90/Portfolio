@@ -45,8 +45,8 @@
     align-items: center;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #fff;
-    letter-spacing: 0.1rem
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.3rem
 }
 
 .header .logo a span {
