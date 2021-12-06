@@ -8,7 +8,7 @@
    .about-section .about-info,
    .about-section .about-img,
    .home-section .home-text,
-   .home-section .home-img{
+   .home-section .home-img .copy{
       flex: 0 0 100%;
       max-width: 100%;
    }
@@ -21,7 +21,7 @@
       font-size: 1.4rem
    }
    .contact-section .contact-form .submit-btn, 
-   .home-section .home-text {
+   .home-section .home-text .copy {
       text-align: center;
    }
    .home-section .full-screen {
@@ -88,7 +88,7 @@
 }
 
 @media(max-width: 574px) {
-   .home-section .home-img .img-box {
+   .home-section .home-img .img-box .copy{
       width: 25rem;
    }
    .home-section .home-text h2 {
