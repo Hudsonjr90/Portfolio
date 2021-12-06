@@ -1672,4 +1672,12 @@ img {
     transition: all 0.3s ease
 }
 /*# sourceMappingURL=global.css.map */
+.copy{
+    color: #fff;
+    border-bottom: 0.3rem solid #04D361;
+    display: inline-block;
+    margin-left: 130px;
+    align-items: center;
 
+
+}
