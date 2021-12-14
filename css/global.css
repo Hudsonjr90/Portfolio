@@ -1417,6 +1417,20 @@ img {
     display: inline-block;
     border: none
 }
+.btn-2 {
+    padding: 1rem 1.5rem;
+    font-size: 16px;
+    font-weight: 500;
+    color: #04D361;
+    background-color: transparent;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 3rem;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none
+}
 
 .btn-1:after {
     border-radius: 3rem
