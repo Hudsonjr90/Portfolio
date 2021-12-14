@@ -1403,6 +1403,13 @@ img {
     align-items: center
 }
 
+.snk{
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-radius: .5rem;
+    width: 100%
+}
+
 .btn-1 {
     padding: 1rem 2.5rem;
     font-size: 16px;
