@@ -49,8 +49,8 @@
     letter-spacing: 0.3rem
 }
 
-.header .logo a span {
-    width: 30px;
+.header .logo a img {
+    width: 35px;
 }
 
 .header .hamburguer-btn {
