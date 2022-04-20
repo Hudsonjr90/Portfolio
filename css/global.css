@@ -632,6 +632,17 @@
     color: #04D361
 }
 
+.about-section .services .timeline .timeline-item .timeline-item-inner h1 {
+    font-weight: 500;
+    color: #fff
+
+}
+.about-section .services .timeline .timeline-item .timeline-item-inner h2 {
+        font-weight: 500;
+        color: #fff
+    
+}
+      
 .about-section .services .timeline .timeline-item .timeline-item-inner h3 {
     font-weight: 500;
     color: #fff
