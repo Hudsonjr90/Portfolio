@@ -1,4 +1,4 @@
-//animação maquina de escrever
+//animação máquina de escrever
 function typeWriter(elemento) {
    const textoArray = elemento.innerHTML.split('');
    elemento.innerHTML = '';
