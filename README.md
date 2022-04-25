@@ -1,13 +1,14 @@
 # Portfolio
 
-Meu portifolio criado com Javascript, Html e CSS( Sass) 
 
-inseri alguns dos meus projetos e habilidades adquiridas nestes 3 anos de estudos.
+Contém algumas informações sobre mim, experiências de trabalho, meus projetos criados e habilidades adquiridas em quase 4 anos de estudos.
 
 
 <p align="left"><img width=50% src="./assets/img/readme.png"></p>
 
 ### tecnologias usadas 
+
+Meu portifolio foi criado com Html / CSS(Sass) / Javascript. 
 
 <table>
   <tbody>
