@@ -1317,7 +1317,8 @@ html ::-webkit-scrollbar-thumb {
 body {
     font-size: 1.6rem;
     background-color: #2b2c2f;
-    overflow-x: hidden
+    overflow-x: hidden;
+    
 }
 
 body.stop-scrolling {
