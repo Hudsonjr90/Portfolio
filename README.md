@@ -4,7 +4,7 @@
 Contém algumas informações sobre mim, experiências de trabalho, meus projetos criados e habilidades adquiridas em quase 4 anos de estudos.
 
 
-<p align="left"><img width=50% src="./assets/img/readme.png"></p>
+<p align="left"><img width=50% src="./assets/img/readme.svg"></p>
 
 ### tecnologias usadas 
 
