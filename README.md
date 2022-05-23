@@ -1,23 +1,23 @@
 # Portfólio
 
-Portfolio
+## Portfolio
 
 
-## Contém algumas informações sobre mim, experiências de trabalho, meus projetos criados e habilidades adquiridas em quase 4 anos de estudos.
+### Contém algumas informações sobre mim, experiências de trabalho, meus projetos criados e habilidades adquiridas em quase 4 anos de estudos.
 
 
-It contains some information about me, work experiences, my created projects and skills acquired in almost 4 years of studies.
+## It contains some information about me, work experiences, my created projects and skills acquired in almost 4 years of studies.
 
 
 <p align="left"><img width=50% src="./assets/img/readme.jpg"></p>
 
 ###  tecnologias usadas
 
-technologies used
+## technologies used
 
-## Meu portfólio foi criado com Html / CSS(Sass) / Javascript. 
+### Meu portfólio foi criado com Html / CSS(Sass) / Javascript. 
 
-My portfolio was created with Html / CSS(Sass) / Javascript.
+## My portfolio was created with Html / CSS(Sass) / Javascript.
 
 <table>
   <tbody>
