@@ -11,9 +11,9 @@
 
 <p align="left"><img width=50% src="./assets/img/readme.jpg"></p>
 
-##  tecnologias usadas
+##  Tecnologias usadas
 
-### technologies used
+### Technologies used
 
 ## Meu portfólio foi criado com Html / CSS(Sass) / Javascript. 
 
