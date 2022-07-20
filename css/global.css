@@ -128,7 +128,7 @@
     top: 1.5rem;
     cursor: pointer;
     text-align: center;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease
 }
@@ -138,7 +138,7 @@
 }
 
 .nav-menu .close-nav-menu:hover {
-    color: red;
+    color: #04D361;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease
 }
@@ -254,7 +254,7 @@
 }
 
 .home-section .home-text p {
-    color: #bbb;
+    color: rgb(255, 255, 255);
     font-size: 1.8rem;
     text-transform: capitalize;
     margin: 0
@@ -349,7 +349,7 @@
     width: 4rem;
     font-size: 2.5rem;
     text-align: center;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     margin: 0 .4rem;
     border-radius: 50%;
     -webkit-transition: all 0.3s ease;
@@ -395,7 +395,7 @@
     font-size: 1.6rem;
     line-height: 2.6rem;
     margin-bottom: 1.5rem;
-    color: #bbb
+    color: rgb(255, 255, 255)
 }
 
 .about-section .about-info .btn-1 {
@@ -418,7 +418,7 @@
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     font-size: 1.6rem;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     font-weight: 500;
     text-transform: capitalize
 }
@@ -481,7 +481,7 @@
     margin: 1rem;
     border-radius: 10px 10px 0px 0px;
     padding: 1.5rem;
-    border-bottom: 3px solid #bbb;
+    border-bottom: 3px solid rgb(255, 255, 255);
     color: #04D361;
     -webkit-transition: .4s ease;
     transition: .4s ease;
@@ -503,7 +503,7 @@
 
 .about-section .container-skill .skills-container .skill-content .conhecimento p {
     font-size: 1.5rem;
-    color: #bbb
+    color: rgb(255, 255, 255)
 }
 
 .about-section .container-skill .skills-container .skill-content .conhecimento::after {
@@ -649,7 +649,7 @@
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner p {
-    color: #bbb
+    color: rgb(255, 255, 255)
 }
 
 .portfolio-section {
@@ -678,7 +678,7 @@
     border-radius: 3rem;
     cursor: pointer;
     font-weight: 500;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     text-transform: capitalize;
     font-size: 1.6rem;
     -webkit-transition: all 0.3s ease;
@@ -755,7 +755,7 @@
 .portfolio-section .portfolio-item .portfolio-item-inner p {
     font-size: 1.6rem;
     margin: 1rem 0 0;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     text-transform: capitalize
 }
 
@@ -834,7 +834,7 @@
 .portfolio-popup .pp-details .pp-details-inner .pp-title p {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     margin: 0 0 1.5rem;
     border-bottom: 0.1rem solid #353535;
     padding-bottom: 1rem
@@ -855,7 +855,7 @@
 
 .portfolio-popup .pp-details .pp-details-inner .description p {
     font-size: 1.6rem;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     line-height: 2.6rem;
     margin: 0;
     padding-bottom: 3rem
@@ -875,7 +875,7 @@
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li {
     margin-bottom: 1rem;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     font-size: 1.6rem;
     font-weight: 600
 }
@@ -1000,7 +1000,7 @@
     text-align: center;
     line-height: 3.5rem;
     font-size: 3.5rem;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease
@@ -1099,14 +1099,14 @@
     display: block;
     font-size: 1.6rem;
     font-weight: 600;
-    color: #fff;
+    color: rgb(255, 255, 255);
     margin: 1.5rem 0 1rem;
     text-transform: capitalize
 }
 
 .contact-section .contact-item .contact-item-inner p {
     font-size: 1.6rem;
-    color: #bbb;
+    color: rgb(255, 255, 255);
     line-height: 2.6rem;
     margin: 0;
     word-break: break-word
@@ -1157,7 +1157,7 @@
     background: transparent;
     font-size: 1.6rem;
     padding: 0 1.5rem;
-    color: #fff
+    color: rgb(255, 255, 255)
 }
 
 .contact-section .contact-form .w-50 .input-group textarea.input-control {
@@ -1685,7 +1685,7 @@ img {
 }
 
 .btn-link-p {
-    color: #bbbbbb;
+    color: #ffffff;
     border-bottom: 0.3rem solid #04D361;
     margin: 0 .5rem 1rem;
     padding: .5rem 1rem;
