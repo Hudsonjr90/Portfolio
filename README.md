@@ -9,7 +9,7 @@
 ### It contains some information about me, work experiences, my created projects and skills acquired in almost 4 years of studies.
 
 
-<p align="left"><img width=50% src="./assets/img/readme.jpg"></p>
+<p align="left"><img width=100% src="./assets/img/read.webp"></p>
 
 ##  Tecnologias usadas
 
