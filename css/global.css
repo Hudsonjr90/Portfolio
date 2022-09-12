@@ -270,21 +270,21 @@
     margin: 0
 }
 
-.home-section .home-text h1 {
+.home-section .home-text .maintext{
     font-size: 2rem;
     font-weight: 500;
     color: #04D361;
     margin: 0
 }
 
-.home-section .home-text h1::after {
+.home-section .home-text .maintext::after {
     content: "|";
     opacity: 1;
     margin-left: 5px;
     display: inline-block;
     white-space: nowrap;
     -webkit-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite
+    animation: blink 0.7s infinite;
 }
 
 @-webkit-keyframes blink {
