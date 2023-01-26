@@ -38,39 +38,38 @@ typeWriter(titulo);
    //attach an event handle to document
    document.addEventListener("click", (event) => {
       if(event.target.classList.contains('link-item')){
-         /*make sure event.target.hash has a value before overridding default behavior*/
          if(event.target.hash !==""){
-            //prevent default anchor click behavior
+           
             event.preventDefault();
             const hash = event.target.hash;
-            //deactive existing active 'section'
+           
             document.querySelector(".section.active").classList.add("hide");
             document.querySelector(".section.active").classList.remove("active");
-            //active new 'section'
+            
             document.querySelector(hash).classList.add("active");
             document.querySelector(hash).classList.remove("hide");
-            //deactivate existing active navigation menu 'link-item'
+         
             navMenu.querySelector(".active").classList.add("outer-shadow","hover-in-shadow");
             navMenu.querySelector(".active").classList.remove("active","inner-shadow");
-            //activate new navigation menu 'link-item'
+            
             if(navMenu.classList.contains("open")){
                event.target.classList.add("active", "inner-shadow");
                event.target.classList.remove("outer-shadow", "hover-in-shadow");
-               //hide navigation menu
+               
                hideNavMenu();
             }
             else {
                let navItems = navMenu.querySelectorAll(".link-item");
                navItems.forEach((item) => {
                   if(hash === item.hash) {
-                     //activate new navigation menu 'link-item'
+                     
                      item.classList.add("active", "inner-shadow");
                      item.classList.remove("outer-shadow", "hover-in-shadow");
                   }
                })
                fadeOutEffect();
             }
-            //add hash (#) to url
+           
             window.location.hash = hash;
          }
       }
