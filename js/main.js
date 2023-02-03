@@ -9,6 +9,8 @@ function typeWriter(elemento) {
 const titulo = document.querySelector('h1');
 typeWriter(titulo);
 
+
+
 /*---------------------navegação menu-----------------------*/ 
 (() => {
 
@@ -261,6 +263,7 @@ function bodyScrollingToggle(){
       }
    })
 })();
+
 
 
 

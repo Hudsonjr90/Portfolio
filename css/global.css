@@ -1723,5 +1723,13 @@ summary {
     font-style: normal;
     font-weight: 400;
     cursor: pointer;
+    list-style-type: none;
   }
 
+.box{
+    box-shadow: 10px 10px 5px 0px rgba(119, 117, 117, 0.75);
+}
+
+.box:hover {
+    box-shadow: 10px 10px 5px 0px #04D361;
+  }
