@@ -1733,3 +1733,17 @@ summary {
 .box:hover {
     box-shadow: 10px 10px 5px 0px #04D361;
   }
+.tab-item1{
+    color: #fff;
+    font-size: 1.2em;
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: #04D361;
+    text-decoration-thickness: 2px;
+}  
+.tab-item1:hover{
+    color: #04D361;
+    -webkit-transition: .4s ease;
+    transition: .4s ease;
+    position: relative;
+}
