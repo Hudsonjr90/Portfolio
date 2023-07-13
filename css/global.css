@@ -432,7 +432,8 @@
 
 .about-section .about-tabs .tab-item.active {
     color: #04D361;
-    cursor: default
+    cursor: default;
+    border: 3px solid #04d361;
 }
 
 .about-section .about-section .tab-content {
