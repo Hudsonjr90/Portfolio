@@ -693,7 +693,8 @@
 }
 
 .portfolio-section .portfolio-filter .filter-item.active {
-    color: #04D361
+    color: #04D361;
+    border: 1px solid #04D361;
 }
 
 .portfolio-section .portfolio-item {
