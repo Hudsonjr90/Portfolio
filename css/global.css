@@ -1749,3 +1749,65 @@ summary {
     transition: .4s ease;
     position: relative;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .modal-content {
+    background-color: #525458;
+    width: 300px;
+    font-size: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    border-radius: 15px;
+  }
+
+  .cabecalho-modal {
+    padding: 4px 0 1px;
+    background: #04D361;
+    text-align: center;
+    border-bottom: 1px solid #6b6b6b;
+    border-radius: 8px;
+  }
+
+  .cabecalho-modal h3 {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .footer-modal {
+    padding: 25px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-modal button {
+    height: 40px;
+    padding: 0px 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .fechar {
+    position: relative;
+    display: flex;
+    top: 0px;
+    right: 3px;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 7%;
+    cursor: pointer;
+  }

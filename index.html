@@ -31,14 +31,6 @@
             <div class="logo">
                <!-- reload page -->
                <div class="nav-menu-inner">
-                  <details>
-                     <summary>Idioma</summary>
-                     <ul>
-                        <li>
-                           <a href="./indexUS.html" class="box">en-US</a>
-                        </li>
-                     </ul>
-                  </details>
                </div>
             </div>
             <div class="hamburguer-btn outer-shadow hover-in-shadow">
@@ -53,10 +45,11 @@
       <div class="close-nav-menu outer-shadow hover-in-shadow ">&times;</div>
       <div class="nav-menu-inner">
          <ul>
-            <li><a href="#home" class="link-item inner-shadow active">Início</a></li>
-            <li><a href="#about" class="link-item outer-shadow hover-in-shadow">Sobre</a></li>
-            <li><a href="#portfolio" class="link-item outer-shadow hover-in-shadow">Portfólio</a></li>
-            <li><a href="#contact" class="link-item outer-shadow hover-in-shadow">Contato</a></li>
+            <li><a href="#home" id="menu-inicio" class="link-item inner-shadow active">Início</a></li>
+            <li><a href="#about" id="menu-sobre" class="link-item outer-shadow hover-in-shadow">Sobre</a></li>
+            <li><a href="#portfolio" id="menu-portfolio" class="link-item outer-shadow hover-in-shadow">Portfólio</a></li>
+            <li><a href="#contact" id="menu-contato" class="link-item outer-shadow hover-in-shadow">Contato</a></li>
+
          </ul>
       </div>
    </nav>
@@ -70,9 +63,10 @@
          <div class="row full-screen align-items-center">
             <div class="home-text">
 
-               <h2>Hudson Kennedy</h2>
-               <h1 class="maintext">Desenvolvedor Fullstack / Engenheiro de Software.</h1>
-               <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">Saiba mais</a>
+               <h2 id="titulo-principal">Hudson Kennedy</h2>
+               <h1 class="maintext" id="texto-principal">Desenvolvedor Fullstack / Engenheiro de Software.</h1>
+               <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow" id="saiba-mais">Saiba mais</a>
+
 
             </div>
 
@@ -96,7 +90,7 @@
       <div class="about-section tab-content container">
          <div class="row">
             <div class="section-title">
-               <h2 data-heading="______">Sobre mim</h2>
+               <h2 id="titulo-sobre-mim" data-heading="______">Sobre mim</h2>
             </div>
          </div>
          <div class="row">
@@ -123,23 +117,33 @@
                </div>
             </div>
             <div class="about-info">
-               <p><span>
-                     Em contato com a área de tecnologia por mais de 10 anos, onde comecei a desenvolver em VB.net,
-                     durante a jornada de aprendizado, fui fazendo alguns cursos, em 2018 iniciei meu Tecnólogo em
-                     processos gerenciais e me formei em 2020, neste período
-                     continuei em contato com a área de tecnologia, onde comecei a estudar Javascript e Typescript,
-                     para trabalhar específicamente no Frontend, que também fiz diversos cursos para me aprimorar,
-                     e evoluir profissionalmente.</br>
-                     Em 2021 iniciei o MBA em Engenharia de Software, me formei em 2022 onde aprendi muitas coisas sobre
-                     Backend e etc...</br>
-                     Em fevereiro de 2023 iniciei meu Mestrado que atua dentro do programa de pós-graduação em Ciência
-                     da Computação, na Universidade de Harvard e me formei.</br>
-                     Continuarei me aprimorando como Desenvolvedor Fullstack e Engenheiro de Software, adquirindo mais
-                     experiência e contribuindo com meu time!
-               </p></span>
-               <a href="./assets/cv/HudsonKennedy-BR.pdf" class="btn-2 outer-shadow hover-in-shadow" target="_blank"
-                  rel="noopener">Currículo</a>
-            </div>
+               <p>
+                   <span id="texto-sobre-mim">
+                       Em contato com a área de tecnologia por mais de 10 anos, onde comecei a desenvolver em VB.net,
+                       durante a jornada de aprendizado, fui fazendo alguns cursos, em 2018 iniciei meu Tecnólogo em
+                       processos gerenciais e me formei em 2020, neste período continuei em contato com a área de tecnologia,
+                       onde comecei a estudar Javascript e Typescript, para trabalhar especificamente no Frontend, que também fiz
+                       diversos cursos para me aprimorar, e evoluir profissionalmente.</br>
+                       Em 2021 iniciei o MBA em Engenharia de Software, me formei em 2022 onde aprendi muitas coisas sobre
+                       Backend e etc...</br>
+                       Em fevereiro de 2023 iniciei meu Mestrado que atua dentro do programa de pós-graduação em Ciência da
+                       Computação, na Universidade de Harvard e me formei.</br>
+                       Continuarei me aprimorando como Desenvolvedor Fullstack e Engenheiro de Software, adquirindo mais
+                       experiência e contribuindo com meu time!
+                   </span>
+               </p>
+               <button id="openModalBtn" class="btn-2 outer-shadow hover-in-shadow">Currículo</button>
+               <div id="modal" class="modal">
+                  <div class="modal-content">
+                     <div class="cabecalho-modal">
+                 <h3 class="modal-title" id="titulo-modal">Escolha o idioma do currículo:</h3>
+                    </div>
+                    <div class="footer-modal">
+                      <button id="portuguesBtn">Português</button>
+                      <button id="inglesBtn">Inglês</button>
+                    </div>
+                </div>
+           </div>
          </div>
          <!-- about tabs -->
          <div class="row">
@@ -973,6 +977,42 @@
             <!--portfolio item end-->
 
             <!--portfolio item start-->
+            <div class="portfolio-item" data-category="web-application">
+               <div class="portfolio-item-inner outer-shadow">
+                  <div class="portfolio-item-img">
+                     <img src="./assets/img/calcflex.webp" alt="portfolio"
+                        data-screenshots="./assets/img/calcflex.webp">
+                     <!--view project btn-->
+                     <span class="view-project">Vizualização do projeto</span>
+                  </div>
+                  <p class="portfolio-item-title">Calculadora Flex</p>
+                  <!--portfolio item details start-->
+                  <div class="portfolio-item-details">
+                     <div class="row">
+                        <div class="description">
+                           <h3>Projeto Brief:</h3>
+                           <p>
+                              Aplicação Javascript simples, para sabermos com qual combustível, devemos abastecer de
+                              acordo com o valor de cada um..
+                           </p>
+                        </div>
+                        <div class="info">
+                           <h3>Informação do Projeto</h3>
+                           <ul>
+                              <li>Data - <span>2023</span></li>
+                              <li>Tecnologias usadas - <span>Javascript, HTML e CSS</span></li>
+                              <li>App - <span><a href="https://calculadora-flex.vercel.app" target="__blank"
+                                       rel="noopener">Acessar</a></span></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!--portfolio item details end-->
+               </div>
+            </div>
+            <!--portfolio item end-->
+
+            <!--portfolio item start-->
             <div class="portfolio-item" data-category="figma">
                <div class="portfolio-item-inner outer-shadow">
                   <div class="portfolio-item-img">
@@ -1079,7 +1119,7 @@
                      <!--view project btn-->
                      <span class="view-project">Vizualização do projeto</span>
                   </div>
-                  <p class="portfolio-item-title">IMC Calculadora</p>
+                  <p class="portfolio-item-title">Calculadora de IMC </p>
                   <!--portfolio item details start-->
                   <div class="portfolio-item-details">
                      <div class="row">
@@ -1112,7 +1152,7 @@
                      <!--view project btn-->
                      <span class="view-project">Vizualização do projeto</span>
                   </div>
-                  <p class="portfolio-item-title">IMC Calculadora</p>
+                  <p class="portfolio-item-title">Calculadora</p>
                   <!--portfolio item details start-->
                   <div class="portfolio-item-details">
                      <div class="row">
@@ -1126,7 +1166,7 @@
                         <div class="info">
                            <h3>Informação do Projeto</h3>
                            <ul>
-                              <li>Data - <span>2019</span></li>
+                              <li>Data - <span>2020</span></li>
                               <li>Tecnologias usadas - <span>Jquery, Javascript, HTML e CSS</span></li>
                               <li>App - <span><a href="https://mathcalculator.vercel.app" target="__blank"
                                        rel="noopener">Acessar</a></span></li>
@@ -1195,7 +1235,7 @@
                         <div class="info">
                            <h3>Informação do Projeto</h3>
                            <ul>
-                              <li>Data - <span>2021</span></li>
+                              <li>Data - <span>2022</span></li>
                               <li>Tecnologias usadas - <span>Javascript, API key, HTML e CSS</span></li>
                               <li>App - <span><a href="https://climatempoapi.vercel.app" target="__blank"
                                        rel="noopener">Acessar</a></span></li>
@@ -1207,32 +1247,31 @@
                </div>
             </div>
             <!--portfolio item end-->
+
             <!--portfolio item start-->
             <div class="portfolio-item" data-category="mobile-app">
                <div class="portfolio-item-inner outer-shadow">
                   <div class="portfolio-item-img">
-                     <img src="./assets/img/calcflex.webp" alt="portfolio"
-                        data-screenshots="./assets/img/calcflex.webp">
+                     <img src="./assets/img/card.webp" alt="portfolio" data-screenshots="./assets/img/card.webp">
                      <!--view project btn-->
                      <span class="view-project">Vizualização do projeto</span>
                   </div>
-                  <p class="portfolio-item-title">Calculadora Flex</p>
+                  <p class="portfolio-item-title">Formulário de Cartão de Crédito</p>
                   <!--portfolio item details start-->
                   <div class="portfolio-item-details">
                      <div class="row">
                         <div class="description">
                            <h3>Projeto Brief:</h3>
                            <p>
-                              Aplicação Javascript simples, para sabermos com qual combustível, devemos abastecer de
-                              acordo com o valor de cada um..
+                              Aplicação para preencher formulário de Cartão de Crédito.
                            </p>
                         </div>
                         <div class="info">
                            <h3>Informação do Projeto</h3>
                            <ul>
-                              <li>Data - <span>2022</span></li>
-                              <li>Tecnologias usadas - <span>Javascript, HTML e CSS</span></li>
-                              <li>App - <span><a href="https://calculadora-flex.vercel.app" target="__blank"
+                              <li>Data - <span>2023</span></li>
+                              <li>Tecnologias usadas - <span>Vue, Typescript, SCSS</span></li>
+                              <li>App - <span><a href="https://credit-card-form-payment.vercel.app" target="__blank"
                                        rel="noopener">Acessar</a></span></li>
                            </ul>
                         </div>
@@ -1242,6 +1281,8 @@
                </div>
             </div>
             <!--portfolio item end-->
+
+
          </div>
       </div>
 
