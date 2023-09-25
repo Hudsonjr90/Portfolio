@@ -432,8 +432,13 @@ function loadEnglishContent() {
    document.getElementById('unica-description').textContent = 'Postgraduate in Software Engineering';
    document.getElementById('harvard-title').textContent = 'Harvard University';
    document.getElementById('harvard-description').textContent = 'Masters degree which operates within graduate program in Science Computer';
-   //document.getElementById('estacio-title').textContent = 'Estacio de Sá college';
-   
+
+   document.querySelectorAll('.estacio-title').forEach(function (element) {
+    element.textContent = 'Estacio de Sá college';
+});
+   document.querySelectorAll('.estacio-description').forEach(function (element) {
+    element.textContent = 'Technologist Management Processeses';
+});
 
    document.getElementById('portfolio-title').textContent = 'Some of my projects ';
    document.getElementById('contato-title').textContent = 'Contact';
@@ -472,20 +477,22 @@ function loadEnglishContent() {
    document.getElementById('login-text').textContent = 'Animated login screen made to practice';
    document.getElementById('conversor-title').textContent = 'Currency Converter';
    document.getElementById('conversor-text').textContent = 'World Currency Converter, made from Udemy course.';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-   document.getElementById('').textContent = '';
-
-
-
-   
+   document.getElementById('calc-title').textContent = 'Flex Calculator';
+   document.getElementById('calc-text').textContent = 'Simple Javascript application, to know which fuel should be used.';
+   document.getElementById('nu-text').textContent = 'Clone Nubank page design, made with Rocketseat.';
+   document.getElementById('ml-text').textContent = 'Clone Design of the Mercado Livre page, made with Rocketseat.';
+   document.getElementById('clock-title').textContent = 'Analog Clock';
+   document.getElementById('clock-text').textContent = 'Analog clock with dark mode.';
+   document.getElementById('imc-title').textContent = 'BMI Calculator';
+   document.getElementById('imc-text').textContent = 'Basic BMI Calculator, to find out if you are overweight or not.';
+   document.getElementById('math-title').textContent = 'Mathematical Calculator';
+   document.getElementById('math-text').textContent = 'Math Calculator, with the main operators for calculation, with Light or Dark layout mode';
+   document.getElementById('flappy-text').textContent = 'Classic Flappy Bird game, recreated through the Udemy course class.';
+   document.getElementById('clima-title').textContent = 'Climate Weather API'; 
+   document.getElementById('clima-text').textContent = 'Simple Javascript application, to search for the climate and weather of cities around the world through the openweather API.'; 
+   document.getElementById('form-title').textContent = 'Credit Card Form'; 
+   document.getElementById('form-text').textContent = 'Application to fill out Credit Card form.'; 
+   document.getElementById('fale-title').textContent = 'Make a contact'; 
+   document.getElementById('localiza-title').textContent = 'Localization'; 
+   document.getElementById('inicio-title').textContent = 'Home'; 
   }
