@@ -299,6 +299,43 @@ function bodyScrollingToggle() {
 
 /*------------------Change language function----------------------- */
 
+// Detectar o idioma do navegador
+function detectLanguageAndLoadContent() {
+  const languageNavigator = navigator.language || navigator.userLanguage;
+  
+  if (languageNavigator.startsWith('en')) {
+      loadEnglishContent();
+    }  
+  }
+  detectLanguageAndLoadContent();
+  
+  const openModalBtn = document.getElementById('openModalBtn');
+  const modal = document.getElementById('modal');
+  const portuguesBtn = document.getElementById('portuguesBtn');
+  const inglesBtn = document.getElementById('inglesBtn');
+  
+  
+  openModalBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+  
+  portuguesBtn.addEventListener('click', () => {
+    window.open('./assets/cv/HudsonKennedy-BR.pdf', '_blank');
+    modal.style.display = 'none';
+  });
+  
+  inglesBtn.addEventListener('click', () => {
+    window.open('./assets/cv/HudsonKennedy-US.pdf', '_blank');
+    modal.style.display = 'none';
+  });
+  
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+  
+
 // Função para trocar para inglês
 function loadEnglishContent() {
   document.getElementById('menu-inicio').textContent = 'Home';
@@ -326,73 +363,129 @@ function loadEnglishContent() {
     document.getElementById('titulo-modal').textContent = 'Choose the CV language';
     document.getElementById('inglesBtn').textContent = 'English';
     document.getElementById('portuguesBtn').textContent = 'Portuguese';
-}
+    document.getElementById('experiencias').textContent = 'Experiences';
+    document.getElementById('tecnologias').textContent = 'Technologies';
+    document.getElementById('formacao-cursos').textContent = 'Education/Courses';
+    document.getElementById('portfolio').textContent = 'Portfolio';
+    document.querySelectorAll('.anos').forEach(function (element) {
+      element.textContent = 'Years';
+  });
+    document.querySelectorAll('.ano').forEach(function (element) {
+      element.textContent = 'Year';
+  });
+    document.querySelectorAll('.meses').forEach(function (element) {
+      element.textContent = 'Months';
+  });
 
-// Função para trocar para português
-function loadPortugueseContent() {
-  document.getElementById('menu-inicio').textContent = 'Início';
-  document.getElementById('menu-sobre').textContent = 'Sobre';
-  document.getElementById('menu-portfolio').textContent = 'Portfólio';
-  document.getElementById('menu-contato').textContent = 'Contato';
-  document.getElementById('titulo-principal').textContent = 'Hudson Kennedy';
-    document.getElementById('texto-principal').textContent = 'Desenvolvedor Fullstack / Engenheiro de Software.';
-    document.getElementById('saiba-mais').textContent = 'Saiba mais';
-    document.getElementById('titulo-sobre-mim').textContent = 'Sobre mim';
-    document.getElementById('texto-sobre-mim').innerHTML = `
-        Em contato com a área de tecnologia por mais de 10 anos, onde comecei a desenvolver em VB.net,
-        durante a jornada de aprendizado, fui fazendo alguns cursos, em 2018 iniciei meu Tecnólogo em
-        processos gerenciais e me formei em 2020, neste período continuei em contato com a área de tecnologia,
-        onde comecei a estudar Javascript e Typescript, para trabalhar especificamente no Frontend, que também fiz
-        diversos cursos para me aprimorar, e evoluir profissionalmente.</br>
-        Em 2021 iniciei o MBA em Engenharia de Software, me formei em 2022 onde aprendi muitas coisas sobre
-        Backend e etc...</br>
-        Em fevereiro de 2023 iniciei meu Mestrado que atua dentro do programa de pós-graduação em Ciência da
-        Computação, na Universidade de Harvard e me formei.</br>
-        Continuarei me aprimorando como Desenvolvedor Fullstack e Engenheiro de Software, adquirindo mais
-        experiência e contribuindo com meu time!
-    `;
-    document.getElementById('openModalBtn').textContent = 'Currículo';
-    document.getElementById('titulo-modal').textContent = 'Escolha o idioma do currículo';
-    document.getElementById('inglesBtn').textContent = 'Inglês';
-    document.getElementById('portuguesBtn').textContent = 'Português';
+   document.getElementById('cast-title').textContent = 'Cast Group';
+   document.getElementById('cast-name').textContent = 'Fullstack Developer/Software engineer';
+   document.getElementById('cast-description').textContent = 'Working directly with external clients on code maintenance/refactoring directives, using Angular and TypeScript on the Frontend, as well as Java with Spring Boot on the Backend and PostgresSQL as the database.';
+   document.getElementById('cast-date').textContent = 'August 2022 - Present';
+   
+   document.getElementById('vilt-title').textContent = 'VILT Brazil Information Systems';
+   document.getElementById('vilt-name').textContent = 'Full Technical Consultant';
+   document.getElementById('vilt-description').textContent = 'Fullstack consulting, working with Java and Spring Boot on the Backend and Angular/React on the Frontend, using Adobe Experience Manager (AEM) programs, providing services to various clients such as Porto, CVC, and more.';
+   document.getElementById('vilt-date').textContent = 'January 2022 - April 2022';
 
-}
+   document.getElementById('dt3-title').textContent = 'DT3 Group';
+   document.getElementById('dt3-name').textContent = 'E-commerce Analyst/Front-end Developer';
+   document.getElementById('dt3-description').textContent = 'Invoice issuance,marketplaces, website development in React.JS, image optimization and responsible for ERP Bling integration.';
+   document.getElementById('dt3-date').textContent = 'February 2019 - June 2021';
 
+   document.getElementById('freela-title').textContent = 'Appen Projects/99Freelas/Capitona Rio';
+   document.getElementById('freela-name').textContent = 'Freelancers/Personal Works';
+   document.getElementById('freela-description').textContent = 'I did some freelance work with Shopify, Wordpress using, React, VueJs, Angular, Typescript, Vanilla Js, Jquery, Bootstrap and Sass.';
+   document.getElementById('freela-date').textContent = 'February 2018- at moment';
 
-// Detectar o idioma do navegador
-function detectLanguageAndLoadContent() {
-const languageNavigator = navigator.language || navigator.userLanguage;
+   document.getElementById('hour-title').textContent = '24-hour courses';
+   document.getElementById('hour-description').textContent = 'Administrative Assistant Course';
+   
+   document.getElementById('fgv-title').textContent = 'FGV';
+   document.getElementById('fgv-description').textContent = 'Digital Security Course';
+   document.getElementById('sebrae-title-a').textContent = 'SEBRAE';
+   document.getElementById('sebrae-description-a').textContent = 'Strategic Planning Course for Entrepreneurs';
+   document.getElementById('sebrae-title-b').textContent = 'SEBRAE';
+   document.getElementById('sebrae-description-b').textContent = 'Financial Strategy for Growth Course';
+   document.getElementById('sebrae-title-c').textContent = 'SEBRAE';
+   document.getElementById('sebrae-description-c').textContent = 'Digital Marketing for Entrepreneurs';
+   document.getElementById('sebrae-title-d').textContent = 'SEBRAE';
+   document.getElementById('sebrae-description-d').textContent = 'Customer Success Course (How to Win and Keep Customers)';
+   document.getElementById('sebrae-title-e').textContent = 'SEBRAE';
+   document.getElementById('sebrae-description-e').textContent = 'Financial Management Course';
+   document.getElementById('sebrae-title-f').textContent = 'SEBRAE';
+   document.getElementById('sebrae-description-f').textContent = 'Business Financial Education Course';
+   document.getElementById('iv-title').textContent = 'IV2 College';
+   document.getElementById('iv-description').textContent = 'M.E.R.N (MongoDB/Express/React/Node) ';
+   document.getElementById('udemy-title').textContent = 'Udemy';
+   document.getElementById('udemy-description').textContent = 'Basic to Advanced Javascript and Typescript Course';
+   document.getElementById('vuejs-title').textContent = 'VueJs Brazil';
+   document.getElementById('vuejs-description').textContent = 'Vuejs Course - Basic to Advanced';
+   document.getElementById('adobe-title-a').textContent = 'Adobe Profissional';
+   document.getElementById('adobe-description-a').textContent = 'AEM - Business Practitioner';
+   document.getElementById('adobe-title-b').textContent = 'Adobe Profissional';
+   document.getElementById('adobe-description-b').textContent = 'AEM - Front-end Developer';
+   document.getElementById('dio-title-a').textContent = 'Digital Innovation';
+   document.getElementById('dio-description-a').textContent = 'Component Architecture and front-end complexity management';
+   document.getElementById('dio-title-b').textContent = 'Digital Innovation';
+   document.getElementById('dio-description-b').textContent = 'Working with Components in React';
+   document.getElementById('unica-title').textContent = 'Single College of MG';
+   document.getElementById('unica-description').textContent = 'Postgraduate in Software Engineering';
+   document.getElementById('harvard-title').textContent = 'Harvard University';
+   document.getElementById('harvard-description').textContent = 'Masters degree which operates within graduate program in Science Computer';
+   //document.getElementById('estacio-title').textContent = 'Estacio de Sá college';
+   
 
-if (languageNavigator.startsWith('en')) {
-    loadEnglishContent();
-} else {
-    loadPortugueseContent();
- }
-}
-detectLanguageAndLoadContent();
+   document.getElementById('portfolio-title').textContent = 'Some of my projects ';
+   document.getElementById('contato-title').textContent = 'Contact';
 
-const openModalBtn = document.getElementById('openModalBtn');
-const modal = document.getElementById('modal');
-const portuguesBtn = document.getElementById('portuguesBtn');
-const inglesBtn = document.getElementById('inglesBtn');
-
-
-openModalBtn.addEventListener('click', () => {
-  modal.style.display = 'block';
+   document.querySelectorAll('.project-title').forEach(function (element) {
+    element.textContent = 'Project view';
+});
+   document.querySelectorAll('.brief').forEach(function (element) {
+    element.textContent = 'Project Brief';
+});
+   document.querySelectorAll('.information').forEach(function (element) {
+    element.textContent = 'Project Information';
+});
+   document.querySelectorAll('.tech-use').forEach(function (element) {
+    element.textContent = 'Technologies used';
+});
+   document.querySelectorAll('.acessar').forEach(function (element) {
+    element.textContent = 'Acess';
 });
 
-portuguesBtn.addEventListener('click', () => {
-  window.open('./assets/cv/HudsonKennedy-BR.pdf', '_blank');
-  modal.style.display = 'none';
-});
+   document.getElementById('text-hotsite').textContent = 'Test project, talking about the workday and the essentiality of ergonomics in the work environment';
+   document.getElementById('search-title').textContent = 'World population survey';
+   document.getElementById('search-text').textContent = 'Simple design, for researching the world population, through the "restworld" API';
+   document.getElementById('react-web').textContent = 'Simple website, following Udemy Course class guidance';
+   document.getElementById('snake-game').textContent = 'Famous snake game, which was a hit on the old Nokia "big brick", recreated to play/run in any browser';
+   document.getElementById('memory-game').textContent = 'Memory Game';
+   document.getElementById('memory-text').textContent = 'Memory game made in React, to exercise Typescript.';
+   document.getElementById('pizza-text').textContent = 'Landing page, from Pizza&Tutti, one of the best in Rio de Janeiro.';
+   document.getElementById('naruto-game').textContent = 'Naruto Run Game 2d made with effects';
+   document.getElementById('poke-text').textContent = 'Pokedex listing some pokemons and informations.';
+   document.getElementById('graph-title').textContent = 'Chart Js';
+   document.getElementById('graph-text').textContent = 'Simple chart made to examples';
+   document.getElementById('sort-title').textContent = 'Soccer draw';
+   document.getElementById('sort-text').textContent = 'Simple application to draw soccer teams.';
+   document.getElementById('login-title').textContent = 'Animated login screen';
+   document.getElementById('login-text').textContent = 'Animated login screen made to practice';
+   document.getElementById('conversor-title').textContent = 'Currency Converter';
+   document.getElementById('conversor-text').textContent = 'World Currency Converter, made from Udemy course.';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
+   document.getElementById('').textContent = '';
 
-inglesBtn.addEventListener('click', () => {
-  window.open('./assets/cv/HudsonKennedy-US.pdf', '_blank');
-  modal.style.display = 'none';
-});
 
-window.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.style.display = 'none';
+
+   
   }
-});
