@@ -495,4 +495,7 @@ function loadEnglishContent() {
    document.getElementById('fale-title').textContent = 'Make a contact'; 
    document.getElementById('localiza-title').textContent = 'Localization'; 
    document.getElementById('inicio-title').textContent = 'Home'; 
+   document.getElementById('kfc-text').textContent = 'Landing Page, created through a technical test.'; 
+   document.getElementById('coke-text').textContent = 'Coca-Cola Card to practice hover and transform CSS.'; 
+   document.getElementById('qrcode-text').textContent = 'QR code generator made to practice methods in JavaScript.'; 
   }

@@ -1,23 +1,14 @@
 # Portfólio
 
-## Portfolio
-
-
 ## Portfólio feito para demonstrar algumas informações sobre mim, experiências de trabalho, projetos criados e habilidades adquiridas em quase 6 anos de estudos.
-
-
-### Portfolio made to demonstrate some information about me, work experiences, projects created and skills acquired in almost 6 years of studies.
 
 
 <p align="left"><img width=100% src="./assets/img/read.webp"></p>
 
 ##  Tecnologias usadas
 
-### Technologies used
-
 ## Meu portfólio foi criado com Html / CSS(Sass) / Javascript. 
 
-### My portfolio was created with Html / CSS(Sass) / Javascript.
 
 <table>
   <tbody>
