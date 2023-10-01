@@ -340,7 +340,7 @@ function detectLanguageAndLoadContent() {
 function loadEnglishContent() {
   document.getElementById('menu-inicio').textContent = 'Home';
   document.getElementById('menu-sobre').textContent = 'About';
-  document.getElementById('menu-portfolio').textContent = 'Portfolio';
+  document.getElementById('menu-portfolio').textContent = 'Projects';
   document.getElementById('menu-contato').textContent = 'Contact';
   document.getElementById('titulo-principal').textContent = 'Hudson Kennedy';
     document.getElementById('texto-principal').textContent = 'Fullstack Developer / Software Engineer.';
@@ -439,7 +439,7 @@ function loadEnglishContent() {
     element.textContent = 'Technologist Management Processeses';
 });
 
-   document.getElementById('portfolio-title').textContent = 'Some of my projects ';
+   document.getElementById('portfolio-title').textContent = 'Projects';
 
    document.querySelectorAll('.project-title').forEach(function (element) {
     element.textContent = 'Project view';
@@ -490,7 +490,7 @@ function loadEnglishContent() {
    document.getElementById('clima-text').textContent = 'Simple Javascript application, to search for the climate and weather of cities around the world through the openweather API.'; 
    document.getElementById('form-title').textContent = 'Credit Card Form'; 
    document.getElementById('form-text').textContent = 'Application to fill out Credit Card form.'; 
-   document.getElementById('fale-title').textContent = 'Make a contact'; 
+   document.getElementById('fale-title').textContent = 'Contact'; 
    document.getElementById('localiza-title').textContent = 'Localization'; 
    document.getElementById('inicio-title').textContent = 'Home'; 
    document.getElementById('kfc-text').textContent = 'Landing Page, created through a technical test.'; 
