@@ -254,12 +254,7 @@
     padding: 0 1.5rem
 }
 
-.home-section .home-text p {
-    color: rgb(255, 255, 255);
-    font-size: 1.8rem;
-    text-transform: capitalize;
-    margin: 0
-}
+
 
 .home-section .home-text h2 {
     font-size: 5.5rem;
@@ -1429,7 +1424,7 @@ img {
     padding: 1rem 2.5rem;
     font-size: 16px;
     font-weight: 500;
-    color: #04D361;
+    color: #ffff;
     background-color: transparent;
     line-height: 1.5;
     cursor: pointer;
@@ -1438,6 +1433,10 @@ img {
     transition: all 0.3s ease;
     display: inline-block;
     border: none
+}
+
+.btn-1:hover{
+    color: #04D361;
 }
 .btn-2 {
     padding: 1rem 1.5rem;
@@ -1718,6 +1717,23 @@ img {
     font-size: 1em;
     border-bottom: 0.2em solid #04D361;
 }
+
+.copy p:hover {
+    animation: pulsar 0.5s infinite;
+  }
+  
+  @keyframes pulsar {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
 
 summary {
     color: #fff;
