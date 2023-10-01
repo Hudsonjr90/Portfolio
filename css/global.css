@@ -420,7 +420,7 @@
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     font-size: 1.6rem;
-    color: rgb(255, 255, 255);
+    color: #04D361;
     font-weight: 500;
     text-transform: capitalize
 }
@@ -431,7 +431,7 @@
 }
 
 .about-section .about-tabs .tab-item.active {
-    color: #04D361;
+    color: #ffffff;
     cursor: default;
     border: 3px solid #04d361;
 }
@@ -635,7 +635,7 @@
     color: #04D361
 }
 
-.about-section .services .timeline .timeline-item .timeline-item-inner h1 {
+.about-section .services .timeline .timeline-item .timeline-item-inner  h1 {
     font-weight: 500;
     color: #ffffff
 
@@ -681,7 +681,7 @@
     border-radius: 3rem;
     cursor: pointer;
     font-weight: 500;
-    color: rgb(255, 255, 255);
+    color: #04D361;
     text-transform: capitalize;
     font-size: 1.6rem;
     -webkit-transition: all 0.3s ease;
@@ -693,7 +693,7 @@
 }
 
 .portfolio-section .portfolio-filter .filter-item.active {
-    color: #04D361;
+    color: #ffff;
     border: 1px solid #04D361;
 }
 

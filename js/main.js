@@ -366,7 +366,6 @@ function loadEnglishContent() {
     document.getElementById('experiencias').textContent = 'Experiences';
     document.getElementById('tecnologias').textContent = 'Technologies';
     document.getElementById('formacao-cursos').textContent = 'Education/Courses';
-    document.getElementById('portfolio').textContent = 'Portfolio';
     document.querySelectorAll('.anos').forEach(function (element) {
       element.textContent = 'Years';
   });
@@ -441,7 +440,6 @@ function loadEnglishContent() {
 });
 
    document.getElementById('portfolio-title').textContent = 'Some of my projects ';
-   document.getElementById('contato-title').textContent = 'Contact';
 
    document.querySelectorAll('.project-title').forEach(function (element) {
     element.textContent = 'Project view';
@@ -458,7 +456,7 @@ function loadEnglishContent() {
    document.querySelectorAll('.acessar').forEach(function (element) {
     element.textContent = 'Acess';
 });
-
+   document.getElementById('all-title').textContent = 'All';
    document.getElementById('text-hotsite').textContent = 'Test project, talking about the workday and the essentiality of ergonomics in the work environment';
    document.getElementById('search-title').textContent = 'World population survey';
    document.getElementById('search-text').textContent = 'Simple design, for researching the world population, through the "restworld" API';
