@@ -350,7 +350,7 @@
     margin: 0 .4rem;
     border-radius: 50%;
     -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease
+    transition: all 0.3s ease;
 }
 
 .about-section .about-img .social-links a::after {
@@ -978,7 +978,7 @@
     height: 4rem;
     line-height: 4rem;
     -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease
+    transition: all 0.3s ease;
 }
 
 .portfolio-popup .pp-main .pp-main-inner .pp-projects-details-btn i {
@@ -1826,4 +1826,40 @@ summary {
     justify-content: flex-end;
     width: 7%;
     cursor: pointer;
+  }
+
+  .button-play,
+  .button-pause {
+      display: inline-block;
+      height: 4rem;
+      width: 4rem;
+      font-size: 3rem;
+      text-align: center;
+      background-color: rgb(15, 15, 15);
+      color: #fff;
+      margin: 0 .4rem;
+      border-radius: 50%;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      cursor: pointer;
+  }
+  
+  .button-play::after,
+  .button-pause::after {
+      border-radius: 50%;
+  }
+  
+  .button-play:hover,
+  .button-pause:hover {
+      color: #04D361;
+  }
+  
+  .button-play,
+  .button-pause {
+      line-height: 4rem;
+  }
+  
+  /* Estilos específicos para o botão de pausa */
+  .button-pause {
+      display: none; /* Inicialmente, oculta o botão de pausa */
   }

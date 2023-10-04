@@ -1,5 +1,5 @@
 //animação máquina de escrever
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const titulo = document.querySelector("h1");
   typeWriter(titulo);
 });
@@ -302,198 +302,315 @@ function bodyScrollingToggle() {
 // Detectar o idioma do navegador
 function detectLanguageAndLoadContent() {
   const languageNavigator = navigator.language || navigator.userLanguage;
-  
-  if (languageNavigator.startsWith('en')) {
-      loadEnglishContent();
-    }  
+
+  if (languageNavigator.startsWith("en")) {
+    loadEnglishContent();
   }
-  detectLanguageAndLoadContent();
-  
-  const openModalBtn = document.getElementById('openModalBtn');
-  const modal = document.getElementById('modal');
-  const portuguesBtn = document.getElementById('portuguesBtn');
-  const inglesBtn = document.getElementById('inglesBtn');
-  
-  
-  openModalBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
-  });
-  
-  portuguesBtn.addEventListener('click', () => {
-    window.open('./assets/cv/HudsonKennedy-BR.pdf', '_blank');
-    modal.style.display = 'none';
-  });
-  
-  inglesBtn.addEventListener('click', () => {
-    window.open('./assets/cv/HudsonKennedy-US.pdf', '_blank');
-    modal.style.display = 'none';
-  });
-  
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-  
+}
+detectLanguageAndLoadContent();
+
+const openModalBtn = document.getElementById("openModalBtn");
+const modal = document.getElementById("modal");
+const portuguesBtn = document.getElementById("portuguesBtn");
+const inglesBtn = document.getElementById("inglesBtn");
+
+openModalBtn.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+portuguesBtn.addEventListener("click", () => {
+  window.open("./assets/cv/HudsonKennedy-BR.pdf", "_blank");
+  modal.style.display = "none";
+});
+
+inglesBtn.addEventListener("click", () => {
+  window.open("./assets/cv/HudsonKennedy-US.pdf", "_blank");
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
 
 // Função para trocar para inglês
 function loadEnglishContent() {
-  document.getElementById('menu-inicio').textContent = 'Home';
-  document.getElementById('menu-sobre').textContent = 'About';
-  document.getElementById('menu-portfolio').textContent = 'Projects';
-  document.getElementById('menu-contato').textContent = 'Contact';
-  document.getElementById('titulo-principal').textContent = 'Hudson Kennedy';
-    document.getElementById('texto-principal').textContent = 'Fullstack Developer / Software Engineer.';
-    document.getElementById('saiba-mais').textContent = 'Learn more';
-    document.getElementById('titulo-sobre-mim').textContent = 'About Me';
-    document.getElementById('texto-sobre-mim').innerHTML = `
-        In contact with the technology field for over 10 years, where I started developing in VB.net,
-        during the learning journey, I took some courses. In 2018, I started my degree in Business
-        Process Management and graduated in 2020. During this period, I continued to be in touch with
-        the technology field, where I began studying JavaScript and TypeScript, to work specifically on
-        the Frontend, for which I also took various courses to improve myself and evolve professionally.</br>
-        In 2021, I started my MBA in Software Engineering, graduated in 2022 where I learned many things
-        about Backend, and so on...</br>
-        In February 2023, I started my Master's degree as part of the Computer Science graduate program
-        at Harvard University and graduated.</br>
-        I will continue to improve myself as a Fullstack Developer and Software Engineer, gaining more
-        experience and contributing to my team!
+  document.getElementById("menu-inicio").textContent = "Home";
+  document.getElementById("menu-sobre").textContent = "About";
+  document.getElementById("menu-portfolio").textContent = "Projects";
+  document.getElementById("menu-contato").textContent = "Contact";
+  document.getElementById("titulo-principal").textContent = "Hudson Kennedy";
+  document.getElementById("texto-principal").textContent =
+    "Fullstack Developer / Software Engineer.";
+  document.getElementById("saiba-mais").textContent = "Learn more";
+  document.getElementById("titulo-sobre-mim").textContent = "About Me";
+  document.getElementById("texto-sobre-mim").innerHTML = `
+  In contact with the technology field for over 10 years, where I started developing in VB.net. During my learning journey, I took some courses. In 2018, 
+  I began my degree in Business Process Management and graduated in 2020. During this time, I continued to be involved in the technology field,
+   where I started studying Java Script and Type Script to work specifically on Frontend. I also took several courses to improve myself and grow professionally.</br>
+  In 2021, I started my MBA in Software Engineering and graduated in 2022. I learned a lot about Backend and so on...</br>
+  In February 2023, I started my Master's degree within the Computer Science postgraduate program at Harvard University and graduated.</br>
+  I will continue to enhance myself as a Fullstack Developer and Software Engineer, gaining more experience and contributing to my team!
     `;
-    document.getElementById('openModalBtn').textContent = 'Resume';
-    document.getElementById('titulo-modal').textContent = 'Choose the CV language';
-    document.getElementById('inglesBtn').textContent = 'English';
-    document.getElementById('portuguesBtn').textContent = 'Portuguese';
-    document.getElementById('experiencias').textContent = 'Experiences';
-    document.getElementById('tecnologias').textContent = 'Technologies';
-    document.getElementById('formacao-cursos').textContent = 'Education/Courses';
-    document.querySelectorAll('.anos').forEach(function (element) {
-      element.textContent = 'Years';
+  document.getElementById("openModalBtn").textContent = "Resume";
+  document.getElementById("titulo-modal").textContent =
+    "Choose the CV language";
+  document.getElementById("inglesBtn").textContent = "English";
+  document.getElementById("portuguesBtn").textContent = "Portuguese";
+  document.getElementById("experiencias").textContent = "Experiences";
+  document.getElementById("tecnologias").textContent = "Technologies";
+  document.getElementById("formacao-cursos").textContent = "Education/Courses";
+  document.querySelectorAll(".anos").forEach(function (element) {
+    element.textContent = "Years";
   });
-    document.querySelectorAll('.ano').forEach(function (element) {
-      element.textContent = 'Year';
+  document.querySelectorAll(".ano").forEach(function (element) {
+    element.textContent = "Year";
   });
-    document.querySelectorAll('.meses').forEach(function (element) {
-      element.textContent = 'Months';
+  document.querySelectorAll(".meses").forEach(function (element) {
+    element.textContent = "Months";
   });
 
-   document.getElementById('cast-title').textContent = 'Cast Group';
-   document.getElementById('cast-name').textContent = 'Fullstack Developer/Software engineer';
-   document.getElementById('cast-description').textContent = 'Working directly with external clients on code maintenance/refactoring directives, using Angular and TypeScript on the Frontend, as well as Java with Spring Boot on the Backend and PostgresSQL as the database.';
-   document.getElementById('cast-date').textContent = 'August 2022 - Present';
-   
-   document.getElementById('vilt-title').textContent = 'VILT Brazil Information Systems';
-   document.getElementById('vilt-name').textContent = 'Full Technical Consultant';
-   document.getElementById('vilt-description').textContent = 'Fullstack consulting, working with Java and Spring Boot on the Backend and Angular/React on the Frontend, using Adobe Experience Manager (AEM) programs, providing services to various clients such as Porto, CVC, and more.';
-   document.getElementById('vilt-date').textContent = 'January 2022 - April 2022';
+  document.getElementById("cast-title").textContent = "Cast Group";
+  document.getElementById("cast-name").textContent =
+    "Fullstack Developer/Software engineer";
+  document.getElementById("cast-description").textContent =
+    "Working directly with external clients on code maintenance/refactoring directives, using Angular and TypeScript on the Frontend, as well as Java with Spring Boot on the Backend and PostgresSQL as the database.";
+  document.getElementById("cast-date").textContent = "August 2022 - Present";
 
-   document.getElementById('dt3-title').textContent = 'DT3 Group';
-   document.getElementById('dt3-name').textContent = 'E-commerce Analyst/Front-end Developer';
-   document.getElementById('dt3-description').textContent = 'Invoice issuance,marketplaces, website development in React.JS, image optimization and responsible for ERP Bling integration.';
-   document.getElementById('dt3-date').textContent = 'February 2019 - June 2021';
+  document.getElementById("vilt-title").textContent =
+    "VILT Brazil Information Systems";
+  document.getElementById("vilt-name").textContent =
+    "Full Technical Consultant";
+  document.getElementById("vilt-description").textContent =
+    "Fullstack consulting, working with Java and Spring Boot on the Backend and Angular/React on the Frontend, using Adobe Experience Manager (AEM) programs, providing services to various clients such as Porto, CVC, and more.";
+  document.getElementById("vilt-date").textContent =
+    "January 2022 - April 2022";
 
-   document.getElementById('freela-title').textContent = 'Appen Projects/99Freelas/Capitona Rio';
-   document.getElementById('freela-name').textContent = 'Freelancers/Personal Works';
-   document.getElementById('freela-description').textContent = 'I did some freelance work with Shopify, Wordpress using, React, VueJs, Angular, Typescript, Vanilla Js, Jquery, Bootstrap and Sass.';
-   document.getElementById('freela-date').textContent = 'February 2018- at moment';
+  document.getElementById("dt3-title").textContent = "DT3 Group";
+  document.getElementById("dt3-name").textContent =
+    "E-commerce Analyst/Front-end Developer";
+  document.getElementById("dt3-description").textContent =
+    "Invoice issuance,marketplaces, website development in React.JS, image optimization and responsible for ERP Bling integration.";
+  document.getElementById("dt3-date").textContent = "February 2019 - June 2021";
 
-   document.getElementById('hour-title').textContent = '24-hour courses';
-   document.getElementById('hour-description').textContent = 'Administrative Assistant Course';
-   
-   document.getElementById('fgv-title').textContent = 'FGV';
-   document.getElementById('fgv-description').textContent = 'Digital Security Course';
-   document.getElementById('sebrae-title-a').textContent = 'SEBRAE';
-   document.getElementById('sebrae-description-a').textContent = 'Strategic Planning Course for Entrepreneurs';
-   document.getElementById('sebrae-title-b').textContent = 'SEBRAE';
-   document.getElementById('sebrae-description-b').textContent = 'Financial Strategy for Growth Course';
-   document.getElementById('sebrae-title-c').textContent = 'SEBRAE';
-   document.getElementById('sebrae-description-c').textContent = 'Digital Marketing for Entrepreneurs';
-   document.getElementById('sebrae-title-d').textContent = 'SEBRAE';
-   document.getElementById('sebrae-description-d').textContent = 'Customer Success Course (How to Win and Keep Customers)';
-   document.getElementById('sebrae-title-e').textContent = 'SEBRAE';
-   document.getElementById('sebrae-description-e').textContent = 'Financial Management Course';
-   document.getElementById('sebrae-title-f').textContent = 'SEBRAE';
-   document.getElementById('sebrae-description-f').textContent = 'Business Financial Education Course';
-   document.getElementById('iv-title').textContent = 'IV2 College';
-   document.getElementById('iv-description').textContent = 'M.E.R.N (MongoDB/Express/React/Node) ';
-   document.getElementById('udemy-title').textContent = 'Udemy';
-   document.getElementById('udemy-description').textContent = 'Basic to Advanced Javascript and Typescript Course';
-   document.getElementById('vuejs-title').textContent = 'VueJs Brazil';
-   document.getElementById('vuejs-description').textContent = 'Vuejs Course - Basic to Advanced';
-   document.getElementById('adobe-title-a').textContent = 'Adobe Profissional';
-   document.getElementById('adobe-description-a').textContent = 'AEM - Business Practitioner';
-   document.getElementById('adobe-title-b').textContent = 'Adobe Profissional';
-   document.getElementById('adobe-description-b').textContent = 'AEM - Front-end Developer';
-   document.getElementById('dio-title-a').textContent = 'Digital Innovation';
-   document.getElementById('dio-description-a').textContent = 'Component Architecture and front-end complexity management';
-   document.getElementById('dio-title-b').textContent = 'Digital Innovation';
-   document.getElementById('dio-description-b').textContent = 'Working with Components in React';
-   document.getElementById('unica-title').textContent = 'Single College of MG';
-   document.getElementById('unica-description').textContent = 'Postgraduate in Software Engineering';
-   document.getElementById('harvard-title').textContent = 'Harvard University';
-   document.getElementById('harvard-description').textContent = 'Masters degree which operates within graduate program in Science Computer';
+  document.getElementById("freela-title").textContent =
+    "Appen Projects/99Freelas/Capitona Rio";
+  document.getElementById("freela-name").textContent =
+    "Freelancers/Personal Works";
+  document.getElementById("freela-description").textContent =
+    "I did some freelance work with Shopify, Wordpress using, React, VueJs, Angular, Typescript, Vanilla Js, Jquery, Bootstrap and Sass.";
+  document.getElementById("freela-date").textContent =
+    "February 2018- at moment";
 
-   document.querySelectorAll('.estacio-title').forEach(function (element) {
-    element.textContent = 'Estacio de Sá college';
-});
-   document.querySelectorAll('.estacio-description').forEach(function (element) {
-    element.textContent = 'Technologist Management Processeses';
-});
+  document.getElementById("hour-title").textContent = "24-hour courses";
+  document.getElementById("hour-description").textContent =
+    "Administrative Assistant Course";
 
-   document.getElementById('portfolio-title').textContent = 'Projects';
+  document.getElementById("fgv-title").textContent = "FGV";
+  document.getElementById("fgv-description").textContent =
+    "Digital Security Course";
+  document.getElementById("sebrae-title-a").textContent = "SEBRAE";
+  document.getElementById("sebrae-description-a").textContent =
+    "Strategic Planning Course for Entrepreneurs";
+  document.getElementById("sebrae-title-b").textContent = "SEBRAE";
+  document.getElementById("sebrae-description-b").textContent =
+    "Financial Strategy for Growth Course";
+  document.getElementById("sebrae-title-c").textContent = "SEBRAE";
+  document.getElementById("sebrae-description-c").textContent =
+    "Digital Marketing for Entrepreneurs";
+  document.getElementById("sebrae-title-d").textContent = "SEBRAE";
+  document.getElementById("sebrae-description-d").textContent =
+    "Customer Success Course (How to Win and Keep Customers)";
+  document.getElementById("sebrae-title-e").textContent = "SEBRAE";
+  document.getElementById("sebrae-description-e").textContent =
+    "Financial Management Course";
+  document.getElementById("sebrae-title-f").textContent = "SEBRAE";
+  document.getElementById("sebrae-description-f").textContent =
+    "Business Financial Education Course";
+  document.getElementById("iv-title").textContent = "IV2 College";
+  document.getElementById("iv-description").textContent =
+    "M.E.R.N (MongoDB/Express/React/Node) ";
+  document.getElementById("udemy-title").textContent = "Udemy";
+  document.getElementById("udemy-description").textContent =
+    "Basic to Advanced Javascript and Typescript Course";
+  document.getElementById("vuejs-title").textContent = "VueJs Brazil";
+  document.getElementById("vuejs-description").textContent =
+    "Vuejs Course - Basic to Advanced";
+  document.getElementById("adobe-title-a").textContent = "Adobe Profissional";
+  document.getElementById("adobe-description-a").textContent =
+    "AEM - Business Practitioner";
+  document.getElementById("adobe-title-b").textContent = "Adobe Profissional";
+  document.getElementById("adobe-description-b").textContent =
+    "AEM - Front-end Developer";
+  document.getElementById("dio-title-a").textContent = "Digital Innovation";
+  document.getElementById("dio-description-a").textContent =
+    "Component Architecture and front-end complexity management";
+  document.getElementById("dio-title-b").textContent = "Digital Innovation";
+  document.getElementById("dio-description-b").textContent =
+    "Working with Components in React";
+  document.getElementById("unica-title").textContent = "Single College of MG";
+  document.getElementById("unica-description").textContent =
+    "Postgraduate in Software Engineering";
+  document.getElementById("harvard-title").textContent = "Harvard University";
+  document.getElementById("harvard-description").textContent =
+    "Masters degree which operates within graduate program in Science Computer";
 
-   document.querySelectorAll('.project-title').forEach(function (element) {
-    element.textContent = 'Project view';
-});
-   document.querySelectorAll('.brief').forEach(function (element) {
-    element.textContent = 'Project Brief';
-});
-   document.querySelectorAll('.information').forEach(function (element) {
-    element.textContent = 'Project Information';
-});
-   document.querySelectorAll('.tech-use').forEach(function (element) {
-    element.textContent = 'Technologies used';
-});
-   document.querySelectorAll('.acessar').forEach(function (element) {
-    element.textContent = 'Acess';
-});
-   document.getElementById('all-title').textContent = 'All';
-   document.getElementById('text-hotsite').textContent = 'Test project, talking about the workday and the essentiality of ergonomics in the work environment';
-   document.getElementById('search-title').textContent = 'World population survey';
-   document.getElementById('search-text').textContent = 'Simple design, for researching the world population, through the "restworld" API';
-   document.getElementById('react-web').textContent = 'Simple website, following Udemy Course class guidance';
-   document.getElementById('snake-game').textContent = 'Famous snake game, which was a hit on the old Nokia "big brick", recreated to play/run in any browser';
-   document.getElementById('memory-game').textContent = 'Memory Game';
-   document.getElementById('memory-text').textContent = 'Memory game made in React, to exercise Typescript.';
-   document.getElementById('pizza-text').textContent = 'Landing page, from Pizza&Tutti, one of the best in Rio de Janeiro.';
-   document.getElementById('naruto-game').textContent = 'Naruto Run Game 2d made with effects';
-   document.getElementById('poke-text').textContent = 'Pokedex listing some pokemons and informations.';
-   document.getElementById('graph-title').textContent = 'Chart Js';
-   document.getElementById('graph-text').textContent = 'Simple chart made to examples';
-   document.getElementById('sort-title').textContent = 'Soccer draw';
-   document.getElementById('sort-text').textContent = 'Simple application to draw soccer teams.';
-   document.getElementById('login-title').textContent = 'Animated login screen';
-   document.getElementById('login-text').textContent = 'Animated login screen made to practice';
-   document.getElementById('conversor-title').textContent = 'Currency Converter';
-   document.getElementById('conversor-text').textContent = 'World Currency Converter, made from Udemy course.';
-   document.getElementById('calc-title').textContent = 'Flex Calculator';
-   document.getElementById('calc-text').textContent = 'Simple Javascript application, to know which fuel should be used.';
-   document.getElementById('nu-text').textContent = 'Clone Nubank page design, made with Rocketseat.';
-   document.getElementById('ml-text').textContent = 'Clone Design of the Mercado Livre page, made with Rocketseat.';
-   document.getElementById('clock-title').textContent = 'Analog Clock';
-   document.getElementById('clock-text').textContent = 'Analog clock with dark mode.';
-   document.getElementById('imc-title').textContent = 'BMI Calculator';
-   document.getElementById('imc-text').textContent = 'Basic BMI Calculator, to find out if you are overweight or not.';
-   document.getElementById('math-title').textContent = 'Mathematical Calculator';
-   document.getElementById('math-text').textContent = 'Math Calculator, with the main operators for calculation, with Light or Dark layout mode';
-   document.getElementById('flappy-text').textContent = 'Classic Flappy Bird game, recreated through the Udemy course class.';
-   document.getElementById('clima-title').textContent = 'Climate Weather API'; 
-   document.getElementById('clima-text').textContent = 'Simple Javascript application, to search for the climate and weather of cities around the world through the openweather API.'; 
-   document.getElementById('form-title').textContent = 'Credit Card Form'; 
-   document.getElementById('form-text').textContent = 'Application to fill out Credit Card form.'; 
-   document.getElementById('fale-title').textContent = 'Contact'; 
-   document.getElementById('localiza-title').textContent = 'Localization'; 
-   document.getElementById('inicio-title').textContent = 'Home'; 
-   document.getElementById('kfc-text').textContent = 'Landing Page, created through a technical test.'; 
-   document.getElementById('coke-text').textContent = 'Coca-Cola Card to practice hover and transform CSS.'; 
-   document.getElementById('qrcode-text').textContent = 'QR code generator made to practice methods in JavaScript.'; 
+  document.querySelectorAll(".estacio-title").forEach(function (element) {
+    element.textContent = "Estacio de Sá college";
+  });
+  document.querySelectorAll(".estacio-description").forEach(function (element) {
+    element.textContent = "Technologist Management Processeses";
+  });
+
+  document.getElementById("portfolio-title").textContent = "Projects";
+
+  document.querySelectorAll(".project-title").forEach(function (element) {
+    element.textContent = "Project view";
+  });
+  document.querySelectorAll(".brief").forEach(function (element) {
+    element.textContent = "Project Brief";
+  });
+  document.querySelectorAll(".information").forEach(function (element) {
+    element.textContent = "Project Information";
+  });
+  document.querySelectorAll(".tech-use").forEach(function (element) {
+    element.textContent = "Technologies used";
+  });
+  document.querySelectorAll(".acessar").forEach(function (element) {
+    element.textContent = "Acess";
+  });
+  document.getElementById("all-title").textContent = "All";
+  document.getElementById("text-hotsite").textContent =
+    "Test project, talking about the workday and the essentiality of ergonomics in the work environment";
+  document.getElementById("search-title").textContent =
+    "World population survey";
+  document.getElementById("search-text").textContent =
+    'Simple design, for researching the world population, through the "restworld" API';
+  document.getElementById("react-web").textContent =
+    "Simple website, following Udemy Course class guidance";
+  document.getElementById("snake-game").textContent =
+    'Famous snake game, which was a hit on the old Nokia "big brick", recreated to play/run in any browser';
+  document.getElementById("memory-game").textContent = "Memory Game";
+  document.getElementById("memory-text").textContent =
+    "Memory game made in React, to exercise Typescript.";
+  document.getElementById("pizza-text").textContent =
+    "Landing page, from Pizza&Tutti, one of the best in Rio de Janeiro.";
+  document.getElementById("naruto-game").textContent =
+    "Naruto Run Game 2d made with effects";
+  document.getElementById("poke-text").textContent =
+    "Pokedex listing some pokemons and informations.";
+  document.getElementById("graph-title").textContent = "Chart Js";
+  document.getElementById("graph-text").textContent =
+    "Simple chart made to examples";
+  document.getElementById("sort-title").textContent = "Soccer draw";
+  document.getElementById("sort-text").textContent =
+    "Simple application to draw soccer teams.";
+  document.getElementById("login-title").textContent = "Animated login screen";
+  document.getElementById("login-text").textContent =
+    "Animated login screen made to practice";
+  document.getElementById("conversor-title").textContent = "Currency Converter";
+  document.getElementById("conversor-text").textContent =
+    "World Currency Converter, made from Udemy course.";
+  document.getElementById("calc-title").textContent = "Flex Calculator";
+  document.getElementById("calc-text").textContent =
+    "Simple Javascript application, to know which fuel should be used.";
+  document.getElementById("nu-text").textContent =
+    "Clone Nubank page design, made with Rocketseat.";
+  document.getElementById("ml-text").textContent =
+    "Clone Design of the Mercado Livre page, made with Rocketseat.";
+  document.getElementById("clock-title").textContent = "Analog Clock";
+  document.getElementById("clock-text").textContent =
+    "Analog clock with dark mode.";
+  document.getElementById("imc-title").textContent = "BMI Calculator";
+  document.getElementById("imc-text").textContent =
+    "Basic BMI Calculator, to find out if you are overweight or not.";
+  document.getElementById("math-title").textContent = "Mathematical Calculator";
+  document.getElementById("math-text").textContent =
+    "Math Calculator, with the main operators for calculation, with Light or Dark layout mode";
+  document.getElementById("flappy-text").textContent =
+    "Classic Flappy Bird game, recreated through the Udemy course class.";
+  document.getElementById("clima-title").textContent = "Climate Weather API";
+  document.getElementById("clima-text").textContent =
+    "Simple Javascript application, to search for the climate and weather of cities around the world through the openweather API.";
+  document.getElementById("form-title").textContent = "Credit Card Form";
+  document.getElementById("form-text").textContent =
+    "Application to fill out Credit Card form.";
+  document.getElementById("fale-title").textContent = "Contact";
+  document.getElementById("localiza-title").textContent = "Localization";
+  document.getElementById("inicio-title").textContent = "Home";
+  document.getElementById("kfc-text").textContent =
+    "Landing Page, created through a technical test.";
+  document.getElementById("coke-text").textContent =
+    "Coca-Cola Card to practice hover and transform CSS.";
+  document.getElementById("qrcode-text").textContent =
+    "QR code generator made to practice methods in JavaScript.";
+}
+
+/*------------------button play function----------------------- */
+
+let buttonPlay = document.getElementById("button-play");
+let buttonPause = document.getElementById("button-pause");
+let isSpeaking = false;
+
+// Função para atualizar o ícone do botão
+function updatePlayButtonIcon(isPlaying) {
+  if (isPlaying) {
+    buttonPlay.querySelector("i").classList.remove("fa-circle-play");
+    buttonPlay.querySelector("i").classList.add("fa-circle-pause");
+  } else {
+    buttonPlay.querySelector("i").classList.remove("fa-circle-pause");
+    buttonPlay.querySelector("i").classList.add("fa-circle-play");
   }
+}
+
+// Função para detectar o idioma do navegador e selecionar a voz apropriada
+function selectVoiceByLanguage() {
+  const userLang = navigator.language || navigator.userLanguage;
+  let voice = "Brazilian Portuguese Male"; // Voz padrão para português
+
+  if (userLang.startsWith("en")) {
+    // Se o idioma do navegador for inglês, use uma voz em inglês
+    voice = "US English Male"; // Exemplo de voz em inglês
+  }
+
+  return voice;
+}
+
+buttonPlay.addEventListener("click", () => {
+  if (!isSpeaking) {
+    let textoSobreMim = document.getElementById("texto-sobre-mim").textContent;
+
+    // Use a API Text-to-Speech do Google para ler o texto em inglês ou português
+    const synthesis = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(textoSobreMim);
+
+    // Defina a voz com base no idioma do navegador
+    utterance.lang = selectVoiceByLanguage();
+
+    utterance.rate = 1.3;
+
+    synthesis.speak(utterance);
+
+    isSpeaking = true;
+    updatePlayButtonIcon(true);
+
+    // Adicione um ouvinte de evento para detectar a conclusão da fala
+    utterance.onend = () => {
+      isSpeaking = false;
+      updatePlayButtonIcon(false);
+    };
+  } else {
+    // Pausar a fala
+    window.speechSynthesis.cancel();
+    isSpeaking = false;
+    updatePlayButtonIcon(false);
+  }
+});
+
+buttonPause.addEventListener("click", () => {
+  // Pausar a fala
+  window.speechSynthesis.pause();
+  isSpeaking = false;
+  updatePlayButtonIcon(false);
+});
