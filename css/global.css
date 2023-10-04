@@ -1863,3 +1863,22 @@ summary {
   .button-pause {
       display: none; /* Inicialmente, oculta o botão de pausa */
   }
+  .button-play::after,
+  .button-pause::after {
+    content: attr(title); /* Use o título como conteúdo */
+    position: absolute;
+    top: 55%; 
+    left: 49%; 
+    transform: translateX(-50%);
+    background-color: #525458;
+    color: white;
+    padding: 0px 7px 0px 7px;
+    font-size: 16px;
+    display: none;
+    border-radius: 20px;
+  }
+
+  .button-play:hover::after,
+  .button-pause:hover::after {
+    display: block;
+  }

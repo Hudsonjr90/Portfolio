@@ -558,9 +558,11 @@ function updatePlayButtonIcon(isPlaying) {
   if (isPlaying) {
     buttonPlay.querySelector("i").classList.remove("fa-circle-play");
     buttonPlay.querySelector("i").classList.add("fa-circle-pause");
+    buttonPlay.setAttribute("title", "Pause");
   } else {
     buttonPlay.querySelector("i").classList.remove("fa-circle-pause");
     buttonPlay.querySelector("i").classList.add("fa-circle-play");
+    buttonPlay.setAttribute("title", "Play");
   }
 }
 
