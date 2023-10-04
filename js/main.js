@@ -590,7 +590,7 @@ buttonPlay.addEventListener("click", () => {
     // Defina a voz com base no idioma do navegador
     utterance.lang = selectVoiceByLanguage();
 
-    utterance.rate = 1.3;
+    utterance.rate = 1;
 
     synthesis.speak(utterance);
 

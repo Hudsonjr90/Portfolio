@@ -1842,6 +1842,7 @@ summary {
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease;
       cursor: pointer;
+      position: relative;
   }
   
   .button-play::after,
@@ -1867,8 +1868,8 @@ summary {
   .button-pause::after {
     content: attr(title); /* Use o título como conteúdo */
     position: absolute;
-    top: 55%; 
-    left: 49%; 
+    top: 0;
+    left: 67px;
     transform: translateX(-50%);
     background-color: #525458;
     color: #fff;
