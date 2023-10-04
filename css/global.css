@@ -1868,12 +1868,12 @@ summary {
   .button-pause::after {
     content: attr(title); /* Use o título como conteúdo */
     position: absolute;
-    top: 0;
-    left: 67px;
+    top: -2px;
+    left: 80px;
     transform: translateX(-50%);
     background-color: #525458;
     color: #fff;
-    padding: 0px 7px 0px 7px;
+    padding: 0px 10px 0px 10px;
     font-size: 16px;
     display: none;
     border-radius: 20px;
