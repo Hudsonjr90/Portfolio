@@ -616,3 +616,80 @@ buttonPause.addEventListener("click", () => {
   isSpeaking = false;
   updatePlayButtonIcon(false);
 });
+
+// ------------------------------------- effect from main page ---------------------------------------
+
+document.addEventListener("DOMContentLoaded", function () {
+  const canvas = document.getElementById("particle-canvas");
+  const ctx = canvas.getContext("2d");
+  const particles = [];
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Função para criar partículas
+  function createParticle() {
+    return {
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      binary: generateRandomBinary(8),
+      velocityX: (Math.random() - 0.5) * 2, // Velocidade horizontal aleatória
+      velocityY: (Math.random() - 0.5) * 2, // Velocidade vertical aleatória
+    };
+  }
+
+  // Função para atualizar e renderizar as partículas
+  function updateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (const particle of particles) {
+      particle.x += particle.velocityX; // Atualiza a posição horizontal
+      particle.y += particle.velocityY; // Atualiza a posição vertical
+
+      // Verifique se a partícula saiu da tela e resete sua posição
+      if (
+        particle.x < 0 ||
+        particle.x > canvas.width ||
+        particle.y < 0 ||
+        particle.y > canvas.height
+      ) {
+        particle.x = Math.random() * canvas.width;
+        particle.y = Math.random() * canvas.height;
+      }
+      ctx.font = '16px arial';
+      ctx.fillStyle = particle.binary === "1" ? "#525458" : "#04D361";
+      ctx.fillText(particle.binary, particle.x, particle.y);
+    }
+  }
+
+  // Função para atualizar o número binário das partículas
+  function updateBinaryPattern() {
+    for (const particle of particles) {
+      particle.binary = generateRandomBinary(8);
+    }
+  }
+
+  // Gere um número binário aleatório com o tamanho especificado
+  function generateRandomBinary(size) {
+    let binary = "";
+    for (let i = 0; i < size; i++) {
+      binary += Math.random() < 0.5 ? "0" : "1";
+    }
+    return binary;
+  }
+
+  // Crie as partículas iniciais
+  for (let i = 0; i < 100; i++) {
+    particles.push(createParticle());
+  }
+
+  // Função de animação
+  function animate() {
+    updateParticles();
+    updateBinaryPattern();
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+
