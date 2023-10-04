@@ -348,10 +348,10 @@ function loadEnglishContent() {
   document.getElementById("texto-sobre-mim").innerHTML = `
   In contact with the technology field for over 10 years, where I started developing in VB.net. During my learning journey, I took some courses. In 2018, 
   I began my degree in Business Process Management and graduated in 2020. During this time, I continued to be involved in the technology field,
-   where I started studying Java Script and Type Script to work specifically on Frontend. I also took several courses to improve myself and grow professionally.</br>
-  In 2021, I started my MBA in Software Engineering and graduated in 2022. I learned a lot about Backend and so on...</br>
+   where I started studying Java Script and Type Script to work specifically on Front End. I also took several courses to improve myself and grow professionally.</br>
+  In 2021, I started my MBA in Software Engineering and graduated in 2022. I learned a lot about Back End and so on...</br>
   In February 2023, I started my Master's degree within the Computer Science postgraduate program at Harvard University and graduated.</br>
-  I will continue to enhance myself as a Fullstack Developer and Software Engineer, gaining more experience and contributing to my team!
+  I will continue to enhance myself as a Full Stack Developer and Software Engineer, gaining more experience and contributing to my team!
     `;
   document.getElementById("openModalBtn").textContent = "Resume";
   document.getElementById("titulo-modal").textContent =
