@@ -1997,13 +1997,13 @@ summary {
   
   @keyframes rotateAndTranslateX {
     0% {
-      transform: rotate(55deg) translateX(40px);
+      transform: rotate(0deg) translateX(40px);
     }
     50% {
-      transform: rotate(55deg) translateX(500px);
+      transform: rotate(150deg) translateX(500px);
     }
     100% {
-      transform: rotate(0deg) translateX(1520px);
+      transform: rotate(0deg) translateX(1020px);
     }
   }
   
