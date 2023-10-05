@@ -313,11 +313,17 @@
 }
 
 .home-section .home-img .img-box img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 1rem solid transparent;
-}
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1rem solid transparent;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .home-section .home-img .img-box img:hover {
+    transform: scaleX(-1);
+  }
+  
 
 .about-section {
   padding: 4rem 0 0;
@@ -1977,3 +1983,15 @@ summary {
     justify-content: center;
     margin: 10px;
   }
+
+  .img-responsive {
+    width: 8rem;
+    margin-left: 35rem;
+    transition: transform 1.3s ease-in-out;
+  }
+  
+  .img-responsive:hover {
+    transform: translateY(-500px) rotate(-45deg);
+  }
+  
+ 
