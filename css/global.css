@@ -1987,10 +1987,23 @@ summary {
   .img-responsive {
     width: 5rem;
     margin-left: 1rem;
+    transform-origin: right; /* Define a origem da rotação no canto inferior esquerdo */
     transition: transform 4.3s ease-in-out;
   }
   
   .img-responsive:hover {
-    transform: translateX(1520px) rotate(45deg);
+    animation: rotateAndTranslateX 5.3s ease-in-out forwards;
+  }
+  
+  @keyframes rotateAndTranslateX {
+    0% {
+      transform: rotate(55deg) translateX(40px);
+    }
+    50% {
+      transform: rotate(55deg) translateX(500px);
+    }
+    100% {
+      transform: rotate(0deg) translateX(1520px);
+    }
   }
   
