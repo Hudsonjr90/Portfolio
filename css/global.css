@@ -1986,12 +1986,12 @@ summary {
 
   .img-responsive {
     width: 8rem;
-    margin-left: 35rem;
+    margin-left: 5rem;
     transition: transform 1.3s ease-in-out;
   }
   
   .img-responsive:hover {
-    transform: translateY(-500px) rotate(-45deg);
+    transform: translateX(1500px) rotate(50deg);
   }
   
  
