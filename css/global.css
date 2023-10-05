@@ -1985,25 +1985,12 @@ summary {
   }
 
   .img-responsive {
-    width: 5rem;
-    margin-left: 1rem;
-    transform-origin: right; /* Define a origem da rotação no canto inferior esquerdo */
-    transition: transform 4.3s ease-in-out;
+    width: 8rem;
+    transition: transform 4.5s ease-in-out;
   }
   
   .img-responsive:hover {
-    animation: rotateAndTranslateX 5.3s ease-in-out forwards;
+    transform: translateY(-1520px) rotate(-95deg);
   }
   
-  @keyframes rotateAndTranslateX {
-    0% {
-      transform: rotate(0deg) translateX(40px);
-    }
-    50% {
-      transform: rotate(150deg) translateX(500px);
-    }
-    100% {
-      transform: rotate(0deg) translateX(1020px);
-    }
-  }
   
