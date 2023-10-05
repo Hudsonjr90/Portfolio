@@ -1985,13 +1985,12 @@ summary {
   }
 
   .img-responsive {
-    width: 8rem;
-    margin-left: 5rem;
-    transition: transform 1.3s ease-in-out;
+    width: 5rem;
+    margin-left: 1rem;
+    transition: transform 4.3s ease-in-out;
   }
   
   .img-responsive:hover {
-    transform: translateX(1500px) rotate(50deg);
+    transform: translateX(1520px) rotate(45deg);
   }
   
- 
