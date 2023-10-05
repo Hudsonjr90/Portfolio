@@ -1941,32 +1941,35 @@ summary {
     width: 100%;
     border-radius: 50%;
     border: 1rem solid transparent;
-    filter: grayscale(0%); /* Inicialmente, a imagem não tem escala de cinza */
-    transition: filter 0.3s ease; /* Adiciona uma transição suave para o efeito de hover */
+    filter: grayscale(0%); 
+    transition: filter 0.3s ease; 
   }
   
   .img-project-box img:hover {
-    filter: grayscale(100%); /* Aplica escala de cinza completa no hover */
+    filter: grayscale(100%); 
   }
   
 
-.contact-img {
-  display: flex;
-  justify-content: center;
-  margin-left: 38rem;
-  margin-bottom: 3rem;
-}
-
-.img-contact-box img {
-    width: 50%;
+  .contact-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  
+  .img-contact-box img {
+    max-width: 300px; 
+    width: 100%;
+    height: auto;
     border-radius: 50%;
     border: 1rem solid transparent;
     filter: grayscale(100%);
-    transition: filter 0.3s ease; /* Adiciona uma transição suave para o efeito de hover */
+    transition: filter 0.3s ease; 
+    display: block; 
+    margin: 0 auto; 
   }
   
   .img-contact-box img:hover {
-    filter: grayscale(0%); /* Remove o efeito de escala de cinza no hover */
-    border-color: #04d361; /* Define a cor da borda no hover (neste caso, verde) */
+    filter: grayscale(0%); 
+    border-color: #04d361; 
   }
   
