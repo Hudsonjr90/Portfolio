@@ -1942,17 +1942,21 @@ summary {
 }
 
 .img-project-box img {
+    max-width: 300px;
     width: 100%;
+    height: auto;
     border-radius: 50%;
     border: 1rem solid transparent;
-    filter: grayscale(0%); 
-    transition: filter 0.3s ease; 
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    display: block;
+    margin: 0 auto;
   }
   
   .img-project-box img:hover {
-    filter: grayscale(100%); 
+    filter: grayscale(0%); 
+    border-color: #04d361; 
   }
-  
 
   .contact-img {
     display: flex;
@@ -1992,5 +1996,3 @@ summary {
   .img-responsive:hover {
     transform: translateY(-1520px) rotate(-95deg);
   }
-  
-  
