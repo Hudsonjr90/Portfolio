@@ -7,6 +7,7 @@
    <meta name="description" content="Hudson Portfolio website, with additional projects and Experiences">
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <link rel="stylesheet" href="css/global.css">
+   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.9.55/css/materialdesignicons.min.css">
    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
    <link rel="preload" as="style"
       href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" />
@@ -70,14 +71,14 @@
 
             <div class="home-img">
                <div class="img-box inner-shadow">
-                   <img src="./assets/img/my.webp" class="outer-shadow" alt="me">
+                  <img src="./assets/img/my.webp" class="outer-shadow" alt="me">
                </div>
-           </div>
-           
-      </div>
-      <footer class="copy">
-         <p> H K - D E V &copy; 2023</p>
-      </footer>
+            </div>
+
+         </div>
+         <footer class="copy">
+            <p> H K - D E V &copy; 2023</p>
+         </footer>
    </section>
 
 
@@ -128,8 +129,12 @@
                      experiência e contribuindo com meu time!
                   </span>
                </p>
-               <button class="button-play" id="button-play" title="Play"><i class="fa-regular fa-circle-play"></button></i>
-               <button class="button-pause" id="button-pause" title="Pause"><i class="fa-regular fa-circle-pause"></button></i>
+               <div class="social-links">
+                  <button class="button-play" id="button-play"><i class="fa-regular fa-circle-play"></button></i>
+                  <button class="button-pause" id="button-pause"><i class="fa-regular fa-circle-pause"></button></i>
+                  <button id="openModalBtn" class="btn-2 outer-shadow hover-in-shadow">Currículo</button>
+               </div>
+
 
                <div id="modal" class="modal">
                   <div class="modal-content">
@@ -150,7 +155,7 @@
                      id="experiencias">Experiências</span>
                   <span class="tab-item" data-target=".skills" id="tecnologias">Tecnologias</span>
                   <span class="tab-item" data-target=".education" id="formacao-cursos">Formação/Cursos</span>
-                  <button id="openModalBtn" class="btn-2 outer-shadow hover-in-shadow social-links">Currículo</button>
+
                </div>
             </div>
 
@@ -239,270 +244,431 @@
                      <div class="skills-container ">
                         <div class="skill-content ">
                            <div class="conhecimento outer-shadow">
-                              <i class="fa-brands fa-html5"></i>
-                              <i class="fa-brands fa-css3"></i>
-                              <i class="fa-brands fa-js-square"></i>
+                              <i class="fa-brands fa-html5" title="HTML"></i>
+                              <br/>
+                              <P>100%</P>  
+                              <br/>
+                              <div class="progress">
+                                 <div class="progress-value"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+                              
+                              <i class="fa-brands fa-css3" title="CSS"></i>
+                              <br/>
+                              <P>100%</P>  
+                              <br/>
+                              <div class="progress">
+                                 <div class="progress-value"></div>
+                               </div>
+                             </div>
+                           <div class="conhecimento outer-shadow">
+                              <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
+                              </div>
+                           <div class="conhecimento outer-shadow">
 
-                              <h3>HTML/CSS/Javascript </h3>
-                              <p>5</p>
-                              <p class="anos">Anos</p>
+                              <i class="fa-brands fa-angular" title="Angular"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
+                              </div>
+                           <div class="conhecimento outer-shadow">
+
+                              <i class="fa-brands fa-react" title="React"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
                            </div>
                            <div class="conhecimento outer-shadow">
 
-                              <i class="fa-brands fa-angular"></i>
-                              <i class="fa-brands fa-react"></i>
-                              <i class="fa-brands fa-vuejs"></i>
-
-                              <h3>Angular/React/Vue </h3>
-                              <p>5</p>
-                              <p class="anos">Anos</p>
+                              <i class="fa-brands fa-vuejs" title="Vue"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
                            </div>
-                           <div class="conhecimento outer-shadow">
-                              <i class="fa-brands fa-node"></i>
-                              <i class="fa-brands fa-wordpress-simple"></i>
-                              <i class="fa-brands fa-git"></i>
-
-                              <h3>Node/Wordpress/Git </h3>
-                              <p>5</p>
-                              <p class="anos">Anos</p>
-                           </div>
-                           <div class="conhecimento outer-shadow">
-                              <i class="fa-brands fa-npm"></i>
-                              <i class="fa-brands fa-yarn"></i>
-                              <i class="fa-brands fa-github"></i>
-
-                              <h3>NPM/YARN/Github </h3>
-                              <p>4</p>
-                              <p class="anos">Anos</p>
-                           </div>
+                           
+                        </div>
+                        <div class="skill-content">
                            <div class="conhecimento outer-shadow">
 
-                              <i class="fa-brands fa-bootstrap"></i>
-                              <i class="fa-solid fa-litecoin-sign"></i>
+                              <i class="fa-brands fa-git-alt" title="Git"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+                              <i class="fa-brands fa-npm" title="NPM"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
 
-                              <h3>Bootstrap/Typescript </h3>
-                              <p>4</p>
-                              <p class="anos">Anos</p>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+                              
+                              <i class="fa-brands fa-yarn" title="YARN"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
+
+                           </div>
+                           <div class="conhecimento outer-shadow">
+                             
+                              <i class="fa-brands fa-github" title="Github"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
+
+                           </div>
+                           <div class="conhecimento outer-shadow">
+
+                              <i class="fa-brands fa-bootstrap" title="Bootstrap"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
+
+                           </div>
+                           <div class="conhecimento outer-shadow">
+
+                              <i class="mdi mdi-language-typescript" title="Typescript"></i> 
+                              
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
+
+                           </div> 
+                        </div>
+                        <div class="skill-content">
+                           <div class="conhecimento outer-shadow">
+                             
+                              <i class="fa-brands fa-wordpress-simple" title="Wordpress"></i>
+                              <br/>
+                              <P>80%</P>  
+                              <br/>
+                              <div class="progress-80">
+                                 <div class="progress-value-80"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+
+                              <i class="fa-brands fa-figma" title="Figma"></i>
+                              <br/>
+                              <P>70%</P>  
+                              <br/>
+                              <div class="progress-70">
+                                 <div class="progress-value-70"></div>
+                               </div>
+
+                           </div>
+                           <div class="conhecimento outer-shadow">
+                              <i class="fa-brands fa-sass" title="Sass"></i>
+                              <br/>
+                              <P>70%</P>  
+                              <br/>
+                              <div class="progress-70">
+                                 <div class="progress-value-70"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+                           
+                              <i class="fa-brands fa-less" title="Less"></i>
+                              <br/>
+                              <P>70%</P>  
+                              <br/>
+                              <div class="progress-70">
+                                 <div class="progress-value-70"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+
+                              <i class="fa-brands fa-node" title="NodeJs"></i>
+                              <br/>
+                              <P>70%</P>  
+                              <br/>
+                              <div class="progress-70">
+                                 <div class="progress-value-70"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+
+                              <i class="fa-brands fa-gitlab" title="Gitlab"></i>
+                              <br/>
+                              <P>50%</P>  
+                              <br/>
+                              <div class="progress-50">
+                                 <div class="progress-value-50"></div>
+                               </div>
                            </div>
                         </div>
-                        <div class="skill-content ">
-
+                        <div class="skill-content">
                            <div class="conhecimento outer-shadow">
-                              <i class="fa-brands fa-figma"></i>
-                              <i class="fa-brands fa-adversal"></i>
 
-                              <h3>Figma/Photoshop</h3>
-                              <p>3</p>
-                              <p class="anos">Anos</p>
-                           </div>
-                           <div class="conhecimento outer-shadow">
-                              <i class="fa-brands fa-sass"></i>
-                              <i class="fa-brands fa-less"></i>
-                              <i class="fa-solid fa-hand-scissors"></i>
-
-                              <h3>Sass/Less/Tailwind</h3>
-                              <p>1</p>
-                              <p class="ano">Ano</p>
+                              <i class="fa-brands fa-java" title="Java"></i>
+                              <br/>
+                              <P>50%</P>  
+                              <br/>
+                              <div class="progress-50">
+                                 <div class="progress-value-50"></div>
+                               </div>
                            </div>
                            <div class="conhecimento outer-shadow">
 
-
-                              <i class="fa-brands fa-java"></i>
-                              <i class="fa-solid fa-database"></i>
-
-                              <h3>Java/PostgreSQL</h3>
-                              <p>1</p>
-                              <p class="ano">Ano</p>
-                           </div>
-                           <div class="conhecimento outer-shadow">
-                              <i class="fa-brands fa-laravel"></i>
-                              <i class="fa-brands fa-php"></i>
-                              <i class="fa-brands fa-sketch"></i>
-
-
-
-                              <h3>Laravel/PHP/Sketch</h3>
-                              <p>6</p>
-                              <p class="meses">Meses</p>
+                              <i class="mdi mdi-database-search" title="PostgreSQL"></i>
+                              <br/>
+                              <P>50%</P>  
+                              <br/>
+                              <div class="progress-50">
+                                 <div class="progress-value-50"></div>
+                               </div>
                            </div>
                            <div class="conhecimento outer-shadow">
 
-                              <i class="fa-solid fa-cubes"></i>
-                              <i class="fa-brands fa-gitlab"></i>
-                              <i class="fa-brands fa-docker"></i>
+                              <i class="fa-brands fa-laravel" title="Laravel"></i>
+                              <br/>
+                              <P>20%</P>  
+                              <br/>
+                              <div class="progress-20">
+                                 <div class="progress-value-20"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+                              <i class="fa-brands fa-php" title="PHP"></i>
+                              <br/>
+                              <P>20%</P>  
+                              <br/>
+                              <div class="progress-50">
+                                 <div class="progress-value-20"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
 
-                              <h3> Webpack/Gitlab/Docker</h3>
-                              <p>6</p>
-                              <p class="meses">Meses</p>
+                              <i class="mdi mdi-webpack" title="Webpack"></i>
+                              <br/>
+                              <P>20%</P>  
+                              <br/>
+                              <div class="progress-20">
+                                 <div class="progress-value-20"></div>
+                               </div>
+                           </div>
+                           <div class="conhecimento outer-shadow">
+
+                              <i class="fa-brands fa-docker" title="Docker"></i>
+                              <br/>
+                              <P>20%</P>  
+                              <br/>
+                              <div class="progress-20">
+                                 <div class="progress-value-20"></div>
+                               </div>
                            </div>
                         </div>
                      </div>
                      <!-- skills-item end -->
                   </div>
                </div>
+
+                              <!--education-->
+                              <div class="row">
+                                 <div class="education services tab-content">
+                                    <div class="row">
+                                       <div class="timeline">
+                                          <div class="row">
+                                             <!--timeline item-->
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="harvard-title">Universidade de Harvard</h3>
+                                                   <p id="harvard-description">Mestrado que atua dentro do programa de
+                                                      pós-graduação em
+                                                      Ciência da Computação</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="unica-title">Faculdade Única de MG</h3>
+                                                   <p id="unica-description">Pós Graduação em Engenharia de Software</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 class="estacio-title">Faculdade Estácio de Sá</h3>
+                                                   <p class="estacio-description">Processos Gerencias</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="dio-title-a">Digital Innovation</h3>
+                                                   <p id="dio-description-a">Trabalhando com Componentes em React</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="dio-title-b">Digital Innovation</h3>
+                                                   <p id="dio-description-b">Arquitetura de Componentes e a gestão da
+                                                      complexidade no
+                                                      front-end</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="adobe-title-a">Adobe Profissional</h3>
+                                                   <p id="adobe-description-a">AEM - Front-end Developer</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="adobe-title-b">Adobe Profissional</h3>
+                                                   <p id="adobe-description-b">AEM - Business Practitioner</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="vuejs-title">VueJs Brasil</h3>
+                                                   <p id="vuejs-description">Curso Vuejs - Básico ao Avançado</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="udemy-title">Udemy</h3>
+                                                   <p id="udemy-description">Curso Javascript e Typescript do Básico ao
+                                                      Avançado
+                                                   </p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="iv-title">Faculdade IV2</h3>
+                                                   <p id="iv-description">M.E.R.N (MongoDB/Express/React/Node) </p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="sebrae-title-f">SEBRAE</h3>
+                                                   <p id="sebrae-description-f">Curso Educação Financeira Empresarial
+                                                   </p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="sebrae-title-e">SEBRAE</h3>
+                                                   <p id="sebrae-description-e">Curso Gestão Financeira</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="sebrae-title-d">SEBRAE</h3>
+                                                   <p id="sebrae-description-d">Curso Customer Success(Como Conquistar e
+                                                      Manter
+                                                      Clientes)
+                                                   </p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="sebrae-title-c">SEBRAE</h3>
+                                                   <p id="sebrae-description-c">Curso Marketing digital para
+                                                      empreendedor</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="sebrae-title-b">SEBRAE</h3>
+                                                   <p id="sebrae-description-b">Curso Estratégia Financeira para o
+                                                      Crescimento
+                                                   </p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="sebrae-title-a">SEBRAE</h3>
+                                                   <p id="sebrae-description-a">Curso Planejamento Estratégico para
+                                                      Empreendedores </p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="fgv-title">FGV</h3>
+                                                   <p id="fgv-description">Curso Segurança Digital</p>
+                                                </div>
+                                             </div>
+                                             <div class="timeline-item">
+                                                <div class="timeline-item-inner outer-shadow">
+                                                   <i class="fa-solid fa-graduation-cap  icon"></i>
+
+                                                   <h3 id="hour-title">Cursos 24horas</h3>
+                                                   <p id="hour-description">Curso Auxiliar Administrativo</p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
             </div>
-
-
-            <!--education-->
-            <div class="row">
-               <div class="education services tab-content">
-                  <div class="row">
-                     <div class="timeline">
-                        <div class="row">
-                           <!--timeline item-->
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="harvard-title">Universidade de Harvard</h3>
-                                 <p id="harvard-description">Mestrado que atua dentro do programa de pós-graduação em
-                                    Ciência da Computação</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="unica-title">Faculdade Única de MG</h3>
-                                 <p id="unica-description">Pós Graduação em Engenharia de Software</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 class="estacio-title">Faculdade Estácio de Sá</h3>
-                                 <p class="estacio-description">Processos Gerencias</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="dio-title-a">Digital Innovation</h3>
-                                 <p id="dio-description-a">Trabalhando com Componentes em React</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="dio-title-b">Digital Innovation</h3>
-                                 <p id="dio-description-b">Arquitetura de Componentes e a gestão da complexidade no
-                                    front-end</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="adobe-title-a">Adobe Profissional</h3>
-                                 <p id="adobe-description-a">AEM - Front-end Developer</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="adobe-title-b">Adobe Profissional</h3>
-                                 <p id="adobe-description-b">AEM - Business Practitioner</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="vuejs-title">VueJs Brasil</h3>
-                                 <p id="vuejs-description">Curso Vuejs - Básico ao Avançado</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="udemy-title">Udemy</h3>
-                                 <p id="udemy-description">Curso Javascript e Typescript do Básico ao Avançado</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="iv-title">Faculdade IV2</h3>
-                                 <p id="iv-description">M.E.R.N (MongoDB/Express/React/Node) </p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="sebrae-title-f">SEBRAE</h3>
-                                 <p id="sebrae-description-f">Curso Educação Financeira Empresarial</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="sebrae-title-e">SEBRAE</h3>
-                                 <p id="sebrae-description-e">Curso Gestão Financeira</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="sebrae-title-d">SEBRAE</h3>
-                                 <p id="sebrae-description-d">Curso Customer Success(Como Conquistar e Manter Clientes)
-                                 </p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="sebrae-title-c">SEBRAE</h3>
-                                 <p id="sebrae-description-c">Curso Marketing digital para empreendedor</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="sebrae-title-b">SEBRAE</h3>
-                                 <p id="sebrae-description-b">Curso Estratégia Financeira para o Crescimento</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="sebrae-title-a">SEBRAE</h3>
-                                 <p id="sebrae-description-a">Curso Planejamento Estratégico para Empreendedores </p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="fgv-title">FGV</h3>
-                                 <p id="fgv-description">Curso Segurança Digital</p>
-                              </div>
-                           </div>
-                           <div class="timeline-item">
-                              <div class="timeline-item-inner outer-shadow">
-                                 <i class="fa-solid fa-graduation-cap  icon"></i>
-
-                                 <h3 id="hour-title">Cursos 24horas</h3>
-                                 <p id="hour-description">Curso Auxiliar Administrativo</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
    </section>
 
    <!-- Portfolio Section -->
@@ -515,9 +681,9 @@
          </div>
          <div class="project-img">
             <div class="img-project-box">
-                <img src="./assets/img/brain.webp" class="outer-shadow" alt="me">
+               <img src="./assets/img/brain.webp" class="outer-shadow" alt="me">
             </div>
-        </div>
+         </div>
          <!--portfolio filter-->
          <div class="row">
             <div class="portfolio-filter">
@@ -1383,9 +1549,9 @@
          </div>
          <div class="contact-img">
             <div class="img-contact-box">
-                <img src="./assets/img/contact.webp" class="outer-shadow" alt="contact">
+               <img src="./assets/img/contact.webp" class="outer-shadow" alt="contact">
             </div>
-        </div>
+         </div>
          <div class="row">
             <!-- contact item -->
             <div class="contact-item">
@@ -1480,4 +1646,5 @@
 <!-- js -->
 <script src="./js/main.js"></script>
 <script src="https://kit.fontawesome.com/00f01067df.js" crossorigin="anonymous"></script>
+
 </html>

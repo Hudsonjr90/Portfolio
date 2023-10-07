@@ -453,40 +453,28 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 8rem;
-  padding: 0 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .about-section .container-skill .skills-container .skill-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
-.about-section .container-skill .skills-container .skill-content:nth-child(2) {
-  margin-top: 1.5rem;
-}
-
-.about-section .container-skill .skills-container .skill-content .conhecimento {
+ .conhecimento  {
   text-align: center;
-  width: 100%;
-  max-width: 23rem;
-  height: 19rem;
+  width: 20rem;
   margin: 1rem;
-  border-radius: 10px 10px 0px 0px;
-  padding: 1.5rem;
+  border-radius: 1rem;
+  padding: 3rem;
   border-bottom: 3px solid rgb(255, 255, 255);
-  color: #04d361;
+  color: #ffff;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   position: relative;
 }
+
 
 .about-section
   .container-skill
@@ -496,8 +484,6 @@
   i {
   font-size: 4.5rem;
   margin-bottom: 1rem;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 
 .about-section
@@ -521,11 +507,10 @@
   color: rgb(255, 255, 255);
 }
 
-.about-section
+/* .about-section
   .container-skill
   .skills-container
-  .skill-content
-  .conhecimento::after {
+  .skill-content::after {
   content: "";
   display: block;
   position: absolute;
@@ -536,7 +521,7 @@
   -webkit-transition: 0.6s ease;
   transition: 0.6s ease;
   background-color: #04d361;
-}
+} */
 
 .about-section
   .container-skill
@@ -544,9 +529,11 @@
   .skill-content
   .conhecimento:hover {
   cursor: pointer;
+  color: #04d361;
+  border-bottom: 3px solid #04d361 
 }
 
-.about-section
+/* .about-section
   .container-skill
   .skills-container
   .skill-content
@@ -555,7 +542,7 @@
   opacity: 0.5;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-}
+} */
 
 .about-section
   .container-skill
@@ -1323,6 +1310,8 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    align-items: center;
+    margin-left: 8rem;
   }
 
   .portfolio-popup .pp-details {
@@ -1419,6 +1408,8 @@ img {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
 }
 
 .justufy-content-between {
@@ -1787,14 +1778,6 @@ img {
   }
 }
 
-summary {
-  color: #fff;
-  font-size: 1.5em;
-  font-style: normal;
-  font-weight: 400;
-  cursor: pointer;
-  list-style-type: none;
-}
 
 .box {
   box-shadow: 10px 10px 5px 0px rgba(119, 117, 117, 0.75);
@@ -1880,19 +1863,18 @@ summary {
 
 .button-play,
 .button-pause {
-  display: inline-block;
-  height: 4rem;
-  width: 4rem;
-  font-size: 3rem;
-  text-align: center;
-  background-color: rgb(15, 15, 15);
-  color: #fff;
-  margin: 0 0.4rem;
-  border-radius: 50%;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
+    display: flex;
+    float: left;
+    font-size: 4rem;
+    text-align: center;
+    background: none;
+    color: #fff;
+    margin: 0 1.4rem;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
 }
 
 .button-play::after,
@@ -1913,20 +1895,6 @@ summary {
 /* Estilos específicos para o botão de pausa */
 .button-pause {
   display: none; /* Inicialmente, oculta o botão de pausa */
-}
-.button-play::after,
-.button-pause::after {
-  content: attr(title); /* Use o título como conteúdo */
-  position: absolute;
-  top: -2px;
-  left: 80px;
-  transform: translateX(-50%);
-  background-color: #525458;
-  color: #fff;
-  padding: 0px 10px 0px 10px;
-  font-size: 16px;
-  display: none;
-  border-radius: 20px;
 }
 
 .button-play:hover::after,
@@ -1995,4 +1963,161 @@ summary {
   
   .img-responsive:hover {
     transform: translateY(-1520px) rotate(-95deg);
+  }
+  
+  .progress {
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    width: 100%;
+  }
+  
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background-color: rgb(43, 194, 83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(43, 194, 83) 37%,
+      rgb(84, 240, 84) 69%
+    );
+    height: 30px;
+    width: 0;
+  }
+  
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
+  .progress-80 {
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    width: 100%;
+  }
+  
+  .progress-value-80 {
+    animation: load80 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background-color: rgb(43, 194, 83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(43, 194, 83) 37%,
+      rgb(84, 240, 84) 69%
+    );
+    height: 30px;
+    width: 0;
+  }
+  
+  @keyframes load80 {
+    0% { width: 0; }
+    100% { width: 80%; }
+  }
+  .progress-70 {
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    width: 100%;
+  }
+  
+  .progress-value-70 {
+    animation: load70 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background-color: rgb(43, 194, 83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(43, 194, 83) 37%,
+      rgb(84, 240, 84) 69%
+    );
+    height: 30px;
+    width: 0;
+  }
+  
+  @keyframes load70 {
+    0% { width: 0; }
+    100% { width: 70%; }
+  }
+
+  .progress-50 {
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    width: 100%;
+  }
+  
+  .progress-value-50 {
+    animation: load50 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background-color: rgb(43, 194, 83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(43, 194, 83) 37%,
+      rgb(84, 240, 84) 69%
+    );
+    height: 30px;
+    width: 0;
+  }
+  
+  @keyframes load50 {
+    0% { width: 0; }
+    100% { width: 50%; }
+  }
+  .progress-20 {
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    width: 100%;
+  }
+  
+  .progress-value-20 {
+    animation: load20 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background-color: rgb(43, 194, 83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(43, 194, 83) 37%,
+      rgb(84, 240, 84) 69%
+    );
+    height: 30px;
+    width: 0;
+  }
+  
+  @keyframes load20 {
+    0% { width: 0; }
+    100% { width: 20%; }
+  }
+
+  .icon-image {
+    width: 5rem;
+    color: #ffff;
+  }
+
+  .icon-image:hover{
+    color: #04d361;
   }
