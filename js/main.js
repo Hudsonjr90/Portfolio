@@ -395,13 +395,13 @@ function loadEnglishContent() {
   document.getElementById("dt3-date").textContent = "February 2019 - June 2021";
 
   document.getElementById("freela-title").textContent =
-    "Appen Projects/99Freelas/Capitona Rio";
+    "99Freelas/Capitona Rio/ETERJ";
   document.getElementById("freela-name").textContent =
     "Freelancers/Personal Works";
   document.getElementById("freela-description").textContent =
-    "I did some freelance work with Shopify, Wordpress using, React, VueJs, Angular, Typescript, Vanilla Js, Jquery, Bootstrap and Sass.";
+    "I took an industrial IT course at ETERJ, and freelance work, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.";
   document.getElementById("freela-date").textContent =
-    "February 2018- at moment";
+    "February 2012 - at moment";
 
   document.getElementById("hour-title").textContent = "24-hour courses";
   document.getElementById("hour-description").textContent =
