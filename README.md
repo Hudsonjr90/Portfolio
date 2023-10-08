@@ -3,7 +3,7 @@
 ## Portfólio feito para demonstrar algumas informações sobre mim, experiências de trabalho, projetos criados e habilidades adquiridas em quase 6 anos de estudos.
 
 
-<p align="left"><img width=100% src="./assets/img/read.webp"></p>
+<p align="left"><img width=100% src="./assets/img/read.png"></p>
 
 ##  Tecnologias usadas
 
