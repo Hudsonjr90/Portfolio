@@ -43,18 +43,6 @@
   z-index: 99;
 }
 
-.header .logo a {
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: rgb(255, 255, 255);
-  letter-spacing: 0.3rem;
-}
-
 .header .hamburguer-btn {
   height: 4rem;
   width: 4rem;
@@ -1295,6 +1283,14 @@
   .about-section .services .timeline .timeline-item:last-child {
     margin-bottom: 0;
   }
+
+  .menu-options {
+    display: none;
+ }
+
+ .nav-menu {
+    display: block;
+ }
 
   .about-section
     .services
