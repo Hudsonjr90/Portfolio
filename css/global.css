@@ -1956,16 +1956,6 @@ img {
   justify-content: center;
   margin: 10px;
 }
-
-.img-responsive {
-  width: 8rem;
-  transition: transform 4.5s ease-in-out;
-}
-
-.img-responsive:hover {
-  transform: translateY(-1520px) rotate(-95deg);
-}
-
 .progress {
   justify-content: flex-start;
   border-radius: 1rem;
@@ -1977,10 +1967,9 @@ img {
 }
 
 .progress-value {
-  animation: load 3s normal forwards;
+  animation: load 10s normal forwards;
   border-radius: 1rem;
   background-color: rgb(43, 194, 83);
-  background-size: 50px 50px;
   height: 2rem;
   width: 0;
 }
@@ -1993,6 +1982,7 @@ img {
     width: 100%;
   }
 }
+
 .progress-90 {
   justify-content: flex-start;
   border-radius: 1rem;
@@ -2004,14 +1994,14 @@ img {
 }
 
 .progress-value-90 {
-  animation: load 3s normal forwards;
+  animation: load90 10s normal forwards;
   border-radius: 1rem;
   background-color: rgb(43, 194, 83);
   height: 2rem;
   width: 0;
 }
 
-@keyframes load {
+@keyframes load90 {
   0% {
     width: 0;
   }
@@ -2031,7 +2021,7 @@ img {
 }
 
 .progress-value-80 {
-  animation: load80 3s normal forwards;
+  animation: load80 10s normal forwards;
   border-radius: 1rem;
   background-color: rgb(43, 194, 83);
   height: 2rem;
@@ -2057,7 +2047,7 @@ img {
 }
 
 .progress-value-70 {
-  animation: load70 3s normal forwards;
+  animation: load70 10s normal forwards;
   border-radius: 1rem;
   background-color: rgb(43, 194, 83);
   height: 2rem;
@@ -2084,7 +2074,7 @@ img {
 }
 
 .progress-value-50 {
-  animation: load50 3s normal forwards;
+  animation: load50 10s normal forwards;
   border-radius: 1rem;
   background-color: rgb(43, 194, 83);
   height: 2rem;
@@ -2110,7 +2100,7 @@ img {
 }
 
 .progress-value-20 {
-  animation: load20 3s normal forwards;
+  animation: load20 10s normal forwards;
   border-radius: 1rem;
   background-color: rgb(43, 194, 83);
   height: 2rem;
@@ -2149,3 +2139,6 @@ img {
   background-color: #ffffff;
   color: #04d361;
 }
+.logo-icon{
+  color: #ffffff;
+  font-size: 5rem;}
