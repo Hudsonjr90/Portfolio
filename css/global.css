@@ -2120,3 +2120,26 @@ img {
   }
 }
 
+/* Estilos CSS para o botão Scroll to Top */
+.scroll-button {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 99;
+  background-color: #04d361;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  font-size: 2.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* .scroll-button:hover {
+  background-color: #04d361;
+  color: #ffff;
+} */

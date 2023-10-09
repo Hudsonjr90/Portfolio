@@ -617,3 +617,39 @@ buttonPause.addEventListener("click", () => {
   updatePlayButtonIcon(false);
 });
 
+/// Função para rolar suavemente para o topo da página
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // Rola suavemente
+  });
+}
+
+// Verifique a posição da janela e exiba ou oculte o botão com base na largura da tela
+function toggleScrollButton() {
+  const scrollButton = document.getElementById("scrollToTopButton");
+
+  // Verifica se a largura da tela é menor ou igual a 767px (tamanho de mobile)
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    if (window.scrollY >= 200) {
+      scrollButton.style.display = "block";
+    } else {
+      scrollButton.style.display = "none";
+    }
+  } else {
+    // Se a largura da tela for maior que 767px, oculte o botão
+    scrollButton.style.display = "none";
+  }
+}
+
+// Adicione um ouvinte de evento de clique ao botão
+document.getElementById("scrollToTopButton").addEventListener("click", scrollToTop);
+
+// Adicione um ouvinte de evento de rolagem para mostrar/ocultar o botão
+window.addEventListener("scroll", toggleScrollButton);
+
+// Adicione um ouvinte de evento de redimensionamento da tela
+window.addEventListener("resize", toggleScrollButton);
+
+// Chame a função uma vez para verificar o estado inicial da página
+toggleScrollButton();
