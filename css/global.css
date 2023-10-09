@@ -48,7 +48,7 @@
   width: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -66,7 +66,7 @@
 }
 
 .header .hamburguer-btn span {
-  display: block;
+  display: none;
   height: 0.3rem;
   width: 1.4rem;
   background-color: #fff;
@@ -103,33 +103,6 @@
   opacity: 0;
   visibility: hidden;
   overflow-y: auto;
-}
-
-.nav-menu .close-nav-menu {
-  height: 4rem;
-  width: 4rem;
-  display: block;
-  font-size: 3.5rem;
-  line-height: 3.5rem;
-  border-radius: 50%;
-  position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
-  cursor: pointer;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.nav-menu .close-nav-menu::after {
-  border-radius: 50%;
-}
-
-.nav-menu .close-nav-menu:hover {
-  color: #04d361;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .nav-menu .nav-menu-inner {
@@ -492,8 +465,6 @@
   font-size: 1.5rem;
   color: rgb(255, 255, 255);
 }
-
-
 
 /* .about-section
   .container-skill
@@ -1293,14 +1264,22 @@
   .menu-options {
     display: none;
   }
-  .logo-icon-name{
-    padding: 6rem 0rem;
+  .logo-icon-name {
+    padding: 6rem 9rem;
   }
 
-  .nav-menu {
+  .header .hamburguer-btn {
     display: block;
+    left: 32rem;
   }
-
+  .header .hamburguer-btn span {
+    display: block;
+    right: -1.2rem;
+    top: 1.8rem;
+  }
+  .list-menu {
+    display: none;
+  }
   .about-section
     .services
     .timeline
@@ -1326,8 +1305,11 @@
   .portfolio-popup .pp-main {
     width: 85%;
   }
+  .home-view{
+      display: block;
+      text-align: center;
+  }
 }
-
 @media (max-width: 574px) {
   .home-section .home-img .img-box {
     width: 25rem;
@@ -1506,6 +1488,28 @@ img {
 }
 
 .btn-1:after {
+  border-radius: 3rem;
+}
+.btn-3 {
+  padding: 1rem 2.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffff;
+  background-color: transparent;
+  line-height: 1.5;
+  cursor: pointer;
+  border-radius: 3rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+}
+
+.btn-3:hover {
+  color: #04d361;
+}
+
+.btn-3:after {
   border-radius: 3rem;
 }
 
@@ -1801,6 +1805,18 @@ img {
   transition: 0.4s ease;
   position: relative;
 }
+.tab-item2 {
+  color: #fff;
+  font-size: 1.2em;
+  font-style: normal;
+  text-decoration-thickness: 2px;
+}
+.tab-item2:hover {
+  color: #04d361;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  position: relative;
+}
 
 .modal {
   display: none;
@@ -1895,7 +1911,6 @@ img {
   line-height: 4rem;
 }
 
-/* Estilos específicos para o botão de pausa */
 .button-pause {
   display: none; /* Inicialmente, oculta o botão de pausa */
 }
@@ -1955,10 +1970,10 @@ img {
 
 .home-view {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  margin: 10px;
+  margin: 1rem;
 }
+
 .progress {
   justify-content: flex-start;
   border-radius: 1rem;
@@ -2119,7 +2134,6 @@ img {
   }
 }
 
-/* Estilos CSS para o botão Scroll to Top */
 .scroll-button {
   display: none;
   position: fixed;
@@ -2146,10 +2160,49 @@ img {
   color: #ffffff;
   font-size: 5rem;
 }
+.logo-icon:hover {
+  color: #04d361;
+  font-size: 5rem;
+}
+
 .logo-icon-name {
   color: #ffffff;
   font-size: 5rem;
   display: flex;
   justify-content: end;
   margin: 5rem 6rem -7rem;
+}
+
+.list-menu {
+  margin-left: auto;
+}
+
+.list-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list-menu ul li {
+  display: inline-block;
+  margin: 2rem;
+}
+
+.menu-button {
+  font-size: 2.3rem;
+  border-radius: 5rem;
+  background-color: transparent;
+  padding: 1rem 1rem 1rem 1rem;
+  color: #fff;
+  border-bottom: 0.25rem solid #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  color: #04d361;
+  border-bottom: 0.25rem solid #04d361;
+}
+.menu-button.active{
+  color: #04d361;
+  border-bottom: 0.25rem solid #04d361;
 }

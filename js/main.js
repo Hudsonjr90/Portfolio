@@ -340,6 +340,10 @@ function loadEnglishContent() {
   document.getElementById("menu-sobre").textContent = "About";
   document.getElementById("menu-portfolio").textContent = "Projects";
   document.getElementById("menu-contato").textContent = "Contact";
+  document.getElementById("menu-in-b").textContent = "Home";
+  document.getElementById("menu-so-b").textContent = "About";
+  document.getElementById("menu-po-b").textContent = "Projects";
+  document.getElementById("menu-co-b").textContent = "Contact";
   document.getElementById("titulo-principal").textContent = "Hudson Kennedy";
   document.getElementById("texto-principal").textContent =
     "Fullstack Developer / Software Engineer.";
@@ -657,3 +661,42 @@ window.addEventListener("resize", toggleScrollButtons);
 
 // Chame a função uma vez para verificar o estado inicial da página
 toggleScrollButtons();
+
+// Selecione o elemento do botão
+const botaoHome = document.querySelector('.home-view');
+
+// Função para verificar a largura da tela e mostrar/ocultar o botão
+function atualizarExibicaoBotao() {
+  if (window.innerWidth <= 767) {
+    botaoHome.style.display = 'block'; // Mostrar o botão em telas menores
+  } else {
+    botaoHome.style.display = 'none'; // Ocultar o botão em telas maiores
+  }
+}
+
+// Chame a função inicialmente e sempre que a janela for redimensionada
+atualizarExibicaoBotao();
+window.addEventListener('resize', atualizarExibicaoBotao);
+
+// Captura todos os itens do menu
+const menuItems = document.querySelectorAll('.menu-button');
+
+// Função para remover a classe inner-shadow de todos os itens do menu, exceto o item fornecido
+function removeInnerShadowFromAllExcept(selectedItem) {
+    menuItems.forEach(item => {
+        if (item !== selectedItem) {
+            item.classList.remove('inner-shadow','active');
+        }
+    });
+}
+
+// Adiciona um evento de clique a cada item do menu
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Remove a classe inner-shadow de todos os itens do menu, exceto o item clicado
+        removeInnerShadowFromAllExcept(item);
+
+        // Adiciona a classe inner-shadow ao item do menu clicado
+        item.classList.add('inner-shadow', 'active');
+    });
+});
