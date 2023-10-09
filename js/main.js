@@ -545,6 +545,8 @@ function loadEnglishContent() {
     "Coca-Cola Card to practice hover and transform CSS.";
   document.getElementById("qrcode-text").textContent =
     "QR code generator made to practice methods in JavaScript.";
+  document.getElementById("whats-title").textContent =  "Talk on the WhatsApp"
+  document.getElementById("mail-title").textContent =  "Send an email"
 }
 
 /*------------------button play function----------------------- */
