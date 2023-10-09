@@ -1293,6 +1293,9 @@
   .menu-options {
     display: none;
   }
+  .logo-icon-name{
+    padding: 6rem 0rem;
+  }
 
   .nav-menu {
     display: block;
@@ -2139,6 +2142,14 @@ img {
   background-color: #ffffff;
   color: #04d361;
 }
-.logo-icon{
+.logo-icon {
   color: #ffffff;
-  font-size: 5rem;}
+  font-size: 5rem;
+}
+.logo-icon-name {
+  color: #ffffff;
+  font-size: 5rem;
+  display: flex;
+  justify-content: end;
+  margin: 5rem 6rem -7rem;
+}
