@@ -1094,7 +1094,6 @@
   padding: 8rem 0 8rem;
   min-height: 100vh;
 }
-
 .contact-section .contact-item {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 33.33%;
@@ -1148,12 +1147,14 @@
 @media (max-width: 767px) {
   .contact-section .w-50,
   .contact-section .contact-item,
+  .contact-section .contact-img,
   .portfolio-popup .pp-details .pp-details-inner .description,
   .portfolio-popup .pp-details .pp-details-inner .info,
   .portfolio-section .portfolio-item,
   .about-section .skills .skill-item,
   .about-section .about-info,
   .about-section .about-img,
+  .portfolio-section .project-img,
   .home-section .home-text,
   .home-section .home-img {
     -webkit-box-flex: 0;
@@ -1232,6 +1233,16 @@
 
   .about-section .services .timeline .timeline-item:last-child {
     margin-bottom: 0;
+  }
+
+  .portfolio-section .project-img{
+    padding-bottom: 3rem ;
+    max-width: 100%;
+  }
+
+  .contact-section .contact-img{
+    padding-bottom: 3rem ;
+    min-width: 100%;
   }
 
   .menu-options {
@@ -1898,53 +1909,41 @@ img {
   display: block;
 }
 
-.project-img {
-  display: flex;
-  justify-content: center;
-  margin-left: 1rem;
-  margin-bottom: 2rem;
+.portfolio-section .project-img {
+  width: 40%; 
+  margin: 0 auto; 
+  display: block; 
+  margin-bottom: 5rem;
 }
+  
+  .portfolio-section .project-img .img-project-box {
+    padding: 1.5rem;
+    border-radius: 50%
+  }
+  
+  .portfolio-section .project-img .img-project-box img {
+    width: 100%;
+    border: 1rem solid transparent;
+    border-radius: 50%
+  }
 
-.img-project-box img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  border: 1rem solid transparent;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-  display: block;
-  margin: 0 auto;
-}
-
-.img-project-box img:hover {
-  filter: grayscale(0%);
-  border-color: #04d361;
-}
-
-.contact-img {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-  cursor: pointer;
-}
-
-.img-contact-box img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  border: 1rem solid transparent;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-  display: block;
-  margin: 0 auto;
-}
-
-.img-contact-box img:hover {
-  filter: grayscale(0%);
-  border-color: #04d361;
-}
+  .contact-section .contact-img {
+    width:40%; 
+    margin: 0 auto; 
+    display: block; 
+    margin-bottom: 3rem;
+  }
+  
+  .contact-section .contact-img .img-contact-box{
+    padding: 1.5rem;
+    border-radius: 50%
+  }
+  
+  .contact-section .contact-img .img-contact-box img {
+    width: 100%;
+    border: 1rem solid transparent;
+    border-radius: 50%
+  }
 
 .home-view {
   display: flex;
