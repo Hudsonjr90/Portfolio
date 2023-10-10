@@ -347,7 +347,6 @@ function loadEnglishContent() {
   document.getElementById("titulo-principal").textContent = "Hudson Kennedy";
   document.getElementById("texto-principal").textContent =
     "Fullstack Developer / Software Engineer.";
-  document.getElementById("saiba-mais").textContent = "Learn more";
   document.getElementById("titulo-sobre-mim").textContent = "About Me";
   document.getElementById("texto-sobre-mim").innerHTML = `
   In contact with the technology field for over 10 years, where I started developing in VB.net. During my learning journey, I took some courses. In 2018, 
