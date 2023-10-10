@@ -215,8 +215,8 @@
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
-  max-width: 50%;
-  padding: 0 1.5rem;
+  width: 40%;
+  padding: 5rem 1.5rem;
 }
 
 .home-section .home-text h2 {
@@ -1167,6 +1167,10 @@
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
+  }
+
+  .home-section .home-img{
+    min-width: 100%;
   }
 
   .about-section .about-info .btn-1 {
