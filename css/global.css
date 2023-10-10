@@ -135,9 +135,10 @@
 .nav-menu .nav-menu-inner ul li a {
   display: inline-block;
   font-size: 2.8rem;
+  font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   color: #fff;
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 4rem;
   border-radius: 3rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -148,6 +149,9 @@
 }
 
 .nav-menu .nav-menu-inner ul li a.active {
+  color: #04d361;
+}
+.menu-icon-1 .menu-icon-2 .menu-icon-3 .menu-icon-4 .nav-menu .nav-menu-inner ul li a i.active{
   color: #04d361;
 }
 
@@ -217,6 +221,7 @@
 
 .home-section .home-text h2 {
   font-size: 5.5rem;
+  font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   color: #fff;
   margin: 0;
@@ -224,7 +229,8 @@
 
 .home-section .home-text .maintext {
   font-size: 2rem;
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #04d361;
   margin: 0;
 }
@@ -307,6 +313,8 @@
   height: 4rem;
   width: 4rem;
   font-size: 2.5rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   text-align: center;
   color: rgb(255, 255, 255);
   margin: 0 0.4rem;
@@ -347,11 +355,13 @@
 }
 
 .about-section .about-info span {
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
 }
 
 .about-section .about-info p {
   font-size: 1.6rem;
+  font-family: "Baloo 2", sans-serif;
   line-height: 2.6rem;
   margin-bottom: 1.5rem;
   color: rgb(255, 255, 255);
@@ -377,6 +387,8 @@
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   font-size: 1.6rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #04d361;
   font-weight: 500;
   text-transform: capitalize;
@@ -443,6 +455,7 @@
   i {
   font-size: 4.5rem;
   margin-bottom: 1rem;
+  
 }
 
 .about-section
@@ -454,6 +467,8 @@
   font-size: 2rem;
   color: #fff;
   margin-bottom: 1rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
 }
 
 .about-section
@@ -464,23 +479,9 @@
   p {
   font-size: 1.5rem;
   color: rgb(255, 255, 255);
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
 }
-
-/* .about-section
-  .container-skill
-  .skills-container
-  .skill-content::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0%;
-  height: 3px;
-  -webkit-transition: 0.6s ease;
-  transition: 0.6s ease;
-  background-color: #04d361;
-} */
 
 .about-section
   .container-skill
@@ -491,17 +492,6 @@
   color: #04d361;
   border: 3px solid #04d361;
 }
-
-/* .about-section
-  .container-skill
-  .skills-container
-  .skill-content
-  .conhecimento:hover
-  i {
-  opacity: 0.5;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-} */
 
 .about-section
   .container-skill
@@ -619,21 +609,40 @@
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h1 {
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #ffffff;
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner h2 {
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #fff;
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h3 {
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #fff;
 }
 
-.about-section .services .timeline .timeline-item .timeline-item-inner p {
+.about-section .services .timeline .timeline-item .timeline-item-inner p{
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: rgb(255, 255, 255);
+}
+
+.experience-date{
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+.college-name{
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
 }
 
 .portfolio-section {
@@ -661,7 +670,8 @@
   padding: 0.5rem 1rem;
   border-radius: 3rem;
   cursor: pointer;
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #04d361;
   text-transform: capitalize;
   font-size: 1.6rem;
@@ -730,7 +740,8 @@
   .view-project {
   text-transform: capitalize;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #04d361;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -750,6 +761,8 @@
 
 .portfolio-section .portfolio-item .portfolio-item-inner p {
   font-size: 1.6rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   margin: 1rem 0 0;
   color: rgb(255, 255, 255);
   text-transform: capitalize;
@@ -813,6 +826,7 @@
 
 .portfolio-popup .pp-details .pp-details-inner .pp-project-details h3 {
   font-size: 2rem;
+  font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   text-transform: capitalize;
   color: #fff;
@@ -825,7 +839,8 @@
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title h2 {
   font-size: 2.8rem;
-  font-weight: 600;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   text-transform: capitalize;
   color: #fff;
   margin: 0 0 0.5rem;
@@ -833,7 +848,8 @@
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p {
   font-size: 1.4rem;
-  font-weight: 600;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: rgb(255, 255, 255);
   margin: 0 0 1.5rem;
   border-bottom: 0.1rem solid #353535;
@@ -841,7 +857,8 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p span {
-  font-weight: 400;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   text-transform: capitalize;
 }
 
@@ -855,6 +872,8 @@
 
 .portfolio-popup .pp-details .pp-details-inner .description p {
   font-size: 1.6rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: rgb(255, 255, 255);
   line-height: 2.6rem;
   margin: 0;
@@ -862,7 +881,8 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .description p span {
-  font-weight: 400;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info {
@@ -877,11 +897,13 @@
   margin-bottom: 1rem;
   color: rgb(255, 255, 255);
   font-size: 1.6rem;
-  font-weight: 600;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li span {
-  font-weight: 400;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   text-transform: capitalize;
 }
 
@@ -971,7 +993,8 @@
   left: 0;
   border-radius: 3rem;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #04d361;
   cursor: pointer;
   padding: 0 1.5rem;
@@ -1007,7 +1030,7 @@
 }
 
 .portfolio-popup .pp-main .pp-main-inner .pp-close:hover {
-  color: #d40b0b;
+  color: #04d361;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1104,7 +1127,8 @@
 .contact-section .contact-item .contact-item-inner span {
   display: block;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: rgb(255, 255, 255);
   margin: 1.5rem 0 1rem;
   text-transform: capitalize;
@@ -1112,65 +1136,14 @@
 
 .contact-section .contact-item .contact-item-inner p {
   font-size: 1.6rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: rgb(255, 255, 255);
   line-height: 2.6rem;
   margin: 0;
   word-break: break-word;
 }
 
-.contact-section .contact-form {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-  margin-top: 5rem;
-}
-
-.contact-section .contact-form .submit-btn {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-  text-align: right;
-  padding: 0 1.5rem;
-}
-
-.contact-section .contact-form .w-50 {
-  padding: 0 1.5rem;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
-.contact-section .contact-form .w-50 .input-group {
-  margin: 0 0 2.5rem;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  border-radius: 3rem;
-}
-
-.contact-section .contact-form .w-50 .input-group::after {
-  border-radius: 3rem;
-}
-
-.contact-section .contact-form .w-50 .input-group .input-control {
-  height: 4.5rem;
-  display: block;
-  width: 100%;
-  border-radius: 3rem;
-  border: none;
-  background: transparent;
-  font-size: 1.6rem;
-  padding: 0 1.5rem;
-  color: rgb(255, 255, 255);
-}
-
-.contact-section .contact-form .w-50 .input-group textarea.input-control {
-  height: 18.4rem;
-  padding-top: 1.5rem;
-  resize: none;
-}
 
 @media (max-width: 767px) {
   .contact-section .w-50,
@@ -1475,7 +1448,8 @@ img {
 .btn-2 {
   padding: 1rem 1.5rem;
   font-size: 16px;
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: #04d361;
   background-color: transparent;
   line-height: 1.5;
@@ -1708,7 +1682,7 @@ img {
 }
 
 .section-title {
-  padding: 0 1.5rem;
+  padding: 2rem 1.5rem;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
@@ -1745,7 +1719,8 @@ img {
   margin: 0 0.5rem 1rem;
   padding: 0.5rem 1rem;
   font-size: 16px;
-  font-weight: 500;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   line-height: 1.5;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
@@ -1767,6 +1742,8 @@ img {
 .copy p {
   color: #fff;
   font-size: 1em;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   border-bottom: 0.2em solid #04d361;
 }
 
@@ -2188,6 +2165,8 @@ img {
 }
 
 .menu-button {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   font-size: 2.3rem;
   border-radius: 5rem;
   background-color: transparent;
@@ -2204,5 +2183,25 @@ img {
 }
 .menu-button.active{
   color: #04d361;
-  border-bottom: 0.25rem solid #04d361;
+  border-top: 0.25rem solid #04d361;
+  border-bottom: none;
 }
+
+.menu-icon-1 {
+  font-size: 3rem;
+  margin: 1.2rem;
+  }
+
+.menu-icon-2{
+  font-size: 3rem;
+  margin: 1.2rem;
+}
+.menu-icon-3{
+  font-size: 3rem;
+  margin: 1.2rem;
+}
+.menu-icon-4{
+  font-size: 3rem;
+  margin: 1.2rem;
+}
+

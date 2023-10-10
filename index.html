@@ -24,20 +24,18 @@
 </head>
 
 <body>
-
-
    <header class="header">
       <div class="container">
          <div class="row justify-content-between">
-               <div class="list-menu">
-                  <ul>
-                      <li><a href="#home" id="menu-in-b" class="link-item menu-button active inner-shadow">Início</a></li>
-                      <li><a href="#about" id="menu-so-b" class="link-item menu-button"></i>Sobre</a></li>
-                      <li><a href="#projects" id="menu-po-b" class="link-item menu-button"></i>Projetos</a></li>
-                      <li><a href="#contact" id="menu-co-b" class="link-item menu-button">Contato</a></li>
-                  </ul>
-              </div>              
-   
+            <div class="list-menu">
+               <ul>
+                  <li><a href="#home" id="menu-in-b" class="link-item menu-button active inner-shadow">Início</a></li>
+                  <li><a href="#about" id="menu-so-b" class="link-item menu-button">Sobre</a></li>
+                  <li><a href="#projects" id="menu-po-b" class="link-item menu-button">Projetos</a></li>
+                  <li><a href="#contact" id="menu-co-b" class="link-item menu-button">Contato</a></li>
+               </ul>
+            </div>
+
             <div class="hamburguer-btn outer-shadow hover-in-shadow">
                <span></span>
             </div>
@@ -45,16 +43,19 @@
       </div>
    </header>
 
-   <!--navigation menu-->
+   <!--navigation hamburguer menu-->
    <nav class="nav-menu">
       <div class="close-nav-menu outer-shadow hover-in-shadow"></div>
       <div class="nav-menu-inner">
          <ul>
-            <li><a href="#home" id="menu-inicio" class="link-item inner-shadow active">Início</a></li>
-            <li><a href="#about" id="menu-sobre" class="link-item outer-shadow hover-in-shadow">Sobre</a></li>
-            <li><a href="#projects" id="menu-portfolio" class="link-item outer-shadow hover-in-shadow">Projetos</a></li>
-            <li><a href="#contact" id="menu-contato" class="link-item outer-shadow hover-in-shadow">Contato</a></li>
-
+            <li><a href="#home" id="menu-inicio" class="link-item inner-shadow active"><i
+                     class="fa-solid fa-house menu-icon-1"></i>Início</a></li>
+            <li><a href="#about" id="menu-sobre" class="link-item outer-shadow hover-in-shadow"><i
+                     class="fa-solid fa-user menu-icon-2"></i>Sobre</a></li>
+            <li><a href="#projects" id="menu-portfolio" class="link-item outer-shadow hover-in-shadow"><i
+                     class="fa-solid fa-laptop-code menu-icon-3"></i>Projetos</a></li>
+            <li><a href="#contact" id="menu-contato" class="link-item outer-shadow hover-in-shadow"><i
+                     class="fa-solid fa-phone-volume menu-icon-4"></i>Contato</a></li>
          </ul>
       </div>
    </nav>
@@ -158,7 +159,7 @@
                   <span class="tab-item outer-shadow active" data-target=".services"
                      id="experiencias">Experiências</span>
                   <span class="tab-item" data-target=".skills" id="tecnologias">Tecnologias</span>
-                  <span class="tab-item" data-target=".education" id="formacao-cursos">Formação/Cursos</span>
+                  <span class="tab-item" data-target=".education" id="formacao-cursos">Formações</span>
 
                </div>
             </div>
@@ -181,7 +182,7 @@
                                     Frontend, além de Java com Springboot no Backend e PostgresSQL como banco de dados.
                                  </h3>
                                  </br>
-                                 <p><u id="cast-date">Agosto 2022 - até o momento</u></p>
+                                 <p class="experience-date" id="cast-date">Agosto 2022 - até o momento</p>
                               </div>
                            </div>
 
@@ -200,7 +201,7 @@
                                     prestando serviços para
                                     diversos clientes como Porto, CVC e etc.</h3>
                                  </br>
-                                 <p><u id="vilt-date"> Janeiro 2022 - Abril 2022 </u></p>
+                                 <p class="experience-date" id="vilt-date"> Janeiro 2022 - Abril 2022</p>
 
                               </div>
                            </div>
@@ -218,7 +219,7 @@
                                     otimização de imagem e
                                     responsável pela integração do ERP Bling.</h3>
                                  </br>
-                                 <p><u id="dt3-date"> Fevereiro 2019 - Junho 2021 </u></p>
+                                 <p class="experience-date" id="dt3-date"> Fevereiro 2019 - Junho 2021 </p>
                               </div>
                            </div>
                            <div class="timeline-item">
@@ -232,7 +233,7 @@
                                     e trabalhos de freelancer, usando Angular Js, VB.net,
                                     HTML, Javascript, Jquery, Bootstrap, Sass.</h3>
                                  </br>
-                                 <p><u id="freela-date">Fevereiro 2012 - até o momento </u></p>
+                                 <p class="experience-date" id="freela-date">Fevereiro 2012 - até o momento</p>
                               </div>
                            </div>
                            <button class="scroll-button">
@@ -865,6 +866,7 @@
                   <i class="mdi mdi-chevron-double-up"></i>
                </button>
             </div>
+
             <!--education-->
             <div class="row">
                <div class="education services tab-content">
@@ -876,7 +878,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="harvard-title">Universidade de Harvard</h3>
+                                 <h3 class="college-name" id="harvard-title">Universidade de Harvard</h3>
                                  <p id="harvard-description">Mestrado que atua dentro do programa de
                                     pós-graduação em
                                     Ciência da Computação</p>
@@ -886,7 +888,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="unica-title">Faculdade Única de MG</h3>
+                                 <h3 class="college-name" id="unica-title">Faculdade Única de MG</h3>
                                  <p id="unica-description">Pós Graduação em Engenharia de Software</p>
                               </div>
                            </div>
@@ -894,7 +896,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 class="estacio-title">Faculdade Estácio de Sá</h3>
+                                 <h3 class="estacio-title college-name">Faculdade Estácio de Sá</h3>
                                  <p class="estacio-description">Processos Gerencias</p>
                               </div>
                            </div>
@@ -902,7 +904,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="dio-title-a">Digital Innovation</h3>
+                                 <h3 class="college-name" id="dio-title-a">Digital Innovation</h3>
                                  <p id="dio-description-a">Trabalhando com Componentes em React</p>
                               </div>
                            </div>
@@ -910,7 +912,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="dio-title-b">Digital Innovation</h3>
+                                 <h3 class="college-name" id="dio-title-b">Digital Innovation</h3>
                                  <p id="dio-description-b">Arquitetura de Componentes e a gestão da
                                     complexidade no
                                     front-end</p>
@@ -920,7 +922,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="adobe-title-a">Adobe Profissional</h3>
+                                 <h3 class="college-name" id="adobe-title-a">Adobe Profissional</h3>
                                  <p id="adobe-description-a">AEM - Front-end Developer</p>
                               </div>
                            </div>
@@ -928,7 +930,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="adobe-title-b">Adobe Profissional</h3>
+                                 <h3 class="college-name" id="adobe-title-b">Adobe Profissional</h3>
                                  <p id="adobe-description-b">AEM - Business Practitioner</p>
                               </div>
                            </div>
@@ -936,7 +938,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="vuejs-title">VueJs Brasil</h3>
+                                 <h3 class="college-name" id="vuejs-title">VueJs Brasil</h3>
                                  <p id="vuejs-description">Curso Vuejs - Básico ao Avançado</p>
                               </div>
                            </div>
@@ -944,7 +946,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="udemy-title">Udemy</h3>
+                                 <h3 class="college-name" id="udemy-title">Udemy</h3>
                                  <p id="udemy-description">Curso Javascript e Typescript do Básico ao
                                     Avançado
                                  </p>
@@ -954,7 +956,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="iv-title">Faculdade IV2</h3>
+                                 <h3 class="college-name" id="iv-title">Faculdade IV2</h3>
                                  <p id="iv-description">M.E.R.N (MongoDB/Express/React/Node) </p>
                               </div>
                            </div>
@@ -962,7 +964,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="sebrae-title-f">SEBRAE</h3>
+                                 <h3 class="college-name" id="sebrae-title-f">SEBRAE</h3>
                                  <p id="sebrae-description-f">Curso Educação Financeira Empresarial
                                  </p>
                               </div>
@@ -971,7 +973,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="sebrae-title-e">SEBRAE</h3>
+                                 <h3 class="college-name" id="sebrae-title-e">SEBRAE</h3>
                                  <p id="sebrae-description-e">Curso Gestão Financeira</p>
                               </div>
                            </div>
@@ -979,7 +981,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="sebrae-title-d">SEBRAE</h3>
+                                 <h3 class="college-name" id="sebrae-title-d">SEBRAE</h3>
                                  <p id="sebrae-description-d">Curso Customer Success(Como Conquistar e
                                     Manter
                                     Clientes)
@@ -990,7 +992,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="sebrae-title-c">SEBRAE</h3>
+                                 <h3 class="college-name" id="sebrae-title-c">SEBRAE</h3>
                                  <p id="sebrae-description-c">Curso Marketing digital para
                                     empreendedor</p>
                               </div>
@@ -999,7 +1001,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="sebrae-title-b">SEBRAE</h3>
+                                 <h3 class="college-name" id="sebrae-title-b">SEBRAE</h3>
                                  <p id="sebrae-description-b">Curso Estratégia Financeira para o
                                     Crescimento
                                  </p>
@@ -1009,7 +1011,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="sebrae-title-a">SEBRAE</h3>
+                                 <h3 class="college-name" id="sebrae-title-a">SEBRAE</h3>
                                  <p id="sebrae-description-a">Curso Planejamento Estratégico para
                                     Empreendedores </p>
                               </div>
@@ -1018,7 +1020,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="fgv-title">FGV</h3>
+                                 <h3 class="college-name" id="fgv-title">FGV</h3>
                                  <p id="fgv-description">Curso Segurança Digital</p>
                               </div>
                            </div>
@@ -1026,7 +1028,7 @@
                               <div class="timeline-item-inner outer-shadow">
                                  <i class="fa-solid fa-graduation-cap  icon"></i>
 
-                                 <h3 id="hour-title">Cursos 24horas</h3>
+                                 <h3 class="college-name" id="hour-title">Cursos 24horas</h3>
                                  <p id="hour-description">Curso Auxiliar Administrativo</p>
                               </div>
                            </div>
