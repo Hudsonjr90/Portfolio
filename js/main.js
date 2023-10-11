@@ -362,7 +362,7 @@ function loadEnglishContent() {
   document.getElementById("inglesBtn").textContent = "English";
   document.getElementById("portuguesBtn").textContent = "Portuguese";
   document.getElementById("experiencias").textContent = "Experiences";
-  document.getElementById("tecnologias").textContent = "Technologies";
+  document.getElementById("tecnologias").textContent = "Skills";
   document.getElementById("formacao-cursos").textContent = "Education/Courses";
   document.querySelectorAll(".anos").forEach(function (element) {
     element.textContent = "Years";
