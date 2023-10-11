@@ -272,7 +272,7 @@
 }
 
 .home-section .home-img .img-box {
-  max-width: 45rem;
+  width: 60rem;
   display: block;
   margin: auto;
   border-radius: 50%;
@@ -301,6 +301,7 @@
   -ms-flex: 0 0 40%;
   flex: 0 0 40%;
   max-width: 40%;
+  margin-top: -8rem;
 }
 
 .about-section .about-img .social-links {
@@ -1167,6 +1168,7 @@
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
+    margin-top: -26rem;
   }
 
   .home-section .home-img{
@@ -1189,7 +1191,7 @@
 
   .home-section .home-img .img-box {
     margin-bottom: 4rem;
-    max-width: 35rem;
+    max-width: 36rem;
   }
 
   .home-section .effect-3 {
@@ -1300,7 +1302,7 @@
 }
 @media (max-width: 574px) {
   .home-section .home-img .img-box {
-    width: 25rem;
+    min-width: 36rem;
   }
 
   .home-section .home-text h2 {
@@ -1753,7 +1755,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: -45px;
+  margin-top: -4rem;
 }
 .copy p {
   color: #fff;
