@@ -1479,6 +1479,10 @@ img {
   border: none;
 }
 
+.btn-2:hover{
+  color: #ffff;
+}
+
 .btn-1:after {
   border-radius: 3rem;
 }
