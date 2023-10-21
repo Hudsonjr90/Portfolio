@@ -2215,3 +2215,7 @@ img {
   margin: 1.2rem;
 }
 
+::selection{
+  color: #04d361;
+  background: #fff;
+}
