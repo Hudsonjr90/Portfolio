@@ -89,7 +89,7 @@
   content: "";
   position: absolute;
   left: 0;
-  width: 100%;
+  width: 65%;
   height: 100%;
   background-color: var(--white);
 }
@@ -2018,23 +2018,15 @@ img {
   border-bottom: none;
 }
 
-.menu-icon-1 {
+.menu-icon-1, 
+.menu-icon-2, 
+.menu-icon-3, 
+.menu-icon-4{
   font-size: 3rem;
   margin: 1.2rem;
   }
 
-.menu-icon-2{
-  font-size: 3rem;
-  margin: 1.2rem;
-}
-.menu-icon-3{
-  font-size: 3rem;
-  margin: 1.2rem;
-}
-.menu-icon-4{
-  font-size: 3rem;
-  margin: 1.2rem;
-}
+
 
 ::selection{
   color: var(--green);
