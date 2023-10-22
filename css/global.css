@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
+:root{
+  --black: #2b2c2f;
+  --green: #04d361;
+  --light-dark: #353535;
+  --light-grey: #bbb;
+  --modal-color: #525458;
+  --modal-header: #6b6b6b;
+  --white: #fff;
+
+}
+
 @font-face {
   font-family: "Pacifico";
   font-style: normal;
@@ -69,7 +80,7 @@
   display: none;
   height: 0.3rem;
   width: 1.4rem;
-  background-color: #fff;
+  background-color: var(--white);
   position: relative;
 }
 
@@ -80,7 +91,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .header .hamburguer-btn span::before {
@@ -93,7 +104,7 @@
 
 .nav-menu {
   position: fixed;
-  background-color: #2b2c2f;
+  background-color: var(--black);
   padding: 0 1.5rem;
   left: 0;
   top: 0;
@@ -137,7 +148,7 @@
   font-size: 2.8rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   padding: 0.5rem 4rem;
   border-radius: 3rem;
   -webkit-transition: all 0.3s ease;
@@ -149,10 +160,10 @@
 }
 
 .nav-menu .nav-menu-inner ul li a.active {
-  color: #04d361;
+  color: var(--green);
 }
 .menu-icon-1 .menu-icon-2 .menu-icon-3 .menu-icon-4 .nav-menu .nav-menu-inner ul li a i.active{
-  color: #04d361;
+  color: var(--green);
 }
 
 .nav-menu.open {
@@ -169,7 +180,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #2b2c2f;
+  background-color: var(--black);
   z-index: -1;
   visibility: hidden;
 }
@@ -223,7 +234,7 @@
   font-size: 5.5rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   margin: 0;
 }
 
@@ -231,7 +242,7 @@
   font-size: 2rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #04d361;
+  color: var(--green);
   margin: 0;
 }
 
@@ -317,7 +328,7 @@
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   margin: 0 0.4rem;
   border-radius: 50%;
   -webkit-transition: all 0.3s ease;
@@ -329,7 +340,7 @@
 }
 
 .about-section .about-img .social-links a:hover {
-  color: #04d361;
+  color: var(--green);
 }
 
 .about-section .about-img .social-links a i {
@@ -365,7 +376,7 @@
   font-family: "Baloo 2", sans-serif;
   line-height: 2.6rem;
   margin-bottom: 1.5rem;
-  color: rgb(255, 255, 255);
+  color: var(--white);
 }
 
 .about-section .about-info .btn-1 {
@@ -390,7 +401,7 @@
   font-size: 1.6rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #04d361;
+  color: var(--green);
   font-weight: 500;
   text-transform: capitalize;
 }
@@ -401,9 +412,9 @@
 }
 
 .about-section .about-tabs .tab-item.active {
-  color: #ffffff;
+  color: var(--white);
   cursor: default;
-  border: 3px solid #04d361;
+  border: 3px solid var(--green);
 }
 
 .about-section .about-section .tab-content {
@@ -442,7 +453,7 @@
   border-radius: 1rem;
   padding: 3rem;
   border: 3px solid transparent;
-  color: #ffff;
+  color: var(--white);
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   position: relative;
@@ -466,7 +477,7 @@
   .conhecimento
   h3 {
   font-size: 2rem;
-  color: #fff;
+  color: var(--white);
   margin-bottom: 1rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
@@ -479,7 +490,7 @@
   .conhecimento
   p {
   font-size: 1.5rem;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
 }
@@ -490,8 +501,8 @@
   .skill-content
   .conhecimento:hover {
   cursor: pointer;
-  color: #04d361;
-  border: 3px solid #04d361;
+  color: var(--green);
+  border: 3px solid var(--green);
 }
 
 .about-section
@@ -520,7 +531,7 @@
   height: 100%;
   left: 50%;
   top: 0;
-  background-color: #353535;
+  background-color: var(--light-dark);
   position: absolute;
 }
 
@@ -585,7 +596,7 @@
   position: absolute;
   width: 3rem;
   height: 0.1rem;
-  background-color: #353535;
+  background-color: var(--light-dark);
   top: 3.7rem;
   z-index: -1;
 }
@@ -593,56 +604,56 @@
 .about-section .services .timeline .timeline-item .timeline-item-inner .icon {
   height: 4rem;
   width: 4rem;
-  background-color: #2b2c2f;
+  background-color: var(--black);
   text-align: center;
-  border: 0.1rem solid #353535;
+  border: 0.1rem solid var(--light-dark);
   border-radius: 50%;
   line-height: 4rem;
   font-size: 3rem;
-  color: #04d361;
+  color: var(--green);
   position: absolute;
   top: 1.8rem;
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner i {
   font-size: 5rem;
-  color: #04d361;
+  color: var(--green);
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h1 {
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner h2 {
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h3 {
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner p{
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: var(--white);
 }
 
 .experience-date{
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   text-decoration: underline;
 }
 
 .college-name{
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   text-decoration: underline;
 }
 
@@ -673,7 +684,7 @@
   cursor: pointer;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #04d361;
+  color: var(--green);
   text-transform: capitalize;
   font-size: 1.6rem;
   -webkit-transition: all 0.3s ease;
@@ -685,8 +696,8 @@
 }
 
 .portfolio-section .portfolio-filter .filter-item.active {
-  color: #ffff;
-  border: 1px solid #04d361;
+  color: var(--white);
+  border: 1px solid var(--green);
 }
 
 .portfolio-section .portfolio-item {
@@ -743,7 +754,7 @@
   font-size: 1.6rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #04d361;
+  color: var(--green);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: absolute;
@@ -765,7 +776,7 @@
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   margin: 1rem 0 0;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   text-transform: capitalize;
 }
 
@@ -787,7 +798,7 @@
 }
 
 .portfolio-popup {
-  background-color: #2b2c2f;
+  background-color: var(--black);
   position: fixed;
   left: 0;
   top: 0;
@@ -830,7 +841,7 @@
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   text-transform: capitalize;
-  color: #fff;
+  color: var(--white);
   margin: 0 0 1.5rem;
 }
 
@@ -843,7 +854,7 @@
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   text-transform: capitalize;
-  color: #fff;
+  color: var(--white);
   margin: 0 0 0.5rem;
 }
 
@@ -851,9 +862,9 @@
   font-size: 1.4rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   margin: 0 0 1.5rem;
-  border-bottom: 0.1rem solid #353535;
+  border-bottom: 0.1rem solid var(--light-dark);
   padding-bottom: 1rem;
 }
 
@@ -875,7 +886,7 @@
   font-size: 1.6rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   line-height: 2.6rem;
   margin: 0;
   padding-bottom: 3rem;
@@ -896,7 +907,7 @@
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li {
   margin-bottom: 1rem;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   font-size: 1.6rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
@@ -910,7 +921,7 @@
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li a {
   text-transform: lowercase;
-  color: #04d361;
+  color: var(--green);
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li:last-child {
@@ -921,7 +932,7 @@
   height: 0.1rem;
   width: 100%;
   display: block;
-  color: #353535;
+  color: var(--light-dark);
 }
 
 .portfolio-popup .pp-main {
@@ -947,7 +958,7 @@
   height: 100%;
   width: 100%;
   z-index: 1005;
-  background-color: rgba(43, 44, 47, 0.5);
+  background-color: var(--black);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -969,7 +980,7 @@
 .portfolio-popup .pp-main .pp-loader div {
   height: 4rem;
   width: 4rem;
-  border: 0.3rem solid #04d361;
+  border: 0.3rem solid var(--green);
   border-radius: 50%;
   border-right: 0.3rem solid transparent;
   -webkit-animation: spin 2s linear infinite;
@@ -996,7 +1007,7 @@
   font-size: 1.6rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #04d361;
+  color: var(--green);
   cursor: pointer;
   padding: 0 1.5rem;
   top: 1.5rem;
@@ -1024,14 +1035,14 @@
   text-align: center;
   line-height: 3.5rem;
   font-size: 3.5rem;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .portfolio-popup .pp-main .pp-main-inner .pp-close:hover {
-  color: #04d361;
+  color: var(--green);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1047,7 +1058,7 @@
   line-height: 4rem;
   bottom: 0.5rem;
   font-size: 1.6rem;
-  color: #bbb;
+  color: var(--light-grey);
 }
 
 .portfolio-popup .pp-main .pp-prev,
@@ -1060,7 +1071,7 @@
   font-size: 2rem;
   cursor: pointer;
   z-index: 1010;
-  color: #fff;
+  color: var(--white);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   opacity: 0.6;
@@ -1115,12 +1126,12 @@
 
 .contact-section .contact-item .contact-item-inner i {
   font-size: 4.9rem;
-  color: #ffff;
+  color: var(--white);
   cursor: pointer;
 }
 .contact-section .contact-item .contact-item-inner i:hover {
   font-size: 4.9rem;
-  color: #04d361;
+  color: var(--green);
   cursor: pointer;
 }
 
@@ -1129,7 +1140,7 @@
   font-size: 1.6rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   margin: 1.5rem 0 1rem;
   text-transform: capitalize;
 }
@@ -1138,7 +1149,7 @@
   font-size: 1.6rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: var(--white);
   line-height: 2.6rem;
   margin: 0;
   word-break: break-word;
@@ -1194,15 +1205,15 @@
     max-width: 36rem;
   }
 
-  .home-section .effect-3 {
+  .home-section {
     margin-left: -6rem;
   }
 
-  .home-section .effect-4 {
+  .home-section {
     left: 15%;
   }
 
-  .home-section .effect-5 {
+  .home-section {
     right: 4%;
   }
 
@@ -1260,7 +1271,6 @@
 
   .header .hamburguer-btn {
     display: block;
-    left: 32rem;
   }
   .header .hamburguer-btn span {
     display: block;
@@ -1334,12 +1344,12 @@ html ::-webkit-scrollbar {
 }
 
 html ::-webkit-scrollbar-thumb {
-  background: #04d361;
+  background: var(--green);
 }
 
 body {
   font-size: 1.6rem;
-  background-color: #2b2c2f;
+  background-color: var(--black);
   overflow-x: hidden;
 }
 
@@ -1449,7 +1459,7 @@ img {
   font-size: 16px;
   font-weight: 700;
   font-family: "Baloo 2", sans-serif;
-  color: #ffff;
+  color: var(--white);
   background-color: transparent;
   line-height: 1.5;
   cursor: pointer;
@@ -1461,14 +1471,14 @@ img {
 }
 
 .btn-1:hover {
-  color: #04d361;
+  color: var(--green);
 }
 .btn-2 {
   padding: 1rem 1.5rem;
   font-size: 16px;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  color: #04d361;
+  color: var(--green);
   background-color: transparent;
   line-height: 1.5;
   cursor: pointer;
@@ -1480,7 +1490,7 @@ img {
 }
 
 .btn-2:hover{
-  color: #ffff;
+  color: var(--white);
 }
 
 .btn-1:after {
@@ -1490,7 +1500,7 @@ img {
   padding: 1rem 2.5rem;
   font-size: 16px;
   font-weight: 500;
-  color: #ffff;
+  color: var(--white);
   background-color: transparent;
   line-height: 1.5;
   cursor: pointer;
@@ -1502,7 +1512,7 @@ img {
 }
 
 .btn-3:hover {
-  color: #04d361;
+  color: var(--green);
 }
 
 .btn-3:after {
@@ -1512,195 +1522,6 @@ img {
 .effect-wrap .effect {
   position: absolute;
   z-index: -1;
-}
-
-.effect-1 {
-  width: 3rem;
-  height: 3rem;
-  border: 0.4rem solid #8a49ff;
-  right: 10%;
-  bottom: 10%;
-  -webkit-animation: spin 10s linear infinite;
-  animation: spin 10s linear infinite;
-}
-
-.effect-2 {
-  left: 3%;
-  bottom: 20%;
-  width: 4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-animation: topBounce 3s ease-in-out infinite;
-  animation: topBounce 3s ease-in-out infinite;
-}
-
-.effect-2 div {
-  height: 0.3rem;
-  width: 0.3rem;
-  background-color: #ff9c07;
-  margin: 0 0.3rem 0.8rem;
-}
-
-.effect-3 {
-  height: 180px;
-  width: 180px;
-  border: 25px solid #04d361;
-  border-radius: 50%;
-  left: 50%;
-  top: -12rem;
-  -webkit-animation: leftBounce 3s ease-in-out infinite;
-  animation: leftBounce 3s ease-in-out infinite;
-}
-
-.effect-4 {
-  border-top: 3rem solid transparent;
-  border-left: 3rem solid #06d79c;
-  left: 30%;
-  top: 20%;
-  -webkit-animation: spin 15s linear infinite;
-  animation: spin 15s linear infinite;
-}
-
-.effect-4::before {
-  content: "";
-  border-top: 3rem solid transparent;
-  border-left: 3rem solid #06d79c;
-  position: absolute;
-  opacity: 0.5;
-  left: -3rem;
-  top: -2.5rem;
-}
-
-.effect-5 {
-  height: 5rem;
-  width: 5rem;
-  right: 10%;
-  top: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  border-radius: 50%;
-  overflow: hidden;
-  -webkit-animation: spin 15s linear infinite;
-  animation: spin 15s linear infinite;
-}
-
-.effect-5 div {
-  width: 0.1rem;
-  background-color: #4dd0e1;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes topBounce {
-  0%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  50% {
-    -webkit-transform: translateY(2.5rem);
-    transform: translateY(2.5rem);
-  }
-}
-
-@keyframes topBounce {
-  0%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  50% {
-    -webkit-transform: translateY(2.5rem);
-    transform: translateY(2.5rem);
-  }
-}
-
-@-webkit-keyframes leftBounce {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  50% {
-    -webkit-transform: translateX(2.5rem);
-    transform: translateX(2.5rem);
-  }
-}
-
-@keyframes leftBounce {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  50% {
-    -webkit-transform: translateX(2.5rem);
-    transform: translateX(2.5rem);
-  }
-}
-
-@-webkit-keyframes fadeInTop {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-2.5rem);
-    transform: translateY(-2.5rem);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInTop {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-2.5rem);
-    transform: translateY(-2.5rem);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
 }
 
 .section-title {
@@ -1718,7 +1539,7 @@ img {
   font-family: "Baloo 2", sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   text-transform: uppercase;
   margin: 0;
 }
@@ -1728,7 +1549,7 @@ img {
   display: block;
   font-size: 1.6rem;
   font-weight: 500;
-  color: #04d361;
+  color: var(--green);
 }
 
 .section.hide {
@@ -1736,8 +1557,8 @@ img {
 }
 
 .btn-link-p {
-  color: #ffffff;
-  border-bottom: 0.3rem solid #04d361;
+  color: var(--white);
+  border-bottom: 0.3rem solid var(--green);
   margin: 0 0.5rem 1rem;
   padding: 0.5rem 1rem;
   font-size: 16px;
@@ -1751,7 +1572,7 @@ img {
 }
 
 .btn-link-p:hover {
-  color: #04d361;
+  color: var(--green);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1762,11 +1583,11 @@ img {
   margin-top: -4rem;
 }
 .copy p {
-  color: #fff;
+  color: var(--white);
   font-size: 1em;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
-  border-bottom: 0.2em solid #04d361;
+  border-bottom: 0.2em solid var(--green);
 }
 
 .copy p:hover {
@@ -1790,28 +1611,28 @@ img {
 }
 
 .box:hover {
-  box-shadow: 10px 10px 5px 0px #04d361;
+  box-shadow: 10px 10px 5px 0px var(--green);
 }
 .tab-item1 {
-  color: #fff;
+  color: var(--white);
   font-size: 1.2em;
   font-style: normal;
   text-decoration-thickness: 2px;
 }
 .tab-item1:hover {
-  color: #04d361;
+  color: var(--green);
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   position: relative;
 }
 .tab-item2 {
-  color: #fff;
+  color: var(--white);
   font-size: 1.2em;
   font-style: normal;
   text-decoration-thickness: 2px;
 }
 .tab-item2:hover {
-  color: #04d361;
+  color: var(--green);
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   position: relative;
@@ -1828,22 +1649,22 @@ img {
 }
 
 .modal-content {
-  background-color: #525458;
+  background-color: var(--modal-color);
   width: 300px;
   font-size: 15px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: var(--white);
   border-radius: 15px;
 }
 
 .cabecalho-modal {
   padding: 4px 0 1px;
-  background: #04d361;
+  background: var(--green);
   text-align: center;
-  border-bottom: 1px solid #6b6b6b;
+  border-bottom: 1px solid var(--modal-header);
   border-radius: 8px;
 }
 
@@ -1886,7 +1707,7 @@ img {
   font-size: 4rem;
   text-align: center;
   background: none;
-  color: #fff;
+  color: var(--white);
   margin: 0 1.4rem;
   border-radius: 50%;
   -webkit-transition: all 0.3s ease;
@@ -1902,7 +1723,7 @@ img {
 
 .button-play:hover,
 .button-pause:hover {
-  color: #04d361;
+  color: var(--green);
 }
 
 .button-play,
@@ -1974,7 +1795,7 @@ img {
 .progress-value {
   animation: load 10s normal forwards;
   border-radius: 1rem;
-  background-color: rgb(43, 194, 83);
+  background-color: var(--green);
   height: 2rem;
   width: 0;
 }
@@ -2001,7 +1822,7 @@ img {
 .progress-value-90 {
   animation: load90 10s normal forwards;
   border-radius: 1rem;
-  background-color: rgb(43, 194, 83);
+  background-color: var(--green);
   height: 2rem;
   width: 0;
 }
@@ -2028,7 +1849,7 @@ img {
 .progress-value-80 {
   animation: load80 10s normal forwards;
   border-radius: 1rem;
-  background-color: rgb(43, 194, 83);
+  background-color: var(--green);
   height: 2rem;
   width: 0;
 }
@@ -2054,7 +1875,7 @@ img {
 .progress-value-70 {
   animation: load70 10s normal forwards;
   border-radius: 1rem;
-  background-color: rgb(43, 194, 83);
+  background-color: var(--green);
   height: 2rem;
   width: 0;
 }
@@ -2081,7 +1902,7 @@ img {
 .progress-value-50 {
   animation: load50 10s normal forwards;
   border-radius: 1rem;
-  background-color: rgb(43, 194, 83);
+  background-color: var(--green);
   height: 2rem;
   width: 0;
 }
@@ -2107,7 +1928,7 @@ img {
 .progress-value-20 {
   animation: load20 10s normal forwards;
   border-radius: 1rem;
-  background-color: rgb(43, 194, 83);
+  background-color: var(--green);
   height: 2rem;
   width: 0;
 }
@@ -2127,8 +1948,8 @@ img {
   bottom: 2rem;
   right: 2rem;
   z-index: 99;
-  background-color: #04d361;
-  color: #ffffff;
+  background-color: var(--green);
+  color: var(--white);
   border: none;
   border-radius: 50%;
   width: 2.8rem;
@@ -2140,20 +1961,20 @@ img {
 }
 
 .scroll-button:hover {
-  background-color: #ffffff;
-  color: #04d361;
+  background-color: var(--white);
+  color: var(--green);
 }
 .logo-icon {
-  color: #ffffff;
+  color: var(--white);
   font-size: 5rem;
 }
 .logo-icon:hover {
-  color: #04d361;
+  color: var(--green);
   font-size: 5rem;
 }
 
 .logo-icon-name {
-  color: #ffffff;
+  color: var(--white);
   font-size: 5rem;
   display: flex;
   justify-content: end;
@@ -2181,19 +2002,19 @@ img {
   border-radius: 5rem;
   background-color: transparent;
   padding: 1rem 1rem 1rem 1rem;
-  color: #fff;
-  border-bottom: 0.25rem solid #fff;
+  color: var(--white);
+  border-bottom: 0.25rem solid var(--white);
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .menu-button:hover {
-  color: #04d361;
-  border-bottom: 0.25rem solid #04d361;
+  color: var(--green);
+  border-bottom: 0.25rem solid var(--green);
 }
 .menu-button.active{
-  color: #04d361;
-  border-top: 0.25rem solid #04d361;
+  color: var(--green);
+  border-top: 0.25rem solid var(--green);
   border-bottom: none;
 }
 
@@ -2216,6 +2037,6 @@ img {
 }
 
 ::selection{
-  color: #04d361;
-  background: #fff;
+  color: var(--green);
+  background: var(--white);
 }
