@@ -402,7 +402,6 @@
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   color: var(--green);
-  font-weight: 500;
   text-transform: capitalize;
 }
 
@@ -1499,8 +1498,9 @@ img {
 }
 .btn-3 {
   padding: 1rem 2.5rem;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "Baloo 2", sans-serif;
   color: var(--white);
   background-color: transparent;
   line-height: 1.5;
@@ -1549,7 +1549,7 @@ img {
   content: attr(data-heading);
   display: block;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--green);
 }
 
@@ -1671,7 +1671,9 @@ img {
 
 .cabecalho-modal h3 {
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 2rem;
 }
 
 .footer-modal {
@@ -1681,20 +1683,23 @@ img {
 }
 
 .footer-modal button {
-  height: 40px;
-  padding: 0px 15px;
-  border-radius: 20px;
+  height: 4rem;
+  padding: 0 1.5rem;
+  border-radius: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-weight: 700;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 2rem;
 }
 
 .fechar {
   position: relative;
   display: flex;
-  top: 0px;
-  right: 3px;
+  top: 0;
+  right: 0.3rem;
   flex-direction: row;
   justify-content: flex-end;
   width: 7%;
