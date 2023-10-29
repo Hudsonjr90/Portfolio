@@ -406,8 +406,9 @@
 }
 
 .about-section .about-tabs .tab-item:hover:not(.active) {
-  opacity: 0.6;
+  opacity: 0.9;
   cursor: pointer;
+  color: var(--white)
 }
 
 .about-section .about-tabs .tab-item.active {
@@ -1614,25 +1615,13 @@ img {
 .box:hover {
   box-shadow: 10px 10px 5px 0px var(--green);
 }
-.tab-item1 {
+.tab-item-2 {
   color: var(--white);
   font-size: 1.2em;
   font-style: normal;
   text-decoration-thickness: 2px;
 }
-.tab-item1:hover {
-  color: var(--green);
-  -webkit-transition: 0.4s ease;
-  transition: 0.4s ease;
-  position: relative;
-}
-.tab-item2 {
-  color: var(--white);
-  font-size: 1.2em;
-  font-style: normal;
-  text-decoration-thickness: 2px;
-}
-.tab-item2:hover {
+.tab-item-2:hover {
   color: var(--green);
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
