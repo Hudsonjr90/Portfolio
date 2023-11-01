@@ -374,12 +374,12 @@ function loadEnglishContent() {
     element.textContent = "Months";
   });
 
-  document.getElementById("cast-title").textContent = "Cast Group";
+  document.getElementById("cast-title").textContent = "Cast Computing S.A.";
   document.getElementById("cast-name").textContent =
     "Fullstack Developer";
   document.getElementById("cast-description").textContent =
     "Working directly with external clients on code maintenance/refactoring directives, using Angular and TypeScript on the Frontend, as well as Java with Spring Boot on the Backend and PostgresSQL as the database.";
-  document.getElementById("cast-date").textContent = "August 2022 - Present";
+  document.getElementById("cast-date").textContent = "August 2022 - October 2023";
 
   document.getElementById("vilt-title").textContent =
     "VILT Brazil Information Systems";
