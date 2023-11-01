@@ -1205,18 +1205,6 @@
     max-width: 36rem;
   }
 
-  .home-section {
-    margin-left: -6rem;
-  }
-
-  .home-section {
-    left: 15%;
-  }
-
-  .home-section {
-    right: 4%;
-  }
-
   .about-section .about-img {
     padding-bottom: 3rem;
   }
@@ -1289,13 +1277,16 @@
     right: auto;
   }
 
-  .about-section .container-skill .skills-container .skill-content {
+  .about-section, .container-skill, .skills-container, .skill-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     align-items: center;
-    margin-left: 9rem;
+  }
+
+  .about-section .container-skill{
+     margin-left: 9rem;
   }
 
   .portfolio-popup .pp-details {
