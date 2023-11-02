@@ -1442,14 +1442,6 @@ img {
     transform: scale(1);
   }
 }
-
-.box {
-  box-shadow: 10px 10px 5px 0px rgba(119, 117, 117, 0.75);
-}
-
-.box:hover {
-  box-shadow: 10px 10px 5px 0px var(--green);
-}
 .tab-item-2 {
   color: var(--white);
   font-size: 1.2em;
@@ -1613,48 +1605,50 @@ img {
 }
 
 .progress {
-  justify-content: flex-start;
-  border-radius: 1rem;
-  align-items: center;
+  box-sizing: content-box;
+  height: 2rem; 
   position: relative;
-  padding: 0 5px;
-  display: flex;
-  width: 100%;
+  background: var(--light-dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 1px;
+  border: 1px solid var(--white);
 }
 
-.progress-value {
-  animation: load 10s normal forwards;
+.progress-value{
+	height:2rem;
+	width:0;
   border-radius: 1rem;
-  background-color: var(--green);
-  height: 2rem;
-  width: 0;
+	background:  var(--green) 1.813rem 1.813rem;
+  animation: load 3s forwards linear;
 }
 
 @keyframes load {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+		0% {
+width: 0;
+ }
+		100% {
+width: 100%;
+ }
 }
 
 .progress-90 {
-  justify-content: flex-start;
-  border-radius: 1rem;
-  align-items: center;
+  box-sizing: content-box;
+  height: 2rem; 
   position: relative;
-  padding: 0 5px;
-  display: flex;
-  width: 100%;
+  background: var(--light-dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 1px;
+  border: 1px solid var(--white);
 }
 
 .progress-value-90 {
-  animation: load90 10s normal forwards;
+	height:2rem;
+	width:0;
   border-radius: 1rem;
-  background-color: var(--green);
-  height: 2rem;
-  width: 0;
+	background:  var(--green) 1.813rem 1.813rem;
+  animation: load90 3s forwards linear;
 }
 
 @keyframes load90 {
@@ -1667,21 +1661,22 @@ img {
 }
 
 .progress-80 {
-  justify-content: flex-start;
-  border-radius: 1rem;
-  align-items: center;
+  box-sizing: content-box;
+  height: 2rem; 
   position: relative;
-  padding: 0 5px;
-  display: flex;
-  width: 100%;
+  background: var(--light-dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 1px;
+  border: 1px solid var(--white);
 }
 
 .progress-value-80 {
-  animation: load80 10s normal forwards;
+  height:2rem;
+	width:0;
   border-radius: 1rem;
-  background-color: var(--green);
-  height: 2rem;
-  width: 0;
+  background:  var(--green) 1.813rem 1.813rem;
+  animation: load80 3s forwards linear;
 }
 
 @keyframes load80 {
@@ -1693,21 +1688,22 @@ img {
   }
 }
 .progress-70 {
-  justify-content: flex-start;
-  border-radius: 1rem;
-  align-items: center;
+  box-sizing: content-box;
+  height: 2rem; 
   position: relative;
-  padding: 0 5px;
-  display: flex;
-  width: 100%;
+  background: var(--light-dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 1px;
+  border: 1px solid var(--white);
 }
 
 .progress-value-70 {
-  animation: load70 10s normal forwards;
+	height:2rem;
+	width:0;
   border-radius: 1rem;
-  background-color: var(--green);
-  height: 2rem;
-  width: 0;
+	background:  var(--green) 1.813rem 1.813rem;
+  animation: load70 3s forwards linear;
 }
 
 @keyframes load70 {
@@ -1720,21 +1716,22 @@ img {
 }
 
 .progress-50 {
-  justify-content: flex-start;
-  border-radius: 1rem;
-  align-items: center;
+  box-sizing: content-box;
+  height: 2rem; 
   position: relative;
-  padding: 0 5px;
-  display: flex;
-  width: 100%;
+  background: var(--light-dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 1px;
+  border: 1px solid var(--white);
 }
 
 .progress-value-50 {
-  animation: load50 10s normal forwards;
+  height:2rem;
+	width:0;
   border-radius: 1rem;
-  background-color: var(--green);
-  height: 2rem;
-  width: 0;
+  background:  var(--green) 1.813rem 1.813rem;
+  animation: load50 3s forwards linear;
 }
 
 @keyframes load50 {
@@ -1746,21 +1743,22 @@ img {
   }
 }
 .progress-30 {
-  justify-content: flex-start;
-  border-radius: 1rem;
-  align-items: center;
+  box-sizing: content-box;
+  height: 2rem; 
   position: relative;
-  padding: 0 5px;
-  display: flex;
-  width: 100%;
+  background: var(--light-dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 1px;
+  border: 1px solid var(--white);
 }
 
 .progress-value-30 {
-  animation: load30 10s normal forwards;
+	height:2rem;
+	width:0;
   border-radius: 1rem;
-  background-color: var(--green);
-  height: 2rem;
-  width: 0;
+	background:  var(--green) 1.813rem 1.813rem;
+  animation: load30 3s forwards linear;
 }
 
 @keyframes load30 {
@@ -1772,21 +1770,22 @@ img {
   }
 }
 .progress-20 {
-  justify-content: flex-start;
-  border-radius: 1rem;
-  align-items: center;
+  box-sizing: content-box;
+  height: 2rem; 
   position: relative;
-  padding: 0 5px;
-  display: flex;
-  width: 100%;
+  background: var(--light-dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 1px;
+  border: 1px solid var(--white);;
 }
 
 .progress-value-20 {
-  animation: load20 10s normal forwards;
+	height:2rem;
+	width:0;
   border-radius: 1rem;
-  background-color: var(--green);
-  height: 2rem;
-  width: 0;
+	background:  var(--green) 1.813rem 1.813rem;
+  animation: load20 3s forwards linear;
 }
 
 @keyframes load20 {
@@ -1799,21 +1798,22 @@ img {
 }
 
 .progress-10 {
-  justify-content: flex-start;
-  border-radius: 1rem;
-  align-items: center;
+  box-sizing: content-box;
+  height: 2rem; 
   position: relative;
-  padding: 0 5px;
-  display: flex;
-  width: 100%;
+  background: var(--light-dark);
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: inset 0 -1px 1px;
+  border: 1px solid var(--white);
 }
 
 .progress-value-10 {
-  animation: load10 10s normal forwards;
+  height:2rem;
+	width:0;
   border-radius: 1rem;
-  background-color: var(--green);
-  height: 2rem;
-  width: 0;
+	background:  var(--green) 1.813rem 1.813rem;
+  animation: load10 3s forwards linear;
 }
 
 @keyframes load10 {
