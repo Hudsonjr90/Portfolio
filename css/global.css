@@ -625,23 +625,39 @@
   font-weight: 700;
   color: var(--white);
 }
+.about-section .services .timeline .timeline-item .timeline-item-inner h1:hover{
+  color: var(--green);
+}
+
 .about-section .services .timeline .timeline-item .timeline-item-inner h2 {
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   color: var(--white);
 }
+.about-section .services .timeline .timeline-item .timeline-item-inner h2:hover{
+  color: var(--green);
+}
+
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h3 {
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   color: var(--white);
 }
+.about-section .services .timeline .timeline-item .timeline-item-inner h3:hover{
+  color: var(--green);
+}
+
 
 .about-section .services .timeline .timeline-item .timeline-item-inner p{
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   color: var(--white);
 }
+.about-section .services .timeline .timeline-item .timeline-item-inner p:hover{
+  color: var(--green);
+}
+
 
 .experience-date{
   font-family: "Baloo 2", sans-serif;
@@ -1978,8 +1994,6 @@ width: 100%;
   background: var(--color);
   color: var(--green);
 }
-
-
 
 @media (max-width: 767px) {
   .contact-section .w-50,
