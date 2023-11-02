@@ -484,23 +484,13 @@ function loadEnglishContent() {
     element.textContent = "Acess";
   });
   document.getElementById("all-title").textContent = "All";
-  document.getElementById("text-hotsite").textContent =
-    "Test project, talking about the workday and the essentiality of ergonomics in the work environment";
-  document.getElementById("search-title").textContent =
-    "World population survey";
-  document.getElementById("search-text").textContent =
-    'Simple design, for researching the world population, through the "restworld" API';
   document.getElementById("react-web").textContent =
     "Simple website, following Udemy Course class guidance";
-  document.getElementById("snake-game").textContent =
-    'Famous snake game, which was a hit on the old Nokia "big brick", recreated to play/run in any browser';
   document.getElementById("memory-game").textContent = "Memory Game";
   document.getElementById("memory-text").textContent =
     "Memory game made in React, to exercise Typescript.";
   document.getElementById("pizza-text").textContent =
     "Landing page, from Pizza&Tutti, one of the best in Rio de Janeiro.";
-  document.getElementById("naruto-game").textContent =
-    "Naruto Run Game 2d made with effects";
   document.getElementById("poke-text").textContent =
     "Pokedex listing some pokemons and informations.";
   document.getElementById("graph-title").textContent = "Chart Js";
@@ -546,6 +536,7 @@ function loadEnglishContent() {
     "Landing Page, created through a technical test.";
   document.getElementById("coke-text").textContent =
     "Coca-Cola Card to practice hover and transform CSS.";
+  document.getElementById("micro-text").textContent = "Home Page of Microsoft Corporation"; 
   document.getElementById("qrcode-text").textContent =
     "QR code generator made to practice methods in JavaScript.";
   document.getElementById("whats-title").textContent =  "Talk on the WhatsApp"
