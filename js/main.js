@@ -523,6 +523,7 @@ function loadEnglishContent() {
     "Math Calculator, with the main operators for calculation, with Light or Dark layout mode";
   document.getElementById("flappy-text").textContent =
     "Classic Flappy Bird game, recreated through the Udemy course class.";
+  document.getElementById("pacman-text").textContent = "Retro Game of Pacman";  
   document.getElementById("clima-title").textContent = "Climate Weather API";
   document.getElementById("clima-text").textContent =
     "Simple Javascript application, to search for the climate and weather of cities around the world through the openweather API.";
