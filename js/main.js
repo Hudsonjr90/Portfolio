@@ -505,9 +505,6 @@ function loadEnglishContent() {
   document.getElementById("conversor-title").textContent = "Currency Converter";
   document.getElementById("conversor-text").textContent =
     "World Currency Converter, made from Udemy course.";
-  document.getElementById("calc-title").textContent = "Flex Calculator";
-  document.getElementById("calc-text").textContent =
-    "Simple Javascript application, to know which fuel should be used.";
   document.getElementById("nu-text").textContent =
     "Clone Nubank page design, made with Rocketseat.";
   document.getElementById("ml-text").textContent =
@@ -518,9 +515,6 @@ function loadEnglishContent() {
   document.getElementById("imc-title").textContent = "BMI Calculator";
   document.getElementById("imc-text").textContent =
     "Basic BMI Calculator, to find out if you are overweight or not.";
-  document.getElementById("math-title").textContent = "Mathematical Calculator";
-  document.getElementById("math-text").textContent =
-    "Math Calculator, with the main operators for calculation, with Light or Dark layout mode";
   document.getElementById("flappy-text").textContent =
     "Classic Flappy Bird game, recreated through the Udemy course class.";
   document.getElementById("pacman-text").textContent = "Retro Game of Pacman";  
@@ -542,6 +536,7 @@ function loadEnglishContent() {
     "QR code generator made to practice methods in JavaScript.";
   document.getElementById("whats-title").textContent =  "Talk on the WhatsApp"
   document.getElementById("mail-title").textContent =  "Send an email"
+  document.getElementById("dino-text").textContent = "Classic Dino Game, from Google Chrome."
 }
 
 /*------------------button play function----------------------- */
