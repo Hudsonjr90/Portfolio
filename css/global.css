@@ -438,6 +438,7 @@
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 4rem;
+  margin-left: -5rem;
 }
 
 .about-section .container-skill .skills-container .skill-content {
@@ -2365,7 +2366,7 @@ img {
   }
 
   .about-section .container-skill{
-     margin-left: 9rem;
+     margin-left: 8rem;
   }
 
   .portfolio-popup .pp-details {
