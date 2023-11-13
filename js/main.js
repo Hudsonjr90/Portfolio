@@ -406,6 +406,15 @@ function loadEnglishContent() {
   document.getElementById("freela-date").textContent =
     "February 2012 - at moment";
 
+  document.getElementById("alltax-date").textContent =
+    "November 2023 - at moment";
+    document.getElementById("alltax-title").textContent = "ALL TAX™ Solutions";
+  document.getElementById("alltax-name").textContent =
+    "Fullstack Developer";
+  document.getElementById("alltax-description").textContent =
+    "lorem ipsum dolor sit amet, consectetur adipiscing";
+
+
   document.getElementById("hour-title").textContent = "24-hour courses";
   document.getElementById("hour-description").textContent =
     "Administrative Assistant Course";
