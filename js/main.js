@@ -695,3 +695,20 @@ menuItems.forEach(item => {
         item.classList.add('inner-shadow', 'active');
     });
 });
+
+// player
+
+document.addEventListener("DOMContentLoaded", function () {
+  var audioPlayer = document.getElementById("audio-player");
+
+  // Verifica se o áudio já foi reproduzido
+  var audioPlayed = localStorage.getItem("audioPlayed");
+
+  if (!audioPlayed) {
+     // Se ainda não foi reproduzido, inicia a reprodução
+     audioPlayer.play();
+
+     // Define a flag indicando que o áudio foi reproduzido
+     localStorage.setItem("audioPlayed", true);
+  }
+});
