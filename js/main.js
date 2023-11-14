@@ -546,6 +546,8 @@ function loadEnglishContent() {
   document.getElementById("whats-title").textContent =  "Talk on the WhatsApp"
   document.getElementById("mail-title").textContent =  "Send an email"
   document.getElementById("dino-text").textContent = "Classic Dino Game, from Google Chrome."
+  document.getElementById("math-title").textContent = "Math Calculator"
+  document.getElementById("math-text").textContent = "Basic math calculator."
 }
 
 /*------------------button play function----------------------- */

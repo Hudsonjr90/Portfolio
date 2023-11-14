@@ -299,9 +299,20 @@
 }
 
 .home-section .home-img .img-box img:hover {
-  transform: scaleX(-1);
+  animation: pulsar 0.5s infinite;
 }
 
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .about-section {
   padding: 4rem 0 0;
   min-height: 100vh;
@@ -1444,21 +1455,6 @@ img {
   border-bottom: 0.2em solid var(--green);
 }
 
-.copy p:hover {
-  animation: pulsar 0.5s infinite;
-}
-
-@keyframes pulsar {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .tab-item-2 {
   color: var(--white);
   font-size: 1.2em;
