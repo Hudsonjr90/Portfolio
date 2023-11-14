@@ -512,7 +512,7 @@
   .skills-container
   .skill-content
   .conhecimento:hover {
-  cursor: progress;
+  cursor: wait; 
   color: var(--green);
   border: 3px solid var(--green);
 }

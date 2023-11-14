@@ -700,7 +700,7 @@ menuItems.forEach(item => {
 
 // Função para abrir link do WhatsApp com mensagem personalizada
 function openWhatsApp() {
-  var message = encodeURIComponent("Olá Hudson, quero fazer um orçamento!");
+  var message = encodeURIComponent("Olá Hudson, gostaria de fazer um orçamento!");
   var whatsappLink = "https://api.whatsapp.com/send?phone=5521969609121&text=" + message;
   window.open(whatsappLink, "_blank");
 }
@@ -708,7 +708,7 @@ function openWhatsApp() {
 // Função para abrir link de e-mail com mensagem personalizada
 function openEmail() {
   var subject = encodeURIComponent("Orçamento");
-  var body = encodeURIComponent("Olá Hudson, quero fazer um orçamento!");
+  var body = encodeURIComponent("Olá Hudson, gostaria de fazer um orçamento!");
   var emailLink = "mailto:hudsonhugo90@gmail.com?subject=" + subject + "&body=" + body;
   window.open(emailLink, "_blank");
 }
