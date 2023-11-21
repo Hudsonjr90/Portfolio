@@ -2295,15 +2295,3 @@ img {
     font-size: 4rem;
   }
 }
-
-/* player */
-
-#audio-player {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  padding: 10px;
-  color: black;
-}
