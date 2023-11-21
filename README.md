@@ -7,7 +7,7 @@
 
 ##  Tecnologias usadas
 
-## Meu portfólio foi criado com Html / CSS(Sass) / Javascript. 
+## Meu portfólio foi criado com Html5 / CSS3 / Javascript. 
 
 
 <table>
