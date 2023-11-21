@@ -348,14 +348,15 @@ function loadEnglishContent() {
   document.getElementById("texto-principal").textContent =
     "Fullstack Developer / Software Engineer.";
   document.getElementById("titulo-sobre-mim").textContent = "About Me";
-  document.getElementById("texto-sobre-mim").innerHTML = `
-  In contact with the technology field for over 10 years, where I started developing in VB.net. During my learning journey, I took some courses. In 2018, 
-  I began my degree in Business Process Management and graduated in 2020. During this time, I continued to be involved in the technology field,
-   where I started studying Java Script and Type Script to work specifically on Front End. I also took several courses to improve myself and grow professionally.</br>
-  In 2021, I started my MBA in Software Engineering and graduated in 2022. I learned a lot about Back End and so on...</br>
-  In February 2023, I started my Master's degree within the Computer Science postgraduate program at Harvard University and graduated.</br>
-  I will continue to enhance myself as a Full Stack Developer and Software Engineer, gaining more experience and contributing to my team!
-    `;
+  document.getElementById(
+    "texto-sobre-mim"
+  ).innerHTML = `With over 10 years of experience in the technology field, I took my initial steps in development using VB.net. 
+  Throughout this journey, I honed my skills through specialized courses. 
+  In 2018, I embarked on a degree in Business Process Management, completing it in 2020. 
+  During this period, I intensified my studies in Java Script and Type Script, focusing on Front-End development. To complement my knowledge, I enrolled in various courses that significantly contributed to my professional growth.
+  In 2021, I advanced my academic journey by enrolling in an MBA in Software Engineering, completing it the following year. This stage provided me with a deeper understanding of Back-End development and related areas.
+  In February 2023, I commenced my Master's degree in the Computer Science postgraduate program at the prestigious Harvard University, where I graduated. This academic experience further expanded my knowledge and perspectives, solidifying my professional standing.
+  My trajectory as a Full Stack Developer and Software Engineer continues to evolve. I am committed to gaining more experience and making substantial contributions to my team's success. The goal is to keep progressing and tackling increasingly complex challenges. `;
   document.getElementById("openModalBtn").textContent = "Resume";
   document.getElementById("titulo-modal").textContent =
     "Choose the CV language";
@@ -375,11 +376,11 @@ function loadEnglishContent() {
   });
 
   document.getElementById("cast-title").textContent = "Cast Computing S.A.";
-  document.getElementById("cast-name").textContent =
-    "Fullstack Developer";
+  document.getElementById("cast-name").textContent = "Fullstack Developer";
   document.getElementById("cast-description").textContent =
     "Working directly with external clients on code maintenance/refactoring directives, using Angular and TypeScript on the Frontend, as well as Java with Spring Boot on the Backend and PostgresSQL as the database.";
-  document.getElementById("cast-date").textContent = "August 2022 - October 2023";
+  document.getElementById("cast-date").textContent =
+    "August 2022 - October 2023";
 
   document.getElementById("vilt-title").textContent =
     "VILT Brazil Information Systems";
@@ -406,14 +407,12 @@ function loadEnglishContent() {
   document.getElementById("freela-date").textContent =
     "February 2012 - at moment";
 
-  document.getElementById("alltax-date").textContent =
-    "November 2023 - at moment";
-    document.getElementById("alltax-title").textContent = "ALL TAX™ Solutions";
-  document.getElementById("alltax-name").textContent =
-    "Fullstack Developer";
-  document.getElementById("alltax-description").textContent =
-    "lorem ipsum dolor sit amet, consectetur adipiscing";
-
+  // document.getElementById("alltax-date").textContent =
+  //   "November 2023 - at moment";
+  // document.getElementById("alltax-title").textContent = "ALL TAX™ Solutions";
+  // document.getElementById("alltax-name").textContent = "Fullstack Developer";
+  // document.getElementById("alltax-description").textContent =
+  //   "lorem ipsum dolor sit amet, consectetur adipiscing";
 
   document.getElementById("hour-title").textContent = "24-hour courses";
   document.getElementById("hour-description").textContent =
@@ -526,7 +525,7 @@ function loadEnglishContent() {
     "Basic BMI Calculator, to find out if you are overweight or not.";
   document.getElementById("flappy-text").textContent =
     "Classic Flappy Bird game, recreated through the Udemy course class.";
-  document.getElementById("pacman-text").textContent = "Retro Game of Pacman";  
+  document.getElementById("pacman-text").textContent = "Retro Game of Pacman";
   document.getElementById("clima-title").textContent = "Climate Weather API";
   document.getElementById("clima-text").textContent =
     "Simple Javascript application, to search for the climate and weather of cities around the world through the openweather API.";
@@ -540,14 +539,16 @@ function loadEnglishContent() {
     "Landing Page, created through a technical test.";
   document.getElementById("coke-text").textContent =
     "Coca-Cola Card to practice hover and transform CSS.";
-  document.getElementById("micro-text").textContent = "Home Page of Microsoft Corporation"; 
+  document.getElementById("micro-text").textContent =
+    "Home Page of Microsoft Corporation";
   document.getElementById("qrcode-text").textContent =
     "QR code generator made to practice methods in JavaScript.";
-  document.getElementById("whats-title").textContent =  "Talk on the WhatsApp"
-  document.getElementById("mail-title").textContent =  "Send an email"
-  document.getElementById("dino-text").textContent = "Classic Dino Game, from Google Chrome."
-  document.getElementById("math-title").textContent = "Math Calculator"
-  document.getElementById("math-text").textContent = "Basic math calculator."
+  document.getElementById("whats-title").textContent = "Talk on the WhatsApp";
+  document.getElementById("mail-title").textContent = "Send an email";
+  document.getElementById("dino-text").textContent =
+    "Classic Dino Game, from Google Chrome.";
+  document.getElementById("math-title").textContent = "Math Calculator";
+  document.getElementById("math-text").textContent = "Basic math calculator.";
 }
 
 /*------------------button play function----------------------- */
@@ -624,20 +625,20 @@ buttonPause.addEventListener("click", () => {
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: "smooth" // Rola suavemente
+    behavior: "smooth", // Rola suavemente
   });
 }
 
 // Adicione um ouvinte de evento de clique a todos os botões com a classe "scroll-button"
 const scrollButtons = document.querySelectorAll(".scroll-button");
-scrollButtons.forEach(button => {
+scrollButtons.forEach((button) => {
   button.addEventListener("click", scrollToTop);
 });
 
 // Verifique a posição da janela e exiba ou oculte os botões com base na largura da tela
 function toggleScrollButtons() {
   // Itera por todos os botões com a classe "scroll-button"
-  scrollButtons.forEach(button => {
+  scrollButtons.forEach((button) => {
     if (window.matchMedia("(max-width: 767px)").matches) {
       if (window.scrollY >= 200) {
         button.style.display = "block";
@@ -660,48 +661,51 @@ window.addEventListener("resize", toggleScrollButtons);
 toggleScrollButtons();
 
 // Selecione o elemento do botão
-const botaoHome = document.querySelector('.home-view');
+const botaoHome = document.querySelector(".home-view");
 
 // Função para verificar a largura da tela e mostrar/ocultar o botão
 function atualizarExibicaoBotao() {
   if (window.innerWidth <= 767) {
-    botaoHome.style.display = 'block'; // Mostrar o botão em telas menores
+    botaoHome.style.display = "block"; // Mostrar o botão em telas menores
   } else {
-    botaoHome.style.display = 'none'; // Ocultar o botão em telas maiores
+    botaoHome.style.display = "none"; // Ocultar o botão em telas maiores
   }
 }
 
 // Chame a função inicialmente e sempre que a janela for redimensionada
 atualizarExibicaoBotao();
-window.addEventListener('resize', atualizarExibicaoBotao);
+window.addEventListener("resize", atualizarExibicaoBotao);
 
 // Captura todos os itens do menu
-const menuItems = document.querySelectorAll('.menu-button');
+const menuItems = document.querySelectorAll(".menu-button");
 
 // Função para remover a classe inner-shadow de todos os itens do menu, exceto o item fornecido
 function removeInnerShadowFromAllExcept(selectedItem) {
-    menuItems.forEach(item => {
-        if (item !== selectedItem) {
-            item.classList.remove('inner-shadow','active');
-        }
-    });
+  menuItems.forEach((item) => {
+    if (item !== selectedItem) {
+      item.classList.remove("inner-shadow", "active");
+    }
+  });
 }
 
 // Adiciona um evento de clique a cada item do menu
-menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        // Remove a classe inner-shadow de todos os itens do menu, exceto o item clicado
-        removeInnerShadowFromAllExcept(item);
+menuItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    // Remove a classe inner-shadow de todos os itens do menu, exceto o item clicado
+    removeInnerShadowFromAllExcept(item);
 
-        // Adiciona a classe inner-shadow ao item do menu clicado
-        item.classList.add('inner-shadow', 'active');
-    });
+    // Adiciona a classe inner-shadow ao item do menu clicado
+    item.classList.add("inner-shadow", "active");
+  });
 });
 
 // Função para abrir link do WhatsApp com mensagem personalizada
 function openWhatsApp() {
-  var message = encodeURIComponent("Olá Hudson, gostaria de fazer um orçamento!");
-  var whatsappLink = "https://api.whatsapp.com/send?phone=5521969609121&text=" + message;
+  var message = encodeURIComponent(
+    "Olá Hudson, gostaria de fazer um orçamento!"
+  );
+  var whatsappLink =
+    "https://api.whatsapp.com/send?phone=5521969609121&text=" + message;
   window.open(whatsappLink, "_blank");
 }
 
@@ -709,10 +713,13 @@ function openWhatsApp() {
 function openEmail() {
   var subject = encodeURIComponent("Orçamento");
   var body = encodeURIComponent("Olá Hudson, gostaria de fazer um orçamento!");
-  var emailLink = "mailto:hudsonhugo90@gmail.com?subject=" + subject + "&body=" + body;
+  var emailLink =
+    "mailto:hudsonhugo90@gmail.com?subject=" + subject + "&body=" + body;
   window.open(emailLink, "_blank");
 }
 
 // Adiciona eventos aos links
-document.getElementById("whatsapp-link").addEventListener("click", openWhatsApp);
+document
+  .getElementById("whatsapp-link")
+  .addEventListener("click", openWhatsApp);
 document.getElementById("email-link").addEventListener("click", openEmail);
