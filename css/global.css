@@ -11,15 +11,7 @@
 
 }
 
-@font-face {
-  font-family: "Pacifico";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Pacifico Regular"), local("Pacifico-Regular"),
-    url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2)
-      format("woff2");
-  font-display: swap;
-}
+
 
 .fa-plus:before {
   content: "\f067";
@@ -370,11 +362,10 @@
 }
 
 .about-section .about-info span {
-  font: 700 'Baloo 2', sans-serif;
+  font: 700 1.8rem 'Baloo 2', sans-serif;
 }
 
 .about-section .about-info p {
-  font: 1.6rem 'Baloo 2', sans-serif;
   line-height: 2.6rem;
   margin-bottom: 1.5rem;
   color: var(--white);
@@ -619,7 +610,7 @@
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h1 {
-  font: 700 'Baloo 2', sans-serif;
+  font: 700 3rem 'Baloo 2', sans-serif;
   color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner h1:hover{
@@ -627,7 +618,7 @@
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h2 {
-  font: 700 'Baloo 2', sans-serif;
+  font: 700 2.5rem 'Baloo 2', sans-serif;
   color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner h2:hover{
@@ -636,7 +627,7 @@
 
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h3 {
-  font: 700 'Baloo 2', sans-serif;
+  font: 700 1.8rem 'Baloo 2', sans-serif;
   color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner h3:hover{
@@ -645,7 +636,7 @@
 
 
 .about-section .services .timeline .timeline-item .timeline-item-inner p{
-  font: 700  'Baloo 2', sans-serif;
+  font: 700 1.7rem 'Baloo 2', sans-serif;
   color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner p:hover{
@@ -660,7 +651,7 @@
 }
 
 .college-name{
-  font: 700 'Baloo 2', sans-serif;
+  font: 700 2rem 'Baloo 2', sans-serif;
   color: var(--white);
   text-decoration: underline;
 }
@@ -1292,7 +1283,7 @@ img {
 }
 .btn-2 {
   padding: 1rem 1.5rem;
-  font: 700 1rem 'Baloo 2', sans-serif;
+  font: 700 1.8rem 'Baloo 2', sans-serif;
   color: var(--green);
   background-color: transparent;
   line-height: 1.5;
@@ -1393,13 +1384,13 @@ img {
 }
 .copy p {
   color: var(--white);
-  font: 700 1rem 'Baloo 2', sans-serif;
+  font: 700 1.7rem 'Baloo 2', sans-serif;
   border-bottom: 0.2em solid var(--green);
 }
 
 .tab-item-2 {
   color: var(--white);
-  font: 1.2em normal;
+  font: 1.2rem normal;
   text-decoration-thickness: 2px;
 }
 .tab-item-2:hover {
