@@ -145,9 +145,7 @@
 
 .nav-menu .nav-menu-inner ul li a {
   display: inline-block;
-  font-size: 2.8rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 2.8rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 0.5rem 4rem;
   border-radius: 3rem;
@@ -231,17 +229,13 @@
 }
 
 .home-section .home-text h2 {
-  font-size: 5.5rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 5.5rem 'Baloo 2', sans-serif;
   color: var(--white);
   margin: 0;
 }
 
 .home-section .home-text .maintext {
-  font-size: 2rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 2rem 'Baloo 2', sans-serif;
   color: var(--green);
   margin: 0;
 }
@@ -335,9 +329,7 @@
   display: inline-block;
   height: 4rem;
   width: 4rem;
-  font-size: 2.5rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 2.5rem 'Baloo 2', sans-serif;
   text-align: center;
   color: var(--white);
   margin: 0 0.4rem;
@@ -378,13 +370,11 @@
 }
 
 .about-section .about-info span {
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 'Baloo 2', sans-serif;
 }
 
 .about-section .about-info p {
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
+  font: 1.6rem 'Baloo 2', sans-serif;
   line-height: 2.6rem;
   margin-bottom: 1.5rem;
   color: var(--white);
@@ -409,9 +399,7 @@
   border-radius: 3rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   color: var(--green);
   text-transform: capitalize;
 }
@@ -488,11 +476,10 @@
   .skill-content
   .conhecimento
   h3 {
-  font-size: 2rem;
+  font: 700 2rem 'Baloo 2', sans-serif;
   color: var(--white);
   margin-bottom: 1rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  
 }
 
 .about-section
@@ -501,10 +488,9 @@
   .skill-content
   .conhecimento
   p {
-  font-size: 1.5rem;
+  font: 700 1.5rem 'Baloo 2', sans-serif;
   color: var(--white);
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+ 
 }
 
 .about-section
@@ -633,8 +619,7 @@
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h1 {
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 'Baloo 2', sans-serif;
   color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner h1:hover{
@@ -642,8 +627,7 @@
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h2 {
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 'Baloo 2', sans-serif;
   color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner h2:hover{
@@ -652,8 +636,7 @@
 
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h3 {
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 'Baloo 2', sans-serif;
   color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner h3:hover{
@@ -662,8 +645,7 @@
 
 
 .about-section .services .timeline .timeline-item .timeline-item-inner p{
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700  'Baloo 2', sans-serif;
   color: var(--white);
 }
 .about-section .services .timeline .timeline-item .timeline-item-inner p:hover{
@@ -672,15 +654,13 @@
 
 
 .experience-date{
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  
   color: var(--white);
   text-decoration: underline;
 }
 
 .college-name{
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 'Baloo 2', sans-serif;
   color: var(--white);
   text-decoration: underline;
 }
@@ -710,11 +690,9 @@
   padding: 0.5rem 1rem;
   border-radius: 3rem;
   cursor: pointer;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   color: var(--green);
   text-transform: capitalize;
-  font-size: 1.6rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -779,9 +757,7 @@
   .portfolio-item-img
   .view-project {
   text-transform: capitalize;
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   color: var(--green);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -800,9 +776,7 @@
 }
 
 .portfolio-section .portfolio-item .portfolio-item-inner p {
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   margin: 1rem 0 0;
   color: var(--white);
   text-transform: capitalize;
@@ -865,9 +839,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-project-details h3 {
-  font-size: 2rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 2rem 'Baloo 2', sans-serif;
   text-transform: capitalize;
   color: var(--white);
   margin: 0 0 1.5rem;
@@ -878,18 +850,14 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title h2 {
-  font-size: 2.8rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 2rem 'Baloo 2', sans-serif;
   text-transform: capitalize;
   color: var(--white);
   margin: 0 0 0.5rem;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p {
-  font-size: 1.4rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.4rem 'Baloo 2', sans-serif;
   color: var(--white);
   margin: 0 0 1.5rem;
   border-bottom: 0.1rem solid var(--light-dark);
@@ -897,8 +865,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p span {
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 'Baloo 2', sans-serif;
   text-transform: capitalize;
 }
 
@@ -911,9 +878,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .description p {
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   color: var(--white);
   line-height: 2.6rem;
   margin: 0;
@@ -921,8 +886,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .description p span {
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700  'Baloo 2', sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info {
@@ -936,14 +900,11 @@
 .portfolio-popup .pp-details .pp-details-inner .info ul li {
   margin-bottom: 1rem;
   color: var(--white);
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li span {
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 'Baloo 2', sans-serif;
   text-transform: capitalize;
 }
 
@@ -1032,9 +993,7 @@
   position: absolute;
   left: 0;
   border-radius: 3rem;
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   color: var(--green);
   cursor: pointer;
   padding: 0 1.5rem;
@@ -1165,18 +1124,14 @@
 
 .contact-section .contact-item .contact-item-inner span {
   display: block;
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   color: var(--white);
   margin: 1.5rem 0 1rem;
   text-transform: capitalize;
 }
 
 .contact-section .contact-item .contact-item-inner p {
-  font-size: 1.6rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   color: var(--white);
   line-height: 2.6rem;
   margin: 0;
@@ -1320,9 +1275,7 @@ img {
 
 .btn-1 {
   padding: 1rem 2.5rem;
-  font-size: 16px;
-  font-weight: 700;
-  font-family: "Baloo 2", sans-serif;
+  font: 700 1rem 'Baloo 2', sans-serif;
   color: var(--white);
   background-color: transparent;
   line-height: 1.5;
@@ -1339,9 +1292,7 @@ img {
 }
 .btn-2 {
   padding: 1rem 1.5rem;
-  font-size: 16px;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1rem 'Baloo 2', sans-serif;
   color: var(--green);
   background-color: transparent;
   line-height: 1.5;
@@ -1362,9 +1313,7 @@ img {
 }
 .btn-3 {
   padding: 1rem 2.5rem;
-  font-size: 1.6rem;
-  font-weight: 700;
-  font-family: "Baloo 2", sans-serif;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   color: var(--white);
   background-color: transparent;
   line-height: 1.5;
@@ -1401,9 +1350,7 @@ img {
 
 .section-title h2 {
   display: inline-block;
-  font-family: "Baloo 2", sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
+  font: 700 3rem 'Baloo 2', sans-serif;
   color: var(--white);
   text-transform: uppercase;
   margin: 0;
@@ -1412,8 +1359,7 @@ img {
 .section-title h2:before {
   content: attr(data-heading);
   display: block;
-  font-size: 1.6rem;
-  font-weight: 700;
+  font: 700 1.6rem;
   color: var(--green);
 }
 
@@ -1426,9 +1372,7 @@ img {
   border-bottom: 0.3rem solid var(--green);
   margin: 0 0.5rem 1rem;
   padding: 0.5rem 1rem;
-  font-size: 16px;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1rem 'Baloo 2', sans-serif;
   line-height: 1.5;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
@@ -1449,16 +1393,13 @@ img {
 }
 .copy p {
   color: var(--white);
-  font-size: 1em;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1rem 'Baloo 2', sans-serif;
   border-bottom: 0.2em solid var(--green);
 }
 
 .tab-item-2 {
   color: var(--white);
-  font-size: 1.2em;
-  font-style: normal;
+  font: 1.2em normal;
   text-decoration-thickness: 2px;
 }
 .tab-item-2:hover {
@@ -1500,9 +1441,7 @@ img {
 
 .cabecalho-modal h3 {
   margin: 0;
-  font-weight: 700;
-  font-family: "Baloo 2", sans-serif;
-  font-size: 2rem;
+  font: 700 2rem 'Baloo 2', sans-serif;
 }
 
 .footer-modal {
@@ -1519,9 +1458,7 @@ img {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-weight: 700;
-  font-family: "Baloo 2", sans-serif;
-  font-size: 2rem;
+  font: 700 2rem 'Baloo 2', sans-serif;
 }
 
 .fechar {
@@ -1652,9 +1589,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', sans-serif;
+  font: 700 1.3rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1709,9 +1644,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', sans-serif;
+  font: 700 1.3rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1766,9 +1699,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', sans-serif;
+  font: 700 1.3rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1824,9 +1755,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', sans-serif;
+  font: 700 1.3rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1882,9 +1811,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', sans-serif;
+  font: 700 1.3rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1940,9 +1867,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', sans-serif;
+  font: 700 1.3rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1998,9 +1923,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', sans-serif;
+  font: 700 1.3rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2056,9 +1979,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', sans-serif;
+  font: 700 1.3rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2132,9 +2053,7 @@ img {
 }
 
 .menu-button {
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
-  font-size: 2.3rem;
+  font: 700 2.3rem 'Baloo 2', sans-serif;
   border-radius: 5rem;
   background-color: transparent;
   padding: 1rem 1rem 1rem 1rem;
@@ -2191,9 +2110,7 @@ img {
 .wrapper .tooltip {
   position: absolute;
   top: 0;
-  font-size: 1.4rem;
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 700;
+  font: 700 1.4rem 'Baloo 2', sans-serif;
   color: var(--white);
   padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
