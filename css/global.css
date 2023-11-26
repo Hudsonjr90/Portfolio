@@ -1330,7 +1330,7 @@ img {
 }
 
 .section-title {
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem 5rem;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
@@ -1347,6 +1347,30 @@ img {
 }
 
 .section-title h2:before {
+  content: attr(data-heading);
+  display: block;
+  font: 700 1.6rem;
+  color: var(--green);
+}
+
+.section-title-about {
+  padding: 1rem 1.5rem 9rem;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.section-title-about h2 {
+  display: inline-block;
+  font: 700 3rem 'Baloo 2', sans-serif;
+  color: var(--white);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.section-title-about  h2:before {
   content: attr(data-heading);
   display: block;
   font: 700 1.6rem;
@@ -1387,17 +1411,6 @@ img {
   border-bottom: 0.2em solid var(--green);
 }
 
-.tab-item-2 {
-  color: var(--white);
-  font: 1.2rem normal;
-  text-decoration-thickness: 2px;
-}
-.tab-item-2:hover {
-  color: var(--green);
-  -webkit-transition: 0.4s ease;
-  transition: 0.4s ease;
-  position: relative;
-}
 
 .modal {
   display: none;
@@ -2035,6 +2048,7 @@ img {
 .list-menu ul {
   list-style: none;
   padding: 0;
+  margin-right: -13rem;
 }
 
 .list-menu ul li {
@@ -2043,7 +2057,7 @@ img {
 }
 
 .menu-button {
-  font: 700 2.3rem 'Baloo 2', sans-serif;
+  font: 700 1.5rem 'Baloo 2', sans-serif;
   border-radius: 5rem;
   background-color: transparent;
   padding: 1rem 1rem 1rem 1rem;
@@ -2223,8 +2237,7 @@ img {
     margin-bottom: 0;
   }
 
-  .portfolio-section .project-img{
-    padding-bottom: 3rem ;
+  .portfolio-section .project-img {
     max-width: 100%;
   }
 
