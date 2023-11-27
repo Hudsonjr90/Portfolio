@@ -319,12 +319,12 @@ openModalBtn.addEventListener("click", () => {
 });
 
 portuguesBtn.addEventListener("click", () => {
-  window.open("./assets/cv/HudsonKennedy-BR.pdf", "_blank");
+  downloadFile("./assets/cv/HudsonKennedy-BR.pdf");
   modal.style.display = "none";
 });
 
 inglesBtn.addEventListener("click", () => {
-  window.open("./assets/cv/HudsonKennedy-US.pdf", "_blank");
+  downloadFile("./assets/cv/HudsonKennedy-US.pdf");
   modal.style.display = "none";
 });
 
@@ -333,6 +333,16 @@ window.addEventListener("click", (event) => {
     modal.style.display = "none";
   }
 });
+
+function downloadFile(filePath) {
+  const link = document.createElement("a");
+  link.href = filePath;
+  link.download = filePath.split("/").pop();
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 
 // Função para trocar para inglês
 function loadEnglishContent() {
@@ -344,7 +354,6 @@ function loadEnglishContent() {
   document.getElementById("menu-so-b").textContent = "About";
   document.getElementById("menu-po-b").textContent = "Projects";
   document.getElementById("menu-co-b").textContent = "Contact";
-  document.getElementById("titulo-principal").textContent = "Hudson Kennedy";
   document.getElementById("texto-principal").textContent =
     "Fullstack Developer / Software Engineer.";
   document.getElementById("titulo-sobre-mim").textContent = "About Me";

@@ -1354,7 +1354,7 @@ img {
 }
 
 .section-title-about {
-  padding: 1rem 1.5rem 9rem;
+  padding: 1rem 1.5rem 2rem;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
@@ -2024,22 +2024,6 @@ img {
   background-color: var(--white);
   color: var(--green);
 }
-.logo-icon {
-  color: var(--white);
-  font-size: 5rem;
-}
-.logo-icon:hover {
-  color: var(--green);
-  font-size: 5rem;
-}
-
-.logo-icon-name {
-  color: var(--white);
-  font-size: 5rem;
-  display: flex;
-  justify-content: end;
-  margin: 5rem 6rem -7rem;
-}
 
 .list-menu {
   margin-left: auto;
@@ -2153,6 +2137,84 @@ img {
   color: var(--green);
 }
 
+
+.text-reveal {
+  display: grid;
+}
+.text-reveal::after, .text-reveal > span {
+  grid-area: 1/1;
+  animation: text-reveal-1 2s ease-in-out 1s forwards;
+}
+.text-reveal > span {
+  padding: 0.5rem 1rem;
+  opacity: 0;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+  -webkit-mask-size: 100% 100%, 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  mask-size: 100% 100%, 100%;
+}
+.text-reveal > span:nth-child(1) {
+  -webkit-text-stroke: 1px var(--green);
+  color: transparent;
+  font: 700 6rem 'Baloo 2', sans-serif;
+}
+.text-reveal > span:nth-child(2) {
+  -webkit-text-stroke: 1px var(--white);
+  color: var(--white);
+  -webkit-mask-image: linear-gradient(#000 0 0);
+  mask-image: linear-gradient(#000 0 0);
+  animation: text-reveal-2 2s ease-in-out 1s forwards;
+  font: 700 6rem 'Baloo 2', sans-serif;
+}
+.text-reveal::after {
+  content: "";
+  z-index: 2;
+  border: 2px solid #fff;
+  border-block: none;
+  width: 100%;
+  justify-self: center;
+  opacity: 0;
+  animation: text-reveal-lines 2s ease-in-out 1s forwards;
+}
+
+@keyframes text-reveal-1 {
+  0%, 100% {
+    -webkit-mask-size: 100% 100%, 100%;
+    mask-size: 100% 100%, 100%;
+    opacity: 1;
+  }
+  50% {
+    -webkit-mask-size: 0% 100%, 100%;
+    mask-size: 100% 100%, 100%;
+  }
+}
+@keyframes text-reveal-2 {
+  0%, 50% {
+    -webkit-mask-size: 0% 100%;
+    mask-size: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    opacity: 1;
+  }
+}
+@keyframes text-reveal-lines {
+  5%, 95% {
+    opacity: 1;
+  }
+  50% {
+    width: 0;
+  }
+}
+
 @media (max-width: 767px) {
   .contact-section .w-50,
   .contact-section .contact-item,
@@ -2172,6 +2234,15 @@ img {
     max-width: 100%;
   }
 
+  .section-title-about {
+    padding: 1rem 1.5rem 9rem;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
   .home-section .home-text {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
@@ -2181,6 +2252,7 @@ img {
 
   .home-section .home-img{
     min-width: 100%;
+    margin-bottom: 9rem;
   }
 
   .about-section .about-info .btn-1 {
@@ -2249,10 +2321,7 @@ img {
   .menu-options {
     display: none;
   }
-  .logo-icon-name {
-    padding: 6rem 9rem;
-  }
-
+  
   .header .hamburguer-btn {
     display: block;
   }
