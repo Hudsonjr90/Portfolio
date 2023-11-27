@@ -227,7 +227,7 @@
 }
 
 .home-section .home-text .maintext {
-  font: 700 2rem 'Baloo 2', sans-serif;
+  font: 700 2.9rem 'Baloo 2', sans-serif;
   color: var(--green);
   margin: 0;
 }
@@ -2364,6 +2364,10 @@ img {
   .home-view{
       display: block;
       text-align: center;
+  }
+
+  .home-section .home-text .maintext{
+    font-size: 2.3rem;
   }
 
 }
