@@ -2071,7 +2071,6 @@ img {
 
 ::selection{
   color: var(--green);
-  background: var(--white);
 }
 
 .wrapper {
