@@ -2246,7 +2246,7 @@ img {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
-    margin-top: -26rem;
+    margin-top: -25rem;
   }
 
   .home-section .home-img{
@@ -2367,6 +2367,16 @@ img {
 
   .home-section .home-text .maintext{
     font-size: 2.3rem;
+  }
+
+  .text-reveal > span:nth-child(1){
+ 
+    line-height: 1;
+  }
+
+  .text-reveal > span:nth-child(2) {
+
+    line-height: 1;
   }
 
 }
