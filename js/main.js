@@ -558,6 +558,7 @@ function loadEnglishContent() {
     "Classic Dino Game, from Google Chrome.";
   document.getElementById("math-title").textContent = "Math Calculator";
   document.getElementById("math-text").textContent = "Basic math calculator.";
+  document.getElementById("dash-text").textContent = "Dashboard with 3 category selects updated in cascade.";
 }
 
 /*------------------button play function----------------------- */

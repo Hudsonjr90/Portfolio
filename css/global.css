@@ -856,7 +856,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p span {
-  font: 700 'Baloo 2', sans-serif;
+  font: 700 1.8rem 'Baloo 2', sans-serif;
   text-transform: capitalize;
 }
 
@@ -877,7 +877,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .description p span {
-  font: 700  'Baloo 2', sans-serif;
+  font: 700 'Baloo 2', sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info {
@@ -891,17 +891,18 @@
 .portfolio-popup .pp-details .pp-details-inner .info ul li {
   margin-bottom: 1rem;
   color: var(--white);
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.8rem 'Baloo 2', sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li span {
-  font: 700 'Baloo 2', sans-serif;
+  font: 700 1.6rem 'Baloo 2', sans-serif;
   text-transform: capitalize;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li a {
   text-transform: lowercase;
   color: var(--green);
+  font: 700 2rem 'Baloo 2', sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li:last-child {
