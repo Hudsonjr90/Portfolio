@@ -502,7 +502,7 @@ function loadEnglishContent() {
   });
   document.getElementById("all-title").textContent = "All";
   document.getElementById("react-web").textContent =
-    "Simple website, following Udemy Course class guidance";
+    "Simple Reactjs website, following Udemy Course class guidance from OOP (Object Oriented Programming";
   document.getElementById("memory-game").textContent = "Memory Game";
   document.getElementById("memory-text").textContent =
     "Memory game made in React, to exercise Typescript.";
@@ -538,7 +538,7 @@ function loadEnglishContent() {
   document.getElementById("clima-title").textContent = "Climate Weather API";
   document.getElementById("clima-text").textContent =
     "Simple Javascript application, to search for the climate and weather of cities around the world through the openweather API.";
-  document.getElementById("form-title").textContent = "Credit Card Form";
+  document.getElementById("form-title").textContent = "VueJs Credit Card Form";
   document.getElementById("form-text").textContent =
     "Application to fill out Credit Card form.";
   document.getElementById("fale-title").textContent = "Contact";
