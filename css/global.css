@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
-:root{
+:root {
   --black: #2b2c2f;
   --green: #04d361;
   --light-dark: #353535;
@@ -8,10 +8,7 @@
   --modal-color: #525458;
   --modal-header: #6b6b6b;
   --white: #fff;
- 
 }
-
-
 
 .fa-plus:before {
   content: "\f067";
@@ -137,7 +134,7 @@
 
 .nav-menu .nav-menu-inner ul li a {
   display: inline-block;
-  font: 700 2.8rem 'Baloo 2', sans-serif;
+  font: 700 2.8rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 0.5rem 4rem;
   border-radius: 3rem;
@@ -152,7 +149,16 @@
 .nav-menu .nav-menu-inner ul li a.active {
   color: var(--green);
 }
-.menu-icon-1 .menu-icon-2 .menu-icon-3 .menu-icon-4 .nav-menu .nav-menu-inner ul li a i.active{
+.menu-icon-1
+  .menu-icon-2
+  .menu-icon-3
+  .menu-icon-4
+  .nav-menu
+  .nav-menu-inner
+  ul
+  li
+  a
+  i.active {
   color: var(--green);
 }
 
@@ -221,13 +227,13 @@
 }
 
 .home-section .home-text h2 {
-  font: 700 5.5rem 'Baloo 2', sans-serif;
+  font: 700 5.5rem "Baloo 2", sans-serif;
   color: var(--white);
   margin: 0;
 }
 
 .home-section .home-text .maintext {
-  font: 700 2.9rem 'Baloo 2', sans-serif;
+  font: 700 2.9rem "Baloo 2", sans-serif;
   color: var(--green);
   margin: 0;
 }
@@ -321,7 +327,7 @@
   display: inline-block;
   height: 4rem;
   width: 4rem;
-  font: 700 2.5rem 'Baloo 2', sans-serif;
+  font: 700 2.5rem "Baloo 2", sans-serif;
   text-align: center;
   color: var(--white);
   margin: 0 0.4rem;
@@ -344,13 +350,13 @@
 
 .about-section .about-img .img-box {
   padding: 1.5rem;
-  border-radius: 50%
+  border-radius: 50%;
 }
 
 .about-section .about-img .img-box img {
   width: 100%;
   border: 1rem solid transparent;
-  border-radius: 50%
+  border-radius: 50%;
 }
 
 .about-section .about-info {
@@ -362,7 +368,7 @@
 }
 
 .about-section .about-info span {
-  font: 700 1.8rem 'Baloo 2', sans-serif;
+  font: 700 1.8rem "Baloo 2", sans-serif;
 }
 
 .about-section .about-info p {
@@ -390,7 +396,7 @@
   border-radius: 3rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--green);
   text-transform: capitalize;
 }
@@ -398,7 +404,7 @@
 .about-section .about-tabs .tab-item:hover:not(.active) {
   opacity: 0.9;
   cursor: pointer;
-  color: var(--white)
+  color: var(--white);
 }
 
 .about-section .about-tabs .tab-item.active {
@@ -458,7 +464,6 @@
   i {
   font-size: 4.5rem;
   margin-bottom: 1rem;
-  
 }
 
 .about-section
@@ -467,10 +472,9 @@
   .skill-content
   .conhecimento
   h3 {
-  font: 700 2rem 'Baloo 2', sans-serif;
+  font: 700 2rem "Baloo 2", sans-serif;
   color: var(--white);
   margin-bottom: 1rem;
-  
 }
 
 .about-section
@@ -479,9 +483,8 @@
   .skill-content
   .conhecimento
   p {
-  font: 700 1.5rem 'Baloo 2', sans-serif;
+  font: 700 1.5rem "Baloo 2", sans-serif;
   color: var(--white);
- 
 }
 
 .about-section
@@ -489,7 +492,7 @@
   .skills-container
   .skill-content
   .conhecimento:hover {
-  cursor: wait; 
+  cursor: wait;
   color: var(--green);
   border: 3px solid var(--green);
 }
@@ -610,48 +613,59 @@
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h1 {
-  font: 700 3rem 'Baloo 2', sans-serif;
+  font: 700 3rem "Baloo 2", sans-serif;
   color: var(--white);
 }
-.about-section .services .timeline .timeline-item .timeline-item-inner h1:hover{
+.about-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner
+  h1:hover {
   color: var(--green);
 }
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h2 {
-  font: 700 2.5rem 'Baloo 2', sans-serif;
+  font: 700 2.5rem "Baloo 2", sans-serif;
   color: var(--white);
 }
-.about-section .services .timeline .timeline-item .timeline-item-inner h2:hover{
+.about-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner
+  h2:hover {
   color: var(--green);
 }
-
 
 .about-section .services .timeline .timeline-item .timeline-item-inner h3 {
-  font: 700 1.8rem 'Baloo 2', sans-serif;
+  font: 700 1.8rem "Baloo 2", sans-serif;
   color: var(--white);
 }
-.about-section .services .timeline .timeline-item .timeline-item-inner h3:hover{
+.about-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner
+  h3:hover {
   color: var(--green);
 }
 
-
-.about-section .services .timeline .timeline-item .timeline-item-inner p{
-  font: 700 1.7rem 'Baloo 2', sans-serif;
+.about-section .services .timeline .timeline-item .timeline-item-inner p {
+  font: 700 1.7rem "Baloo 2", sans-serif;
   color: var(--white);
 }
-.about-section .services .timeline .timeline-item .timeline-item-inner p:hover{
+.about-section .services .timeline .timeline-item .timeline-item-inner p:hover {
   color: var(--green);
 }
 
-
-.experience-date{
-  
+.experience-date {
   color: var(--white);
   text-decoration: underline;
 }
 
-.college-name{
-  font: 700 2rem 'Baloo 2', sans-serif;
+.college-name {
+  font: 700 2rem "Baloo 2", sans-serif;
   color: var(--white);
   text-decoration: underline;
 }
@@ -681,7 +695,7 @@
   padding: 0.5rem 1rem;
   border-radius: 3rem;
   cursor: pointer;
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--green);
   text-transform: capitalize;
   -webkit-transition: all 0.3s ease;
@@ -748,7 +762,7 @@
   .portfolio-item-img
   .view-project {
   text-transform: capitalize;
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--green);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -767,7 +781,7 @@
 }
 
 .portfolio-section .portfolio-item .portfolio-item-inner p {
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   margin: 1rem 0 0;
   color: var(--white);
   text-transform: capitalize;
@@ -830,7 +844,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-project-details h3 {
-  font: 700 2rem 'Baloo 2', sans-serif;
+  font: 700 2rem "Baloo 2", sans-serif;
   text-transform: capitalize;
   color: var(--white);
   margin: 0 0 1.5rem;
@@ -841,14 +855,14 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title h2 {
-  font: 700 2rem 'Baloo 2', sans-serif;
+  font: 700 2rem "Baloo 2", sans-serif;
   text-transform: capitalize;
   color: var(--white);
   margin: 0 0 0.5rem;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p {
-  font: 700 1.4rem 'Baloo 2', sans-serif;
+  font: 700 1.4rem "Baloo 2", sans-serif;
   color: var(--white);
   margin: 0 0 1.5rem;
   border-bottom: 0.1rem solid var(--light-dark);
@@ -856,7 +870,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p span {
-  font: 700 1.8rem 'Baloo 2', sans-serif;
+  font: 700 1.8rem "Baloo 2", sans-serif;
   text-transform: capitalize;
 }
 
@@ -869,7 +883,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .description p {
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--white);
   line-height: 2.6rem;
   margin: 0;
@@ -877,7 +891,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .description p span {
-  font: 700 'Baloo 2', sans-serif;
+  font: 700 "Baloo 2", sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info {
@@ -891,18 +905,18 @@
 .portfolio-popup .pp-details .pp-details-inner .info ul li {
   margin-bottom: 1rem;
   color: var(--white);
-  font: 700 1.8rem 'Baloo 2', sans-serif;
+  font: 700 1.8rem "Baloo 2", sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li span {
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   text-transform: capitalize;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li a {
   text-transform: lowercase;
   color: var(--green);
-  font: 700 2rem 'Baloo 2', sans-serif;
+  font: 700 2rem "Baloo 2", sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li:last-child {
@@ -985,7 +999,7 @@
   position: absolute;
   left: 0;
   border-radius: 3rem;
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--green);
   cursor: pointer;
   padding: 0 1.5rem;
@@ -1116,20 +1130,19 @@
 
 .contact-section .contact-item .contact-item-inner span {
   display: block;
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--white);
   margin: 1.5rem 0 1rem;
   text-transform: capitalize;
 }
 
 .contact-section .contact-item .contact-item-inner p {
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--white);
   line-height: 2.6rem;
   margin: 0;
   word-break: break-word;
 }
-
 
 * {
   margin: 0;
@@ -1267,7 +1280,7 @@ img {
 
 .btn-1 {
   padding: 1rem 2.5rem;
-  font: 700 1rem 'Baloo 2', sans-serif;
+  font: 700 1rem "Baloo 2", sans-serif;
   color: var(--white);
   background-color: transparent;
   line-height: 1.5;
@@ -1284,7 +1297,7 @@ img {
 }
 .btn-2 {
   padding: 1rem 1.5rem;
-  font: 700 1.8rem 'Baloo 2', sans-serif;
+  font: 700 1.8rem "Baloo 2", sans-serif;
   color: var(--green);
   background-color: transparent;
   line-height: 1.5;
@@ -1296,7 +1309,7 @@ img {
   border: none;
 }
 
-.btn-2:hover{
+.btn-2:hover {
   color: var(--white);
 }
 
@@ -1305,7 +1318,7 @@ img {
 }
 .btn-3 {
   padding: 1rem 2.5rem;
-  font: 700 1.6rem 'Baloo 2', sans-serif;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--white);
   background-color: transparent;
   line-height: 1.5;
@@ -1341,7 +1354,7 @@ img {
 
 .section-title h2 {
   display: inline-block;
-  font: 700 3rem 'Baloo 2', sans-serif;
+  font: 700 3rem "Baloo 2", sans-serif;
   color: var(--white);
   text-transform: uppercase;
   margin: 0;
@@ -1365,13 +1378,13 @@ img {
 
 .section-title-about h2 {
   display: inline-block;
-  font: 700 3rem 'Baloo 2', sans-serif;
+  font: 700 3rem "Baloo 2", sans-serif;
   color: var(--white);
   text-transform: uppercase;
   margin: 0;
 }
 
-.section-title-about  h2:before {
+.section-title-about h2:before {
   content: attr(data-heading);
   display: block;
   font: 700 1.6rem;
@@ -1387,7 +1400,7 @@ img {
   border-bottom: 0.3rem solid var(--green);
   margin: 0 0.5rem 1rem;
   padding: 0.5rem 1rem;
-  font: 700 1rem 'Baloo 2', sans-serif;
+  font: 700 1rem "Baloo 2", sans-serif;
   line-height: 1.5;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
@@ -1406,7 +1419,6 @@ img {
   justify-content: center;
   margin-top: -8rem;
 }
-
 
 .modal {
   display: none;
@@ -1440,7 +1452,7 @@ img {
 
 .cabecalho-modal h3 {
   margin: 0;
-  font: 700 2rem 'Baloo 2', sans-serif;
+  font: 700 2rem "Baloo 2", sans-serif;
 }
 
 .footer-modal {
@@ -1457,7 +1469,7 @@ img {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font: 700 2rem 'Baloo 2', sans-serif;
+  font: 700 2rem "Baloo 2", sans-serif;
 }
 
 .fechar {
@@ -1512,40 +1524,40 @@ img {
 }
 
 .portfolio-section .project-img {
-  width: 40%; 
-  margin: 0 auto; 
-  display: block; 
+  width: 40%;
+  margin: 0 auto;
+  display: block;
   margin-bottom: 5rem;
 }
-  
-  .portfolio-section .project-img .img-project-box {
-    padding: 1.5rem;
-    border-radius: 50%
-  }
-  
-  .portfolio-section .project-img .img-project-box img {
-    width: 100%;
-    border: 1rem solid transparent;
-    border-radius: 50%
-  }
 
-  .contact-section .contact-img {
-    width:40%; 
-    margin: 0 auto; 
-    display: block; 
-    margin-bottom: 3rem;
-  }
-  
-  .contact-section .contact-img .img-contact-box{
-    padding: 1.5rem;
-    border-radius: 50%
-  }
-  
-  .contact-section .contact-img .img-contact-box img {
-    width: 100%;
-    border: 1rem solid transparent;
-    border-radius: 50%
-  }
+.portfolio-section .project-img .img-project-box {
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+
+.portfolio-section .project-img .img-project-box img {
+  width: 100%;
+  border: 1rem solid transparent;
+  border-radius: 50%;
+}
+
+.contact-section .contact-img {
+  width: 40%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 3rem;
+}
+
+.contact-section .contact-img .img-contact-box {
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+
+.contact-section .contact-img .img-contact-box img {
+  width: 100%;
+  border: 1rem solid transparent;
+  border-radius: 50%;
+}
 
 .home-view {
   display: flex;
@@ -1555,7 +1567,7 @@ img {
 
 .progress {
   box-sizing: content-box;
-  height: 2rem; 
+  height: 2rem;
   position: relative;
   background: var(--light-dark);
   border-radius: 2rem;
@@ -1588,7 +1600,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem 'Baloo 2', sans-serif;
+  font: 700 1.3rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1610,7 +1622,7 @@ img {
 
 .progress-90 {
   box-sizing: content-box;
-  height: 2rem; 
+  height: 2rem;
   position: relative;
   background: var(--light-dark);
   border-radius: 2rem;
@@ -1643,7 +1655,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem 'Baloo 2', sans-serif;
+  font: 700 1.3rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1665,7 +1677,7 @@ img {
 
 .progress-80 {
   box-sizing: content-box;
-  height: 2rem; 
+  height: 2rem;
   position: relative;
   background: var(--light-dark);
   border-radius: 2rem;
@@ -1698,7 +1710,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem 'Baloo 2', sans-serif;
+  font: 700 1.3rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1718,10 +1730,9 @@ img {
   transform: translateX(-50%) rotate(45deg);
 }
 
-
 .progress-70 {
   box-sizing: content-box;
-  height: 2rem; 
+  height: 2rem;
   position: relative;
   background: var(--light-dark);
   border-radius: 2rem;
@@ -1754,7 +1765,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem 'Baloo 2', sans-serif;
+  font: 700 1.3rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1774,10 +1785,9 @@ img {
   transform: translateX(-50%) rotate(45deg);
 }
 
-
 .progress-50 {
   box-sizing: content-box;
-  height: 2rem; 
+  height: 2rem;
   position: relative;
   background: var(--light-dark);
   border-radius: 2rem;
@@ -1810,7 +1820,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem 'Baloo 2', sans-serif;
+  font: 700 1.3rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1830,10 +1840,9 @@ img {
   transform: translateX(-50%) rotate(45deg);
 }
 
-
 .progress-30 {
   box-sizing: content-box;
-  height: 2rem; 
+  height: 2rem;
   position: relative;
   background: var(--light-dark);
   border-radius: 2rem;
@@ -1866,7 +1875,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem 'Baloo 2', sans-serif;
+  font: 700 1.3rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1886,10 +1895,9 @@ img {
   transform: translateX(-50%) rotate(45deg);
 }
 
-
 .progress-20 {
   box-sizing: content-box;
-  height: 2rem; 
+  height: 2rem;
   position: relative;
   background: var(--light-dark);
   border-radius: 2rem;
@@ -1922,7 +1930,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem 'Baloo 2', sans-serif;
+  font: 700 1.3rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1942,10 +1950,9 @@ img {
   transform: translateX(-50%) rotate(45deg);
 }
 
-
 .progress-10 {
   box-sizing: content-box;
-  height: 2rem; 
+  height: 2rem;
   position: relative;
   background: var(--light-dark);
   border-radius: 2rem;
@@ -1978,7 +1985,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem 'Baloo 2', sans-serif;
+  font: 700 1.3rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2037,7 +2044,7 @@ img {
 }
 
 .menu-button {
-  font: 700 1.5rem 'Baloo 2', sans-serif;
+  font: 700 1.5rem "Baloo 2", sans-serif;
   border-radius: 5rem;
   background-color: transparent;
   padding: 1rem 1rem 1rem 1rem;
@@ -2051,21 +2058,21 @@ img {
   color: var(--green);
   border-bottom: 0.25rem solid var(--green);
 }
-.menu-button.active{
+.menu-button.active {
   color: var(--green);
   border-top: 0.25rem solid var(--green);
   border-bottom: none;
 }
 
-.menu-icon-1, 
-.menu-icon-2, 
-.menu-icon-3, 
-.menu-icon-4{
+.menu-icon-1,
+.menu-icon-2,
+.menu-icon-3,
+.menu-icon-4 {
   font-size: 3rem;
   margin: 1.2rem;
-  }
+}
 
-::selection{
+::selection {
   color: var(--green);
 }
 
@@ -2093,7 +2100,7 @@ img {
 .wrapper .tooltip {
   position: absolute;
   top: 0;
-  font: 700 1.4rem 'Baloo 2', sans-serif;
+  font: 700 1.4rem "Baloo 2", sans-serif;
   color: var(--white);
   padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
@@ -2132,11 +2139,11 @@ img {
   color: var(--green);
 }
 
-
 .text-reveal {
   display: grid;
 }
-.text-reveal::after, .text-reveal > span {
+.text-reveal::after,
+.text-reveal > span {
   grid-area: 1/1;
   animation: text-reveal-1 2s ease-in-out 1s forwards;
 }
@@ -2157,7 +2164,7 @@ img {
 .text-reveal > span:nth-child(1) {
   -webkit-text-stroke: 1px var(--green);
   color: transparent;
-  font: 700 6rem 'Baloo 2', sans-serif;
+  font: 700 6rem "Baloo 2", sans-serif;
 }
 .text-reveal > span:nth-child(2) {
   -webkit-text-stroke: 1px var(--white);
@@ -2165,7 +2172,7 @@ img {
   -webkit-mask-image: linear-gradient(#000 0 0);
   mask-image: linear-gradient(#000 0 0);
   animation: text-reveal-2 2s ease-in-out 1s forwards;
-  font: 700 6rem 'Baloo 2', sans-serif;
+  font: 700 6rem "Baloo 2", sans-serif;
 }
 .text-reveal::after {
   content: "";
@@ -2179,7 +2186,8 @@ img {
 }
 
 @keyframes text-reveal-1 {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-mask-size: 100% 100%, 100%;
     mask-size: 100% 100%, 100%;
     opacity: 1;
@@ -2190,7 +2198,8 @@ img {
   }
 }
 @keyframes text-reveal-2 {
-  0%, 50% {
+  0%,
+  50% {
     -webkit-mask-size: 0% 100%;
     mask-size: 0% 100%;
     opacity: 1;
@@ -2202,7 +2211,8 @@ img {
   }
 }
 @keyframes text-reveal-lines {
-  5%, 95% {
+  5%,
+  95% {
     opacity: 1;
   }
   50% {
@@ -2227,19 +2237,32 @@ img {
   padding: 1rem;
   color: var(--white);
   background: transparent;
-  font: 700 2rem 'Baloo 2', sans-serif;
+  font: 700 2rem "Baloo 2", sans-serif;
 }
 
 .scroller[data-animated="true"] {
   overflow: hidden;
-  -webkit-mask: linear-gradient(90deg, transparent, var(--white) 20%, var(--white) 80%, transparent);
-  mask: linear-gradient(90deg, transparent, var(--white) 20%, var(--white) 80%, transparent);
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    var(--white) 20%,
+    var(--white) 80%,
+    transparent
+  );
+  mask: linear-gradient(
+    90deg,
+    transparent,
+    var(--white) 20%,
+    var(--white) 80%,
+    transparent
+  );
 }
 
 .scroller[data-animated="true"] .scroller__inner {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller[data-speed="fast"] {
@@ -2252,11 +2275,11 @@ img {
   }
 }
 
-.toast{
+.toast {
   position: absolute;
-  top: 25px;
-  right: 30px;
-  border-radius: 12px;
+  top: 9rem;
+  right: 1rem;
+  border-radius: 1rem;
   background: var(--white);
   padding: 20px 35px 20px 25px;
   box-shadow: 06px 20px -5px rgba(0, 0, 0, 0.1);
@@ -2265,16 +2288,16 @@ img {
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
 }
 
-.toast.active{
+.toast.active {
   transform: translate(0%);
 }
 
-.toast .toast-content{
+.toast .toast-content {
   display: flex;
   align-items: center;
 }
 
-.toast-content .check{
+.toast-content .check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2286,32 +2309,32 @@ img {
   border-radius: 50%;
 }
 
-.toast-content .message{
+.toast-content .message {
   display: flex;
   flex-direction: column;
   margin: 0 20px;
 }
 
-.message .text{
-  font:400 16px "Baloo2", sans-serif;
-  color: var(--light-grey);
+.message .text {
+  font: 400 16px "Baloo2", sans-serif;
+  color: var(--green);
 }
-.message .text.text-1{
-  font:600 16px "Baloo2", sans-serif;
-  color: var(--light-dark)
+.message .text.text-1 {
+  font: 600 16px "Baloo2", sans-serif;
+  color: var(--light-dark);
 }
 
-.toast .close{
+.toast .close {
   position: absolute;
   top: 10px;
   right: 15px;
 }
 
-.toast .close:hover{
+.toast .close:hover {
   opacity: 1;
 }
 
-.toast .progress-notify{
+.toast .progress-notify {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2319,7 +2342,7 @@ img {
   width: 100%;
 }
 
-.toast .progress-notify::before{
+.toast .progress-notify::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -2329,12 +2352,12 @@ img {
   background-color: var(--green);
 }
 
-.progress-notify.active:before{
-  animation: progressnotify 5s linear forwards; 
+.progress-notify.active:before {
+  animation: progressnotify 5s linear forwards;
 }
 
 @keyframes progressnotify {
-  100%{
+  100% {
     right: 100%;
   }
 }
@@ -2378,7 +2401,7 @@ img {
     margin-top: -25rem;
   }
 
-  .home-section .home-img{
+  .home-section .home-img {
     min-width: 100%;
     margin-bottom: 9rem;
   }
@@ -2441,15 +2464,15 @@ img {
     max-width: 100%;
   }
 
-  .contact-section .contact-img{
-    padding-bottom: 3rem ;
+  .contact-section .contact-img {
+    padding-bottom: 3rem;
     min-width: 100%;
   }
 
   .menu-options {
     display: none;
   }
-  
+
   .header .hamburguer-btn {
     display: block;
   }
@@ -2470,7 +2493,10 @@ img {
     right: auto;
   }
 
-  .about-section, .container-skill, .skills-container, .skill-content {
+  .about-section,
+  .container-skill,
+  .skills-container,
+  .skill-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -2478,8 +2504,8 @@ img {
     align-items: center;
   }
 
-  .about-section .container-skill{
-     margin-left: 8rem;
+  .about-section .container-skill {
+    margin-left: 8rem;
   }
 
   .portfolio-popup .pp-details {
@@ -2489,23 +2515,24 @@ img {
   .portfolio-popup .pp-main {
     width: 85%;
   }
-  .home-view{
-      display: block;
-      text-align: center;
+  .home-view {
+    display: block;
+    text-align: center;
   }
 
-  .home-section .home-text .maintext{
+  .home-section .home-text .maintext {
     font-size: 2.3rem;
   }
 
-  .text-reveal > span:nth-child(1){
- 
+  .text-reveal > span:nth-child(1) {
     line-height: 1;
   }
 
   .text-reveal > span:nth-child(2) {
-
     line-height: 1;
+  }
+  .toast {
+    display: none;
   }
 
 }
