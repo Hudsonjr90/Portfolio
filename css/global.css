@@ -2177,7 +2177,7 @@ img {
 .text-reveal::after {
   content: "";
   z-index: 2;
-  border: 2px solid #fff;
+  border: 0.125rem solid #fff;
   border-block: none;
   width: 100%;
   justify-self: center;
@@ -2279,12 +2279,12 @@ img {
   position: absolute;
   top: 9rem;
   right: 1rem;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   background: var(--white);
-  padding: 20px 35px 20px 25px;
-  box-shadow: 06px 20px -5px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 2.1875rem 1.25rem 1.5625rem;
+  box-shadow: 0.375rem 1.25rem -0.3125rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transform: translateX(calc(100% + 30px));
+  transform: translateX(calc(100% + 1.875rem));
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
 }
 
@@ -2301,18 +2301,18 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 35px;
-  min-width: 35px;
+  height: 2.1875rem;
+  min-width: 2.1875rem;
   background-color: var(--green);
   color: var(--white);
-  font: 700 20px "Baloo2", sans-serif;
+  font: 700 1.25rem "Baloo2", sans-serif;
   border-radius: 50%;
 }
 
 .toast-content .message {
   display: flex;
   flex-direction: column;
-  margin: 0 20px;
+  margin: 0 1.25rem;
 }
 
 .message .text {
@@ -2532,7 +2532,9 @@ img {
     line-height: 1;
   }
   .toast {
-    display: none;
+    position: absolute;
+    top: 25px;
+    right: 30px;
   }
 
 }
