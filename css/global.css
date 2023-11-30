@@ -2252,6 +2252,97 @@ img {
   }
 }
 
+.toast{
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  border-radius: 12px;
+  background: var(--white);
+  padding: 20px 35px 20px 25px;
+  box-shadow: 06px 20px -5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.toast.active{
+  transform: translate(0%);
+}
+
+.toast .toast-content{
+  display: flex;
+  align-items: center;
+}
+
+.toast-content .check{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  min-width: 35px;
+  background-color: var(--green);
+  color: var(--white);
+  font: 700 20px "Baloo2", sans-serif;
+  border-radius: 50%;
+}
+
+.toast-content .message{
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.message .text{
+  font:400 16px "Baloo2", sans-serif;
+  color: var(--light-grey);
+}
+.message .text.text-1{
+  font:600 16px "Baloo2", sans-serif;
+  color: var(--light-dark)
+}
+
+.toast .close{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.toast .close:hover{
+  opacity: 1;
+}
+
+.toast .progress-notify{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+}
+
+.toast .progress-notify::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--green);
+}
+
+.progress-notify.active:before{
+  animation: progressnotify 5s linear forwards; 
+}
+
+@keyframes progressnotify {
+  100%{
+    right: 100%;
+  }
+}
+
+.toast.active ~ button {
+  pointer-events: none;
+}
+
 @media (max-width: 767px) {
   .contact-section .w-50,
   .contact-section .contact-item,

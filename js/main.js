@@ -343,6 +343,51 @@ function downloadFile(filePath) {
   document.body.removeChild(link);
 }
 
+const portuguesBtnDownload = document.getElementById("portuguesBtn");
+const inglesBtnDownload = document.getElementById("inglesBtn");
+const toast = document.querySelector(".toast");
+const closeIcon = document.querySelector(".toast .close");
+const progressnotify = document.querySelector(".progress-notify");
+
+let timer1, timer2;
+
+portuguesBtnDownload.addEventListener("click", () => {
+  toast.classList.add("active");
+  progressnotify.classList.add("active");
+  
+  timer1 = setTimeout(() =>{
+    toast.classList.remove("active");
+  }, 5000);
+
+  timer2 = setTimeout(() =>{
+    progressnotify.classList.remove("active");
+  }, 5300);
+});
+
+inglesBtnDownload.addEventListener("click", () => {
+  toast.classList.add("active");
+  progressnotify.classList.add("active");
+  
+  timer1 = setTimeout(() =>{
+    toast.classList.remove("active");
+  }, 5000);
+
+  timer2 = setTimeout(() =>{
+    progressnotify.classList.remove("active");
+  }, 5300);
+});
+
+closeIcon.addEventListener("click", () => {
+  toast.classList.remove("active");
+
+  setTimeout(() =>{
+progressnotify.classList.remove("active");
+  }, 300);
+
+  clearTimeout(timer1);
+  clearTimeout(timer2);
+});
+
 
 // Função para trocar para inglês
 function loadEnglishContent() {
@@ -415,14 +460,6 @@ function loadEnglishContent() {
     "I took an industrial IT course at ETERJ, and freelance work, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.";
   document.getElementById("freela-date").textContent =
     "February 2012 - at moment";
-
-  // document.getElementById("alltax-date").textContent =
-  //   "November 2023 - at moment";
-  // document.getElementById("alltax-title").textContent = "ALL TAX™ Solutions";
-  // document.getElementById("alltax-name").textContent = "Fullstack Developer";
-  // document.getElementById("alltax-description").textContent =
-  //   "lorem ipsum dolor sit amet, consectetur adipiscing";
-
   document.getElementById("hour-title").textContent = "24-hour courses";
   document.getElementById("hour-description").textContent =
     "Administrative Assistant Course";
@@ -559,6 +596,8 @@ function loadEnglishContent() {
   document.getElementById("math-title").textContent = "Math Calculator";
   document.getElementById("math-text").textContent = "Basic math calculator.";
   document.getElementById("dash-text").textContent = "Dashboard with 3 category selects updated in cascade.";
+  document.getElementById("text-btn1").textContent = "Well Done";
+  document.getElementById("text-btn2").textContent = "Downloaded file";
 }
 
 /*------------------button play function----------------------- */
