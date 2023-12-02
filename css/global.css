@@ -2531,6 +2531,20 @@ img {
   .text-reveal > span:nth-child(2) {
     line-height: 1;
   }
+
+  .scroller {
+    max-width: none; /* Remova a limitação de largura para dispositivos móveis */
+    width: 100%; /* Ocupa 100% da largura disponível */
+  }
+
+  .scroller__inner {
+    flex-wrap: nowrap; /* Evita que as palavras se quebrem em dispositivos móveis */
+  }
+
+  .scroller[data-animated="true"] .scroller__inner {
+    animation: scroll var(--_animation-duration, 20s) var(--_animation-direction, forwards) linear infinite; /* Ajuste a duração da animação para dispositivos móveis */
+  }
+
   .toast {
     display: none;
   }
