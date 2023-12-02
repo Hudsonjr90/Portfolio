@@ -2532,9 +2532,7 @@ img {
     line-height: 1;
   }
   .toast {
-    position: absolute;
-    top: 25px;
-    right: 30px;
+    display: none;
   }
 
 }
