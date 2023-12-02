@@ -2533,16 +2533,18 @@ img {
   }
 
   .scroller {
-    max-width: none; /* Remova a limitação de largura para dispositivos móveis */
-    width: 100%; /* Ocupa 100% da largura disponível */
+    max-width: none;
+    width: 100%;
+    overflow-x: hidden; /* Desabilita a rolagem horizontal no container principal */
   }
 
   .scroller__inner {
-    flex-wrap: nowrap; /* Evita que as palavras se quebrem em dispositivos móveis */
+    white-space: nowrap; /* Evita que as palavras quebrem em várias linhas */
+    animation: scroll var(--_animation-duration, 20s) var(--_animation-direction, forwards) linear infinite; /* Mantém a animação */
   }
 
   .scroller[data-animated="true"] .scroller__inner {
-    animation: scroll var(--_animation-duration, 20s) var(--_animation-direction, forwards) linear infinite; /* Ajuste a duração da animação para dispositivos móveis */
+    animation: none; /* Remove a animação original */
   }
 
   .toast {
