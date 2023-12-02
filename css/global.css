@@ -2555,7 +2555,7 @@ img {
   }
   .mobile-info p {
     color: var(--white);
-    font: 700 1.7rem "Baloo 2", sans-serif;
+    font: 700 2.5rem "Baloo 2", sans-serif;
     border-bottom: 0.2em solid var(--green);
   }
   .maintext{

@@ -434,8 +434,10 @@ function loadEnglishContent() {
   document.getElementById("menu-co-b").textContent = "Contact";
   document.getElementById("texto-principal").textContent =
     "Welcome to my portfolio.";
+  document.getElementById("mobile-homename").textContent =
+    "Welcome to my portfolio.";
   document.getElementById("texto-principal2").textContent =
-    "Fullstack Developer / Software Engineer";
+    "Fullstack Developer / Software Engineer.";
   document.getElementById("home-name1").textContent =
     "Fullstack Developer";
   document.getElementById("home-name2").textContent =
