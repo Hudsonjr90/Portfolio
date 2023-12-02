@@ -2533,7 +2533,6 @@ img {
   }
 
   .scroller {
-    max-width: none;
     width: 100%;
     overflow-x: hidden; /* Desabilita a rolagem horizontal no container principal */
   }
