@@ -2543,10 +2543,6 @@ img {
     animation: scroll var(--_animation-duration, 20s) var(--_animation-direction, forwards) linear infinite; /* Mantém a animação */
   }
 
-  .scroller[data-animated="true"] .scroller__inner {
-    animation: none; /* Remove a animação original */
-  }
-
   .toast {
     display: none;
   }
