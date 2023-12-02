@@ -2538,8 +2538,11 @@ img {
   }
 
   .scroller__inner {
-    white-space: nowrap; /* Evita que as palavras quebrem em várias linhas */
-    animation: scroll var(--_animation-duration, 20s) var(--_animation-direction, forwards) linear infinite; /* Mantém a animação */
+    flex-wrap: nowrap; /* Evita que as palavras se quebrem em dispositivos móveis */
+  }
+
+  .scroller[data-animated="true"] .scroller__inner {
+    animation: scroll var(--_animation-duration, 2s) var(--_animation-direction, forwards) linear infinite; /* Ajuste a duração da animação para dispositivos móveis */
   }
 
   .toast {
