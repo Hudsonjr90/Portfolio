@@ -2035,12 +2035,12 @@ img {
 .list-menu ul {
   list-style: none;
   padding: 0;
-  margin-right: -13rem;
+  margin-right: -5rem;
 }
 
 .list-menu ul li {
   display: inline-block;
-  margin: 2rem;
+  margin: 2rem 1rem 0rem 0rem;
 }
 
 .menu-button {
