@@ -387,12 +387,12 @@ let timer1, timer2;
 portuguesBtnDownload.addEventListener("click", () => {
   toast.classList.add("active");
   progressnotify.classList.add("active");
-  
-  timer1 = setTimeout(() =>{
+
+  timer1 = setTimeout(() => {
     toast.classList.remove("active");
   }, 5000);
 
-  timer2 = setTimeout(() =>{
+  timer2 = setTimeout(() => {
     progressnotify.classList.remove("active");
   }, 5300);
 });
@@ -400,12 +400,12 @@ portuguesBtnDownload.addEventListener("click", () => {
 inglesBtnDownload.addEventListener("click", () => {
   toast.classList.add("active");
   progressnotify.classList.add("active");
-  
-  timer1 = setTimeout(() =>{
+
+  timer1 = setTimeout(() => {
     toast.classList.remove("active");
   }, 5000);
 
-  timer2 = setTimeout(() =>{
+  timer2 = setTimeout(() => {
     progressnotify.classList.remove("active");
   }, 5300);
 });
@@ -413,14 +413,13 @@ inglesBtnDownload.addEventListener("click", () => {
 closeIcon.addEventListener("click", () => {
   toast.classList.remove("active");
 
-  setTimeout(() =>{
-progressnotify.classList.remove("active");
+  setTimeout(() => {
+    progressnotify.classList.remove("active");
   }, 300);
 
   clearTimeout(timer1);
   clearTimeout(timer2);
 });
-
 
 // Função para trocar para inglês
 function loadEnglishContent() {
@@ -438,20 +437,23 @@ function loadEnglishContent() {
     "Welcome to my portfolio.";
   document.getElementById("texto-principal2").textContent =
     "Fullstack Developer / Software Engineer.";
-  document.getElementById("home-name1").textContent =
-    "Fullstack Developer";
-  document.getElementById("home-name2").textContent =
-    "Software Engineer";
+  document.getElementById("home-name1").textContent = "Fullstack Developer";
+  document.getElementById("home-name2").textContent = "Software Engineer";
   document.getElementById("titulo-sobre-mim").textContent = "About Me";
   document.getElementById(
     "texto-sobre-mim"
-  ).innerHTML = `With over 10 years of experience in the technology field, I took my initial steps in development using VB.net. 
-  Throughout this journey, I honed my skills through specialized courses. 
-  In 2018, I embarked on a degree in Business Process Management, completing it in 2020. 
-  During this period, I intensified my studies in Java Script and Type Script, focusing on Front-End development. To complement my knowledge, I enrolled in various courses that significantly contributed to my professional growth.
-  In 2021, I advanced my academic journey by enrolling in an MBA in Software Engineering, completing it the following year. This stage provided me with a deeper understanding of Back-End development and related areas.
-  In February 2023, I commenced my Master's degree in the Computer Science postgraduate program at the prestigious Harvard University, where I graduated. This academic experience further expanded my knowledge and perspectives, solidifying my professional standing.
-  My trajectory as a Full Stack Developer and Software Engineer continues to evolve. I am committed to gaining more experience and making substantial contributions to my team's success. The goal is to keep progressing and tackling increasingly complex challenges. `;
+  ).innerHTML = `I'm a full stack developer with over 10 years of experience in web projects, using
+  VB.net and Javascript. Previously I worked at a solutions company
+  digital, where I worked directly with the allocated projects, in the directives and negotiations of
+  code maintenance/refactoring, using Angular with Typescript on the Front-End, Java with
+  Springboot in the Back-End and PostgreSQL Database.
+</br>
+  In addition to my training in management processes and an MBA in software engineering, I completed
+  recently completed my master's degree in computer science at Harvard University, where I deepened the
+  my knowledge in areas such as artificial intelligence, cloud computing and security
+  information. As a fullstack developer and software engineer, my goal is to continue
+  improving, acquiring more experience and contributing to my team, delivering solutions
+  quality, innovative and that generate value for customers.`;
   document.getElementById("openModalBtn").textContent = "Resume";
   document.getElementById("titulo-modal").textContent =
     "Choose the CV language";
@@ -636,7 +638,8 @@ function loadEnglishContent() {
     "Classic Dino Game, from Google Chrome.";
   document.getElementById("math-title").textContent = "Math Calculator";
   document.getElementById("math-text").textContent = "Basic math calculator.";
-  document.getElementById("dash-text").textContent = "Dashboard with 3 category selects updated in cascade.";
+  document.getElementById("dash-text").textContent =
+    "Dashboard with 3 category selects updated in cascade.";
   document.getElementById("text-btn1").textContent = "Well Done";
   document.getElementById("text-btn2").textContent = "Downloaded file";
 }
@@ -815,7 +818,7 @@ document
 document.getElementById("email-link").addEventListener("click", openEmail);
 
 const scrollers = document.querySelectorAll(".scroller");
-      
+
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   scrollers.forEach((scroller) => {
     scroller.setAttribute("data-animated", true);
