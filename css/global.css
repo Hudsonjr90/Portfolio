@@ -1344,7 +1344,7 @@ img {
 }
 
 .section-title {
-  padding: 1rem 1.5rem 5rem;
+  padding: 1rem 1.5rem 1rem;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
@@ -1363,31 +1363,7 @@ img {
 .section-title h2:before {
   content: attr(data-heading);
   display: block;
-  font: 700 1.6rem;
-  color: var(--green);
-}
-
-.section-title-about {
-  padding: 1rem 1.5rem 2rem;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-  text-align: center;
-}
-
-.section-title-about h2 {
-  display: inline-block;
-  font: 700 3rem "Baloo 2", sans-serif;
-  color: var(--white);
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.section-title-about h2:before {
-  content: attr(data-heading);
-  display: block;
-  font: 700 1.6rem;
+  font: 700 1.6rem "Baloo 2", sans-serif;
   color: var(--green);
 }
 
