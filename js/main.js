@@ -642,6 +642,8 @@ function loadEnglishContent() {
     "Dashboard with 3 category selects updated in cascade.";
   document.getElementById("text-btn1").textContent = "Well Done";
   document.getElementById("text-btn2").textContent = "Downloaded file";
+  document.getElementById("swiss-title").textContent = "Angular17 Swiss Calendar";
+  document.getElementById("swiss-text").textContent = "Swiss Canton Holiday Tracker";
 }
 
 /*------------------button play function----------------------- */
