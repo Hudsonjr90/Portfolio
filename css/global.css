@@ -132,18 +132,18 @@
   display: inline-block;
   font: 700 2.8rem "Baloo 2", sans-serif;
   color: var(--white);
-  padding: 0.5rem 4rem;
-  border-radius: 3rem;
+  padding: 2rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  border: none;
 }
 
-.nav-menu .nav-menu-inner ul li a::after {
-  border-radius: 3rem;
-}
+
+
 
 .nav-menu .nav-menu-inner ul li a.active {
   color: var(--green);
+  border-bottom: 0.2rem solid;
 }
   .menu-icon-1
   .menu-icon-2
@@ -345,9 +345,9 @@
   -webkit-box-flex: 0;
   -ms-flex: 0 0 40%;
   flex: 0 0 40%;
-  max-width: 40%;
-  margin-top: -6rem;
-  margin-left: 35rem;
+  max-width: 26%;
+  margin-top: -10rem;
+  margin-left: 42rem;
 }
 
 .about-section .about-img .img-box {
@@ -398,8 +398,8 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 4rem;
-  margin-left: -5rem;
+  margin-top: 6rem;
+  margin-left: 2rem;
 }
 
 .skills-section .container-skill .skills-container .skill-content {
@@ -459,7 +459,7 @@
   .skills-container
   .skill-content
   .conhecimento:hover {
-  cursor: wait;
+  cursor:grab;
   color: var(--green);
   border: 3px solid var(--green);
 }
@@ -860,15 +860,14 @@
 
 .portfolio-section .portfolio-item .portfolio-item-inner .portfolio-item-img {
   position: relative;
+    height: 200px; 
+    overflow: hidden;
 }
 
-.portfolio-section
-  .portfolio-item
-  .portfolio-item-inner
-  .portfolio-item-img
-  img {
+.portfolio-section .portfolio-item .portfolio-item-inner .portfolio-item-img img {
   border-radius: 0.5rem;
   width: 100%;
+  height: auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -898,7 +897,7 @@
 }
 
 .portfolio-section .portfolio-item .portfolio-item-inner p {
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 2rem "Baloo 2", sans-serif;
   margin: 1rem 0 0;
   color: var(--white);
   text-transform: capitalize;
@@ -1355,6 +1354,11 @@ img {
   box-shadow: inset 3px 3px 3px #222327, inset -3px -3px 3px #363636;
 }
 
+.inner-shadow-mod {
+  filter: drop-shadow(3px 3px 3px #222327) drop-shadow(-3px -3px 3px #363636);
+}
+
+
 .hover-in-shadow {
   position: relative;
   z-index: 1;
@@ -1552,7 +1556,7 @@ img {
   font: 700 3rem "Baloo 2", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-  margin: 0;
+  margin-bottom: 5rem;
 }
 
 .section-title-project h2:before {
@@ -2256,6 +2260,10 @@ img {
   border-top: 0.25rem solid var(--green);
   border-bottom: none;
 }
+.menu-mobile.active {
+  border-top: none;
+  border-bottom: 0.25rem solid var(--green);
+}
 
 .menu-icon-1,
 .menu-icon-2,
@@ -2599,7 +2607,7 @@ img {
 
   .home-section .home-img {
     min-width: 100%;
-    margin-bottom: 9rem;
+    margin-bottom: 12rem;
   }
 
   .about-section .about-info {

@@ -64,6 +64,7 @@ function typeWriter(elemento) {
 
   escreverComEfeito(textoOriginal, 0);
 }
+
 /*---------------------navegação menu-----------------------*/
 (() => {
   const hamburguerBtn = document.querySelector(".hamburguer-btn"),
@@ -75,13 +76,13 @@ function typeWriter(elemento) {
 
   function showNavMenu() {
     navMenu.classList.toggle("open");
-    bodyScrollingToggle();
+   
   }
 
   function hideNavMenu() {
     navMenu.classList.toggle("open");
     fadeOutEffect();
-    bodyScrollingToggle();
+    
   }
   function fadeOutEffect() {
     document.querySelector(".fade-out-effect").classList.add("active");
@@ -104,22 +105,21 @@ function typeWriter(elemento) {
 
         navMenu
           .querySelector(".active")
-          .classList.add("outer-shadow", "hover-in-shadow");
+          // .classList.add("outer-shadow", "hover-in-shadow");
         navMenu
           .querySelector(".active")
-          .classList.remove("active", "inner-shadow");
+          .classList.remove("active", "inner-shadow-mod");
 
         if (navMenu.classList.contains("open")) {
-          event.target.classList.add("active", "inner-shadow");
-          event.target.classList.remove("outer-shadow", "hover-in-shadow");
-
+          event.target.classList.add("active", "inner-shadow-mod");
+        
           hideNavMenu();
         } else {
           let navItems = navMenu.querySelectorAll(".link-item");
           navItems.forEach((item) => {
             if (hash === item.hash) {
-              item.classList.add("active", "inner-shadow");
-              item.classList.remove("outer-shadow", "hover-in-shadow");
+              item.classList.add("active", "inner-shadow-mod");
+              
             }
           });
           fadeOutEffect();
@@ -208,7 +208,7 @@ function typeWriter(elemento) {
 
   function popupToggle() {
     popup.classList.toggle("open");
-    bodyScrollingToggle();
+   
   }
 
   function popupSlideshow() {
