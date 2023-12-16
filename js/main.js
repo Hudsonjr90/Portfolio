@@ -131,36 +131,6 @@ function typeWriter(elemento) {
   });
 })();
 
-/*---------------------about section tabs-----------------------*/
-(() => {
-  const aboutSection = document.querySelector(".about-section"),
-    tabsContainer = document.querySelector(".about-tabs");
-
-  tabsContainer.addEventListener("click", (event) => {
-    if (
-      event.target.classList.contains("tab-item") &&
-      !event.target.classList.contains("active")
-    ) {
-      const target = event.target.getAttribute("data-target");
-      //desativar 'tab-item' q esta ativo
-      tabsContainer
-        .querySelector(".active")
-        .classList.remove("outer-shadow", "active");
-      //ativar novo 'tab-item'
-      event.target.classList.add("active", "outer-shadow");
-      //desativar 'tab-content' q esta ativo
-      aboutSection
-        .querySelector(".tab-content.active")
-        .classList.remove("active");
-      //ativar novo 'tab-item'
-      aboutSection.querySelector(target).classList.add("active");
-    }
-  });
-})();
-
-function bodyScrollingToggle() {
-  document.body.classList.toggle("stop-scrolling");
-}
 
 /*---------------------portfolio filter e popup-----------------------*/
 
@@ -387,12 +357,15 @@ let timer1, timer2;
 portuguesBtnDownload.addEventListener("click", () => {
   toast.classList.add("active");
   progressnotify.classList.add("active");
+  toast.style.display = "block";
 
   timer1 = setTimeout(() => {
+    toast.style.display = "none";
     toast.classList.remove("active");
   }, 5000);
 
   timer2 = setTimeout(() => {
+    toast.style.display = "none";
     progressnotify.classList.remove("active");
   }, 5300);
 });
@@ -400,18 +373,25 @@ portuguesBtnDownload.addEventListener("click", () => {
 inglesBtnDownload.addEventListener("click", () => {
   toast.classList.add("active");
   progressnotify.classList.add("active");
+  toast.style.display = "block";
 
   timer1 = setTimeout(() => {
+    toast.style.display = "none";
     toast.classList.remove("active");
   }, 5000);
+  
 
   timer2 = setTimeout(() => {
+    toast.style.display = "none";
     progressnotify.classList.remove("active");
   }, 5300);
+  
 });
 
 closeIcon.addEventListener("click", () => {
+  toast.style.display = "none";
   toast.classList.remove("active");
+  
 
   setTimeout(() => {
     progressnotify.classList.remove("active");
@@ -419,16 +399,23 @@ closeIcon.addEventListener("click", () => {
 
   clearTimeout(timer1);
   clearTimeout(timer2);
+  toast.style.display = "none";
 });
 
 // Função para trocar para inglês
 function loadEnglishContent() {
   document.getElementById("menu-inicio").textContent = "Home";
   document.getElementById("menu-sobre").textContent = "About";
+  document.getElementById("menu-jobs").textContent = "Experiences";
+  document.getElementById("menu-skills").textContent = "Skills";
+  document.getElementById("menu-education").textContent = "Formations";
   document.getElementById("menu-portfolio").textContent = "Projects";
   document.getElementById("menu-contato").textContent = "Contact";
   document.getElementById("menu-in-b").textContent = "Home";
   document.getElementById("menu-so-b").textContent = "About";
+  document.getElementById("menu-jo-b").textContent = "Experiences";
+  document.getElementById("menu-sk-b").textContent = "Skills";
+  document.getElementById("menu-ed-b").textContent = "Formations";
   document.getElementById("menu-po-b").textContent = "Projects";
   document.getElementById("menu-co-b").textContent = "Contact";
   document.getElementById("texto-principal").textContent =
@@ -459,9 +446,9 @@ function loadEnglishContent() {
     "Choose the CV language";
   document.getElementById("inglesBtn").textContent = "English";
   document.getElementById("portuguesBtn").textContent = "Portuguese";
-  document.getElementById("experiencias").textContent = "Experiences";
-  document.getElementById("tecnologias").textContent = "Skills";
-  document.getElementById("formacao-cursos").textContent = "Education/Courses";
+  document.getElementById("jobs-title").textContent = "Experiences";
+  document.getElementById("skills-title").textContent = "Skills";
+  document.getElementById("education-title").textContent = "Formations";
   document.querySelectorAll(".anos").forEach(function (element) {
     element.textContent = "Years";
   });
@@ -472,21 +459,14 @@ function loadEnglishContent() {
     element.textContent = "Months";
   });
 
-  document.getElementById("cast-title").textContent = "Cast Computing S.A.";
-  document.getElementById("cast-name").textContent = "Fullstack Developer";
-  document.getElementById("cast-description").textContent =
-    "Working directly with external clients on code maintenance/refactoring directives, using Angular and TypeScript on the Frontend, as well as Java with Spring Boot on the Backend and PostgresSQL as the database.";
-  document.getElementById("cast-date").textContent =
-    "August 2022 - October 2023";
-
-  document.getElementById("vilt-title").textContent =
-    "VILT Brazil Information Systems";
-  document.getElementById("vilt-name").textContent =
-    "Full Technical Consultant";
-  document.getElementById("vilt-description").textContent =
-    "Fullstack consulting, working with Java and Spring Boot on the Backend and Angular/React on the Frontend, using Adobe Experience Manager (AEM) programs, providing services to various clients such as Porto, CVC, and more.";
-  document.getElementById("vilt-date").textContent =
-    "January 2022 - April 2022";
+  document.getElementById("freela-title").textContent =
+  "99Freelas/Capitona Rio/ETERJ";
+document.getElementById("freela-name").textContent =
+  "Freelancers/Personal Works";
+document.getElementById("freela-description").textContent =
+  "I took an industrial IT course at ETERJ, and freelance work, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.";
+document.getElementById("freela-date").textContent =
+  "February 2012 - at moment";
 
   document.getElementById("dt3-title").textContent = "DT3 Group";
   document.getElementById("dt3-name").textContent =
@@ -495,14 +475,32 @@ function loadEnglishContent() {
     "Invoice issuance,marketplaces, website development in React.JS, image optimization and responsible for ERP Bling integration.";
   document.getElementById("dt3-date").textContent = "February 2019 - June 2021";
 
-  document.getElementById("freela-title").textContent =
-    "99Freelas/Capitona Rio/ETERJ";
-  document.getElementById("freela-name").textContent =
-    "Freelancers/Personal Works";
-  document.getElementById("freela-description").textContent =
-    "I took an industrial IT course at ETERJ, and freelance work, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.";
-  document.getElementById("freela-date").textContent =
-    "February 2012 - at moment";
+  document.getElementById("vilt-title").textContent =
+  "VILT Brazil Information Systems";
+document.getElementById("vilt-name").textContent =
+  "Full Technical Consultant";
+document.getElementById("vilt-description").textContent =
+  "Fullstack consulting, working with Java and Spring Boot on the Backend and Angular/React on the Frontend, using Adobe Experience Manager (AEM) programs, providing services to various clients such as Porto, CVC, and more.";
+document.getElementById("vilt-date").textContent =
+  "January 2022 - April 2022";
+
+  document.getElementById("cast-title").textContent = "Cast Computing S.A.";
+  document.getElementById("cast-name").textContent = "Fullstack Developer";
+  document.getElementById("cast-description").textContent =
+    "Working directly with external clients on code maintenance/refactoring directives, using Angular and TypeScript on the Frontend, as well as Java with Spring Boot on the Backend and PostgresSQL as the database.";
+  document.getElementById("cast-date").textContent =
+    "August 2022 - October 2023";
+
+  document.getElementById("newer-title").textContent =
+    "coming soon";
+  document.getElementById("newer-name").textContent =
+    "new job title";
+  document.getElementById("newer-description").textContent =
+    "new opportunity that will come";
+  document.getElementById("newer-date").textContent =
+    "arriving nearly";
+
+
   document.getElementById("hour-title").textContent = "24-hour courses";
   document.getElementById("hour-description").textContent =
     "Administrative Assistant Course";
@@ -640,8 +638,8 @@ function loadEnglishContent() {
   document.getElementById("math-text").textContent = "Basic math calculator.";
   document.getElementById("dash-text").textContent =
     "Dashboard with 3 category selects updated in cascade.";
-  document.getElementById("text-btn1").textContent = "Well Done";
-  document.getElementById("text-btn2").textContent = "Downloaded file";
+  document.getElementById("text-btn1").textContent = "File";
+  document.getElementById("text-btn2").textContent = "Downloaded";
   document.getElementById("swiss-title").textContent = "Angular17 Swiss Calendar";
   document.getElementById("swiss-text").textContent = "Swiss Canton Holiday Tracker";
 }
