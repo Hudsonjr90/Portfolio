@@ -76,13 +76,11 @@ function typeWriter(elemento) {
 
   function showNavMenu() {
     navMenu.classList.toggle("open");
-   
   }
 
   function hideNavMenu() {
     navMenu.classList.toggle("open");
     fadeOutEffect();
-    
   }
   function fadeOutEffect() {
     document.querySelector(".fade-out-effect").classList.add("active");
@@ -103,23 +101,21 @@ function typeWriter(elemento) {
         document.querySelector(hash).classList.add("active");
         document.querySelector(hash).classList.remove("hide");
 
-        navMenu
-          .querySelector(".active")
-          // .classList.add("outer-shadow", "hover-in-shadow");
+        navMenu.querySelector(".active");
+        // .classList.add("outer-shadow", "hover-in-shadow");
         navMenu
           .querySelector(".active")
           .classList.remove("active", "inner-shadow-mod");
 
         if (navMenu.classList.contains("open")) {
           event.target.classList.add("active", "inner-shadow-mod");
-        
+
           hideNavMenu();
         } else {
           let navItems = navMenu.querySelectorAll(".link-item");
           navItems.forEach((item) => {
             if (hash === item.hash) {
               item.classList.add("active", "inner-shadow-mod");
-              
             }
           });
           fadeOutEffect();
@@ -130,7 +126,6 @@ function typeWriter(elemento) {
     }
   });
 })();
-
 
 /*---------------------portfolio filter e popup-----------------------*/
 
@@ -208,7 +203,6 @@ function typeWriter(elemento) {
 
   function popupToggle() {
     popup.classList.toggle("open");
-   
   }
 
   function popupSlideshow() {
@@ -379,19 +373,16 @@ inglesBtnDownload.addEventListener("click", () => {
     toast.style.display = "none";
     toast.classList.remove("active");
   }, 5000);
-  
 
   timer2 = setTimeout(() => {
     toast.style.display = "none";
     progressnotify.classList.remove("active");
   }, 5300);
-  
 });
 
 closeIcon.addEventListener("click", () => {
   toast.style.display = "none";
   toast.classList.remove("active");
-  
 
   setTimeout(() => {
     progressnotify.classList.remove("active");
@@ -429,18 +420,21 @@ function loadEnglishContent() {
   document.getElementById("titulo-sobre-mim").textContent = "About Me";
   document.getElementById(
     "texto-sobre-mim"
-  ).innerHTML = `I'm a full stack developer with over 10 years of experience in web projects, using
-  VB.net and Javascript. Previously I worked at a solutions company
-  digital, where I worked directly with the allocated projects, in the directives and negotiations of
-  code maintenance/refactoring, using Angular with Typescript on the Front-End, Java with
+  ).innerHTML = `Enthusiast of the best web & mobile development technologies with experience
+  of more than 10 years in the area of ​​information technology, working as an analyst/developer.
+  Previously I worked in a digital solutions company, where I worked directly with allocated projects,
+  in code maintenance/refactoring directives and procedures,
+  using Angular with Typescript on the Front-End, Java with
   Springboot in the Back-End and PostgreSQL Database.
-</br>
   In addition to my training in management processes and an MBA in software engineering, I completed
   recently completed my master's degree in computer science at Harvard University, where I deepened the
   my knowledge in areas such as artificial intelligence, cloud computing and security
   information. As a fullstack developer and software engineer, my goal is to continue
   improving, acquiring more experience and contributing to my team, delivering solutions
-  quality, innovative and that generate value for customers.`;
+  quality, innovative and that generate value for customers.
+  Passionate about my work, I always seek to learn more about software development, architecture,
+  development of new products and services with cutting-edge technology, project standards,
+  distributed solutions and scalable applications.`;
   document.getElementById("openModalBtn").textContent = "Resume";
   document.getElementById("titulo-modal").textContent =
     "Choose the CV language";
@@ -460,13 +454,13 @@ function loadEnglishContent() {
   });
 
   document.getElementById("freela-title").textContent =
-  "99Freelas/Capitona Rio/ETERJ";
-document.getElementById("freela-name").textContent =
-  "Freelancers/Personal Works";
-document.getElementById("freela-description").textContent =
-  "I took an industrial IT course at ETERJ, and freelance work, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.";
-document.getElementById("freela-date").textContent =
-  "February 2012 - at moment";
+    "99Freelas/Capitona Rio/ETERJ";
+  document.getElementById("freela-name").textContent =
+    "Freelancers/Personal Works";
+  document.getElementById("freela-description").textContent =
+    "I took an industrial IT course at ETERJ, and freelance work, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.";
+  document.getElementById("freela-date").textContent =
+    "February 2012 - at moment";
 
   document.getElementById("dt3-title").textContent = "DT3 Group";
   document.getElementById("dt3-name").textContent =
@@ -476,13 +470,13 @@ document.getElementById("freela-date").textContent =
   document.getElementById("dt3-date").textContent = "February 2019 - June 2021";
 
   document.getElementById("vilt-title").textContent =
-  "VILT Brazil Information Systems";
-document.getElementById("vilt-name").textContent =
-  "Full Technical Consultant";
-document.getElementById("vilt-description").textContent =
-  "Fullstack consulting, working with Java and Spring Boot on the Backend and Angular/React on the Frontend, using Adobe Experience Manager (AEM) programs, providing services to various clients such as Porto, CVC, and more.";
-document.getElementById("vilt-date").textContent =
-  "January 2022 - April 2022";
+    "VILT Brazil Information Systems";
+  document.getElementById("vilt-name").textContent =
+    "Full Technical Consultant";
+  document.getElementById("vilt-description").textContent =
+    "Fullstack consulting, working with Java and Spring Boot on the Backend and Angular/React on the Frontend, using Adobe Experience Manager (AEM) programs, providing services to various clients such as Porto, CVC, and more.";
+  document.getElementById("vilt-date").textContent =
+    "January 2022 - April 2022";
 
   document.getElementById("cast-title").textContent = "Cast Computing S.A.";
   document.getElementById("cast-name").textContent = "Fullstack Developer";
@@ -491,15 +485,11 @@ document.getElementById("vilt-date").textContent =
   document.getElementById("cast-date").textContent =
     "August 2022 - October 2023";
 
-  document.getElementById("newer-title").textContent =
-    "coming soon";
-  document.getElementById("newer-name").textContent =
-    "new job title";
+  document.getElementById("newer-title").textContent = "coming soon";
+  document.getElementById("newer-name").textContent = "new job title";
   document.getElementById("newer-description").textContent =
     "new opportunity that will come";
-  document.getElementById("newer-date").textContent =
-    "arriving nearly";
-
+  document.getElementById("newer-date").textContent = "arriving nearly";
 
   document.getElementById("hour-title").textContent = "24-hour courses";
   document.getElementById("hour-description").textContent =
@@ -600,8 +590,6 @@ document.getElementById("vilt-date").textContent =
   document.getElementById("conversor-title").textContent = "Currency Converter";
   document.getElementById("conversor-text").textContent =
     "World Currency Converter, made from Udemy course.";
-  document.getElementById("nu-text").textContent =
-    "Clone Nubank page design, made with Rocketseat.";
   document.getElementById("ml-text").textContent =
     "Clone Design of the Mercado Livre page, made with Rocketseat.";
   document.getElementById("clock-title").textContent = "Analog Clock";
@@ -640,8 +628,10 @@ document.getElementById("vilt-date").textContent =
     "Dashboard with 3 category selects updated in cascade.";
   document.getElementById("text-btn1").textContent = "File";
   document.getElementById("text-btn2").textContent = "Downloaded";
-  document.getElementById("swiss-title").textContent = "Angular17 Swiss Calendar";
-  document.getElementById("swiss-text").textContent = "Swiss Canton Holiday Tracker";
+  document.getElementById("swiss-title").textContent =
+    "Angular17 Swiss Calendar";
+  document.getElementById("swiss-text").textContent =
+    "Swiss Canton Holiday Tracker";
 }
 
 /*------------------button play function----------------------- */
@@ -833,14 +823,14 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   });
 }
 
-window.addEventListener('scroll', () => {
-  const menuContainer = document.querySelector('.menu-container');
-  
-  const scrollThreshold = 100; 
+window.addEventListener("scroll", () => {
+  const menuContainer = document.querySelector(".menu-container");
+
+  const scrollThreshold = 100;
 
   if (window.scrollY > scrollThreshold) {
-    menuContainer.classList.add('scrolled');
+    menuContainer.classList.add("scrolled");
   } else {
-    menuContainer.classList.remove('scrolled');
+    menuContainer.classList.remove("scrolled");
   }
 });
