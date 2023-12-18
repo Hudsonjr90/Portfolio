@@ -832,3 +832,15 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     });
   });
 }
+
+window.addEventListener('scroll', () => {
+  const menuContainer = document.querySelector('.menu-container');
+  
+  const scrollThreshold = 100; 
+
+  if (window.scrollY > scrollThreshold) {
+    menuContainer.classList.add('scrolled');
+  } else {
+    menuContainer.classList.remove('scrolled');
+  }
+});

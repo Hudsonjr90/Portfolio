@@ -2224,20 +2224,30 @@ img {
   background-color: var(--white);
   color: var(--green);
 }
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black); 
+  z-index: 1000; 
+  transition: background-color 0.3s ease;
+}
 
-.list-menu {
-  margin-left: auto;
+.menu-container.scrolled {
+  background-color: var(--modal-header);
 }
 
 .list-menu ul {
   list-style: none;
   padding: 0;
-  margin-right: -10rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .list-menu ul li {
-  display: inline-block;
-  margin: 2rem 3rem 0rem 0rem;
+  margin: 2rem;
 }
 
 .menu-button {
