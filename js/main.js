@@ -323,11 +323,13 @@ portuguesBtn.addEventListener("click", () => {
 inglesBtn.addEventListener("click", () => {
   downloadFile("./assets/cv/HudsonKennedy-US.pdf");
   modal.style.display = "none";
+ 
 });
 
 window.addEventListener("click", (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
+    
   }
 });
 
@@ -338,6 +340,7 @@ function downloadFile(filePath) {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+  scrollToTop();
 }
 
 const portuguesBtnDownload = document.getElementById("portuguesBtn");

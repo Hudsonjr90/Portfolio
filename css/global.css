@@ -2235,7 +2235,7 @@ img {
 }
 
 .menu-container.scrolled {
-  background-color: var(--modal-header);
+  background:10px var(--modal-header);
 }
 
 .list-menu ul {
@@ -2391,7 +2391,7 @@ img {
 .text-reveal::after {
   content: "";
   z-index: 2;
-  border: 0.125rem solid #fff;
+  border: 0.125rem solid var(--white);
   border-block: none;
   width: 100%;
   justify-self: center;
@@ -2492,7 +2492,8 @@ img {
 .toast {
   position: absolute;
   display: none;
-  margin: -9rem 0rem 0rem 10rem;
+  top: 9rem;
+  right: 35rem;
   border-radius: 0.75rem;
   background: var(--white);
   padding: 1.25rem 2.1875rem 1.25rem 1.5625rem;
@@ -2787,7 +2788,7 @@ img {
   }
 
   .toast {
-    margin: -15rem 0rem 0rem -17rem;
+    margin: -7rem -15rem 0rem -10rem;
   }
   .mobile-info {
     display: block;
