@@ -2578,12 +2578,40 @@ img {
   pointer-events: none;
 }
 
-.mobile-info {
+.mobile-info, .maintext2 {
   display: none;
 }
 
-.maintext2{
-  display: none;
+.snow, .snow2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../assets/img/snow.png);
+  background-position: 0 0;
+}
+
+.snow{
+  background-size: 70em;
+  animation: snowfall 30s linear infinite;
+}
+.snow2{
+  background-size: 50em;
+  animation: snowfall2 30s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes snowfall{
+  100% {
+    background-position: 70em 70em;
+  }
+}
+
+@keyframes snowfall2{
+  100% {
+    background-position: 50em 0em;
+  }
 }
 
 @media (max-width: 767px) {
