@@ -289,22 +289,9 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.home-section .home-img .img-box img:hover {
-  animation: pulsar 0.5s infinite;
+.home-section .topcap img{
+  width: 22vw;
 }
-
-@keyframes pulsar {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 
 .home-section .home-social-links .social-links {
   margin-top: 4rem;
@@ -2666,6 +2653,14 @@ img {
   .home-section .home-img .img-box {
     margin-bottom: 4rem;
     max-width: 36rem;
+  }
+
+  .home-section .topcap{
+    margin: 0rem 0rem 10rem 5rem;
+  }
+
+  .home-section .topcap img{
+    width: 100vw;
   }
 
   .about-section .about-img {
