@@ -1,3 +1,7 @@
+window.onload = function() {
+  history.replaceState("", document.title, window.location.pathname);
+};
+
 //animação máquina de escrever
 document.addEventListener("DOMContentLoaded", function () {
   const titulo = document.querySelector("h1");
