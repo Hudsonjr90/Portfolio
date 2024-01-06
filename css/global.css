@@ -1644,13 +1644,19 @@ img {
 
 .footer-modal button {
   height: 4rem;
-  padding: 0 1.5rem;
+  padding: 3rem 1.5rem;
   border-radius: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font: 700 2rem "Baloo 2", sans-serif;
+}
+
+.footer-modal i {
+  margin-left: 0.5rem; /* Adicione um espaçamento entre o ícone e o texto */
+  font: 700 3.5rem "Baloo 2", sans-serif;
+  color: var(--green);
 }
 
 .fechar {

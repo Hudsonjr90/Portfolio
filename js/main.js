@@ -400,6 +400,7 @@ closeIcon.addEventListener("click", () => {
   toast.style.display = "none";
 });
 
+
 // Função para trocar para inglês
 function loadEnglishContent() {
   document.getElementById("menu-inicio").textContent = "Home";
@@ -445,8 +446,6 @@ function loadEnglishContent() {
   document.getElementById("openModalBtn").textContent = "Resume";
   document.getElementById("titulo-modal").textContent =
     "Choose the CV language";
-  document.getElementById("inglesBtn").textContent = "English";
-  document.getElementById("portuguesBtn").textContent = "Portuguese";
   document.getElementById("jobs-title").textContent = "Experiences";
   document.getElementById("skills-title").textContent = "Skills";
   document.getElementById("education-title").textContent = "Formations";
