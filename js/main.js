@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   history.replaceState("", document.title, window.location.pathname);
 };
 
@@ -327,13 +327,11 @@ portuguesBtn.addEventListener("click", () => {
 inglesBtn.addEventListener("click", () => {
   downloadFile("./assets/cv/HudsonKennedy-US.pdf");
   modal.style.display = "none";
- 
 });
 
 window.addEventListener("click", (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
-    
   }
 });
 
@@ -399,7 +397,6 @@ closeIcon.addEventListener("click", () => {
   clearTimeout(timer2);
   toast.style.display = "none";
 });
-
 
 // Função para trocar para inglês
 function loadEnglishContent() {
