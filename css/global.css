@@ -8,6 +8,7 @@
   --modal-color: #525458;
   --modal-header: #6b6b6b;
   --white: #fff;
+  --animation-speed: 40s;
 }
 
 .fa-plus:before {
@@ -271,7 +272,7 @@
 }
 
 .home-section .home-img .img-box {
-  width: 60rem;
+  width: 50rem;
   display: block;
   margin: auto;
   border-radius: 50%;
@@ -371,6 +372,8 @@
 .about-section .about-info .social-links {
   margin: 0rem 0rem 1rem 0rem;
 }
+
+
 
 .skills-section .container-skill {
   display: -webkit-box;
