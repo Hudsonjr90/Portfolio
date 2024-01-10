@@ -403,6 +403,7 @@ function loadEnglishContent() {
   document.getElementById("menu-inicio").textContent = "Home";
   document.getElementById("menu-sobre").textContent = "About";
   document.getElementById("menu-jobs").textContent = "Experiences";
+  document.getElementById("menu-testim").textContent = "Testimonials";
   document.getElementById("menu-skills").textContent = "Skills";
   document.getElementById("menu-education").textContent = "Formations";
   document.getElementById("menu-portfolio").textContent = "Projects";
@@ -410,6 +411,7 @@ function loadEnglishContent() {
   document.getElementById("menu-in-b").textContent = "Home";
   document.getElementById("menu-so-b").textContent = "About";
   document.getElementById("menu-jo-b").textContent = "Experiences";
+  document.getElementById("menu-te-st").textContent = "Testimonials";
   document.getElementById("menu-sk-b").textContent = "Skills";
   document.getElementById("menu-ed-b").textContent = "Formations";
   document.getElementById("menu-po-b").textContent = "Projects";
@@ -425,21 +427,16 @@ function loadEnglishContent() {
   document.getElementById("titulo-sobre-mim").textContent = "About Me";
   document.getElementById(
     "texto-sobre-mim"
-  ).innerHTML = `Enthusiast of the best web & mobile development technologies with experience
-  of more than 10 years in the area of ​​information technology, working as an analyst/developer.
-  Previously I worked in a digital solutions company, where I worked directly with allocated projects,
-  in code maintenance/refactoring directives and procedures,
-  using Angular with Typescript on the Front-End, Java with
-  Springboot in the Back-End and PostgreSQL Database.
-  In addition to my training in management processes and an MBA in software engineering, I completed
-  recently completed my master's degree in computer science at Harvard University, where I deepened the
-  my knowledge in areas such as artificial intelligence, cloud computing and security
-  information. As a fullstack developer and software engineer, my goal is to continue
-  improving, acquiring more experience and contributing to my team, delivering solutions
-  quality, innovative and that generate value for customers.
-  Passionate about my work, I always seek to learn more about software development, architecture,
-  development of new products and services with cutting-edge technology, project standards,
-  distributed solutions and scalable applications.`;
+  ).innerHTML = `Enthusiast of the best web & mobile development technologies with over 10 years of experience in the field, a technology and innovation enthusiast, 
+  with a solid academic background and rich experience in software development. Currently, I work as a Fullstack Developer, with a focus on Front-End, where I apply 
+  knowledge gained throughout my educational and professional journey. Previously, I worked at a digital solutions company, where I was directly involved in projects, 
+  providing directives and handling maintenance/refactoring of codes, using Angular with Typescript on the Front-End, Java with Springboot on the Back-End, and PostgreSQL as the database.
+  In addition to my background in managerial processes and an MBA in software engineering, I recently completed my master's in computer science at Harvard University, 
+  where I deepened my knowledge in areas such as artificial intelligence, cloud computing, and information security. As a fullstack developer and software engineer, 
+  my goal is to continue improving, gaining more experience, and contributing to my team by delivering quality, innovative solutions that add value to clients.
+  Passionate about my work, I always seek to learn more about software development, architecture, creating new products and services with cutting-edge technology, 
+  design patterns, distributed solutions, and scalable applications. I believe that continuous learning is the key to success in the technology field, and I am always 
+  seeking new challenges and opportunities to enhance my skills and contribute to innovative projects.`;
   document.getElementById("openModalBtn").textContent = "Resume";
   document.getElementById("titulo-modal").textContent =
     "Choose the CV language";
@@ -636,76 +633,6 @@ function loadEnglishContent() {
   document.getElementById("swiss-text").textContent =
     "Swiss Canton Holiday Tracker";
 }
-
-/*------------------button play function----------------------- */
-
-let buttonPlay = document.getElementById("button-play");
-let buttonPause = document.getElementById("button-pause");
-let isSpeaking = false;
-
-// Função para atualizar o ícone do botão
-function updatePlayButtonIcon(isPlaying) {
-  if (isPlaying) {
-    buttonPlay.querySelector("i").classList.remove("fa-circle-play");
-    buttonPlay.querySelector("i").classList.add("fa-circle-pause");
-    buttonPlay.setAttribute("title", "Pause");
-  } else {
-    buttonPlay.querySelector("i").classList.remove("fa-circle-pause");
-    buttonPlay.querySelector("i").classList.add("fa-circle-play");
-    buttonPlay.setAttribute("title", "Play");
-  }
-}
-
-// Função para detectar o idioma do navegador e selecionar a voz apropriada
-function selectVoiceByLanguage() {
-  const userLang = navigator.language || navigator.userLanguage;
-  let voice = "Brazilian Portuguese Male"; // Voz padrão para português
-
-  if (userLang.startsWith("en")) {
-    // Se o idioma do navegador for inglês, use uma voz em inglês
-    voice = "US English Male"; // Exemplo de voz em inglês
-  }
-
-  return voice;
-}
-
-buttonPlay.addEventListener("click", () => {
-  if (!isSpeaking) {
-    let textoSobreMim = document.getElementById("texto-sobre-mim").textContent;
-
-    // Use a API Text-to-Speech do Google para ler o texto em inglês ou português
-    const synthesis = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(textoSobreMim);
-
-    // Defina a voz com base no idioma do navegador
-    utterance.lang = selectVoiceByLanguage();
-
-    utterance.rate = 1;
-
-    synthesis.speak(utterance);
-
-    isSpeaking = true;
-    updatePlayButtonIcon(true);
-
-    // Adicione um ouvinte de evento para detectar a conclusão da fala
-    utterance.onend = () => {
-      isSpeaking = false;
-      updatePlayButtonIcon(false);
-    };
-  } else {
-    // Pausar a fala
-    window.speechSynthesis.cancel();
-    isSpeaking = false;
-    updatePlayButtonIcon(false);
-  }
-});
-
-buttonPause.addEventListener("click", () => {
-  // Pausar a fala
-  window.speechSynthesis.pause();
-  isSpeaking = false;
-  updatePlayButtonIcon(false);
-});
 
 // Função para rolar suavemente para o topo da página
 function scrollToTop() {

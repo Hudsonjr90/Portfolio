@@ -150,6 +150,7 @@
   .menu-icon-5
   .menu-icon-6
   .menu-icon-7
+  .menu-icon-8
   .nav-menu
   .nav-menu-inner
   ul
@@ -772,6 +773,142 @@
   .timeline-item-inner
   p:hover {
   color: var(--green);
+}
+
+.testimonials-section .services {
+  padding: 0 0 8rem;
+}
+
+.testimonials-section .services .timeline {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.testimonials-section .services .timeline::before {
+  content: "";
+  width: 0.1rem;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  background-color: var(--light-dark);
+  position: absolute;
+}
+
+.testimonials-section .services .timeline .timeline-item {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 1.5rem;
+}
+
+.testimonials-section .services .timeline .timeline-item:nth-child(odd) {
+  padding-right: calc(50% + 5rem);
+  text-align: right;
+}
+
+.testimonials-section .services .timeline .timeline-item:nth-child(even) {
+  padding-left: calc(50% + 5rem);
+}
+
+.testimonials-section .services .timeline .timeline-item:nth-child(odd) .icon {
+  right: -7rem;
+}
+
+.testimonials-section .services .timeline .timeline-item:nth-child(even) .icon {
+  left: -7rem;
+}
+
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item:nth-child(odd)
+  .timeline-item-inner:before {
+  right: -3rem;
+}
+
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item:nth-child(even)
+  .timeline-item-inner:before {
+  left: -3rem;
+}
+
+.testimonials-section .services .timeline .timeline-item .timeline-item-inner {
+  padding: 3rem;
+  border-radius: 2.5rem;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner::before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 0.1rem;
+  background-color: var(--light-dark);
+  top: 3.7rem;
+  z-index: -1;
+}
+
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner
+  .icon {
+  height: 4rem;
+  width: 4rem;
+  background-color: var(--black);
+  text-align: center;
+  border: 0.1rem solid var(--light-dark);
+  border-radius: 50%;
+  line-height: 4rem;
+  font-size: 3rem;
+  color: var(--green);
+  position: absolute;
+  top: 1.8rem;
+}
+
+.testimonials-section .services .timeline .timeline-item .timeline-item-inner p {
+  font: 700 1.7rem "Baloo 2", sans-serif;
+  color: var(--white);
+  margin-top: 2rem;
+  overflow-wrap: break-word;
+  text-align: start;
+}
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner
+  p:hover {
+  color: var(--green);
+}
+
+.testimonials-section .services .timeline .timeline-item .timeline-item-inner i {
+  font-size: 5rem;
+  color: var(--green);
+}
+
+.testimonials-section .services .timeline .timeline-item .timeline-item-inner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.testimonials-section .services .timeline .timeline-item .timeline-item-inner:hover img {
+  transform: scale(1.1); 
 }
 
 .portfolio-section {
@@ -1531,6 +1668,31 @@ img {
   color: var(--green);
 }
 
+.section-title-testimonials {
+  padding: 1rem 1.5rem 1rem;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.section-title-testimonials h2 {
+  display: inline-block;
+  font: 700 3rem "Baloo 2", sans-serif;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+
+.section-title-testimonials h2:before {
+  content: attr(data-heading);
+  display: block;
+  font: 700 1.6rem "Baloo 2", sans-serif;
+  color: var(--green);
+}
+
 .section-title-project {
   padding: 1rem 1.5rem 1rem;
   -webkit-box-flex: 0;
@@ -1671,46 +1833,6 @@ img {
   justify-content: flex-end;
   width: 7%;
   cursor: pointer;
-}
-
-.button-play,
-.button-pause {
-  display: flex;
-  float: left;
-  font-size: 4rem;
-  text-align: center;
-  background: none;
-  color: var(--white);
-  margin: 0 1.4rem;
-  border-radius: 50%;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-.button-play::after,
-.button-pause::after {
-  border-radius: 50%;
-}
-
-.button-play:hover,
-.button-pause:hover {
-  color: var(--green);
-}
-
-.button-play,
-.button-pause {
-  line-height: 4rem;
-}
-
-.button-pause {
-  display: none; /* Inicialmente, oculta o botão de pausa */
-}
-
-.button-play:hover::after,
-.button-pause:hover::after {
-  display: block;
 }
 
 .portfolio-section .project-img {
@@ -2284,8 +2406,9 @@ img {
 .menu-icon-3,
 .menu-icon-4,
 .menu-icon-5,
-.menu-icon-61,
-.menu-icon-7 {
+.menu-icon-6,
+.menu-icon-7,
+.menu-icon-8 {
   font-size: 3rem;
   margin: 1.2rem;
 }
@@ -2644,6 +2767,7 @@ img {
   .skills-section,
   .skills-section .skills .skill-item,
   .education-section,
+  .testimonials-section,
   .portfolio-section .project-img,
   .home-section .home-text,
   .home-section .home-img {
@@ -2760,6 +2884,36 @@ img {
     margin-bottom: 0;
   }
 
+  .testimonials-section .services .timeline .timeline-item:nth-child(odd) {
+    padding-right: 1.5rem;
+    text-align: left;
+    padding-left: 7.5rem;
+  }
+  
+  .testimonials-section .services .timeline .timeline-item:nth-child(even) {
+    padding-left: 7.5rem;
+  }
+  
+  .testimonials-section .services .timeline::before {
+    left: 3.5rem;
+  }
+  
+  .testimonials-section .services .timeline .timeline-item:nth-child(odd) .icon {
+    right: auto;
+    left: -6rem;
+  }
+  
+  .testimonials-section .services .timeline .timeline-item:nth-child(even) .icon {
+    left: -6rem;
+  }
+  
+  .testimonials-section .services .timeline .timeline-item {
+    margin-bottom: 4rem;
+  }
+  
+  .testimonials-section .services .timeline .timeline-item:last-child {
+    margin-bottom: 0;
+  }
   .portfolio-section .project-img {
     max-width: 100%;
   }
@@ -2785,6 +2939,15 @@ img {
     display: none;
   }
   .education-section
+    .services
+    .timeline
+    .timeline-item:nth-child(odd)
+    .timeline-item-inner::before {
+    left: -3rem;
+    right: auto;
+  }
+
+  .testimonials-section
     .services
     .timeline
     .timeline-item:nth-child(odd)
