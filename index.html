@@ -9,8 +9,6 @@
    <link rel="stylesheet" href="css/global.css">
    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.9.55/css/materialdesignicons.min.css">
    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-   <link rel="preload" as="style"
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" />
    <link rel="icon" href="./assets/img/rocket.webp">
    <meta property="og:site_name" content="Website">
    <meta property="og:title" content="Portfolio - Hudson Kennedy">
@@ -36,11 +34,11 @@
                      <li><a href="#about" id="menu-so-b" class="link-item menu-button" style="--navAni:2">Sobre</a>
                      </li>
                      <li><a href="#testimonials" id="menu-te-st" class="link-item menu-button"
-                           style="--navAni:5">Depoimentos</a></li>
+                           style="--navAni:3">Depoimentos</a></li>
                      <li><a href="#education" id="menu-ed-b" class="link-item menu-button"
-                           style="--navAni:3">Formações</a></li>
+                           style="--navAni:4">Formações</a></li>
                      <li><a href="#jobs" id="menu-jo-b" class="link-item menu-button"
-                           style="--navAni:4">Experiências</a></li>
+                           style="--navAni:5">Experiências</a></li>
                      <li><a href="#skills" id="menu-sk-b" class="link-item menu-button"
                            style="--navAni:6">Habilidades</a></li>
                      <li><a href="#projects" id="menu-po-b" class="link-item menu-button"
@@ -159,7 +157,7 @@
       <div class="about-section container">
          <div class="row">
             <div class="section-title-about">
-               <h2 id="titulo-sobre-mim" data-heading="______">Sobre Mim</h2>
+               <h2 id="titulo-sobre-mim" >Sobre Mim</h2>
             </div>
          </div>
          <div class="about-img">
@@ -233,7 +231,7 @@
    <section class="testimonials-section section" id="testimonials">
       <div class="row">
          <div class="section-title-testimonials">
-            <h2 id="education-title" data-heading="______">Depoimentos</h2>
+            <h2 id="testimonial-title" >Depoimentos</h2>
          </div>
       </div>
       <div class="testimonials container services">
@@ -407,7 +405,7 @@
    <section class="education-section section" id="education">
       <div class="row">
          <div class="section-title-education">
-            <h2 id="education-title" data-heading="______">Formações</h2>
+            <h2 id="education-title" >Formações</h2>
          </div>
       </div>
 
@@ -418,7 +416,17 @@
                   <!--timeline item-->
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/bootcamp.png" alt="bootcamp">
+
+                        <h3 id="dio-title">Digital Innovation</h3>
+                        <p id="dio-description-f">Bootcamp Banco Pan - Desenvolvimento Frontend com Angular</p>
+                     </div>
+                  </div>
+                  <div class="timeline-item">
+                     <div class="timeline-item-inner outer-shadow">
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/harvard.png" alt="harvard">
 
                         <h3 id="harvard-title">Universidade de Harvard</h3>
                         <p id="harvard-description">Mestrado que atua dentro do programa de
@@ -428,33 +436,37 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/mba.png" alt="MBA">
 
                         <h3 id="unica-title">Faculdade Única de MG</h3>
                         <p id="unica-description">Pós Graduação em Engenharia de Software</p>
                      </div>
                   </div>
-                  <div class="timeline-item">
+                  <!-- <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/" alt="Estácio">
 
                         <h3 class="estacio-title college-name">Faculdade Estácio de Sá</h3>
                         <p class="estacio-description">Processos Gerencias</p>
                      </div>
-                  </div>
+                  </div> -->
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/dio-comp.png">
 
-                        <h3 id="dio-title-a">Digital Innovation</h3>
+                        <h3 id="dio-title">Digital Innovation</h3>
                         <p id="dio-description-a">Trabalhando com Componentes em React</p>
                      </div>
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/dio-arq.png">
 
-                        <h3 id="dio-title-b">Digital Innovation</h3>
+                        <h3 id="dio-title">Digital Innovation</h3>
                         <p id="dio-description-b">Arquitetura de Componentes e a gestão da
                            complexidade no
                            front-end</p>
@@ -462,7 +474,35 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/dio-log.png">
+
+                        <h3 id="dio-title">Digital Innovation</h3>
+                        <p id="dio-description-c">Lógica de Programção Essencial</p>
+                     </div>
+                  </div>
+                  <div class="timeline-item">
+                     <div class="timeline-item-inner outer-shadow">
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/dio-es6.png">
+
+                        <h3 id="dio-title">Digital Innovation</h3>
+                        <p id="dio-description-d">Javascript ES6 Essencial</p>
+                     </div>
+                  </div>
+                  <div class="timeline-item">
+                     <div class="timeline-item-inner outer-shadow">
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/dio-ang8.png">
+
+                        <h3 id="dio-title">Digital Innovation</h3>
+                        <p id="dio-description-e">Técnicas Avançadas em Angular 8</p>
+                     </div>
+                  </div>
+                  <div class="timeline-item">
+                     <div class="timeline-item-inner outer-shadow">
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/aem-front.png">
 
                         <h3 id="adobe-title-a">Adobe Profissional</h3>
                         <p id="adobe-description-a">AEM - Front-end Developer</p>
@@ -470,7 +510,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/aem-sbp.png">
 
                         <h3 id="adobe-title-b">Adobe Profissional</h3>
                         <p id="adobe-description-b">AEM - Business Practitioner</p>
@@ -478,15 +519,35 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/vuejs.png">
 
                         <h3 id="vuejs-title">VueJs Brasil</h3>
-                        <p id="vuejs-description">Curso Vuejs - Básico ao Avançado</p>
+                        <p id="vuejs-description-a">Curso Vuejs - Básico ao Avançado</p>
                      </div>
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/dio-vue1.png">
+
+                        <h3 id="dio-title">Digital Innovation</h3>
+                        <p id="vuejs-description-b">Diretivas e Propriedades de Componentes Vue.js</p>
+                     </div>
+                  </div>
+                  <div class="timeline-item">
+                     <div class="timeline-item-inner outer-shadow">
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/dio-vue2.png">
+
+                        <h3 id="dio-title">Digital Innovation</h3>
+                        <p id="vuejs-description-c">Componentes, Métodos e Ciclo de vida com Vue.js</p>
+                     </div>
+                  </div>
+                  <div class="timeline-item">
+                     <div class="timeline-item-inner outer-shadow">
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/udemy.png">
 
                         <h3 id="udemy-title">Udemy</h3>
                         <p id="udemy-description">Curso Javascript e Typescript do Básico ao
@@ -496,15 +557,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
-
-                        <h3 id="iv-title">Faculdade IV2</h3>
-                        <p id="iv-description">M.E.R.N (MongoDB/Express/React/Node) </p>
-                     </div>
-                  </div>
-                  <div class="timeline-item">
-                     <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/sebrae-EF.png">
 
                         <h3 id="sebrae-title-f">SEBRAE</h3>
                         <p id="sebrae-description-f">Curso Educação Financeira Empresarial
@@ -513,7 +567,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/sebrae-GF.png">
 
                         <h3 id="sebrae-title-e">SEBRAE</h3>
                         <p id="sebrae-description-e">Curso Gestão Financeira</p>
@@ -521,7 +576,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/sebrae-CS.png">
 
                         <h3 id="sebrae-title-d">SEBRAE</h3>
                         <p id="sebrae-description-d">Curso Customer Success(Como Conquistar e
@@ -532,7 +588,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/sebrae-MD.png">
 
                         <h3 id="sebrae-title-c">SEBRAE</h3>
                         <p id="sebrae-description-c">Curso Marketing digital para
@@ -541,7 +598,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/sebrae-EFC.png">
 
                         <h3 id="sebrae-title-b">SEBRAE</h3>
                         <p id="sebrae-description-b">Curso Estratégia Financeira para o
@@ -551,7 +609,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/sebrae-PE.png">
 
                         <h3 id="sebrae-title-a">SEBRAE</h3>
                         <p id="sebrae-description-a">Curso Planejamento Estratégico para
@@ -560,7 +619,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/fgv.png">
 
                         <h3 id="fgv-title">FGV</h3>
                         <p id="fgv-description">Curso Segurança Digital</p>
@@ -568,7 +628,8 @@
                   </div>
                   <div class="timeline-item">
                      <div class="timeline-item-inner outer-shadow">
-                        <i class="mdi mdi-shield-account  icon"></i>
+                        <i class="fa-solid fa-graduation-cap  icon"></i>
+                        <img src="assets/img/24h.png">
 
                         <h3 id="hour-title">Cursos 24horas</h3>
                         <p id="hour-description">Curso Auxiliar Administrativo</p>
@@ -588,7 +649,7 @@
       <div class="jobs-section container">
          <div class="row">
             <div class="section-title-experience">
-               <h2 id="jobs-title" data-heading="______">Experiências</h2>
+               <h2 id="jobs-title" >Experiências</h2>
             </div>
          </div>
          <div class="services">
@@ -702,7 +763,7 @@
       <div class="skills-section skills container">
          <div class="row">
             <div class="section-title-skills">
-               <h2 id="skills-title" data-heading="______">Habilidades</h2>
+               <h2 id="skills-title" >Habilidades</h2>
             </div>
          </div>
          <div class="container-skill ">
@@ -1384,7 +1445,7 @@
       <div class="container">
          <div class="row">
             <div class="section-title-project">
-               <h2 id="portfolio-title" data-heading="______">Projetos</h2>
+               <h2 id="portfolio-title" >Projetos</h2>
             </div>
          </div>
          <div class="row">
@@ -2158,7 +2219,7 @@
       <div class="container">
          <div class="row">
             <div class="section-title-contact">
-               <h2 data-heading="______" id="fale-title">Contato</h2>
+               <h2  id="fale-title">Contato</h2>
             </div>
          </div>
          <div class="contact-img">

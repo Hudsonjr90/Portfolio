@@ -443,6 +443,7 @@ function loadEnglishContent() {
   document.getElementById("jobs-title").textContent = "Experiences";
   document.getElementById("skills-title").textContent = "Skills";
   document.getElementById("education-title").textContent = "Formations";
+  document.getElementById("testimonial-title").textContent = "Testimonials";
   document.querySelectorAll(".anos").forEach(function (element) {
     element.textContent = "Years";
   });
@@ -451,6 +452,9 @@ function loadEnglishContent() {
   });
   document.querySelectorAll(".meses").forEach(function (element) {
     element.textContent = "Months";
+  });
+  document.querySelectorAll("dio-title").forEach(function (element) {
+    element.textContent = "Digital Innovation";
   });
 
   document.getElementById("freela-title").textContent =
@@ -516,28 +520,33 @@ function loadEnglishContent() {
   document.getElementById("sebrae-title-f").textContent = "SEBRAE";
   document.getElementById("sebrae-description-f").textContent =
     "Business Financial Education Course";
-  document.getElementById("iv-title").textContent = "IV2 College";
-  document.getElementById("iv-description").textContent =
-    "M.E.R.N (MongoDB/Express/React/Node) ";
   document.getElementById("udemy-title").textContent = "Udemy";
   document.getElementById("udemy-description").textContent =
     "Basic to Advanced Javascript and Typescript Course";
   document.getElementById("vuejs-title").textContent = "VueJs Brazil";
-  document.getElementById("vuejs-description").textContent =
+  document.getElementById("vuejs-description-a").textContent =
     "Vuejs Course - Basic to Advanced";
+  document.getElementById("vuejs-description-b").textContent =
+    "Vue.js Component Directives and Properties";
+  document.getElementById("vuejs-description-c").textContent =
+    "Components, Methods and Lifecycle with Vue.js";
   document.getElementById("adobe-title-a").textContent = "Adobe Profissional";
   document.getElementById("adobe-description-a").textContent =
     "AEM - Business Practitioner";
   document.getElementById("adobe-title-b").textContent = "Adobe Profissional";
   document.getElementById("adobe-description-b").textContent =
     "AEM - Front-end Developer";
-  document.getElementById("dio-title-a").textContent = "Digital Innovation";
+
   document.getElementById("dio-description-a").textContent =
     "Component Architecture and front-end complexity management";
-  document.getElementById("dio-title-b").textContent = "Digital Innovation";
   document.getElementById("dio-description-b").textContent =
     "Working with Components in React";
-  document.getElementById("unica-title").textContent = "Single College of MG";
+  document.getElementById("dio-description-c").textContent = "Essential Programming Logic";
+  document.getElementById("dio-description-d").textContent = "Essential Javascript ES6";
+  document.getElementById("dio-description-e").textContent = "Advanced techniques in angular";
+  document.getElementById("dio-description-f").textContent = "Bank Pan Bootcamp - Frontend Development with Angular";
+  document.getElementById("unica-title").textContent =
+      "Single College of MG";
   document.getElementById("unica-description").textContent =
     "Postgraduate in Software Engineering";
   document.getElementById("harvard-title").textContent = "Harvard University";

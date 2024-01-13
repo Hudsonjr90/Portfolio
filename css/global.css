@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Josefin+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
 :root {
   --black: #2b2c2f;
@@ -131,7 +131,7 @@
 
 .nav-menu .nav-menu-inner ul li a {
   display: inline-block;
-  font: 700 2.8rem "Baloo 2", sans-serif;
+  font: 700 2.8rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2rem;
   -webkit-transition: all 0.3s ease;
@@ -225,13 +225,13 @@
 }
 
 .home-section .home-text h2 {
-  font: 700 5.5rem "Baloo 2", sans-serif;
+  font: 700 5.5rem "Josefin Sans", sans-serif;
   color: var(--white);
   margin: 0;
 }
 
 .home-section .home-text .maintext {
-  font: 700 2.9rem "Baloo 2", sans-serif;
+  font: 700 2.9rem "Josefin Sans", sans-serif;
   color: var(--green);
   margin: 0;
 }
@@ -301,7 +301,7 @@
   display: inline-block;
   height: 4rem;
   width: 4rem;
-  font: 700 2.5rem "Baloo 2", sans-serif;
+  font: 700 2.5rem "Josefin Sans", sans-serif;
   text-align: center;
   color: var(--white);
   margin: 0 0.4rem;
@@ -358,7 +358,7 @@
 }
 
 .about-section .about-info span {
-  font: 700 1.8rem "Baloo 2", sans-serif;
+  font: 700 1.8rem "Josefin Sans", sans-serif;
 }
 
 .about-section .about-info p {
@@ -373,8 +373,6 @@
 .about-section .about-info .social-links {
   margin: 0rem 0rem 1rem 0rem;
 }
-
-
 
 .skills-section .container-skill {
   display: -webkit-box;
@@ -425,7 +423,7 @@
   .skill-content
   .conhecimento
   h3 {
-  font: 700 2rem "Baloo 2", sans-serif;
+  font: 700 2rem "Josefin Sans", sans-serif;
   color: var(--white);
   margin-bottom: 1rem;
 }
@@ -436,7 +434,7 @@
   .skill-content
   .conhecimento
   p {
-  font: 700 1.5rem "Baloo 2", sans-serif;
+  font: 700 1.5rem "Josefin Sans", sans-serif;
   color: var(--white);
 }
 
@@ -566,7 +564,7 @@
 }
 
 .jobs-section .services .timeline .timeline-item .timeline-item-inner h1 {
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
 }
 .jobs-section .services .timeline .timeline-item .timeline-item-inner h1:hover {
@@ -574,7 +572,7 @@
 }
 
 .jobs-section .services .timeline .timeline-item .timeline-item-inner h2 {
-  font: 700 2.5rem "Baloo 2", sans-serif;
+  font: 700 2.5rem "Josefin Sans", sans-serif;
   color: var(--white);
 }
 .jobs-section .services .timeline .timeline-item .timeline-item-inner h2:hover {
@@ -582,7 +580,7 @@
 }
 
 .jobs-section .services .timeline .timeline-item .timeline-item-inner h3 {
-  font: 700 1.8rem "Baloo 2", sans-serif;
+  font: 700 1.8rem "Josefin Sans", sans-serif;
   color: var(--white);
 }
 .jobs-section .services .timeline .timeline-item .timeline-item-inner h3:hover {
@@ -590,7 +588,7 @@
 }
 
 .jobs-section .services .timeline .timeline-item .timeline-item-inner p {
-  font: 700 1.7rem "Baloo 2", sans-serif;
+  font: 700 1.7rem "Josefin Sans", sans-serif;
   color: var(--white);
 }
 .jobs-section .services .timeline .timeline-item .timeline-item-inner p:hover {
@@ -723,7 +721,7 @@
 }
 
 .education-section .services .timeline .timeline-item .timeline-item-inner h1 {
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
 }
 .education-section
@@ -736,7 +734,7 @@
 }
 
 .education-section .services .timeline .timeline-item .timeline-item-inner h2 {
-  font: 700 2.5rem "Baloo 2", sans-serif;
+  font: 700 2.5rem "Josefin Sans", sans-serif;
   color: var(--white);
 }
 .education-section
@@ -749,9 +747,10 @@
 }
 
 .education-section .services .timeline .timeline-item .timeline-item-inner h3 {
-  font: 700 1.8rem "Baloo 2", sans-serif;
+  font: 700 1.8rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-decoration: underline;
+  margin-top: 2rem;
 }
 .education-section
   .services
@@ -763,7 +762,7 @@
 }
 
 .education-section .services .timeline .timeline-item .timeline-item-inner p {
-  font: 700 1.7rem "Baloo 2", sans-serif;
+  font: 700 1.7rem "Josefin Sans", sans-serif;
   color: var(--white);
 }
 .education-section
@@ -773,6 +772,13 @@
   .timeline-item-inner
   p:hover {
   color: var(--green);
+}
+
+.education-section .services .timeline .timeline-item .timeline-item-inner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .testimonials-section .services {
@@ -936,7 +942,7 @@
   padding: 0.5rem 1rem;
   border-radius: 3rem;
   cursor: pointer;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
   text-transform: capitalize;
   -webkit-transition: all 0.3s ease;
@@ -1006,7 +1012,7 @@
   .portfolio-item-img
   .view-project {
   text-transform: capitalize;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -1025,7 +1031,7 @@
 }
 
 .portfolio-section .portfolio-item .portfolio-item-inner p {
-  font: 700 2rem "Baloo 2", sans-serif;
+  font: 700 2rem "Josefin Sans", sans-serif;
   margin: 1rem 0 0;
   color: var(--white);
   text-transform: capitalize;
@@ -1088,7 +1094,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-project-details h3 {
-  font: 700 2rem "Baloo 2", sans-serif;
+  font: 700 2rem "Josefin Sans", sans-serif;
   text-transform: capitalize;
   color: var(--white);
   margin: 0 0 1.5rem;
@@ -1099,14 +1105,14 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title h2 {
-  font: 700 2rem "Baloo 2", sans-serif;
+  font: 700 2rem "Josefin Sans", sans-serif;
   text-transform: capitalize;
   color: var(--white);
   margin: 0 0 0.5rem;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p {
-  font: 700 1.4rem "Baloo 2", sans-serif;
+  font: 700 1.4rem "Josefin Sans", sans-serif;
   color: var(--white);
   margin: 0 0 1.5rem;
   border-bottom: 0.1rem solid var(--light-dark);
@@ -1114,7 +1120,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .pp-title p span {
-  font: 700 1.8rem "Baloo 2", sans-serif;
+  font: 700 1.8rem "Josefin Sans", sans-serif;
   text-transform: capitalize;
 }
 
@@ -1127,7 +1133,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .description p {
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--white);
   line-height: 2.6rem;
   margin: 0;
@@ -1135,7 +1141,7 @@
 }
 
 .portfolio-popup .pp-details .pp-details-inner .description p span {
-  font: 700 "Baloo 2", sans-serif;
+  font: 700 "Josefin Sans", sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info {
@@ -1149,18 +1155,18 @@
 .portfolio-popup .pp-details .pp-details-inner .info ul li {
   margin-bottom: 1rem;
   color: var(--white);
-  font: 700 1.8rem "Baloo 2", sans-serif;
+  font: 700 1.8rem "Josefin Sans", sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li span {
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   text-transform: capitalize;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li a {
   text-transform: lowercase;
   color: var(--green);
-  font: 700 2rem "Baloo 2", sans-serif;
+  font: 700 2rem "Josefin Sans", sans-serif;
 }
 
 .portfolio-popup .pp-details .pp-details-inner .info ul li:last-child {
@@ -1243,7 +1249,7 @@
   position: absolute;
   left: 0;
   border-radius: 3rem;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
   cursor: pointer;
   padding: 0 1.5rem;
@@ -1374,14 +1380,14 @@
 
 .contact-section .contact-item .contact-item-inner span {
   display: block;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--white);
   margin: 1.5rem 0 1rem;
   text-transform: capitalize;
 }
 
 .contact-section .contact-item .contact-item-inner p {
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--white);
   line-height: 2.6rem;
   margin: 0;
@@ -1521,7 +1527,7 @@ img {
 
 .btn-2 {
   padding: 1rem 1.5rem;
-  font: 700 1.8rem "Baloo 2", sans-serif;
+  font: 700 1.8rem "Josefin Sans", sans-serif;
   color: var(--green);
   background-color: transparent;
   line-height: 1.5;
@@ -1539,7 +1545,7 @@ img {
 
 .btn-3 {
   padding: 1rem 2.5rem;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--white);
   background-color: transparent;
   line-height: 1.5;
@@ -1571,21 +1577,21 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
-  margin-bottom: 10rem;
+  margin-bottom: 12rem;
 }
 
 .section-title-about h2 {
   display: inline-block;
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-  margin: 0;
+  margin-top: 2rem;
 }
 
 .section-title-about h2:before {
   content: attr(data-heading);
   display: block;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
 }
 
@@ -1600,21 +1606,21 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
-  margin-top: 8rem;
+  margin-bottom: 2rem;
 }
 
 .section-title-experience h2 {
   display: inline-block;
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-  margin-bottom: 5rem;
+  margin-top: 10rem;
 }
 
 .section-title-experience h2:before {
   content: attr(data-heading);
   display: block;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
 }
 
@@ -1625,21 +1631,21 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
-  margin-top: 8rem;
+  margin-bottom: 1rem;
 }
 
 .section-title-skills h2 {
   display: inline-block;
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-  margin: 0;
+  margin-top: 10rem;
 }
 
 .section-title-skills h2:before {
   content: attr(data-heading);
   display: block;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
 }
 
@@ -1650,21 +1656,21 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
-  margin-top: 8rem;
+  margin-bottom: 5rem;
 }
 
 .section-title-education h2 {
   display: inline-block;
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-  margin-bottom: 5rem;
+  margin-top: 10rem;
 }
 
 .section-title-education h2:before {
   content: attr(data-heading);
   display: block;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
 }
 
@@ -1675,21 +1681,21 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
-  margin-top: 8rem;
+  margin-bottom: 5rem;
 }
 
 .section-title-testimonials h2 {
   display: inline-block;
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-  margin-bottom: 5rem;
+  margin-top: 10rem;
 }
 
 .section-title-testimonials h2:before {
   content: attr(data-heading);
   display: block;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
 }
 
@@ -1700,20 +1706,21 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .section-title-project h2 {
   display: inline-block;
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-  margin-bottom: 5rem;
+   margin-top: 2rem;
 }
 
 .section-title-project h2:before {
   content: attr(data-heading);
   display: block;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
 }
 
@@ -1724,20 +1731,21 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .section-title-contact h2 {
   display: inline-block;
-  font: 700 3rem "Baloo 2", sans-serif;
+  font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-  margin: 0;
+  margin-top: 2rem;
 }
 
 .section-title-contact h2:before {
   content: attr(data-heading);
   display: block;
-  font: 700 1.6rem "Baloo 2", sans-serif;
+  font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--green);
 }
 
@@ -1746,7 +1754,7 @@ img {
   border-bottom: 0.3rem solid var(--green);
   margin: 0 0.5rem 1rem;
   padding: 0.5rem 1rem;
-  font: 700 1rem "Baloo 2", sans-serif;
+  font: 700 1rem "Josefin Sans", sans-serif;
   line-height: 1.5;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
@@ -1798,7 +1806,7 @@ img {
 
 .cabecalho-modal h3 {
   margin: 0;
-  font: 700 2rem "Baloo 2", sans-serif;
+  font: 700 2rem "Josefin Sans", sans-serif;
 }
 
 .footer-modal {
@@ -1815,12 +1823,12 @@ img {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font: 700 2rem "Baloo 2", sans-serif;
+  font: 700 2rem "Josefin Sans", sans-serif;
 }
 
 .footer-modal i {
   margin-left: 0.5rem; /* Adicione um espaçamento entre o ícone e o texto */
-  font: 700 3.5rem "Baloo 2", sans-serif;
+  font: 700 3.5rem "Josefin Sans", sans-serif;
   color: var(--green);
 }
 
@@ -1912,7 +1920,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem "Baloo 2", sans-serif;
+  font: 700 1.3rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -1967,7 +1975,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem "Baloo 2", sans-serif;
+  font: 700 1.3rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2022,7 +2030,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem "Baloo 2", sans-serif;
+  font: 700 1.3rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2077,7 +2085,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem "Baloo 2", sans-serif;
+  font: 700 1.3rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2132,7 +2140,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem "Baloo 2", sans-serif;
+  font: 700 1.3rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2187,7 +2195,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem "Baloo 2", sans-serif;
+  font: 700 1.3rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2242,7 +2250,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem "Baloo 2", sans-serif;
+  font: 700 1.3rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2297,7 +2305,7 @@ img {
   position: absolute;
   right: -14px;
   top: -45px;
-  font: 700 1.3rem "Baloo 2", sans-serif;
+  font: 700 1.3rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 2px 6px;
   border-radius: 3px;
@@ -2377,7 +2385,7 @@ img {
 }
 
 .menu-button {
-  font: 700 1.5rem "Baloo 2", sans-serif;
+  font: 700 1.5rem "Josefin Sans", sans-serif;
   border-radius: 5rem;
   background-color: transparent;
   padding: 1rem 1rem 1rem 1rem;
@@ -2441,7 +2449,7 @@ img {
 .wrapper .tooltip {
   position: absolute;
   top: 0;
-  font: 700 1.4rem "Baloo 2", sans-serif;
+  font: 700 1.4rem "Josefin Sans", sans-serif;
   color: var(--white);
   padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
@@ -2505,7 +2513,7 @@ img {
 .text-reveal > span:nth-child(1) {
   -webkit-text-stroke: 1px var(--green);
   color: transparent;
-  font: 700 6rem "Baloo 2", sans-serif;
+  font: 700 6rem "Josefin Sans", sans-serif;
 }
 .text-reveal > span:nth-child(2) {
   -webkit-text-stroke: 1px var(--white);
@@ -2513,7 +2521,7 @@ img {
   -webkit-mask-image: linear-gradient(#000 0 0);
   mask-image: linear-gradient(#000 0 0);
   animation: text-reveal-2 2s ease-in-out 1s forwards;
-  font: 700 6rem "Baloo 2", sans-serif;
+  font: 700 6rem "Josefin Sans", sans-serif;
 }
 .text-reveal::after {
   content: "";
@@ -2578,7 +2586,7 @@ img {
   padding: 1rem;
   color: var(--white);
   background: transparent;
-  font: 700 2rem "Baloo 2", sans-serif;
+  font: 700 2rem "Josefin Sans", sans-serif;
 }
 
 .scroller[data-animated="true"] {
@@ -2889,11 +2897,11 @@ img {
     text-align: left;
     padding-left: 7.5rem;
   }
-  
+
   .testimonials-section .services .timeline .timeline-item:nth-child(even) {
     padding-left: 7.5rem;
   }
-  
+
   .testimonials-section .services .timeline::before {
     left: 3.5rem;
   }
@@ -2906,11 +2914,11 @@ img {
   .testimonials-section .services .timeline .timeline-item:nth-child(even) .icon {
     left: -6rem;
   }
-  
+
   .testimonials-section .services .timeline .timeline-item {
     margin-bottom: 4rem;
   }
-  
+
   .testimonials-section .services .timeline .timeline-item:last-child {
     margin-bottom: 0;
   }
@@ -3010,14 +3018,14 @@ img {
   }
   .mobile-info p {
     color: var(--white);
-    font: 700 2.5rem "Baloo 2", sans-serif;
+    font: 700 2.5rem "Josefin Sans", sans-serif;
     border-bottom: 0.2em solid var(--green);
   }
   .maintext {
     display: none;
   }
   .home-section .home-text .maintext2 {
-    font: 700 2.9rem "Baloo 2", sans-serif;
+    font: 700 2.9rem "Josefin Sans", sans-serif;
     color: var(--green);
     margin: 0;
     display: block;
