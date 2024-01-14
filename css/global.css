@@ -885,7 +885,12 @@
   top: 1.8rem;
 }
 
-.testimonials-section .services .timeline .timeline-item .timeline-item-inner p {
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner
+  p {
   font: 700 1.7rem "Baloo 2", sans-serif;
   color: var(--white);
   margin-top: 2rem;
@@ -901,20 +906,35 @@
   color: var(--green);
 }
 
-.testimonials-section .services .timeline .timeline-item .timeline-item-inner i {
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner
+  i {
   font-size: 5rem;
   color: var(--green);
 }
 
-.testimonials-section .services .timeline .timeline-item .timeline-item-inner img {
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner
+  img {
   width: 100%;
   height: auto;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.testimonials-section .services .timeline .timeline-item .timeline-item-inner:hover img {
-  transform: scale(1.1); 
+.testimonials-section
+  .services
+  .timeline
+  .timeline-item
+  .timeline-item-inner:hover
+  img {
+  transform: scale(1.1);
 }
 
 .portfolio-section {
@@ -1714,7 +1734,7 @@ img {
   font: 700 3rem "Josefin Sans", sans-serif;
   color: var(--white);
   text-transform: uppercase;
-   margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .section-title-project h2:before {
@@ -2647,11 +2667,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.1875rem;
-  min-width: 2.1875rem;
+  height: 4rem;
+  min-width: 4rem;
   background-color: var(--green);
   color: var(--white);
-  font: 700 1.25rem "Baloo2", sans-serif;
+  font: 700 3rem "Baloo2", sans-serif;
   border-radius: 50%;
 }
 
@@ -2712,9 +2732,10 @@ img {
   pointer-events: none;
 }
 
-.mobile-info,
-.maintext2 {
-  display: none;
+.mobile-info p {
+  color: var(--white);
+  font: 700 3rem "Josefin Sans", sans-serif;
+  border-bottom: 0.2em solid var(--green);
 }
 
 .snow,
@@ -2905,13 +2926,21 @@ img {
   .testimonials-section .services .timeline::before {
     left: 3.5rem;
   }
-  
-  .testimonials-section .services .timeline .timeline-item:nth-child(odd) .icon {
+
+  .testimonials-section
+    .services
+    .timeline
+    .timeline-item:nth-child(odd)
+    .icon {
     right: auto;
     left: -6rem;
   }
-  
-  .testimonials-section .services .timeline .timeline-item:nth-child(even) .icon {
+
+  .testimonials-section
+    .services
+    .timeline
+    .timeline-item:nth-child(even)
+    .icon {
     left: -6rem;
   }
 

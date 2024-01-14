@@ -36,38 +36,7 @@ function typeWriter(elemento) {
   escreverComEfeito(textoOriginal, 0);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const titulo = document.querySelector("h3");
-  typeWriter(titulo);
-});
 
-function typeWriter(elemento) {
-  const textoOriginal = elemento.innerHTML;
-  let isTyping = true;
-
-  function escreverComEfeito(texto, i) {
-    if (i < texto.length && isTyping) {
-      elemento.innerHTML = texto.substring(0, i + 1);
-      setTimeout(() => escreverComEfeito(texto, i + 1), 50);
-    } else {
-      isTyping = false;
-      setTimeout(() => apagarComEfeito(texto), 1000);
-    }
-  }
-
-  function apagarComEfeito(texto) {
-    const tamanho = elemento.innerHTML.length;
-    if (tamanho > 0) {
-      elemento.innerHTML = texto.substring(0, tamanho - 1);
-      setTimeout(() => apagarComEfeito(texto), 30);
-    } else {
-      isTyping = true;
-      escreverComEfeito(texto, 0);
-    }
-  }
-
-  escreverComEfeito(textoOriginal, 0);
-}
 
 /*---------------------navegação menu-----------------------*/
 (() => {
