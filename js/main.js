@@ -773,3 +773,18 @@ window.addEventListener("scroll", () => {
     menuContainer.classList.remove("scrolled");
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var menuButtons = document.querySelectorAll('.menu-button');
+
+  menuButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+          var audioElement = document.getElementById('menuAudio');
+
+          audioElement.pause();
+          audioElement.currentTime = 0;
+
+          audioElement.play();
+      });
+  });
+});
