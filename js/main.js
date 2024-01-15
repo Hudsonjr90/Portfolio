@@ -386,13 +386,9 @@ function loadEnglishContent() {
   document.getElementById("menu-po-b").textContent = "Projects";
   document.getElementById("menu-co-b").textContent = "Contact";
   document.getElementById("texto-principal").textContent =
-    "Welcome to my portfolio.";
+    "Fullstack Developer.";
   document.getElementById("mobile-homename").textContent =
     "Welcome to my portfolio.";
-  document.getElementById("texto-principal2").textContent =
-    "Fullstack Developer / Software Engineer.";
-  document.getElementById("home-name1").textContent = "Fullstack Developer";
-  document.getElementById("home-name2").textContent = "Software Engineer";
   document.getElementById("titulo-sobre-mim").textContent = "About Me";
   document.getElementById(
     "texto-sobre-mim"
@@ -586,7 +582,6 @@ function loadEnglishContent() {
   document.getElementById("form-text").textContent =
     "Application to fill out Credit Card form.";
   document.getElementById("fale-title").textContent = "Contact";
-  document.getElementById("localiza-title").textContent = "Localization";
   document.getElementById("inicio-title").textContent = "Home";
   document.getElementById("kfc-text").textContent =
     "Landing Page, created through a technical test.";
@@ -596,8 +591,8 @@ function loadEnglishContent() {
     "Home Page of Microsoft Corporation";
   document.getElementById("qrcode-text").textContent =
     "QR code generator made to practice methods in JavaScript.";
-  document.getElementById("whats-title").textContent = "Talk on the WhatsApp";
-  document.getElementById("mail-title").textContent = "Send an email";
+  document.getElementById("contact-subtitle").textContent = "Contact me";
+  document.getElementById("contact-texttitle").textContent = "I will be willing to help you, whether for a budget, whether for an implementation or etc...  Choose one of the options below and talk to me!";
   document.getElementById("dino-text").textContent =
     "Classic Dino Game, from Google Chrome.";
   document.getElementById("math-title").textContent = "Math Calculator";

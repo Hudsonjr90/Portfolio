@@ -1389,6 +1389,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-left: 20rem;
 }
 
 .contact-section .contact-text,
@@ -3002,7 +3003,8 @@ img {
   }
 
   .contact-section .contact-content {
-    flex-direction: column; /* Mudar a direção do flex para coluna em telas menores */
+    flex-direction: column; 
+    margin-left: 1rem;
   }
 
   .contact-section .contact-text h2,
