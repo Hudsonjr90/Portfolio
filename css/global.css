@@ -3,6 +3,7 @@
 :root {
   --black: #2b2c2f;
   --green: #04d361;
+  --red: #fd0303;
   --light-dark: #353535;
   --light-grey: #bbb;
   --modal-color: #525458;
@@ -268,7 +269,7 @@
   }
 }
 
-.home-section .home-text .btn-1 {
+.home-section .home-text {
   margin-top: 3rem;
 }
 
@@ -367,7 +368,7 @@
   color: var(--white);
 }
 
-.about-section .about-info .btn-1 {
+.about-section .about-info {
   margin: 3rem 2rem 0 0;
 }
 .about-section .about-info .social-links {
@@ -1366,52 +1367,102 @@
 }
 
 .contact-section {
-  padding: 8rem 0 8rem;
-  min-height: 100vh;
-}
-.contact-section .contact-item {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 33.33%;
-  flex: 0 0 33.33%;
-  max-width: 33.33%;
-  padding: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 8rem 0 0rem;
 }
 
-.contact-section .contact-item .contact-item-inner {
-  padding: 3rem 1.5rem;
-  text-align: center;
-  border-radius: 0.5rem;
-  width: 100%;
-}
-
-.contact-section .contact-item .contact-item-inner i {
-  font-size: 4.9rem;
-  color: var(--white);
-  cursor: pointer;
-}
-.contact-section .contact-item .contact-item-inner i:hover {
-  font-size: 4.9rem;
-  color: var(--green);
-  cursor: pointer;
-}
-
-.contact-section .contact-item .contact-item-inner span {
+.contact-section .contact-img {
+  width: 40%;
+  margin: 0 auto;
   display: block;
-  font: 700 1.6rem "Josefin Sans", sans-serif;
-  color: var(--white);
-  margin: 1.5rem 0 1rem;
-  text-transform: capitalize;
+  margin-bottom: 3rem;
 }
 
-.contact-section .contact-item .contact-item-inner p {
-  font: 700 1.6rem "Josefin Sans", sans-serif;
+.contact-section .contact-img .img-contact-box {
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+
+.contact-section .contact-img .img-contact-box img {
+  width: 100%;
+  border: 1rem solid transparent;
+  border-radius: 50%;
+}
+
+.contact-section .contact-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact-section .contact-text,
+.contact-section .contact-info {
+  flex: 0 0 48%;
+  margin-bottom: 5rem;
+}
+
+.contact-section .contact-text h2,
+.contact-section .contact-text p  {
+  font: 700 2.5rem "Josefin Sans", sans-serif;
+  margin-bottom: 3rem;
   color: var(--white);
-  line-height: 2.6rem;
-  margin: 0;
-  word-break: break-word;
+}
+
+.contact-section .button,
+.contact-section .button-mail {
+  display: inline-block;
+  padding: 2rem 2rem;
+  font: 700 2rem "Josefin Sans", sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  justify-content: space-between;
+}
+
+.contact-section .button {
+  margin-right: 2rem; 
+}
+
+.contact-section .button:hover {
+  background-color: var(--green); 
+}
+
+.contact-section .button-mail:hover {
+  background-color: var(--red); 
+}
+
+
+.contact-section .button i, 
+.contact-section .button-mail i {
+  margin-right: 0.5rem;
+}
+
+.contact-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-section ul li {
+  font: 700 2.5rem "Josefin Sans", sans-serif;
+  margin-bottom: 5rem;
+  color: var(--white);
+  
+}
+
+.contact-section .contact-info i {
+  font: 700 2.5rem "Josefin Sans", sans-serif;
+  margin-right: 0.5rem;
+  color: var(--white);
+}
+
+.contact-section .contact-info li {
+  display: flex;
+  align-items: center;
+}
+
+.contact-section .contact-info a {
+  font: 700 2.5rem "Josefin Sans", sans-serif;
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 * {
@@ -1545,7 +1596,7 @@ img {
   align-items: center;
 }
 
-.btn-2 {
+.btn-1 {
   padding: 1rem 1.5rem;
   font: 700 1.8rem "Josefin Sans", sans-serif;
   color: var(--green);
@@ -1559,11 +1610,11 @@ img {
   border: none;
 }
 
-.btn-2:hover {
+.btn-1:hover {
   color: var(--white);
 }
 
-.btn-3 {
+.btn-2 {
   padding: 1rem 2.5rem;
   font: 700 1.6rem "Josefin Sans", sans-serif;
   color: var(--white);
@@ -1577,11 +1628,11 @@ img {
   border: none;
 }
 
-.btn-3:hover {
+.btn-2:hover {
   color: var(--green);
 }
 
-.btn-3:after {
+.btn-2:after {
   border-radius: 3rem;
 }
 
@@ -1876,24 +1927,6 @@ img {
 }
 
 .portfolio-section .project-img .img-project-box img {
-  width: 100%;
-  border: 1rem solid transparent;
-  border-radius: 50%;
-}
-
-.contact-section .contact-img {
-  width: 40%;
-  margin: 0 auto;
-  display: block;
-  margin-bottom: 3rem;
-}
-
-.contact-section .contact-img .img-contact-box {
-  padding: 1.5rem;
-  border-radius: 50%;
-}
-
-.contact-section .contact-img .img-contact-box img {
   width: 100%;
   border: 1rem solid transparent;
   border-radius: 50%;
@@ -2786,6 +2819,9 @@ img {
   .contact-section .w-50,
   .contact-section .contact-item,
   .contact-section .contact-img,
+  .contact-section .contact-info,
+  .contact-section .contact-text,
+  .contact-section .contact-content,
   .portfolio-popup .pp-details .pp-details-inner .description,
   .portfolio-popup .pp-details .pp-details-inner .info,
   .portfolio-section .portfolio-item,
@@ -2823,7 +2859,6 @@ img {
     font-size: 1.4rem;
   }
 
-  .contact-section .contact-form,
   .home-section .home-text {
     text-align: center;
   }
@@ -2955,9 +2990,56 @@ img {
     max-width: 100%;
   }
 
+  .contact-section{
+    padding: 8rem 0 0rem;
+  }
+
+  .contact-section .contact-content {
+    text-align: center;
+    padding: 0 2rem;
+  }
+
   .contact-section .contact-img {
     padding-bottom: 3rem;
     min-width: 100%;
+  }
+
+  .contact-section .contact-content {
+    flex-direction: column; /* Mudar a direção do flex para coluna em telas menores */
+  }
+
+  .contact-section .contact-text h2,
+.contact-section .contact-text p {
+  font: 700 1.8rem "Josefin Sans", sans-serif;
+}
+
+  .contact-section .button,
+  .contact-section .button-mail {
+    font-size: 1.4rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-section ul li {
+    font: 700 1.8rem "Josefin Sans", sans-serif; /* Diminuir o tamanho da fonte em telas menores */
+    margin-bottom: 5rem; /* Ajustar a margem inferior em telas menores */
+    color: var(--white);
+  }
+
+  .contact-section .contact-info i {
+    font: 700 1.8rem "Josefin Sans", sans-serif; /* Diminuir o tamanho da fonte em telas menores */
+    margin-right: 0.5rem;
+    color: var(--white);
+  }
+
+  .contact-section .contact-info li {
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-section .contact-info a {
+    font: 700 1.8rem "Josefin Sans", sans-serif; /* Diminuir o tamanho da fonte em telas menores */
+    color: var(--white);
+    text-decoration: none;
   }
 
   .menu-options {
@@ -3023,9 +3105,6 @@ img {
   .home-section .home-text .maintext {
     font-size: 2.3rem;
   }
-  .home-section .home-text .maintext2 {
-    font-size: 2.3rem;
-  }
 
   .text-reveal > span:nth-child(1) {
     line-height: 1;
@@ -3049,47 +3128,6 @@ img {
     color: var(--white);
     font: 700 2.5rem "Josefin Sans", sans-serif;
     border-bottom: 0.2em solid var(--green);
-  }
-  .maintext {
-    display: none;
-  }
-  .home-section .home-text .maintext2 {
-    font: 700 2.9rem "Josefin Sans", sans-serif;
-    color: var(--green);
-    margin: 0;
-    display: block;
-  }
-
-  .home-section .home-text .maintext2::after {
-    content: "|";
-    opacity: 1;
-    margin-left: 5px;
-    display: inline-block;
-    white-space: nowrap;
-    -webkit-animation: blink 0.7s infinite;
-    animation: blink2 0.7s infinite;
-  }
-
-  @-webkit-keyframes blink2 {
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0;
-    }
-  }
-
-  @keyframes blink2 {
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0;
-    }
   }
 }
 @media (max-width: 574px) {
