@@ -283,10 +283,9 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.home-section .home-text .text-icon{
+.home-section .home-text .text-icon {
   margin-left: 1rem;
 }
-
 
 .home-section .topcap img {
   width: 22vw;
@@ -296,8 +295,6 @@
   margin-top: 4rem;
   text-align: center;
 }
-
-
 
 .home-section .home-social-links .social-links a::after {
   border-radius: 50%;
@@ -372,7 +369,7 @@
   transition: all 0.3s ease;
 }
 
-.home-section .home-social-links .social-links  a {
+.home-section .home-social-links .social-links a {
   display: inline-block;
   height: 4rem;
   width: 4rem;
@@ -385,11 +382,10 @@
   transition: all 0.3s ease;
 }
 
-.home-section .home-social-links .social-links  a:hover{
+.home-section .home-social-links .social-links a:hover {
   color: var(--white);
   transition: all 0.3s ease;
 }
-
 
 .text-reveal {
   display: grid;
@@ -471,7 +467,6 @@
     width: 0;
   }
 }
-
 
 .about-section {
   padding: 4rem 0 0;
@@ -1549,7 +1544,7 @@
 }
 
 .contact-section .contact-text h2,
-.contact-section .contact-text p  {
+.contact-section .contact-text p {
   font: 700 2.5rem "Josefin Sans", sans-serif;
   margin-bottom: 2rem;
   color: var(--white);
@@ -1566,19 +1561,18 @@
 }
 
 .contact-section .button {
-  margin-right: 2rem; 
+  margin-right: 2rem;
 }
 
 .contact-section .button:hover {
-  background-color: var(--green); 
+  background-color: var(--green);
 }
 
 .contact-section .button-mail:hover {
-  background-color: var(--red); 
+  background-color: var(--red);
 }
 
-
-.contact-section .button i, 
+.contact-section .button i,
 .contact-section .button-mail i {
   margin-right: 0.5rem;
 }
@@ -1592,7 +1586,6 @@
   font: 700 2.5rem "Josefin Sans", sans-serif;
   margin-bottom: 5rem;
   color: var(--white);
-  
 }
 
 .contact-section .contact-info i {
@@ -1986,7 +1979,6 @@ img {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 
 .modal {
   display: none;
@@ -2621,7 +2613,6 @@ img {
   color: var(--green);
 }
 
-
 .toast {
   position: absolute;
   display: none;
@@ -2929,7 +2920,7 @@ img {
     max-width: 100%;
   }
 
-  .contact-section{
+  .contact-section {
     padding: 8rem 0 0rem;
   }
 
@@ -2944,14 +2935,14 @@ img {
   }
 
   .contact-section .contact-content {
-    flex-direction: column; 
+    flex-direction: column;
     margin-left: 1rem;
   }
 
   .contact-section .contact-text h2,
-.contact-section .contact-text p {
-  font: 700 1.8rem "Josefin Sans", sans-serif;
-}
+  .contact-section .contact-text p {
+    font: 700 1.8rem "Josefin Sans", sans-serif;
+  }
 
   .contact-section .button,
   .contact-section .button-mail {
@@ -3062,8 +3053,6 @@ img {
   .toast {
     margin: -7rem -15rem 0rem -10rem;
   }
-
- 
 }
 @media (max-width: 574px) {
   .home-section .home-img .img-box {
