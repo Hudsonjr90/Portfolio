@@ -387,8 +387,6 @@ function loadEnglishContent() {
   document.getElementById("menu-co-b").textContent = "Contact";
   document.getElementById("texto-principal").textContent =
     "Fullstack Developer.";
-  document.getElementById("mobile-homename").textContent =
-    "Welcome to my portfolio.";
   document.getElementById("titulo-sobre-mim").textContent = "About Me";
   document.getElementById(
     "texto-sobre-mim"
