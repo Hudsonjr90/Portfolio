@@ -589,7 +589,7 @@ function loadEnglishContent() {
     "Home Page of Microsoft Corporation";
   document.getElementById("qrcode-text").textContent =
     "QR code generator made to practice methods in JavaScript.";
-  document.getElementById("contact-subtitle").textContent = "Contact me";
+  document.getElementById("contact-subtitle").textContent = "Let's build something amazing together!";
   document.getElementById("contact-texttitle").textContent = "I will be willing to help you, whether for a budget, whether for an implementation or etc...  Choose one of the options below and talk to me!";
   document.getElementById("dino-text").textContent =
     "Classic Dino Game, from Google Chrome.";
