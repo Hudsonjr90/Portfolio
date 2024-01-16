@@ -428,64 +428,44 @@ function loadEnglishContent() {
     "I took an industrial IT course at ETERJ, and freelance work, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.";
   document.getElementById("freela-date").textContent =
     "February 2012 - at moment";
-
   document.getElementById("dt3-title").textContent = "DT3 Group";
-  document.getElementById("dt3-name").textContent =
-    "E-commerce Analyst/Front-end Developer";
-  document.getElementById("dt3-description").textContent =
-    "Invoice issuance,marketplaces, website development in React.JS, image optimization and responsible for ERP Bling integration.";
+  document.getElementById("dt3-name").textContent = "E-commerce Analyst/Front-end Developer";
+  document.getElementById("dt3-description").textContent = "Issuance of invoice, in marketplaces, website migration in Wordpress to React.JS, using hooks, redux, router proptypes, emailjs/browser, swiper and etc...image optimization and responsible for the integration ofERP Bling.";
   document.getElementById("dt3-date").textContent = "February 2019 - June 2021";
-
-  document.getElementById("vilt-title").textContent =
-    "VILT Brazil Information Systems";
-  document.getElementById("vilt-name").textContent =
-    "Full Technical Consultant";
-  document.getElementById("vilt-description").textContent =
-    "Fullstack consulting, working with Java and Spring Boot on the Backend and Angular/React on the Frontend, using Adobe Experience Manager (AEM) programs, providing services to various clients such as Porto, CVC, and more.";
-  document.getElementById("vilt-date").textContent =
-    "January 2022 - April 2022";
-
+  document.getElementById("vilt-title").textContent = "VILT Brazil Information Systems";
+  document.getElementById("vilt-name").textContent = "Full Technical Consultant";
+  document.getElementById("vilt-description").textContent = "Fullstack Consulting, working with Java on the Backend and Angular/React on theFrontend using ng-bootstrapngrx/effects, ngrx/store-devtools, ngx-owl-carousel-o, sweetalertand etc... in addition to Platform programs Adobe Experience Manager(AEM), providing services to Porto, CVC etc.";
+  document.getElementById("vilt-date").textContent ="January 2022 - April 2022";
   document.getElementById("cast-title").textContent = "Cast Computing S.A.";
   document.getElementById("cast-name").textContent = "Fullstack Developer";
-  document.getElementById("cast-description").textContent =
-    "Working directly with external clients on code maintenance/refactoring directives, using Angular and TypeScript on the Frontend, as well as Java with Spring Boot on the Backend and PostgresSQL as the database.";
-  document.getElementById("cast-date").textContent =
-    "August 2022 - October 2023";
-
+  document.getElementById("cast-description").textContent = "Acting directly on directives and maintenance/refactoring activities of codes, using Java/springboot, PostgreSQL in the database, Typescript and Angular together from some libraries leaflet-draw, leaflet-geosearch, leaflet-spin, leaflet.fullscreen, ng2-currency-mask, ng2-file-upload, ngx-bootstrap, ngx-mask, ngx-toastr, ngx-pagination, rxjs and etc...";
+  document.getElementById("cast-date").textContent = "August 2022 - October 2023";
+  document.getElementById("tdb-title").textContent = "Pocket Therapy";
+  document.getElementById("tdb-name").textContent = "Senior Front-End Developer";
+  document.getElementById("tdb-description").textContent = "I work PJ, where I worked on the project architecture, updating from the Angular14 version to version 15, dependency adjustments, syntax corrections, layouts and styles with Sass/Scss and etc...";
+  document.getElementById("tdb-date").textContent = "December 2023 - January 2024";
   document.getElementById("newer-title").textContent = "coming soon";
   document.getElementById("newer-name").textContent = "new job title";
-  document.getElementById("newer-description").textContent =
-    "new opportunity that will come";
+  document.getElementById("newer-description").textContent = "new opportunity that will come";
   document.getElementById("newer-date").textContent = "arriving nearly";
-
   document.getElementById("hour-title").textContent = "24-hour courses";
-  document.getElementById("hour-description").textContent =
-    "Administrative Assistant Course";
-
+  document.getElementById("hour-description").textContent = "Administrative Assistant Course";
   document.getElementById("fgv-title").textContent = "FGV";
-  document.getElementById("fgv-description").textContent =
-    "Digital Security Course";
+  document.getElementById("fgv-description").textContent = "Digital Security Course";
   document.getElementById("sebrae-title-a").textContent = "SEBRAE";
-  document.getElementById("sebrae-description-a").textContent =
-    "Strategic Planning Course for Entrepreneurs";
+  document.getElementById("sebrae-description-a").textContent = "Strategic Planning Course for Entrepreneurs";
   document.getElementById("sebrae-title-b").textContent = "SEBRAE";
-  document.getElementById("sebrae-description-b").textContent =
-    "Financial Strategy for Growth Course";
+  document.getElementById("sebrae-description-b").textContent = "Financial Strategy for Growth Course";
   document.getElementById("sebrae-title-c").textContent = "SEBRAE";
-  document.getElementById("sebrae-description-c").textContent =
-    "Digital Marketing for Entrepreneurs";
+  document.getElementById("sebrae-description-c").textContent = "Digital Marketing for Entrepreneurs";
   document.getElementById("sebrae-title-d").textContent = "SEBRAE";
-  document.getElementById("sebrae-description-d").textContent =
-    "Customer Success Course (How to Win and Keep Customers)";
+  document.getElementById("sebrae-description-d").textContent = "Customer Success Course (How to Win and Keep Customers)";
   document.getElementById("sebrae-title-e").textContent = "SEBRAE";
-  document.getElementById("sebrae-description-e").textContent =
-    "Financial Management Course";
+  document.getElementById("sebrae-description-e").textContent = "Financial Management Course";
   document.getElementById("sebrae-title-f").textContent = "SEBRAE";
-  document.getElementById("sebrae-description-f").textContent =
-    "Business Financial Education Course";
+  document.getElementById("sebrae-description-f").textContent = "Business Financial Education Course";
   document.getElementById("udemy-title").textContent = "Udemy";
-  document.getElementById("udemy-description").textContent =
-    "Basic to Advanced Javascript and Typescript Course";
+  document.getElementById("udemy-description").textContent = "Basic to Advanced Javascript and Typescript Course";
   document.getElementById("vuejs-title").textContent = "VueJs Brazil";
   document.getElementById("vuejs-description-a").textContent =
     "Vuejs Course - Basic to Advanced";
