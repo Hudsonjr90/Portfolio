@@ -5,37 +5,45 @@ window.onload = function () {
 //animação máquina de escrever
 document.addEventListener("DOMContentLoaded", function () {
   const titulo = document.querySelector("h1");
-  typeWriter(titulo);
+  const textos = [
+    "Cientista da Computação",
+    "Desenvolvedor Fullstack",
+    "Engenheiro de Software",
+    "UI-UX Designer"
+  ];
+
+  let currentIndex = 0;
+  typeWriter(titulo, textos);
+
+  function typeWriter(elemento, textos) {
+    const textoOriginal = elemento.innerHTML;
+    let isTyping = true;
+
+    function escreverComEfeito(texto, i) {
+      if (i < texto.length && isTyping) {
+        elemento.innerHTML = texto.substring(0, i + 1);
+        setTimeout(() => escreverComEfeito(texto, i + 1), 50);
+      } else {
+        isTyping = false;
+        setTimeout(() => apagarComEfeito(texto, textos), 1000);
+      }
+    }
+
+    function apagarComEfeito(texto, textos) {
+      const tamanho = elemento.innerHTML.length;
+      if (tamanho > 0) {
+        elemento.innerHTML = texto.substring(0, tamanho - 1);
+        setTimeout(() => apagarComEfeito(texto, textos), 30);
+      } else {
+        isTyping = true;
+        currentIndex = (currentIndex + 1) % textos.length; 
+        escreverComEfeito(textos[currentIndex], 0);
+      }
+    }
+
+    escreverComEfeito(textoOriginal, 0);
+  }
 });
-
-function typeWriter(elemento) {
-  const textoOriginal = elemento.innerHTML;
-  let isTyping = true;
-
-  function escreverComEfeito(texto, i) {
-    if (i < texto.length && isTyping) {
-      elemento.innerHTML = texto.substring(0, i + 1);
-      setTimeout(() => escreverComEfeito(texto, i + 1), 50);
-    } else {
-      isTyping = false;
-      setTimeout(() => apagarComEfeito(texto), 1000);
-    }
-  }
-
-  function apagarComEfeito(texto) {
-    const tamanho = elemento.innerHTML.length;
-    if (tamanho > 0) {
-      elemento.innerHTML = texto.substring(0, tamanho - 1);
-      setTimeout(() => apagarComEfeito(texto), 30);
-    } else {
-      isTyping = true;
-      escreverComEfeito(texto, 0);
-    }
-  }
-
-  escreverComEfeito(textoOriginal, 0);
-}
-
 
 
 /*---------------------navegação menu-----------------------*/

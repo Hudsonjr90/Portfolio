@@ -394,7 +394,6 @@
 .home-section .home-text .text-reveal::after,
 .home-section .home-text .text-reveal > span {
   grid-area: 1/1;
-  animation: text-reveal-1 2s ease-in-out 1s forwards;
 }
 
 .home-section .home-text .text-reveal > span {
@@ -414,8 +413,11 @@
 
 .home-section .home-text .text-reveal > span:nth-child(1) {
   -webkit-text-stroke: 1px var(--green);
-  color: var(--green);
+  color: transparent;
   font: 700 5.6rem "Josefin Sans", sans-serif;
+  -webkit-mask-image: linear-gradient(#000 0 0);
+  mask-image: linear-gradient(#000 0 0);
+  animation: text-reveal-1 2s ease-in-out 1s forwards;
 }
 
 .home-section .home-text .text-reveal > span:nth-child(2) {
