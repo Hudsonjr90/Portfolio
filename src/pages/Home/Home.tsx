@@ -32,10 +32,10 @@ const Home = () => {
   const handleLanguageClick = (language: string) => {
     switch (language) {
       case "pt-br":
-        window.open("../../../public/cv/HudsonKennedy-BR.pdf", "_blank");
+        window.open("/cv/HudsonKennedy-BR.pdf", "_blank");
         break;
       case "en-us":
-        window.open("../../../public/cv/HudsonKennedy-US.pdf", "_blank");
+        window.open("/cv/HudsonKennedy-US.pdf", "_blank");
         break;
       default:
         break;
