@@ -27,22 +27,15 @@ const Home = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
-  function downloadFile(filePath: any) {
-    const link = document.createElement("a");
-    link.href = filePath;
-    link.download = filePath.split("/").pop();
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
+ 
 
   const handleLanguageClick = (language: string) => {
     switch (language) {
       case "pt-br":
-        downloadFile("../../../public/cv/HudsonKennedy-BR.pdf");
+        window.open("../../../public/cv/HudsonKennedy-BR.pdf", "_blank");
         break;
       case "en-us":
-        downloadFile("../../../public/cv/HudsonKennedy-US.pdf");
+        window.open("../../../public/cv/HudsonKennedy-US.pdf", "_blank");
         break;
       default:
         break;
