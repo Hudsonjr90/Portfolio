@@ -1,0 +1,30 @@
+.testimonials {
+    max-width: 1400px;
+    max-height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 4rem;
+    width: 100%;
+  }
+  
+  .testimonials .heading {
+    animation: animate 0.8s ease-in-out 1 forwards;
+    font-size: 3rem;
+    margin: 10rem 0 3rem;
+    opacity: 0;
+    text-align: center;
+  }
+
+  @keyframes animate {
+    from {
+      filter: blur(33px);
+      opacity: 0;
+      transform: translate(0, 100px);
+    }
+  
+    to {
+      filter: blur(0);
+      opacity: 1;
+      transform: translate(0);
+    }
+  }

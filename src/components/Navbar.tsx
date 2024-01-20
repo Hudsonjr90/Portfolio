@@ -148,6 +148,23 @@ const Navbar = () => {
                         style={{ ["--i" as string]: 1 }}
                     >
                         <NavLink
+                            to="/testimonials"
+                            className={({ isActive }) => (isActive ? styles.active : "")}
+                        >
+                            Depoimentos
+                        </NavLink>
+                    </li>
+
+                    <li
+                        onClick={() => {
+                            handleLinkClick();
+                            handleAudioButtonClick();
+                        }}
+                        className={`${styles.active_menu}
+                                    ${showMenu ? styles.animation_menu : ""}`}
+                        style={{ ["--i" as string]: 1 }}
+                    >
+                        <NavLink
                             to="/skills"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >

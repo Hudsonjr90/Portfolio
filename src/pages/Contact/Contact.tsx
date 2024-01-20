@@ -68,16 +68,16 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_kseykmd",
-        "template_lwsac3m",
+        "service_ofgyyik",
+        "template_jl1lly9",
         templateParams,
-        "mdijYFp_vy0CuY4_a"
+        "pg7uosKesPGRIzFWI"
       )
       .then(
         (response) => {
           if (response.status === 200) {
             Swal.fire({
-              title: "Otimo!",
+              title: "Ótimo!",
               text: "Mensagem enviada com sucesso!",
               icon: "success",
             });

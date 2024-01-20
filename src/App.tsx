@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 // PAGES
 import Home from "./pages/Home/Home";
 import About from './pages/About/About';
-// import Testimonials from './pages/Testimonials/Testimonials';
+import Testimonials from './pages/Testimonials/Testimonials';
 // import Education from './pages/Education/Education';
 // import Experiences from './pages/Experiences/Experiences';
 import Portfolio from './pages/Portfolio/Portfolio';
@@ -30,8 +30,8 @@ function App() {
             <Routes location={location} key={location.pathname}>
               <Route index element={<Home />} />
               <Route path="/about" element={<About />} />
-              {/* <Route path="/testimonials" element={<Testimonials />} />
-              <Route path="/education" element={<Education />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              {/* <Route path="/education" element={<Education />} />
               <Route path="/experiences" element={<Experiences />} /> */}
               <Route path="/skills" element={<Skills />} />
               <Route path="/portfolio" element={<Portfolio />} />

@@ -39,6 +39,8 @@
   justify-content: center;
   gap: 1rem;
   position: relative;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .box_icon {
@@ -73,8 +75,45 @@
 .typescript,
 .firebase,
 .mysql,
-.canva,
-.vscode {
+.figma,
+.vue,
+.angular,
+.npm,
+.yarn,
+.bootstrap,
+.shopify,
+.wordpress,
+.jquery,
+.node,
+.markdown,
+.less,
+.sass,
+.photoshop,
+.gitlab,
+.materialdesign,
+.java,
+.postgres,
+.pinia,
+.vuetify,
+.googlean,
+.googlead,
+.laravel,
+.php,
+.graphql,
+.webpack,
+.docker,
+.vscode,
+.swagger,
+.springboot,
+.firebase,
+.csharp,
+.python,
+.jira,
+.electron,
+.jenkins,
+.terraform,
+.ansible,
+.kubernetes {
   border-radius: 25%;
   border: 0.1rem solid var(--main_color);
   display: inline-flex;
@@ -84,6 +123,7 @@
   padding: 0.4rem;
   transition: 0.3s ease;
   width: 4.5rem;
+  flex-basis: 4.5rem;
 }
 
 .icons_container .react:hover,
@@ -96,8 +136,45 @@
 .css:hover,
 .html:hover,
 .firebase:hover,
-.canva:hover,
-.vscode:hover {
+.figma:hover,
+.vue:hover,
+.npm:hover,
+.yarn:hover,
+.bootstrap:hover,
+.angular:hover,
+.shopify:hover,
+.wordpress:hover,
+.jquery:hover,
+.node:hover,
+.markdown:hover,
+.less:hover,
+.sass:hover,
+.photoshop:hover,
+.gitlab:hover,
+.materialdesign:hover,
+.java:hover,
+.postgres:hover,
+.pinia:hover,
+.vuetify:hover,
+.googlean:hover,
+.googlead:hover,
+.laravel:hover,
+.php:hover,
+.graphql:hover,
+.webpack:hover,
+.docker:hover,
+.vscode:hover,
+.swagger:hover,
+.springboot:hover,
+.firebase:hover,
+.csharp:hover,
+.python:hover,
+.jira:hover,
+.electron:hover,
+.jenkins:hover,
+.terraform:hover,
+.ansible:hover,
+.kubernetes:hover {
   box-shadow: 0 0 1rem var(--main_color);
   background-color: var(--main_color);
   border: none;
@@ -120,8 +197,45 @@
   .typescript,
   .firebase,
   .mysql,
-  .canva,
-  .vscode {
+  .figma,
+  .angular,
+  .vue,
+  .npm,
+  .yarn,
+  .bootstrap,
+  .shopify,
+  .wordpress,
+  .jquery,
+  .node,
+  .markdown,
+  .less,
+  .sass,
+  .photoshop,
+  .gitlab,
+  .materialdesign,
+.java,
+.postgres,
+.pinia,
+.vuetify,
+.googlean,
+.googlead,
+.laravel,
+.php,
+.graphql,
+.webpack,
+.docker,
+  .vscode,
+  .swagger,
+.springboot,
+.firebase,
+.csharp,
+.python,
+.jira,
+.electron,
+.jenkins,
+.terraform,
+.ansible,
+.kubernetes {
     height: 3.8rem;
     width: 3.8rem;
   }
@@ -173,10 +287,36 @@
   .typescript,
   .firebase,
   .mysql,
-  .canva,
-  .vscode {
-    height: 5rem;
+  .figma,
+  .angular,
+  .vue,
+  .shopify,
+  .wordpress,
+  .jquery,
+  .node,
+  .markdown,
+  .less,
+  .sass,
+  .photoshop,
+  .gitlab,
+  .vscode,
+  .swagger,
+.springboot,
+.firebase,
+.csharp,
+.python,
+.jira,
+.electron,
+.jenkins,
+.terraform,
+.ansible,
+.kubernetes {
+    height: 4rem;
     margin-bottom: 1.1rem;
-    width: 5rem;
+    width: 4rem;
+  }
+
+  .icon_descripition{
+    left: 35%;
   }
 }
