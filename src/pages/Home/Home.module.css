@@ -278,15 +278,15 @@
   }
 
   .home_img {
-    bottom: -15rem;
-    right: -4rem;
+    bottom: -8rem;
+    right: -11rem;
   }
 }
 
 @media (max-width: 400px) {
   .home_img {
-    bottom: -13rem;
-    right: -2.5rem;
+    bottom: -10rem;
+    right: -10.5rem;
   }
 
   .home_img img {
@@ -296,8 +296,8 @@
 
 @media (max-width: 375px) {
   .home_img {
-    bottom: -26rem;
-    right: -3.5rem;
+    bottom: -12rem;
+    right: -11.5rem;
   }
 
   .home_img img {

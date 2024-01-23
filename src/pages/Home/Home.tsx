@@ -4,6 +4,9 @@ import styles from "./Home.module.css";
 import { NavLink } from "react-router-dom";
 // COMPONENTS
 import Transition from "../../components/Transition";
+import Lottie from "react-lottie";
+
+//import ResumeModal from "../../components/ResumeModal";
 
 // REACT ICONS
 import {
@@ -12,8 +15,10 @@ import {
   FaLinkedinIn,
   FaWhatsapp,
 } from "react-icons/fa6";
-// IMGAGENS
-import Home_img from "../../../public/imgs/my.png";
+// IMAGENS
+import { useMediaQuery } from "react-responsive";
+import HomeDesktopImage from "/imgs/my.png";
+import HomeMobileImage from "/imgs/my-mobile.png";
 // PARTICLES
 import ParticlesBackground from "../../components/ParticlesBackground";
 // FRAMER MOTION
@@ -21,29 +26,29 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const Home = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
+  const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage;
+
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const handleDropdownToggle = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
- 
-
   const handleLanguageClick = (language: string) => {
     switch (language) {
       case "pt-br":
-        window.open("/cv/HudsonKennedy-BR.pdf", "_blank");
-        break;
       case "en-us":
-        window.open("/cv/HudsonKennedy-US.pdf", "_blank");
+        setModalOpen(true);
         break;
       default:
         break;
     }
     setDropdownOpen(false);
   };
-
-  
 
   return (
     <>
@@ -59,7 +64,7 @@ const Home = () => {
             <h1 className={styles.animate_h1}>Hudson Kennedy</h1>
 
             <div className={styles.transparent_text}>
-            <h3 className={styles.animation_text}>Desenvolvedor Fullstack</h3>
+              <h3 className={styles.animation_text}>Desenvolvedor Fullstack</h3>
             </div>
 
             <div className={styles.social_media}>
@@ -185,7 +190,7 @@ const Home = () => {
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <img src={Home_img} alt="home_img" />
+            <img src={imageUrl} alt="home_img" />
           </motion.div>
         </section>
       </Transition>
