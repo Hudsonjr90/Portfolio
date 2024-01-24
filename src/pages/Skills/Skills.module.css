@@ -219,17 +219,19 @@
     align-items: center;
   }
   
-  .filters select, .filters .icon_search svg{
-    display: none;
-  }
- 
+  .filters select,
   .filters input {
     width: 65vw;
     height: 4vh;
     margin-bottom: 1rem;
     margin-left: -2rem;
-    border: 1px solid var(--main_color);
-  }  
+  }
+
+  .filters .icon_search svg{
+    display: none;
+  }
+
+  
   .pagination li a {
     width: auto; 
     padding: 0.5rem 1rem; 
