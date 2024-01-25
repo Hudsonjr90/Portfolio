@@ -10,7 +10,7 @@
   .experiences .heading {
     animation: animate 0.8s ease-in-out 1 forwards;
     font-size: 3rem;
-    margin: 10rem 0 3rem;
+    margin: 10rem 0 4rem;
     opacity: 0;
     text-align: center;
   }
@@ -30,17 +30,22 @@
   }
 
   .vertical_timeline_title{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     text-align: center;
   } 
  .vertical_timeline_subtitle{
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: center;
  } 
 
  .vertical_timeline_description{
-  font-size: 1.2rem;
+  font-size: 1.125rem !important;
   text-align: center;
  }
 
- 
+ @media (max-width: 767px) {
+  .experiences .heading{
+    font-size: 2.7rem;
+  }
+
+ }

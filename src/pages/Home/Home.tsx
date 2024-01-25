@@ -4,9 +4,6 @@ import styles from "./Home.module.css";
 import { NavLink } from "react-router-dom";
 // COMPONENTS
 import Transition from "../../components/Transition";
-import Lottie from "react-lottie";
-
-//import ResumeModal from "../../components/ResumeModal";
 
 // REACT ICONS
 import {
@@ -32,7 +29,7 @@ const Home = () => {
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const [isModalOpen, setModalOpen] = useState(false);
+  
 
   const handleDropdownToggle = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -42,7 +39,6 @@ const Home = () => {
     switch (language) {
       case "pt-br":
       case "en-us":
-        setModalOpen(true);
         break;
       default:
         break;

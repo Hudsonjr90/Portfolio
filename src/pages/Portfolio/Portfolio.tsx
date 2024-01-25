@@ -11,16 +11,17 @@ import Transition from "../../components/Transition";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 // IMAGENS
-import web from "../../../public/imgs/web.png";
-import pokedex from "../../../public/imgs/pokedex.png";
-import memory from "../../../public/imgs/memory.png";
-import pacman from "../../../public/imgs/pacman.png";
-import clima from "../../../public/imgs/clima.png";
-import clock from "../../../public/imgs/clock.png";
+import web from "/imgs/web.png";
+import pokedex from "/imgs/pokedex.png";
+import memory from "/imgs/memory.png";
+import pacman from "/imgs/pacman.png";
+import clima from "/imgs/clima.png";
+import clock from "/imgs/clock.png";
+import card from "/imgs/card.png";
 
 const Portfolio = () => {
-  const [slidePerview, setSlidePerview] = useState<number>(5);
-  const [initialSlide] = useState<number>(1);
+  const [slidePerview, setSlidePerview] = useState<number>(3);
+  const [initialSlide] = useState<number>(3);
   const [transitionCompleted, setTransitionCompleted] = useState(false);
 
   const data = [
@@ -37,6 +38,7 @@ const Portfolio = () => {
         "React Icons",
         "Typescript",
         "Styled-Components",
+        "NodeJs",
         "CSS",
         "HTML",
       ],
@@ -70,7 +72,7 @@ const Portfolio = () => {
       name: "Jogo Da Memória React",
       description:
         "Jogo criado em React, feito com Typescript, para poder praticar e exercitar um pouco mais na linguagem. Jogo simples, cujo ainda terá algumas atualizações e modificações também.",
-      technologies: ["React", "Typescript", "CSS", "Bootstrap"],
+      technologies: ["React", "Typescript", "CSS", "NodeJs", "Bootstrap"],
       linkDeploy: "https://reactmemorygame.vercel.app",
       linkRepository: "https://github.com/Hudsonjr90/Reactmemorygame",
     },
@@ -115,15 +117,15 @@ const Portfolio = () => {
       linkDeploy: "https://analog-clock-dm.vercel.app",
       linkRepository: "https://github.com/Hudsonjr90/RelogioAnalogicoJs",
     },
-    // {
-    //   id: 6,
-    //   image: ,
-    //   name: "",
-    //   description: "",
-    //   technologies: ["", "", ""],
-    //   linkDeploy: "",
-    //   linkRepository: "",
-    // },
+    {
+      id: 6,
+      image: card,
+      name: "CreditCard-Form Vue",
+      description: "Um formulário de cartão de crédito com microinterações suaves e agradáveis. Inclui formatação de números, validação e detecção automática de tipo de cartão. Construído com vuejs e totalmente responsivo.",
+      technologies: ["Vue", "Javascript", "Sass", "NodeJs", "i18n"],
+      linkDeploy: "https://credit-card-form-payment.vercel.app",
+      linkRepository: "https://github.com/Hudsonjr90/CreditCard-Form",
+    },
     // {
     //   id: 7,
     //   image: ,

@@ -1,6 +1,6 @@
 import styles from "./Experiences.module.css";
 
-import { motion } from "framer-motion";
+
 import Transition from "../../components/Transition";
 import { FaBriefcase } from "react-icons/fa6";
 import {
@@ -89,11 +89,11 @@ const Experiences = () => {
               Consultor Técnico Fullstack
             </h4>
             <p className={styles.vertical_timeline_description}>
-              Consultoria Fullstack, trabalhando com Java e NodeJs no Backend e
-              Angular/React no Frontend usando, ng-bootstrap ngrx/effects,
-              ngrx/store-devtools ngx-owl-carousel-o, sweetalert e etc... além
-              de programas da Plataforma Adobe Experience Manager(AEM),
-              prestando serviços para Porto, CVC e etc.
+              Consultoria Fullstack, usando Java/NodeJs no Back,
+              Angular/React no Front, ng-bootstrap ngrx/effects,
+              ngrx/store-devtools ngx-owl-carousel-o, sweetalert e etc...
+              além de programas Adobe Experience Manager(AEM),
+              com serviços para Porto, CVC e etc.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -116,9 +116,8 @@ const Experiences = () => {
             </h4>
             <p className={styles.vertical_timeline_description}>
               Atuando diretamente, nas diretivas e trativas de
-              manutenção/refatoração de códigos, utilizando Java com springboot,
-              NodeJs com Express no Backend PostgreSQL no banco de dados,
-              Typescript com Angular e React no Frontend juntamente de algumas
+              manutenção/refatoração de códigos, utilizando Java/springboot,
+              NodeJs/Express no Back, PostgreSQL,Typescript com Angular/React no Front com algumas
               bibliotecas leaflet-draw, leaflet-geosearch, leaflet-spin leaflet.
               fullscreen, ng2-currency-mask, ng2-file-upload, ngx-bootstrap,
               ngx-mask, ngx-pagination, ngx-toastr, rxjs e etc...

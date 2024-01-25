@@ -204,12 +204,12 @@
 
 .home_img {
   position: fixed;
-  right: 50rem;
+  right: 25rem;
 }
 
 .home_img img {
   object-fit: none;
-  width: 25vw;
+  width: 40vw;
   z-index: 2;
 }
 
@@ -241,6 +241,17 @@
 }
 
 /* <========== breakpoints ==========> */
+
+@media (max-width: 1100px) {
+  .home_img {
+    bottom: -1rem;
+    right: 2rem;
+  }
+
+  .home_img img {
+    width: 30vw;
+  }
+}
 
 @media (max-width: 991px) {
   .home_img {

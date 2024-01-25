@@ -1,0 +1,134 @@
+.card_container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  margin-left: 8rem;
+  margin-bottom: 5rem;
+}
+
+.card_content {
+  width: 35vw; 
+  height: 50vh; 
+  margin-bottom: 15px;
+  border: 2px solid var(--main_color);
+  overflow: hidden;
+  position: relative;
+  border-radius: 2rem;
+}
+
+
+.card_content img {
+  width: 35vw; 
+  height: 50vh; 
+  transition: filter 0.3s ease;
+  border-radius: 1rem;
+}
+
+.card_text {
+  color: var(--main_color);
+  text-align: justify;
+  padding: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: pre-wrap; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.card_content img.blur {
+  filter: blur(50px); 
+}
+
+
+.card_text.showText {
+  opacity: 1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li a {
+  cursor: pointer;
+  margin: 5px;
+  padding: 5px;
+  color: var(--main_color);
+  border: 1px solid var(--main_color);
+  display: flex;
+  justify-content: center;
+  width: 3vw;
+  height: 3vh;
+  border-radius: 20px;
+}
+
+.pagination li.activePage {
+  color: var(--main_color);
+  border: 1px solid var(--main_color);
+  background-color: var(--bg_color);
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .card_container {
+    flex-direction: column;
+    align-content: end;
+  }
+
+  .card_content {
+    width: 85vw;
+    height: 30vh;
+    margin-bottom: 15px;
+  }
+
+  .card_content img {
+    width: 85vw;
+    height: 30vh;
+  }
+
+  .card_text {
+    text-align: center;
+    letter-spacing: -1px;
+    padding: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    white-space: break-spaces;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    font-size: 1.4rem;
+  }
+
+  .pagination {
+    margin-top: 15px;
+  }
+
+
+}
+
+
+@media (max-width: 650px){
+  .pagination li a {
+    width: auto; 
+    padding: 0.5rem 1rem; 
+    text-align: center; 
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+}
+

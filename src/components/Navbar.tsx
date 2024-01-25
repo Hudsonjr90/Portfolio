@@ -165,6 +165,40 @@ const Navbar = () => {
                         style={{ ["--i" as string]: 1 }}
                     >
                         <NavLink
+                            to="/education"
+                            className={({ isActive }) => (isActive ? styles.active : "")}
+                        >
+                            Formações
+                        </NavLink>
+                    </li>
+
+                    <li
+                        onClick={() => {
+                            handleLinkClick();
+                            handleAudioButtonClick();
+                        }}
+                        className={`${styles.active_menu}
+                                    ${showMenu ? styles.animation_menu : ""}`}
+                        style={{ ["--i" as string]: 1 }}
+                    >
+                        <NavLink
+                            to="/experiences"
+                            className={({ isActive }) => (isActive ? styles.active : "")}
+                        >
+                            Experiências
+                        </NavLink>
+                    </li>
+
+                    <li
+                        onClick={() => {
+                            handleLinkClick();
+                            handleAudioButtonClick();
+                        }}
+                        className={`${styles.active_menu}
+                                    ${showMenu ? styles.animation_menu : ""}`}
+                        style={{ ["--i" as string]: 1 }}
+                    >
+                        <NavLink
                             to="/skills"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >

@@ -1,30 +1,76 @@
 .testimonials {
-    max-width: 1400px;
-    max-height: 100vh;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0 4rem;
-    width: 100%;
-  }
-  
-  .testimonials .heading {
-    animation: animate 0.8s ease-in-out 1 forwards;
-    font-size: 3rem;
-    margin: 10rem 0 3rem;
+  max-width: 1800px;
+  max-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 4rem;
+  width: 100%;
+}
+
+.testimonials .heading {
+  animation: animate 0.8s ease-in-out 1 forwards;
+  font-size: 3rem;
+  margin: 10rem 0 6rem;
+  opacity: 0;
+  text-align: center;
+}
+
+@keyframes animate {
+  from {
+    filter: blur(33px);
     opacity: 0;
-    text-align: center;
+    transform: translate(0, 100px);
   }
 
-  @keyframes animate {
-    from {
-      filter: blur(33px);
-      opacity: 0;
-      transform: translate(0, 100px);
-    }
-  
-    to {
-      filter: blur(0);
-      opacity: 1;
-      transform: translate(0);
-    }
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0);
   }
+}
+
+
+
+/* <========== breakpoints ==========> */
+
+/* Estilos para dispositivos com largura máxima de 991px */
+@media (max-width: 991px) {
+  .testimonials .heading {
+    font-size: 5.2rem;
+    }
+}
+
+/* Estilos para dispositivos com largura máxima de 768px */
+@media (max-width: 768px) {
+ .testimonials .heading {
+  font-size: 5rem;
+  }
+}
+
+/* Estilos para dispositivos com largura máxima de 691px */
+@media (max-width: 691px) {
+  .testimonials .heading {
+    font-size: 4.4rem;
+    }
+}
+
+/* Estilos para dispositivos com largura máxima de 470px */
+@media (max-width: 470px) {
+  .testimonials .heading {
+    font-size: 3.26rem;
+    }
+}
+
+/* Estilos para dispositivos com largura máxima de 400px */
+@media (max-width: 400px) {
+  .testimonials .heading {
+    font-size: 3rem;
+    }
+}
+
+/* Estilos para dispositivos com largura máxima de 375px */
+@media (max-width: 375px) {
+  .testimonials .heading {
+    font-size: 2.8rem;
+    }
+}

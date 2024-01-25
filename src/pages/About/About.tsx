@@ -2,8 +2,8 @@
 import styles from "./About.module.css"
 // COMPONENT
 import Transition from "../../components/Transition";
-// IMGAGENS
-import About_img from "../../../public/imgs/hudson.png";
+// IMAGENS
+import About_img from "/imgs/hudson.png";
 // FRAMER MOTION
 import { motion } from "framer-motion";
 // REACT ICONS
