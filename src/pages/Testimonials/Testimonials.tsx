@@ -2,7 +2,6 @@ import { SetStateAction, useState, useCallback, useEffect } from "react";
 import styles from "./Testimonials.module.css";
 import Transition from "../../components/Transition";
 import CardComponent from "../../components/CardComponent";
-//import CardCarousel from "../../components/CardCarousel";
 
 
 const Testimonials = () => {

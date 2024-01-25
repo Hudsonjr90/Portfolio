@@ -9,10 +9,24 @@
 }
 
 .container_img_skills img {
+    animation: floatImage 4s ease-in-out infinite;
     margin-bottom: 3rem;
     width: 27vw;
 }
 
+@keyframes floatImage {
+    0% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-2.4rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
 .about_content {
     background: rgba(0, 0, 0, .1);
     border-radius: 10px;

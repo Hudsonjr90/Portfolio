@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import { NavLink } from "react-router-dom";
 // COMPONENTS
 import Transition from "../../components/Transition";
+import { Modal } from "react-bootstrap";
 
 // REACT ICONS
 import {
@@ -11,6 +12,7 @@ import {
   FaGithub,
   FaLinkedinIn,
   FaWhatsapp,
+  FaXmark,
 } from "react-icons/fa6";
 // IMAGENS
 import { useMediaQuery } from "react-responsive";
@@ -20,31 +22,52 @@ import HomeMobileImage from "/imgs/my-mobile.png";
 import ParticlesBackground from "../../components/ParticlesBackground";
 // FRAMER MOTION
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Home = () => {
+  
+  const imagesBr = ["/imgs/HudsonKennedy-BR_1.jpg", "/imgs/HudsonKennedy-BR_2.jpg", "/imgs/HudsonKennedy-BR_3.jpg"];
+  const imagesUs = ["/imgs/HudsonKennedy-US_1.jpg", "/imgs/HudsonKennedy-US_2.jpg", "/imgs/HudsonKennedy-US_3.jpg"];;
+
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage;
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<string[]>([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImages, setSelectedImages] = useState<string[]>([]);
 
-  
 
   const handleDropdownToggle = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
   const handleLanguageClick = (language: string) => {
+    let images: string[] = [];
     switch (language) {
       case "pt-br":
+        images = imagesBr;
+        
+        break;
       case "en-us":
+        images = imagesUs;
+       
         break;
       default:
         break;
     }
+    setSelectedImages(selectedLanguage);
+    setSelectedImages(images);
+    setShowModal(true);
     setDropdownOpen(false);
   };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+
 
   return (
     <>
@@ -54,7 +77,7 @@ const Home = () => {
             <ParticlesBackground />
 
             <h3 className={styles.first_h3}>
-              Inovando a cada <span>Byte</span>
+              Melhor a cada <span>Commit</span>
             </h3>
 
             <h1 className={styles.animate_h1}>Hudson Kennedy</h1>
@@ -190,6 +213,21 @@ const Home = () => {
           </motion.div>
         </section>
       </Transition>
+      <Modal show={showModal} onHide={handleCloseModal}  className={styles.modal_container}>
+        <Modal.Header closeButton>
+          <Modal.Title className={styles.modal_title}>Currículo <FaXmark onClick={handleCloseModal}/> </Modal.Title>
+          
+        </Modal.Header>
+        <Modal.Body className={styles.modal_content}>
+          {selectedImages.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Currículo ${selectedLanguage} - Slide ${index + 1}`}
+            />
+          ))}
+        </Modal.Body>
+      </Modal>
     </>
   );
 };
