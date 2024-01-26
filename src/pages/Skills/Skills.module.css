@@ -242,7 +242,7 @@
     justify-content: center;
     margin-bottom: 2rem;
     align-items: center;
-    flex-wrap: wrap; /* Permite que os botões se movam para a próxima linha conforme necessário */
+    flex-wrap: wrap;
   }
 }
 

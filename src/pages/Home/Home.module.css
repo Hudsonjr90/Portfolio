@@ -429,6 +429,14 @@
     bottom: -14rem;
     right: 5rem;
   }
+
+  .text_reveal > span:nth-child(1) {
+    font-size: 4rem !important;
+  }
+  
+  .text_reveal > span:nth-child(2) {
+    font-size: 4rem !important;
+  }
 }
 
 @media (max-width: 470px) {
@@ -460,6 +468,9 @@
     bottom: -8rem;
     right: -11rem;
   }
+
+
+  
 }
 
 @media (max-width: 400px) {
