@@ -58,10 +58,9 @@
   font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
-  left: 16%;
+  left: 50px;
   position: absolute;
   text-transform: uppercase;
-  top: 50%;
 }
 
 .icons_container .icon_hover {
@@ -94,6 +93,7 @@
   width: 11vw;
   height: 4vh;
   color: var(--main_color);
+  border: 1px solid var(--main_color);
   background-color: var(--bg_color);
   padding-left: 1rem;
 }
@@ -207,8 +207,7 @@
   }
 
   .icon_description {
-    left: 50%; 
-    transform: translateX(-50%);
+    left: 40px; 
     text-align: center; 
   }
 
@@ -223,7 +222,7 @@
   .filters input {
     width: 65vw;
     height: 4vh;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-left: -2rem;
   }
 
