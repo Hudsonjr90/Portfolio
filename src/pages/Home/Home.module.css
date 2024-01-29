@@ -297,6 +297,7 @@
 .home_img {
   position: fixed;
   right: 25rem;
+  z-index: -1;
 }
 
 .home_img img {
