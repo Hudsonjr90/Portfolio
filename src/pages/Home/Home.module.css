@@ -466,8 +466,8 @@
   }
 
   .home_img {
-    bottom: -8rem;
-    right: -11rem;
+    bottom: -14rem;
+    right: -4rem;
   }
 
 
@@ -477,7 +477,7 @@
 @media (max-width: 400px) {
   .home_img {
     bottom: -10rem;
-    right: -9.5rem;
+    right: -2.5rem;
   }
 
   .home_img img {
@@ -490,10 +490,10 @@
 @media (max-width: 375px) {
   .home_img {
     bottom: 0rem;
-    right: -0.5rem;
+    right: 8.5rem;
   }
 
   .home_img img {
-    width: 65vw;
+    width: 68vw;
   }
 }
