@@ -199,6 +199,7 @@
 
 .social_media {
   display: flex;
+  margin-top: 5rem;
 }
 
 .social_media a {
@@ -217,13 +218,19 @@
   width: 3.5rem;
 }
 
-.react-tooltip {
-  padding: 0.5rem;
-  background-color: #333;
-  color: #fff;
-  border-radius: 0.2rem;
-  font-size: 1rem;
-}
+ .social_media a[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--main_color);
+  color: var(--bg_color);
+  padding: .5em;
+  border-radius: .3em;
+  opacity: .9;
+  pointer-events: none;
+} 
 
 .whatsapp_link:hover {
   color: #fff;
