@@ -13,7 +13,7 @@ const About = () => {
   return (
     <Transition onAnimationComplete={() => { }}>
       <section className={styles.about}>
-        <div className={styles.container_img_skills}>
+        <div className={styles.container_img}>
           <motion.div
             initial={{ opacity: 0, y: "80%" }}
             animate={{ opacity: 1, y: "0%" }}
