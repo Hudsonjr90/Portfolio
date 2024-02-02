@@ -25,7 +25,6 @@ import ParticlesBackground from "../../components/ParticlesBackground";
 // FRAMER MOTION
 import { motion } from "framer-motion";
 
-
 const Home = () => {
   const imagesBr = [
     "/imgs/HudsonKennedy-BR_1.jpg",
@@ -115,7 +114,6 @@ const Home = () => {
                   to="https://api.whatsapp.com/send?phone=5521969609121"
                   className={styles.whatsapp_link}
                   target="_blank"
-                  
                 >
                   <FaWhatsapp />
                 </NavLink>
@@ -188,7 +186,6 @@ const Home = () => {
                   to="https://github.com/Hudsonjr90"
                   className={styles.github_link}
                   target="_blank"
-                  
                 >
                   <FaGithub />
                 </NavLink>
@@ -224,7 +221,12 @@ const Home = () => {
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <img src={imageUrl} alt="home_img" />
+            <div className={styles.ring}>
+              <i className={ styles.clrMain}></i>
+              <i className={styles.clrSecondary }></i>
+              <i className={ styles.clrTertiary }></i>
+              <img src={imageUrl} alt="home_img" />
+            </div>
           </motion.div>
         </section>
       </Transition>
