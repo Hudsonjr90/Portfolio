@@ -31,7 +31,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/testimonials" element={<Testimonials />} />
-              {/* <Route path="/education" element={<Education />} /> */}
+              <Route path="/education" element={<Education />} />
               <Route path="/experiences" element={<Experiences />} /> 
               <Route path="/skills" element={<Skills />} />
               <Route path="/portfolio" element={<Portfolio />} />

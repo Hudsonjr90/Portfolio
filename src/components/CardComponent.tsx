@@ -2,84 +2,125 @@ import Card from "react-bootstrap/Card";
 import styles from "./CardComponent.module.css";
 import Paginate from "react-paginate";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const CardComponent = () => {
   const cards = [
     {
       id: 1,
-      img: "/imgs/linkedin1.png",
-      text: "Hudson é um profissional super dedicado e comprometido com a entrega, sempre demonstrou pro-atividade, desenvoltura, bem como a iniciativa e capacidade de resolver problemas de forma objetiva e com conhecimento técnico.",
+      img: "/imgs/bootcamp.png",
+      text: "Digital Innovation - Bootcamp Banco Pan(Desenvolvimento Frontend com Angular)",
     },
     {
       id: 2,
-      img: "/imgs/linkedin2.png",
-      text: "Excelente parceiro de trabalho e uma ótima pessoa! Seu senso de responsabilidade se destaca dentre os demais, nunca deixando nada pra trás ou sem solução. Aprendi muito com o Hudson e com certeza levo esses aprendizados para a vida.",
+      img: "/imgs/harvard.png",
+      text: "Universidade de Harvard - Mestrado que atua dentro do programa de pós-graduação em Ciência da Computação",
     },
     {
       id: 3,
-      img: "/imgs/linkedin3.png",
-      text: "Hudson é um excelente parceiro de trabalho, sempre buscando aprimoramento e desenvolver novas habilidades. Está sempre disposto a ajudar. Dedicado e comprometido.",
+      img: "/imgs/mba.png",
+      text: "Faculdade Única de MG - Pós Graduação em Engenharia de Software",
     },
     {
       id: 4,
-      img: "/imgs/linkedin4.png",
-      text: "Profissional exemplar! Muito dedicado, assíduo resolutivo e proativo. E de uma ótima convivência interpessoal. Super recomendo!",
+      img: "/imgs/estacio.png",
+      text: "Faculdade Estácio de Sá - Processos Gerenciais",
     },
     {
       id: 5,
-      img: "/imgs/linkedin5.png",
-      text: "Ótimo Profissional, sempre buscando aprender, melhorar e dominar novos assuntos. Auxiliando a equipe na resolução de problemas.",
+      img: "/imgs/dio-comp.png",
+      text: "Digital Innovation - Trabalhando com Componentes em React",
     },
     {
       id: 6,
-      img: "/imgs/linkedin6.png",
-      text: "Hudson para mim, foi um excelente instrututor. Me ensinou a manusear uma plataforma, que nem de longe é da minha área. Profissional exemplar e de extrema capacidade. tem tudo para decolar em sua carreira de Desenvolvedor.",
+      img: "/imgs/dio-arq.png",
+      text: "Digital Innovation - Arquitetura de Componentes e a gestão da complexidade no front-end",
     },
     {
       id: 7,
-      img: "/imgs/linkedin7.png",
-      text: "Trabalhei com o Hudson na Vilt. Mesmo sendo um período curto, tive a oportunidade de conhecer essa pessoa maravilhosa, bem animada e colaborativa. Participamos de treinamentos e alguns desafios juntos, durantes esse tempo ele como uma pessoa mais experiente se mostrou um bom orientador e um ótimo motivador para todos a sua volta e principalmente para as pessoas mais juniores. Sempre disposto a ajudar, ele será um grande aliado dentro de qualquer equipe.",
+      img: "/imgs/dio-log.png",
+      text: "Digital Innovation - Lógica de Programção Essencial",
     },
     {
       id: 8,
-      img: "/imgs/linkedin8.png",
-      text: "Eu tive a oportunidade de trabalhar com o Hudson. Foi uma experiência muito interessante, pois se trata de um profissional muito dedicado e competente no quesito frontend. Uma grata surpresa e super recomendo. Sucesso Hudson!",
+      img: "/imgs/dio-es6.png",
+      text: "Digital Innovation - Javascript ES6 Essencial",
     },
     {
       id: 9,
-      img: "/imgs/linkedin9.png",
-      text: "Hudson é um profissional completo, sempre pró-ativo e disposto a ajudar, mas no tempo em que trabalhamos juntos ele se destacou realmente pela sua habilidade no desenvolvimento frontend e conhecimentos de UX/UI, sempre muito detalhista. Ele se tornou uma referência para mim, tenho certeza que irá contribuir muito na equipe que venha a fazer parte!",
+      img: "/imgs/dio-ang8.png",
+      text: "Digital Innovation - Técnicas Avançadas em Angular 8",
     },
     {
       id: 10,
-      img: "/imgs/linkedin10.png",
-      text: "Trabalhar com Hudson foi uma experiência excelente. Sua compreensão do FrontEnd é evidente em cada implementação e apoio ao time. Ele é proativo, criativo e sempre busca soluções inovadoras e elegantes.",
+      img: "/imgs/aem-front.png",
+      text: "Adobe Profissional - AEM(Front-end Developer)",
     },
     {
       id: 11,
-      img: "/imgs/linkedin11.png",
-      text: "Tive o prazer de contar com o Hudson no meu time. Um desenvolvedor focado e criativo, sempre buscando solucionar os desafios que encontramos no projeto. Proativo e disponível para ajudar os colegas de time, visando o melhor para a entrega dos objetivos!",
+      img: "/imgs/aem-sbp.png",
+      text: "Adobe Profissional - AEM(Sites Business Practitioner)",
     },
     {
       id: 12,
-      img: "/imgs/linkedin12.png",
-      text: "Um ótimo profissional e profundo conhecedor na parte de Front-end, não se limitando a uso de frameworks para a 'magia' acontecer. Recomendado demais!",
+      img: "/imgs/vuejs.png",
+      text: "VueJs Brasil - Curso Vuejs(Básico ao Avançado)",
     },
     {
       id: 13,
-      img: "/imgs/linkedin13.png",
-      text: "Hudson é um perfeito profissional, comprometido no que faz, sempre conclui seus projetos com excelência",
+      img: "/imgs/dio-vue1.png",
+      text: "Digital Innovation - Diretivas e Propriedades de Componentes Vue.js ",
     },
     {
       id: 14,
-      img: "/imgs/linkedin14.png",
-      text: "Hudson foi um dos candidatos que tive o prazer de conhecer. Uma pessoa muito educada, com uma história de vida incrível e levou o nosso bate-papo de uma maneira bem descontraída, sempre explicando com muita riqueza de detalhes as suas experiências. Um excelente perfil a ser avaliado.  ",
+      img: "/imgs/dio-vue2.png",
+      text: "Digital Innovation - Componentes, Métodos e Ciclo de vida com Vue.js",
     },
-    // {
-    //   id: 15,
-    //   img: "/imgs/linkedin15.png",
-    //   text: "Eu tive o prazer de trabalhar com o colega Hudson Kennedy na equipe de desenvolvimento da Cast, no projeto MG-Florestas e posso atestar suas habilidades excepcionais e dedicação. Hudson é um desenvolvedor front-end talentoso e apaixonado, sempre demonstrando um profundo entendimento das mais recentes tecnologias e melhores práticas. Durante nosso tempo juntos na Cast, ele desempenhou um papel fundamental no sucesso do projeto. O que mais me impressionou em Hudson é a sua capacidade de enfrentar desafios complexos com criatividade e eficiência. Sua atenção aos detalhes e comprometimento com a entrega de produtos de alta qualidade sempre o destacaram. Além de suas habilidades técnicas impressionantes, Hudson foi membro incrível da equipe. Sua comunicação clara e disposição para colaborar tornaram o ambiente de trabalho mais produtivo e agradável. Recomendo Hudson sem reservas e estou confiante de que ele continuará a ter um impacto positivo onde quer que vá. Se você está procurando um desenvolvedor front-end talentoso e comprometido, Hudson Kennedy é a escolha certa. Sinta-se à vontade para entrar em contato se precisar de informações adicionais. Atenciosamente, Gei Batista.",
-    // },
+    {
+      id: 15,
+      img: "/imgs/udemy.png",
+      text: "Udemy - Curso Javascript e Typescript do Básico ao Avançado",
+    },
+    {
+      id: 16,
+      img: "/imgs/sebrae-EF.png",
+      text: "Sebrae - Curso Educação Financeira Empresarial",
+    },
+    {
+      id: 17,
+      img: "/imgs/sebrae-GF.png",
+      text: "Sebrae - Curso Gestão Financeira",
+    },
+    {
+      id: 18,
+      img: "/imgs/sebrae-CS.png",
+      text: "Sebrae - Curso Customer Success(Como Conquistar e Manter Clientes)",
+    },
+    {
+      id: 19,
+      img: "/imgs/sebrae-MD.png",
+      text: "Sebrae - Curso Marketing digital para empreendedor",
+    },
+    {
+      id: 20,
+      img: "/imgs/sebrae-EFC.png",
+      text: "Sebrae - Curso Estratégia Financeira para o Crescimento ",
+    },
+    {
+      id: 21,
+      img: "/imgs/sebrae-PE.png",
+      text: "Sebrae - Curso Planejamento Estratégico para Empreendedores",
+    },
+    {
+      id: 22,
+      img: "/imgs/fgv.png",
+      text: "FGV - Curso Segurança Digital",
+    },
+    {
+      id: 23,
+      img: "/imgs/24h.png",
+      text: "Cursos 24h - Auxiliar Administrativo",
+    },
   ];
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -87,11 +128,11 @@ const CardComponent = () => {
   const handleMouseEnter = (id: number) => {
     setHoveredCard(id);
   };
-  
+
   const handleMouseLeave = () => {
     setHoveredCard(null);
   };
-  
+
   const [currentPage, setCurrentPage] = useState(0);
 
   const cardsPerPage = 2;
@@ -99,9 +140,13 @@ const CardComponent = () => {
 
   const pageCount = Math.ceil(cards.length / cardsPerPage);
 
-  const handlePageClick = ({ selected: selectedPage }: { selected: number }) => {
+  const handlePageClick = ({
+    selected: selectedPage,
+  }: {
+    selected: number;
+  }) => {
     setCurrentPage(selectedPage);
-  }
+  };
 
   const autoChangePage = () => {
     if (!hoveredCard) {
@@ -110,14 +155,12 @@ const CardComponent = () => {
     }
   };
 
-
   useEffect(() => {
-    const intervalId = setInterval(autoChangePage, 5000); 
+    const intervalId = setInterval(autoChangePage, 5000);
 
-    return () => clearInterval(intervalId); 
+    return () => clearInterval(intervalId);
   }, [currentPage, pageCount, hoveredCard]);
 
-  
   const currentPageData = cards
     .slice(offset, offset + cardsPerPage)
     .map((card) => (
@@ -133,7 +176,11 @@ const CardComponent = () => {
           className={hoveredCard === card.id ? styles.blur : ""}
         />
         <Card.ImgOverlay>
-          <Card.Text className={`${styles.card_text} ${hoveredCard === card.id ? styles.showText : ""}`}>
+          <Card.Text
+            className={`${styles.card_text} ${
+              hoveredCard === card.id ? styles.showText : ""
+            }`}
+          >
             {card.text}
           </Card.Text>
         </Card.ImgOverlay>
@@ -142,20 +189,20 @@ const CardComponent = () => {
 
   return (
     <>
-      <div className={styles.card_container}>
+      <motion.div className={styles.card_container}>
         {currentPageData}
-      </div>
-      <Paginate
-        pageCount={pageCount}
-        pageRangeDisplayed={5}
-        marginPagesDisplayed={3}
-        onPageChange={handlePageClick}
-        containerClassName={styles.pagination}
-        activeClassName={styles.activePage}
-        previousLabel="<<"
-        nextLabel=" >>"
-        forcePage={currentPage}
-      />
+      </motion.div>
+        <Paginate
+          pageCount={pageCount}
+          pageRangeDisplayed={6}
+          marginPagesDisplayed={0}
+          onPageChange={handlePageClick}
+          containerClassName={styles.pagination}
+          activeClassName={styles.activePage}
+          previousLabel="<<"
+          nextLabel=" >>"
+          forcePage={currentPage}
+        />
     </>
   );
 };

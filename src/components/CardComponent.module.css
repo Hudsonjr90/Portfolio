@@ -1,9 +1,8 @@
 .card_container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap; 
-  margin-left: 8rem;
   margin-bottom: 5rem;
 }
 

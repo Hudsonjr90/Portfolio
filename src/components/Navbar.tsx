@@ -148,10 +148,10 @@ const Navbar = () => {
                         style={{ ["--i" as string]: 1 }}
                     >
                         <NavLink
-                            to="/testimonials"
+                            to="/education"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Depoimentos
+                            Formações
                         </NavLink>
                     </li>
 
@@ -165,12 +165,14 @@ const Navbar = () => {
                         style={{ ["--i" as string]: 1 }}
                     >
                         <NavLink
-                            to="/education"
+                            to="/testimonials"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Formações
+                            Depoimentos
                         </NavLink>
                     </li> */}
+
+                    
 
                     <li
                         onClick={() => {
