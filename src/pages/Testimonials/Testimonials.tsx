@@ -149,7 +149,7 @@ const Testimonials = () => {
           <span>//</span> Alguns <span>Depoimentos</span>
         </h2>
         <motion.div
-          initial={{ opacity: 0, x: "-100%" }}
+          initial={{ opacity: 0, x: "100%" }}
           animate={{ opacity: 1, x: "0%" }}
           transition={{
             duration: 2,
