@@ -20,7 +20,7 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background: #797979;
+  background: var(--scroll-color);
   transition: all 0.5s ease-in-out;
 }
 
@@ -30,6 +30,7 @@
 
 ::-webkit-scrollbar-track {
   background: #f9f9f9;
+  border-radius: 1rem;
 }
 
 :root {
@@ -38,6 +39,7 @@
   --placeholder_color: rgba(255, 255, 255, .3); 
   --second_bg_color:#323946;
   --text_color: #ededed;
+  --scroll-color: #353535;
 }
 
  .light_mode {
@@ -46,6 +48,7 @@
    --placeholder_color: #808080; 
    --second_bg_color: #cbd5e1 ;
    --text_color: #020617; 
+   --scroll-color: #070707;
    transition: 1.5s;
 }
      
