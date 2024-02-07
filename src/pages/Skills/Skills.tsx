@@ -115,7 +115,15 @@ const Skills = () => {
         <span>//</span> Minhas <span>Habilidades</span>
       </h2>
 
-      <motion.div className={styles.filters}>
+      <motion.div 
+        initial={{ opacity: 0, x: "100%" }}
+        animate={{ opacity: 1, x: "0%" }}
+        transition={{
+          duration: 5,
+          delay: 0.3,
+          ease: [0.3, 0, 0.2, 1]
+        }}
+      className={styles.filters}>
         <select
           value={selectedCategory}
           onChange={(e) => handleCategoryChange(e.target.value)}
@@ -153,6 +161,14 @@ const Skills = () => {
           );
         })}
       </motion.div>
+      <motion.div
+     initial={{ opacity: 0, x: "100%" }}
+     animate={{ opacity: 1, x: "0%" }}
+     transition={{
+       duration: 5,
+       delay: 0.3,
+       ease: [0.3, 0, 0.2, 1]
+     }}>
       <ReactPaginate
           pageCount={totalPages}
           pageRangeDisplayed={5}
@@ -164,6 +180,7 @@ const Skills = () => {
           nextLabel=" >>"
           forcePage={currentPage}
         />
+      </motion.div>  
     </section>
   </Transition>
   );

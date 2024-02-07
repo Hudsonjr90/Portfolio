@@ -1,14 +1,15 @@
 .card_container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap; 
   margin-bottom: 5rem;
+  margin-top: 8rem;
 }
 
 .card_content {
-  width: 35vw; 
-  height: 50vh; 
+  width: 25vw; 
+  height: 35vh; 
   margin-bottom: 15px;
   border: 2px solid var(--main_color);
   overflow: hidden;
@@ -18,8 +19,8 @@
 
 
 .card_content img {
-  width: 35vw; 
-  height: 50vh; 
+  width: 25vw; 
+  height: 35vh; 
   transition: filter 0.3s ease;
   border-radius: 1rem;
 }
@@ -27,11 +28,11 @@
 .card_text {
   color: var(--main_color);
   text-align: justify;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: -1px;
   padding: 25px;
   position: absolute;
-  width: 30vw;
+  width: 15vw;
   opacity: 0;
   transition: opacity 0.3s ease;
   top: 50%;
@@ -55,6 +56,7 @@
   justify-content: center;
   list-style: none;
   padding: 0;
+  margin-top: 10rem;
 }
 
 .pagination li a {
@@ -81,6 +83,7 @@
   .card_container {
     flex-direction: column;
     align-content: end;
+    margin-top: 2rem;
   }
 
   .card_content {

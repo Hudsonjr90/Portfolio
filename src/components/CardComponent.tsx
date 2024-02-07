@@ -189,9 +189,27 @@ const CardComponent = () => {
 
   return (
     <>
-      <motion.div className={styles.card_container}>
+      <motion.div
+        initial={{ opacity: 0, x: "-80%" }}
+        animate={{ opacity: 1, x: "0%" }}
+        transition={{
+          duration: 2,
+          delay: 0.3,
+          ease: [0.3, 0, 0.2, 1],
+        }}
+        className={styles.card_container}
+      >
         {currentPageData}
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: "80%" }}
+        animate={{ opacity: 1, y: "0%" }}
+        transition={{
+          duration: 2,
+          delay: 0.3,
+          ease: [0.3, 0, 0.2, 1],
+        }}
+      >
         <Paginate
           pageCount={pageCount}
           pageRangeDisplayed={6}
@@ -199,10 +217,11 @@ const CardComponent = () => {
           onPageChange={handlePageClick}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}
-          previousLabel="<<"
-          nextLabel=" >>"
+          previousLabel={"←"}
+          nextLabel={"→"}
           forcePage={currentPage}
         />
+      </motion.div>
     </>
   );
 };

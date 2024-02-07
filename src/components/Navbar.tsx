@@ -155,7 +155,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
 
-                    {/* <li
+                    <li
                         onClick={() => {
                             handleLinkClick();
                             handleAudioButtonClick();
@@ -170,7 +170,7 @@ const Navbar = () => {
                         >
                             Depoimentos
                         </NavLink>
-                    </li> */}
+                    </li>
 
                     
 
