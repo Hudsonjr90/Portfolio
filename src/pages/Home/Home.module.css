@@ -242,6 +242,7 @@
   animation: animate 0.8s ease-in-out 0.9s 1 forwards;
   opacity: 0;
   position: relative;
+  z-index: 1;
 }
 
 .btn_box .btn {
@@ -335,6 +336,7 @@
   color: var(--main_color);
   border: 2px solid var(--main_color);
   background-color: var(--bg_color);
+  z-index: 1;
 }
 
 .modal_title {
@@ -485,6 +487,7 @@
 @media (max-width: 470px) {
   .modal_container {
     width: 70vw;
+    z-index: 2;
   }
 
   .modal_content {
@@ -523,7 +526,7 @@
 
 @media (max-width: 400px) {
   .home_img {
-    bottom: -13rem;
+    bottom: -9rem;
     right: -7.5rem;
   }
 
@@ -544,8 +547,8 @@
 
 @media (max-width: 375px) {
   .home_img {
-    bottom: -14rem;
-    right: -7.5rem;
+    bottom: -11rem;
+    right: -9.5rem;
   }
 
   .home_img img {
