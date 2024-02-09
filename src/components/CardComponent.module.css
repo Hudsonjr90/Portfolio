@@ -76,13 +76,12 @@
   color: var(--main_color);
   border: 1px solid var(--main_color);
   background-color: var(--bg_color);
-  border-radius: 20px;
 }
 
 @media (max-width: 768px) {
   .card_container {
     flex-direction: column;
-    align-content: end;
+    align-content: center;
     margin-top: 2rem;
   }
 
@@ -114,15 +113,12 @@
   .pagination {
     margin-top: 15px;
   }
-}
 
-
-
-@media (max-width: 650px){
   .pagination li a {
     width: auto; 
-    padding: 0.5rem 1rem; 
+    padding: 0.7rem 1rem; 
     text-align: center; 
+    border-radius: 0;
   }
 
   .pagination {
@@ -131,5 +127,214 @@
     margin-bottom: 2rem;
     align-items: center;
   }
+
+  .pagination li.activePage{
+    border: 1px solid var(--main_color);
+  }
 }
 
+
+
+@media (max-width: 650px){
+  .card_container {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 4rem;
+  }
+
+  .card_content {
+    width: 90vw;
+    height: 33vh;
+    margin-bottom: 15px;
+    position: relative; 
+  }
+
+  .card_content img {
+    width: 90vw;
+    height: 33vh;
+  }
+
+  .card_text {
+    text-align: center;
+    padding: 0 4rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+   font-size: 2.4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pagination li a {
+    width: auto; 
+    padding: 0.7rem 1rem; 
+    text-align: center; 
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .pagination li.activePage{
+    border: 1px solid var(--main_color);
+  }
+}
+
+@media (max-width: 470px){
+  .card_container {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 4rem;
+  }
+
+  .card_content {
+    width: 89vw;
+    height: 31vh;
+    margin-bottom: 15px;
+    position: relative; 
+  }
+
+  .card_content img {
+    width: 89vw;
+    height: 31vh;
+  }
+
+  .card_text {
+    text-align: center;
+    padding: 0 3.2rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+   font-size: 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pagination li a {
+    width: auto; 
+    padding: 0.7rem 1rem; 
+    text-align: center; 
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .pagination li.activePage{
+    border: 1px solid var(--main_color);
+  }
+}
+
+@media (max-width: 400px){
+  .card_container {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 4rem;
+  }
+
+  .card_content {
+    width: 88vw;
+    height: 30vh;
+    margin-bottom: 15px;
+    position: relative; 
+  }
+
+  .card_content img {
+    width: 88vw;
+    height: 30vh;
+  }
+
+  .card_text {
+    text-align: center;
+    padding: 0 3rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+   font-size: 2.3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pagination li a {
+    width: auto; 
+    padding: 0.7rem 1rem; 
+    text-align: center; 
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .pagination li.activePage{
+    border: 1px solid var(--main_color);
+  }
+}
+
+@media(max-width: 375px){
+  .card_container {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 4rem;
+  }
+
+  .card_content {
+    width: 85vw;
+    height: 29vh;
+    margin-bottom: 15px;
+    position: relative; 
+  }
+
+  .card_content img {
+    width: 85vw;
+    height: 29vh;
+  }
+
+  .card_text {
+    text-align: center;
+    padding: 0 5rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+   font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pagination li a {
+    width: auto; 
+    padding: 0.7rem 1rem; 
+    text-align: center; 
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .pagination li.activePage{
+    border: 1px solid var(--main_color);
+  }
+}

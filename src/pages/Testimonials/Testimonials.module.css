@@ -231,15 +231,32 @@
 /* Estilos para dispositivos com largura máxima de 691px */
 @media (max-width: 691px) {
   .testimonials .heading {
-    font-size: 4.4rem;
+    font-size: 4rem;
   }
   .slider_container img {
     position: absolute;
-    width: 97vw;
-    height: 45vh;
+    width: 60vw;
+    height: 42vh;
     border-radius: 2rem;
-    margin-left: -46.8rem;
+    margin-left: 0.2rem;
   }
+
+  .flipContent {
+    width: 59vw;
+    height: 41vh;
+    margin-left: 9rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .flipContent h3 {
+    margin-bottom: 2rem;
+  }
+
   .pagination li a {
     width: auto;
     padding: 0.7rem 1rem;
@@ -277,6 +294,13 @@
     height: 44vh;
     margin-left: -1rem;
   }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
   .pagination li a {
     width: auto;
     padding: 0.9rem 1rem;
@@ -299,21 +323,34 @@
 /* Estilos para dispositivos com largura máxima de 400px */
 @media (max-width: 400px) {
   .testimonials .heading {
-    font-size: 3rem;
+    font-size: 2.9rem;
   }
   .slider_container img {
     position: absolute;
-    width: 85vw;
-    height: 40vh;
+    width: 75vw;
+    height: 35vh;
     border-radius: 2rem;
-    margin-left: 0.1rem;
+    margin-left: -1rem;
+    margin-top: 5rem;
   }
 
   .flipContent {
-    width: 84vw;
-    height: 39vh;
-    margin-left: -0.1rem;
+    width: 74vw;
+    height: 34vh;
+    margin-left: 2rem;
+    margin-top: 5rem;
   }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .flipContent h3{
+    margin-bottom: 6rem;
+  }
+
   .pagination li a {
     width: auto;
     padding: 0.7rem 1rem;
@@ -344,14 +381,27 @@
     width: 90vw;
     height: 45vh;
     border-radius: 2rem;
-    margin-left: -0.9rem;
+    margin-left: 0.1rem;
+    margin-top: -1rem;
   }
 
   .flipContent {
     width: 89vw;
     height: 44vh;
-    margin-left: -1.9rem;
+    margin-left: -1.2rem;
+    margin-top: -1rem;
   }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .flipContent h3{
+    margin-bottom: 6rem;
+  }
+
   .pagination li a {
     width: auto;
     padding: 0.7rem 1rem;

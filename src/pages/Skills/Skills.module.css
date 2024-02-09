@@ -108,13 +108,14 @@
   color: var(--main_color);
   border-bottom: 1px solid var(--main_color);
   background-color: var(--bg_color);
-  padding-left: 2rem;
+  padding-left: 3rem;
   margin-left: 79rem;
+  width: 7vw;
 }
 
 .filters input[type="text"]::placeholder {
   color: var(--main_color);
-  padding-left: 3rem;
+  padding: 0rem;
 }
 
 .filters .icon_search{
@@ -124,8 +125,7 @@
 
 .filters .icon_search svg{
   font-size: 2rem;
-  flex-direction: column-reverse;
-  margin-left: -21rem;
+  margin-left: -18rem;
   margin-top: 0.7rem;
 }
 
@@ -183,23 +183,10 @@
     font-size: 1.6rem;
     margin: 6rem 0 1.5rem;
   }
-}
-
-@media (max-width: 650px) {
-  .skills {
-    padding: 0 1rem; 
-  }
-
-  .skills h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
   .icons_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 1rem; 
-    margin-left: 6rem;
   }
 
   .icon_hover {
@@ -220,25 +207,30 @@
     align-items: center;
   }
   
-  .filters select,
-  .filters input {
-    width: 65vw;
+  .filters select {
+    width: 40vw;
     height: 4vh;
     margin-bottom: 2rem;
     margin-left: -2rem;
   }
 
-  .filters .icon_search svg{
-    display: block;
-    margin-left: -15rem;
-    margin-top: -5rem;
+  .filters input{
+    width: 20vw;
+    height: 5vh;
+    margin-left: -1rem;
   }
 
-  
+  .filters .icon_search svg{
+    display: block;
+    margin-left: -8rem;
+    margin-top: -3.7rem;
+  }
+
   .pagination li a {
     width: auto; 
     padding: 0.5rem 1rem; 
     text-align: center; 
+    border-radius: 0;
   }
 
   .pagination {
@@ -248,10 +240,286 @@
     align-items: center;
     flex-wrap: wrap;
   }
+
+  .pagination li.activePage{
+    border-radius: 0;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .skills {
+    padding: 0 1rem; 
+  }
+
+  .skills h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .icons_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; 
+  }
+
+  .icon_hover {
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon_description {
+    left: 40px; 
+    text-align: center; 
+  }
+
+  .filters {
+    flex-direction: column;
+    padding: 2rem 1rem; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .filters select {
+    width: 40vw;
+    height: 4vh;
+    margin-bottom: 2rem;
+    margin-left: -2rem;
+  }
+
+  .filters input{
+    width: 20vw;
+    height: 5vh;
+    margin-left: -1rem;
+  }
+
+  .filters .icon_search svg{
+    display: block;
+    margin-left: -8rem;
+    margin-top: -3.7rem;
+  }
+
+  
+  .pagination li a {
+    width: auto; 
+    padding: 0.5rem 1rem; 
+    text-align: center; 
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .pagination li.activePage{
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 500px) {
   .pagination button {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .icons_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-left: 3rem;
+    margin-top: 3rem;
+  }
+
+  .icon_hover {
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon_description {
+    left: 40px; 
+    text-align: center; 
+  }
+
+  .filters {
+    flex-direction: column;
+    padding: 2rem 1rem; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .filters select {
+    width: 49vw;
+    height: 4vh;
+    margin-bottom: 2rem;
+    margin-left: -4rem;
+  }
+
+  .filters input{
+    width: 25vw;
+    height: 4.1vh;
+    margin-left: -5rem;
+  }
+
+  .filters .icon_search svg{
+    display: block;
+    margin-left: -9rem;
+    margin-top: -3.3rem;
+  }
+
+  
+  .pagination li a {
+    width: auto; 
+    padding: 0.9rem 1rem; 
+    text-align: center; 
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .pagination li.activePage{
+    border-radius: 0;
+  }
+}  
+
+@media (max-width: 400px) {
+  .icons_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1rem; 
+  }
+
+  .icon_hover {
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon_description {
+    left: 40px; 
+    text-align: center; 
+  }
+
+  .filters {
+    flex-direction: column;
+    padding: 2rem 1rem; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .filters select{
+    width: 52vw;
+    height: 4vh;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+  }
+
+  .filters input{
+    width: 30vw;
+    height: 4.1vh;
+    margin-left: 2rem;
+  }
+
+
+  .filters .icon_search svg{
+    display: block;
+    margin-left: -6.5rem;
+    margin-top: -3.3rem;
+  }
+
+  
+  .pagination li a {
+    width: auto; 
+    padding: 0.8rem 1rem; 
+    text-align: center;
+    border-radius: 0; 
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .pagination li.activePage{
+    border-radius: 0;
+  }
+}
+
+@media(max-width: 375px) {
+  .icons_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-left: 2rem;
+  }
+
+  .icon_hover {
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon_description {
+    left: 40px; 
+    text-align: center; 
+  }
+
+  .filters {
+    flex-direction: column;
+    padding: 2rem 1rem; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .filters select{
+    width: 65vw;
+    height: 4vh;
+    margin-bottom: 2rem;
+    margin-left: -2rem;
+  }
+
+  .filters input{
+    width: 30vw;
+    height: 5vh;
+    margin-left: -3rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .filters .icon_search svg{
+    display: block;
+    margin-left: -9rem;
+    margin-top: -4.2rem;
+  }
+
+  .pagination li a {
+    width: auto; 
+    padding: 0.5rem 1rem; 
+    text-align: center; 
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .pagination li.activePage{
+    border-radius: 0;
   }
 }

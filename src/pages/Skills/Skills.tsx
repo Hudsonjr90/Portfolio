@@ -176,8 +176,8 @@ const Skills = () => {
           onPageChange={handlePageClick}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}
-          previousLabel="<<"
-          nextLabel=" >>"
+          previousLabel={"<<"}
+          nextLabel={">>"}
           forcePage={currentPage}
         />
       </motion.div>  

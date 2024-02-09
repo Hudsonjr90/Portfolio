@@ -9,11 +9,12 @@ import { useState } from "react";
 
 // REACT ICONS
 import {
+  FaCircleArrowDown,
+  FaCircleXmark,
   FaEnvelope,
   FaGithub,
   FaLinkedinIn,
   FaWhatsapp,
-  FaXmark,
 } from "react-icons/fa6";
 
 // IMAGENS
@@ -45,6 +46,8 @@ const Home = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<string[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
+  const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
+  
 
   const handleDropdownToggle = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -52,20 +55,23 @@ const Home = () => {
 
   const handleLanguageClick = (language: string) => {
     let images: string[] = [];
+    let pdfPath: string | null = null;
     switch (language) {
       case "pt-br":
         images = imagesBr;
+        pdfPath = "/public/cv/HudsonKennedy-BR.pdf";
 
         break;
       case "en-us":
         images = imagesUs;
-
+        pdfPath = "/public/cv/HudsonKennedy-US.pdf";
         break;
       default:
         break;
     }
     setSelectedImages(selectedLanguage);
     setSelectedImages(images);
+    setSelectedPdf(pdfPath);
     setShowModal(true);
     setDropdownOpen(false);
   };
@@ -73,6 +79,18 @@ const Home = () => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  const handleDownload = (_filePath: any) => {
+    if (selectedPdf) {
+      const link = document.createElement("a");
+      link.href = selectedPdf;
+      link.download = selectedPdf.split("/").pop() || "resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setShowModal(false);
+    }
+  }
 
   return (
     <>
@@ -222,9 +240,9 @@ const Home = () => {
             }}
           >
             <div className={styles.ring}>
-              <i className={ styles.clrMain}></i>
-              <i className={styles.clrSecondary }></i>
-              <i className={ styles.clrTertiary }></i>
+              <i></i>
+              <i></i>
+              <i></i>
               <img src={imageUrl} alt="home_img" />
             </div>
           </motion.div>
@@ -237,7 +255,8 @@ const Home = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title className={styles.modal_title}>
-            Currículo <FaXmark onClick={handleCloseModal} />{" "}
+            Currículo  <FaCircleArrowDown className={styles.down_button} onClick={handleDownload} />  
+            <FaCircleXmark className={styles.close_button} onClick={handleCloseModal} />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className={styles.modal_content}>
