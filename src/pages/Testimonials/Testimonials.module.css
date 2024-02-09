@@ -320,6 +320,57 @@
   }
 }
 
+@media (max-width: 428px) {
+  .testimonials .heading {
+    font-size: 3.26rem;
+  }
+  .slider_container {
+    height: 45vh;
+  }
+
+  .slider_container img {
+    position: absolute;
+    width: 70vw;
+    height: 31vh;
+    border-radius: 2rem;
+    margin-left: 0rem;
+  }
+
+  .flipContent {
+    width: 69vw;
+    height: 30vh;
+    margin-left: 4.1rem;
+  }
+
+  .flipContent h3{
+    margin-bottom: 3rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.9rem 1rem;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .pagination li.activePage {
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+}
+
 /* Estilos para dispositivos com largura máxima de 400px */
 @media (max-width: 400px) {
   .testimonials .heading {
@@ -347,7 +398,7 @@
     text-align: left;
   }
 
-  .flipContent h3{
+  .flipContent h3 {
     margin-bottom: 6rem;
   }
 
@@ -398,7 +449,7 @@
     text-align: left;
   }
 
-  .flipContent h3{
+  .flipContent h3 {
     margin-bottom: 6rem;
   }
 

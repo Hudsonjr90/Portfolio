@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    padding: 8rem 6% 2rem;
+    padding: 0rem 6% 10rem;
 }
 
 .header_container {
@@ -250,16 +250,46 @@ form .textarea_field .error_txt  {
 
     .contact form {
         width: 100%;
+        margin-bottom: 32rem;
     } 
 } 
 
-@media (max-width: 410px) {
+@media (max-width: 428px) {
     .header_container {
         justify-content: space-between;
     }
 
     .header_container h2 {
         font-size: 2.7rem;
+    }
+    .contact form {
+        margin-bottom: 35rem;
+    }
+}
+
+@media (max-width: 400px){
+    .header_container {
+        justify-content: space-between;
+    }
+
+    .header_container h2 {
+        font-size: 2.7rem;
+    }
+    .contact form {
+        margin-bottom: 25rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .header_container {
+        justify-content: space-between;
+    }
+
+    .header_container h2 {
+        font-size: 2.7rem;
+    }
+    .contact form {
+        margin-bottom: 5rem;
     }
 }
 

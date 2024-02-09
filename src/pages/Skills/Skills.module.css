@@ -394,6 +394,72 @@
   }
 }  
 
+@media (max-width: 428px) {
+  .icons_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-left: 4rem;
+    margin-top: 3rem;
+  }
+
+  .icon_hover {
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon_description {
+    left: 40px; 
+    text-align: center; 
+  }
+
+  .filters {
+    flex-direction: column;
+    padding: 2rem 1rem; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .filters select {
+    width: 49vw;
+    height: 4vh;
+    margin-bottom: 2rem;
+   
+  }
+
+  .filters input{
+    width: 25vw;
+    height: 4.1vh;
+  }
+
+  .filters .icon_search svg{
+    display: block;
+    margin-left: -9rem;
+    margin-top: -3.5rem;
+  }
+
+  
+  .pagination li a {
+    width: auto; 
+    padding: 0.8rem 1rem; 
+    text-align: center; 
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .pagination li.activePage{
+    border-radius: 0;
+  }
+}
+
 @media (max-width: 400px) {
   .icons_container {
     display: grid;

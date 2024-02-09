@@ -246,7 +246,7 @@ const Portfolio = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Saiba Mais
+                        Código
                       </NavLink>
                     </div>
                   </div>

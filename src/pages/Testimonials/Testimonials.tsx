@@ -142,6 +142,19 @@ const Testimonials = () => {
     setFlipped(false);
   };
 
+  const autoChangePage = () => {
+    if (!isFlipped) {
+      const nextPage = (currentPage + 1) % pageCount;
+      setCurrentPage(nextPage);
+    }
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(autoChangePage, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [currentPage, pageCount, isFlipped]);
+
   return (
     <Transition onAnimationComplete={() => {}}>
       <section className={styles.testimonials}>

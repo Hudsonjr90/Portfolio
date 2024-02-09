@@ -126,6 +126,30 @@
   }
 }
 
+@media (max-width: 428px){
+  .about {
+    max-height: 100vh;
+    padding: 7rem 3% 2rem;
+  }
+
+  .about_content {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    width: 91.7vw;
+    height: 37vh;
+    overflow-y: auto;
+  }
+
+  .container_img {
+    height: 45vh;
+  }
+
+  .container_img img {
+    display: block;
+    width: 80vw;
+  }
+}
+
 @media (max-width: 375px) {
   .about {
     flex-direction: column-reverse;
