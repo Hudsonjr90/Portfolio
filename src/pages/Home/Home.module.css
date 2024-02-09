@@ -550,6 +550,50 @@
   }
 }
 
+@media (max-width: 428px){
+  .modal_container {
+    width: 70vw;
+    z-index: 2;
+  }
+
+  .modal_content {
+    width: 69vw;
+  }
+
+  .modal_content img {
+    width: 66vw;
+  }
+  .modal_title {
+    padding-left: 9rem;
+  }
+
+  .modal_title svg {
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  .home_content {
+    height: 90rem;
+  }
+
+  .home_img img {
+    width: 115vw;
+  }
+
+  .home_img {
+    bottom: -4rem;
+    right: -4rem;
+  }
+
+  .ring i {
+    width: 260px;
+    height: 260px;
+    z-index: 2;
+    margin-left: 13rem;
+    margin-top: 13rem;
+  }
+}
+
 @media (max-width: 400px) {
   .home_img {
     bottom: -9rem;
