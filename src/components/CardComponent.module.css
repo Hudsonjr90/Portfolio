@@ -76,6 +76,7 @@
   color: var(--main_color);
   border: 1px solid var(--main_color);
   background-color: var(--bg_color);
+  border-radius: 20px;
 }
 
 @media (max-width: 768px) {
@@ -130,6 +131,7 @@
 
   .pagination li.activePage{
     border: 1px solid var(--main_color);
+    border-radius: 0;
   }
 }
 
@@ -183,6 +185,7 @@
 
   .pagination li.activePage{
     border: 1px solid var(--main_color);
+    border-radius: 0;
   }
 }
 
@@ -285,6 +288,7 @@
 
   .pagination li.activePage{
     border: 1px solid var(--main_color);
+    border-radius: 0;
   }
 }
 
@@ -336,5 +340,6 @@
 
   .pagination li.activePage{
     border: 1px solid var(--main_color);
+    border-radius: 0;
   }
 }
