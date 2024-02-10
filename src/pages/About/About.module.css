@@ -134,14 +134,14 @@
 
   .about_content {
     margin-bottom: 3rem;
-    margin-top: 3rem;
+    margin-top: 6rem;
     width: 91.7vw;
     height: 37vh;
     overflow-y: auto;
   }
 
   .container_img {
-    height: 45vh;
+    height: 48vh;
   }
 
   .container_img img {
