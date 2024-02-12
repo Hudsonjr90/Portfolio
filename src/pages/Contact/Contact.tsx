@@ -122,7 +122,7 @@ const Contact = () => {
               }}
             >
               <NavLink
-                to="https://api.whatsapp.com/send?phone=5585989295516"
+                to="https://api.whatsapp.com/send?phone=5521969609121"
                 className={styles.whatsapp_link}
               >
                 <FaWhatsapp />
@@ -170,7 +170,7 @@ const Contact = () => {
               }}
             >
               <NavLink
-                to="https://www.linkedin.com/in/israeldevfrontend"
+                to="https://www.linkedin.com/in/hudsonkennedyjr"
                 className={styles.linkedin_link}
               >
                 <FaLinkedinIn />
@@ -194,7 +194,7 @@ const Contact = () => {
               }}
             >
               <NavLink
-                to="https://github.com/Israelkilday"
+                to="https://github.com/Hudsonjr90"
                 className={styles.github_link}
               >
                 <FaGithub />
