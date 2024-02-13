@@ -360,7 +360,6 @@
 .modal_title .close_button {
   font-size: 3rem;
   cursor: pointer;
-  
 }
 
 .modal_content {
@@ -472,6 +471,10 @@
     right: 5rem;
   }
 
+  .home_content {
+    height: 75vh;
+  }
+
   .ring i {
     width: 260px;
     height: 260px;
@@ -504,7 +507,13 @@
     padding-left: 17rem;
   }
 
-  .modal_title svg {
+  .modal_title .down_button {
+    font-size: 2.9rem;
+    cursor: pointer;
+    margin-left: 15rem;
+  }
+
+  .modal_title .close_button {
     font-size: 3rem;
     cursor: pointer;
   }
@@ -524,10 +533,16 @@
     width: 66vw;
   }
   .modal_title {
-    padding-left: 9rem;
+    padding-left: 3rem;
   }
 
-  .modal_title svg {
+  .modal_title .down_button {
+    font-size: 2.9rem;
+    cursor: pointer;
+    margin-left: 12rem;
+  }
+
+  .modal_title .close_button {
     font-size: 3rem;
     cursor: pointer;
   }
@@ -537,8 +552,12 @@
   }
 
   .home_img {
-    bottom: -14rem;
-    right: -4rem;
+    bottom: -2rem;
+    right: -5rem;
+  }
+
+  .home_content {
+    height: 75vh;
   }
 
   .ring i {
@@ -550,7 +569,7 @@
   }
 }
 
-@media (max-width: 428px){
+@media (max-width: 428px) {
   .modal_container {
     width: 70vw;
     z-index: 2;
@@ -564,25 +583,31 @@
     width: 66vw;
   }
   .modal_title {
-    padding-left: 9rem;
+    padding-left: 3rem;
   }
 
-  .modal_title svg {
+  .modal_title .down_button {
+    font-size: 2.9rem;
+    cursor: pointer;
+    margin-left: 10rem;
+  }
+
+  .modal_title .close_button {
     font-size: 3rem;
     cursor: pointer;
-  }
-
-  .home_content {
-    height: 90rem;
   }
 
   .home_img img {
     width: 115vw;
   }
 
+  .home_content {
+    height: 75vh;
+  }
+
   .home_img {
-    bottom: -4rem;
-    right: -4rem;
+    bottom: -1rem;
+    right: -5rem;
   }
 
   .ring i {
@@ -596,7 +621,7 @@
 
 @media (max-width: 400px) {
   .home_img {
-    bottom: -9rem;
+    bottom: -5rem;
     right: -7.5rem;
   }
 
@@ -606,6 +631,10 @@
     z-index: 2;
   }
 
+  .home_content {
+    height: 75vh;
+  }
+
   .ring i {
     width: 260px;
     height: 260px;
@@ -613,9 +642,28 @@
     margin-left: 13rem;
     margin-top: 13rem;
   }
+
+  .modal_title{
+    padding-left: 3rem;
+  }
+
+  .modal_title .down_button {
+    font-size: 2.9rem;
+    cursor: pointer;
+    margin-left: 9rem;
+  }
+
+  .modal_title .close_button {
+    font-size: 3rem;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 375px) {
+  .home_content {
+    height: 75vh;
+  }
+
   .home_img {
     bottom: -11rem;
     right: -9.5rem;
@@ -631,5 +679,20 @@
     z-index: 2;
     margin-left: 13rem;
     margin-top: 13rem;
+  }
+
+  .modal_title{
+    padding-left: 2rem;
+  }
+
+  .modal_title .down_button {
+    font-size: 2.9rem;
+    cursor: pointer;
+    margin-left: 9rem;
+  }
+
+  .modal_title .close_button {
+    font-size: 3rem;
+    cursor: pointer;
   }
 }
