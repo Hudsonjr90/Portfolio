@@ -36,12 +36,10 @@
   justify-content: center;
   gap: 2rem; 
   flex-wrap: wrap;
-  margin-left: 15rem;
 }
 
 .box_icon {
-  width: calc(25% - 2rem); 
-  margin-bottom: 2rem; 
+  margin: 0 4rem 7rem;
 }
 
 .box_icon{
@@ -269,6 +267,10 @@
     margin-bottom: 1rem;
   }
 
+  .box_icon {
+    margin: 0 3rem 4rem;
+  }
+
   .icon_description {
     left: 40px; 
     text-align: center; 
@@ -342,6 +344,10 @@
     margin-bottom: 1rem;
   }
 
+  .box_icon {
+    margin: 0 1rem 4rem;
+  }
+
   .icon_description {
     left: 40px; 
     text-align: center; 
@@ -399,7 +405,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-left: 4rem;
+    margin-left: 0rem;
     margin-top: 3rem;
   }
 
@@ -408,6 +414,11 @@
     width: 4rem;
     margin-bottom: 1rem;
   }
+
+  .box_icon {
+    margin: 0 3rem 4rem;
+  }
+
 
   .icon_description {
     left: 40px; 
@@ -471,6 +482,10 @@
     height: 4rem;
     width: 4rem;
     margin-bottom: 1rem;
+  }
+
+  .box_icon {
+    margin: 0 2rem 3rem;
   }
 
   .icon_description {
@@ -537,6 +552,10 @@
     height: 4rem;
     width: 4rem;
     margin-bottom: 1rem;
+  }
+
+  .box_icon {
+    margin: 0 1rem 3rem;
   }
 
   .icon_description {

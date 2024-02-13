@@ -50,6 +50,7 @@
     padding: 0 1rem;
     text-align: center;
     width: 100%;
+    cursor: default;
 }
 
 .portfolio_container:hover .portfolio_content {
@@ -70,7 +71,7 @@
 
 .portfolio_content .description {
     animation: animate .8s ease-in-out .3s 1 forwards;
-    color: #ffffff; 
+    color: #fff; 
     line-height: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
