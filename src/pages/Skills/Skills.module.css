@@ -446,14 +446,14 @@
 
   .filters .icon_search svg{
     display: block;
-    margin-left: -9rem;
-    margin-top: -3.5rem;
+    margin-left: -8.9rem;
+    margin-top: -2.7rem;
   }
 
   
   .pagination li a {
     width: auto; 
-    padding: 0.8rem 1rem; 
+    padding: 0.6rem 1rem; 
     text-align: center; 
     border-radius: 0;
   }

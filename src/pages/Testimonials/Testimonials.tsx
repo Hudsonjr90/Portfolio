@@ -127,7 +127,7 @@ const Testimonials = () => {
     setCurrentPage(data.selected);
   };
 
-  const pageCount = Math.ceil(cardItems.length / 1); // Número de páginas com 1 card por página
+  const pageCount = Math.ceil(cardItems.length / 1); 
   const imageIndex = wrap(
     0,
     windowWidth > 768 ? imagesDesktop.length : imagesMobile.length,
