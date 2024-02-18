@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 // COMPONENT
 import Transition from "../../components/Transition";
+import { useTranslation } from "react-i18next";
 // SWIPER
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
@@ -20,8 +21,10 @@ import clock from "/imgs/clock.png";
 import card from "/imgs/card.png";
 
 const Portfolio = () => {
+  const { t } = useTranslation(); 
+
   const [slidePerview, setSlidePerview] = useState<number>(3);
-  const [initialSlide] = useState<number>(3);
+  const [initialSlide] = useState<number>(0);
   const [transitionCompleted, setTransitionCompleted] = useState(false);
 
   const data = [
@@ -69,7 +72,7 @@ const Portfolio = () => {
     {
       id: 2,
       image: memory,
-      name: "Jogo Da Memória React",
+      name: "Memory React Game",
       description:
         "Jogo criado em React, feito com Typescript, para poder praticar e exercitar um pouco mais na linguagem. Jogo simples, cujo ainda terá algumas atualizações e modificações também.",
       technologies: ["React", "Typescript", "CSS", "NodeJs", "Bootstrap"],
@@ -95,7 +98,7 @@ const Portfolio = () => {
     {
       id: 4,
       image: clima,
-      name: "Clima Tempo API",
+      name: "Weather API",
       description: "App Criado com HTML, CSS e Javascript, consumindo a WeatherAPI, para mostrar as informações de cada cidade.",
       technologies: [
         "Javascript", 
@@ -187,7 +190,7 @@ const Portfolio = () => {
       {transitionCompleted && (
         <section className={styles.portfolio}>
           <h2 className={styles.heading}>
-            <span>//</span> Principais <span>Projetos</span>
+            <span>//</span> {t("projects.title")} <span>{t("projects.text")}</span>
           </h2>
 
           <Swiper
@@ -218,10 +221,10 @@ const Portfolio = () => {
                   />
                   <div className={styles.portfolio_content}>
                     <h2 className={styles.name}>{item.name}</h2>
-                    <p className={styles.description}>{item.description}</p>
+                    <p className={styles.description}>{t(`projects.data.${item.id}.description`)}</p>
 
                     <div className={styles.technologies}>
-                      <h3>Tecnologias Ultilizadas:</h3>
+                      <h3>{t("projects.subtitle")}</h3>
                       <ul>
                         {item.technologies &&
                           item.technologies.map((tech, index) => (
@@ -246,7 +249,7 @@ const Portfolio = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Código
+                        Code
                       </NavLink>
                     </div>
                   </div>

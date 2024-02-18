@@ -3,11 +3,14 @@ import styles from "./Testimonials.module.css";
 import Transition from "../../components/Transition";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactPaginate from "react-paginate";
+import { useTranslation } from "react-i18next";
 import { wrap } from "popmotion";
 import imagesDesktop from "../../components/config/imageServer";
 import imagesMobile from "../../components/config/imageServerMobile";
 
+
 const Testimonials = () => {
+  const { t } = useTranslation(); 
   const cardItems = [
     {
       id: 1,
@@ -159,7 +162,7 @@ const Testimonials = () => {
     <Transition onAnimationComplete={() => {}}>
       <section className={styles.testimonials}>
         <h2 className={styles.heading}>
-          <span>//</span> Alguns <span>Depoimentos</span>
+          <span>//</span>{t("testimonials.title")}<span>{t("testimonials.text")}</span>
         </h2>
         <motion.div
           initial={{ opacity: 0, x: "100%" }}
@@ -180,7 +183,7 @@ const Testimonials = () => {
               onMouseLeave={handleMouseLeave}
             >
               <h3>{cardItems[imageIndex].title}</h3>
-              <p>{cardItems[imageIndex].text}</p>
+              <p>{t(`testimonials.cards.${imageIndex}.text`)}</p>
             </motion.div>
             <motion.img
               key={`${currentPage}-${cardItems[imageIndex].id}-img`}

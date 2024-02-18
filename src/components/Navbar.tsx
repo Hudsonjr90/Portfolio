@@ -9,6 +9,8 @@ import { FaMoon, FaSun, FaPalette } from "react-icons/fa6";
 import styles from "./Navbar.module.css";
 // CONTEXT
 import { useTheme } from '../context/ThemeContext';
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
     const [lightMode, setLightMode] = useState<boolean>(false);
@@ -16,6 +18,8 @@ const Navbar = () => {
     const [selectedColor, setSelectedColor] = useState<string | null>(null);
     const [paletteInputInvisible, setPaletteInputInvisible] = useState<boolean>(false);
     const [soundClick, setSoundClick] = useState<boolean>(false)
+    const { t } = useTranslation();
+
 
     const { mainColor, setMainColor } = useTheme();
 
@@ -73,16 +77,6 @@ const Navbar = () => {
 
     }, [selectedColor]);
 
-    // const handleAudioDoubleClick = () => {
-    //     const audio = new Audio("/sounds/double_click.mp3");
-
-    //     if (soundClick) {
-    //         audio.pause(); 
-    //     } else {
-    //         audio.play();
-    //     }
-    // };
-
     const handleAudioButtonClick = () => {
         const audio = new Audio("/sounds/button_click.mp3");
 
@@ -134,7 +128,7 @@ const Navbar = () => {
                             to="/about"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Sobre
+                           {t("menu.about")}
                         </NavLink>
                     </li>
 
@@ -151,7 +145,7 @@ const Navbar = () => {
                             to="/education"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Formações
+                            {t("menu.academic-education")}
                         </NavLink>
                     </li>
 
@@ -168,7 +162,7 @@ const Navbar = () => {
                             to="/testimonials"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Depoimentos
+                            {t("menu.testimonials")}
                         </NavLink>
                     </li>
 
@@ -187,7 +181,7 @@ const Navbar = () => {
                             to="/experiences"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Experiências
+                            {t("menu.experiences")}
                         </NavLink>
                     </li>
 
@@ -204,7 +198,7 @@ const Navbar = () => {
                             to="/skills"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Habilidades
+                            {t("menu.skills")}
                         </NavLink>
                     </li>
 
@@ -221,7 +215,7 @@ const Navbar = () => {
                             to="/portfolio"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Projetos
+                            {t("menu.portfolio")}
                         </NavLink>
                     </li>
 
@@ -238,7 +232,7 @@ const Navbar = () => {
                             to="/contact"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Contato
+                           {t("menu.contact")}
                         </NavLink>
                     </li>
                 </ul>
@@ -304,6 +298,10 @@ const Navbar = () => {
                             onClick={() => handleColorSelection("ball_4")}
                         ></button>                        
                     </div>
+                </label>
+
+                <label>
+                <LanguageSwitcher />
                 </label>
 
                 <button

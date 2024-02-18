@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Transition from "../../components/Transition";
 import { SetStateAction, useState, useEffect } from "react";
 import ReactPaginate from 'react-paginate';
+import { useTranslation } from "react-i18next";
 
 import { GrMysql } from "react-icons/gr";
 import { LuSearch } from "react-icons/lu";
@@ -16,6 +17,8 @@ import { BiLogoTypescript, BiLogoReact,BiLogoAngular, BiLogoJavascript, BiLogoCs
 
 
 const Skills = () => {
+  const { t } = useTranslation(); 
+
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -112,7 +115,7 @@ const Skills = () => {
     <Transition onAnimationComplete={() => {}}>
     <section className={styles.skills}>
       <h2 className={styles.heading}>
-        <span>//</span> Minhas <span>Habilidades</span>
+        <span>//</span> {t("skills.title")}<span>{t("skills.text")}</span>
       </h2>
 
       <motion.div 
@@ -128,17 +131,17 @@ const Skills = () => {
           value={selectedCategory}
           onChange={(e) => handleCategoryChange(e.target.value)}
         >
-          <option value="all">Todas as categorias</option>
+          <option value="all">{t("skills.select1")}</option>
           <option value="frontend">Frontend</option>
           <option value="backend">Backend</option>
-          <option value="database">Banco de Dados</option>
-          <option value="tools">Ferramentas</option>
+          <option value="database">{t("skills.select2")}</option>
+          <option value="tools">{t("skills.select3")}</option>
         </select>
         <input
           type="text"
           value={searchTerm}
           onChange={handleSearchTermChange}
-          placeholder="Buscar..."
+          placeholder={t("skills.search")}
         />
         <motion.div className={styles.icon_search}>           
         <LuSearch />

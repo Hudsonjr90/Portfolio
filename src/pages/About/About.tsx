@@ -7,9 +7,13 @@ import About_img from "/imgs/hudson.png";
 // FRAMER MOTION
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 // REACT ICONS
 
 const About = () => {
+  const { t } = useTranslation();
+
   const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
   const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
@@ -51,21 +55,11 @@ const About = () => {
             }}
           >
             <h2>
-              <span>//</span> Quem é <span>Hudson Kennedy</span>
+              <span>//</span>{t("about.title")}<span>Hudson Kennedy</span>
             </h2>
 
             <p>
-              - Olá, me chamo Hudson Kennedy. Como Desenvolvedor Web apaixonado
-              e dedicado, acumulei uma sólida experiência ao longo de 10 anos,
-              complementada por habilidades interpessoais que considero
-              fundamentais para o universo da programação. Especializei-me em
-              tecnologias web, possuindo um conhecimento abrangente que se
-              estende por diversas ferramentas e linguagens. Minha paixão pelo
-              aprendizado constante e meu comprometimento em evoluir
-              continuamente me impulsionam a aplicar minha vasta experiência no
-              desenvolvimento de soluções web inovadoras e impactantes.
-              Minha natureza comunicativa torna-me sempre pronto para desempenhar um papel vital em
-              propostas inovadoras. Vamos construir algo incrível juntos!
+              {t("about.text")}
             </p>
           </motion.div>
         </div>

@@ -19,7 +19,12 @@
  - React
  - React Router DOM
  - React Icons(para ícones)
- - Vite
+ - Redux
+ - i18next (para intenacionalização para idioma americano)
+ - Animate Presence (para a seção de depoimentos)
+ - React Paginate (para montar paginação dos cards)
+ - React Bootstrap Card (para a seção de formação)
+ - React Vertical Timeline (para a seção de experiências)
  - Swiper (para a seção de portfólio)
  - EmailJS (para o formulário de contato)
  - SweetAlert (para notificações)
@@ -31,6 +36,7 @@
  - HTML
  - Vscode
  - Git
+ - Vite
  - Outras tecnologias específicas de cada projeto listadas nos respectivos itens do portfólio
    
  ## 📁 Estrutura de Diretórios
@@ -46,6 +52,13 @@
  - Envio de formulário de E-mail
  - Links ativos
  - Navegação Dinâmica entre páginas(SPA)
+
+ ##  Todo 
+
+ - implementar outros idiomas 
+ - ajustar paletas de cores no light mode
+ - inserir mais projetos desenvolvidos
+ - etc...
 
  ## 🤝Contribuição
 

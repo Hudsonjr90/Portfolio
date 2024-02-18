@@ -1,0 +1,54 @@
+.lng_btn {
+  background: transparent;
+  color: var(--text_color);
+  display: inline-flex;
+  font-weight: 700;
+  font-size: 2.5rem;
+  transition: 0.5s ease;
+  z-index: 1;
+  cursor: pointer;
+  padding: 1.2rem 0.2rem;
+}
+
+.lng_box .lng_btn::before {
+  background: var(--bg_color);
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+  width: 0;
+  z-index: -1;
+}
+
+.lng_box .lng_btn:hover::before {
+  width: 100%;
+}
+
+.lng_box .lng_btn:hover {
+  box-shadow: none;
+}
+
+.dropdown_content {
+  border: 0.2rem solid var(--main_color);
+  height: 7.4rem;
+  position: absolute;
+  text-align: center;
+  transition: height 0.5s ease;
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: -0.5rem;
+}
+.dropdown_content img {
+  width: 2rem;
+}
+.dropdown_content button {
+  background-color: var(--bg_color);
+  color: var(--main_color);
+  padding: 0.5rem 0rem;
+  border: 1px solid;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

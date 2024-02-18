@@ -4,7 +4,7 @@
     justify-content: space-between;
     left: 0;
     position: fixed;
-    padding: 2rem 6%;
+    padding: 1.2rem 6%;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -114,8 +114,7 @@ label {
 }
 
 .toggle_palette_theme {
-    background-color: #000;
-    border: .2rem solid var(--main_color);
+    background-color: var(--bg_color);
     height: 0;
     position: absolute;
     top: 100%;
@@ -190,7 +189,7 @@ label {
         background: none;
         cursor: pointer;
         display: block;
-        height: 3.2rem;
+        height: 5rem;
         margin-right: 1rem;
         position: relative;
         width: 2.4rem;

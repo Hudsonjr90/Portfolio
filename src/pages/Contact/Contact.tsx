@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 // COMPONENT
 import Transition from "../../components/Transition";
+import { useTranslation } from "react-i18next";
 // EMAILJS
 import emailjs from "@emailjs/browser";
 // SWEETALERT
@@ -20,7 +21,11 @@ import {
   FaWhatsapp,
 } from "react-icons/fa6";
 
+
 const Contact = () => {
+
+  const { t } = useTranslation(); 
+  
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -101,7 +106,7 @@ const Contact = () => {
       <section className={styles.contact}>
         <div className={styles.header_container}>
           <h2>
-            <span>//</span> Contate <span>Me!</span>
+            <span>//</span>{t("contact.title")} <span>{t("contact.text")}</span>
           </h2>
 
           <div className={styles.social_media}>
@@ -208,7 +213,7 @@ const Contact = () => {
             <div className={`${styles.input_field} ${styles.field}`}>
               <input
                 type="text"
-                placeholder="Nome Completo"
+                placeholder={t("contact.name")}
                 className={`${styles.item} ${nameError ? styles.error : ""}`}
                 id="name"
                 onChange={(e) => {
@@ -224,14 +229,14 @@ const Contact = () => {
                   nameError ? styles.show_message : ""
                 }`}
               >
-                Nome não pode ficar em branco
+                {t("contact.name_error")}
               </div>
             </div>
 
             <div className={`${styles.input_field} ${styles.field}`}>
               <input
                 type="email"
-                placeholder="Endereço do Email"
+                placeholder={t("contact.email")}
                 className={`${styles.item} ${emailError ? styles.error : ""}`}
                 id="email"
                 onChange={(e) => {
@@ -247,7 +252,7 @@ const Contact = () => {
                   emailError ? styles.show_message : ""
                 }`}
               >
-                Email não pode ficar em branco
+                {t("contact.email_error")}
               </div>
             </div>
           </div>
@@ -256,7 +261,7 @@ const Contact = () => {
             <div className={`${styles.input_field} ${styles.field}`}>
               <input
                 type="number"
-                placeholder="Número do Telefone"
+                placeholder={t("contact.phone")}
                 className={`${styles.item} ${phoneError ? styles.error : ""}`}
                 id="phone"
                 onChange={(e) => {
@@ -272,14 +277,14 @@ const Contact = () => {
                   phoneError ? styles.show_message : ""
                 }`}
               >
-                Telefone não pode ficar em branco
+                {t("contact.phone_error")}
               </div>
             </div>
 
             <div className={`${styles.input_field} ${styles.field}`}>
               <input
                 type="text"
-                placeholder="Assunto"
+                placeholder={t("contact.subject")}
                 id="subject"
                 className={`${styles.item} ${subjectError ? styles.error : ""}`}
                 onChange={(e) => {
@@ -295,7 +300,7 @@ const Contact = () => {
                   subjectError ? styles.show_message : ""
                 }`}
               >
-                Assunto não pode ficar em branco
+                {t("contact.subject_error")}
               </div>
             </div>
           </div>
@@ -303,7 +308,7 @@ const Contact = () => {
           <div className={`${styles.textarea_field} ${styles.field}`}>
             <textarea
               name=""
-              placeholder="Sua mensagem"
+              placeholder={t("contact.message")}
               id="message"
               cols={30}
               rows={10}
@@ -321,13 +326,13 @@ const Contact = () => {
                 messageError ? styles.show_message : ""
               }`}
             >
-              Mensagem não pode ficar em branco
+              {t("contact.message_error")}
             </div>
           </div>
 
           <div className={styles.btn_box}>
             <button className={styles.btn} type="submit">
-              Enviar Mensagem
+            {t("contact.submit")}
             </button>
           </div>
         </form>

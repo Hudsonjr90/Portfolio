@@ -6,16 +6,10 @@ import { NavLink } from "react-router-dom";
 import Transition from "../../components/Transition";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 // REACT ICONS
-import {
-  FaCircleArrowDown,
-  FaCircleXmark,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedinIn,
-  FaWhatsapp,
-} from "react-icons/fa6";
+import { FaCircleArrowDown, FaCircleXmark, FaEnvelope, FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 
 // IMAGENS
 import { useMediaQuery } from "react-responsive";
@@ -27,6 +21,8 @@ import ParticlesBackground from "../../components/ParticlesBackground";
 import { motion } from "framer-motion";
 
 const Home = () => {
+  const { t } = useTranslation();
+  
   const imagesBr = [
     "/imgs/HudsonKennedy-BR_1.jpg",
     "/imgs/HudsonKennedy-BR_2.jpg",
@@ -100,7 +96,7 @@ const Home = () => {
             <ParticlesBackground />
 
             <h3 className={styles.first_h3}>
-              Melhor a cada <span>Commit</span>
+            {t("home.title")} <span>Commit</span>
             </h3>
 
             <h1 className={styles.text_reveal}>
@@ -109,7 +105,7 @@ const Home = () => {
             </h1>
 
             <div className={styles.transparent_text}>
-              <h3 className={styles.animation_text}>Desenvolvedor Fullstack</h3>
+              <h3 className={styles.animation_text}>{t("home.function")}</h3>
             </div>
 
             <div className={styles.social_media}>
@@ -213,7 +209,7 @@ const Home = () => {
             <div className={styles.btn_box}>
               <div className={styles.dropdown}>
                 <button className={styles.btn} onClick={handleDropdownToggle}>
-                  Currículo
+                  {t("home.resume")}
                 </button>
                 {isDropdownOpen && (
                   <div className={styles.dropdown_content}>
@@ -255,7 +251,7 @@ const Home = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title className={styles.modal_title}>
-            Currículo  <FaCircleArrowDown className={styles.down_button} onClick={handleDownload} />  
+          {t("home.resume")}  <FaCircleArrowDown className={styles.down_button} onClick={handleDownload} />  
             <FaCircleXmark className={styles.close_button} onClick={handleCloseModal} />
           </Modal.Title>
         </Modal.Header>
