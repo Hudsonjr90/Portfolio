@@ -53,14 +53,14 @@
  - Links ativos
  - Navegação Dinâmica entre páginas(SPA)
 
- ##  Todo 
+ ## 🎯 Todo 
 
  - implementar outros idiomas 
  - ajustar paletas de cores no light mode
  - inserir mais projetos desenvolvidos
  - etc...
 
- ## 🤝Contribuição
+ ## 🤝 Contribuição
 
 Se você deseja contribuir com este projeto, siga estas etapas:
 
