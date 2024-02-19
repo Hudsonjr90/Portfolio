@@ -111,7 +111,7 @@ const Navbar = () => {
                             to="/"
                             className={({ isActive }) => (isActive ? styles.active : "")}
                         >
-                            Home
+                           {t("menu.home")}
                         </NavLink>
                     </li>
 

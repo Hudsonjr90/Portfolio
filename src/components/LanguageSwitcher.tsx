@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { GrLanguage } from "react-icons/gr";
+import { Us, Fr, Br, Es, It } from "react-flags-select";
 import styles from "./LanguageSwitcher.module.css";
 
 const LanguageSwitcher = () => {
@@ -60,7 +61,7 @@ const LanguageSwitcher = () => {
                 handleAudioButtonClick();
               }}
             >
-              <img src="/imgs/pt-flag.png" alt="PT Flag" />
+              <Br className={styles.flags} />
             </button>
             <button
               onClick={() => {
@@ -68,15 +69,16 @@ const LanguageSwitcher = () => {
                 handleAudioButtonClick();
               }}
             >
-              <img src="/imgs/en-flag.png" alt="EN Flag" />
+              <Us className={styles.flags} />
             </button>
+            
             {/* <button
               onClick={() => {
                 changeLanguage("fr");
                 handleAudioButtonClick();
               }}
             >
-              <img src="/imgs/fr-flag.png" alt="FR Flag" />
+             <Fr className={styles.flags} />
             </button>
 
             <button
@@ -85,7 +87,7 @@ const LanguageSwitcher = () => {
                 handleAudioButtonClick();
               }}
             >
-              <img src="/imgs/it-flag.png" alt="IT Flag" />
+             <It className={styles.flags} />
             </button>
 
             <button
@@ -94,7 +96,7 @@ const LanguageSwitcher = () => {
                 handleAudioButtonClick();
               }}
             >
-              <img src="/imgs/es-flag.png" alt="ES Flag" />
+             <Es className={styles.flags} />
             </button> */}
           </div>
         )}
