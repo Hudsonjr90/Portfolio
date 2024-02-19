@@ -31,7 +31,7 @@
 }
 
 .dropdown_content {
-  border: 0.2rem solid var(--main_color);
+  border: 2px solid var(--main_color);
   height: 7.4rem;
   position: absolute;
   text-align: center;
@@ -48,7 +48,6 @@
   background-color: var(--bg_color);
   color: var(--main_color);
   padding: 0.5rem 0rem;
-  border: 1px solid;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

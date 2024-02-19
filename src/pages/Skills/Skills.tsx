@@ -90,7 +90,7 @@ const Skills = () => {
   };
 
   useEffect(() => {
-    setCurrentPage(0); // Redefine a página para a primeira sempre que a categoria é alterada
+    setCurrentPage(0); 
   }, [selectedCategory]);
   
   const filteredIcons = icons.filter((icon) => {

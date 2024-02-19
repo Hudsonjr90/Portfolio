@@ -6,10 +6,17 @@ import { NavLink } from "react-router-dom";
 import Transition from "../../components/Transition";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 // REACT ICONS
-import { FaCircleArrowDown, FaCircleXmark, FaEnvelope, FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
+import {
+  FaCircleArrowDown,
+  FaCircleXmark,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa6";
 
 // IMAGENS
 import { useMediaQuery } from "react-responsive";
@@ -22,7 +29,7 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   const { t } = useTranslation();
-  
+
   const imagesBr = [
     "/imgs/HudsonKennedy-BR_1.jpg",
     "/imgs/HudsonKennedy-BR_2.jpg",
@@ -43,7 +50,7 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
-  
+  const [soundClick, setSoundClick] = useState<boolean>(false);
 
   const handleDropdownToggle = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -86,7 +93,17 @@ const Home = () => {
       document.body.removeChild(link);
       setShowModal(false);
     }
-  }
+  };
+
+  const handleAudioButtonClick = () => {
+    const audio = new Audio("/sounds/button_click.mp3");
+
+    if (soundClick) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  };
 
   return (
     <>
@@ -96,7 +113,7 @@ const Home = () => {
             <ParticlesBackground />
 
             <h3 className={styles.first_h3}>
-            {t("home.title")} <span>Commit</span>
+              {t("home.title")} <span>Commit</span>
             </h3>
 
             <h1 className={styles.text_reveal}>
@@ -208,15 +225,31 @@ const Home = () => {
 
             <div className={styles.btn_box}>
               <div className={styles.dropdown}>
-                <button className={styles.btn} onClick={handleDropdownToggle}>
+                <button
+                  className={styles.btn}
+                  onClick={() => {
+                    handleDropdownToggle();
+                    handleAudioButtonClick();
+                  }}
+                >
                   {t("home.resume")}
                 </button>
                 {isDropdownOpen && (
                   <div className={styles.dropdown_content}>
-                    <button onClick={() => handleLanguageClick("pt-br")}>
+                    <button
+                      onClick={() => {
+                        handleLanguageClick("pt-br");
+                        handleAudioButtonClick();
+                      }}
+                    >
                       pt-br
                     </button>
-                    <button onClick={() => handleLanguageClick("en-us")}>
+                    <button
+                      onClick={() => {
+                        handleLanguageClick("en-us");
+                        handleAudioButtonClick();
+                      }}
+                    >
                       en-us
                     </button>
                   </div>
@@ -251,8 +284,18 @@ const Home = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title className={styles.modal_title}>
-          {t("home.resume")}  <FaCircleArrowDown className={styles.down_button} onClick={handleDownload} />  
-            <FaCircleXmark className={styles.close_button} onClick={handleCloseModal} />
+            {t("home.resume")}{" "}
+            <FaCircleArrowDown
+              className={styles.down_button}
+              onClick={handleDownload}
+            />
+            <FaCircleXmark
+              className={styles.close_button}
+              onClick={() => {
+                handleCloseModal();
+                handleAudioButtonClick();
+              }}
+            />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className={styles.modal_content}>

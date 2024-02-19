@@ -115,6 +115,7 @@ label {
 
 .toggle_palette_theme {
     background-color: var(--bg_color);
+    border: none;
     height: 0;
     position: absolute;
     top: 100%;
@@ -125,7 +126,12 @@ label {
 
 .palette_open {
     height: 14.9rem;
+    border: 2px solid var(--main_color);
+    margin-top: -1.2rem;
+    
 }
+
+
 
 .ball {
     border: none;

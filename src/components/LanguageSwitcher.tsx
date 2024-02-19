@@ -6,6 +6,7 @@ import styles from "./LanguageSwitcher.module.css";
 const LanguageSwitcher = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const { i18n } = useTranslation();
+  const [soundClick, setSoundClick] = useState<boolean>(false);
 
   const changeLanguage = (lng: string | undefined) => {
     i18n.changeLanguage(lng);
@@ -13,6 +14,12 @@ const LanguageSwitcher = () => {
       case "en":
         break;
       case "pt":
+        break;
+      case "fr":
+        break;
+      case "it":
+        break;
+      case "es":
         break;
       default:
         break;
@@ -24,20 +31,71 @@ const LanguageSwitcher = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
+  const handleAudioButtonClick = () => {
+    const audio = new Audio("/sounds/button_click.mp3");
+
+    if (soundClick) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  };
+
   return (
     <div className={styles.lng_box}>
       <div className={styles.dropdown}>
         <button className={styles.lng_btn}>
-          <GrLanguage onClick={handleDropdownToggle} />
+          <GrLanguage
+            onClick={() => {
+              handleDropdownToggle();
+              handleAudioButtonClick();
+            }}
+          />
         </button>
         {isDropdownOpen && (
           <div className={styles.dropdown_content}>
-            <button onClick={() => changeLanguage("pt")}>
+            <button
+              onClick={() => {
+                changeLanguage("pt");
+                handleAudioButtonClick();
+              }}
+            >
               <img src="/imgs/pt-flag.png" alt="PT Flag" />
             </button>
-            <button onClick={() => changeLanguage("en")}>
+            <button
+              onClick={() => {
+                changeLanguage("en");
+                handleAudioButtonClick();
+              }}
+            >
               <img src="/imgs/en-flag.png" alt="EN Flag" />
             </button>
+            {/* <button
+              onClick={() => {
+                changeLanguage("fr");
+                handleAudioButtonClick();
+              }}
+            >
+              <img src="/imgs/fr-flag.png" alt="FR Flag" />
+            </button>
+
+            <button
+              onClick={() => {
+                changeLanguage("it");
+                handleAudioButtonClick();
+              }}
+            >
+              <img src="/imgs/it-flag.png" alt="IT Flag" />
+            </button>
+
+            <button
+              onClick={() => {
+                changeLanguage("es");
+                handleAudioButtonClick();
+              }}
+            >
+              <img src="/imgs/es-flag.png" alt="ES Flag" />
+            </button> */}
           </div>
         )}
       </div>
