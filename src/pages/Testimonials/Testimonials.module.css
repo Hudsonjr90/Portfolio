@@ -10,7 +10,7 @@
 .testimonials .heading {
   animation: animate 0.8s ease-in-out 1 forwards;
   font-size: 3rem;
-  margin: 10rem 0 6rem;
+  margin: 12rem 0 6rem;
   opacity: 0;
   text-align: center;
 }
@@ -326,20 +326,21 @@
   }
   .slider_container {
     height: 45vh;
+    margin-top: 10rem;
   }
 
   .slider_container img {
     position: absolute;
-    width: 70vw;
+    width: 60vw;
     height: 31vh;
     border-radius: 2rem;
     margin-left: 0rem;
   }
 
   .flipContent {
-    width: 69vw;
+    width: 59vw;
     height: 30vh;
-    margin-left: 4.1rem;
+    margin-left: 5.5rem;
   }
 
   .flipContent h3{
@@ -354,7 +355,7 @@
 
   .pagination li a {
     width: auto;
-    padding: 0.9rem 1rem;
+    padding: 0.4rem 1rem;
     text-align: center;
     border-radius: 0;
   }
@@ -471,3 +472,5 @@
     align-items: center;
   }
 }
+
+@media (max-width: 360px) {}

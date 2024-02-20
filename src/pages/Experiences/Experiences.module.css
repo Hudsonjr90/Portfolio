@@ -10,7 +10,7 @@
   .experiences .heading {
     animation: animate 0.8s ease-in-out 1 forwards;
     font-size: 3rem;
-    margin: 10rem 0 4rem;
+    margin: 12rem 0 4rem;
     opacity: 0;
     text-align: center;
   }

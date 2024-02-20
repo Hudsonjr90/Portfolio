@@ -127,8 +127,7 @@ label {
 .palette_open {
     height: 14.9rem;
     border: 2px solid var(--main_color);
-    margin-top: -1.2rem;
-    
+    margin-top: -1.2rem;   
 }
 
 
@@ -180,8 +179,8 @@ label {
 }
 @media (max-width: 768px) {
     .header::before {
-        background: rgba(0, 0, 0, .1);
-        backdrop-filter: blur(50px);
+        background: var(--bg_color);
+        backdrop-filter: blur(80px);
         content: " ";
         height: 100%;
         left: 0;
@@ -223,9 +222,9 @@ label {
         transform: translateY(-8px) rotate(-405deg);
     }
     .links_list {
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        background: rgba(0, 0, 0, .1);
-        backdrop-filter: blur(20px);
+        border-top: 2px solid var(--main_color);
+        background: var(--bg_color);
+        backdrop-filter: 50px(blur);
         flex-direction: column;
         height: 0;
         left: 0;

@@ -134,7 +134,7 @@
 
   .about_content {
     margin-bottom: 3rem;
-    margin-top: 6rem;
+    margin-top: 9rem;
     width: 91.7vw;
     height: 37vh;
     overflow-y: auto;
@@ -146,7 +146,7 @@
 
   .container_img img {
     display: block;
-    width: 80vw;
+    width: 72vw;
   }
 }
 
@@ -181,3 +181,5 @@
     width: 48vw;
   }
 }
+
+@media (max-width: 360px) {}

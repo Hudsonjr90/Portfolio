@@ -12,7 +12,7 @@
 .skills .heading {
   animation: animate 0.8s ease-in-out 1 forwards;
   font-size: 3rem;
-  margin: 10rem 0 3rem;
+  margin: 12rem 0 3rem;
   opacity: 0;
   text-align: center;
 }
@@ -435,14 +435,15 @@
   
   .filters select {
     width: 49vw;
-    height: 4vh;
+    height: 5vh;
+    padding-left: 1rem;
     margin-bottom: 2rem;
-   
   }
 
   .filters input{
     width: 25vw;
     height: 4.1vh;
+    border-bottom: 1px solid var(--main_color)
   }
 
   .filters .icon_search svg{
@@ -609,3 +610,5 @@
     border-radius: 0;
   }
 }
+
+@media (max-width: 360px) {}
