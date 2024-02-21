@@ -72,7 +72,7 @@ const LanguageSwitcher = () => {
               <Us className={styles.flags} />
             </button>
             
-            {/* <button
+            <button
               onClick={() => {
                 changeLanguage("fr");
                 handleAudioButtonClick();
@@ -97,7 +97,8 @@ const LanguageSwitcher = () => {
               }}
             >
              <Es className={styles.flags} />
-            </button> */}
+            </button>
+            
           </div>
         )}
       </div>
