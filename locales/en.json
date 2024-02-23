@@ -79,20 +79,26 @@
   },
 
   "experiences": {
-    "title": " My ",
+    "title": " My",
     "text": " Experiences",
     "subtitle1": "Freelancer/Personal Projects",
     "subtitle2": "E-commerce Analyst / Front-end Developer",
     "subtitle3": "Fullstack Technical Consultant",
-    "subtitle4": "Fullstack Developer",
-    "description1": "I took a course in industrial computing at ETERJ and did freelance work, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
-    "description2": "Issuing invoices on marketplaces, migrating the website from Wordpress to React with NodeJs, using redux, router proptypes, emailjs/browser, swiper, etc. Image optimization and responsible for integrating the ERP Bling.",
-    "description3": "Fullstack consulting, using Java/NodeJs on the Backend, Angular/React on the Frontend, as well as Adobe Experience Manager (AEM) programs, with services for Porto, CVC, etc.",
-    "description4": "Directly involved in the directives and maintenance/refactoring of codes, using Java/springboot, NodeJs/Express on the Backend, PostgreSQL, Typescript with Angular/React on the Frontend",
+    "subtitle4": "Frontend Engineer",
+    "subtitle5": "Fullstack Developer",
+    "subtitle6": "Senior Front-End Developer",
+    "description1": "I took an industrial computing course at ETERJ and worked on freelance projects, using Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
+    "description2": "Issuance of invoices on marketplaces, migration of the website from Wordpress to React with NodeJs, using redux, router proptypes, emailjs/browser, swiper, etc.. image optimization and responsible for ERP Bling integration",
+    "description3": "Fullstack consultancy, using Java/NodeJs on the Backend, Angular/React on the Frontend, as well as Adobe Experience Manager(AEM) programs, with services for Porto, CVC, etc.",
+    "description4": "Freelance work, where I worked on creating architecture and optimizing pages and image loading, using Vue3 on the Frontend, PHP and Laravel on the Backend, as well as Docker and Webpack to set up application containers, layouts and styles with Sass/Scss, etc...",
+    "description5": "Acting directly on code maintenance/refactoring directives and treatments, using Java/springboot, NodeJs/Express on the Backend, PostgreSQL,Typescript with Angular/React on the Frontend",
+    "description6": "Freelance work, where I worked on project architecture, updating Angular version 14 to version 15, dependency adjustments, syntax corrections, layouts and styles with Sass/Scss, etc...",
     "date1": "February 2012 - Present",
     "date2": "February 2019 - June 2021",
     "date3": "January 2022 - April 2022",
-    "date4": "August 2022 - October 2023"
+    "date4": "April 2022 - August 2022",
+    "date5": "August 2022 - October 2023",
+    "date6": "November 2023 - January 2024"
   },
 
   "skills": {
@@ -110,25 +116,37 @@
     "subtitle": "Used Technologies",
     "data": [
       {
-        "description": "Simple website, following object-oriented guidance from the Udemy Course."
+        "description": "Simple website, following object-oriented Course guidance on Udemy"
       },
       {
         "description": "Pokedex listing pokémons and their information, using lazy loading and filter."
       },
       {
-        "description": "Game created in React, made with Typescript, to practice and exercise a bit more in the language. Simple game, which will still have some updates and modifications as well."
+        "description": "Game created in React, made with Typescript, to practice and exercise a little more in the language. Simple game, which will still have some updates and modifications as well."
       },
       {
         "description": "A historical homage and a precise recreation of the original Pac-Man arcade game."
       },
       {
-        "description": "App created with HTML, CSS, and Javascript, consuming the WeatherAPI, to display information for each city."
+        "description": "App created with HTML, CSS, and JavaScript, consuming the WeatherAPI, to display information for each city."
       },
       {
-        "description": "Analog and digital clock, made with TypeScript and Styled-Components."
+        "description": "Analog clock and digital clock, made with TypeScript and Styled-Components"
       },
       {
-        "description": "A credit card form with smooth and pleasant microinteractions. Includes number formatting, validation, and automatic card type detection. Built with Vue.js and fully responsive."
+        "description": "A credit card form with smooth and pleasant microinteractions. Includes number formatting, validation, and automatic card type detection. Built with vuejs and fully responsive."
+      },
+      {
+        "description": "Swiss Canton Holiday Tracker"
+      },
+      {
+        "description": "Landing page, from pizzeria Pizza&Tutti, one of the best in Rio de Janeiro."
+      },
+      {
+        "description": "Animated login screen, made for practice"
+      },
+      {
+        "description": "Global Currency Converter, made in Udemy course"
       }
     ]
   },

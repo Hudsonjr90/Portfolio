@@ -19,6 +19,10 @@ import pacman from "/imgs/pacman.png";
 import clima from "/imgs/clima.png";
 import clock from "/imgs/clock.png";
 import card from "/imgs/card.png";
+import calendar from "/imgs/calendar.png";
+import pizza from "/imgs/pizza.png";
+import login from "/imgs/login.png";
+import conversor from "/imgs/conversor.png";
 
 const Portfolio = () => {
   const { t } = useTranslation(); 
@@ -125,46 +129,46 @@ const Portfolio = () => {
       image: card,
       name: "CreditCard-Form Vue",
       description: "Um formulário de cartão de crédito com microinterações suaves e agradáveis. Inclui formatação de números, validação e detecção automática de tipo de cartão. Construído com vuejs e totalmente responsivo.",
-      technologies: ["Vue", "Javascript", "Sass", "NodeJs", "i18n"],
+      technologies: ["Vue", "Javascript", "Sass/Scss", "NodeJs", "i18n"],
       linkDeploy: "https://credit-card-form-payment.vercel.app",
       linkRepository: "https://github.com/Hudsonjr90/CreditCard-Form",
     },
-    // {
-    //   id: 7,
-    //   image: ,
-    //   name: "",
-    //   description: "",
-    //   technologies: ["", "", ""],
-    //   linkDeploy: "",
-    //   linkRepository: "",
-    // },
-    // {
-    //   id: 8,
-    //   image: ,
-    //   name: "",
-    //   description: "",
-    //   technologies: ["", "", ""],
-    //   linkDeploy: "",
-    //   linkRepository: "",
-    // },
-    // {
-    //   id: 9,
-    //   image: ,
-    //   name: "",
-    //   description: "",
-    //   technologies: ["", "", ""],
-    //   linkDeploy: "",
-    //   linkRepository: "",
-    // },
-    // {
-    //   id: 10,
-    //   image: ,
-    //   name: "",
-    //   description: "",
-    //   technologies: ["", "", ""],
-    //   linkDeploy: "",
-    //   linkRepository: "",
-    // },
+    {
+      id: 7,
+      image: calendar,
+      name: "Swiss Calendar Angular17",
+      description: "Rastreador de Feriados do Cantão Suíço",
+      technologies: ["Angular17", "Typescript", "Sass/Scss", "Karma", "Jasmine"],
+      linkDeploy: "https://swiss-holiday-tracker.vercel.app",
+      linkRepository: "https://github.com/Hudsonjr90/swiss-holiday-tracker",
+    },
+    {
+      id: 8,
+      image: pizza,
+      name: "Pizza&Tutti",
+      description: "Landing page, da pizzaria Pizza&Tutti, uma das melhores do Rio de Janeiro.",
+      technologies: ["Javascript", "Html", "Sass/Scss"],
+      linkDeploy: "https://www.pizzaetutti.com.br/",
+      linkRepository: "https://github.com/Hudsonjr90/Pizzaria",
+    },
+    {
+      id: 9,
+      image: login,
+      name: "Login Page Screen",
+      description: "Tela de login animada, feita para praticar",
+      technologies: ["Javascript", "Html", "Css"],
+      linkDeploy: "https://sign-in-up-form.vercel.app",
+      linkRepository: "https://github.com/Hudsonjr90/Sign-in-up-Form",
+    },
+    {
+      id: 10,
+      image: conversor,
+      name: "World Currency Converter",
+      description: "Conversor de Moedas Mundial, feito no curso da Udemy",
+      technologies: ["Javascript", "Html", "Css"],
+      linkDeploy: "https://conversor-de-moedas-mundial.vercel.app",
+      linkRepository: "https://github.com/Hudsonjr90/ConversorDeMoedasMundial",
+    },
   ];
 
   useEffect(() => {

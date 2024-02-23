@@ -81,18 +81,24 @@
     "experiences": {
       "title": " Mes",
       "text": " Expériences",
-      "subtitle1": "Freelancer/Projets Personnels",
-      "subtitle2": "Analyste E-commerce / Développeur Front-end",
+      "subtitle1": "Freelance/Projets Personnels",
+      "subtitle2": "Analyste en E-commerce / Développeur Front-end",
       "subtitle3": "Consultant Technique Fullstack",
-      "subtitle4": "Développeur Fullstack",
-      "description1": "J'ai suivi un cours d'informatique industrielle à l'ETERJ et travaillé en freelance, utilisant Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
-      "description2": "Émission de factures sur les marketplaces, migration du site de Wordpress à React avec NodeJs, en utilisant redux, router proptypes, emailjs/browser, swiper, etc. Optimisation des images et responsable de l'intégration de l'ERP Bling.",
-      "description3": "Consultant Fullstack, utilisant Java/NodeJs en Back, Angular/React en Front, ainsi que des programmes Adobe Experience Manager(AEM), avec des services pour Porto, CVC, etc.",
-      "description4": "Directement impliqué dans les directives et la maintenance/réfaction de codes, utilisant Java/springboot, NodeJs/Express en Back, PostgreSQL, Typescript avec Angular/React en Front.",
-      "date1": "Février 2012 - jusqu'à présent",
+      "subtitle4": "Ingénieur Frontend",
+      "subtitle5": "Développeur Fullstack",
+      "subtitle6": "Développeur Front-End Senior",
+      "description1": "J'ai suivi un cours d'informatique industrielle à l'ETERJ et travaillé sur des projets en freelance, utilisant Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
+      "description2": "Émission de factures sur les places de marché, migration du site de Wordpress à React avec NodeJs, utilisant redux, router proptypes, emailjs/browser, swiper, etc.. optimisation des images et responsable de l'intégration de l'ERP Bling",
+      "description3": "Conseil Fullstack, en utilisant Java/NodeJs sur le Backend, Angular/React sur le Frontend, ainsi que des programmes Adobe Experience Manager(AEM), avec des services pour Porto, CVC, etc.",
+      "description4": "Travail en freelance, où j'ai travaillé sur la création d'architecture et l'optimisation des pages et du chargement des images, en utilisant Vue3 sur le Frontend, PHP et Laravel sur le Backend, ainsi que Docker et Webpack pour configurer les conteneurs d'application, mises en page et styles avec Sass/Scss, etc...",
+      "description5": "Agissant directement sur les directives de maintenance/refactoring du code et les traitements, en utilisant Java/springboot, NodeJs/Express sur le Backend, PostgreSQL, Typescript avec Angular/React sur le Frontend",
+      "description6": "Travail en freelance, où j'ai travaillé sur l'architecture du projet, en mettant à jour la version Angular 14 à la version 15, ajustements de dépendance, corrections de syntaxe, mises en page et styles avec Sass/Scss, etc...",
+      "date1": "Février 2012 - Aujourd'hui",
       "date2": "Février 2019 - Juin 2021",
       "date3": "Janvier 2022 - Avril 2022",
-      "date4": "Août 2022 - Octobre 2023"
+      "date4": "Avril 2022 - Août 2022",
+      "date5": "Août 2022 - Octobre 2023",
+      "date6": "Novembre 2023 - Janvier 2024"
     }, 
   
     "skills": {
@@ -110,25 +116,37 @@
       "subtitle": "Technologies Utilisées",
       "data": [
         {
-          "description": "Site web simple, suivant les directives orientées objet du cours sur Udemy."
+          "description": "Site Web simple, suivant les orientations du cours orienté objet sur Udemy"
         },
         {
-          "description": "Pokedex listant les pokémons et leurs informations, utilisant le chargement paresseux et le filtre."
+          "description": "Pokedex répertoriant les pokémons et leurs informations, utilisant le chargement paresseux et le filtre."
         },
         {
           "description": "Jeu créé en React, réalisé avec Typescript, pour pratiquer et exercer un peu plus dans le langage. Jeu simple, qui aura encore quelques mises à jour et modifications également."
         },
         {
-          "description": "Un hommage historique et une reconstitution précise du jeu d'arcade original Pac-Man."
+          "description": "Un hommage historique et une recréation précise du jeu d'arcade original Pac-Man."
         },
         {
-          "description": "Application créée avec HTML, CSS et Javascript, consommant l'API météo, pour afficher des informations pour chaque ville."
+          "description": "Application créée avec HTML, CSS et JavaScript, consommant l'API météo, pour afficher des informations pour chaque ville."
         },
         {
-          "description": "Horloge analogique et numérique, réalisée avec TypeScript et Styled-Components."
+          "description": "Horloge analogique et horloge numérique, réalisées avec TypeScript et Styled-Components"
         },
         {
-          "description": "Un formulaire de carte de crédit avec des micro-interactions douces et agréables. Comprend le formatage des numéros, la validation et la détection automatique du type de carte. Construit avec Vue.js et entièrement responsive."
+          "description": "Un formulaire de carte de crédit avec des micro-interactions douces et agréables. Inclut le formatage des nombres, la validation et la détection automatique du type de carte. Construit avec vuejs et entièrement responsive."
+        },
+        {
+          "description": "Suivi des jours fériés du canton suisse"
+        },
+        {
+          "description": "Page d'accueil, de la pizzeria Pizza&Tutti, l'une des meilleures de Rio de Janeiro."
+        },
+        {
+          "description": "Écran de connexion animé, réalisé pour la pratique"
+        },
+        {
+          "description": "Convertisseur de devises mondial, réalisé dans le cours Udemy"
         }
       ]
     },

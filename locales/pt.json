@@ -84,15 +84,21 @@
     "subtitle1": "Freelancer/Projetos Pessoais",
     "subtitle2": "Analista de E-commerce / Desenvolvedor Front-end",
     "subtitle3": "Consultor Técnico Fullstack",
-    "subtitle4": "Desenvolvedor Fullstack",
+    "subtitle4": "Engenheiro Frontend",
+    "subtitle5": "Desenvolvedor Fullstack",
+    "subtitle6": "Desenvolvedor Front-End Sênior",
     "description1": "Fiz curso de informática industrial na ETERJ, e trabalhos de freelancer, usando Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
     "description2": "Emissão de nota fiscal, nos marketplaces, migração do site em Wordpress para React com NodeJs, usando redux, router proptypes, emailjs/browser, swiper e etc.. otimização de imagens e responsável pela integração do ERP Bling",
     "description3": "Consultoria Fullstack, usando Java/NodeJs no Backend, Angular/React no Frontend, além de programas Adobe Experience Manager(AEM), com serviços para Porto, CVC e etc.",
-    "description4": "Atuando diretamente, nas diretivas e trativas de manutenção/refatoração de códigos, utilizando Java/springboot, NodeJs/Express no Backend, PostgreSQL,Typescript com Angular/React no Frontend",
+    "description4": "Trabalho PJ, onde atuei na criação de arquitetura e otimização de páginas e carregamento de imagens, usando Vue3 no Frontend, PHP e Laravel no Backend, além de Docker e Webpack para montar os contâineres da aplicação, layouts e estilos com Sass/Scss e etc...",
+    "description5": "Atuando diretamente, nas diretivas e trativas de manutenção/refatoração de códigos, utilizando Java/springboot, NodeJs/Express no Backend, PostgreSQL,Typescript com Angular/React no Frontend",
+    "description6": "Trabalho PJ, onde atuei na arquitetura do projeto, fazendo update da versão do Angular14 para versão 15, ajustes de dependências, correções de sintaxes, layouts e estilos com Sass/Scss e etc...",
     "date1": "Fevereiro 2012 - até o momento",
     "date2": "Fevereiro 2019 - Junho 2021",
     "date3": "Janeiro 2022 - Abril 2022",
-    "date4": "Agosto 2022 - Outubro 2023"
+    "date4": "Abril 2022 - Agosto2022",
+    "date5": "Agosto 2022 - Outubro 2023",
+    "date6": "Novembro 2023 - Janeiro 2024"
   }, 
 
   "skills": {
@@ -129,6 +135,18 @@
       },
       {
         "description": "Um formulário de cartão de crédito com microinterações suaves e agradáveis. Inclui formatação de números, validação e detecção automática de tipo de cartão. Construído com vuejs e totalmente responsivo."
+      },
+      {
+        "description": "Rastreador de Feriados do Cantão Suíço"
+      },
+      {
+        "description": "Landing page, da pizzaria Pizza&Tutti, uma das melhores do Rio de Janeiro."
+      },
+      {
+        "description": "Tela de login animada, feita para praticar"
+      },
+      {
+        "description": "Conversor de Moedas Mundial, feito no curso da Udemy"
       }
     ]
   },
