@@ -12,17 +12,17 @@ import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 // IMAGENS
-import web from "/imgs/web.png";
-import pokedex from "/imgs/pokedex.png";
-import memory from "/imgs/memory.png";
-import pacman from "/imgs/pacman.png";
-import clima from "/imgs/clima.png";
-import clock from "/imgs/clock.png";
-import card from "/imgs/card.png";
-import calendar from "/imgs/calendar.png";
-import pizza from "/imgs/pizza.png";
-import login from "/imgs/login.png";
-import conversor from "/imgs/conversor.png";
+import web from "/imgs/imgProjects/web.png";
+import pokedex from "/imgs/imgProjects/pokedex.png";
+import memory from "/imgs/imgProjects/memory.png";
+import pacman from "/imgs/imgProjects/pacman.png";
+import clima from "/imgs/imgProjects/clima.png";
+import clock from "/imgs/imgProjects/clock.png";
+import card from "/imgs/imgProjects/card.png";
+import calendar from "/imgs/imgProjects/calendar.png";
+import pizza from "/imgs/imgProjects/pizza.png";
+import login from "/imgs/imgProjects/login.png";
+import conversor from "/imgs/imgProjects/conversor.png";
 
 const Portfolio = () => {
   const { t } = useTranslation(); 
