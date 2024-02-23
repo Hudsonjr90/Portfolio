@@ -19,14 +19,14 @@ i18n
       en: {
         translation: enTranslation
       },
-      es: {
-        translation : esTranslation
-      },
       fr: {	
         translation : frTranslation
       },
       it:{
         translation : itTranslation
+      },
+      es: {
+        translation : esTranslation
       }
     }
   });

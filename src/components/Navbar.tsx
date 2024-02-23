@@ -13,12 +13,14 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
+    const { t } = useTranslation();
+    
     const [lightMode, setLightMode] = useState<boolean>(false);
     const [paletteOpen, setPaletteOpen] = useState<boolean>(false);
     const [selectedColor, setSelectedColor] = useState<string | null>(null);
     const [paletteInputInvisible, setPaletteInputInvisible] = useState<boolean>(false);
     const [soundClick, setSoundClick] = useState<boolean>(false)
-    const { t } = useTranslation();
+   
 
 
     const { mainColor, setMainColor } = useTheme();

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 // COMPONENTS
 import Transition from "../../components/Transition";
 import { Modal } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // REACT ICONS
@@ -28,60 +28,83 @@ import ParticlesBackground from "../../components/ParticlesBackground";
 import { motion } from "framer-motion";
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const imagesBr = [
-    "/imgs/HudsonKennedy-BR_1.jpg",
-    "/imgs/HudsonKennedy-BR_2.jpg",
-    "/imgs/HudsonKennedy-BR_3.jpg",
+    "/imgs/imgCv/HudsonKennedyBR-1.png",
+    "/imgs/imgCv/HudsonKennedyBR-2.png",
+    "/imgs/imgCv/HudsonKennedyBR-3.png",
   ];
+
   const imagesUs = [
-    "/imgs/HudsonKennedy-US_1.jpg",
-    "/imgs/HudsonKennedy-US_2.jpg",
-    "/imgs/HudsonKennedy-US_3.jpg",
+    "/imgs/imgCv/HudsonKennedyUS-1.png",
+    "/imgs/imgCv/HudsonKennedyUS-2.png",
+    "/imgs/imgCv/HudsonKennedyUS-3.png",
+  ];
+
+  const imagesFr = [
+    "/imgs/imgCv/HudsonKennedyFR-1.png",
+    "/imgs/imgCv/HudsonKennedyFR-2.png",
+    "/imgs/imgCv/HudsonKennedyFR-3.png",
+  ];
+
+  const imagesIt = [
+    "/imgs/imgCv/HudsonKennedyIT-1.png",
+    "/imgs/imgCv/HudsonKennedyIT-2.png",
+    "/imgs/imgCv/HudsonKennedyIT-3.png",
+  ];
+
+  const imagesEs = [
+    "/imgs/imgCv/HudsonKennedyES-1.png",
+    "/imgs/imgCv/HudsonKennedyES-2.png",
+    "/imgs/imgCv/HudsonKennedyES-3.png",
   ];
 
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage;
 
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<string[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
   const [soundClick, setSoundClick] = useState<boolean>(false);
 
-  const handleDropdownToggle = () => {
-    setDropdownOpen(!isDropdownOpen);
-  };
+  useEffect(() => {
+    // Função para carregar as imagens e o PDF com base no idioma selecionado
+    const loadContent = () => {
+      let images: string[] = [];
+      let pdfPath: string | null = null;
+      switch (i18n.language) {
+        case "pt":
+          images = imagesBr;
+          pdfPath = "/public/cv/HudsonKennedy-BR.pdf";
+          break;
+        case "en":
+          images = imagesUs;
+          pdfPath = "/public/cv/HudsonKennedy-US.pdf";
+          break;
+        case "fr":
+          images = imagesFr;
+          pdfPath = "/public/cv/HudsonKennedy-FR.pdf";
+          break;
+        case "it":
+          images = imagesIt;
+          pdfPath = "/public/cv/HudsonKennedy-IT.pdf";
+          break;
+        case "es":
+          images = imagesEs;
+          pdfPath = "/public/cv/HudsonKennedy-ES.pdf";
+          break;
+        default:
+          break;
+      }
+      setSelectedImages(images);
+      setSelectedPdf(pdfPath);
+    };
 
-  const handleLanguageClick = (language: string) => {
-    let images: string[] = [];
-    let pdfPath: string | null = null;
-    switch (language) {
-      case "pt-br":
-        images = imagesBr;
-        pdfPath = "/public/cv/HudsonKennedy-BR.pdf";
-
-        break;
-      case "en-us":
-        images = imagesUs;
-        pdfPath = "/public/cv/HudsonKennedy-US.pdf";
-        break;
-      default:
-        break;
-    }
-    setSelectedImages(selectedLanguage);
-    setSelectedImages(images);
-    setSelectedPdf(pdfPath);
-    setShowModal(true);
-    setDropdownOpen(false);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+    // Carregar o conteúdo quando o componente montar e sempre que o idioma mudar
+    loadContent();
+  }, [i18n.language]);
 
   const handleDownload = (_filePath: any) => {
     if (selectedPdf) {
@@ -224,37 +247,15 @@ const Home = () => {
             </div>
 
             <div className={styles.btn_box}>
-              <div className={styles.dropdown}>
-                <button
-                  className={styles.btn}
-                  onClick={() => {
-                    handleDropdownToggle();
-                    handleAudioButtonClick();
-                  }}
-                >
-                  {t("home.resume")}
-                </button>
-                {isDropdownOpen && (
-                  <div className={styles.dropdown_content}>
-                    <button
-                      onClick={() => {
-                        handleLanguageClick("pt-br");
-                        handleAudioButtonClick();
-                      }}
-                    >
-                      pt-br
-                    </button>
-                    <button
-                      onClick={() => {
-                        handleLanguageClick("en-us");
-                        handleAudioButtonClick();
-                      }}
-                    >
-                      en-us
-                    </button>
-                  </div>
-                )}
-              </div>
+              <button
+                className={styles.btn}
+                onClick={() => {
+                  setShowModal(true);
+                  handleAudioButtonClick();
+                }}
+              >
+                {t("home.resume")}
+              </button>
             </div>
           </div>
 
@@ -279,12 +280,11 @@ const Home = () => {
       </Transition>
       <Modal
         show={showModal}
-        onHide={handleCloseModal}
+        onHide={() => setShowModal(false)}
         className={styles.modal_container}
       >
         <Modal.Header closeButton>
           <Modal.Title className={styles.modal_title}>
-            {t("home.resume")}{" "}
             <FaCircleArrowDown
               className={styles.down_button}
               onClick={handleDownload}
@@ -292,7 +292,7 @@ const Home = () => {
             <FaCircleXmark
               className={styles.close_button}
               onClick={() => {
-                handleCloseModal();
+                setShowModal(false);
                 handleAudioButtonClick();
               }}
             />
@@ -303,7 +303,7 @@ const Home = () => {
             <img
               key={index}
               src={image}
-              alt={`Currículo ${selectedLanguage} - Slide ${index + 1}`}
+              alt={`Currículo ${i18n.language} - Slide ${index + 1}`}
             />
           ))}
         </Modal.Body>

@@ -12,8 +12,12 @@ import "react-vertical-timeline-component/style.min.css";
 
 const Experiences = () => {
   const { t } = useTranslation();
+
+
   return (
     <Transition onAnimationComplete={() => {}}>
+      <div>
+    </div>
       <section className={styles.experiences}>
         <h2 className={styles.heading}>
           <span>//</span>
@@ -45,6 +49,7 @@ const Experiences = () => {
               {t("experiences.description1")}
             </p>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
@@ -67,6 +72,7 @@ const Experiences = () => {
               {t("experiences.description2")}
             </p>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
@@ -91,6 +97,7 @@ const Experiences = () => {
               {t("experiences.description3")}
             </p>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
@@ -123,7 +130,7 @@ const Experiences = () => {
               color: "var(--main_color)",
             }}
             contentArrowStyle={{ borderRight: "none" }}
-            date={t("experiences.date4")}
+            date={t("experiences.date5")}
             iconStyle={{
               background: "var(--bg_color)",
               color: "var(--main_color)",
@@ -140,6 +147,7 @@ const Experiences = () => {
               {t("experiences.description5")}
             </p>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
@@ -164,6 +172,7 @@ const Experiences = () => {
               {t("experiences.description6")}
             </p>
           </VerticalTimelineElement>
+          
         </VerticalTimeline>
       </section>
     </Transition>

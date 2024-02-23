@@ -29,13 +29,11 @@
 }
 
 .swiper-button-next::after {
-  color: var(--main_color);
-  font-weight: bold;
+  display: none;
 }
 
 .swiper-button-prev::after {
-  color: var(--main_color);
-  font-weight: bold;
+  display: none;
 }
 
 .teste {
