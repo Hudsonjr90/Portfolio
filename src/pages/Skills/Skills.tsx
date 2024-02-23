@@ -10,7 +10,7 @@ import { GrMysql } from "react-icons/gr";
 import { LuSearch } from "react-icons/lu";
 import { GiPineapple } from "react-icons/gi";
 import { FaGitAlt, FaNpm, FaYarn, FaGithub, FaBootstrap, FaShopify, FaJira, FaDocker, FaVuejs, FaNode, FaJava, FaPhp, FaPython, FaMarkdown, FaGitlab, FaWordpress } from "react-icons/fa6";
-import { SiTailwindcss, SiNextdotjs,SiFigma, SiDotnet, SiVercel, SiMaterialdesign, SiPostgresql, SiVuetify, SiGraphql, SiWebpack, SiSwagger, SiLaravel, SiSpringboot, SiCsharp, SiElectron, SiJenkins, SiJquery, SiLess, SiSass, SiAdobephotoshop, SiGoogleanalytics, SiGoogleads, SiTerraform, SiAnsible, SiKubernetes, SiExpress, SiJest, SiJasmine,
+import { SiTailwindcss, SiNextdotjs,SiFigma, SiDotnet, SiVercel, SiVite, SiMaterialdesign, SiPostgresql, SiVuetify, SiGraphql, SiWebpack, SiSwagger, SiLaravel, SiSpringboot, SiCsharp, SiElectron, SiJenkins, SiJquery, SiLess, SiSass, SiAdobephotoshop, SiGoogleanalytics, SiGoogleads, SiTerraform, SiAnsible, SiKubernetes, SiExpress, SiJest, SiJasmine,
 } from "react-icons/si";
 import { BiLogoTypescript, BiLogoReact,BiLogoAngular, BiLogoJavascript, BiLogoCss3, BiLogoHtml5, BiLogoFirebase, BiLogoRedux, BiLogoMongodb, BiLogoNetlify, BiLogoHeroku } from "react-icons/bi";
 
@@ -46,7 +46,7 @@ const Skills = () => {
     GiPineapple,Vuetify: SiVuetify,Figma: SiFigma,Tailwind: SiTailwindcss,Material: SiMaterialdesign,GraphQL: SiGraphql,Webpack: SiWebpack,Swagger: SiSwagger,Laravel: SiLaravel,
     Springboot: SiSpringboot,Csharp: SiCsharp,Electron: SiElectron, Jenkins: SiJenkins,Jquery: SiJquery,Photoshop: SiAdobephotoshop,Analytics: SiGoogleanalytics,ADS: SiGoogleads,
     Terraform: SiTerraform, Ansible: SiAnsible, Kubernetes: SiKubernetes, Jest: SiJest, Jasmine: SiJasmine, MongoDB:BiLogoMongodb, Dotnet: SiDotnet, Netlify: BiLogoNetlify, Heroku: BiLogoHeroku,
-    Vercel: SiVercel, Nextjs: SiNextdotjs
+    Vercel: SiVercel, Nextjs: SiNextdotjs, Vite: SiVite
   };
   
   const icons = [
@@ -68,7 +68,7 @@ const Skills = () => {
     { id: 45, name: "Terraform", category: "Tools" },{ id: 46, name: "Ansible", category: "Tools" },{ id: 47, name: "Kubernetes", category: "Tools" },
     { id: 48, name: "Jest", category: "Tools" },{ id: 49, name: "Jasmine", category: "Tools" },{ id: 50, name: "MongoDB", category: "Database" },
     { id: 51, name: "Dotnet", category: "Backend" }, { id: 52, name: "Netlify", category: "Tools" },{ id: 53, name: "Heroku", category: "Tools" },
-    { id: 54, name: "Vercel", category: "Tools"}, {id: 55, name: "Nextjs", category: "Frontend"}
+    { id: 54, name: "Vercel", category: "Tools"}, {id: 55, name: "Nextjs", category: "Frontend"}, {id: 56, name: "Vite", category: "Tools"}
 
   ];
   
