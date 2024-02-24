@@ -1,171 +1,173 @@
 {
-    "menu": {
-        "home": "Accueil",
-      "about": "À propos",
-      "academic-education": "Académique",
-      "testimonials": "Dépositions",
-      "experiences": "Expériences",
-      "skills": "Compétences",
-      "portfolio": "Projets",
-      "contact": "Contact"
-    },
-  
-    "home": {
-      "title": "Meilleur à chaque",
-      "function": "Développeur Fullstack",
-      "resume": "Curriculum Vitae",
-      "modal": "Conteúdo"
-    },
-  
-    "about": {
-      "title": " Qui est ",
-      "text": "- Bonjour, je m'appelle Hudson Kennedy. En tant que développeur web passionné et dévoué, j'ai accumulé une solide expérience sur une période de 10 ans, complétée par des compétences interpersonnelles que je considère comme essentielles dans l'univers de la programmation. Je me suis spécialisé dans les technologies web, possédant une connaissance approfondie qui s'étend sur plusieurs outils et langages. Ma passion pour l'apprentissage continu et mon engagement à évoluer sans cesse m'incitent à appliquer ma vaste expérience au développement de solutions web innovantes et impactantes. Ma nature communicative me rend toujours prêt à jouer un rôle vital dans des propositions novatrices. Construisons quelque chose d'incroyable ensemble!"
-    },
-  
-    "education": {
-      "title": " Mes",
-      "text": " Formations"
-    },
-  
-    "testimonials": {
-      "title": " Quelques",
-      "text": " Témoignages",
-      "cards": [
-        {
-          "text": "Hudson est un professionnel très dévoué et engagé envers la livraison. Il a toujours fait preuve de proactivité, de compétence ainsi que d'initiative et de capacité à résoudre les problèmes de manière objective et avec des connaissances techniques."
-        },
-        {
-          "text": "Excellent partenaire de travail et une personne formidable ! Son sens des responsabilités se distingue des autres, ne laissant jamais rien de côté ou sans solution. J'ai beaucoup appris avec Hudson et je porte certainement ces apprentissages dans ma vie."
-        },
-        {
-          "text": "Hudson est un excellent partenaire de travail, toujours en quête d'amélioration et de développement de nouvelles compétences. Il est toujours prêt à aider. Dévoué et engagé."
-        },
-        {
-            "text": "Professionnel exemplaire ! Très dévoué, résolutif et proactif. Et d'une excellente convivialité. Je recommande fortement !"
-          },
-          {
-            "text": "Excellent professionnel, toujours désireux d'apprendre, de s'améliorer et de maîtriser de nouveaux sujets. Aidant l'équipe à résoudre les problèmes."
-          },
-          {
-            "text": "Hudson a été un excellent instructeur pour moi. Il m'a appris à manipuler une plateforme, qui n'est pas du tout de mon domaine. Professionnel exemplaire et extrêmement compétent. Il a tout pour réussir dans sa carrière de développeur."
-          },
-          {
-            "text": "J'ai travaillé avec Hudson chez Vilt. Bien que ce fût une période courte, j'ai eu l'occasion de connaître cette personne merveilleuse, très dynamique et collaborative. Nous avons participé à des formations et à quelques défis ensemble, et pendant ce temps, en tant que personne plus expérimentée, il s'est révélé être un bon guide et un excellent motivateur pour tous et surtout pour les plus juniors. Toujours prêt à aider, il sera un grand allié au sein de n'importe quelle équipe."
-          },
-          {
-            "text": "J'ai eu l'occasion de travailler avec Hudson. Ce fut une expérience très intéressante, car il s'agit d'un professionnel très dévoué et compétent en matière de front-end. Une agréable surprise et je le recommande vivement. Succès Hudson !"
-          },
-          {
-            "text": "Hudson est un professionnel complet, toujours proactif et prêt à aider, mais pendant le temps que nous avons travaillé ensemble, il s'est vraiment distingué par ses compétences en développement front-end et ses connaissances en UX/UI, toujours très méticuleux. Il est devenu une référence pour moi, je suis sûr qu'il contribuera beaucoup à l'équipe qu'il rejoindra !"
-          },
-          {
-            "text": "Travailler avec Hudson a été une excellente expérience. Sa compréhension du FrontEnd est évidente dans chaque implémentation et soutien à l'équipe. Il est proactif, créatif et cherche toujours des solutions innovantes et élégantes."
-          },
-          {
-            "text": "J'ai eu le plaisir de compter sur Hudson dans mon équipe. Un développeur concentré et créatif, toujours à la recherche de solutions aux défis que nous rencontrons dans le projet. Proactif et disponible pour aider les collègues de l'équipe, visant le meilleur pour atteindre les objectifs !"
-          },
-          {
-            "text": "Un excellent professionnel et un expert profond en Front-end, ne se limitant pas à l'utilisation de frameworks pour que la 'magie' opère. Fortement recommandé !"
-          },
-          {
-            "text": "J'ai eu le plaisir de travailler avec le collègue Hudson Kennedy dans l'équipe de développement de Cast, sur le projet MG-Florestas, et je peux attester de ses compétences exceptionnelles et de son dévouement. Hudson est un développeur front-end talentueux et passionné, démontrant toujours une compréhension approfondie des dernières technologies et des meilleures pratiques. Pendant notre temps ensemble chez Cast, il a joué un rôle crucial dans le succès du projet. Ce qui m'a le plus impressionné chez Hudson, c'est sa capacité à relever les défis complexes avec créativité et efficacité. Son attention aux détails et son engagement à fournir des produits de haute qualité l'ont toujours distingué. En plus de ses compétences techniques impressionnantes, Hudson a été un membre incroyable de l'équipe. Sa communication claire et sa disposition à collaborer ont rendu l'environnement de travail plus productif et agréable. Je recommande Hudson sans réserve et je suis confiant qu'il continuera à avoir un impact positif partout où il ira. Si vous recherchez un développeur front-end talentueux et engagé, Hudson Kennedy est le bon choix. N'hésitez pas à me contacter si vous avez besoin d'informations supplémentaires. Cordialement, Gei Batista."
-          },
-          {
-            "text": "Hudson a été l'un des candidats que j'ai eu le plaisir de rencontrer. Une personne très polie, avec une histoire de vie incroyable et qui a mené notre conversation de manière très détendue, expliquant toujours en détail ses expériences. Un excellent profil à évaluer."
-          },
-          {
-            "text": "Hudson est un professionnel parfait, engagé dans ce qu'il fait, il termine toujours ses projets avec excellence."
-          }
-      ]
-    },
-  
-    "experiences": {
-      "title": " Mes",
-      "text": " Expériences",
-      "subtitle1": "Freelance/Projets Personnels",
-      "subtitle2": "Analyste en E-commerce / Développeur Front-end",
-      "subtitle3": "Consultant Technique Fullstack",
-      "subtitle4": "Ingénieur Frontend",
-      "subtitle5": "Développeur Fullstack",
-      "subtitle6": "Développeur Front-End Senior",
-      "description1": "J'ai suivi un cours d'informatique industrielle à l'ETERJ et travaillé sur des projets en freelance, utilisant Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
-      "description2": "Émission de factures, migration du site de Wordpress à React avec NodeJs, en utilisant redux, router proptypes, emailjs/browser, swiper, sweetalert, etc... optimisation et chargement des images et responsable de l'intégration de l'ERP Bling et de l'intégration des places de marché",
-      "description3": "Conseil Fullstack, en utilisant Java/NodeJs sur le Backend, Angular/React sur le Frontend, ainsi que des programmes Adobe Experience Manager(AEM), avec des services pour Porto, CVC, etc.",
-      "description4": "Travail en freelance, où j'ai travaillé sur la création d'architecture et l'optimisation des pages et du chargement des images, en utilisant Vue3 sur le Frontend, PHP et Laravel sur le Backend, ainsi que Docker et Webpack pour configurer les conteneurs d'application, mises en page et styles avec Sass/Scss, etc...",
-      "description5": "Agissant directement sur les directives de maintenance/refactoring du code et les traitements, en utilisant Java/springboot, NodeJs/Express sur le Backend, PostgreSQL, Typescript avec Angular/React sur le Frontend",
-      "description6": "Travail en freelance, où j'ai travaillé sur l'architecture du projet, en mettant à jour la version Angular 14 à la version 15, ajustements de dépendance, corrections de syntaxe, mises en page et styles avec Sass/Scss, etc...",
-      "date1": "Février 2012 - Aujourd'hui",
-      "date2": "Février 2019 - Juin 2021",
-      "date3": "Janvier 2022 - Avril 2022",
-      "date4": "Avril 2022 - Août 2022",
-      "date5": "Août 2022 - Octobre 2023",
-      "date6": "Novembre 2023 - Janvier 2024"
-    }, 
-  
-    "skills": {
-      "title": " Mes",
-      "text": " Compétences",
-      "select1": "Toutes les Catégories",
-      "select2": "Bases de Données",
-      "select3": "Outils",
-      "search": "Rechercher..."
-    },
-  
-    "projects": {
-      "title": " Principaux",
-      "text": " Projets",
-      "subtitle": "Technologies Utilisées",
-      "data": [
-        {
-          "description": "Site Web simple, suivant les orientations du cours orienté objet sur Udemy"
-        },
-        {
-          "description": "Pokedex répertoriant les pokémons et leurs informations, utilisant le chargement paresseux et le filtre."
-        },
-        {
-          "description": "Jeu créé en React, réalisé avec Typescript, pour pratiquer et exercer un peu plus dans le langage. Jeu simple, qui aura encore quelques mises à jour et modifications également."
-        },
-        {
-          "description": "Un hommage historique et une recréation précise du jeu d'arcade original Pac-Man."
-        },
-        {
-          "description": "Application créée avec HTML, CSS et JavaScript, consommant l'API météo, pour afficher des informations pour chaque ville."
-        },
-        {
-          "description": "Horloge analogique et horloge numérique, réalisées avec TypeScript et Styled-Components"
-        },
-        {
-          "description": "Un formulaire de carte de crédit avec des micro-interactions douces et agréables. Inclut le formatage des nombres, la validation et la détection automatique du type de carte. Construit avec vuejs et entièrement responsive."
-        },
-        {
-          "description": "Suivi des jours fériés du canton suisse"
-        },
-        {
-          "description": "Page d'accueil, de la pizzeria Pizza&Tutti, l'une des meilleures de Rio de Janeiro."
-        },
-        {
-          "description": "Écran de connexion animé, réalisé pour la pratique"
-        },
-        {
-          "description": "Convertisseur de devises mondial, réalisé dans le cours Udemy"
-        }
-      ]
-    },
-  
-    "contact": {
-      "title": " Contact",
-      "text": "Moi !",
-      "name": "Nom Complet",
-      "email":"Email",
-      "phone":"Téléphone",
-      "subject": "Sujet",
-      "message": "Votre Message",
-      "submit" : "Envoyer le Message",
-      "name_error": "Le nom ne peut pas être vide",
-      "email_error": "L'e-mail ne peut pas être vide",  
-      "phone_error": "Le téléphone ne peut pas être vide",
-      "subject_error": "Le sujet ne peut pas être vide",
-      "message_error": "Le message ne peut pas être vide"
-    }
+  "menu": {
+    "home": "Accueil",
+    "about": "À propos",
+    "academic-education": "Académique",
+    "testimonials": "Dépositions",
+    "experiences": "Expériences",
+    "skills": "Compétences",
+    "portfolio": "Projets",
+    "contact": "Contact"
+  },
+
+  "home": {
+    "title": "Meilleur à chaque",
+    "function1": "Informaticien",
+    "function2": "Développeur Fullstack",
+    "function3": "Ingénieur logiciel",
+    "function4": "Concepteur UI/UX",
+    "resume": "Curriculum Vitae",
+    "modal": "Conteúdo"
+  },
+
+  "about": {
+    "title": " Qui est ",
+    "text": "- Bonjour, je m'appelle Hudson Kennedy. En tant que développeur web passionné et dévoué, j'ai accumulé une solide expérience sur une période de 10 ans, complétée par des compétences interpersonnelles que je considère comme essentielles dans l'univers de la programmation. Je me suis spécialisé dans les technologies web, possédant une connaissance approfondie qui s'étend sur plusieurs outils et langages. Ma passion pour l'apprentissage continu et mon engagement à évoluer sans cesse m'incitent à appliquer ma vaste expérience au développement de solutions web innovantes et impactantes. Ma nature communicative me rend toujours prêt à jouer un rôle vital dans des propositions novatrices. Construisons quelque chose d'incroyable ensemble!"
+  },
+
+  "education": {
+    "title": " Mes",
+    "text": " Formations"
+  },
+
+  "testimonials": {
+    "title": " Quelques",
+    "text": " Témoignages",
+    "cards": [
+      {
+        "text": "Hudson est un professionnel très dévoué et engagé envers la livraison. Il a toujours fait preuve de proactivité, de compétence ainsi que d'initiative et de capacité à résoudre les problèmes de manière objective et avec des connaissances techniques."
+      },
+      {
+        "text": "Excellent partenaire de travail et une personne formidable ! Son sens des responsabilités se distingue des autres, ne laissant jamais rien de côté ou sans solution. J'ai beaucoup appris avec Hudson et je porte certainement ces apprentissages dans ma vie."
+      },
+      {
+        "text": "Hudson est un excellent partenaire de travail, toujours en quête d'amélioration et de développement de nouvelles compétences. Il est toujours prêt à aider. Dévoué et engagé."
+      },
+      {
+        "text": "Professionnel exemplaire ! Très dévoué, résolutif et proactif. Et d'une excellente convivialité. Je recommande fortement !"
+      },
+      {
+        "text": "Excellent professionnel, toujours désireux d'apprendre, de s'améliorer et de maîtriser de nouveaux sujets. Aidant l'équipe à résoudre les problèmes."
+      },
+      {
+        "text": "Hudson a été un excellent instructeur pour moi. Il m'a appris à manipuler une plateforme, qui n'est pas du tout de mon domaine. Professionnel exemplaire et extrêmement compétent. Il a tout pour réussir dans sa carrière de développeur."
+      },
+      {
+        "text": "J'ai travaillé avec Hudson chez Vilt. Bien que ce fût une période courte, j'ai eu l'occasion de connaître cette personne merveilleuse, très dynamique et collaborative. Nous avons participé à des formations et à quelques défis ensemble, et pendant ce temps, en tant que personne plus expérimentée, il s'est révélé être un bon guide et un excellent motivateur pour tous et surtout pour les plus juniors. Toujours prêt à aider, il sera un grand allié au sein de n'importe quelle équipe."
+      },
+      {
+        "text": "J'ai eu l'occasion de travailler avec Hudson. Ce fut une expérience très intéressante, car il s'agit d'un professionnel très dévoué et compétent en matière de front-end. Une agréable surprise et je le recommande vivement. Succès Hudson !"
+      },
+      {
+        "text": "Hudson est un professionnel complet, toujours proactif et prêt à aider, mais pendant le temps que nous avons travaillé ensemble, il s'est vraiment distingué par ses compétences en développement front-end et ses connaissances en UX/UI, toujours très méticuleux. Il est devenu une référence pour moi, je suis sûr qu'il contribuera beaucoup à l'équipe qu'il rejoindra !"
+      },
+      {
+        "text": "Travailler avec Hudson a été une excellente expérience. Sa compréhension du FrontEnd est évidente dans chaque implémentation et soutien à l'équipe. Il est proactif, créatif et cherche toujours des solutions innovantes et élégantes."
+      },
+      {
+        "text": "J'ai eu le plaisir de compter sur Hudson dans mon équipe. Un développeur concentré et créatif, toujours à la recherche de solutions aux défis que nous rencontrons dans le projet. Proactif et disponible pour aider les collègues de l'équipe, visant le meilleur pour atteindre les objectifs !"
+      },
+      {
+        "text": "Un excellent professionnel et un expert profond en Front-end, ne se limitant pas à l'utilisation de frameworks pour que la 'magie' opère. Fortement recommandé !"
+      },
+      {
+        "text": "J'ai eu le plaisir de travailler avec le collègue Hudson Kennedy dans l'équipe de développement de Cast, sur le projet MG-Florestas, et je peux attester de ses compétences exceptionnelles et de son dévouement. Hudson est un développeur front-end talentueux et passionné, démontrant toujours une compréhension approfondie des dernières technologies et des meilleures pratiques. Pendant notre temps ensemble chez Cast, il a joué un rôle crucial dans le succès du projet. Ce qui m'a le plus impressionné chez Hudson, c'est sa capacité à relever les défis complexes avec créativité et efficacité. Son attention aux détails et son engagement à fournir des produits de haute qualité l'ont toujours distingué. En plus de ses compétences techniques impressionnantes, Hudson a été un membre incroyable de l'équipe. Sa communication claire et sa disposition à collaborer ont rendu l'environnement de travail plus productif et agréable. Je recommande Hudson sans réserve et je suis confiant qu'il continuera à avoir un impact positif partout où il ira. Si vous recherchez un développeur front-end talentueux et engagé, Hudson Kennedy est le bon choix. N'hésitez pas à me contacter si vous avez besoin d'informations supplémentaires. Cordialement, Gei Batista."
+      },
+      {
+        "text": "Hudson a été l'un des candidats que j'ai eu le plaisir de rencontrer. Une personne très polie, avec une histoire de vie incroyable et qui a mené notre conversation de manière très détendue, expliquant toujours en détail ses expériences. Un excellent profil à évaluer."
+      },
+      {
+        "text": "Hudson est un professionnel parfait, engagé dans ce qu'il fait, il termine toujours ses projets avec excellence."
+      }
+    ]
+  },
+
+  "experiences": {
+    "title": " Mes",
+    "text": " Expériences",
+    "subtitle1": "Freelance/Projets Personnels",
+    "subtitle2": "Analyste en E-commerce / Développeur Front-end",
+    "subtitle3": "Consultant Technique Fullstack",
+    "subtitle4": "Ingénieur Frontend",
+    "subtitle5": "Développeur Fullstack",
+    "subtitle6": "Développeur Front-End Senior",
+    "description1": "J'ai suivi un cours d'informatique industrielle à l'ETERJ et travaillé sur des projets en freelance, utilisant Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
+    "description2": "Émission de factures, migration du site de Wordpress à React avec NodeJs, en utilisant redux, router proptypes, emailjs/browser, swiper, sweetalert, etc... optimisation et chargement des images et responsable de l'intégration de l'ERP Bling et de l'intégration des places de marché",
+    "description3": "Conseil Fullstack, en utilisant Java/NodeJs sur le Backend, Angular/React sur le Frontend, ainsi que des programmes Adobe Experience Manager(AEM), avec des services pour Porto, CVC, etc.",
+    "description4": "Travail en freelance, où j'ai travaillé sur la création d'architecture et l'optimisation des pages et du chargement des images, en utilisant Vue3 sur le Frontend, PHP et Laravel sur le Backend, ainsi que Docker et Webpack pour configurer les conteneurs d'application, mises en page et styles avec Sass/Scss, etc...",
+    "description5": "Agissant directement sur les directives de maintenance/refactoring du code et les traitements, en utilisant Java/springboot, NodeJs/Express sur le Backend, PostgreSQL, Typescript avec Angular/React sur le Frontend",
+    "description6": "Travail en freelance, où j'ai travaillé sur l'architecture du projet, en mettant à jour la version Angular 14 à la version 15, ajustements de dépendance, corrections de syntaxe, mises en page et styles avec Sass/Scss, etc...",
+    "date1": "Février 2012 - Aujourd'hui",
+    "date2": "Février 2019 - Juin 2021",
+    "date3": "Janvier 2022 - Avril 2022",
+    "date4": "Avril 2022 - Août 2022",
+    "date5": "Août 2022 - Octobre 2023",
+    "date6": "Novembre 2023 - Janvier 2024"
+  },
+
+  "skills": {
+    "title": " Mes",
+    "text": " Compétences",
+    "select1": "Toutes les Catégories",
+    "select2": "Bases de Données",
+    "select3": "Outils",
+    "search": "Rechercher..."
+  },
+
+  "projects": {
+    "title": " Principaux",
+    "text": " Projets",
+    "subtitle": "Technologies Utilisées",
+    "data": [
+      {
+        "description": "Site Web simple, suivant les orientations du cours orienté objet sur Udemy"
+      },
+      {
+        "description": "Pokedex répertoriant les pokémons et leurs informations, utilisant le chargement paresseux et le filtre."
+      },
+      {
+        "description": "Jeu créé en React, réalisé avec Typescript, pour pratiquer et exercer un peu plus dans le langage. Jeu simple, qui aura encore quelques mises à jour et modifications également."
+      },
+      {
+        "description": "Un hommage historique et une recréation précise du jeu d'arcade original Pac-Man."
+      },
+      {
+        "description": "Application créée avec HTML, CSS et JavaScript, consommant l'API météo, pour afficher des informations pour chaque ville."
+      },
+      {
+        "description": "Horloge analogique et horloge numérique, réalisées avec TypeScript et Styled-Components"
+      },
+      {
+        "description": "Un formulaire de carte de crédit avec des micro-interactions douces et agréables. Inclut le formatage des nombres, la validation et la détection automatique du type de carte. Construit avec vuejs et entièrement responsive."
+      },
+      {
+        "description": "Suivi des jours fériés du canton suisse"
+      },
+      {
+        "description": "Page d'accueil, de la pizzeria Pizza&Tutti, l'une des meilleures de Rio de Janeiro."
+      },
+      {
+        "description": "Écran de connexion animé, réalisé pour la pratique"
+      },
+      {
+        "description": "Convertisseur de devises mondial, réalisé dans le cours Udemy"
+      }
+    ]
+  },
+
+  "contact": {
+    "title": " Contact",
+    "text": "Moi !",
+    "name": "Nom Complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "subject": "Sujet",
+    "message": "Votre Message",
+    "submit": "Envoyer le Message",
+    "name_error": "Le nom ne peut pas être vide",
+    "email_error": "L'e-mail ne peut pas être vide",
+    "phone_error": "Le téléphone ne peut pas être vide",
+    "subject_error": "Le sujet ne peut pas être vide",
+    "message_error": "Le message ne peut pas être vide"
   }
-  
+}

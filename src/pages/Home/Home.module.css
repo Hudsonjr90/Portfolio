@@ -26,82 +26,23 @@
 
 .home_content .first_h3 {
   animation: animate 0.8s ease-in-out 1 forwards;
-  font-size: 3rem;
-  font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font: 700 3rem "Montserrat", sans-serif;
   opacity: 0;
   position: relative;
 }
 
 .home_content .transparent_text {
-  animation: animate 0.8s ease-in-out 0.6s 1 forwards;
-  opacity: 0;
-  position: relative;
-  width: 41.3rem;
+  margin: 0 3rem -2rem;
+  font: 700 2.9rem "Orbitron", sans-serif;
+ 
 }
 
-.home_content .animation_text {
-  font-family: "Orbitron", sans-serif;
-  font-size: 2.7rem;
-}
-
-.home_content .transparent_text .animation_text {
-  animation-delay: 2s;
-  animation: homeBgText 6s linear infinite;
-  background-image: linear-gradient(var(--main_color), var(--main_color));
-  background-repeat: no-repeat;
-  background-clip: text;
-  background-position: 0 0;
-  color: transparent;
-  margin-bottom: 2rem;
-  -webkit-text-stroke: 0.7px var(--main_color);
-  -webkit-background-clip: text;
-}
-
-@keyframes homeBgText {
-  0%,
-  10%,
-  100% {
-    background-position: -41.3rem 0;
-  }
-
-  65%,
-  85% {
-    background-position: 0 0;
-  }
-}
-
-.home_content .transparent_text::before {
-  animation-delay: 2s;
-  animation: homeCursorText 6s linear infinite;
-  border-right: 2px solid var(--main_color);
+.home_content .transparent_text::after {
   content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 0;
-  z-index: -1;
-}
-
-@keyframes homeCursorText {
-  0%,
-  10%,
-  100% {
-    width: 0;
-  }
-
-  65%,
-  78%,
-  85% {
-    opacity: 1;
-    width: 100%;
-  }
-
-  75%,
-  81% {
-    opacity: 0;
-  }
+  opacity: 1;
+  margin-left: 5px;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .home_content .text_reveal {
@@ -453,11 +394,11 @@
   }
 
   .text_reveal > span:nth-child(1) {
-    font-size: 4rem !important;
+    font-size: 4rem ;
   }
 
   .text_reveal > span:nth-child(2) {
-    font-size: 4rem !important;
+    font-size: 4rem ;
   }
 
   .modal_container {
@@ -702,4 +643,5 @@
     font-size: 3rem;
     cursor: pointer;
   }
+ 
 }

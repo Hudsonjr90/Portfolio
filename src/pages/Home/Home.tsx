@@ -7,6 +7,7 @@ import Transition from "../../components/Transition";
 import { Modal } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import Typewriter from "typewriter-effect";
 
 // REACT ICONS
 import {
@@ -68,6 +69,7 @@ const Home = () => {
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
   const [soundClick, setSoundClick] = useState<boolean>(false);
+  
 
   useEffect(() => {
     // Função para carregar as imagens e o PDF com base no idioma selecionado
@@ -128,6 +130,21 @@ const Home = () => {
     }
   };
 
+  const [typedStrings, setTypedStrings] = useState<string[]>([]);
+
+  useEffect(() => {
+
+    const strings = [
+      t("home.function1"),
+      t("home.function2"),
+      t("home.function3"),
+      t("home.function4"),    
+    ];
+    setTypedStrings(strings);
+  }, [t]);
+
+  
+
   return (
     <>
       <Transition onAnimationComplete={() => {}}>
@@ -144,9 +161,26 @@ const Home = () => {
               <span aria-hidden="true">Hudson Kennedy</span>
             </h1>
 
-            <div className={styles.transparent_text}>
-              <h3 className={styles.animation_text}>{t("home.function")}</h3>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: "80%" }}
+              animate={{ opacity: 1, x: "0%" }}
+              transition={{
+                duration: 2,
+                delay: 0.3,
+                ease: [0.3, 0, 0.2, 1],
+              }}
+              className={styles.transparent_text}
+            >
+              <Typewriter
+                options={{
+                  strings: typedStrings,
+                  autoStart: true,
+                  loop: true,
+                  delay: 40,
+                  deleteSpeed: 30,
+                }}
+              />
+            </motion.div>
 
             <div className={styles.social_media}>
               <motion.div

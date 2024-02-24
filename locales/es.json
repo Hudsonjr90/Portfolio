@@ -12,7 +12,10 @@
 
   "home": {
     "title": "Mejor en cada",
-    "function": "Desarrollador Fullstack",
+    "function1": "Científico informático",
+    "function2": "Desarrollador Fullstack",
+    "function3": "Ingeniero de software",
+    "function4": "Diseñador UI/UX",
     "resume": "Currículum",
     "modal": "Conteúdo"
   },

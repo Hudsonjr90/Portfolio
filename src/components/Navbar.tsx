@@ -20,7 +20,7 @@ const Navbar = () => {
     const [selectedColor, setSelectedColor] = useState<string | null>(null);
     const [paletteInputInvisible, setPaletteInputInvisible] = useState<boolean>(false);
     const [soundClick, setSoundClick] = useState<boolean>(false)
-   
+
 
 
     const { mainColor, setMainColor } = useTheme();

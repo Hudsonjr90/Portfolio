@@ -39,6 +39,7 @@
   width: 30vw;
   height: 40vh;
   border-radius: 2rem;
+  margin-left: 3rem;
 }
 
 .pagination {
@@ -98,7 +99,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 58.8rem;
+  margin-left: 63.3rem;
   background-color: var(--bg_color);
   border: 1px solid var(--main_color);
   padding: 20px;

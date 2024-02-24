@@ -134,10 +134,23 @@ const CardComponent = () => {
   };
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [cardsPerPage, setCardsPerPage] = useState(1);
 
-  const cardsPerPage = 2;
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 768) {
+        setCardsPerPage(2);
+      } else {
+        setCardsPerPage(1);
+      }
+    }
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const offset = currentPage * cardsPerPage;
-
   const pageCount = Math.ceil(cards.length / cardsPerPage);
 
   const handlePageClick = ({
@@ -170,11 +183,7 @@ const CardComponent = () => {
         onMouseEnter={() => handleMouseEnter(card.id)}
         onMouseLeave={handleMouseLeave}
       >
-        <Card.Img
-          src={card.img}
-          alt="Card image"
-          className={hoveredCard === card.id ? styles.blur : ""}
-        />
+        <Card.Img src={card.img} alt="Card image"  className={hoveredCard === card.id ? styles.blur : ""} />
         <Card.ImgOverlay>
           <Card.Text
             className={`${styles.card_text} ${

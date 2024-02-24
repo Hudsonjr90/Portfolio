@@ -11,7 +11,7 @@ import imagesMobile from "../../components/config/imageServerMobile";
 
 const Testimonials = () => {
   const { t } = useTranslation(); 
-  const cardItems = [
+   const cardItems = [
     {
       id: 1,
       title: "Rafael Araujo",
@@ -87,9 +87,9 @@ const Testimonials = () => {
       title: "Deborah Montezano",
       text: "Hudson é um perfeito profissional, comprometido no que faz, sempre conclui seus projetos com excelência",
     },
-  ];
+   ];
 
-  const variants = {
+   const variants = {
     enter: (direction: number) => {
       return {
         x: direction > 0 ? 1000 : -1000,
@@ -108,13 +108,13 @@ const Testimonials = () => {
         opacity: 0,
       };
     },
-  };
+   };
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [isFlipped, setFlipped] = useState(false);
+   const [currentPage, setCurrentPage] = useState(0);
+   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+   const [isFlipped, setFlipped] = useState(false);
 
-  useEffect(() => {
+   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -124,39 +124,39 @@ const Testimonials = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+   }, []);
 
-  const handlePageClick = (data: { selected: SetStateAction<number> }) => {
+   const handlePageClick = (data: { selected: SetStateAction<number> }) => {
     setCurrentPage(data.selected);
-  };
+   };
 
-  const pageCount = Math.ceil(cardItems.length / 1); 
-  const imageIndex = wrap(
+   const pageCount = Math.ceil(cardItems.length / 1); 
+   const imageIndex = wrap(
     0,
     windowWidth > 768 ? imagesDesktop.length : imagesMobile.length,
     currentPage
-  );
+   );
 
-  const handleMouseEnter = () => {
+   const handleMouseEnter = () => {
     setFlipped(true);
-  };
+   };
 
-  const handleMouseLeave = () => {
+   const handleMouseLeave = () => {
     setFlipped(false);
-  };
+   };
 
-  const autoChangePage = () => {
+   const autoChangePage = () => {
     if (!isFlipped) {
       const nextPage = (currentPage + 1) % pageCount;
       setCurrentPage(nextPage);
     }
-  };
+   };
 
-  useEffect(() => {
+   useEffect(() => {
     const intervalId = setInterval(autoChangePage, 5000);
 
     return () => clearInterval(intervalId);
-  }, [currentPage, pageCount, isFlipped]);
+   }, [currentPage, pageCount, isFlipped]);
 
   return (
     <Transition onAnimationComplete={() => {}}>
