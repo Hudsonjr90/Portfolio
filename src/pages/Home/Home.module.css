@@ -34,7 +34,6 @@
 .home_content .transparent_text {
   margin: 0 3rem -2rem;
   font: 700 2.9rem "Orbitron", sans-serif;
- 
 }
 
 .home_content .transparent_text::after {
@@ -96,6 +95,7 @@
   justify-self: center;
   opacity: 0;
   animation: text_reveal-lines 2s ease-in-out 1s forwards;
+  z-index: 0 ;
 }
 
 @keyframes text_reveal-lines {
@@ -183,7 +183,6 @@
   animation: animate 0.8s ease-in-out 0.9s 1 forwards;
   opacity: 0;
   position: relative;
-  z-index: 1;
 }
 
 .btn_box .btn {
@@ -200,7 +199,6 @@
   position: relative;
   padding: 1.2rem 3.2rem;
   transition: 0.5s ease;
-  z-index: 1;
   cursor: pointer;
 }
 
@@ -213,7 +211,7 @@
   top: 0;
   transition: 0.5s;
   width: 0;
-  z-index: -1;
+
 }
 
 .btn_box .btn:hover::before {
@@ -233,7 +231,6 @@
 .home_img img {
   object-fit: none;
   width: 40vw;
-  z-index: 2;
 }
 
 .modal_container {
@@ -254,7 +251,7 @@
 
 .modal_title {
   margin-bottom: 1rem;
-  padding-left: 22rem;
+  padding-left: 17rem; 
   display: flex;
   justify-content: space-between;
   border: 2px solid var(--main_color);
@@ -263,7 +260,7 @@
 .modal_title .down_button {
   font-size: 2.9rem;
   cursor: pointer;
-  margin-left: 30rem;
+  margin-left: 35rem;
 }
 
 .modal_title .close_button {
@@ -379,6 +376,7 @@
   .home_img {
     bottom: -12rem;
     right: 5rem;
+    z-index: -1;
   }
 
   .home_content {
@@ -427,6 +425,7 @@
     font-size: 3rem;
     cursor: pointer;
   }
+  
 }
 
 @media (max-width: 470px) {
@@ -443,7 +442,7 @@
     width: 66vw;
   }
   .modal_title {
-    padding-left: 3rem;
+    padding-left: 15rem;
   }
 
   .modal_title .down_button {
@@ -493,7 +492,7 @@
     width: 66vw;
   }
   .modal_title {
-    padding-left: 3rem;
+    padding-left: 14rem;
   }
 
   .modal_title .down_button {
@@ -527,6 +526,15 @@
     margin-left: 13rem;
     margin-top: 13rem;
   }
+
+  .text_reveal span{
+    font-size: 4rem !important;
+  }
+
+  .transparent_text{
+    font-size: 2.9rem !important;
+    margin: 0 !important;
+  }
 }
 
 @media (max-width: 400px) {
@@ -554,7 +562,7 @@
   }
 
   .modal_title{
-    padding-left: 3rem;
+    padding-left: 16rem;
   }
 
   .modal_title .down_button {
@@ -566,6 +574,15 @@
   .modal_title .close_button {
     font-size: 3rem;
     cursor: pointer;
+  }
+
+  .text_reveal span{
+    font-size: 3.5rem !important;
+  }
+
+  .transparent_text{
+    font-size: 2.2rem !important;
+    margin-left: -1rem !important;
   }
 }
 
@@ -592,7 +609,7 @@
   }
 
   .modal_title{
-    padding-left: 2rem;
+    padding-left: 14rem;
   }
 
   .modal_title .down_button {
@@ -604,6 +621,15 @@
   .modal_title .close_button {
     font-size: 3rem;
     cursor: pointer;
+  }
+
+  .text_reveal span{
+    font-size: 3.5rem !important;
+  }
+
+  .transparent_text{
+    font-size: 2.2rem !important;
+    margin-left: -1rem !important;
   }
 }
 
@@ -642,6 +668,14 @@
   .modal_title .close_button {
     font-size: 3rem;
     cursor: pointer;
+  } 
+
+  .text_reveal span{
+    font-size: 3.5rem !important;
   }
- 
+
+  .transparent_text{
+    font-size: 2.2rem !important;
+    margin-left: -1rem !important;
+  }
 }

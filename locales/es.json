@@ -20,6 +20,14 @@
     "modal": "Conteúdo"
   },
 
+  "name": {
+    "br": "Brasil | PT",
+    "us": "Estados Unidos | EN",
+    "fr": "Francia | FR",
+    "it": "Italia | IT",
+    "es": "España | ES"
+  },  
+
   "about": {
     "title": " Quién Soy ",
     "text": "- Hola, mi nombre es Hudson Kennedy. Como desarrollador web apasionado y dedicado, he acumulado una sólida experiencia en 10 años, complementada por habilidades interpersonales que considero fundamentales en el universo de la programación. Me he especializado en tecnologías web, poseyendo un conocimiento profundo que se extiende a través de varias herramientas y lenguajes. Mi pasión por el aprendizaje continuo y mi compromiso con la evolución constante me impulsan a aplicar mi amplia experiencia en el desarrollo de soluciones web innovadoras e impactantes. Mi naturaleza comunicativa me hace siempre dispuesto a desempeñar un papel vital en propuestas innovadoras. ¡Construyamos algo increíble juntos!"

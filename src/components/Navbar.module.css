@@ -27,6 +27,7 @@
 .links_list {
   display: flex;
   list-style: none;
+  
 }
 
 .links_list a {
@@ -178,6 +179,7 @@ label {
     padding: 2rem 3%;
   }
 }
+
 @media (max-width: 768px) {
   .header {
     background: var(--bg_color);
@@ -195,7 +197,7 @@ label {
     background: none;
     cursor: pointer;
     display: block;
-    height: 5rem;
+    height: 6.5rem;
     margin-right: 1rem;
     position: relative;
     width: 2.4rem;
@@ -225,7 +227,7 @@ label {
   .links_list {
     border-top: 2px solid var(--main_color);
     background: var(--bg_color);
-    backdrop-filter: 50px (blur);
+    backdrop-filter: 50px(blur);
     flex-direction: column;
     height: 0;
     left: 0;
@@ -235,6 +237,7 @@ label {
     transition: 0.6s ease;
     width: 100%;
   }
+
   .links_list.active {
     height: 42.5rem;
   }

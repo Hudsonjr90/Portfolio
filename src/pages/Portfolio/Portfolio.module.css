@@ -126,7 +126,6 @@
   padding: 8px 18px;
   position: relative;
   transition: 0.5s ease;
-  z-index: 1;
 }
 
 .links .link::before {
@@ -138,7 +137,6 @@
   top: 0;
   transition: 0.5s;
   width: 0;
-  z-index: -1;
 }
 
 .portfolio_content .links .link:hover::before {

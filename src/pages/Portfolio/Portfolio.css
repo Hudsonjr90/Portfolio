@@ -36,6 +36,10 @@
   display: none;
 }
 
+.swiper{
+  z-index: 0 !important;  
+}
+
 .teste {
   background: #666666;
   border-radius: 2rem;
