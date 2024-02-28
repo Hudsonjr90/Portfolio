@@ -251,7 +251,7 @@
 
 .modal_title {
   margin-bottom: 1rem;
-  padding-left: 17rem; 
+  padding-left: 16rem !important; 
   display: flex;
   justify-content: space-between;
   border: 2px solid var(--main_color);
@@ -347,6 +347,10 @@
   .home_img img {
     width: 30vw;
   }
+
+  .modal_title{
+    padding-left: 16rem;
+  }
 }
 
 @media (max-width: 991px) {
@@ -361,6 +365,10 @@
 
   .home_content {
     height: 50rem;
+  }
+
+  .modal_title{
+    padding-left: 18rem;
   }
 }
 
@@ -412,7 +420,7 @@
     width: 66vw;
   }
   .modal_title {
-    padding-left: 17rem;
+    padding-left: 19rem !important;
   }
 
   .modal_title .down_button {
@@ -492,7 +500,7 @@
     width: 66vw;
   }
   .modal_title {
-    padding-left: 14rem;
+    padding-left: 14rem !important;
   }
 
   .modal_title .down_button {
@@ -562,7 +570,7 @@
   }
 
   .modal_title{
-    padding-left: 16rem;
+    padding-left: 16rem !important;
   }
 
   .modal_title .down_button {
@@ -609,7 +617,7 @@
   }
 
   .modal_title{
-    padding-left: 14rem;
+    padding-left: 14rem  !important;
   }
 
   .modal_title .down_button {
@@ -656,7 +664,7 @@
   }
 
   .modal_title{
-    padding-left: 2rem;
+    padding-left: 13rem  !important;
   }
 
   .modal_title .down_button {

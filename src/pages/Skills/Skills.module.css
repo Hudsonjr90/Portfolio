@@ -1,4 +1,3 @@
-
 .skills {
   max-width: 1400px;
   max-height: 100vh;
@@ -34,61 +33,53 @@
 .icons_container {
   display: flex;
   justify-content: center;
-  gap: 2rem; 
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .box_icon {
-  margin: 0 4rem 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  height: 200px; /* Defina a altura desejada */
+  margin-bottom: 10px; /* Adicione margem inferior para espaço entre os ícones */
 }
 
-.box_icon{
-  position: relative; 
-}
-
-.box_icon:hover .icon_description {
-  display: block;
-  top: -25%;
-  transform: translate(-50%, 0%);
+.icon_wrapper {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  color: var(--main_color);
 }
 
 .icon_description {
-  display: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  letter-spacing: 0.1rem;
-  left: 50px;
+  text-align: center; /* Centraliza o texto horizontalmente */
+  font-size: 1.9rem; /* Adiciona margem superior para espaço entre o ícone e o nome */
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   position: absolute;
-  text-transform: uppercase;
+  margin-top: -140px;
+  margin-left: 5px;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  font-size: 2rem;
 }
 
-.icons_container .icon_hover {
-  border-radius: 25%;
-  border: 0.1rem solid var(--main_color);
-  display: inline-flex;
-  color: var(--main_color);
-  height: 10rem;
-  margin: 1rem 0 0.8rem;
-  padding: 0.4rem;
-  transition: 0.3s ease;
-  width: 10rem;
-  flex-basis: 4.5rem;
-}
-
-.icons_container .icon_hover:hover {
-  box-shadow: 0 0 1rem var(--main_color);
-  background-color: var(--main_color);
-  border: none;
-  color: var(--bg_color);
-}
-
-.filters{
+.filters {
   display: flex;
   justify-content: space-between;
   padding: 5rem;
 }
 
-.filters select{
+.filters select {
   width: 11vw;
   height: 4vh;
   color: var(--main_color);
@@ -97,12 +88,12 @@
   padding-left: 1rem;
 }
 
-.filters option{
+.filters option {
   color: var(--main_color);
   padding-left: 1rem;
 }
 
-.filters input{
+.filters input {
   color: var(--main_color);
   border-bottom: 1px solid var(--main_color);
   background-color: var(--bg_color);
@@ -116,12 +107,12 @@
   padding: 0rem;
 }
 
-.filters .icon_search{
+.filters .icon_search {
   color: var(--main_color);
   display: flex;
 }
 
-.filters .icon_search svg{
+.filters .icon_search svg {
   font-size: 2rem;
   margin-left: -18rem;
   margin-top: 0.7rem;
@@ -135,7 +126,7 @@
   margin-top: 2.7rem;
 }
 
-.pagination li a{
+.pagination li a {
   cursor: pointer;
   margin: 5px;
   padding: 5px;
@@ -148,20 +139,19 @@
   border-radius: 20px;
 }
 
-
-.pagination li.activePage{
+.pagination li.activePage {
   color: var(--main_color);
   border: 1px solid var(--main_color);
   background-color: var(--bg_color);
   border-radius: 20px;
 }
 
-.styles.searchIcon{
+.styles.searchIcon {
   color: var(--main_color);
 }
 
 @media (max-width: 991px) {
-  .icon_hover {
+  .icon {
     height: 3.8rem;
     width: 3.8rem;
   }
@@ -174,7 +164,7 @@
 
 @media (max-width: 768px) {
   .icons_container {
-    bottom: 0.8rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .skills h2 {
@@ -183,28 +173,37 @@
   }
   .icons_container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 1rem; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
-  .icon_hover {
+  .icon {
     height: 4rem;
     width: 4rem;
     margin-bottom: 1rem;
   }
 
   .icon_description {
-    left: 40px; 
-    text-align: center; 
+    left: 40px;
+    text-align: center;
   }
+
+  .icon_wrapper{
+    top: 50%;
+  }
+
+  .indicator{
+    margin-top: -8.9rem;
+  }
+
 
   .filters {
     flex-direction: column;
-    padding: 2rem 1rem; 
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
   }
-  
+
   .filters select {
     width: 40vw;
     height: 4vh;
@@ -212,22 +211,22 @@
     margin-left: -2rem;
   }
 
-  .filters input{
+  .filters input {
     width: 20vw;
     height: 5vh;
     margin-left: -1rem;
   }
 
-  .filters .icon_search svg{
+  .filters .icon_search svg {
     display: block;
     margin-left: -8rem;
     margin-top: -3.7rem;
   }
 
   .pagination li a {
-    width: auto; 
-    padding: 0.5rem 1rem; 
-    text-align: center; 
+    width: auto;
+    padding: 0.5rem 1rem;
+    text-align: center;
     border-radius: 0;
   }
 
@@ -239,15 +238,14 @@
     flex-wrap: wrap;
   }
 
-  .pagination li.activePage{
+  .pagination li.activePage {
     border-radius: 0;
   }
-
 }
 
-@media (max-width: 650px) {
+@media screen and (max-width: 650px) {
   .skills {
-    padding: 0 1rem; 
+    padding: 0 1rem;
   }
 
   .skills h2 {
@@ -257,32 +255,41 @@
 
   .icons_container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 1rem; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
-  .icon_hover {
+  .icon {
     height: 4rem;
     width: 4rem;
     margin-bottom: 1rem;
   }
 
   .box_icon {
-    margin: 0 3rem 4rem;
+    margin: 0 1rem 2rem;
   }
 
   .icon_description {
-    left: 40px; 
-    text-align: center; 
+    left: 40px;
+    text-align: center;
   }
+
+  .icon_wrapper{
+    top: 50%;
+  }
+
+  .indicator{
+    margin-top: -8.5rem;
+  }
+
 
   .filters {
     flex-direction: column;
-    padding: 2rem 1rem; 
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
   }
-  
+
   .filters select {
     width: 40vw;
     height: 4vh;
@@ -290,23 +297,22 @@
     margin-left: -2rem;
   }
 
-  .filters input{
+  .filters input {
     width: 20vw;
     height: 5vh;
     margin-left: -1rem;
   }
 
-  .filters .icon_search svg{
+  .filters .icon_search svg {
     display: block;
     margin-left: -8rem;
     margin-top: -3.7rem;
   }
 
-  
   .pagination li a {
-    width: auto; 
-    padding: 0.5rem 1rem; 
-    text-align: center; 
+    width: auto;
+    padding: 0.5rem 1rem;
+    text-align: center;
     border-radius: 0;
   }
 
@@ -318,48 +324,58 @@
     flex-wrap: wrap;
   }
 
-  .pagination li.activePage{
+  .pagination li.activePage {
     border-radius: 0;
   }
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .pagination button {
     font-size: 0.8rem;
   }
 }
 
-@media (max-width: 470px) {
+@media screen and (max-width: 470px) {
   .icons_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-left: 3rem;
+   
     margin-top: 3rem;
   }
 
-  .icon_hover {
-    height: 4rem;
-    width: 4rem;
+  .icon {
+    height: 9rem;
+    width: 9rem;
     margin-bottom: 1rem;
   }
 
   .box_icon {
-    margin: 0 1rem 4rem;
+    margin: 0 1rem 2rem;
   }
 
   .icon_description {
-    left: 40px; 
-    text-align: center; 
+    left: 40px;
+    text-align: center;
   }
+
+  .icon_wrapper{
+    top: 50%;
+  }
+
+  .indicator{
+    margin-top: -8.2rem;
+  }
+
 
   .filters {
     flex-direction: column;
-    padding: 2rem 1rem; 
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
+    margin-left: 5rem;
   }
-  
+
   .filters select {
     width: 49vw;
     height: 4vh;
@@ -367,23 +383,22 @@
     margin-left: -4rem;
   }
 
-  .filters input{
+  .filters input {
     width: 25vw;
     height: 4.1vh;
     margin-left: -5rem;
   }
 
-  .filters .icon_search svg{
+  .filters .icon_search svg {
     display: block;
     margin-left: -9rem;
     margin-top: -3.3rem;
   }
 
-  
   .pagination li a {
-    width: auto; 
-    padding: 0.9rem 1rem; 
-    text-align: center; 
+    width: auto;
+    padding: 0.9rem 1rem;
+    text-align: center;
     border-radius: 0;
   }
 
@@ -395,44 +410,51 @@
     flex-wrap: wrap;
   }
 
-  .pagination li.activePage{
+  .pagination li.activePage {
     border-radius: 0;
   }
-}  
+}
 
-@media (max-width: 428px) {
+@media screen and (max-width: 428px) {
   .icons_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-left: 0rem;
     margin-top: 3rem;
   }
 
-  .icon_hover {
-    height: 4rem;
-    width: 4rem;
-    margin-bottom: 1rem;
+  .icon {
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 2rem;
   }
 
   .box_icon {
-    margin: 0 3rem 4rem;
+    margin: 0 -1rem 4rem;
   }
 
-
   .icon_description {
-    left: 40px; 
-    text-align: center; 
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .icon_wrapper{
+    top: 50%;
+  }
+
+  .indicator{
+    margin-top: -6.1rem;
   }
 
   .filters {
     flex-direction: column;
-    padding: 2rem 1rem; 
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
     margin-left: 5rem;
   }
-  
+
   .filters select {
     width: 49vw;
     height: 5vh;
@@ -440,23 +462,22 @@
     margin-bottom: 2rem;
   }
 
-  .filters input{
+  .filters input {
     width: 25vw;
     height: 4.1vh;
-    border-bottom: 1px solid var(--main_color)
+    border-bottom: 1px solid var(--main_color);
   }
 
-  .filters .icon_search svg{
+  .filters .icon_search svg {
     display: block;
     margin-left: -7.9rem;
     margin-top: -2.7rem;
   }
 
-  
   .pagination li a {
-    width: auto; 
-    padding: 0.6rem 1rem; 
-    text-align: center; 
+    width: auto;
+    padding: 0.4rem 1rem;
+    text-align: center;
     border-radius: 0;
   }
 
@@ -468,21 +489,21 @@
     flex-wrap: wrap;
   }
 
-  .pagination li.activePage{
+  .pagination li.activePage {
     border-radius: 0;
   }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 415px) {
   .icons_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1rem; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
-  .icon_hover {
-    height: 4rem;
-    width: 4rem;
+  .icon {
+    height: 10rem;
+    width: 10rem;
     margin-bottom: 1rem;
   }
 
@@ -491,43 +512,50 @@
   }
 
   .icon_description {
-    left: 40px; 
-    text-align: center; 
+    left: 40px;
+    text-align: center;
   }
+
+  .icon_wrapper{
+    top: 50%;
+  }
+
+  .indicator{
+    margin-top: -7.8rem;
+  }
+
 
   .filters {
     flex-direction: column;
-    padding: 2rem 1rem; 
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
   }
-  
-  .filters select{
+
+  .filters select {
     width: 52vw;
     height: 4vh;
     margin-bottom: 2rem;
     margin-left: 1rem;
   }
 
-  .filters input{
+  .filters input {
     width: 30vw;
     height: 4.1vh;
     margin-left: 2rem;
   }
 
-
-  .filters .icon_search svg{
+  .filters .icon_search svg {
     display: block;
     margin-left: -6.5rem;
     margin-top: -3.3rem;
   }
 
-  
   .pagination li a {
-    width: auto; 
-    padding: 0.8rem 1rem; 
+    width: auto;
+    padding: 0.8rem 1rem;
     text-align: center;
-    border-radius: 0; 
+    border-radius: 0;
   }
 
   .pagination {
@@ -537,65 +565,148 @@
     align-items: center;
     flex-wrap: wrap;
   }
-  .pagination li.activePage{
+  .pagination li.activePage {
     border-radius: 0;
   }
 }
 
-@media(max-width: 375px) {
+@media screen and (max-width: 400px) {
   .icons_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-left: 2rem;
   }
 
-  .icon_hover {
-    height: 4rem;
-    width: 4rem;
+  .icon {
+    height: 8rem;
+    width: 8rem;
     margin-bottom: 1rem;
   }
 
   .box_icon {
-    margin: 0 1rem 3rem;
+    margin: 0 0rem 3rem;
   }
 
   .icon_description {
-    left: 40px; 
-    text-align: center; 
+    text-align: center;
+  }
+
+  .icon_wrapper{
+    top: 50%;
+  }
+
+  .indicator{
+    margin-top: -8.3rem;
+  }
+
+
+  .filters {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+
+  .filters select {
+    width: 52vw;
+    height: 4vh;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+  }
+
+  .filters input {
+    width: 30vw;
+    height: 4.1vh;
+    margin-left: 2rem;
+  }
+
+  .filters .icon_search svg {
+    display: block;
+    margin-left: -6.5rem;
+    margin-top: -3.3rem;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .pagination li.activePage {
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .icons_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .icon {
+    height: 8rem;
+    width: 8rem;
+    margin-bottom: 1rem;
+  }
+
+  .box_icon {
+    margin: 0 -1rem 3rem;
+  }
+
+  .icon_description {
+    left: 40px;
+    text-align: center;
+  }
+
+  .icon_wrapper{
+    top: 50%;
+  }
+
+  .indicator{
+    margin-top: -7rem;
   }
 
   .filters {
     flex-direction: column;
-    padding: 2rem 1rem; 
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
   }
-  
-  .filters select{
+
+  .filters select {
     width: 65vw;
     height: 4vh;
     margin-bottom: 2rem;
     margin-left: -2rem;
   }
 
-  .filters input{
+  .filters input {
     width: 30vw;
     height: 5vh;
     margin-left: -3rem;
     margin-bottom: 1.1rem;
   }
 
-  .filters .icon_search svg{
+  .filters .icon_search svg {
     display: block;
     margin-left: -9rem;
     margin-top: -4.2rem;
   }
 
   .pagination li a {
-    width: auto; 
-    padding: 0.5rem 1rem; 
-    text-align: center; 
+    width: auto;
+    padding: 0.5rem 1rem;
+    text-align: center;
     border-radius: 0;
   }
 
@@ -606,9 +717,27 @@
     align-items: center;
     flex-wrap: wrap;
   }
-  .pagination li.activePage{
+  .pagination li.activePage {
     border-radius: 0;
   }
 }
 
-@media (max-width: 360px) {}
+@media screen and (max-width: 360px) {
+  .icons_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .box_icon {
+    margin: 0 -1rem 2rem; /* Ajuste a margem entre os ícones */
+  }
+
+  .icon_wrapper{
+    top: 50%;
+  }
+
+  .indicator{
+    margin-top: -7.5rem;
+  }
+
+
+}
