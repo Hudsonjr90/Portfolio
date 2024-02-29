@@ -6,7 +6,7 @@
 }
 
 .portfolio {
-  max-width: 1900px;
+  max-width: 1400px;
   max-height: 100vh;
   margin: 0 auto;
   overflow: hidden;
@@ -17,7 +17,7 @@
 .portfolio .heading {
   animation: animate 0.8s ease-in-out 1 forwards;
   font-size: 3.5rem;
-  margin: 10rem 0 3rem;
+  margin: 15rem 0 3rem;
   opacity: 0;
   text-align: center;
 }
@@ -157,13 +157,15 @@
   }
 }
 
-@media (max-width: 580px) {
+
+
+@media (max-width: 768px) {
   .portfolio {
     padding: 0 2%;
   }
 
   .portfolio .heading {
-    margin: 12rem 0 8rem;
+    margin: 15rem 0 8rem;
   }
 
   .portfolio_content .description {
