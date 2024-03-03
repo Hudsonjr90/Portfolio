@@ -10,7 +10,6 @@ import ProgressBar from "react-customizable-progressbar";
 import { GrMysql } from "react-icons/gr";
 import { LuSearch } from "react-icons/lu";
 import { GiPineapple } from "react-icons/gi";
-import { BiBoltCircle } from "react-icons/bi";
 import {
   FaGitAlt,
   FaNpm,
@@ -72,7 +71,8 @@ import {
   BiLogoRedux,
   BiLogoMongodb,
   BiLogoNetlify,
-  BiLogoHeroku
+  BiLogoHeroku,
+  BiBoltCircle
 } from "react-icons/bi";
 
 const Skills = () => {
@@ -158,7 +158,7 @@ const Skills = () => {
     Nextjs: SiNextdotjs,
     Vite: SiVite,
     Postman: SiPostman,
-    Thunderclient: BiBoltCircle
+    Thunderclient: BiBoltCircle,
   };
 
   const icons = [
@@ -355,7 +355,7 @@ const Skills = () => {
                     {IconComponent && <IconComponent className={styles.icon} />}
                   </div>
                   <div className={styles.indicator}>
-                    <div>{icon.percentage}%</div>
+                    <motion.div>{icon.percentage}%</motion.div>
                   </div>
                 </ProgressBar>
               </motion.div>
@@ -389,6 +389,3 @@ const Skills = () => {
   );
 };
 export default Skills;
-function calculateItemsPerPage(): any {
-  throw new Error("Function not implemented.");
-}
