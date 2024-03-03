@@ -1,12 +1,13 @@
 // CSS
 import styles from "./Contact.module.css";
 // HOOKS
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // REACT ROUTER DOM
 import { NavLink } from "react-router-dom";
 // COMPONENT
 import Transition from "../../components/Transition";
 import { useTranslation } from "react-i18next";
+import InputMask from "react-input-mask";
 // EMAILJS
 import emailjs from "@emailjs/browser";
 // SWEETALERT
@@ -21,11 +22,9 @@ import {
   FaWhatsapp,
 } from "react-icons/fa6";
 
-
 const Contact = () => {
+  const { t } = useTranslation();
 
-  const { t } = useTranslation(); 
-  
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -72,12 +71,7 @@ const Contact = () => {
     };
 
     emailjs
-      .send(
-        "service_ofgyyik",
-        "template_jl1lly9",
-        templateParams,
-        "pg7uosKesPGRIzFWI"
-      )
+      .send("gmailMessage", "replyKey", templateParams, "pg7uosKesPGRIzFWI")
       .then(
         (response) => {
           if (response.status === 200) {
@@ -106,7 +100,8 @@ const Contact = () => {
       <section className={styles.contact}>
         <div className={styles.header_container}>
           <h2>
-            <span>//</span>{t("contact.title")} <span>{t("contact.text")}</span>
+            <span>//</span>
+            {t("contact.title")} <span>{t("contact.text")}</span>
           </h2>
 
           <div className={styles.social_media}>
@@ -229,7 +224,7 @@ const Contact = () => {
                   nameError ? styles.show_message : ""
                 }`}
               >
-                {t("contact.name_error")}
+                {t("contact.error")}
               </div>
             </div>
 
@@ -252,15 +247,16 @@ const Contact = () => {
                   emailError ? styles.show_message : ""
                 }`}
               >
-                {t("contact.email_error")}
+                {t("contact.error")}
               </div>
             </div>
           </div>
 
           <div className={styles.input_box}>
             <div className={`${styles.input_field} ${styles.field}`}>
-              <input
-                type="number"
+              <InputMask
+                mask="(99) 99999-9999"
+                maskChar=" "
                 placeholder={t("contact.phone")}
                 className={`${styles.item} ${phoneError ? styles.error : ""}`}
                 id="phone"
@@ -277,7 +273,7 @@ const Contact = () => {
                   phoneError ? styles.show_message : ""
                 }`}
               >
-                {t("contact.phone_error")}
+                {t("contact.error")}
               </div>
             </div>
 
@@ -300,7 +296,7 @@ const Contact = () => {
                   subjectError ? styles.show_message : ""
                 }`}
               >
-                {t("contact.subject_error")}
+                {t("contact.error")}
               </div>
             </div>
           </div>
@@ -326,13 +322,13 @@ const Contact = () => {
                 messageError ? styles.show_message : ""
               }`}
             >
-              {t("contact.message_error")}
+              {t("contact.error")}
             </div>
           </div>
 
           <div className={styles.btn_box}>
             <button className={styles.btn} type="submit">
-            {t("contact.submit")}
+              {t("contact.submit")}
             </button>
           </div>
         </form>

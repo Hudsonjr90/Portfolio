@@ -166,16 +166,12 @@
   "contact": {
     "title": " Contacto",
     "text": "¡Yo!",
-    "name": "Nombre Completo",
-    "email": "Correo Electrónico",
-    "phone": "Teléfono",
-    "subject": "Asunto",
-    "message": "Tu Mensaje",
-    "submit": "Enviar Mensaje",
-    "name_error": "El nombre no puede estar vacío",
-    "email_error": "El correo electrónico no puede estar vacío",
-    "phone_error": "El teléfono no puede estar vacío",
-    "subject_error": "El asunto no puede estar vacío",
-    "message_error": "El mensaje no puede estar vacío"
+    "name": "Nombre Completo *",
+    "email": "Correo Electrónico *",
+    "phone": "Teléfono *",
+    "subject": "Asunto *",
+    "message": "Tu Mensaje *",
+    "submit": "Enviar Mensaje *",
+    "error": "Campo obligatorio"
   }
 }

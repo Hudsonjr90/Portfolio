@@ -166,16 +166,12 @@
   "contact": {
     "title": " Contate",
     "text": " Me!",
-    "name": "Nome Completo",
-    "email":"Email",
-    "phone":"Telefone",
-    "subject": "Assunto",
-    "message": "Sua Mensagem",
+    "name": "Nome Completo *",
+    "email":"Email *",
+    "phone":"Telefone *",
+    "subject": "Assunto *",
+    "message": "Sua Mensagem *",
     "submit" : "Enviar Mensagem",
-    "name_error": "Nome não pode ficar em branco",
-    "email_error": "Email não pode ficar em branco",  
-    "phone_error": "Telefone não pode ficar em branco",
-    "subject_error": "Assunto não pode ficar em branco",
-    "message_error": "Mensagem não pode ficar em branco"
+    "error": "Campo obrigatório"
   }
 }

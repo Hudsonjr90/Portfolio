@@ -166,16 +166,12 @@
   "contact": {
     "title": " Contact",
     "text": "Moi !",
-    "name": "Nom Complet",
-    "email": "Email",
-    "phone": "Téléphone",
-    "subject": "Sujet",
-    "message": "Votre Message",
-    "submit": "Envoyer le Message",
-    "name_error": "Le nom ne peut pas être vide",
-    "email_error": "L'e-mail ne peut pas être vide",
-    "phone_error": "Le téléphone ne peut pas être vide",
-    "subject_error": "Le sujet ne peut pas être vide",
-    "message_error": "Le message ne peut pas être vide"
+    "name": "Nom Complet *",
+    "email": "Email *",
+    "phone": "Téléphone *",
+    "subject": "Sujet *",
+    "message": "Votre Message *",
+    "submit": "Envoyer le Message *",
+    "error": "champs requis"
   }
 }

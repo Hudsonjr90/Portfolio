@@ -10,6 +10,7 @@ import ProgressBar from "react-customizable-progressbar";
 import { GrMysql } from "react-icons/gr";
 import { LuSearch } from "react-icons/lu";
 import { GiPineapple } from "react-icons/gi";
+import { BiBoltCircle } from "react-icons/bi";
 import {
   FaGitAlt,
   FaNpm,
@@ -58,6 +59,7 @@ import {
   SiExpress,
   SiJest,
   SiJasmine,
+  SiPostman
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -70,7 +72,7 @@ import {
   BiLogoRedux,
   BiLogoMongodb,
   BiLogoNetlify,
-  BiLogoHeroku,
+  BiLogoHeroku
 } from "react-icons/bi";
 
 const Skills = () => {
@@ -155,6 +157,8 @@ const Skills = () => {
     Vercel: SiVercel,
     Nextjs: SiNextdotjs,
     Vite: SiVite,
+    Postman: SiPostman,
+    Thunderclient: BiBoltCircle
   };
 
   const icons = [
@@ -214,7 +218,9 @@ const Skills = () => {
     { id: 53, name: "Heroku", category: "Tools", percentage: 60 },
     { id: 54, name: "Vercel", category: "Tools", percentage: 60 },
     { id: 55, name: "Nextjs", category: "Frontend", percentage: 10 },
-    { id: 56, name: "Vite", category: "Tools", percentage: 10 },
+    { id: 56, name: "Vite", category: "Tools", percentage: 60 },
+    { id: 57, name: "Postman", category: "Tools", percentage: 20 },
+    { id: 58, name: "Thunderclient", category: "Tools", percentage: 20 },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -249,14 +255,14 @@ const Skills = () => {
     return categoryMatch && searchTermMatch;
   });
 
-  const [itemsPerPage, setItemsPerPage] = useState(12);
+  const [itemsPerPage, setItemsPerPage] = useState(14);
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 768) {
-        setItemsPerPage(8);
+        setItemsPerPage(6);
       } else {
-        setItemsPerPage(12);
+        setItemsPerPage(14);
       }
     }
 
@@ -286,10 +292,10 @@ const Skills = () => {
         </h2>
 
         <motion.div
-          initial={{ opacity: 0, x: "100%" }}
+          initial={{ opacity: 0, x: "-100%" }}
           animate={{ opacity: 1, x: "0%" }}
           transition={{
-            duration: 5,
+            duration: 2.5,
             delay: 0.3,
             ease: [0.3, 0, 0.2, 1],
           }}
@@ -332,7 +338,7 @@ const Skills = () => {
               >
                 <span className={styles.icon_description}>{icon.name}</span>
                 <ProgressBar
-                  radius={75}
+                  radius={65}
                   strokeWidth={4}
                   strokeColor="var(--main_color)"
                   trackStrokeWidth={9}
@@ -358,10 +364,10 @@ const Skills = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: "100%" }}
+          initial={{ opacity: 0, x: "-100%" }}
           animate={{ opacity: 1, x: "0%" }}
           transition={{
-            duration: 5,
+            duration: 2.5,
             delay: 0.3,
             ease: [0.3, 0, 0.2, 1],
           }}

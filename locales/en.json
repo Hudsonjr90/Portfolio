@@ -166,16 +166,12 @@
   "contact": {
     "title": "Contact",
     "text": "Me!",
-    "name": "Full Name",
-    "email": "Email",
-    "phone": "Phone",
-    "subject": "Subject",
-    "message": "Your Message",
-    "submit": "Send Message",
-    "name_error": "Name cannot be blank",
-    "email_error": "Email cannot be blank",
-    "phone_error": "Phone cannot be blank",
-    "subject_error": "Subject cannot be blank",
-    "message_error": "Message cannot be blank"
+    "name": "Full Name *",
+    "email": "Email *",
+    "phone": "Phone *",
+    "subject": "Subject *",
+    "message": "Your Message *",
+    "submit": "Send Message *",
+    "error": "Required field"
   }
 }
