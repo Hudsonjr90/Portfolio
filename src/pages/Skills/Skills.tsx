@@ -58,7 +58,7 @@ import {
   SiExpress,
   SiJest,
   SiJasmine,
-  SiPostman
+  SiPostman,
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -72,7 +72,7 @@ import {
   BiLogoMongodb,
   BiLogoNetlify,
   BiLogoHeroku,
-  BiBoltCircle
+  BiBoltCircle,
 } from "react-icons/bi";
 
 const Skills = () => {
@@ -329,7 +329,7 @@ const Skills = () => {
           animate="visible"
         >
           {visibleIcons.map((icon) => {
-            const IconComponent = iconComponents[icon.name];
+            const IconComponent = iconComponents[icon.name];     
             return (
               <motion.div
                 key={icon.id}
@@ -355,7 +355,9 @@ const Skills = () => {
                     {IconComponent && <IconComponent className={styles.icon} />}
                   </div>
                   <div className={styles.indicator}>
-                    <motion.div>{icon.percentage}%</motion.div>
+                    <motion.div>
+                      {icon.percentage}%
+                    </motion.div>
                   </div>
                 </ProgressBar>
               </motion.div>
