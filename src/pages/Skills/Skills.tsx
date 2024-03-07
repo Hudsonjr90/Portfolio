@@ -6,6 +6,7 @@ import { SetStateAction, useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { useTranslation } from "react-i18next";
 import ProgressBar from "react-customizable-progressbar";
+import CountUp from "react-countup";
 
 import { GrMysql } from "react-icons/gr";
 import { LuSearch } from "react-icons/lu";
@@ -91,9 +92,9 @@ const Skills = () => {
   };
 
   const item = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { x: 80, opacity: 0 },
     visible: {
-      y: 0,
+      x: 0,
       opacity: 1,
     },
   };
@@ -260,7 +261,7 @@ const Skills = () => {
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 768) {
-        setItemsPerPage(6);
+        setItemsPerPage(4);
       } else {
         setItemsPerPage(14);
       }
@@ -329,7 +330,7 @@ const Skills = () => {
           animate="visible"
         >
           {visibleIcons.map((icon) => {
-            const IconComponent = iconComponents[icon.name];     
+            const IconComponent = iconComponents[icon.name];
             return (
               <motion.div
                 key={icon.id}
@@ -355,9 +356,13 @@ const Skills = () => {
                     {IconComponent && <IconComponent className={styles.icon} />}
                   </div>
                   <div className={styles.indicator}>
-                    <motion.div>
-                      {icon.percentage}%
-                    </motion.div>
+                    <CountUp
+                      start={0}
+                      end={icon.percentage}
+                      duration={5}
+                      useEasing={true}
+                      suffix={"%"}
+                    />
                   </div>
                 </ProgressBar>
               </motion.div>
@@ -377,7 +382,7 @@ const Skills = () => {
           <ReactPaginate
             pageCount={totalPages}
             pageRangeDisplayed={5}
-            marginPagesDisplayed={2}
+            marginPagesDisplayed={0}
             onPageChange={handlePageClick}
             containerClassName={styles.pagination}
             activeClassName={styles.activePage}

@@ -222,7 +222,7 @@ const Testimonials = () => {
             breakLabel={"..."}
             breakClassName={"break-me"}
             pageCount={pageCount}
-            pageRangeDisplayed={6}
+            pageRangeDisplayed={5}
             marginPagesDisplayed={0}
             onPageChange={handlePageClick}
             containerClassName={styles.pagination}
