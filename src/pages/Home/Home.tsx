@@ -318,13 +318,15 @@ const Home = () => {
         className={styles.modal_container}
       >
         <Modal.Header closeButton>
-          <Modal.Title className={styles.modal_title}>
+        <Modal.Title className={styles.modal_title}>
             <FaCircleArrowDown
               className={styles.down_button}
               onClick={handleDownload}
+              title={t("home.download")}
             />
             <FaCircleXmark
               className={styles.close_button}
+              title={t("home.close")}
               onClick={() => {
                 setShowModal(false);
                 handleAudioButtonClick();
