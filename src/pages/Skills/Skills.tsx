@@ -91,13 +91,6 @@ const Skills = () => {
     },
   };
 
-  const item = {
-    hidden: { x: 80, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-    },
-  };
 
   const iconComponents: { [index: string]: React.ElementType } = {
     HTML: BiLogoHtml5,
@@ -334,7 +327,7 @@ const Skills = () => {
             return (
               <motion.div
                 key={icon.id}
-                variants={item}
+                variants={container}
                 className={styles.box_icon}
               >
                 <span className={styles.icon_description}>{icon.name}</span>
@@ -359,8 +352,7 @@ const Skills = () => {
                     <CountUp
                       start={0}
                       end={icon.percentage}
-                      duration={5}
-                      useEasing={true}
+                      duration={2.5}    
                       suffix={"%"}
                     />
                   </div>
