@@ -143,6 +143,7 @@ const Home = () => {
     setTypedStrings(strings);
   }, [t]);
 
+
   
 
   return (
@@ -163,8 +164,9 @@ const Home = () => {
 
             <motion.div
               initial={{ opacity: 0, x: "80%" }}
-              animate={{ opacity: 1, x: "0%" }}
+              animate={{ opacity: 1, x: "0%", rotate: 360 }}
               transition={{
+                type: 'spring',
                 duration: 2,
                 delay: 0.3,
                 ease: [0.3, 0, 0.2, 1],
