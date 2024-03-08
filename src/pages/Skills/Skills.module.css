@@ -212,15 +212,15 @@
   }
 
   .filters input {
-    width: 20vw;
-    height: 5vh;
+    width: 15vw;
+    height: 3vh;
     margin-left: -1rem;
   }
 
   .filters .icon_search svg {
     display: block;
     margin-left: -8rem;
-    margin-top: -3.7rem;
+    margin-top: -3rem;
   }
 
   .pagination li a {

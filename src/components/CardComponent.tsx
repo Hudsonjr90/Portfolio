@@ -138,7 +138,7 @@ const CardComponent = () => {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 769) {
         setCardsPerPage(2);
       } else {
         setCardsPerPage(1);

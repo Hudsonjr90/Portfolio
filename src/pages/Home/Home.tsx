@@ -307,6 +307,9 @@ const Home = () => {
               <i></i>
               <i></i>
               <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
               <img src={imageUrl} alt="home_img" />
             </div>
           </motion.div>

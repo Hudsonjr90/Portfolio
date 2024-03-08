@@ -95,7 +95,7 @@
   justify-self: center;
   opacity: 0;
   animation: text_reveal-lines 2s ease-in-out 1s forwards;
-  z-index: 0 ;
+  z-index: 0;
 }
 
 @keyframes text_reveal-lines {
@@ -211,7 +211,6 @@
   top: 0;
   transition: 0.5s;
   width: 0;
-
 }
 
 .btn_box .btn:hover::before {
@@ -231,6 +230,95 @@
 .home_img img {
   object-fit: none;
   width: 40vw;
+  border: 2px solid var(--main_color);
+  border-radius: 50%;
+}
+
+.ring {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 5px solid var(--main_color);
+  transition: 0.5s;
+}
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate-ring 6s linear infinite;
+  border: 2px solid var(--main_color);
+}
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate-ring 4s linear infinite;
+  border: 2px solid var(--main_color);
+}
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate-ring2 10s linear infinite;
+  border: 2px solid var(--main_color);
+}
+
+.ring i:nth-child(4) {
+  border-radius: 28% 52% 53% 27% / 31% 34% 46% 49%;
+  animation: animate-ring3 6s linear infinite;
+  border: 3px solid var(--main_color);
+}
+.ring i:nth-child(5) {
+  border-radius: 51% 54% 66% 69%/48% 72% 73% 47%;
+  animation: animate-ring4 4s linear infinite;
+  border: 3px solid var(--main_color);
+}
+.ring i:nth-child(6) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate-ring5 10s linear infinite;
+  border: 3px solid var(--main_color);
+}
+
+@keyframes animate-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-ring2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes animate-ring3 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes animate-ring4 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes animate-ring5 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .modal_container {
@@ -251,7 +339,7 @@
 
 .modal_title {
   margin-bottom: 1rem;
-  padding-left: 16rem !important; 
+  padding-left: 16rem !important;
   display: flex;
   justify-content: space-between;
   border: 2px solid var(--main_color);
@@ -292,50 +380,6 @@
   justify-content: flex-end;
 }
 
-.ring {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.ring i {
-  position: absolute;
-  inset: 0;
-  border: 2px solid var(--main_color);
-  transition: 0.5s;
-}
-.ring i:nth-child(1) {
-  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-  animation: animate-ring 6s linear infinite;
-}
-.ring i:nth-child(2) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate-ring 4s linear infinite;
-}
-.ring i:nth-child(3) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate-ring2 10s linear infinite;
-}
-
-@keyframes animate-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes animate-ring2 {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 /* <========== breakpoints ==========> */
 
 @media (max-width: 1100px) {
@@ -348,7 +392,7 @@
     width: 30vw;
   }
 
-  .modal_title{
+  .modal_title {
     padding-left: 16rem;
   }
 }
@@ -367,23 +411,24 @@
     height: 50rem;
   }
 
-  .modal_title{
+  .modal_title {
     padding-left: 18rem;
   }
 }
 
-@media (max-width: 691px) {
+@media (max-width: 768px) {
   .home_content {
     height: 70rem;
   }
 
   .home_img img {
     width: 70vw;
+    border: none;
   }
 
   .home_img {
-    bottom: -12rem;
-    right: 5rem;
+    bottom: 10rem;
+    right: 20rem;
     z-index: -1;
   }
 
@@ -392,19 +437,19 @@
   }
 
   .ring i {
-    width: 260px;
-    height: 260px;
+    width: 530px;
+    height: 530px;
     z-index: 2;
-    margin-left: 15rem;
-    margin-top: 15rem;
+    margin-left: -3rem;
+    margin-top: -2rem;
   }
 
   .text_reveal > span:nth-child(1) {
-    font-size: 4rem ;
+    font-size: 4rem;
   }
 
   .text_reveal > span:nth-child(2) {
-    font-size: 4rem ;
+    font-size: 4rem;
   }
 
   .modal_container {
@@ -433,7 +478,6 @@
     font-size: 3rem;
     cursor: pointer;
   }
-  
 }
 
 @media (max-width: 470px) {
@@ -516,6 +560,7 @@
 
   .home_img img {
     width: 115vw;
+    border: none;
   }
 
   .home_content {
@@ -535,11 +580,11 @@
     margin-top: 13rem;
   }
 
-  .text_reveal span{
+  .text_reveal span {
     font-size: 4rem !important;
   }
 
-  .transparent_text{
+  .transparent_text {
     font-size: 2.9rem !important;
     margin: 0 !important;
   }
@@ -555,6 +600,7 @@
     width: 110vw;
     position: relative;
     z-index: 2;
+    border: none;
   }
 
   .home_content {
@@ -569,7 +615,7 @@
     margin-top: 13rem;
   }
 
-  .modal_title{
+  .modal_title {
     padding-left: 16rem !important;
   }
 
@@ -584,11 +630,11 @@
     cursor: pointer;
   }
 
-  .text_reveal span{
+  .text_reveal span {
     font-size: 3.5rem !important;
   }
 
-  .transparent_text{
+  .transparent_text {
     font-size: 2.2rem !important;
     margin-left: -1rem !important;
   }
@@ -606,6 +652,7 @@
 
   .home_img img {
     width: 68vw;
+    border: none;
   }
 
   .ring i {
@@ -616,8 +663,8 @@
     margin-top: 13rem;
   }
 
-  .modal_title{
-    padding-left: 14rem  !important;
+  .modal_title {
+    padding-left: 14rem !important;
   }
 
   .modal_title .down_button {
@@ -631,11 +678,11 @@
     cursor: pointer;
   }
 
-  .text_reveal span{
+  .text_reveal span {
     font-size: 3.5rem !important;
   }
 
-  .transparent_text{
+  .transparent_text {
     font-size: 2.2rem !important;
     margin-left: -1rem !important;
   }
@@ -653,6 +700,7 @@
 
   .home_img img {
     width: 68vw;
+    border: none;
   }
 
   .ring i {
@@ -663,8 +711,8 @@
     margin-top: 13rem;
   }
 
-  .modal_title{
-    padding-left: 13rem  !important;
+  .modal_title {
+    padding-left: 13rem !important;
   }
 
   .modal_title .down_button {
@@ -676,13 +724,13 @@
   .modal_title .close_button {
     font-size: 3rem;
     cursor: pointer;
-  } 
+  }
 
-  .text_reveal span{
+  .text_reveal span {
     font-size: 3.5rem !important;
   }
 
-  .transparent_text{
+  .transparent_text {
     font-size: 2.2rem !important;
     margin-left: -1rem !important;
   }

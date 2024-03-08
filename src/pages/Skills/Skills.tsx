@@ -253,7 +253,7 @@ const Skills = () => {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 769) {
         setItemsPerPage(4);
       } else {
         setItemsPerPage(14);

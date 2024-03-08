@@ -256,7 +256,7 @@ const Contact = () => {
             <div className={`${styles.input_field} ${styles.field}`}>
               <InputMask
                 mask="(99) 99999-9999"
-                maskChar=" "
+                maskChar="_"
                 placeholder={t("contact.phone")}
                 className={`${styles.item} ${phoneError ? styles.error : ""}`}
                 id="phone"
