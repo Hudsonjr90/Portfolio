@@ -1,13 +1,13 @@
 // CSS
 import styles from "./Contact.module.css";
 // HOOKS
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 // REACT ROUTER DOM
 import { NavLink } from "react-router-dom";
 // COMPONENT
 import Transition from "../../components/Transition";
 import { useTranslation } from "react-i18next";
-import InputMask from "react-input-mask";
+import PhoneInput from "react-phone-number-input/input"
 // EMAILJS
 import emailjs from "@emailjs/browser";
 // SWEETALERT
@@ -254,17 +254,19 @@ const Contact = () => {
 
           <div className={styles.input_box}>
             <div className={`${styles.input_field} ${styles.field}`}>
-              <InputMask
-                mask="(99) 99999-9999"
-                maskChar="_"
-                placeholder={t("contact.phone")}
-                className={`${styles.item} ${phoneError ? styles.error : ""}`}
+             <PhoneInput
+                country="BR"
                 id="phone"
-                onChange={(e) => {
-                  setPhone(e.target.value);
-                  setPhoneError(false);
-                }}
+                placeholder={t("contact.phone")}
+                maxLength={15}
+                className={`${styles.item} ${phoneError ? styles.error : ""}`}
                 value={phone}
+                onChange={(value) => {
+                  if (typeof value === "string") {
+                    setPhone(value);
+                    setPhoneError(false);
+                  }
+                }}
               />
 
               <div

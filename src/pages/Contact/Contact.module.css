@@ -280,21 +280,6 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 400px) {
-  .contact {
-    padding: 6rem 6% 2rem;
-    margin-top: -10rem;
-  }
-
-  .header_container {
-    justify-content: space-between;
-  }
-
-  .header_container h2 {
-    font-size: 2.7rem;
-  }
-}
-
 @media (max-width: 428px) {
   .contact {
     padding: 6rem 6% 2rem;
@@ -303,6 +288,21 @@ form .textarea_field .error_txt {
 
   .header_container {
     margin-top: 30rem;
+    justify-content: space-between;
+  }
+
+  .header_container h2 {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .contact {
+    padding: 6rem 6% 2rem;
+    margin-top: -12rem;
+  }
+
+  .header_container {
     justify-content: space-between;
   }
 
