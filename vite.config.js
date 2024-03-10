@@ -7,4 +7,7 @@ export default defineConfig({
   css: {
     modules: true, 
   },
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
+  }
 })
