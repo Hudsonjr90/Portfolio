@@ -8,6 +8,7 @@ import { Modal } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Typewriter from "typewriter-effect";
+import { saveAs } from "file-saver";
 
 // REACT ICONS
 import {
@@ -69,7 +70,6 @@ const Home = () => {
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
   const [soundClick, setSoundClick] = useState<boolean>(false);
-  
 
   useEffect(() => {
     // Função para carregar as imagens e o PDF com base no idioma selecionado
@@ -79,23 +79,23 @@ const Home = () => {
       switch (i18n.language) {
         case "pt":
           images = imagesBr;
-          pdfPath = "/public/cv/HudsonKennedy-BR.pdf";
+          pdfPath = "/cv/HudsonKennedy-BR.pdf";
           break;
         case "en":
           images = imagesUs;
-          pdfPath = "/public/cv/HudsonKennedy-US.pdf";
+          pdfPath = "/cv/HudsonKennedy-US.pdf";
           break;
         case "fr":
           images = imagesFr;
-          pdfPath = "/public/cv/HudsonKennedy-FR.pdf";
+          pdfPath = "/cv/HudsonKennedy-FR.pdf";
           break;
         case "it":
           images = imagesIt;
-          pdfPath = "/public/cv/HudsonKennedy-IT.pdf";
+          pdfPath = "/cv/HudsonKennedy-IT.pdf";
           break;
         case "es":
           images = imagesEs;
-          pdfPath = "/public/cv/HudsonKennedy-ES.pdf";
+          pdfPath = "/cv/HudsonKennedy-ES.pdf";
           break;
         default:
           break;
@@ -104,19 +104,23 @@ const Home = () => {
       setSelectedPdf(pdfPath);
     };
 
-    // Carregar o conteúdo quando o componente montar e sempre que o idioma mudar
     loadContent();
   }, [i18n.language]);
 
-  const handleDownload = (_filePath: any) => {
+  const handleDownload = () => {
     if (selectedPdf) {
-      const link = document.createElement("a");
-      link.href = selectedPdf;
-      link.download = selectedPdf.split("/").pop() || "resume.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setShowModal(false);
+      const fileName = selectedPdf.split("/").pop()?.replace(".pdf", "");
+      if (fileName) {
+        fetch(selectedPdf)
+          .then((response) => response.blob())
+          .then((blob) => {
+            saveAs(blob, `${fileName}.pdf`);
+          })
+          .catch((error) => {
+            console.error("Error downloading PDF:", error);
+          });
+        setShowModal(false);
+      }
     }
   };
 
@@ -133,18 +137,14 @@ const Home = () => {
   const [typedStrings, setTypedStrings] = useState<string[]>([]);
 
   useEffect(() => {
-
     const strings = [
       t("home.function1"),
       t("home.function2"),
       t("home.function3"),
-      t("home.function4"),    
+      t("home.function4"),
     ];
     setTypedStrings(strings);
   }, [t]);
-
-
-  
 
   return (
     <>
@@ -154,7 +154,17 @@ const Home = () => {
             <ParticlesBackground />
 
             <h3 className={styles.first_h3}>
+              <motion.div
+               initial={{ opacity: 0, x: "80%" }}
+               animate={{ opacity: 1, x: "0%", rotate: 360 }}
+               transition={{
+                 type: "spring",
+                 duration: 2,
+                 delay: 0.3,
+                 ease: [0.3, 0, 0.2, 1],
+               }}>
               {t("home.title")} <span>Commit</span>
+              </motion.div>
             </h3>
 
             <h1 className={styles.text_reveal}>
@@ -163,14 +173,14 @@ const Home = () => {
             </h1>
 
             <motion.div
-              initial={{ opacity: 0, x: "80%" }}
-              animate={{ opacity: 1, x: "0%", rotate: 360 }}
-              transition={{
-                type: 'spring',
-                duration: 2,
-                delay: 0.3,
-                ease: [0.3, 0, 0.2, 1],
-              }}
+             animate={{ x: [30, 150, 10], opacity: 1, scale: 1 }}
+             transition={{
+               duration: 3,
+               delay: 0.3,
+               ease: [0.5, 0.71, 1, 1.5],
+             }}
+             initial={{ opacity: 0, scale: 0.5 }}
+             whileHover={{ scale: 1.2 }}
               className={styles.transparent_text}
             >
               <Typewriter
@@ -299,6 +309,7 @@ const Home = () => {
             className={styles.home_img}
             initial={{ opacity: 0, y: "100%" }}
             animate={{ opacity: 1, y: "0%" }}
+            whileHover={{ scale: 1.2 }}
             transition={{
               duration: 2,
               delay: 0.7,
@@ -323,7 +334,7 @@ const Home = () => {
         className={styles.modal_container}
       >
         <Modal.Header closeButton>
-        <Modal.Title className={styles.modal_title}>
+          <Modal.Title className={styles.modal_title}>
             <FaCircleArrowDown
               className={styles.down_button}
               onClick={handleDownload}
