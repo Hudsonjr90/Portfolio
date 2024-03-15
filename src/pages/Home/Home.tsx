@@ -307,24 +307,16 @@ const Home = () => {
 
           <motion.div
             className={styles.home_img}
-            initial={{ opacity: 0, y: "100%" }}
-            animate={{ opacity: 1, y: "0%" }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: "0%" }}
             whileHover={{ scale: 1.2 }}
             transition={{
               duration: 2,
               delay: 0.7,
               ease: [0.2, 0, 0.2, 1],
             }}
-          >
-            <div className={styles.ring}>
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
+          >          
               <img src={imageUrl} alt="home_img" />
-            </div>
           </motion.div>
         </section>
       </Transition>

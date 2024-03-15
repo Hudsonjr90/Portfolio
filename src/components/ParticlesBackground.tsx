@@ -1,5 +1,5 @@
 // HOOKS
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 // PARTICLES
 import Particles from "react-tsparticles"
 import { loadFull } from "tsparticles";
@@ -26,7 +26,7 @@ const ParticlesBackground = () => {
     const particlesConfig: RecursivePartial<IOptions> = {
         "particles": {
           "number": {
-            "value": 30,
+            "value": 35,
             "density": {
               "enable": true,
               "value_area": 800
@@ -43,11 +43,6 @@ const ParticlesBackground = () => {
             },
             "polygon": {
               "nb_sides": 5
-            },
-            "image": {
-              "src": "img/github.svg",
-              "width": 100,
-              "height": 100
             }
           },
           "opacity": {
