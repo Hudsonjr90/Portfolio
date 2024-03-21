@@ -183,7 +183,11 @@ const CardComponent = () => {
         onMouseEnter={() => handleMouseEnter(card.id)}
         onMouseLeave={handleMouseLeave}
       >
-        <Card.Img src={card.img} alt="Card image"  className={hoveredCard === card.id ? styles.blur : ""} />
+        <Card.Img
+          src={card.img}
+          alt="Card image"
+          className={hoveredCard === card.id ? styles.blur : ""}
+        />
         <Card.ImgOverlay>
           <Card.Text
             className={`${styles.card_text} ${
@@ -195,6 +199,18 @@ const CardComponent = () => {
         </Card.ImgOverlay>
       </Card>
     ));
+
+  const [soundClick, setSoundClick] = useState<boolean>(false);
+
+  const handleAudio = () => {
+    const audio = new Audio("/sounds/button_click.mp3");
+
+    if (soundClick) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  };
 
   return (
     <>
@@ -223,7 +239,10 @@ const CardComponent = () => {
           pageCount={pageCount}
           pageRangeDisplayed={5}
           marginPagesDisplayed={0}
-          onPageChange={handlePageClick}
+          onPageChange={({ selected: selectedPage }) => {
+            handlePageClick({ selected: selectedPage });
+            handleAudio();
+          }}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}
           previousLabel={"<<"}

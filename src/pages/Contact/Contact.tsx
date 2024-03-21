@@ -215,6 +215,19 @@ const Contact = () => {
     retina_detect: true,
   };
 
+  const [soundClick, setSoundClick] = useState<boolean>(false) 
+
+ const handleAudio = () => {
+        const audio = new Audio("/sounds/button_click.mp3");
+
+        if (soundClick) {
+            audio.pause(); 
+        } else {
+            audio.play();
+        }
+    };
+
+
   return (
     <Transition onAnimationComplete={() => {}}>
       <Particles options={particlesConfig} init={particlesInit} />
@@ -450,7 +463,7 @@ const Contact = () => {
           </div>
 
           <div className={styles.btn_box}>
-            <button className={styles.btn} type="submit">
+            <button className={styles.btn} type="submit" onClick={handleAudio}>
               {t("contact.submit")}
             </button>
           </div>

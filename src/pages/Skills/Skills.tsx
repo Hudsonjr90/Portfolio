@@ -396,6 +396,18 @@ const Skills = () => {
     startIndex + itemsPerPage
   );
 
+  const [soundClick, setSoundClick] = useState<boolean>(false);
+
+  const handleAudio = () => {
+    const audio = new Audio("/sounds/button_click.mp3");
+
+    if (soundClick) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  };
+
   return (
     <Transition onAnimationComplete={() => {}}>
       <Particles options={particlesConfig} init={particlesInit} />
@@ -417,7 +429,10 @@ const Skills = () => {
         >
           <select
             value={selectedCategory}
-            onChange={(e) => handleCategoryChange(e.target.value)}
+            onChange={(e) => {
+              handleCategoryChange(e.target.value);
+              handleAudio(); 
+            }}
           >
             <option value="all">{t("skills.select1")}</option>
             <option value="frontend">Frontend</option>
@@ -495,7 +510,10 @@ const Skills = () => {
             pageCount={totalPages}
             pageRangeDisplayed={5}
             marginPagesDisplayed={0}
-            onPageChange={handlePageClick}
+            onPageChange={({ selected: selectedPage }) => {
+              handlePageClick({ selected: selectedPage });
+              handleAudio();
+            }}
             containerClassName={styles.pagination}
             activeClassName={styles.activePage}
             previousLabel={"<<"}

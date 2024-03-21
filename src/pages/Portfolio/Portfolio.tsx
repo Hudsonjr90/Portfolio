@@ -383,7 +383,8 @@ const Portfolio = () => {
               depth: 100,
               modifier: 2.5,
             }}
-            slidesPerView={slidePerview}
+            autoplay={true}
+            slidesPerView={slidePerview}  
             pagination={{ clickable: true }}
             navigation
             initialSlide={initialSlide}

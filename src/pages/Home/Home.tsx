@@ -124,7 +124,7 @@ const Home = () => {
     }
   };
 
-  const handleAudioButtonClick = () => {
+  const handleAudio = () => {
     const audio = new Audio("/sounds/button_click.mp3");
 
     if (soundClick) {
@@ -297,7 +297,7 @@ const Home = () => {
                 className={styles.btn}
                 onClick={() => {
                   setShowModal(true);
-                  handleAudioButtonClick();
+                  handleAudio();
                 }}
               >
                 {t("home.resume")}
@@ -337,7 +337,7 @@ const Home = () => {
               title={t("home.close")}
               onClick={() => {
                 setShowModal(false);
-                handleAudioButtonClick();
+                handleAudio();
               }}
             />
           </Modal.Title>

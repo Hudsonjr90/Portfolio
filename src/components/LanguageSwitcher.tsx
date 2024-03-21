@@ -21,7 +21,7 @@ const LanguageSwitcher = () => {
     setSidebarOpen(!SidebarOpen);
   };
 
-  const handleAudioButtonClick = () => {
+  const handleAudio = () => {
     const audio = new Audio("/sounds/button_click.mp3");
   
     if (soundClick) {
@@ -42,7 +42,7 @@ const LanguageSwitcher = () => {
       <button className={styles.lng_btn}
        onClick={() => {
         toggleSidebar();
-        handleAudioButtonClick(); 
+        handleAudio(); 
       }}>
           {currentLanguage === "pt" && <Br className={styles.flags} />}
           {currentLanguage === "en" && <Us className={styles.flags} />}
@@ -60,7 +60,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("pt");
-                handleAudioButtonClick(); 
+                handleAudio(); 
               }}
             >
               <div className={styles.flags_name}>
@@ -71,7 +71,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("en");
-                handleAudioButtonClick(); 
+                handleAudio(); 
               }}
             >
               <div className={styles.flags_name}>
@@ -83,7 +83,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("fr");
-                handleAudioButtonClick(); 
+                handleAudio(); 
               }}
             >
               <div className={styles.flags_name}>
@@ -95,7 +95,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("it");
-                handleAudioButtonClick(); 
+                handleAudio(); 
               }}
             >
               <div className={styles.flags_name}>
@@ -107,7 +107,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("es");
-                handleAudioButtonClick(); 
+                handleAudio(); 
               }}
             >
               <div className={styles.flags_name}>

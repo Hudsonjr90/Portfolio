@@ -79,7 +79,7 @@ const Navbar = () => {
 
     }, [selectedColor]);
 
-    const handleAudioButtonClick = () => {
+    const handleAudio = () => {
         const audio = new Audio("/sounds/button_click.mp3");
 
         if (soundClick) {
@@ -103,7 +103,7 @@ const Navbar = () => {
                     <li
                         onClick={() => {
                             handleLinkClick();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -120,7 +120,7 @@ const Navbar = () => {
                     <li
                         onClick={() => {
                             handleLinkClick();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -137,7 +137,7 @@ const Navbar = () => {
                     <li
                         onClick={() => {
                             handleLinkClick();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -154,7 +154,7 @@ const Navbar = () => {
                     <li
                         onClick={() => {
                             handleLinkClick();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -173,7 +173,7 @@ const Navbar = () => {
                     <li
                         onClick={() => {
                             handleLinkClick();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -190,7 +190,7 @@ const Navbar = () => {
                     <li
                         onClick={() => {
                             handleLinkClick();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -207,7 +207,7 @@ const Navbar = () => {
                     <li
                         onClick={() => {
                             handleLinkClick();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -224,7 +224,7 @@ const Navbar = () => {
                     <li
                         onClick={() => {
                             handleLinkClick();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -247,7 +247,7 @@ const Navbar = () => {
                         className={styles.input_darc_light_mode}
                         onClick={() => {
                             handleToggleLightMode();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                     />
 
@@ -261,7 +261,7 @@ const Navbar = () => {
                         className={styles.input_palette_colors}
                         onClick={() => {
                             handlePaletteToggle();
-                            handleAudioButtonClick();
+                            handleAudio();
                         }}
                     />
 
@@ -309,7 +309,7 @@ const Navbar = () => {
                 <button
                     onClick={() =>{
                         handleClickButton();
-                        handleAudioButtonClick();
+                        handleAudio();
                     }}
                     className={`${styles.btn_menu}
                 ${showMenu ? styles.active : ""}`}
