@@ -1,5 +1,5 @@
 // HOOKS
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useResponsiveNavbar } from "../hooks/useResponsiveNavbar";
 // REACT ROUTER DOM
 import { NavLink } from "react-router-dom";

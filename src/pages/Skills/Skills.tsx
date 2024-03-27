@@ -2,7 +2,7 @@ import styles from "./Skills.module.css";
 
 import { motion } from "framer-motion";
 import Transition from "../../components/Transition";
-import { SetStateAction, useState, useEffect, useCallback } from "react";
+import { SetStateAction, useState, useEffect, useCallback, useMemo } from "react";
 import ReactPaginate from "react-paginate";
 import { useTranslation } from "react-i18next";
 import ProgressBar from "react-customizable-progressbar";
@@ -357,16 +357,18 @@ const Skills = () => {
     setCurrentPage(0);
   }, [selectedCategory]);
 
-  const filteredIcons = icons.filter((icon) => {
-    const categoryMatch =
-      selectedCategory === "all" ||
-      icon.category.toLowerCase() === selectedCategory.toLowerCase();
-    const searchTermMatch = icon.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+  const filteredIcons = useMemo(() => {
+    return icons.filter((icon) => {
+      const categoryMatch =
+        selectedCategory === "all" ||
+        icon.category.toLowerCase() === selectedCategory.toLowerCase();
+      const searchTermMatch = icon.name
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
 
-    return categoryMatch && searchTermMatch;
-  });
+      return categoryMatch && searchTermMatch;
+    });
+  }, [icons, selectedCategory, searchTerm]);
 
   const [itemsPerPage, setItemsPerPage] = useState(14);
 
@@ -388,13 +390,14 @@ const Skills = () => {
 
   const handlePageClick = ({ selected }: { selected: number }) => {
     setCurrentPage(selected);
+    setSearchTerm("");
   };
 
-  const startIndex = currentPage * itemsPerPage;
-  const visibleIcons = filteredIcons.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+  const visibleIcons = useMemo(() => {
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return filteredIcons.slice(startIndex, endIndex);
+  }, [currentPage, itemsPerPage, filteredIcons]);
 
   const [soundClick, setSoundClick] = useState<boolean>(false);
 

@@ -10,7 +10,7 @@
   z-index: 1000;  
   transition: transform 0.3s ease, opacity 0.3s ease;
   background-color: var(--bg_color);
-  border-bottom: 2px solid var(--main_color);
+  border-bottom: 1px solid var(--main_color);
 }
 
 .logo {
