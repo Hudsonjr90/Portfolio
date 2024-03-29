@@ -296,6 +296,22 @@
 
 /* <========== breakpoints ==========> */
 
+@media (max-width: 2560px){
+  .home_img {
+    bottom: 15rem;
+    right: 35rem;
+  }
+
+  .home_img img {
+    width: 19vw;
+  }
+
+  .modal_title .down_button {
+    margin-left: 56rem;
+  }
+
+}
+
 @media (max-width: 1450px) {
   .home_img {
     bottom: 15rem;

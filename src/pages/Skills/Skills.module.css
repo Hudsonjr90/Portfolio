@@ -147,8 +147,22 @@
   border-radius: 20px;
 }
 
-.styles.searchIcon {
-  color: var(--main_color);
+@media (max-width: 2560px){
+
+  .filters input {
+    color: var(--main_color);
+    border-bottom: 1px solid var(--main_color);
+    background-color: var(--bg_color);
+    padding-left: 3rem;
+    margin-left: 85rem;
+    width: 5vw;
+  }  
+
+  .filters .icon_search svg {
+    font-size: 2rem;
+    margin-left: -13rem;
+    margin-top: 0.7rem;
+  }
 }
 
 @media (max-width: 991px) {

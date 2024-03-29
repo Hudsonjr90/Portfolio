@@ -7,7 +7,7 @@
   padding: 1.2rem 6%;
   top: 0;
   width: 100%;
-  z-index: 1000;  
+  z-index: 1000;
   transition: transform 0.3s ease, opacity 0.3s ease;
   background-color: var(--bg_color);
   border-bottom: 1px solid var(--main_color);
@@ -27,7 +27,6 @@
 .links_list {
   display: flex;
   list-style: none;
-  
 }
 
 .links_list a {
@@ -174,7 +173,7 @@ label {
 
 /* <========== breakpoints ==========> */
 
-@media (max-width: 1440px){
+@media (max-width: 1440px) {
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
@@ -220,9 +219,8 @@ label {
     transform: translateY(-8px) rotate(-405deg);
   }
   .links_list {
-    border-top: 2px solid var(--main_color);
     background: var(--bg_color);
-    backdrop-filter: 50px(blur);
+    backdrop-filter: 50px (blur);
     flex-direction: column;
     height: 0;
     left: 0;
@@ -296,9 +294,8 @@ label {
     transform: translateY(-8px) rotate(-405deg);
   }
   .links_list {
-    border-top: 2px solid var(--main_color);
     background: var(--bg_color);
-    backdrop-filter: 50px(blur);
+    backdrop-filter: 50px (blur);
     flex-direction: column;
     height: 0;
     left: 0;
@@ -372,9 +369,8 @@ label {
     transform: translateY(-8px) rotate(-405deg);
   }
   .links_list {
-    border-top: 2px solid var(--main_color);
     background: var(--bg_color);
-    backdrop-filter: 50px(blur);
+    backdrop-filter: 50px (blur);
     flex-direction: column;
     height: 0;
     left: 0;
