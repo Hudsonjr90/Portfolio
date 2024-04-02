@@ -64,6 +64,8 @@ import {
   SiJest,
   SiJasmine,
   SiPostman,
+  SiCypress,
+  SiAmazonaws
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -272,6 +274,8 @@ const Skills = () => {
     Vite: SiVite,
     Postman: SiPostman,
     Thunderclient: BiBoltCircle,
+    Cypress: SiCypress,
+    AWS: SiAmazonaws
   };
 
   const icons = [
@@ -334,6 +338,8 @@ const Skills = () => {
     { id: 56, name: "Vite", category: "Tools", percentage: 60 },
     { id: 57, name: "Postman", category: "Tools", percentage: 20 },
     { id: 58, name: "Thunderclient", category: "Tools", percentage: 20 },
+    { id: 59, name: "Cypress", category: "Tools", percentage: 10 },
+    { id: 60, name: "AWS", category: "Tools", percentage: 10 },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");

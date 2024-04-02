@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { GrLanguage } from "react-icons/gr";
 import { Us, Fr, Br, Es, It } from "react-flags-select";
 import styles from "./LanguageSwitcher.module.css";
 import { motion } from "framer-motion";
