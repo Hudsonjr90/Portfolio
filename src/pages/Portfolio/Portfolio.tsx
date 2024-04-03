@@ -12,7 +12,7 @@ import Particles from "react-tsparticles";
 import { Engine, IOptions } from 'tsparticles-engine';
 import { loadFull } from "tsparticles";
 import { useTheme } from "../../context/ThemeContext";
-import portfolioServer from "../../components/data/portfolioServer";
+import portfolioServer from "../../data/portfolioServer";
 // SWIPER
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";

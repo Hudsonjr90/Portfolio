@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Typewriter from "typewriter-effect";
 import { saveAs } from "file-saver";
-import resumeServer from "../../components/data/resumeServer";
+import resumeServer from "../../data/resumeServer";
 
 // REACT ICONS
 import {

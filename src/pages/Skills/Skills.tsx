@@ -2,8 +2,8 @@ import styles from "./Skills.module.css";
 
 import { motion } from "framer-motion";
 import Transition from "../../components/Transition";
-import iconComponents from "../../components/data/iconComponents";
-import icons from "../../components/data/icons";
+import iconComponents from "../../data/iconComponents";
+import icons from "../../data/icons";
 import { SetStateAction, useState, useEffect, useCallback, useMemo } from "react";
 import ReactPaginate from "react-paginate";
 import { useTranslation } from "react-i18next";
