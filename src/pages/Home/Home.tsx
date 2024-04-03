@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Typewriter from "typewriter-effect";
 import { saveAs } from "file-saver";
+import resumeServer from "../../components/data/resumeServer";
 
 // REACT ICONS
 import {
@@ -32,36 +33,6 @@ import { motion } from "framer-motion";
 const Home = () => {
   const { t, i18n } = useTranslation();
 
-  const imagesBr = [
-    "/imgs/imgCv/HudsonKennedyBR-1.png",
-    "/imgs/imgCv/HudsonKennedyBR-2.png",
-    "/imgs/imgCv/HudsonKennedyBR-3.png",
-  ];
-
-  const imagesUs = [
-    "/imgs/imgCv/HudsonKennedyUS-1.png",
-    "/imgs/imgCv/HudsonKennedyUS-2.png",
-    "/imgs/imgCv/HudsonKennedyUS-3.png",
-  ];
-
-  const imagesFr = [
-    "/imgs/imgCv/HudsonKennedyFR-1.png",
-    "/imgs/imgCv/HudsonKennedyFR-2.png",
-    "/imgs/imgCv/HudsonKennedyFR-3.png",
-  ];
-
-  const imagesIt = [
-    "/imgs/imgCv/HudsonKennedyIT-1.png",
-    "/imgs/imgCv/HudsonKennedyIT-2.png",
-    "/imgs/imgCv/HudsonKennedyIT-3.png",
-  ];
-
-  const imagesEs = [
-    "/imgs/imgCv/HudsonKennedyES-1.png",
-    "/imgs/imgCv/HudsonKennedyES-2.png",
-    "/imgs/imgCv/HudsonKennedyES-3.png",
-  ];
-
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage;
@@ -72,29 +43,29 @@ const Home = () => {
   const [soundClick, setSoundClick] = useState<boolean>(false);
 
   useEffect(() => {
-    // Função para carregar as imagens e o PDF com base no idioma selecionado
+    
     const loadContent = () => {
       let images: string[] = [];
       let pdfPath: string | null = null;
       switch (i18n.language) {
         case "pt":
-          images = imagesBr;
+          images = resumeServer.br;
           pdfPath = "/cv/HudsonKennedy-BR.pdf";
           break;
         case "en":
-          images = imagesUs;
+          images = resumeServer.us;
           pdfPath = "/cv/HudsonKennedy-US.pdf";
           break;
         case "fr":
-          images = imagesFr;
+          images = resumeServer.fr;
           pdfPath = "/cv/HudsonKennedy-FR.pdf";
           break;
         case "it":
-          images = imagesIt;
+          images = resumeServer.it;
           pdfPath = "/cv/HudsonKennedy-IT.pdf";
           break;
         case "es":
-          images = imagesEs;
+          images = resumeServer.es;
           pdfPath = "/cv/HudsonKennedy-ES.pdf";
           break;
         default:
