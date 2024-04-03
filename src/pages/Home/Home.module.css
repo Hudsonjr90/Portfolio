@@ -155,25 +155,25 @@
   width: 3.5rem;
 }
 
-.whatsapp_link:hover {
+.whatsapp:hover {
   color: #fff;
   background: #25d366;
   border: none;
 }
 
-.email_link:hover {
+.email:hover {
   color: #fff;
   background: #ee0a0a;
   border: none;
 }
 
-.linkedin_link:hover {
+.linkedin:hover {
   color: #fff;
   background: #2867b2;
   border: none;
 }
 
-.github_link:hover {
+.github:hover {
   color: #fff;
   background: #181717;
   border: none;

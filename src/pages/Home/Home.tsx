@@ -183,7 +183,7 @@ const Home = () => {
               >
                 <NavLink
                   to="https://api.whatsapp.com/send?phone=5521969609121"
-                  className={styles.whatsapp_link}
+                  className={styles.whatsapp}
                   target="_blank"
                 >
                   <FaWhatsapp />
@@ -207,7 +207,7 @@ const Home = () => {
               >
                 <NavLink
                   to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
-                  className={styles.email_link}
+                  className={styles.email}
                   target="_blank"
                 >
                   <FaEnvelope />
@@ -231,7 +231,7 @@ const Home = () => {
               >
                 <NavLink
                   to="https://www.linkedin.com/in/hudsonkennedyjr"
-                  className={styles.linkedin_link}
+                  className={styles.linkedin}
                   target="_blank"
                 >
                   <FaLinkedinIn />
@@ -255,7 +255,7 @@ const Home = () => {
               >
                 <NavLink
                   to="https://github.com/Hudsonjr90"
-                  className={styles.github_link}
+                  className={styles.github}
                   target="_blank"
                 >
                   <FaGithub />

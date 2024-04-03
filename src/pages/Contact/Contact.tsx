@@ -257,7 +257,7 @@ const Contact = () => {
             >
               <NavLink
                 to="https://api.whatsapp.com/send?phone=5521969609121"
-                className={styles.whatsapp_link}
+                className={styles.whatsapp}
               >
                 <FaWhatsapp />
               </NavLink>
@@ -281,7 +281,7 @@ const Contact = () => {
             >
               <NavLink
                 to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
-                className={styles.email_link}
+                className={styles.email}
               >
                 <FaEnvelope />
               </NavLink>
@@ -305,7 +305,7 @@ const Contact = () => {
             >
               <NavLink
                 to="https://www.linkedin.com/in/hudsonkennedyjr"
-                className={styles.linkedin_link}
+                className={styles.linkedin}
               >
                 <FaLinkedinIn />
               </NavLink>
@@ -329,7 +329,7 @@ const Contact = () => {
             >
               <NavLink
                 to="https://github.com/Hudsonjr90"
-                className={styles.github_link}
+                className={styles.github}
               >
                 <FaGithub />
               </NavLink>

@@ -241,7 +241,7 @@ const Navbar = () => {
             </nav>
 
             <div className={styles.icons_container} id="container">
-                <label>
+                <label >
                     <input
                         type="checkbox"
                         className={styles.input_darc_light_mode}
