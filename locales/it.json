@@ -106,12 +106,14 @@
     "description4": "Lavoro freelance, dove ho lavorato sulla creazione di architetture e sull'ottimizzazione di pagine e caricamento di immagini, utilizzando Vue3 sul Frontend, PHP e Laravel sul Backend, oltre a Docker e Webpack per configurare i container dell'applicazione, layout e stili con Sass/Scss, ecc...",
     "description5": "Agendo direttamente sulle direttive di manutenzione/refactoring del codice e trattamenti, utilizzando Java/springboot, NodeJs/Express sul Backend, PostgreSQL, Typescript con Angular/React sul Frontend",
     "description6": "Lavoro freelance, dove ho lavorato sull'architettura del progetto, aggiornando la versione di Angular 14 alla versione 15, aggiustamenti delle dipendenze, correzioni di sintassi, layout e stili con Sass/Scss, ecc...",
-    "date1": "Febbraio 2012 - Presente",
+    "description7": "Lavoro freelance, Creazione e manutenzione di layout e interfacce con React, Styled-Components e Tailwind CSS, creazione di test unitari con Cypress e Jest, ottimizzazione di pagine e componenti.",
+    "date1": "Febbraio 2012 - Ad oggi",
     "date2": "Febbraio 2019 - Giugno 2021",
     "date3": "Gennaio 2022 - Aprile 2022",
     "date4": "Aprile 2022 - Agosto 2022",
     "date5": "Agosto 2022 - Ottobre 2023",
-    "date6": "Novembre 2023 - Gennaio 2024"
+    "date6": "Novembre 2023 - Gennaio 2024",
+    "date7": "Aprile 2024 - Ad oggi"
   },
 
   "skills": {

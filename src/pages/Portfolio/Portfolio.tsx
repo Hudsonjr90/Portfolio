@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 import Transition from "../../components/Transition";
 import { useTranslation } from "react-i18next";
 import Particles from "react-tsparticles";
-import { Engine, IOptions } from 'tsparticles-engine';
+import { Engine, IOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import { useTheme } from "../../context/ThemeContext";
 import portfolioServer from "../../data/portfolioServer";
@@ -17,15 +17,12 @@ import portfolioServer from "../../data/portfolioServer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 
-
-
-
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
-      ? RecursivePartial<U>[]
-      : T[P] extends object
-      ? RecursivePartial<T[P]>
-      : T[P];
+    ? RecursivePartial<U>[]
+    : T[P] extends object
+    ? RecursivePartial<T[P]>
+    : T[P];
 };
 
 const Portfolio = () => {
@@ -34,8 +31,6 @@ const Portfolio = () => {
   const [slidePerview, setSlidePerview] = useState<number>(3);
   const [initialSlide] = useState<number>(3);
   const [transitionCompleted, setTransitionCompleted] = useState(false);
-
-
 
   useEffect(() => {
     function handleResize() {
@@ -186,10 +181,19 @@ const Portfolio = () => {
               depth: 100,
               modifier: 2.5,
             }}
-            slidesPerView={slidePerview}  
+            slidesPerView={slidePerview}
             pagination={{ clickable: true }}
             navigation
             initialSlide={initialSlide}
+            autoplay={{ delay: 3000 }} 
+            onSwiper={(swiper) => {
+              swiper.el.onmouseover = () => {
+                swiper.autoplay.stop();
+              };
+              swiper.el.onmouseout = () => {
+                swiper.autoplay.start();
+              };
+            }}
           >
             {portfolioServer.map((item) => (
               <SwiperSlide key={item.id} className="teste">
@@ -202,7 +206,7 @@ const Portfolio = () => {
                   <div className={styles.portfolio_content}>
                     <h2 className={styles.name}>{item.name}</h2>
                     <p className={styles.description}>
-                      {t(`projects.portfolioServer.${item.id}.description`)}
+                      {t(`projects.data.${item.id}.description`)}
                     </p>
 
                     <div className={styles.technologies}>

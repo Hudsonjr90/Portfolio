@@ -135,7 +135,6 @@ const Experiences = () => {
     retina_detect: true
   }
 
-
   return (
     <Transition onAnimationComplete={() => {}}>
       <Particles options={particlesConfig} init={particlesInit} />
@@ -161,7 +160,7 @@ const Experiences = () => {
             icon={<FaBriefcase />}
           >
             <h3 className={styles.vertical_timeline_title}>
-              99Freelas/Capitona Rio/Eterj
+             Eterj/Capitona Rio
             </h3>
             <h4 className={styles.vertical_timeline_subtitle}>
               {t("experiences.subtitle1")}
@@ -293,6 +292,32 @@ const Experiences = () => {
               {t("experiences.description6")}
             </p>
           </VerticalTimelineElement>
+
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{
+              background: "var(--bg_color)",
+              color: "var(--main_color)",
+            }}
+            contentArrowStyle={{ borderRight: "none" }}
+            date={t("experiences.date7")}
+            iconStyle={{
+              background: "var(--bg_color)",
+              color: "var(--main_color)",
+            }}
+            icon={<FaBriefcase />}
+          >
+            <h3 className={styles.vertical_timeline_title}>
+              Cubo Connect
+            </h3>
+            <h4 className={styles.vertical_timeline_subtitle}>
+              {t("experiences.subtitle6")}
+            </h4>
+            <p className={styles.vertical_timeline_description}>
+              {t("experiences.description7")}
+            </p>
+          </VerticalTimelineElement>
+          
         </VerticalTimeline>
       </section>
     </Transition>

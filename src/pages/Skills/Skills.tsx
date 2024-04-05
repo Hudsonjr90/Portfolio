@@ -1,9 +1,8 @@
 import styles from "./Skills.module.css";
-
 import { motion } from "framer-motion";
 import Transition from "../../components/Transition";
-import iconComponents from "../../data/iconComponents";
-import icons from "../../data/icons";
+import {iconComponents} from "../../data/iconsServer"
+import { mainIcons } from "../../data/iconsServer";
 import { SetStateAction, useState, useEffect, useCallback, useMemo } from "react";
 import ReactPaginate from "react-paginate";
 import { useTranslation } from "react-i18next";
@@ -167,7 +166,7 @@ const Skills = () => {
   }, [selectedCategory]);
 
   const filteredIcons = useMemo(() => {
-    return icons.filter((icon) => {
+    return mainIcons.filter((icon) => {
       const categoryMatch =
         selectedCategory === "all" ||
         icon.category.toLowerCase() === selectedCategory.toLowerCase();
@@ -177,7 +176,7 @@ const Skills = () => {
 
       return categoryMatch && searchTermMatch;
     });
-  }, [icons, selectedCategory, searchTerm]);
+  }, [mainIcons, selectedCategory, searchTerm]);
 
   const [itemsPerPage, setItemsPerPage] = useState(14);
 
