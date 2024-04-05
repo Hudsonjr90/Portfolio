@@ -36,7 +36,78 @@
 
   "education": {
     "title": " Mes",
-    "text": " Formations"
+    "text": " Formations",
+    "cards": [
+      {
+        "text": "Digital Innovation - Bootcamp Banco Pan (Développement Frontend avec Angular)"
+      },
+      {
+        "text": "Université de Harvard - Master faisant partie du programme de troisième cycle en informatique"
+      },
+      {
+        "text": "Collège unique de MG - Cours de troisième cycle en génie logiciel"
+      },
+      {
+        "text": "Estácio de Sá Collège - Gestion d'entreprise"
+      },
+      {
+        "text": "Digital Innovation - Travailler avec des composants en React"
+      },
+      {
+        "text": "Digital Innovation - Architecture des composants et gestion de la complexité en frontend"
+      },
+      {
+        "text": "Digital Innovation - Logique de programmation essentielle"
+      },
+      {
+        "text": "Digital Innovation - Javascript ES6 Essentiel"
+      },
+      {
+        "text": "Digital Innovation - Techniques avancées en Angular 8"
+      },
+      {
+        "text": "Professionnel Adobe - AEM (Développeur Front-end)"
+      },
+      {
+        "text": "Professionnel Adobe - AEM (Praticien Commercial de Sites)"
+      },
+      {
+        "text": "VueJs Brasil - Cours Vuejs (De Base à Avancé)"
+      },
+      {
+        "text": "Digital Innovation - Directives Vue.js et Propriétés de Composants"
+      },
+      {
+        "text": "Digital Innovation - Composants, Méthodes et Cycle de vie avec Vue.js"
+      },
+      {
+        "text": "Udemy - Cours Javascript et Typescript du De Base à l'Avancé"
+      },
+      {
+        "text": "Sebrae - Cours d'éducation financière pour les entreprises"
+      },
+      {
+        "text": "Sebrae - Cours de gestion financière"
+      },
+      {
+        "text": "Sebrae - Cours sur la réussite client (Comment Acquérir et Fidéliser les Clients)"
+      },
+      {
+        "text": "Sebrae - Cours de Marketing Digital pour les Entrepreneurs"
+      },
+      {
+        "text": "Sebrae - Cours sur la Stratégie Financière pour la Croissance"
+      },
+      {
+        "text": "Sebrae - Cours de Planification Stratégique pour les Entrepreneurs"
+      },
+      {
+        "text": "FGV - Cours de Sécurité Numérique"
+      },
+      {
+        "text": "Cursos 24h - Assistant Administratif"
+      }
+    ]
   },
 
   "testimonials": {

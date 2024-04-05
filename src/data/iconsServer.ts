@@ -133,6 +133,7 @@ const iconComponents: { [index: string]: React.ElementType } = {
 };
 
 const mainIcons = [
+  
   { id: 0, name: "HTML", category: "Frontend", percentage: 100 },
   { id: 1, name: "CSS", category: "Frontend", percentage: 100 },
   { id: 2, name: "JavaScript", category: "Frontend", percentage: 80 },

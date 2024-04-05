@@ -4,8 +4,10 @@ import Paginate from "react-paginate";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import cardsServer from "../data/cardsServer";
+import { useTranslation } from "react-i18next";
 
 const CardComponent = () => {
+  const { t } = useTranslation();
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
@@ -78,7 +80,7 @@ const CardComponent = () => {
               hoveredCard === card.id ? styles.showText : ""
             }`}
           >
-            {card.text}
+            {t(`education.cards.${card.id}.text`)}
           </Card.Text>
         </Card.ImgOverlay>
       </Card>

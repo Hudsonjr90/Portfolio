@@ -27,7 +27,7 @@
 .card_text {
   color: var(--main_color);
   text-align: justify;
-  font-size: 1.5rem;
+  font-size: 2rem;
   letter-spacing: -1px;
   padding: 25px;
   position: absolute;

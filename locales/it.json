@@ -21,13 +21,13 @@
     "close": "Chiudere"
   },
 
- "name": {
-  "br": "Brasile | PT",
-  "us": "Stati Uniti | EN",
-  "fr": "Francia | FR",
-  "it": "Italia | IT",
-  "es": "Spagna | ES"
-},
+  "name": {
+    "br": "Brasile | PT",
+    "us": "Stati Uniti | EN",
+    "fr": "Francia | FR",
+    "it": "Italia | IT",
+    "es": "Spagna | ES"
+  },
 
   "about": {
     "title": " Chi è ",
@@ -36,7 +36,78 @@
 
   "education": {
     "title": " La Mia",
-    "text": " Educazione Accademica"
+    "text": " Educazione Accademica",
+    "cards": [
+      {
+        "text": "Innovazione Digitale - Bootcamp Banco Pan (Sviluppo Frontend con Angular)"
+      },
+      {
+        "text": "Università di Harvard - Master che opera all'interno del programma di post-laurea in Informatica"
+      },
+      {
+        "text": "Collegio Unico di MG - Post-laurea in Ingegneria del Software"
+      },
+      {
+        "text": "Estácio de Sá Collegio - Gestione dei Processi"
+      },
+      {
+        "text": "Innovazione Digitale - Lavorare con Componenti in React"
+      },
+      {
+        "text": "Innovazione Digitale - Architettura dei Componenti e gestione della complessità nel front-end"
+      },
+      {
+        "text": "Innovazione Digitale - Logica di Programmazione Essenziale"
+      },
+      {
+        "text": "Innovazione Digitale - Javascript ES6 Essenziale"
+      },
+      {
+        "text": "Innovazione Digitale - Tecniche Avanzate in Angular 8"
+      },
+      {
+        "text": "Professionista Adobe - AEM (Sviluppatore Front-end)"
+      },
+      {
+        "text": "Professionista Adobe - AEM (Sites Business Practitioner)"
+      },
+      {
+        "text": "VueJs Brasil - Corso Vuejs (Dal Base all'Avanzato)"
+      },
+      {
+        "text": "Innovazione Digitale - Direttive e Proprietà dei Componenti Vue.js"
+      },
+      {
+        "text": "Innovazione Digitale - Componenti, Metodi e Ciclo di vita con Vue.js"
+      },
+      {
+        "text": "Udemy - Corso Javascript e Typescript dal Base all'Avanzato"
+      },
+      {
+        "text": "Sebrae - Corso di Educazione Finanziaria Aziendale"
+      },
+      {
+        "text": "Sebrae - Corso di Gestione Finanziaria"
+      },
+      {
+        "text": "Sebrae - Corso Customer Success (Come Conquistare e Mantenere Clienti)"
+      },
+      {
+        "text": "Sebrae - Corso di Marketing Digitale per Imprenditori"
+      },
+      {
+        "text": "Sebrae - Corso di Strategia Finanziaria per la Crescita"
+      },
+      {
+        "text": "Sebrae - Corso di Pianificazione Strategica per Imprenditori"
+      },
+      {
+        "text": "FGV - Corso di Sicurezza Digitale"
+      },
+      {
+        "text": "Corsi 24h - Assistente Amministrativo"
+      }
+    ]
   },
 
   "testimonials": {

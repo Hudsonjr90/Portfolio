@@ -27,7 +27,7 @@
     "fr": "France | FR",
     "it": "Italy | IT",
     "es": "Spain | ES"
-  },  
+  },
 
   "about": {
     "title": " Who is ",
@@ -36,7 +36,78 @@
 
   "education": {
     "title": " My",
-    "text": " Academics"
+    "text": " Academics",
+    "cards": [
+      {
+        "text": "Digital Innovation - Banco Pan Bootcamp (Frontend Development with Angular)"
+      },
+      {
+        "text": "Harvard University - Master's degree within the Computer Science postgraduate program"
+      },
+      {
+        "text": "Single College of MG - Postgraduate course in Software Engineering"
+      },
+      {
+        "text": "Estácio de Sá College - Business Management"
+      },
+      {
+        "text": "Digital Innovation - Working with Components in React"
+      },
+      {
+        "text": "Digital Innovation - Component Architecture and complexity management in front-end"
+      },
+      {
+        "text": "Digital Innovation - Essential Programming Logic"
+      },
+      {
+        "text": "Digital Innovation - Essential Javascript ES6"
+      },
+      {
+        "text": "Digital Innovation - Advanced Techniques in Angular 8"
+      },
+      {
+        "text": "Adobe Professional - AEM (Front-end Developer)"
+      },
+      {
+        "text": "Adobe Professional - AEM (Sites Business Practitioner)"
+      },
+      {
+        "text": "VueJs Brasil - Vuejs Course (Basic to Advanced)"
+      },
+      {
+        "text": "Digital Innovation - Vue.js Directives and Component Properties"
+      },
+      {
+        "text": "Digital Innovation - Components, Methods, and Lifecycle with Vue.js"
+      },
+      {
+        "text": "Udemy - Javascript and Typescript Course from Basic to Advanced"
+      },
+      {
+        "text": "Sebrae - Business Financial Education Course"
+      },
+      {
+        "text": "Sebrae - Financial Management Course"
+      },
+      {
+        "text": "Sebrae - Customer Success Course (How to Acquire and Retain Customers)"
+      },
+      {
+        "text": "Sebrae - Digital Marketing Course for Entrepreneurs"
+      },
+      {
+        "text": "Sebrae - Financial Strategy for Growth Course"
+      },
+      {
+        "text": "Sebrae - Strategic Planning for Entrepreneurs Course"
+      },
+      {
+        "text": "FGV - Digital Security Course"
+      },
+      {
+        "text": "Cursos 24h - Administrative Assistant"
+      }
+    ]
   },
 
   "testimonials": {

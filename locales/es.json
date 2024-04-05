@@ -27,7 +27,7 @@
     "fr": "Francia | FR",
     "it": "Italia | IT",
     "es": "España | ES"
-  },  
+  },
 
   "about": {
     "title": " Quién Soy ",
@@ -36,7 +36,78 @@
 
   "education": {
     "title": " Mi",
-    "text": " Educación Académica"
+    "text": " Educación Académica",
+    "cards": [
+      {
+        "text": "Innovación Digital - Bootcamp Banco Pan (Desarrollo Frontend con Angular)"
+      },
+      {
+        "text": "Universidad de Harvard - Maestría que actúa dentro del programa de posgrado en Ciencias de la Computación"
+      },
+      {
+        "text": "Colegio Única de MG - Posgrado en Ingeniería de Software"
+      },
+      {
+        "text": "Colegio Estácio de Sá - Gestión de Procesos"
+      },
+      {
+        "text": "Innovación Digital - Trabajando con Componentes en React"
+      },
+      {
+        "text": "Innovación Digital - Arquitectura de Componentes y gestión de la complejidad en el front-end"
+      },
+      {
+        "text": "Innovación Digital - Lógica de Programación Esencial"
+      },
+      {
+        "text": "Innovación Digital - Javascript ES6 Esencial"
+      },
+      {
+        "text": "Innovación Digital - Técnicas Avanzadas en Angular 8"
+      },
+      {
+        "text": "Profesional Adobe - AEM (Desarrollador Front-end)"
+      },
+      {
+        "text": "Profesional Adobe - AEM (Sites Business Practitioner)"
+      },
+      {
+        "text": "VueJs Brasil - Curso Vuejs (Básico al Avanzado)"
+      },
+      {
+        "text": "Innovación Digital - Directivas y Propiedades de Componentes Vue.js"
+      },
+      {
+        "text": "Innovación Digital - Componentes, Métodos y Ciclo de vida con Vue.js"
+      },
+      {
+        "text": "Udemy - Curso Javascript y Typescript del Básico al Avanzado"
+      },
+      {
+        "text": "Sebrae - Curso Educación Financiera Empresarial"
+      },
+      {
+        "text": "Sebrae - Curso Gestión Financiera"
+      },
+      {
+        "text": "Sebrae - Curso Customer Success (Cómo Conquistar y Mantener Clientes)"
+      },
+      {
+        "text": "Sebrae - Curso Marketing Digital para Emprendedor"
+      },
+      {
+        "text": "Sebrae - Curso Estrategia Financiera para el Crecimiento"
+      },
+      {
+        "text": "Sebrae - Curso Planificación Estratégica para Emprendedores"
+      },
+      {
+        "text": "FGV - Curso Seguridad Digital"
+      },
+      {
+        "text": "Cursos 24h - Auxiliar Administrativo"
+      }
+    ]
   },
 
   "testimonials": {

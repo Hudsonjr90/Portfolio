@@ -12,11 +12,13 @@ import login from "/imgs/imgProjects/login.png";
 import conversor from "/imgs/imgProjects/conversor.png";
 
 const portfolioServer = [
+
   {
     id: 0,
     image: web,
     name: "React Website",
-    description: "Website simples, seguindo orientação a objetos do Curso na Udemy",
+    description:
+      "Website simples, seguindo orientação a objetos do Curso na Udemy",
     technologies: [
       "React",
       "Hooks",
@@ -31,12 +33,12 @@ const portfolioServer = [
     linkDeploy: "https://reactwebsite-puce.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/reactwebsite",
   },
-
   {
     id: 1,
     image: pokedex,
     name: "Pokedex React",
-    description: "Pokedex listando pokémons e suas informações, usando lazy loading e filter.",
+    description:
+      "Pokedex listando pokémons e suas informações, usando lazy loading e filter.",
     technologies: [
       "React",
       "React Router Dom",
@@ -50,12 +52,12 @@ const portfolioServer = [
     linkDeploy: "https://pokdex-react.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/PokedexReact",
   },
-
   {
     id: 2,
     image: memory,
     name: "Memory React Game",
-    description: "Jogo criado em React, feito com Typescript, para poder praticar e exercitar um pouco mais na linguagem. Jogo simples, cujo ainda terá algumas atualizações e modificações também.",
+    description:
+      "Jogo criado em React, feito com Typescript, para poder praticar e exercitar um pouco mais na linguagem. Jogo simples, cujo ainda terá algumas atualizações e modificações também.",
     technologies: ["React", "Typescript", "CSS", "NodeJs", "Bootstrap"],
     linkDeploy: "https://reactmemorygame.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/Reactmemorygame",
@@ -64,7 +66,8 @@ const portfolioServer = [
     id: 3,
     image: pacman,
     name: "Pacman Game",
-    description: "Uma homenagem histórica e uma recriação precisa do jogo de fliperama original Pac-Man.",
+    description:
+      "Uma homenagem histórica e uma recriação precisa do jogo de fliperama original Pac-Man.",
     technologies: ["Javascript", "Jquery", "Python", "Html", "CSS"],
     linkDeploy: "https://pacman-retro-game.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/Pacman_RetroGame",
@@ -73,7 +76,8 @@ const portfolioServer = [
     id: 4,
     image: clima,
     name: "Weather API",
-    description: "App Criado com HTML, CSS e Javascript, consumindo a WeatherAPI, para mostrar as informações de cada cidade.",
+    description:
+      "App Criado com HTML, CSS e Javascript, consumindo a WeatherAPI, para mostrar as informações de cada cidade.",
     technologies: [
       "Javascript",
       "API Weather",
@@ -89,7 +93,8 @@ const portfolioServer = [
     id: 5,
     image: clock,
     name: "React Clock",
-    description: "Um relógio analógico e um relógio digital, feito com TypeScript e Styled-Components",
+    description:
+      "Um relógio analógico e um relógio digital, feito com TypeScript e Styled-Components",
     technologies: ["React", "Typescript", "Styled-Components", "CSS", "Html"],
     linkDeploy: "https://analog-clock-dm.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/RelogioAnalogicoJs",
@@ -98,7 +103,8 @@ const portfolioServer = [
     id: 6,
     image: card,
     name: "CreditCard-Form Vue",
-    description: "Um formulário de cartão de crédito com microinterações suaves e agradáveis. Inclui formatação de números, validação e detecção automática de tipo de cartão. Construído com vuejs e totalmente responsivo.",
+    description:
+      "Um formulário de cartão de crédito com microinterações suaves e agradáveis. Inclui formatação de números, validação e detecção automática de tipo de cartão. Construído com vuejs e totalmente responsivo.",
     technologies: ["Vue", "Javascript", "Sass/Scss", "NodeJs", "i18n"],
     linkDeploy: "https://credit-card-form-payment.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/CreditCard-Form",
@@ -116,7 +122,8 @@ const portfolioServer = [
     id: 8,
     image: pizza,
     name: "Pizza&Tutti",
-    description: "Landing page, da pizzaria Pizza&Tutti, uma das melhores do Rio de Janeiro.",
+    description:
+      "Landing page, da pizzaria Pizza&Tutti, uma das melhores do Rio de Janeiro.",
     technologies: ["Javascript", "Html", "Sass/Scss"],
     linkDeploy: "https://www.pizzaetutti.com.br/",
     linkRepository: "https://github.com/Hudsonjr90/Pizzaria",

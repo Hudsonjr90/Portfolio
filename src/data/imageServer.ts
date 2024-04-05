@@ -1,4 +1,5 @@
 const imageServer = {
+  
   desktop: [
     "/imgs/imgLinkedin/linkedin1.png",
     "/imgs/imgLinkedin/linkedin2.png",
