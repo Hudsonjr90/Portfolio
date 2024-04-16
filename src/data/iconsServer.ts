@@ -51,6 +51,7 @@ import {
   SiPostman,
   SiCypress,
   SiAmazonaws,
+  SiSketch
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -130,6 +131,7 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Thunderclient: BiBoltCircle,
   Cypress: SiCypress,
   AWS: SiAmazonaws,
+  Sketch: SiSketch
 };
 
 const mainIcons = [
@@ -195,6 +197,7 @@ const mainIcons = [
   { id: 58, name: "Thunderclient", category: "Tools", percentage: 20 },
   { id: 59, name: "Cypress", category: "Tools", percentage: 10 },
   { id: 60, name: "AWS", category: "Tools", percentage: 10 },
+  { id: 61, name: "Sketch", category: "Tools", percentage: 10 },
 ];
 
 export { iconComponents, mainIcons };
