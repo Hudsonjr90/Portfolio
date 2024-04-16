@@ -252,7 +252,6 @@ const Skills = () => {
             <option value="tools">Tools</option>
             <option value="deploy">Deploy</option>
             <option value="design">Design</option>
-            <option value="seo">SEO</option>
           </select>
           <input
             type="text"
