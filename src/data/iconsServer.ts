@@ -200,7 +200,7 @@ const mainIcons = [
   { id: 59, name: "Cypress", category: "Tools", percentage: 10 },
   { id: 60, name: "AWS", category: "Deploy", percentage: 10 },
   { id: 61, name: "Sketch", category: "Design", percentage: 10 },
-  { id: 62, name: "Adobe XD", category: "Design", percentage: 10 },
+  { id: 62, name: "AdobeXD", category: "Design", percentage: 10 },
 ];
 
 export { iconComponents, mainIcons };
