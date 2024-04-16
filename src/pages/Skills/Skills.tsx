@@ -245,11 +245,14 @@ const Skills = () => {
               handleAudio(); 
             }}
           >
-            <option value="all">{t("skills.select1")}</option>
+            <option value="all">All</option>
             <option value="frontend">Frontend</option>
             <option value="backend">Backend</option>
-            <option value="database">{t("skills.select2")}</option>
-            <option value="tools">{t("skills.select3")}</option>
+            <option value="database">Database</option>
+            <option value="tools">Tools</option>
+            <option value="deploy">Deploy</option>
+            <option value="design">Design</option>
+            <option value="seo">SEO</option>
           </select>
           <input
             type="text"
