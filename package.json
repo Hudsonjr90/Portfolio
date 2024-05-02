@@ -32,6 +32,7 @@
     "react-spring": "^9.7.3",
     "react-tsparticles": "^2.12.2",
     "react-vertical-timeline-component": "^3.6.0",
+    "react-wordcloud": "^1.2.7",
     "sweetalert2": "^11.10.2",
     "sweetalert2-react-content": "^5.0.7",
     "swiper": "^11.0.5",

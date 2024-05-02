@@ -1,9 +1,15 @@
 import styles from "./Skills.module.css";
 import { motion } from "framer-motion";
 import Transition from "../../components/Transition";
-import {iconComponents} from "../../data/iconsServer"
-import { mainIcons } from "../../data/iconsServer";
-import { SetStateAction, useState, useEffect, useCallback, useMemo } from "react";
+import { iconComponents, mainIcons } from "../../data/iconsServer";
+import WordCloudComponent from "../../components/WordCloudComponent";
+import {
+  SetStateAction,
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+} from "react";
 import ReactPaginate from "react-paginate";
 import { useTranslation } from "react-i18next";
 import ProgressBar from "react-customizable-progressbar";
@@ -13,6 +19,7 @@ import { Engine, IOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import { useTheme } from "../../context/ThemeContext";
 import { LuSearch } from "react-icons/lu";
+import { FaCloud, FaSearchengin } from "react-icons/fa6";
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -38,21 +45,21 @@ const Skills = () => {
         value: 50,
         density: {
           enable: true,
-          value_area: 800
-        }
+          value_area: 800,
+        },
       },
       color: {
-        value: mainColor
+        value: mainColor,
       },
       shape: {
         type: "polygon",
         stroke: {
           width: 0,
-          color: mainColor
+          color: mainColor,
         },
         polygon: {
-          sides: 3
-        }
+          sides: 3,
+        },
       },
       opacity: {
         value: 1,
@@ -61,8 +68,8 @@ const Skills = () => {
           enable: false,
           speed: 1,
           opacity_min: 0.1,
-          sync: false
-        }
+          sync: false,
+        },
       },
       size: {
         value: 3,
@@ -71,15 +78,15 @@ const Skills = () => {
           enable: true,
           speed: 4.872463273808071,
           size_min: 0.1,
-          sync: false
-        }
+          sync: false,
+        },
       },
       line_linked: {
         enable: false,
         distance: 150,
         color: "#ffffff",
         opacity: 0.4,
-        width: 1
+        width: 1,
       },
       move: {
         enable: true,
@@ -89,49 +96,49 @@ const Skills = () => {
         straight: true,
         out_mode: "out",
         bounce: false,
-        attract: { enable: false, rotateX: 600, rotateY: 1200 }
-      }
+        attract: { enable: false, rotateX: 600, rotateY: 1200 },
+      },
     },
     interactivity: {
       events: {
         onhover: {
           enable: true,
-          mode: "repulse"
+          mode: "repulse",
         },
         onclick: {
           enable: false,
-          mode: "push"
+          mode: "push",
         },
-        resize: true
+        resize: true,
       },
       modes: {
         grab: {
           distance: 400,
           line_linked: {
-            opacity: 1
-          }
+            opacity: 1,
+          },
         },
         bubble: {
           distance: 400,
           size: 40,
           duration: 2,
           opacity: 8,
-          speed: 3
+          speed: 3,
         },
         repulse: {
           distance: 150,
-          duration: 0.4
+          duration: 0.4,
         },
         push: {
-          particles_nb: 4
+          particles_nb: 4,
         },
         remove: {
-          particles_nb: 2
-        }
-      }
+          particles_nb: 2,
+        },
+      },
     },
-    retina_detect: true
-  }
+    retina_detect: true,
+  };
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -148,8 +155,8 @@ const Skills = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(0);
+  const [showCloud, setShowCloud] = useState(false);
 
-  
   const handleCategoryChange = (category: SetStateAction<string>) => {
     setSelectedCategory(category);
     setCurrentPage(0);
@@ -219,6 +226,10 @@ const Skills = () => {
     }
   };
 
+  const toggleCloud = () => {
+    setShowCloud(!showCloud);
+  };
+
   return (
     <Transition onAnimationComplete={() => {}}>
       <Particles options={particlesConfig} init={particlesInit} />
@@ -227,113 +238,122 @@ const Skills = () => {
           <span>//</span> {t("skills.title")}
           <span>{t("skills.text")}</span>
         </h2>
-
-        <motion.div
-          initial={{ opacity: 0, x: "-100%" }}
-          animate={{ opacity: 1, x: "0%" }}
-          transition={{
-            duration: 2.5,
-            delay: 0.3,
-            ease: [0.3, 0, 0.2, 1],
-          }}
-          className={styles.filters}
-        >
-          <select
-            value={selectedCategory}
-            onChange={(e) => {
-              handleCategoryChange(e.target.value);
-              handleAudio(); 
-            }}
-          >
-            <option value="all">All</option>
-            <option value="frontend">Frontend</option>
-            <option value="backend">Backend</option>
-            <option value="database">Database</option>
-            <option value="tools">Tools</option>
-            <option value="deploy">Deploy</option>
-            <option value="design">Design</option>
-          </select>
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={handleSearchTermChange}
-            placeholder={t("skills.search")}
-          />
-          <motion.div className={styles.icon_search}>
-            <LuSearch />
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className={styles.icons_container}
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          {visibleIcons.map((icon) => {
-            const IconComponent = iconComponents[icon.name];
-            return (
-              <motion.div
-                key={icon.id}
-                variants={container}
-                className={styles.box_icon}
+        <button className={styles.toggle} onClick={toggleCloud}>
+        {showCloud ? <FaSearchengin className={styles.show_cloud} /> : <FaCloud className={styles.show_cloud} />}
+        </button>
+        {showCloud ? (
+          
+          <WordCloudComponent />
+        ) : (
+          <>
+            <motion.div
+              initial={{ opacity: 0, x: "-100%" }}
+              animate={{ opacity: 1, x: "0%" }}
+              transition={{
+                duration: 2.5,
+                delay: 0.3,
+                ease: [0.3, 0, 0.2, 1],
+              }}
+              className={styles.filters}
+            >
+              <select
+                value={selectedCategory}
+                onChange={(e) => {
+                  handleCategoryChange(e.target.value);
+                  handleAudio();
+                }}
               >
-                <span className={styles.icon_description}>{icon.name}</span>
-                <ProgressBar
-                  radius={65}
-                  strokeWidth={4}
-                  strokeColor="var(--main_color)"
-                  trackStrokeWidth={9}
-                  trackStrokeColor="var(--second_bg_color)"
-                  pointerRadius={9}
-                  pointerStrokeWidth={8}
-                  pointerStrokeColor="var(--main_color)"
-                  progress={icon.percentage}
-                  initialAnimation={true}
-                  transition="2.5s ease 0.5s"
-                  trackTransition="0s ease"
-                >
-                  <div className={styles.icon_wrapper}>
-                    {IconComponent && <IconComponent className={styles.icon} />}
-                  </div>
-                  <div className={styles.indicator}>
-                    <CountUp
-                      start={0}
-                      end={icon.percentage}
-                      duration={2.5}
-                      suffix={"%"}
-                    />
-                  </div>
-                </ProgressBar>
+                <option value="all">All</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="database">Database</option>
+                <option value="tools">Tools</option>
+                <option value="deploy">Deploy</option>
+                <option value="design">Design</option>
+              </select>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={handleSearchTermChange}
+                placeholder={t("skills.search")}
+              />
+              <motion.div className={styles.icon_search}>
+                <LuSearch />
               </motion.div>
-            );
-          })}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: "-100%" }}
-          animate={{ opacity: 1, x: "0%" }}
-          transition={{
-            duration: 2.5,
-            delay: 0.3,
-            ease: [0.3, 0, 0.2, 1],
-          }}
-        >
-          <ReactPaginate
-            pageCount={totalPages}
-            pageRangeDisplayed={5}
-            marginPagesDisplayed={0}
-            onPageChange={({ selected: selectedPage }) => {
-              handlePageClick({ selected: selectedPage });
-              handleAudio();
-            }}
-            containerClassName={styles.pagination}
-            activeClassName={styles.activePage}
-            previousLabel={"<<"}
-            nextLabel={">>"}
-            forcePage={currentPage}
-          />
-        </motion.div>
+            </motion.div>
+            <motion.div
+              className={styles.icons_container}
+              variants={container}
+              initial="hidden"
+              animate="visible"
+            >
+              {visibleIcons.map((icon) => {
+                const IconComponent = iconComponents[icon.name];
+                return (
+                  <motion.div
+                    key={icon.id}
+                    variants={container}
+                    className={styles.box_icon}
+                  >
+                    <span className={styles.icon_description}>{icon.name}</span>
+                    <ProgressBar
+                      radius={65}
+                      strokeWidth={4}
+                      strokeColor="var(--main_color)"
+                      trackStrokeWidth={9}
+                      trackStrokeColor="var(--second_bg_color)"
+                      pointerRadius={9}
+                      pointerStrokeWidth={8}
+                      pointerStrokeColor="var(--main_color)"
+                      progress={icon.percentage}
+                      initialAnimation={true}
+                      transition="2.5s ease 0.5s"
+                      trackTransition="0s ease"
+                    >
+                      <div className={styles.icon_wrapper}>
+                        {IconComponent && (
+                          <IconComponent className={styles.icon} />
+                        )}
+                      </div>
+                      <div className={styles.indicator}>
+                        <CountUp
+                          start={0}
+                          end={icon.percentage}
+                          duration={2.5}
+                          suffix={"%"}
+                        />
+                      </div>
+                    </ProgressBar>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: "-100%" }}
+              animate={{ opacity: 1, x: "0%" }}
+              transition={{
+                duration: 2.5,
+                delay: 0.3,
+                ease: [0.3, 0, 0.2, 1],
+              }}
+            >
+              <ReactPaginate
+                pageCount={totalPages}
+                pageRangeDisplayed={5}
+                marginPagesDisplayed={0}
+                onPageChange={({ selected: selectedPage }) => {
+                  handlePageClick({ selected: selectedPage });
+                  handleAudio();
+                }}
+                containerClassName={styles.pagination}
+                activeClassName={styles.activePage}
+                previousLabel={"<<"}
+                nextLabel={">>"}
+                forcePage={currentPage}
+              />
+            </motion.div>
+          </>
+        )}
       </section>
     </Transition>
   );
