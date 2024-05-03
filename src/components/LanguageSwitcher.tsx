@@ -10,11 +10,10 @@ const LanguageSwitcher = () => {
   const [currentLanguage, setCurrentLanguage] = useState<string>("pt");
   const [SidebarOpen, setSidebarOpen] = useState(false);
 
-  const changeLanguage = (lng: string ) => {
+  const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setCurrentLanguage(lng || "");
   };
-  
 
   const toggleSidebar = () => {
     setSidebarOpen(!SidebarOpen);
@@ -22,9 +21,9 @@ const LanguageSwitcher = () => {
 
   const handleAudio = () => {
     const audio = new Audio("/sounds/button_click.mp3");
-  
+
     if (soundClick) {
-     audio.pause();    
+      audio.pause();
     } else {
       audio.play();
     }
@@ -34,15 +33,16 @@ const LanguageSwitcher = () => {
     setSidebarOpen(false);
   }, [currentLanguage]);
 
-
   return (
     <div className={styles.lng_box}>
       <div className={styles.slide}>
-      <button className={styles.lng_btn}
-       onClick={() => {
-        toggleSidebar();
-        handleAudio(); 
-      }}>
+        <button
+          className={styles.lng_btn}
+          onClick={() => {
+            toggleSidebar();
+            handleAudio();
+          }}
+        >
           {currentLanguage === "pt" && <Br className={styles.flags} />}
           {currentLanguage === "en" && <Us className={styles.flags} />}
           {currentLanguage === "fr" && <Fr className={styles.flags} />}
@@ -59,7 +59,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("pt");
-                handleAudio(); 
+                handleAudio();
               }}
             >
               <div className={styles.flags_name}>
@@ -70,7 +70,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("en");
-                handleAudio(); 
+                handleAudio();
               }}
             >
               <div className={styles.flags_name}>
@@ -82,7 +82,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("fr");
-                handleAudio(); 
+                handleAudio();
               }}
             >
               <div className={styles.flags_name}>
@@ -94,7 +94,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("it");
-                handleAudio(); 
+                handleAudio();
               }}
             >
               <div className={styles.flags_name}>
@@ -106,7 +106,7 @@ const LanguageSwitcher = () => {
             <button
               onClick={() => {
                 changeLanguage("es");
-                handleAudio(); 
+                handleAudio();
               }}
             >
               <div className={styles.flags_name}>
