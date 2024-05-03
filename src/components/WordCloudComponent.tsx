@@ -25,8 +25,6 @@ const WordCloudComponent = () => {
     getWordColor: () => mainColor,
   };
 
-  
-
   return (
     <motion.div
       style={{ width: "100%", height: "600px" }}
