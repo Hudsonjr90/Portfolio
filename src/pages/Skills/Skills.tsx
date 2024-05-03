@@ -2,6 +2,7 @@ import styles from "./Skills.module.css";
 import { motion } from "framer-motion";
 import Transition from "../../components/Transition";
 import { iconComponents, mainIcons } from "../../data/iconsServer";
+import WordCloud from "../../components/WordCloud";
 import {
   SetStateAction,
   useState,
@@ -18,6 +19,7 @@ import { Engine, IOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import { useTheme } from "../../context/ThemeContext";
 import { LuSearch } from "react-icons/lu";
+import { FaSearchengin, FaCloud } from "react-icons/fa6";
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -236,6 +238,17 @@ const Skills = () => {
           <span>//</span> {t("skills.title")}
           <span>{t("skills.text")}</span>
         </h2>
+        <button className={styles.toggle} onClick={toggleCloud}>
+          {showCloud ? (
+            <FaSearchengin className={styles.show_cloud} />
+          ) : (
+            <FaCloud className={styles.show_cloud} />
+          )}
+        </button>
+        {showCloud ? (
+          <WordCloud />
+        ) : (
+          <>
             <motion.div
               initial={{ opacity: 0, x: "-100%" }}
               animate={{ opacity: 1, x: "0%" }}
@@ -342,6 +355,8 @@ const Skills = () => {
                 forcePage={currentPage}
               />
             </motion.div>
+          </>
+        )}
       </section>
     </Transition>
   );

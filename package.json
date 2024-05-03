@@ -21,6 +21,7 @@
     "react-chrono": "^2.4.2",
     "react-countup": "^6.5.0",
     "react-customizable-progressbar": "^1.2.0",
+    "react-d3-cloud": "^1.0.6",
     "react-dom": "^18.2.0",
     "react-flags-select": "^2.2.3",
     "react-i18next": "^14.0.5",
