@@ -13,7 +13,7 @@
   "home": {
     "title": "Melhor a cada",
     "function1":  "Cientista da Computação",
-    "function2": "Desenvolvedor Fullstack",
+    "function2": "Especialista Frontend",
     "function3": "Engenheiro de Software",
     "function4": "UI/UX Designer",
     "resume": "Currículo",
@@ -190,9 +190,6 @@
   "skills": {
     "title": " Minhas",
     "text": " Habilidades",
-    "select1": "Todas as Categorias",
-    "select2": "Bancos de Dados",
-    "select3": "Ferramentas",
     "search": "Buscar..."
   },
 

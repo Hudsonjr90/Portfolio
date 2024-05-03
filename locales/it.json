@@ -13,7 +13,7 @@
   "home": {
     "title": "Migliore in ogni",
     "function1": "Scienziato informatico",
-    "function2": "Sviluppatore Fullstack",
+    "function2": "Specialista del frontend",
     "function3": "Ingegnere del software",
     "function4": "Progettista UI/UX",
     "resume": "Curriculum",
@@ -190,9 +190,7 @@
   "skills": {
     "title": "Le Mie",
     "text": " Competenze",
-    "select1": "Tutte le Categorie",
-    "select2": "Database",
-    "select3": "Strumenti",
+   
     "search": "Cerca..."
   },
 

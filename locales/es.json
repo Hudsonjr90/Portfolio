@@ -13,7 +13,7 @@
   "home": {
     "title": "Mejor en cada",
     "function1": "Científico informático",
-    "function2": "Desarrollador Fullstack",
+    "function2": "Especialista en front-end",
     "function3": "Ingeniero de software",
     "function4": "Diseñador UI/UX",
     "resume": "Currículum",
@@ -190,9 +190,6 @@
   "skills": {
     "title": " Mis",
     "text": " Habilidades",
-    "select1": "Todas las Categorías",
-    "select2": "Bases de Datos",
-    "select3": "Herramientas",
     "search": "Buscar..."
   },
 

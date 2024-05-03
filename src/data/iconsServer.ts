@@ -51,6 +51,8 @@ import {
   SiPostman,
   SiCypress,
   SiAmazonaws,
+  SiSketch,
+  SiAdobexd
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -130,6 +132,8 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Thunderclient: BiBoltCircle,
   Cypress: SiCypress,
   AWS: SiAmazonaws,
+  Sketch: SiSketch,
+  AdobeXD: SiAdobexd
 };
 
 const mainIcons = [
@@ -162,7 +166,7 @@ const mainIcons = [
   { id: 25, name: "Markdown", category: "Tools", percentage: 30 },
   { id: 26, name: "Java", category: "Backend", percentage: 10 },
   { id: 27, name: "Gitlab", category: "Tools", percentage: 50 },
-  { id: 28, name: "Figma", category: "Tools", percentage: 70 },
+  { id: 28, name: "Figma", category: "Design", percentage: 70 },
   { id: 29, name: "Pinia", category: "Frontend", percentage: 40 },
   { id: 30, name: "Vuetify", category: "Frontend", percentage: 50 },
   { id: 31, name: "Tailwind", category: "Frontend", percentage: 30 },
@@ -176,9 +180,9 @@ const mainIcons = [
   { id: 39, name: "Electron", category: "Tools", percentage: 40 },
   { id: 40, name: "Jenkins", category: "Tools", percentage: 10 },
   { id: 41, name: "Jquery", category: "Frontend", percentage: 70 },
-  { id: 42, name: "Photoshop", category: "Tools", percentage: 80 },
+  { id: 42, name: "Photoshop", category: "Design", percentage: 80 },
   { id: 43, name: "Analytics", category: "Tools", percentage: 60 },
-  { id: 44, name: "ADS", category: "Frontend", percentage: 60 },
+  { id: 44, name: "ADS", category: "Tools", percentage: 60 },
   { id: 45, name: "Terraform", category: "Tools", percentage: 10 },
   { id: 46, name: "Ansible", category: "Tools", percentage: 10 },
   { id: 47, name: "Kubernetes", category: "Tools", percentage: 10 },
@@ -186,15 +190,17 @@ const mainIcons = [
   { id: 49, name: "Jasmine", category: "Tools", percentage: 30 },
   { id: 50, name: "MongoDB", category: "Database", percentage: 10 },
   { id: 51, name: "Dotnet", category: "Backend", percentage: 30 },
-  { id: 52, name: "Netlify", category: "Tools", percentage: 60 },
-  { id: 53, name: "Heroku", category: "Tools", percentage: 60 },
-  { id: 54, name: "Vercel", category: "Tools", percentage: 60 },
+  { id: 52, name: "Netlify", category: "Deploy", percentage: 60 },
+  { id: 53, name: "Heroku", category: "Deploy", percentage: 60 },
+  { id: 54, name: "Vercel", category: "Deploy", percentage: 60 },
   { id: 55, name: "Nextjs", category: "Frontend", percentage: 10 },
   { id: 56, name: "Vite", category: "Tools", percentage: 60 },
   { id: 57, name: "Postman", category: "Tools", percentage: 20 },
   { id: 58, name: "Thunderclient", category: "Tools", percentage: 20 },
   { id: 59, name: "Cypress", category: "Tools", percentage: 10 },
   { id: 60, name: "AWS", category: "Tools", percentage: 10 },
+  { id: 61, name: "Sketch", category: "Design", percentage: 10 },
+  { id: 62, name: "AdobeXD", category: "Design", percentage: 10 },
 ];
 
 export { iconComponents, mainIcons };

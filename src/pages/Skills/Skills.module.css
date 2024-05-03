@@ -147,6 +147,18 @@
   border-radius: 20px;
 }
 
+.toggle{
+  border: none;
+  border-radius: 20px;
+}
+
+.show_cloud{
+  font-size: 4rem;
+  cursor: pointer;
+  color: var(--main_color);
+  background: var(--bg_color);
+}
+
 @media (max-width: 2560px){
 
   .filters input {
