@@ -41,7 +41,16 @@ const WordCloud = () => {
   };
 
   return (
-    <motion.div className={styles.container}>
+    <motion.div
+      initial={{ opacity: 0, x: "100%" }}
+      animate={{ opacity: 1, x: "0%" }}
+      transition={{
+        duration: 2.5,
+        delay: 0.3,
+        ease: [0.3, 0, 0.2, 1],
+      }}
+      className={styles.container}
+    >
       <Cloud
         data={words}
         width={1500}

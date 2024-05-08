@@ -19,7 +19,8 @@ import { Engine, IOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import { useTheme } from "../../context/ThemeContext";
 import { LuSearch } from "react-icons/lu";
-import { FaSearchengin, FaCloud } from "react-icons/fa6";
+import { FaCloudMeatball, FaSearch } from "react-icons/fa";
+
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -240,9 +241,9 @@ const Skills = () => {
         </h2>
         <button className={styles.toggle} onClick={toggleCloud}>
           {showCloud ? (
-            <FaSearchengin className={styles.show_cloud} />
+            <FaSearch className={styles.show_cloud} />
           ) : (
-            <FaCloud className={styles.show_cloud} />
+            <FaCloudMeatball className={styles.show_cloud} />
           )}
         </button>
         {showCloud ? (
