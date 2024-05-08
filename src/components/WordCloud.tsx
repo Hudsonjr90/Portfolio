@@ -33,10 +33,9 @@ const WordCloud = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const fontSizeMapper = (word: { value: number; }) => {
-    
+  const fontSizeMapper = (word: { value: number }) => {
     const isMobile = window.innerWidth < 768;
-   
+
     const scaleFactor = isMobile ? 10 : 8;
     return Math.log2(word.value) * scaleFactor;
   };
