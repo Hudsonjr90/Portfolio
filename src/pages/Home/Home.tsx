@@ -1,15 +1,15 @@
 // CSS
-import styles from "./Home.module.css";
+import styles from "./Home.module.css"
 // REACT ROUTER DOM
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 // COMPONENTS
-import Transition from "../../components/Transition";
-import { Modal } from "react-bootstrap";
-import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import Typewriter from "typewriter-effect";
-import { saveAs } from "file-saver";
-import resumeServer from "../../data/resumeServer";
+import Transition from "../../components/Transition"
+import { Modal } from "react-bootstrap"
+import { useState, useEffect } from "react"
+import { useTranslation } from "react-i18next"
+import Typewriter from "typewriter-effect"
+import { saveAs } from "file-saver"
+import resumeServer from "../../data/resumeServer"
 
 // REACT ICONS
 import {
@@ -19,93 +19,93 @@ import {
   FaGithub,
   FaLinkedinIn,
   FaWhatsapp,
-} from "react-icons/fa6";
+} from "react-icons/fa6"
 
 // IMAGENS
-import { useMediaQuery } from "react-responsive";
-import HomeDesktopImage from "/imgs/my.png";
-import HomeMobileImage from "/imgs/my-mobile.png";
+import { useMediaQuery } from "react-responsive"
+import HomeDesktopImage from "/imgs/my.png"
+import HomeMobileImage from "/imgs/my-mobile.png"
 // PARTICLES
-import ParticlesBackground from "../../components/ParticlesBackground";
+import ParticlesBackground from "../../components/ParticlesBackground"
 // FRAMER MOTION
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 const Home = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation()
 
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" })
 
-  const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage;
+  const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage
 
-  const [showModal, setShowModal] = useState(false);
-  const [selectedImages, setSelectedImages] = useState<string[]>([]);
-  const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
-  const [soundClick, setSoundClick] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState(false)
+  const [selectedImages, setSelectedImages] = useState<string[]>([])
+  const [selectedPdf, setSelectedPdf] = useState<string | null>(null)
+  const [soundClick, setSoundClick] = useState<boolean>(false)
 
   useEffect(() => {
     
     const loadContent = () => {
-      let images: string[] = [];
-      let pdfPath: string | null = null;
+      let images: string[] = []
+      let pdfPath: string | null = null
       switch (i18n.language) {
         case "pt":
-          images = resumeServer.br;
-          pdfPath = "/cv/HudsonKennedy-BR.pdf";
-          break;
+          images = resumeServer.br
+          pdfPath = "/cv/HudsonKennedy-BR.pdf"
+          break
         case "en":
-          images = resumeServer.us;
-          pdfPath = "/cv/HudsonKennedy-US.pdf";
-          break;
+          images = resumeServer.us
+          pdfPath = "/cv/HudsonKennedy-US.pdf"
+          break
         case "fr":
-          images = resumeServer.fr;
-          pdfPath = "/cv/HudsonKennedy-FR.pdf";
-          break;
+          images = resumeServer.fr
+          pdfPath = "/cv/HudsonKennedy-FR.pdf"
+          break
         case "it":
-          images = resumeServer.it;
-          pdfPath = "/cv/HudsonKennedy-IT.pdf";
-          break;
+          images = resumeServer.it
+          pdfPath = "/cv/HudsonKennedy-IT.pdf"
+          break
         case "es":
-          images = resumeServer.es;
-          pdfPath = "/cv/HudsonKennedy-ES.pdf";
-          break;
+          images = resumeServer.es
+          pdfPath = "/cv/HudsonKennedy-ES.pdf"
+          break
         default:
-          break;
+          break
       }
-      setSelectedImages(images);
-      setSelectedPdf(pdfPath);
-    };
+      setSelectedImages(images)
+      setSelectedPdf(pdfPath)
+    }
 
-    loadContent();
-  }, [i18n.language]);
+    loadContent()
+  }, [i18n.language])
 
   const handleDownload = () => {
     if (selectedPdf) {
-      const fileName = selectedPdf.split("/").pop()?.replace(".pdf", "");
+      const fileName = selectedPdf.split("/").pop()?.replace(".pdf", "")
       if (fileName) {
         fetch(selectedPdf)
           .then((response) => response.blob())
           .then((blob) => {
-            saveAs(blob, `${fileName}.pdf`);
+            saveAs(blob, `${fileName}.pdf`)
           })
           .catch((error) => {
-            console.error("Error downloading PDF:", error);
-          });
-        setShowModal(false);
+            console.error("Error downloading PDF:", error)
+          })
+        setShowModal(false)
       }
     }
-  };
+  }
 
   const handleAudio = () => {
-    const audio = new Audio("/sounds/button_click.mp3");
+    const audio = new Audio("/sounds/button_click.mp3")
 
     if (soundClick) {
-      audio.pause();
+      audio.pause()
     } else {
-      audio.play();
+      audio.play()
     }
-  };
+  }
 
-  const [typedStrings, setTypedStrings] = useState<string[]>([]);
+  const [typedStrings, setTypedStrings] = useState<string[]>([])
 
   useEffect(() => {
     const strings = [
@@ -113,9 +113,9 @@ const Home = () => {
       t("home.function2"),
       t("home.function3"),
       t("home.function4"),
-    ];
-    setTypedStrings(strings);
-  }, [t]);
+    ]
+    setTypedStrings(strings)
+  }, [t])
 
   return (
     <>
@@ -267,8 +267,8 @@ const Home = () => {
               <button
                 className={styles.btn}
                 onClick={() => {
-                  setShowModal(true);
-                  handleAudio();
+                  setShowModal(true)
+                  handleAudio()
                 }}
               >
                 {t("home.resume")}
@@ -307,8 +307,8 @@ const Home = () => {
               className={styles.close_button}
               title={t("home.close")}
               onClick={() => {
-                setShowModal(false);
-                handleAudio();
+                setShowModal(false)
+                handleAudio()
               }}
             />
           </Modal.Title>
@@ -324,7 +324,7 @@ const Home = () => {
         </Modal.Body>
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

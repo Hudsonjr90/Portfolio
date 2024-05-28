@@ -35,6 +35,6 @@ const imageServer = {
     "/imgs/imgsMobile/linkedin14.png",
     "/imgs/imgsMobile/linkedin15.png",
   ],
-};
+}
 
-export default imageServer;
+export default imageServer

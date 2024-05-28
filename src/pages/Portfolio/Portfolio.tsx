@@ -1,61 +1,61 @@
 // CSS
-import "./Portfolio.css";
-import styles from "./Portfolio.module.css";
+import "./Portfolio.css"
+import styles from "./Portfolio.module.css"
 // HOOKS
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react"
 // REACT ROUTER DOM
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 // COMPONENT
-import Transition from "../../components/Transition";
-import { useTranslation } from "react-i18next";
-import Particles from "react-tsparticles";
-import { Engine, IOptions } from "tsparticles-engine";
-import { loadFull } from "tsparticles";
-import { useTheme } from "../../context/ThemeContext";
-import portfolioServer from "../../data/portfolioServer";
+import Transition from "../../components/Transition"
+import { useTranslation } from "react-i18next"
+import Particles from "react-tsparticles"
+import { Engine, IOptions } from "tsparticles-engine"
+import { loadFull } from "tsparticles"
+import { useTheme } from "../../context/ThemeContext"
+import portfolioServer from "../../data/portfolioServer"
 // SWIPER
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react"
+import { EffectCoverflow } from "swiper/modules"
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]
     : T[P] extends object
     ? RecursivePartial<T[P]>
-    : T[P];
-};
+    : T[P]
+}
 
 const Portfolio = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
-  const [slidePerview, setSlidePerview] = useState<number>(3);
-  const [initialSlide] = useState<number>(3);
-  const [transitionCompleted, setTransitionCompleted] = useState(false);
+  const [slidePerview, setSlidePerview] = useState<number>(3)
+  const [initialSlide] = useState<number>(3)
+  const [transitionCompleted, setTransitionCompleted] = useState(false)
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 580) {
-        setSlidePerview(1);
+        setSlidePerview(1)
       } else {
-        setSlidePerview(3);
+        setSlidePerview(3)
       }
     }
 
-    handleResize();
+    handleResize()
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize)
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+      window.removeEventListener("resize", handleResize)
+    }
+  })
 
   const particlesInit = useCallback((engine: Engine) => {
-    loadFull(engine);
-    return Promise.resolve();
-  }, []);
+    loadFull(engine)
+    return Promise.resolve()
+  }, [])
 
-  const { mainColor } = useTheme();
+  const { mainColor } = useTheme()
 
   const particlesConfig: RecursivePartial<IOptions> = {
     particles: {
@@ -156,7 +156,7 @@ const Portfolio = () => {
       },
     },
     retina_detect: true,
-  };
+  }
 
   return (
     <Transition onAnimationComplete={() => setTransitionCompleted(true)}>
@@ -188,11 +188,11 @@ const Portfolio = () => {
             autoplay={{ delay: 3000 }} 
             onSwiper={(swiper) => {
               swiper.el.onmouseover = () => {
-                swiper.autoplay.stop();
-              };
+                swiper.autoplay.stop()
+              }
               swiper.el.onmouseout = () => {
-                swiper.autoplay.start();
-              };
+                swiper.autoplay.start()
+              }
             }}
           >
             {portfolioServer.map((item) => (
@@ -246,7 +246,7 @@ const Portfolio = () => {
         </section>
       )}
     </Transition>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default Portfolio

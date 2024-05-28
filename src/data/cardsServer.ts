@@ -115,6 +115,6 @@ const cardsServer = [
     img: "/imgs/imgEducation/24h.png",
     text: "Cursos 24h - Auxiliar Administrativo",
   },
-];
+]
 
-export default cardsServer;
+export default cardsServer

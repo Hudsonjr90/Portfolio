@@ -75,6 +75,6 @@ const testimonialServer = [
     title: "Deborah Montezano",
     text: "Hudson é um perfeito profissional, comprometido no que faz, sempre conclui seus projetos com excelência",
   },
-];
+]
 
-export default testimonialServer;
+export default testimonialServer

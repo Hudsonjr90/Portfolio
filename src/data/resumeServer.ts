@@ -35,6 +35,6 @@ const resumeServer = {
     "/imgs/imgCv/HudsonKennedyES-4.png",
   ],
 
-};
+}
 
-export default resumeServer;
+export default resumeServer

@@ -5,12 +5,12 @@ export const useResponsiveNavbar = () => {
     const [showMenu, setShowMenu] = useState(false)
 
     const handleClickButton = () => {
-        setShowMenu(!showMenu);
-    };
+        setShowMenu(!showMenu)
+    }
 
     const handleLinkClick = () => {
-        setShowMenu(false);
-    };
+        setShowMenu(false)
+    }
 
-    return { handleClickButton, handleLinkClick, showMenu };
-};
+    return { handleClickButton, handleLinkClick, showMenu }
+}

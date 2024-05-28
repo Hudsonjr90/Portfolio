@@ -1,5 +1,5 @@
-import { GrMysql } from "react-icons/gr";
-import { GiPineapple } from "react-icons/gi";
+import { GrMysql } from "react-icons/gr"
+import { GiPineapple } from "react-icons/gi"
 import {
   FaGitAlt,
   FaNpm,
@@ -17,7 +17,7 @@ import {
   FaMarkdown,
   FaGitlab,
   FaWordpress,
-} from "react-icons/fa6";
+} from "react-icons/fa6"
 import {
   SiTailwindcss,
   SiNextdotjs,
@@ -53,7 +53,7 @@ import {
   SiAmazonaws,
   SiSketch,
   SiAdobexd
-} from "react-icons/si";
+} from "react-icons/si"
 import {
   BiLogoTypescript,
   BiLogoReact,
@@ -67,7 +67,7 @@ import {
   BiLogoNetlify,
   BiLogoHeroku,
   BiBoltCircle,
-} from "react-icons/bi";
+} from "react-icons/bi"
 
 const iconComponents: { [index: string]: React.ElementType } = {
   HTML: BiLogoHtml5,
@@ -134,7 +134,7 @@ const iconComponents: { [index: string]: React.ElementType } = {
   AWS: SiAmazonaws,
   Sketch: SiSketch,
   AdobeXD: SiAdobexd
-};
+}
 
 const mainIcons = [
   
@@ -201,6 +201,6 @@ const mainIcons = [
   { id: 60, name: "AWS", category: "Tools", percentage: 10 },
   { id: 61, name: "Sketch", category: "Design", percentage: 10 },
   { id: 62, name: "AdobeXD", category: "Design", percentage: 10 },
-];
+]
 
-export { iconComponents, mainIcons };
+export { iconComponents, mainIcons }

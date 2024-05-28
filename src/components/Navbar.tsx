@@ -1,47 +1,47 @@
 // HOOKS
-import { useState, useEffect } from "react";
-import { useResponsiveNavbar } from "../hooks/useResponsiveNavbar";
+import { useState, useEffect } from "react"
+import { useResponsiveNavbar } from "../hooks/useResponsiveNavbar"
 // REACT ROUTER DOM
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 // REACT ICONS
-import { FaMoon, FaSun, FaPalette } from "react-icons/fa6";
+import { FaMoon, FaSun, FaPalette } from "react-icons/fa6"
 // CSS 
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.css"
 // CONTEXT
-import { useTheme } from '../context/ThemeContext';
-import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { useTheme } from '../context/ThemeContext'
+import { useTranslation } from "react-i18next"
+import LanguageSwitcher from "./LanguageSwitcher"
 
 const Navbar = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
     
-    const [lightMode, setLightMode] = useState<boolean>(false);
-    const [paletteOpen, setPaletteOpen] = useState<boolean>(false);
-    const [selectedColor, setSelectedColor] = useState<string | null>(null);
-    const [paletteInputInvisible, setPaletteInputInvisible] = useState<boolean>(false);
+    const [lightMode, setLightMode] = useState<boolean>(false)
+    const [paletteOpen, setPaletteOpen] = useState<boolean>(false)
+    const [selectedColor, setSelectedColor] = useState<string | null>(null)
+    const [paletteInputInvisible, setPaletteInputInvisible] = useState<boolean>(false)
     const [soundClick, setSoundClick] = useState<boolean>(false)
 
 
 
-    const { mainColor, setMainColor } = useTheme();
+    const { mainColor, setMainColor } = useTheme()
 
-    const { handleClickButton, handleLinkClick, showMenu } = useResponsiveNavbar();
+    const { handleClickButton, handleLinkClick, showMenu } = useResponsiveNavbar()
 
     const handleToggleLightMode = () => {
-        setLightMode(!lightMode);
-        setPaletteInputInvisible(!lightMode);
+        setLightMode(!lightMode)
+        setPaletteInputInvisible(!lightMode)
     }
 
     useEffect(() => {
         if (lightMode) {
-            document.body.classList.add('light_mode');
-            setMainColor("#dc2626");
+            document.body.classList.add('light_mode')
+            setMainColor("#dc2626")
         } else {
-            document.body.classList.remove('light_mode');
-            setMainColor("#0ef");
+            document.body.classList.remove('light_mode')
+            setMainColor("#0ef")
             setTimeout(() => {
-                document.body.style.transition = "background-color 1.5s, color 1.5s";
-            }, 1500);
+                document.body.style.transition = "background-color 1.5s, color 1.5s"
+            }, 1500)
         }
 
     }, [lightMode])
@@ -51,43 +51,43 @@ const Navbar = () => {
     }
 
     const handleColorSelection = (color: string) => {
-        setSelectedColor(color);
+        setSelectedColor(color)
     }
 
     useEffect(() => {
         if (selectedColor === "ball_0") {
-            document.documentElement.style.setProperty("--main_color", "#ffb703");
-            setMainColor("#ffb703");
+            document.documentElement.style.setProperty("--main_color", "#ffb703")
+            setMainColor("#ffb703")
 
         } else if (selectedColor === "ball_2") {
-            document.documentElement.style.setProperty("--main_color", "#3a86ff");
-            setMainColor("#3a86ff");
+            document.documentElement.style.setProperty("--main_color", "#3a86ff")
+            setMainColor("#3a86ff")
 
         } else if (selectedColor === "ball_1") {
-            document.documentElement.style.setProperty("--text_color", "#8ecae6");
+            document.documentElement.style.setProperty("--text_color", "#8ecae6")
             setMainColor(mainColor)
 
         } else if (selectedColor === "ball_3") {
-            document.documentElement.style.setProperty("--text_color", "#eb5e28");
+            document.documentElement.style.setProperty("--text_color", "#eb5e28")
             setMainColor(mainColor)
 
         } else if (selectedColor === "ball_4") {
-            document.documentElement.style.setProperty("--main_color", "#0ef");
-            document.documentElement.style.setProperty("--text_color", "#fff");
-            setMainColor("#0ef");
+            document.documentElement.style.setProperty("--main_color", "#0ef")
+            document.documentElement.style.setProperty("--text_color", "#fff")
+            setMainColor("#0ef")
         }
 
-    }, [selectedColor]);
+    }, [selectedColor])
 
     const handleAudio = () => {
-        const audio = new Audio("/sounds/button_click.mp3");
+        const audio = new Audio("/sounds/button_click.mp3")
 
         if (soundClick) {
-            audio.pause(); 
+            audio.pause() 
         } else {
-            audio.play();
+            audio.play()
         }
-    };
+    }
 
     return (
         <header className={styles.header}>
@@ -95,15 +95,15 @@ const Navbar = () => {
                 to={"/"}
                 className={styles.logo}
             >
-                &lt; <span className={styles.logo_span}>H.K DEV</span>/&gt;
+                &lt <span className={styles.logo_span}>H.K DEV</span>/&gt
             </NavLink>
 
             <nav>
                 <ul className={`${styles.links_list} ${showMenu ? styles.active : ""}`}>
                     <li
                         onClick={() => {
-                            handleLinkClick();
-                            handleAudio();
+                            handleLinkClick()
+                            handleAudio()
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -119,8 +119,8 @@ const Navbar = () => {
 
                     <li
                         onClick={() => {
-                            handleLinkClick();
-                            handleAudio();
+                            handleLinkClick()
+                            handleAudio()
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -136,8 +136,8 @@ const Navbar = () => {
 
                     <li
                         onClick={() => {
-                            handleLinkClick();
-                            handleAudio();
+                            handleLinkClick()
+                            handleAudio()
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -153,8 +153,8 @@ const Navbar = () => {
 
                     <li
                         onClick={() => {
-                            handleLinkClick();
-                            handleAudio();
+                            handleLinkClick()
+                            handleAudio()
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -172,8 +172,8 @@ const Navbar = () => {
 
                     <li
                         onClick={() => {
-                            handleLinkClick();
-                            handleAudio();
+                            handleLinkClick()
+                            handleAudio()
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -189,8 +189,8 @@ const Navbar = () => {
 
                     <li
                         onClick={() => {
-                            handleLinkClick();
-                            handleAudio();
+                            handleLinkClick()
+                            handleAudio()
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -206,8 +206,8 @@ const Navbar = () => {
 
                     <li
                         onClick={() => {
-                            handleLinkClick();
-                            handleAudio();
+                            handleLinkClick()
+                            handleAudio()
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -223,8 +223,8 @@ const Navbar = () => {
 
                     <li
                         onClick={() => {
-                            handleLinkClick();
-                            handleAudio();
+                            handleLinkClick()
+                            handleAudio()
                         }}
                         className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ""}`}
@@ -246,8 +246,8 @@ const Navbar = () => {
                         type="checkbox"
                         className={styles.input_darc_light_mode}
                         onClick={() => {
-                            handleToggleLightMode();
-                            handleAudio();
+                            handleToggleLightMode()
+                            handleAudio()
                         }}
                     />
 
@@ -260,8 +260,8 @@ const Navbar = () => {
                         type="checkbox"
                         className={styles.input_palette_colors}
                         onClick={() => {
-                            handlePaletteToggle();
-                            handleAudio();
+                            handlePaletteToggle()
+                            handleAudio()
                         }}
                     />
 
@@ -308,8 +308,8 @@ const Navbar = () => {
 
                 <button
                     onClick={() =>{
-                        handleClickButton();
-                        handleAudio();
+                        handleClickButton()
+                        handleAudio()
                     }}
                     className={`${styles.btn_menu}
                 ${showMenu ? styles.active : ""}`}
@@ -320,7 +320,7 @@ const Navbar = () => {
                 </button>
             </div>
         </header>
-    );
-};
+    )
+}
 
-export default Navbar;
+export default Navbar

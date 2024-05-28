@@ -1,30 +1,30 @@
-import styles from "./Education.module.css";
-import Transition from "../../components/Transition";
-import CardComponent from "../../components/CardComponent";
-import { useTranslation } from "react-i18next";
-import Particles from "react-tsparticles";
-import { Engine, IOptions } from "tsparticles-engine";
-import { useCallback, useState } from "react";
-import { loadFull } from "tsparticles";
-import { useTheme } from "../../context/ThemeContext";
+import styles from "./Education.module.css"
+import Transition from "../../components/Transition"
+import CardComponent from "../../components/CardComponent"
+import { useTranslation } from "react-i18next"
+import Particles from "react-tsparticles"
+import { Engine, IOptions } from "tsparticles-engine"
+import { useCallback, useState } from "react"
+import { loadFull } from "tsparticles"
+import { useTheme } from "../../context/ThemeContext"
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]
     : T[P] extends object
     ? RecursivePartial<T[P]>
-    : T[P];
-};
+    : T[P]
+}
 
 const Education = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const particlesInit = useCallback((engine: Engine) => {
-    loadFull(engine);
-    return Promise.resolve();
-  }, []);
+    loadFull(engine)
+    return Promise.resolve()
+  }, [])
 
-  const { mainColor } = useTheme();
+  const { mainColor } = useTheme()
 
   const particlesConfig: RecursivePartial<IOptions> = {
     particles: {
@@ -140,7 +140,7 @@ const Education = () => {
         <CardComponent />
       </section>
     </Transition>
-  );
-};
+  )
+}
 
-export default Education;
+export default Education

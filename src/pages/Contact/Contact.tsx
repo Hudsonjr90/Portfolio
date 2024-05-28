@@ -1,56 +1,56 @@
 // CSS
-import styles from "./Contact.module.css";
+import styles from "./Contact.module.css"
 // HOOKS
-import { SetStateAction, useState, useCallback } from "react";
+import { SetStateAction, useState, useCallback } from "react"
 // REACT ROUTER DOM
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 // COMPONENT
-import Transition from "../../components/Transition";
-import { useTranslation } from "react-i18next";
-import PhoneInput from "react-phone-number-input/input";
-import Particles from "react-tsparticles";
-import { Engine, IOptions } from "tsparticles-engine";
-import { loadFull } from "tsparticles";
-import { useTheme } from "../../context/ThemeContext";
+import Transition from "../../components/Transition"
+import { useTranslation } from "react-i18next"
+import PhoneInput from "react-phone-number-input/input"
+import Particles from "react-tsparticles"
+import { Engine, IOptions } from "tsparticles-engine"
+import { loadFull } from "tsparticles"
+import { useTheme } from "../../context/ThemeContext"
 // EMAILJS
-import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser"
 // SWEETALERT
-import Swal from "sweetalert2";
+import Swal from "sweetalert2"
 // FRAMER MOTION
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 // REACT ICONS
 import {
   FaEnvelope,
   FaGithub,
   FaLinkedinIn,
   FaWhatsapp,
-} from "react-icons/fa6";
+} from "react-icons/fa6"
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]
     : T[P] extends object
     ? RecursivePartial<T[P]>
-    : T[P];
-};
+    : T[P]
+}
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [phone, setPhone] = useState<string>("");
-  const [subject, setSubject] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+  const [name, setName] = useState<string>("")
+  const [email, setEmail] = useState<string>("")
+  const [phone, setPhone] = useState<string>("")
+  const [subject, setSubject] = useState<string>("")
+  const [message, setMessage] = useState<string>("")
 
-  const [nameError, setNameError] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<boolean>(false);
-  const [phoneError, setPhoneError] = useState<boolean>(false);
-  const [subjectError, setSubjectError] = useState<boolean>(false);
-  const [messageError, setMessageError] = useState<boolean>(false);
+  const [nameError, setNameError] = useState<boolean>(false)
+  const [emailError, setEmailError] = useState<boolean>(false)
+  const [phoneError, setPhoneError] = useState<boolean>(false)
+  const [subjectError, setSubjectError] = useState<boolean>(false)
+  const [messageError, setMessageError] = useState<boolean>(false)
 
   function sendEmail(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (
       name === "" ||
@@ -59,20 +59,20 @@ const Contact = () => {
       subject === "" ||
       message === ""
     ) {
-      setNameError(name === "");
-      setEmailError(email === "");
-      setPhoneError(phone === "");
-      setSubjectError(subject === "");
-      setMessageError(message === "");
+      setNameError(name === "")
+      setEmailError(email === "")
+      setPhoneError(phone === "")
+      setSubjectError(subject === "")
+      setMessageError(message === "")
 
-      return;
+      return
     }
 
-    setNameError(false);
-    setEmailError(false);
-    setPhoneError(false);
-    setSubjectError(false);
-    setMessageError(false);
+    setNameError(false)
+    setEmailError(false)
+    setPhoneError(false)
+    setSubjectError(false)
+    setMessageError(false)
 
     const templateParams = {
       from_name: name,
@@ -80,7 +80,7 @@ const Contact = () => {
       phone: phone,
       subject: subject,
       message: message,
-    };
+    }
 
     emailjs
       .send("gmailMessage", "replyKey", templateParams, "pg7uosKesPGRIzFWI")
@@ -91,28 +91,28 @@ const Contact = () => {
               title: "Ótimo!",
               text: "Mensagem enviada com sucesso!",
               icon: "success",
-            });
+            })
           }
 
-          console.log("EMAIL ENVIADO", response.status, response.text);
-          setName("");
-          setEmail("");
-          setPhone("");
-          setSubject("");
-          setMessage("");
+          console.log("EMAIL ENVIADO", response.status, response.text)
+          setName("")
+          setEmail("")
+          setPhone("")
+          setSubject("")
+          setMessage("")
         },
         (error) => {
-          console.log("ERRO AO ENVIAR O EMAIL ", error);
+          console.log("ERRO AO ENVIAR O EMAIL ", error)
         }
-      );
+      )
   }
 
   const particlesInit = useCallback((engine: Engine) => {
-    loadFull(engine);
-    return Promise.resolve();
-  }, []);
+    loadFull(engine)
+    return Promise.resolve()
+  }, [])
 
-  const { mainColor } = useTheme();
+  const { mainColor } = useTheme()
 
   const particlesConfig: RecursivePartial<IOptions> = {
     particles: {
@@ -213,19 +213,19 @@ const Contact = () => {
       },
     },
     retina_detect: true,
-  };
+  }
 
   const [soundClick, setSoundClick] = useState<boolean>(false) 
 
  const handleAudio = () => {
-        const audio = new Audio("/sounds/button_click.mp3");
+        const audio = new Audio("/sounds/button_click.mp3")
 
         if (soundClick) {
-            audio.pause(); 
+            audio.pause() 
         } else {
-            audio.play();
+            audio.play()
         }
-    };
+    }
 
 
   return (
@@ -346,8 +346,8 @@ const Contact = () => {
                 className={`${styles.item} ${nameError ? styles.error : ""}`}
                 id="name"
                 onChange={(e) => {
-                  setName(e.target.value);
-                  setNameError(false);
+                  setName(e.target.value)
+                  setNameError(false)
                 }}
                 value={name}
               />
@@ -369,8 +369,8 @@ const Contact = () => {
                 className={`${styles.item} ${emailError ? styles.error : ""}`}
                 id="email"
                 onChange={(e) => {
-                  setEmail(e.target.value);
-                  setEmailError(false);
+                  setEmail(e.target.value)
+                  setEmailError(false)
                 }}
                 value={email}
               />
@@ -397,8 +397,8 @@ const Contact = () => {
                 value={phone}
                 onChange={(value) => {
                   if (typeof value === "string") {
-                    setPhone(value);
-                    setPhoneError(false);
+                    setPhone(value)
+                    setPhoneError(false)
                   }
                 }}
               />
@@ -420,8 +420,8 @@ const Contact = () => {
                 id="subject"
                 className={`${styles.item} ${subjectError ? styles.error : ""}`}
                 onChange={(e) => {
-                  setSubject(e.target.value);
-                  setSubjectError(false);
+                  setSubject(e.target.value)
+                  setSubjectError(false)
                 }}
                 value={subject}
               />
@@ -446,8 +446,8 @@ const Contact = () => {
               rows={10}
               className={`${styles.item} ${messageError ? styles.error : ""}`}
               onChange={(e) => {
-                setMessage(e.target.value);
-                setMessageError(false);
+                setMessage(e.target.value)
+                setMessageError(false)
               }}
               value={message}
             ></textarea>
@@ -470,7 +470,7 @@ const Contact = () => {
         </form>
       </section>
     </Transition>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -1,27 +1,27 @@
-import { SetStateAction, useEffect, useState, useCallback } from "react";
-import styles from "./Testimonials.module.css";
-import Transition from "../../components/Transition";
-import { motion, AnimatePresence } from "framer-motion";
-import ReactPaginate from "react-paginate";
-import { useTranslation } from "react-i18next";
-import { wrap } from "popmotion";
-import imagesServer from "../../data/imageServer";
-import testimonialServer from "../../data/testimonialsServer";
-import Particles from "react-tsparticles";
-import { Engine, IOptions } from "tsparticles-engine";
-import { loadFull } from "tsparticles";
-import { useTheme } from "../../context/ThemeContext";
+import { SetStateAction, useEffect, useState, useCallback } from "react"
+import styles from "./Testimonials.module.css"
+import Transition from "../../components/Transition"
+import { motion, AnimatePresence } from "framer-motion"
+import ReactPaginate from "react-paginate"
+import { useTranslation } from "react-i18next"
+import { wrap } from "popmotion"
+import imagesServer from "../../data/imageServer"
+import testimonialServer from "../../data/testimonialsServer"
+import Particles from "react-tsparticles"
+import { Engine, IOptions } from "tsparticles-engine"
+import { loadFull } from "tsparticles"
+import { useTheme } from "../../context/ThemeContext"
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]
     : T[P] extends object
     ? RecursivePartial<T[P]>
-    : T[P];
-};
+    : T[P]
+}
 
 const Testimonials = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
  
 
   const variants = {
@@ -29,7 +29,7 @@ const Testimonials = () => {
       return {
         x: direction > 0 ? 1000 : -1000,
         opacity: 0,
-      };
+      }
     },
     center: {
       zIndex: 1,
@@ -41,64 +41,64 @@ const Testimonials = () => {
         zIndex: 0,
         x: direction < 0 ? 1000 : -1000,
         opacity: 0,
-      };
+      }
     },
-  };
+  }
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [isFlipped, setFlipped] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [isFlipped, setFlipped] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+      setWindowWidth(window.innerWidth)
+    }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize)
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   const handlePageClick = (data: { selected: SetStateAction<number> }) => {
-    setCurrentPage(data.selected);
-  };
+    setCurrentPage(data.selected)
+  }
 
-  const pageCount = Math.ceil(testimonialServer.length / 1);
+  const pageCount = Math.ceil(testimonialServer.length / 1)
   const imageIndex = wrap(
     0,
     windowWidth > 768 ? imagesServer.desktop.length : imagesServer.mobile.length,
     currentPage
-  );
+  )
 
   const handleMouseEnter = () => {
-    setFlipped(true);
-  };
+    setFlipped(true)
+  }
 
   const handleMouseLeave = () => {
-    setFlipped(false);
-  };
+    setFlipped(false)
+  }
 
   const autoChangePage = () => {
     if (!isFlipped) {
-      const nextPage = (currentPage + 1) % pageCount;
-      setCurrentPage(nextPage);
+      const nextPage = (currentPage + 1) % pageCount
+      setCurrentPage(nextPage)
     }
-  };
+  }
 
   useEffect(() => {
-    const intervalId = setInterval(autoChangePage, 5000);
+    const intervalId = setInterval(autoChangePage, 5000)
 
-    return () => clearInterval(intervalId);
-  }, [currentPage, pageCount, isFlipped]);
+    return () => clearInterval(intervalId)
+  }, [currentPage, pageCount, isFlipped])
 
   const particlesInit = useCallback((engine: Engine) => {
-    loadFull(engine);
-    return Promise.resolve();
-  }, []);
+    loadFull(engine)
+    return Promise.resolve()
+  }, [])
 
-  const { mainColor } = useTheme();
+  const { mainColor } = useTheme()
 
   const particlesConfig: RecursivePartial<IOptions> = {
     particles: {
@@ -199,19 +199,19 @@ const Testimonials = () => {
       },
     },
     retina_detect: true,
-  };
+  }
 
   const [soundClick, setSoundClick] = useState<boolean>(false) 
 
  const handleAudio = () => {
-        const audio = new Audio("/sounds/button_click.mp3");
+        const audio = new Audio("/sounds/button_click.mp3")
 
         if (soundClick) {
-            audio.pause(); 
+            audio.pause() 
         } else {
-            audio.play();
+            audio.play()
         }
-    };
+    }
 
   return (
     <Transition onAnimationComplete={() => {}}>
@@ -283,8 +283,8 @@ const Testimonials = () => {
             pageRangeDisplayed={5}
             marginPagesDisplayed={0}
             onPageChange={({ selected: selectedPage }) => {
-              handlePageClick({ selected: selectedPage });
-              handleAudio();
+              handlePageClick({ selected: selectedPage })
+              handleAudio()
             }}
             containerClassName={styles.pagination}
             activeClassName={styles.activePage}
@@ -293,7 +293,7 @@ const Testimonials = () => {
         </motion.div>
       </section>
     </Transition>
-  );
-};
+  )
+}
 
-export default Testimonials;
+export default Testimonials

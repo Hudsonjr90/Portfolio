@@ -1,10 +1,10 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import ptTranslation from "./locales/pt.json";
-import enTranslation from "./locales/en.json";
-import esTranslation from "./locales/es.json";
-import frTranslation from "./locales/fr.json";
-import itTranslation from "./locales/it.json";
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import ptTranslation from "./locales/pt.json"
+import enTranslation from "./locales/en.json"
+import esTranslation from "./locales/es.json"
+import frTranslation from "./locales/fr.json"
+import itTranslation from "./locales/it.json"
 
 
 i18n
@@ -29,6 +29,6 @@ i18n
         translation : esTranslation
       }
     }
-  });
+  })
 
-export default i18n;
+export default i18n

@@ -1,64 +1,64 @@
-import Card from "react-bootstrap/Card";
-import styles from "./CardComponent.module.css";
-import Paginate from "react-paginate";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import cardsServer from "../data/cardsServer";
-import { useTranslation } from "react-i18next";
+import Card from "react-bootstrap/Card"
+import styles from "./CardComponent.module.css"
+import Paginate from "react-paginate"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import cardsServer from "../data/cardsServer"
+import { useTranslation } from "react-i18next"
 
 const CardComponent = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   const handleMouseEnter = (id: number) => {
-    setHoveredCard(id);
-  };
+    setHoveredCard(id)
+  }
 
   const handleMouseLeave = () => {
-    setHoveredCard(null);
-  };
+    setHoveredCard(null)
+  }
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [cardsPerPage, setCardsPerPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0)
+  const [cardsPerPage, setCardsPerPage] = useState(1)
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 769) {
-        setCardsPerPage(2);
+        setCardsPerPage(2)
       } else {
-        setCardsPerPage(1);
+        setCardsPerPage(1)
       }
     }
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
-  const offset = currentPage * cardsPerPage;
-  const pageCount = Math.ceil(cardsServer.length / cardsPerPage);
+  const offset = currentPage * cardsPerPage
+  const pageCount = Math.ceil(cardsServer.length / cardsPerPage)
 
   const handlePageClick = ({
     selected: selectedPage,
   }: {
-    selected: number;
+    selected: number
   }) => {
-    setCurrentPage(selectedPage);
-  };
+    setCurrentPage(selectedPage)
+  }
 
   const autoChangePage = () => {
     if (!hoveredCard) {
-      const nextPage = (currentPage + 1) % pageCount;
-      setCurrentPage(nextPage);
+      const nextPage = (currentPage + 1) % pageCount
+      setCurrentPage(nextPage)
     }
-  };
+  }
 
   useEffect(() => {
-    const intervalId = setInterval(autoChangePage, 5000);
+    const intervalId = setInterval(autoChangePage, 5000)
 
-    return () => clearInterval(intervalId);
-  }, [currentPage, pageCount, hoveredCard]);
+    return () => clearInterval(intervalId)
+  }, [currentPage, pageCount, hoveredCard])
 
   const currentPageData = cardsServer
     .slice(offset, offset + cardsPerPage)
@@ -84,19 +84,19 @@ const CardComponent = () => {
           </Card.Text>
         </Card.ImgOverlay>
       </Card>
-    ));
+    ))
 
-  const [soundClick, setSoundClick] = useState<boolean>(false);
+  const [soundClick, setSoundClick] = useState<boolean>(false)
 
   const handleAudio = () => {
-    const audio = new Audio("/sounds/button_click.mp3");
+    const audio = new Audio("/sounds/button_click.mp3")
 
     if (soundClick) {
-      audio.pause();
+      audio.pause()
     } else {
-      audio.play();
+      audio.play()
     }
-  };
+  }
 
   return (
     <>
@@ -126,8 +126,8 @@ const CardComponent = () => {
           pageRangeDisplayed={5}
           marginPagesDisplayed={0}
           onPageChange={({ selected: selectedPage }) => {
-            handlePageClick({ selected: selectedPage });
-            handleAudio();
+            handlePageClick({ selected: selectedPage })
+            handleAudio()
           }}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}
@@ -137,7 +137,7 @@ const CardComponent = () => {
         />
       </motion.div>
     </>
-  );
-};
+  )
+}
 
-export default CardComponent;
+export default CardComponent

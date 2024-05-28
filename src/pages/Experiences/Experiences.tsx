@@ -1,38 +1,38 @@
-import styles from "./Experiences.module.css";
+import styles from "./Experiences.module.css"
 
-import Transition from "../../components/Transition";
-import { useTranslation } from "react-i18next";
+import Transition from "../../components/Transition"
+import { useTranslation } from "react-i18next"
 
-import { FaBriefcase } from "react-icons/fa6";
+import { FaBriefcase } from "react-icons/fa6"
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+} from "react-vertical-timeline-component"
+import "react-vertical-timeline-component/style.min.css"
 
-import Particles from "react-tsparticles";
-import { Engine, IOptions } from 'tsparticles-engine';
-import { loadFull } from "tsparticles";
-import { useTheme } from "../../context/ThemeContext";
-import { useCallback, useState } from "react";
+import Particles from "react-tsparticles"
+import { Engine, IOptions } from 'tsparticles-engine'
+import { loadFull } from "tsparticles"
+import { useTheme } from "../../context/ThemeContext"
+import { useCallback, useState } from "react"
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
       ? RecursivePartial<U>[]
       : T[P] extends object
       ? RecursivePartial<T[P]>
-      : T[P];
-};
+      : T[P]
+}
 
 const Experiences = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const particlesInit = useCallback((engine: Engine) => {
     loadFull(engine)
-    return Promise.resolve();
-}, []);
+    return Promise.resolve()
+}, [])
 
- const {mainColor} = useTheme();
+ const {mainColor} = useTheme()
 
  const particlesConfig: RecursivePartial<IOptions> = {
     particles: {
@@ -321,7 +321,7 @@ const Experiences = () => {
         </VerticalTimeline>
       </section>
     </Transition>
-  );
-};
+  )
+}
 
-export default Experiences;
+export default Experiences

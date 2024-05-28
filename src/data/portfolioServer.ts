@@ -1,18 +1,16 @@
 // IMAGENS
-import web from "/imgs/imgProjects/web.png";
-import pokedex from "/imgs/imgProjects/pokedex.png";
-import memory from "/imgs/imgProjects/memory.png";
-import pacman from "/imgs/imgProjects/pacman.png";
-import clima from "/imgs/imgProjects/clima.png";
-import clock from "/imgs/imgProjects/clock.png";
-import card from "/imgs/imgProjects/card.png";
-import calendar from "/imgs/imgProjects/calendar.png";
-import pizza from "/imgs/imgProjects/pizza.png";
-import login from "/imgs/imgProjects/login.png";
-import conversor from "/imgs/imgProjects/conversor.png";
+import web from "/imgs/imgProjects/web.png"
+import pokedex from "/imgs/imgProjects/pokedex.png"
+import memory from "/imgs/imgProjects/memory.png"
+import pacman from "/imgs/imgProjects/pacman.png"
+import clima from "/imgs/imgProjects/clima.png"
+import clock from "/imgs/imgProjects/clock.png"
+import card from "/imgs/imgProjects/card.png"
+import calendar from "/imgs/imgProjects/calendar.png"
+import login from "/imgs/imgProjects/login.png"
+import conversor from "/imgs/imgProjects/conversor.png"
 
 const portfolioServer = [
-
   {
     id: 0,
     image: web,
@@ -118,18 +116,9 @@ const portfolioServer = [
     linkDeploy: "https://swiss-holiday-tracker.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/swiss-holiday-tracker",
   },
+
   {
     id: 8,
-    image: pizza,
-    name: "Pizza&Tutti",
-    description:
-      "Landing page, da pizzaria Pizza&Tutti, uma das melhores do Rio de Janeiro.",
-    technologies: ["Javascript", "Html", "Sass/Scss"],
-    linkDeploy: "https://www.pizzaetutti.com.br/",
-    linkRepository: "https://github.com/Hudsonjr90/Pizzaria",
-  },
-  {
-    id: 9,
     image: login,
     name: "Login Page Screen",
     description: "Tela de login animada, feita para praticar",
@@ -138,7 +127,7 @@ const portfolioServer = [
     linkRepository: "https://github.com/Hudsonjr90/Sign-in-up-Form",
   },
   {
-    id: 10,
+    id: 9,
     image: conversor,
     name: "World Currency Converter",
     description: "Conversor de Moedas Mundial, feito no curso da Udemy",
@@ -146,6 +135,16 @@ const portfolioServer = [
     linkDeploy: "https://conversor-de-moedas-mundial.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/ConversorDeMoedasMundial",
   },
+    // {
+  //   id: 10,
+  //   image: ,
+  //   name: "",
+  //   description:
+  //     "",
+  //   technologies: ["", "", "", "", "", "", "", "", "",],
+  //   linkDeploy: "",
+  //   linkRepository: "",
+  // },
   // {
   //   id: 11,
   //   image: ,
@@ -191,6 +190,6 @@ const portfolioServer = [
   //   linkDeploy: "",
   //   linkRepository: "",
   // }
-];
+]
 
-export default portfolioServer;
+export default portfolioServer

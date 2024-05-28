@@ -1,17 +1,17 @@
 // CSS
-import styles from "./About.module.css";
+import styles from "./About.module.css"
 // COMPONENT
-import Transition from "../../components/Transition";
-import Particles from "react-tsparticles";
-import { Engine, IOptions } from 'tsparticles-engine';
-import { useCallback, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { loadFull } from "tsparticles";
-import { useTheme } from "../../context/ThemeContext";
+import Transition from "../../components/Transition"
+import Particles from "react-tsparticles"
+import { Engine, IOptions } from 'tsparticles-engine'
+import { useCallback, useState } from "react"
+import { useTranslation } from "react-i18next"
+import { loadFull } from "tsparticles"
+import { useTheme } from "../../context/ThemeContext"
 // IMAGENS
-import About_img from "/imgs/hudson.png";
+import About_img from "/imgs/hudson.png"
 // FRAMER MOTION
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 
 type RecursivePartial<T> = {
@@ -19,24 +19,24 @@ type RecursivePartial<T> = {
       ? RecursivePartial<U>[]
       : T[P] extends object
       ? RecursivePartial<T[P]>
-      : T[P];
-};
+      : T[P]
+}
 
 const About = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
-  const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
-  const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
+  const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`
+  const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`
 
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [isInView, setIsInView] = useState(false)
 
   const particlesInit = useCallback((engine: Engine) => {
     loadFull(engine)
-    return Promise.resolve();
-}, []);
+    return Promise.resolve()
+}, [])
 
- const {mainColor} = useTheme(); 
+ const {mainColor} = useTheme() 
 
   const particlesConfig: RecursivePartial<IOptions> = {
     particles: {
@@ -188,7 +188,7 @@ const About = () => {
         </div>
       </section>
     </Transition>
-  );
-};
+  )
+}
 
-export default About;
+export default About

@@ -1,27 +1,27 @@
 // HOOKS
-import { useCallback } from 'react';
+import { useCallback } from 'react'
 // PARTICLES
 import Particles from "react-tsparticles"
-import { loadFull } from "tsparticles";
-import { Engine, IOptions } from 'tsparticles-engine';
+import { loadFull } from "tsparticles"
+import { Engine, IOptions } from 'tsparticles-engine'
 // CONTEXT
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext'
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
       ? RecursivePartial<U>[]
       : T[P] extends object
       ? RecursivePartial<T[P]>
-      : T[P];
-};
+      : T[P]
+}
 
 const ParticlesBackground = () => {
     const particlesInit = useCallback((engine: Engine) => {
         loadFull(engine)
-        return Promise.resolve();
-    }, []);
+        return Promise.resolve()
+    }, [])
 
-    const {mainColor} = useTheme();
+    const {mainColor} = useTheme()
 
     const particlesConfig: RecursivePartial<IOptions> = {
         "particles": {
@@ -136,8 +136,8 @@ const ParticlesBackground = () => {
                 init={particlesInit}
             />
         </div>
-    );
-};
+    )
+}
 
-export default ParticlesBackground;
+export default ParticlesBackground
 

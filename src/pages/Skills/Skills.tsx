@@ -1,44 +1,43 @@
-import styles from "./Skills.module.css";
-import { motion } from "framer-motion";
-import Transition from "../../components/Transition";
-import { iconComponents, mainIcons } from "../../data/iconsServer";
-import WordCloud from "../../components/WordCloud";
+import styles from './Skills.module.css'
+import { motion } from 'framer-motion'
+import Transition from '../../components/Transition'
+import { iconComponents, mainIcons } from '../../data/iconsServer'
+import WordCloud from '../../components/WordCloud'
 import {
   SetStateAction,
   useState,
   useEffect,
   useCallback,
   useMemo,
-} from "react";
-import ReactPaginate from "react-paginate";
-import { useTranslation } from "react-i18next";
-import ProgressBar from "react-customizable-progressbar";
-import CountUp from "react-countup";
-import Particles from "react-tsparticles";
-import { Engine, IOptions } from "tsparticles-engine";
-import { loadFull } from "tsparticles";
-import { useTheme } from "../../context/ThemeContext";
-import { LuSearch } from "react-icons/lu";
-import { FaCloudMeatball, FaSearch } from "react-icons/fa";
-
+} from 'react'
+import ReactPaginate from 'react-paginate'
+import { useTranslation } from 'react-i18next'
+import ProgressBar from 'react-customizable-progressbar'
+import CountUp from 'react-countup'
+import Particles from 'react-tsparticles'
+import { Engine, IOptions } from 'tsparticles-engine'
+import { loadFull } from 'tsparticles'
+import { useTheme } from '../../context/ThemeContext'
+import { LuSearch } from 'react-icons/lu'
+import { FaCloudMeatball, FaSearch } from 'react-icons/fa'
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]
     : T[P] extends object
     ? RecursivePartial<T[P]>
-    : T[P];
-};
+    : T[P]
+}
 
 const Skills = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const particlesInit = useCallback((engine: Engine) => {
-    loadFull(engine);
-    return Promise.resolve();
-  }, []);
+    loadFull(engine)
+    return Promise.resolve()
+  }, [])
 
-  const { mainColor } = useTheme();
+  const { mainColor } = useTheme()
 
   const particlesConfig: RecursivePartial<IOptions> = {
     particles: {
@@ -53,7 +52,7 @@ const Skills = () => {
         value: mainColor,
       },
       shape: {
-        type: "polygon",
+        type: 'polygon',
         stroke: {
           width: 0,
           color: mainColor,
@@ -85,17 +84,17 @@ const Skills = () => {
       line_linked: {
         enable: false,
         distance: 150,
-        color: "#ffffff",
+        color: '#ffffff',
         opacity: 0.4,
         width: 1,
       },
       move: {
         enable: true,
         speed: 4,
-        direction: "top-right",
+        direction: 'top-right',
         random: false,
         straight: true,
-        out_mode: "out",
+        out_mode: 'out',
         bounce: false,
         attract: { enable: false, rotateX: 600, rotateY: 1200 },
       },
@@ -104,11 +103,11 @@ const Skills = () => {
       events: {
         onhover: {
           enable: true,
-          mode: "repulse",
+          mode: 'repulse',
         },
         onclick: {
           enable: false,
-          mode: "push",
+          mode: 'push',
         },
         resize: true,
       },
@@ -139,7 +138,7 @@ const Skills = () => {
       },
     },
     retina_detect: true,
-  };
+  }
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -151,93 +150,93 @@ const Skills = () => {
         staggerChildren: 0.2,
       },
     },
-  };
+  }
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [currentPage, setCurrentPage] = useState(0);
-  const [showCloud, setShowCloud] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [currentPage, setCurrentPage] = useState(0)
+  const [showCloud, setShowCloud] = useState(false)
 
   const handleCategoryChange = (category: SetStateAction<string>) => {
-    setSelectedCategory(category);
-    setCurrentPage(0);
-  };
+    setSelectedCategory(category)
+    setCurrentPage(0)
+  }
 
   const handleSearchTermChange = (event: {
-    target: { value: SetStateAction<string> };
+    target: { value: SetStateAction<string> }
   }) => {
-    setSearchTerm(event.target.value);
-  };
+    setSearchTerm(event.target.value)
+  }
 
   useEffect(() => {
-    setCurrentPage(0);
-  }, [selectedCategory]);
+    setCurrentPage(0)
+  }, [selectedCategory])
 
   const filteredIcons = useMemo(() => {
     return mainIcons.filter((icon) => {
       const categoryMatch =
-        selectedCategory === "all" ||
-        icon.category.toLowerCase() === selectedCategory.toLowerCase();
+        selectedCategory === 'all' ||
+        icon.category.toLowerCase() === selectedCategory.toLowerCase()
       const searchTermMatch = icon.name
         .toLowerCase()
-        .includes(searchTerm.toLowerCase());
+        .includes(searchTerm.toLowerCase())
 
-      return categoryMatch && searchTermMatch;
-    });
-  }, [mainIcons, selectedCategory, searchTerm]);
+      return categoryMatch && searchTermMatch
+    })
+  }, [mainIcons, selectedCategory, searchTerm])
 
-  const [itemsPerPage, setItemsPerPage] = useState(14);
+  const [itemsPerPage, setItemsPerPage] = useState(14)
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 769) {
-        setItemsPerPage(4);
+        setItemsPerPage(4)
       } else {
-        setItemsPerPage(14);
+        setItemsPerPage(14)
       }
     }
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
-  const totalPages = Math.ceil(filteredIcons.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredIcons.length / itemsPerPage)
 
   const handlePageClick = ({ selected }: { selected: number }) => {
-    setCurrentPage(selected);
-    setSearchTerm("");
-  };
+    setCurrentPage(selected)
+    setSearchTerm('')
+  }
 
   const visibleIcons = useMemo(() => {
-    const startIndex = currentPage * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    return filteredIcons.slice(startIndex, endIndex);
-  }, [currentPage, itemsPerPage, filteredIcons]);
+    const startIndex = currentPage * itemsPerPage
+    const endIndex = startIndex + itemsPerPage
+    return filteredIcons.slice(startIndex, endIndex)
+  }, [currentPage, itemsPerPage, filteredIcons])
 
-  const [soundClick, setSoundClick] = useState<boolean>(false);
+  const [soundClick, setSoundClick] = useState<boolean>(false)
 
   const handleAudio = () => {
-    const audio = new Audio("/sounds/button_click.mp3");
+    const audio = new Audio('/sounds/button_click.mp3')
 
     if (soundClick) {
-      audio.pause();
+      audio.pause()
     } else {
-      audio.play();
+      audio.play()
     }
-  };
+  }
 
   const toggleCloud = () => {
-    setShowCloud(!showCloud);
-  };
+    setShowCloud(!showCloud)
+  }
 
   return (
     <Transition onAnimationComplete={() => {}}>
       <Particles options={particlesConfig} init={particlesInit} />
       <section className={styles.skills}>
         <h2 className={styles.heading}>
-          <span>//</span> {t("skills.title")}
-          <span>{t("skills.text")}</span>
+          <span>//</span> {t('skills.title')}
+          <span>{t('skills.text')}</span>
         </h2>
         <button className={styles.toggle} onClick={toggleCloud}>
           {showCloud ? (
@@ -251,8 +250,8 @@ const Skills = () => {
         ) : (
           <>
             <motion.div
-              initial={{ opacity: 0, x: "-100%" }}
-              animate={{ opacity: 1, x: "0%" }}
+              initial={{ opacity: 0, x: '-100%' }}
+              animate={{ opacity: 1, x: '0%' }}
               transition={{
                 duration: 2.5,
                 delay: 0.3,
@@ -263,8 +262,8 @@ const Skills = () => {
               <select
                 value={selectedCategory}
                 onChange={(e) => {
-                  handleCategoryChange(e.target.value);
-                  handleAudio();
+                  handleCategoryChange(e.target.value)
+                  handleAudio()
                 }}
               >
                 <option value="all">All</option>
@@ -279,7 +278,7 @@ const Skills = () => {
                 type="text"
                 value={searchTerm}
                 onChange={handleSearchTermChange}
-                placeholder={t("skills.search")}
+                placeholder={t('skills.search')}
               />
               <motion.div className={styles.icon_search}>
                 <LuSearch />
@@ -292,7 +291,7 @@ const Skills = () => {
               animate="visible"
             >
               {visibleIcons.map((icon) => {
-                const IconComponent = iconComponents[icon.name];
+                const IconComponent = iconComponents[icon.name]
                 return (
                   <motion.div
                     key={icon.id}
@@ -324,17 +323,17 @@ const Skills = () => {
                           start={0}
                           end={icon.percentage}
                           duration={2.5}
-                          suffix={"%"}
+                          suffix={'%'}
                         />
                       </div>
                     </ProgressBar>
                   </motion.div>
-                );
+                )
               })}
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: "-100%" }}
-              animate={{ opacity: 1, x: "0%" }}
+              initial={{ opacity: 0, x: '-100%' }}
+              animate={{ opacity: 1, x: '0%' }}
               transition={{
                 duration: 2.5,
                 delay: 0.3,
@@ -346,13 +345,13 @@ const Skills = () => {
                 pageRangeDisplayed={5}
                 marginPagesDisplayed={0}
                 onPageChange={({ selected: selectedPage }) => {
-                  handlePageClick({ selected: selectedPage });
-                  handleAudio();
+                  handlePageClick({ selected: selectedPage })
+                  handleAudio()
                 }}
                 containerClassName={styles.pagination}
                 activeClassName={styles.activePage}
-                previousLabel={"<<"}
-                nextLabel={">>"}
+                previousLabel={'<<'}
+                nextLabel={'>>'}
                 forcePage={currentPage}
               />
             </motion.div>
@@ -360,6 +359,6 @@ const Skills = () => {
         )}
       </section>
     </Transition>
-  );
-};
-export default Skills;
+  )
+}
+export default Skills

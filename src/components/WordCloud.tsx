@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import Cloud from "react-d3-cloud";
-import { mainIcons } from "../data/iconsServer";
-import { useTheme } from "../context/ThemeContext";
-import { motion } from "framer-motion";
-import styles from "./WordCloud.module.css";
+import { useEffect, useState } from "react"
+import Cloud from "react-d3-cloud"
+import { mainIcons } from "../data/iconsServer"
+import { useTheme } from "../context/ThemeContext"
+import { motion } from "framer-motion"
+import styles from "./WordCloud.module.css"
 
 const WordCloud = () => {
   const words = mainIcons.map((icon) => ({
     text: `${icon.name} - ${icon.category}`,
     value: icon.id,
-  }));
+  }))
 
-  const { mainColor } = useTheme();
+  const { mainColor } = useTheme()
 
   const [wordPositions, setWordPositions] = useState(
     words.map(() => ({
       x: Math.random() * 1500,
       y: Math.random() * 700,
     }))
-  );
+  )
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,18 +27,18 @@ const WordCloud = () => {
           x: Math.random() * 1500,
           y: Math.random() * 700,
         }))
-      );
-    }, 7000);
+      )
+    }, 7000)
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval)
+  }, [])
 
   const fontSizeMapper = (word: { value: number }) => {
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 768
 
-    const scaleFactor = isMobile ? 10 : 8;
-    return Math.log2(word.value) * scaleFactor;
-  };
+    const scaleFactor = isMobile ? 10 : 8
+    return Math.log2(word.value) * scaleFactor
+  }
 
   return (
     <motion.div
@@ -65,7 +65,7 @@ const WordCloud = () => {
         fill={() => mainColor}
       />
     </motion.div>
-  );
-};
+  )
+}
 
-export default WordCloud;
+export default WordCloud

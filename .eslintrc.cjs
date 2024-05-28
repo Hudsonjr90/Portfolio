@@ -6,6 +6,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
@@ -15,6 +17,10 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+    ],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: 'var', next: 'return' },
     ],
   },
 }
