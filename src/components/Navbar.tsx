@@ -95,7 +95,7 @@ const Navbar = () => {
                 to={"/"}
                 className={styles.logo}
             >
-                &lt <span className={styles.logo_span}>H.K DEV</span>/&gt
+                &lt; <span className={styles.logo_span}>H.K DEV</span>/&gt;
             </NavLink>
 
             <nav>
