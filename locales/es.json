@@ -199,10 +199,10 @@
     "subtitle": "Tecnologías Utilizadas",
     "data": [
       {
-        "description": "Sitio web simple, siguiendo la orientación del curso orientado a objetos en Udemy"
+        "description": "Sitio web simple, siguiendo la orientación del curso orientado a objetos en Udemy."
       },
       {
-        "description": "Pokedex que lista pokémons y su información, utilizando carga perezosa y filtro."
+        "description": "Pokedex usa API para consultar y enumerar Pokémon."
       },
       {
         "description": "Juego creado en React, hecho con TypeScript, para practicar y ejercitar un poco más en el lenguaje. Juego simple, que aún tendrá algunas actualizaciones y modificaciones también."

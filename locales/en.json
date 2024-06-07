@@ -199,10 +199,10 @@
     "subtitle": "Used Technologies",
     "data": [
       {
-        "description": "Simple website, following object-oriented Course guidance on Udemy"
+        "description": "Simple website, following object-oriented Course guidance on Udemy."
       },
       {
-        "description": "Pokedex listing pokémons and their information, using lazy loading and filter."
+        "description": "Pokedex using API to query and list Pokémon."
       },
       {
         "description": "Game created in React, made with Typescript, to practice and exercise a little more in the language. Simple game, which will still have some updates and modifications as well."

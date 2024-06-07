@@ -52,7 +52,8 @@ import {
   SiCypress,
   SiAmazonaws,
   SiSketch,
-  SiAdobexd
+  SiAdobexd,
+  SiNuxtdotjs
 } from "react-icons/si"
 import {
   BiLogoTypescript,
@@ -133,7 +134,8 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Cypress: SiCypress,
   AWS: SiAmazonaws,
   Sketch: SiSketch,
-  AdobeXD: SiAdobexd
+  AdobeXD: SiAdobexd,
+  Nuxtjs: SiNuxtdotjs
 }
 
 const mainIcons = [
@@ -201,6 +203,7 @@ const mainIcons = [
   { id: 60, name: "AWS", category: "Tools", percentage: 10 },
   { id: 61, name: "Sketch", category: "Design", percentage: 10 },
   { id: 62, name: "AdobeXD", category: "Design", percentage: 10 },
+  { id: 63, name: "Nuxtjs", category: "Frontend", percentage: 10 },
 ]
 
 export { iconComponents, mainIcons }

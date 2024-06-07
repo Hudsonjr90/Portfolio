@@ -199,10 +199,10 @@
     "subtitle": "Tecnologias Utilizadas",
     "data": [
       {
-        "description": "Website simples, seguindo orientação a objetos do Curso na Udemy"
+        "description": "Website simples, seguindo orientação a objetos do Curso na Udemy."
       },
       {
-        "description": "Pokedex listando pokémons e suas informações, usando lazy loading e filter."
+        "description": "Pokedex usando API para consultar e listar Pokemóns."
       },
       {
         "description": "Jogo criado em React, feito com Typescript, para poder praticar e exercitar um pouco mais na linguagem. Jogo simples, cujo ainda terá algumas atualizações e modificações também."

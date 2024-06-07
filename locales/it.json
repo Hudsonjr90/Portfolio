@@ -203,7 +203,7 @@
         "description": "Sito web semplice, seguendo le linee guida del corso orientato agli oggetti su Udemy"
       },
       {
-        "description": "Pokedex che elenca i pokémon e le loro informazioni, utilizzando il caricamento ritardato e il filtro."
+        "description": "Pokedex utilizza l'API per interrogare ed elencare i Pokémon."
       },
       {
         "description": "Giochi creati in React, realizzati con Typescript, per praticare ed esercitarsi un po' di più nel linguaggio. Gioco semplice, che avrà ancora alcuni aggiornamenti e modifiche anche."
