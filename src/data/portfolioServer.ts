@@ -28,8 +28,8 @@ const portfolioServer = [
       "CSS",
       "HTML",
     ],
-    linkDeploy: "",
-    linkRepository: "",
+    linkDeploy: "https://reactwebsite-puce.vercel.app",
+    linkRepository: "https://github.com/Hudsonjr90/reactwebsite",
   },
   {
     id: 1,
