@@ -28,7 +28,7 @@ const testimonialServer = [
   {
     id: 6,
     title: "André Scott",
-    text: "Hudson para mim, foi um excelente instrututor. Me ensinou a manusear uma plataforma, que nem de longe é da minha área. Profissional exemplar e de extrema capacidade. tem tudo para decolar em sua carreira de Desenvolvedor.",
+    text: "Hudson para mim, foi um excelente instrutor. Me ensinou a manusear uma plataforma, que nem de longe é da minha área. Profissional exemplar e de extrema capacidade. tem tudo para decolar em sua carreira de Desenvolvedor.",
   },
   {
     id: 7,
