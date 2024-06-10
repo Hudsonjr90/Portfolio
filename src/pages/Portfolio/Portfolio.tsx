@@ -29,7 +29,7 @@ const Portfolio = () => {
   const { t } = useTranslation()
 
   const [slidePerview, setSlidePerview] = useState<number>(3)
-  const [initialSlide] = useState<number>(3)
+  const [initialSlide] = useState<number>(0)
   const [transitionCompleted, setTransitionCompleted] = useState(false)
 
   useEffect(() => {

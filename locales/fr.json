@@ -223,13 +223,31 @@
         "description": "Suivi des jours fériés du canton suisse"
       },
       {
-        "description": "Page d'accueil, de la pizzeria Pizza&Tutti, l'une des meilleures de Rio de Janeiro."
-      },
-      {
         "description": "Écran de connexion animé, réalisé pour la pratique"
       },
       {
         "description": "Convertisseur de devises mondial, réalisé dans le cours Udemy"
+      },
+      {
+        "description": "Une petite application web pour accélérer le tirage au sort des équipes de football"
+      },
+      {
+         "description": "Site web d’un organisateur de tâches (to-do list)"
+      },
+      {
+         "description": "Calculateur d’IMC simple pour le calcul de la masse corporelle"
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
       }
     ]
   },

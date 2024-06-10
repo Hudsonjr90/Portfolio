@@ -223,13 +223,34 @@
         "description": "Rastreador de Feriados do Cantão Suíço"
       },
       {
-        "description": "Landing page, da pizzaria Pizza&Tutti, uma das melhores do Rio de Janeiro."
-      },
-      {
         "description": "Tela de login animada, feita para praticar"
       },
       {
         "description": "Conversor de Moedas Mundial, feito no curso da Udemy"
+      },
+      {
+        "description": "Um pequeno app web para agilizar o sorteio dos times no futebol"
+      },
+      {
+        "description": "Website de um organizador de tarefas (to-do list)"
+      },
+      {
+         "description": "Calculadora IMC simples, para cálculo de massa corporal"
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
       }
     ]
   },

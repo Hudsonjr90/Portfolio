@@ -223,13 +223,31 @@
         "description": "Rastreador de días festivos del Cantón Suizo"
       },
       {
-        "description": "Página de inicio, de la pizzería Pizza&Tutti, una de las mejores de Río de Janeiro."
-      },
-      {
         "description": "Pantalla de inicio de sesión animada, hecha para practicar"
       },
       {
         "description": "Convertidor de moneda global, realizado en el curso de Udemy"
+      },
+      {
+        "description": "Una pequeña aplicación web para agilizar el sorteo de equipos en el fútbol"
+      },
+      {
+         "description": "Sitio web de un organizador de tareas (lista de tareas pendientes)"
+      },
+      {
+         "description": "Calculadora de IMC simple para el cálculo de la masa corporal"
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
       }
     ]
   },

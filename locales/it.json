@@ -224,13 +224,31 @@
         "description": "Tracker delle festività del Canton svizzero"
       },
       {
-        "description": "Pagina di atterraggio, dalla pizzeria Pizza&Tutti, una delle migliori di Rio de Janeiro."
-      },
-      {
         "description": "Schermata di accesso animata, fatta per esercitarsi"
       },
       {
         "description": "Convertitore di valuta globale, realizzato nel corso di Udemy"
+      },
+      {
+        "description": "Una piccola web app per velocizzare il sorteggio delle squadre nel calcio"
+      },
+      {
+         "description": "Sito web di un organizzatore di attività (elenco di cose da fare)"
+      },
+      {
+         "description": "Semplice calcolatore BMI per il calcolo della massa corporea"
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
+      },
+      {
+         "description": ""
       }
     ]
   },

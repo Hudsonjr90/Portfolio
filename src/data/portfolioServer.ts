@@ -9,6 +9,9 @@ import card from "/imgs/imgProjects/card.png"
 import calendar from "/imgs/imgProjects/calendar.png"
 import login from "/imgs/imgProjects/login.png"
 import conversor from "/imgs/imgProjects/conversor.png"
+import sorteio from "/imgs/imgProjects/sorteio.png"
+import task from "/imgs/imgProjects/task.png"
+import imc from "/imgs/imgProjects/imc.png"
 
 const portfolioServer = [
   {
@@ -133,34 +136,34 @@ const portfolioServer = [
     linkDeploy: "https://conversor-de-moedas-mundial.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/ConversorDeMoedasMundial",
   },
-    // {
-  //   id: 10,
-  //   image: ,
-  //   name: "",
-  //   description:
-  //     "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // },
-  // {
-  //   id: 11,
-  //   image: ,
-  //   name: "",
-  //   description: "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // },
-  // {
-  //   id: 12,
-  //   image: ,
-  //   name: "",
-  //   description: "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // },
+    {
+    id: 10,
+    image: sorteio,
+    name: "Soccer Sort",
+    description:
+      "Um pequeno app web para agilizar o sorteio dos times no futebol",
+    technologies: ["HTML", "CSS", "JS"],
+    linkDeploy: "https://sorteiodostimes.vercel.app/",
+    linkRepository: "https://github.com/Hudsonjr90/sorteiodostimes",
+  },
+  {
+    id: 11,
+    image: task,
+    name: "Task App",
+    description: "Website de um organizador de tarefas (to-do list)",
+    technologies: ["React", "Typescript", "Tailwind", "Redux"],
+    linkDeploy: "https://taskapp-v1.vercel.app/",
+    linkRepository: "https://github.com/Hudsonjr90/Task-app",
+  },
+  {
+    id: 12,
+    image: imc,
+    name: "IMC Calculator",
+    description: "Calculadora IMC simples, para cálculo de massa corporal",
+    technologies: ["Vue3", "Vuetify", "Vite", "Typescript"],
+    linkDeploy: "https://calcimc.vercel.app/",
+    linkRepository: "https://github.com/Hudsonjr90/Calculadora-IMC",
+  },
   // {
   //   id: 13,
   //   image: ,
@@ -181,6 +184,42 @@ const portfolioServer = [
   // },
   // {
   //   id: 15,
+  //   image: ,
+  //   name: "",
+  //   description: "",
+  //   technologies: ["", "", "", "", "", "", "", "", "",],
+  //   linkDeploy: "",
+  //   linkRepository: "",
+  // }
+  // {
+  //   id: 16,
+  //   image: ,
+  //   name: "",
+  //   description: "",
+  //   technologies: ["", "", "", "", "", "", "", "", "",],
+  //   linkDeploy: "",
+  //   linkRepository: "",
+  // }
+  // {
+  //   id: 17,
+  //   image: ,
+  //   name: "",
+  //   description: "",
+  //   technologies: ["", "", "", "", "", "", "", "", "",],
+  //   linkDeploy: "",
+  //   linkRepository: "",
+  // }
+  // {
+  //   id: 18,
+  //   image: ,
+  //   name: "",
+  //   description: "",
+  //   technologies: ["", "", "", "", "", "", "", "", "",],
+  //   linkDeploy: "",
+  //   linkRepository: "",
+  // }
+  // {
+  //   id: 19,
   //   image: ,
   //   name: "",
   //   description: "",
