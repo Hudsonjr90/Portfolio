@@ -173,7 +173,8 @@ label {
 
 /* <========== breakpoints ==========> */
 
-@media (max-width: 1440px) {
+
+@media (max-width: 1550px) {
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
