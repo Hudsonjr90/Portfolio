@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next"
 import { loadFull } from "tsparticles"
 import { useTheme } from "../../context/ThemeContext"
 // IMAGENS
-import About_img from "/imgs/hudson.png"
+import About_img from "/imgs/about.png"
 // FRAMER MOTION
 import { motion } from "framer-motion"
 
