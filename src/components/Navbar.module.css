@@ -176,78 +176,31 @@ label {
 
 @media (max-width: 1550px) {
   .header {
-    background: var(--bg_color);
-    backdrop-filter: blur(80px);
-    content: " ";
-    height: auto;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    padding: 1rem 2%;
+    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  position: fixed;
+  padding: 1.2rem 1%;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-color: var(--bg_color);
+  border-bottom: 1px solid var(--main_color);
   }
-  .btn_menu {
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: block;
-    height: 6.5rem;
-    margin-right: 1rem;
+
+  .links_list a {
+    color: var(--text_color);
+    font-size: 1.7rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin-left: 3rem;
     position: relative;
-    width: 2.4rem;
+    transition: 0.3s;
   }
-  .btn_menu .bar {
-    border-radius: 3px;
-    background: var(--main_color);
-    display: block;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.7s;
-    width: 28px;
-  }
-  .btn_menu .bar:nth-child(2) {
-    background: var(--text_color);
-  }
-
-  .btn_menu.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(405deg);
-  }
-  .btn_menu.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .btn_menu.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-405deg);
-  }
-  .links_list {
-    background: var(--bg_color);
-    backdrop-filter: 50px (blur);
-    flex-direction: column;
-    height: 0;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 100%;
-    transition: 0.6s ease;
-    width: 100%;
-  }
-
-  .links_list.active {
-    height: 42.5rem;
-  }
-  .links_list li {
-    justify-content: center;
-    margin: 2.1rem 0 0.8rem;
-    opacity: 0;
-    text-align: center;
-    transition: 0.3s ease;
-    transform: translateY(-50px);
-  }
-  .links_list li.animation_menu {
-    opacity: 1;
-    transition-delay: calc(0.2s * var(--i));
-    transform: translateY(0);
-  }
+  
 }
 
 @media (max-width: 991px) {

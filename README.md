@@ -8,6 +8,8 @@
 
  ## 🎨 Layout 💻 && 📱 Mobile  
 
+ <img src="./public/imgs/readme.png"/>
+
 
  ## ⚙️ Pré-requisitos
 
