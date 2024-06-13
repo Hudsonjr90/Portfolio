@@ -28,7 +28,7 @@ type RecursivePartial<T> = {
 const Portfolio = () => {
   const { t } = useTranslation()
 
-  const [slidePerview, setSlidePerview] = useState<number>(3)
+  const [slidePerview, setSlidePerview] = useState<number>(1)
   const [initialSlide] = useState<number>(0)
   const [transitionCompleted, setTransitionCompleted] = useState(false)
 
@@ -176,13 +176,14 @@ const Portfolio = () => {
             centeredSlides={true}
             loop={false}
             coverflowEffect={{
-              rotate: 0,
+              rotate: 50,
               stretch: 0,
               depth: 100,
-              modifier: 2.5,
+              modifier: 1,
+              slideShadows: true,
             }}
             slidesPerView={slidePerview}
-            pagination={{ clickable: true }}
+           
             navigation
             initialSlide={initialSlide}
             autoplay={{ delay: 3000 }} 
