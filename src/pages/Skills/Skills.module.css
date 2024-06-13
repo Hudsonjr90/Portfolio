@@ -160,6 +160,9 @@
 }
 
 @media (max-width: 2560px){
+  .skills .heading {
+    font-size: 3.7rem;
+  }
 
   .filters input {
     color: var(--main_color);

@@ -86,17 +86,6 @@ const CardComponent = () => {
       </Card>
     ))
 
-  const [soundClick, setSoundClick] = useState<boolean>(false)
-
-  const handleAudio = () => {
-    const audio = new Audio("/sounds/button_click.mp3")
-
-    if (soundClick) {
-      audio.pause()
-    } else {
-      audio.play()
-    }
-  }
 
   return (
     <>
@@ -127,7 +116,6 @@ const CardComponent = () => {
           marginPagesDisplayed={0}
           onPageChange={({ selected: selectedPage }) => {
             handlePageClick({ selected: selectedPage })
-            handleAudio()
           }}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}

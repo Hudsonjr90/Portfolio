@@ -171,14 +171,205 @@
 
 /* <========== breakpoints ==========> */
 
-/* Estilos para dispositivos com largura máxima de 991px */
+@media (max-width: 2560px){
+  .testimonials .heading {
+    font-size: 3.7rem;
+  }
+
+  .slider_container img {
+    position: absolute;
+    width: 30vw;
+    height: 45vh;
+    border-radius: 2rem;
+    margin-left: -1rem;
+  }
+
+  .flipContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 29vw;
+    height: 45vh;
+    margin-left: 55rem;
+    border: 1px solid var(--main_color);
+    background-color: var(--bg_color);
+    padding: 0 5rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    border-radius: 0;
+  }
+}
+
+
+@media (max-width: 1550px){
+  .testimonials .heading {
+    font-size: 3.5rem;
+  }
+
+  .slider_container img {
+    position: absolute;
+    width: 32vw;
+    height: 45vh;
+    border-radius: 2rem;
+    margin-left: -1rem;
+  }
+
+  .flipContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31vw;
+    height: 45vh;
+    margin-left: 46rem;
+    border: 1px solid var(--main_color);
+    background-color: var(--bg_color);
+    padding: 0 5rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0rem 1rem;
+    text-align: center;
+    border-radius: 0;
+  }
+}
+
+
+@media (max-width: 1450px){
+  .testimonials .heading {
+    font-size: 3.2rem;
+  }
+
+  .slider_container img {
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    border-radius: 2rem;
+    margin-left: 2rem;
+  }
+
+  .flipContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34vw;
+    height: 44vh;
+    margin-left: 45rem;
+    border: 1px solid var(--main_color);
+    background-color: var(--bg_color);
+    padding: 0 5rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0rem 1rem;
+    text-align: center;
+    border-radius: 0;
+  }
+}
+
+
+@media (max-width: 1024px){
+  .testimonials .heading {
+    font-size: 5.2rem;
+  }
+
+  .slider_container img {
+    position: absolute;
+    width: 80vw;
+    height: 45vh;
+    border-radius: 2rem;
+    margin-left: -1rem;
+  }
+
+  .flipContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 45vh;
+    margin-left: 5.1rem;
+    border: 1px solid var(--main_color);
+    background-color: var(--bg_color);
+    padding: 0 5rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 1rem 1rem;
+    text-align: center;
+    border-radius: 0;
+  }
+}
+
+
 @media (max-width: 991px) {
   .testimonials .heading {
     font-size: 5.2rem;
   }
+
+  .slider_container img {
+    position: absolute;
+    width: 80vw;
+    height: 45vh;
+    border-radius: 2rem;
+    margin-left: -1rem;
+  }
+
+  .flipContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 45vh;
+    margin-left: 5.1rem;
+    border: 1px solid var(--main_color);
+    background-color: var(--bg_color);
+    padding: 0 5rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 1rem 1rem;
+    text-align: center;
+    border-radius: 0;
+  }
 }
 
-/* Estilos para dispositivos com largura máxima de 768px */
 @media (max-width: 768px) {
   .testimonials .heading {
     font-size: 5rem;
@@ -229,7 +420,6 @@
   }
 }
 
-/* Estilos para dispositivos com largura máxima de 691px */
 @media (max-width: 691px) {
   .testimonials .heading {
     font-size: 4rem;
@@ -277,7 +467,6 @@
   }
 }
 
-/* Estilos para dispositivos com largura máxima de 470px */
 @media (max-width: 470px) {
   .testimonials .heading {
     font-size: 3.26rem;
@@ -373,7 +562,6 @@
   }
 }
 
-/* Estilos para dispositivos com largura máxima de 400px */
 @media (max-width: 400px) {
   .testimonials .heading {
     font-size: 2.9rem;
@@ -423,7 +611,6 @@
   }
 }
 
-/* Estilos para dispositivos com largura máxima de 375px */
 @media (max-width: 375px) {
   .testimonials .heading {
     font-size: 2.8rem;
@@ -474,4 +661,52 @@
   }
 }
 
-@media (max-width: 360px) {}
+@media (max-width: 360px) {
+  .testimonials .heading {
+    font-size: 2.8rem;
+  }
+
+  .slider_container img {
+    position: absolute;
+    width: 90vw;
+    height: 45vh;
+    border-radius: 2rem;
+    margin-left: 0.1rem;
+    margin-top: -1rem;
+  }
+
+  .flipContent {
+    width: 89vw;
+    height: 44vh;
+    margin-left: -1.2rem;
+    margin-top: -1rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .flipContent h3 {
+    margin-bottom: 6rem;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .pagination li.activePage {
+    border-radius: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+}

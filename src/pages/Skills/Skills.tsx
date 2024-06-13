@@ -214,18 +214,6 @@ const Skills = () => {
     return filteredIcons.slice(startIndex, endIndex)
   }, [currentPage, itemsPerPage, filteredIcons])
 
-  const [soundClick, setSoundClick] = useState<boolean>(false)
-
-  const handleAudio = () => {
-    const audio = new Audio('/sounds/button_click.mp3')
-
-    if (soundClick) {
-      audio.pause()
-    } else {
-      audio.play()
-    }
-  }
-
   const toggleCloud = () => {
     setShowCloud(!showCloud)
   }
@@ -263,7 +251,6 @@ const Skills = () => {
                 value={selectedCategory}
                 onChange={(e) => {
                   handleCategoryChange(e.target.value)
-                  handleAudio()
                 }}
               >
                 <option value="all">All</option>
@@ -346,7 +333,6 @@ const Skills = () => {
                 marginPagesDisplayed={0}
                 onPageChange={({ selected: selectedPage }) => {
                   handlePageClick({ selected: selectedPage })
-                  handleAudio()
                 }}
                 containerClassName={styles.pagination}
                 activeClassName={styles.activePage}

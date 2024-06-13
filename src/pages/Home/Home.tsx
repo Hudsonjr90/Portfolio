@@ -40,7 +40,6 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedImages, setSelectedImages] = useState<string[]>([])
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null)
-  const [soundClick, setSoundClick] = useState<boolean>(false)
 
   useEffect(() => {
     
@@ -95,15 +94,6 @@ const Home = () => {
     }
   }
 
-  const handleAudio = () => {
-    const audio = new Audio("/sounds/button_click.mp3")
-
-    if (soundClick) {
-      audio.pause()
-    } else {
-      audio.play()
-    }
-  }
 
   const [typedStrings, setTypedStrings] = useState<string[]>([])
 
@@ -268,7 +258,6 @@ const Home = () => {
                 className={styles.btn}
                 onClick={() => {
                   setShowModal(true)
-                  handleAudio()
                 }}
               >
                 {t("home.resume")}
@@ -308,7 +297,6 @@ const Home = () => {
               title={t("home.close")}
               onClick={() => {
                 setShowModal(false)
-                handleAudio()
               }}
             />
           </Modal.Title>
