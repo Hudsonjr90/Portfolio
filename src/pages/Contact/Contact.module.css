@@ -204,7 +204,7 @@ form .textarea_field .error_txt {
   color: var(--main_color);
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: -20rem;
@@ -237,7 +237,7 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: -20rem;
@@ -248,7 +248,7 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 545px) {
+@media screen and (max-width: 545px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: -20rem;
@@ -264,7 +264,7 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 470px) {
+@media screen and (max-width: 470px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: -15rem;
@@ -280,7 +280,7 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 428px) {
+@media screen and (max-width: 428px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: 1rem;
@@ -296,7 +296,7 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 415px) {
+@media screen and (max-width: 415px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: -12rem;
@@ -311,7 +311,7 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: -10rem;
@@ -326,7 +326,7 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 375px) {
+@media screen and (max-width: 375px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: -2rem;
@@ -341,7 +341,7 @@ form .textarea_field .error_txt {
   }
 }
 
-@media (max-width: 360px) {
+@media screen and (max-width: 360px) {
   .contact {
     padding: 6rem 6% 2rem;
     margin-top: -5rem;

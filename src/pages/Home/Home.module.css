@@ -253,7 +253,6 @@
 
 .modal_title {
   margin-bottom: 1rem;
-  padding-left: 16rem !important;
   display: flex;
   justify-content: space-between;
   border: 2px solid var(--main_color);
@@ -342,7 +341,7 @@
 
 @media (max-width: 1550px) {
   .home_img {
-    bottom: 5rem;
+    bottom: 2rem;
     right: 10rem;
   }
 
@@ -355,27 +354,24 @@
   }
 
   .modal_container {
-    width: 69.4vw;
+    width: 48vw;
     z-index: 2;
   }
 
   .modal_content {
-    width: 69vw;
-    height: 85vh;
+    width: 48vw;
+    height: 65vh;
   }
 
   .modal_content img {
-    width: 68vw;
+    width: 48vw;
   }
 
-  .modal_title {
-    padding-left: 18rem;
-  }
-
+ 
   .modal_title .down_button {
     font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 74rem;
+    margin-left: 42rem;
   }
 
   .modal_title .close_button {
@@ -386,8 +382,8 @@
 
 @media (max-width: 1450px) {
   .home_img {
-    bottom: 9rem;
-    right: 6rem;
+    bottom: 2.5rem;
+    right: 8rem;
   }
 
   .home_img img {
@@ -395,31 +391,27 @@
   }
 
   .home_content {
-    height: 50rem;
+    height: 60vh;
   }
 
   .modal_container {
-    width: 69.4vw;
+    width: 60vw;
     z-index: 2;
   }
 
   .modal_content {
-    width: 69vw;
-    height: 85vh;
+    width: 60vw;
+    height: 65vh;
   }
 
   .modal_content img {
-    width: 68vw;
-  }
-
-  .modal_title {
-    padding-left: 18rem;
+    width: 59vw;
   }
 
   .modal_title .down_button {
     font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 74rem;
+    margin-left: 58rem;
   }
 
   .modal_title .close_button {
@@ -430,16 +422,16 @@
 
 @media (max-width: 1024px) {
   .home_img {
-    bottom: 2rem;
-    right: 5rem;
+    bottom: 3rem;
+    right: 3rem;
   }
 
   .home_img img {
-    width: 48vw;
+    width: 43vw;
   }
 
   .home_content {
-    height: 50rem;
+    height: 40vh;
   }
 
   .modal_container {
@@ -516,23 +508,19 @@
 }
 
 @media (max-width: 768px) {
-  .home_content {
-    height: 70rem;
-  }
-
   .home_img img {
-    width: 60vw;
+    width: 50vw;
 
   }
 
   .home_img {
-    bottom: 5rem;
+    bottom: 2rem;
     right: 1rem;
     z-index: -1;
   }
 
   .home_content {
-    height: 75vh;
+    height: 60vh;
   }
 
 

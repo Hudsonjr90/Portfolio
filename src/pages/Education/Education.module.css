@@ -28,3 +28,41 @@
     transform: translate(0);
   }
 }
+
+@media (max-width: 2560px){
+  .education .heading {
+    font-size: 3.7rem;
+  }
+}
+
+
+@media (max-width: 1550px){
+  .education .heading {
+    font-size: 3.5rem;
+  }
+}
+
+
+@media (max-width: 1450px){
+  .education .heading {
+    font-size: 3.3rem;
+  }
+}
+
+
+@media screen and( max-width: 1024px){}
+
+
+@media screen and (max-width: 767px){}
+
+
+@media screen and (max-width: 470px){}
+
+
+@media screen and (max-width: 428px){}
+
+
+@media screen and (max-width: 375px){}
+
+
+

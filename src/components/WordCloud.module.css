@@ -1,6 +1,8 @@
 .container{
-  margin-top: 5rem;   
+    max-width: 1800px;  
+    margin-top: 3rem;
 }
+
 
 @media (max-width: 767px){
     .container{

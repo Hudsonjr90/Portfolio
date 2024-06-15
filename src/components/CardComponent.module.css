@@ -25,7 +25,7 @@
 }
 
 .card_text {
-  color: var(--main_color);
+  color: #020617;
   text-align: justify;
   font-size: 2rem;
   letter-spacing: -1px;
@@ -65,17 +65,15 @@
   justify-content: center;
   width: 3vw;
   height: 3vh;
-  border-radius: 20px;
 }
 
 .pagination li.activePage {
   color: var(--main_color);
   border: 1px solid var(--main_color);
   background-color: var(--bg_color);
-  border-radius: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 2560px) {
   .card_container {
     flex-direction: column;
     align-content: center;
@@ -83,20 +81,20 @@
   }
 
   .card_content {
-    width: 85vw;
-    height: 30vh;
-    margin-bottom: 15px;
+    width: 35vw;
+    height: 50vh;
+    margin-bottom: 5px;
     position: relative;
   }
 
   .card_content img {
-    width: 85vw;
-    height: 30vh;
+    width: 35vw;
+    height: 50vh;
   }
 
   .card_text {
     text-align: center;
-    padding: 0 2rem;
+    padding: 0 70rem;
     letter-spacing: -1px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -115,7 +113,6 @@
     width: auto;
     padding: 0.7rem 1rem;
     text-align: center;
-    border-radius: 0;
   }
 
   .pagination {
@@ -124,10 +121,204 @@
     margin-bottom: 2rem;
     align-items: center;
   }
+}
 
-  .pagination li.activePage {
-    border: 1px solid var(--main_color);
-    border-radius: 0;
+@media (max-width: 1550px) {
+  .card_container {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 2rem;
+  }
+
+  .card_content {
+    width: 40vw;
+    height: 50vh;
+    margin-bottom: 5px;
+    position: relative;
+  }
+
+  .card_content img {
+    width: 40vw;
+    height: 50vh;
+  }
+
+  .card_text {
+    text-align: center;
+    padding: 0 33rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    width: 88vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pagination {
+    margin-top: 5px;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.2rem 1rem;
+    text-align: center;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1450px) {
+  .card_container {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 2rem;
+  }
+
+  .card_content {
+    width: 45vw;
+    height: 55vh;
+    margin-bottom: 1px;
+    position: relative;
+  }
+
+  .card_content img {
+    width: 45vw;
+    height: 55vh;
+  }
+
+  .card_text {
+    text-align: center;
+    padding: 0 30rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    width: 88vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pagination {
+    margin-top: -15px;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.2rem 1rem;
+    text-align: center;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card_container {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 2rem;
+  }
+
+  .card_content {
+    width: 45vw;
+    height: 40vh;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .card_content img {
+    width: 45vw;
+    height: 40vh;
+  }
+
+  .card_text {
+    text-align: center;
+    padding: 0 22rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    width: 88vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pagination {
+    margin-top: 5px;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.2rem 1rem;
+    text-align: center;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .card_container {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 2rem;
+  }
+
+  .card_content {
+    width: 47vw;
+    height: 30vh;
+    position: relative;
+  }
+
+  .card_content img {
+    width: 47vw;
+    height: 30vh;
+  }
+
+  .card_text {
+    text-align: center;
+    padding: 0 20rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    width: 88vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pagination {
+    margin-top: -15px;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
   }
 }
 
@@ -167,7 +358,6 @@
     width: auto;
     padding: 0.7rem 1rem;
     text-align: center;
-    border-radius: 0;
   }
 
   .pagination {
@@ -175,11 +365,6 @@
     justify-content: center;
     margin-bottom: 2rem;
     align-items: center;
-  }
-
-  .pagination li.activePage {
-    border: 1px solid var(--main_color);
-    border-radius: 0;
   }
 }
 
@@ -219,7 +404,6 @@
     width: auto;
     padding: 0.7rem 1rem;
     text-align: center;
-    border-radius: 0;
   }
 
   .pagination {
@@ -227,10 +411,6 @@
     justify-content: center;
     margin-bottom: 2rem;
     align-items: center;
-  }
-
-  .pagination li.activePage {
-    border: 1px solid var(--main_color);
   }
 }
 
@@ -277,12 +457,6 @@
     width: auto;
     padding: 0.3rem 1rem;
     text-align: center;
-    border-radius: 0;
-  }
-
-  .pagination li.activePage {
-    border: 1px solid var(--main_color);
-    border-radius: 0;
   }
 }
 
@@ -322,7 +496,6 @@
     width: auto;
     padding: 0.7rem 1rem;
     text-align: center;
-    border-radius: 0;
   }
 
   .pagination {
@@ -330,11 +503,6 @@
     justify-content: center;
     margin-bottom: 2rem;
     align-items: center;
-  }
-
-  .pagination li.activePage {
-    border: 1px solid var(--main_color);
-    border-radius: 0;
   }
 }
 
@@ -374,7 +542,6 @@
     width: auto;
     padding: 0.7rem 1rem;
     text-align: center;
-    border-radius: 0;
   }
 
   .pagination {
@@ -382,11 +549,6 @@
     justify-content: center;
     margin-bottom: 2rem;
     align-items: center;
-  }
-
-  .pagination li.activePage {
-    border: 1px solid var(--main_color);
-    border-radius: 0;
   }
 }
 
