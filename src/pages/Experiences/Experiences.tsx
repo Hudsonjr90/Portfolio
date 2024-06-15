@@ -14,7 +14,7 @@ import Particles from "react-tsparticles"
 import { Engine, IOptions } from 'tsparticles-engine'
 import { loadFull } from "tsparticles"
 import { useTheme } from "../../context/ThemeContext"
-import { useCallback, useState } from "react"
+import { useCallback } from "react"
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]

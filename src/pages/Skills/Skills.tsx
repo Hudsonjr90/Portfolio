@@ -18,8 +18,10 @@ import Particles from 'react-tsparticles'
 import { Engine, IOptions } from 'tsparticles-engine'
 import { loadFull } from 'tsparticles'
 import { useTheme } from '../../context/ThemeContext'
-import { LuSearch } from 'react-icons/lu'
-import { FaCloudMeatball, FaSearch } from 'react-icons/fa'
+import { FaSearch } from 'react-icons/fa'
+import { GiSunCloud } from 'react-icons/gi'
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css'
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -218,6 +220,14 @@ const Skills = () => {
     setShowCloud(!showCloud)
   }
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
+    }, 7000) 
+
+    return () => clearInterval(interval)
+  }, [totalPages])
+
   return (
     <Transition onAnimationComplete={() => {}}>
       <Particles options={particlesConfig} init={particlesInit} />
@@ -226,13 +236,24 @@ const Skills = () => {
           <span>//</span> {t('skills.title')}
           <span>{t('skills.text')}</span>
         </h2>
-        <button className={styles.toggle} onClick={toggleCloud}>
-          {showCloud ? (
-            <FaSearch className={styles.show_cloud} />
-          ) : (
-            <FaCloudMeatball className={styles.show_cloud} />
-          )}
-        </button>
+        <div>
+          <button className={styles.toggle} onClick={toggleCloud}>
+            {showCloud ? (
+              <FaSearch
+                className={styles.show_search}
+                data-tooltip-id="search-tooltip"
+              />
+            ) : (
+              <GiSunCloud
+                className={styles.show_cloud}
+                data-tooltip-id="cloud-tooltip"
+              />
+            )}
+          </button>
+          <Tooltip id="search-tooltip" place="top" content="Search" />
+          <Tooltip id="cloud-tooltip" place="top" content="Cloud" />
+        </div>
+
         {showCloud ? (
           <WordCloud />
         ) : (
@@ -268,7 +289,7 @@ const Skills = () => {
                 placeholder={t('skills.search')}
               />
               <motion.div className={styles.icon_search}>
-                <LuSearch />
+                <FaSearch />
               </motion.div>
             </motion.div>
             <motion.div
