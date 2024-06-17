@@ -141,10 +141,7 @@
 
 .social_media a {
   align-items: center;
-  border: 0.2rem solid var(--main_color);
-  background: transparent;
   border-radius: 50%;
-  color: var(--main_color);
   display: inline-flex;
   font-size: 1.6rem;
   height: 3.5rem;
@@ -155,25 +152,25 @@
   width: 3.5rem;
 }
 
-.whatsapp:hover {
+.social_media .whatsapp {
   color: #fff;
   background: #25d366;
   border: none;
 }
 
-.email:hover {
+.social_media .email {
   color: #fff;
   background: #ee0a0a;
   border: none;
 }
 
-.linkedin:hover {
+.social_media .linkedin {
   color: #fff;
   background: #2867b2;
   border: none;
 }
 
-.github:hover {
+.social_media .github {
   color: #fff;
   background: #181717;
   border: none;

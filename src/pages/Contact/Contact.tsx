@@ -1,30 +1,27 @@
 // CSS
-import styles from "./Contact.module.css"
+import styles from './Contact.module.css'
 // HOOKS
-import { SetStateAction, useState, useCallback } from "react"
+import { SetStateAction, useState, useCallback } from 'react'
 // REACT ROUTER DOM
-import { NavLink } from "react-router-dom"
+import { NavLink } from 'react-router-dom'
 // COMPONENT
-import Transition from "../../components/Transition"
-import { useTranslation } from "react-i18next"
-import PhoneInput from "react-phone-number-input/input"
-import Particles from "react-tsparticles"
-import { Engine, IOptions } from "tsparticles-engine"
-import { loadFull } from "tsparticles"
-import { useTheme } from "../../context/ThemeContext"
+import Transition from '../../components/Transition'
+import { useTranslation } from 'react-i18next'
+import PhoneInput from 'react-phone-number-input/input'
+import Particles from 'react-tsparticles'
+import { Engine, IOptions } from 'tsparticles-engine'
+import { loadFull } from 'tsparticles'
+import { useTheme } from '../../context/ThemeContext'
 // EMAILJS
-import emailjs from "@emailjs/browser"
+import emailjs from '@emailjs/browser'
 // SWEETALERT
-import Swal from "sweetalert2"
+import Swal from 'sweetalert2'
 // FRAMER MOTION
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 // REACT ICONS
-import {
-  FaEnvelope,
-  FaGithub,
-  FaLinkedinIn,
-  FaWhatsapp,
-} from "react-icons/fa6"
+import { FaEnvelope, FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa6'
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -37,11 +34,11 @@ type RecursivePartial<T> = {
 const Contact = () => {
   const { t } = useTranslation()
 
-  const [name, setName] = useState<string>("")
-  const [email, setEmail] = useState<string>("")
-  const [phone, setPhone] = useState<string>("")
-  const [subject, setSubject] = useState<string>("")
-  const [message, setMessage] = useState<string>("")
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [phone, setPhone] = useState<string>('')
+  const [subject, setSubject] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
 
   const [nameError, setNameError] = useState<boolean>(false)
   const [emailError, setEmailError] = useState<boolean>(false)
@@ -53,17 +50,17 @@ const Contact = () => {
     e.preventDefault()
 
     if (
-      name === "" ||
-      email === "" ||
-      phone === "" ||
-      subject === "" ||
-      message === ""
+      name === '' ||
+      email === '' ||
+      phone === '' ||
+      subject === '' ||
+      message === ''
     ) {
-      setNameError(name === "")
-      setEmailError(email === "")
-      setPhoneError(phone === "")
-      setSubjectError(subject === "")
-      setMessageError(message === "")
+      setNameError(name === '')
+      setEmailError(email === '')
+      setPhoneError(phone === '')
+      setSubjectError(subject === '')
+      setMessageError(message === '')
 
       return
     }
@@ -83,27 +80,27 @@ const Contact = () => {
     }
 
     emailjs
-      .send("gmailMessage", "replyKey", templateParams, "pg7uosKesPGRIzFWI")
+      .send('gmailMessage', 'replyKey', templateParams, 'pg7uosKesPGRIzFWI')
       .then(
         (response) => {
           if (response.status === 200) {
             Swal.fire({
-              title: "Ótimo!",
-              text: "Mensagem enviada com sucesso!",
-              icon: "success",
+              title: 'Ótimo!',
+              text: 'Mensagem enviada com sucesso!',
+              icon: 'success',
             })
           }
 
-          console.log("EMAIL ENVIADO", response.status, response.text)
-          setName("")
-          setEmail("")
-          setPhone("")
-          setSubject("")
-          setMessage("")
+          console.log('EMAIL ENVIADO', response.status, response.text)
+          setName('')
+          setEmail('')
+          setPhone('')
+          setSubject('')
+          setMessage('')
         },
         (error) => {
-          console.log("ERRO AO ENVIAR O EMAIL ", error)
-        }
+          console.log('ERRO AO ENVIAR O EMAIL ', error)
+        },
       )
   }
 
@@ -127,7 +124,7 @@ const Contact = () => {
         value: mainColor,
       },
       shape: {
-        type: "polygon",
+        type: 'polygon',
         stroke: {
           width: 0,
           color: mainColor,
@@ -159,17 +156,17 @@ const Contact = () => {
       line_linked: {
         enable: false,
         distance: 150,
-        color: "#ffffff",
+        color: '#ffffff',
         opacity: 0.4,
         width: 1,
       },
       move: {
         enable: true,
         speed: 4,
-        direction: "top-right",
+        direction: 'top-right',
         random: false,
         straight: true,
-        out_mode: "out",
+        out_mode: 'out',
         bounce: false,
         attract: { enable: false, rotateX: 600, rotateY: 1200 },
       },
@@ -178,11 +175,11 @@ const Contact = () => {
       events: {
         onhover: {
           enable: true,
-          mode: "repulse",
+          mode: 'repulse',
         },
         onclick: {
           enable: false,
-          mode: "push",
+          mode: 'push',
         },
         resize: true,
       },
@@ -222,12 +219,11 @@ const Contact = () => {
         <div className={styles.header_container}>
           <h2>
             <span>//</span>
-            {t("contact.title")} <span>{t("contact.text")}</span>
+            {t('contact.title')} <span>{t('contact.text')}</span>
           </h2>
 
           <div className={styles.social_media}>
             <motion.div
-              className={styles.icon_container}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -235,7 +231,7 @@ const Contact = () => {
                 delay: 1.2,
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
-                  type: "spring",
+                  type: 'spring',
                   damping: 5,
                   stiffness: 100,
                   restDelta: 0.001,
@@ -245,13 +241,15 @@ const Contact = () => {
               <NavLink
                 to="https://api.whatsapp.com/send?phone=5521969609121"
                 className={styles.whatsapp}
+                target="_blank"
+                data-tooltip-id="whatsapp"
               >
                 <FaWhatsapp />
               </NavLink>
+              <Tooltip id="whatsapp" place="top" content="Whatsapp" />
             </motion.div>
 
             <motion.div
-              className={styles.icon_container}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -259,7 +257,7 @@ const Contact = () => {
                 delay: 1.5,
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
-                  type: "spring",
+                  type: 'spring',
                   damping: 5,
                   stiffness: 100,
                   restDelta: 0.001,
@@ -269,13 +267,15 @@ const Contact = () => {
               <NavLink
                 to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
                 className={styles.email}
+                target="_blank"
+                data-tooltip-id="email"
               >
                 <FaEnvelope />
               </NavLink>
+              <Tooltip id="email" place="top" content="Email" />
             </motion.div>
 
             <motion.div
-              className={styles.icon_container}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -283,7 +283,7 @@ const Contact = () => {
                 delay: 1.7,
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
-                  type: "spring",
+                  type: 'spring',
                   damping: 5,
                   stiffness: 100,
                   restDelta: 0.001,
@@ -293,13 +293,15 @@ const Contact = () => {
               <NavLink
                 to="https://www.linkedin.com/in/hudsonkennedyjr"
                 className={styles.linkedin}
+                target="_blank"
+                data-tooltip-id="linkedin"
               >
                 <FaLinkedinIn />
               </NavLink>
+              <Tooltip id="linkedin" place="top" content="LinkedIn" />
             </motion.div>
 
             <motion.div
-              className={styles.icon_container}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -307,7 +309,7 @@ const Contact = () => {
                 delay: 1.9,
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
-                  type: "spring",
+                  type: 'spring',
                   damping: 5,
                   stiffness: 100,
                   restDelta: 0.001,
@@ -317,9 +319,12 @@ const Contact = () => {
               <NavLink
                 to="https://github.com/Hudsonjr90"
                 className={styles.github}
+                target="_blank"
+                data-tooltip-id="github"
               >
                 <FaGithub />
               </NavLink>
+              <Tooltip id="github" place="top" content="Github" />
             </motion.div>
           </div>
         </div>
@@ -329,8 +334,8 @@ const Contact = () => {
             <div className={`${styles.input_field} ${styles.field}`}>
               <input
                 type="text"
-                placeholder={t("contact.name")}
-                className={`${styles.item} ${nameError ? styles.error : ""}`}
+                placeholder={t('contact.name')}
+                className={`${styles.item} ${nameError ? styles.error : ''}`}
                 id="name"
                 onChange={(e) => {
                   setName(e.target.value)
@@ -342,18 +347,18 @@ const Contact = () => {
               <div
                 id="error_name"
                 className={`${styles.error_message} ${
-                  nameError ? styles.show_message : ""
+                  nameError ? styles.show_message : ''
                 }`}
               >
-                {t("contact.error")}
+                {t('contact.error')}
               </div>
             </div>
 
             <div className={`${styles.input_field} ${styles.field}`}>
               <input
                 type="email"
-                placeholder={t("contact.email")}
-                className={`${styles.item} ${emailError ? styles.error : ""}`}
+                placeholder={t('contact.email')}
+                className={`${styles.item} ${emailError ? styles.error : ''}`}
                 id="email"
                 onChange={(e) => {
                   setEmail(e.target.value)
@@ -365,10 +370,10 @@ const Contact = () => {
               <div
                 id="error_email"
                 className={`${styles.error_message} ${
-                  emailError ? styles.show_message : ""
+                  emailError ? styles.show_message : ''
                 }`}
               >
-                {t("contact.error")}
+                {t('contact.error')}
               </div>
             </div>
           </div>
@@ -378,12 +383,12 @@ const Contact = () => {
               <PhoneInput
                 country="BR"
                 id="phone"
-                placeholder={t("contact.phone")}
+                placeholder={t('contact.phone')}
                 maxLength={15}
-                className={`${styles.item} ${phoneError ? styles.error : ""}`}
+                className={`${styles.item} ${phoneError ? styles.error : ''}`}
                 value={phone}
                 onChange={(value) => {
-                  if (typeof value === "string") {
+                  if (typeof value === 'string') {
                     setPhone(value)
                     setPhoneError(false)
                   }
@@ -393,19 +398,19 @@ const Contact = () => {
               <div
                 id="error_phone"
                 className={`${styles.error_message} ${
-                  phoneError ? styles.show_message : ""
+                  phoneError ? styles.show_message : ''
                 }`}
               >
-                {t("contact.error")}
+                {t('contact.error')}
               </div>
             </div>
 
             <div className={`${styles.input_field} ${styles.field}`}>
               <input
                 type="text"
-                placeholder={t("contact.subject")}
+                placeholder={t('contact.subject')}
                 id="subject"
-                className={`${styles.item} ${subjectError ? styles.error : ""}`}
+                className={`${styles.item} ${subjectError ? styles.error : ''}`}
                 onChange={(e) => {
                   setSubject(e.target.value)
                   setSubjectError(false)
@@ -416,10 +421,10 @@ const Contact = () => {
               <div
                 id="error_subject"
                 className={`${styles.error_message} ${
-                  subjectError ? styles.show_message : ""
+                  subjectError ? styles.show_message : ''
                 }`}
               >
-                {t("contact.error")}
+                {t('contact.error')}
               </div>
             </div>
           </div>
@@ -427,11 +432,11 @@ const Contact = () => {
           <div className={`${styles.textarea_field} ${styles.field}`}>
             <textarea
               name=""
-              placeholder={t("contact.message")}
+              placeholder={t('contact.message')}
               id="message"
               cols={30}
               rows={10}
-              className={`${styles.item} ${messageError ? styles.error : ""}`}
+              className={`${styles.item} ${messageError ? styles.error : ''}`}
               onChange={(e) => {
                 setMessage(e.target.value)
                 setMessageError(false)
@@ -442,16 +447,16 @@ const Contact = () => {
             <div
               id="error_message"
               className={`${styles.error_message} ${
-                messageError ? styles.show_message : ""
+                messageError ? styles.show_message : ''
               }`}
             >
-              {t("contact.error")}
+              {t('contact.error')}
             </div>
           </div>
 
           <div className={styles.btn_box}>
             <button className={styles.btn} type="submit">
-              {t("contact.submit")}
+              {t('contact.submit')}
             </button>
           </div>
         </form>
