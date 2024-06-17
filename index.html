@@ -6,18 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Hudson Kennedy">
-  <meta name="theme-color" id="theme-color" content="#FFFFFF" />
-  <script>
-    // A função abaixo deve ser chamada quando o tema for alterado
-    function updateThemeColor(theme) {
-      const metaTag = document.querySelector('#theme-color');
-      if (theme === 'dark') {
-        metaTag.setAttribute('content', '#0ef');
-      } else {
-        metaTag.setAttribute('content', '#dc2626');
-      }
-    }
-  </script>
+  <meta name="theme-color" content="var(--main_color)" />
+  <meta name="msapplication-navbutton-color" content="var(--main_color)" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="var(--main_color)">
   <meta property="og:site_name" content="Portfolio">
   <meta property="og:title" content="Hudson Kennedy">
   <meta property="og:description"
