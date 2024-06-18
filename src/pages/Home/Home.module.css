@@ -200,7 +200,6 @@
 }
 
 .btn_box .btn::before {
-  background: var(--bg_color);
   content: "";
   position: absolute;
   height: 100%;
@@ -208,6 +207,8 @@
   top: 0;
   transition: 0.5s;
   width: 0;
+  box-shadow: none;
+  color: #fff;
 }
 
 .btn_box .btn:hover::before {
@@ -217,6 +218,7 @@
 .btn_box .btn:hover {
   box-shadow: none;
   color: var(--main_color);
+  background: var(--bg_color);
 }
 
 .home_img {
