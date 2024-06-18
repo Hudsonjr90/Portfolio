@@ -10,7 +10,7 @@
 
 .skills .heading {
   animation: animate 0.8s ease-in-out 1 forwards;
-  font-size: 3rem;
+  font-size: 3.7rem;
   margin: 12rem 0 3rem;
   opacity: 0;
   text-align: center;
@@ -163,6 +163,7 @@
 }
 
 @media screen and (max-width: 2560px) {
+
   .icons_container {
     display: flex;
     gap: 2rem;
@@ -283,7 +284,7 @@
   }
 
   .skills .heading {
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 11rem 0 2rem;
   }
 
