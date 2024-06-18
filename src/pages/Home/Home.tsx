@@ -283,6 +283,7 @@ const Home = () => {
             <img src={imageUrl} alt="home_img" />
           </motion.div>
         </section>
+        <div className={styles.footer}>Copyright© 2024 H.K DEV  </div>
       </Transition>
       <Modal
         show={showModal}
