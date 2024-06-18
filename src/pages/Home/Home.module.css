@@ -208,7 +208,6 @@
   transition: 0.5s;
   width: 0;
   box-shadow: none;
-  color: #fff;
 }
 
 .btn_box .btn:hover::before {
@@ -309,26 +308,24 @@
   }
 
   .modal_container {
-    width: 70vw;
+    width: 40.9vw;
+    height: 75.5vh;
     z-index: 2;
   }
 
   .modal_content {
-    width: 69vw;
+    width: 40.7vw;
+    height: 71vh;
   }
 
   .modal_content img {
-    width: 69vw;
-  }
-
-  .modal_title {
-    padding-left: 18rem;
+    width: 40vw;
   }
 
   .modal_title .down_button {
     font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 142rem;
+    margin-left: 92rem;
   }
 
   .modal_title .close_button {

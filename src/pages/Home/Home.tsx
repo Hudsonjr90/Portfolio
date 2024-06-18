@@ -294,15 +294,17 @@ const Home = () => {
             <FaCircleArrowDown
               className={styles.down_button}
               onClick={handleDownload}
-              title={t('home.download')}
+              data-tooltip-id="down_btn"
             />
             <FaCircleXmark
               className={styles.close_button}
-              title={t('home.close')}
+              data-tooltip-id="close_btn"
               onClick={() => {
                 setShowModal(false)
               }}
             />
+            <Tooltip id="down_btn" place="left" content={t('home.download')} />
+            <Tooltip id="close_btn" place="right" content={t('home.close')} />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className={styles.modal_content}>
