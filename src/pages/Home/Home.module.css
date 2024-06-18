@@ -228,8 +228,9 @@
 .home_img img {
   object-fit: none;
   width: 26.5vw;
-  border: 2px solid var(--main_color);
+  border: none;
   border-radius: 50%;
+  background-color: var(--main_color);
 }
 
 .footer {
