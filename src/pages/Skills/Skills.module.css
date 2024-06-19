@@ -501,23 +501,20 @@
 
 @media screen and (max-width: 991px) {
   .skills .heading {
-    font-size: 2rem;
-    margin: 8rem 0 2rem;
+    font-size: 5.2rem;
+    margin: 11rem 0 2rem;
   }
 
-  .icons_container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  
   .icons_container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 
   .icon {
-    height: 3.8rem;
-    width: 3.8rem;
+    height: 5.5rem;
+    width: 5.5rem;
   }
 
   .icon_description {
@@ -526,25 +523,25 @@
   }
 
   .icon_wrapper {
-    top: 50%;
+    top: 40%;
   }
 
   .indicator {
-    margin-top: -8.9rem;
+    margin-top: -7.2rem;
   }
 
   .filters {
-    flex-direction: column;
+    flex-direction: row;
     padding: 2rem 1rem;
     display: flex;
     align-items: center;
   }
 
   .filters select {
-    width: 40vw;
+    width: 30vw;
     height: 4vh;
     margin-bottom: 2rem;
-    margin-left: -2rem;
+    margin-left: 5rem;
   }
 
   .filters input {
@@ -555,8 +552,8 @@
 
   .filters .icon_search svg {
     display: block;
-    margin-left: -8rem;
-    margin-top: -3rem;
+    margin-left: -27.5rem;
+    margin-top: 0.1rem;
   }
 
   .pagination li a {

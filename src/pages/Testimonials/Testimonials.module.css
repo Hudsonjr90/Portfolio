@@ -347,16 +347,16 @@
     width: 80vw;
     height: 45vh;
     border-radius: 2rem;
-    margin-left: -1rem;
+    margin-left: 1rem;
   }
 
   .flipContent {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80vw;
-    height: 45vh;
-    margin-left: 5.1rem;
+    width: 79vw;
+    height: 44vh;
+    margin-left: 5rem;
     border: 1px solid var(--main_color);
     background-color: var(--bg_color);
     padding: 0 5rem;

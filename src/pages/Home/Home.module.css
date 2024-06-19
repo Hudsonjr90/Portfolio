@@ -489,16 +489,16 @@
 
 @media (max-width: 991px) {
   .home_img {
-    bottom: -14rem;
-    right: 4rem;
+    bottom: 15rem;
+    right: 15rem;
   }
 
   .home_img img {
-    width: 50vw;
+    width: 60vw;
   }
 
   .home_content {
-    height: 50rem;
+    height: 80rem;
   }
 
   .modal_container {
@@ -541,8 +541,8 @@
   }
 
   .home_img {
-    bottom: 2rem;
-    right: 1rem;
+    bottom: 9rem;
+    right: 5rem;
     z-index: -1;
   }
 
@@ -625,7 +625,7 @@
   }
 
   .home_img {
-    bottom: 7rem;
+    bottom: 18rem;
     right: 11.3rem;
   }
 
@@ -688,7 +688,7 @@
 
 @media (max-width: 415px){
   .home_img {
-    bottom: 5rem;
+    bottom: 15rem;
     right: 10rem;
   }
 
@@ -729,7 +729,7 @@
 
 @media (max-width: 400px) {
   .home_img {
-    bottom: 5rem;
+    bottom: 10rem;
     right: 8.5rem;
   }
 
@@ -774,13 +774,13 @@
   }
 
   .home_img {
-    bottom: 2.5rem;
+    bottom: 5.5rem;
     right: 7.5rem;
   }
 
   .home_img img {
     width: 68vw;
-    border: 1px solid var(--main_color);
+    
   }
 
   .modal_title {
@@ -814,13 +814,12 @@
   }
 
   .home_img {
-    bottom: 3.5rem;
+    bottom: 8.5rem;
     right: 6.5rem;
   }
 
   .home_img img {
     width: 71vw;
-    border: 1px solid var(--main_color)
   }
 
   .modal_title {

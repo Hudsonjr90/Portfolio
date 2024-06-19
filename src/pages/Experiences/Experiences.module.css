@@ -9,7 +9,7 @@
   
   .experiences .heading {
     animation: animate 0.8s ease-in-out 1 forwards;
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 12rem 0 4rem;
     opacity: 0;
     text-align: center;
@@ -59,17 +59,22 @@
 
 @media screen and (max-width: 1450px){
   .experiences .heading{
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 }
 
 
 @media screen and (max-width: 1024px){
   .experiences .heading{
-    font-size: 2.9rem;
+    font-size: 3.1rem;
   }
 }
 
+@media screen and (max-width: 991px){
+  .experiences .heading{
+    font-size: 3rem;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .experiences .heading{

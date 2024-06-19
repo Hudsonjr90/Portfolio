@@ -98,12 +98,24 @@
 }
 
 @media (max-width: 991px) {
-  .container_img img {
-    width: 35vw;
+  .about {
+    gap: 2rem;
   }
 
   .about_content {
-    width: 400px;
+    width: 50vw;
+  }
+
+  .container_img img {
+    width: 40vw;
+  }
+
+  .about_content h2 {
+    font-size: 2rem;
+  }
+
+  .about_content p {
+    font-size: 1.5rem;
   }
 }
 
