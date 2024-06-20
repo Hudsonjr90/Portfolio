@@ -350,6 +350,50 @@
 
 }
 
+@media (max-width: 1920px){
+  .home_img {
+    bottom: 20rem;
+    right: 30rem;
+  }
+
+  .home_img img {
+    width: 26vw;
+  }
+
+  .home_content {
+    height: 25rem;
+  }
+
+  .modal_container {
+    width: 50.2vw;
+    z-index: 2;
+  }
+
+  .modal_content {
+    width: 50vw;
+    height: 71vh;
+  }
+
+  .modal_content img {
+    width: 49.2vw;
+  }
+
+  .modal_title .down_button {
+    font-size: 2.9rem;
+    cursor: pointer;
+    margin-left: 82rem;
+  }
+
+  .modal_title .close_button {
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  .footer {
+    font-size: 1.7rem;
+  }
+}
+
 @media (max-width: 1550px) {
   .home_img {
     bottom: 2rem;
