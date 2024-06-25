@@ -4,7 +4,7 @@
   left: 0;
   position: fixed;
   top: 0;
-  transform-origin: bottom;
+  transform-origin: right;
   width: 100%;
   z-index: 2;
 }

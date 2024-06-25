@@ -84,8 +84,10 @@ const Navbar = () => {
 
         if (soundClick) {
             audio.pause() 
+            setSoundClick(false)
         } else {
             audio.play()
+           
         }
     }
 
