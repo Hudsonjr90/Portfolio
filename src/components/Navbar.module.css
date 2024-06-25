@@ -173,7 +173,7 @@ label {
 
 /* <========== breakpoints ==========> */
 
-@media (max-width: 2560px) {
+@media screen and (max-width: 2560px) {
   .header {
     align-items: center;
     display: flex;
@@ -201,7 +201,7 @@ label {
   }
 }
 
-@media (max-width: 1550px) {
+@media screen and (max-width: 1550px) {
   .header {
     align-items: center;
     display: flex;
@@ -229,7 +229,7 @@ label {
   }
 }
 
-@media (max-width: 1450px) {
+@media screen and (max-width: 1450px) {
   .header {
     align-items: center;
     display: flex;
@@ -257,7 +257,7 @@ label {
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
@@ -332,7 +332,7 @@ label {
   }
 }
 
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
@@ -407,7 +407,7 @@ label {
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);

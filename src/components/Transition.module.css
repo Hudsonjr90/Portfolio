@@ -15,7 +15,7 @@
   left: 0;
   position: fixed;
   top: 0;
-  transform-origin: top;
+  transform-origin: left;
   width: 100%;
 }
 

@@ -49,7 +49,7 @@
    --second_bg_color: #cbd5e1 ;
    --text_color: #020617; 
    --scroll-color: #070707;
-   transition: 1.5s;
+    transition: 1.5s;
 }
      
 html {

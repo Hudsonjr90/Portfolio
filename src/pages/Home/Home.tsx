@@ -175,7 +175,12 @@ const Home = () => {
                 >
                   <FaWhatsapp />
                 </NavLink>
-                <Tooltip id="whatsapp" place="top" content="Whatsapp" />
+                <Tooltip
+                  id="whatsapp"
+                  place="top"
+                  content="Whatsapp"
+                  style={{ backgroundColor: '#25d366', color: '#fff' }}
+                />
               </motion.div>
 
               <motion.div
@@ -201,7 +206,12 @@ const Home = () => {
                 >
                   <FaEnvelope />
                 </NavLink>
-                <Tooltip id="email" place="top" content="Email" />
+                <Tooltip
+                  id="email"
+                  place="top"
+                  content="Email"
+                  style={{ backgroundColor: '#ee0a0a', color: '#fff' }}
+                />
               </motion.div>
 
               <motion.div
@@ -227,7 +237,12 @@ const Home = () => {
                 >
                   <FaLinkedinIn />
                 </NavLink>
-                <Tooltip id="linkedin" place="top" content="LinkedIn" />
+                <Tooltip
+                  id="linkedin"
+                  place="top"
+                  content="LinkedIn"
+                  style={{ backgroundColor: '#2867b2', color: '#fff' }}
+                />
               </motion.div>
 
               <motion.div
@@ -250,10 +265,16 @@ const Home = () => {
                   className={styles.github}
                   target="_blank"
                   data-tooltip-id="github"
+                  data-tooltip-variant="dark"
                 >
                   <FaGithub />
                 </NavLink>
-                <Tooltip id="github" place="top" content="Github" />
+                <Tooltip
+                  id="github"
+                  place="top"
+                  content="Github"
+                  style={{ backgroundColor: '#181717', color: '#fff' }}
+                />
               </motion.div>
             </div>
 
@@ -283,7 +304,18 @@ const Home = () => {
             <img src={imageUrl} alt="home_img" />
           </motion.div>
         </section>
-        <div className={styles.footer}>Copyright© 2024 H.K DEV  </div>
+        <motion.div
+          className={styles.footer}
+          initial={{ opacity: 0, y: '-100%' }}
+          animate={{ opacity: 1, y: '0%' }}
+          transition={{
+            duration: 2,
+            delay: 0.7,
+            ease: [0.2, 0, 0.2, 1],
+          }}
+        >
+          Copyright© 2024 H.K DEV{' '}
+        </motion.div>
       </Transition>
       <Modal
         show={showModal}

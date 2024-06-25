@@ -223,110 +223,131 @@ const Contact = () => {
           </h2>
 
           <div className={styles.social_media}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 3,
-                delay: 1.2,
-                ease: [0, 0.71, 0.2, 1.01],
-                scale: {
-                  type: 'spring',
-                  damping: 5,
-                  stiffness: 100,
-                  restDelta: 0.001,
-                },
-              }}
-            >
-              <NavLink
-                to="https://api.whatsapp.com/send?phone=5521969609121"
-                className={styles.whatsapp}
-                target="_blank"
-                data-tooltip-id="whatsapp"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 3,
+                  delay: 1.2,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: 'spring',
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001,
+                  },
+                }}
               >
-                <FaWhatsapp />
-              </NavLink>
-              <Tooltip id="whatsapp" place="top" content="Whatsapp" />
-            </motion.div>
+                <NavLink
+                  to="https://api.whatsapp.com/send?phone=5521969609121"
+                  className={styles.whatsapp}
+                  target="_blank"
+                  data-tooltip-id="whatsapp"
+                >
+                  <FaWhatsapp />
+                </NavLink>
+                <Tooltip
+                  id="whatsapp"
+                  place="top"
+                  content="Whatsapp"
+                  style={{ backgroundColor: '#25d366', color: '#fff' }}
+                />
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 3,
-                delay: 1.5,
-                ease: [0, 0.71, 0.2, 1.01],
-                scale: {
-                  type: 'spring',
-                  damping: 5,
-                  stiffness: 100,
-                  restDelta: 0.001,
-                },
-              }}
-            >
-              <NavLink
-                to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
-                className={styles.email}
-                target="_blank"
-                data-tooltip-id="email"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 3,
+                  delay: 1.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: 'spring',
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001,
+                  },
+                }}
               >
-                <FaEnvelope />
-              </NavLink>
-              <Tooltip id="email" place="top" content="Email" />
-            </motion.div>
+                <NavLink
+                  to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
+                  className={styles.email}
+                  target="_blank"
+                  data-tooltip-id="email"
+                >
+                  <FaEnvelope />
+                </NavLink>
+                <Tooltip
+                  id="email"
+                  place="top"
+                  content="Email"
+                  style={{ backgroundColor: '#ee0a0a', color: '#fff' }}
+                />
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.3,
-                delay: 1.7,
-                ease: [0, 0.71, 0.2, 1.01],
-                scale: {
-                  type: 'spring',
-                  damping: 5,
-                  stiffness: 100,
-                  restDelta: 0.001,
-                },
-              }}
-            >
-              <NavLink
-                to="https://www.linkedin.com/in/hudsonkennedyjr"
-                className={styles.linkedin}
-                target="_blank"
-                data-tooltip-id="linkedin"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 1.7,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: 'spring',
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001,
+                  },
+                }}
               >
-                <FaLinkedinIn />
-              </NavLink>
-              <Tooltip id="linkedin" place="top" content="LinkedIn" />
-            </motion.div>
+                <NavLink
+                  to="https://www.linkedin.com/in/hudsonkennedyjr"
+                  className={styles.linkedin}
+                  target="_blank"
+                  data-tooltip-id="linkedin"
+                >
+                  <FaLinkedinIn />
+                </NavLink>
+                <Tooltip
+                  id="linkedin"
+                  place="top"
+                  content="LinkedIn"
+                  style={{ backgroundColor: '#2867b2', color: '#fff' }}
+                />
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 3,
-                delay: 1.9,
-                ease: [0, 0.71, 0.2, 1.01],
-                scale: {
-                  type: 'spring',
-                  damping: 5,
-                  stiffness: 100,
-                  restDelta: 0.001,
-                },
-              }}
-            >
-              <NavLink
-                to="https://github.com/Hudsonjr90"
-                className={styles.github}
-                target="_blank"
-                data-tooltip-id="github"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 3,
+                  delay: 1.9,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: 'spring',
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001,
+                  },
+                }}
               >
-                <FaGithub />
-              </NavLink>
-              <Tooltip id="github" place="top" content="Github" />
-            </motion.div>
-          </div>
+                <NavLink
+                  to="https://github.com/Hudsonjr90"
+                  className={styles.github}
+                  target="_blank"
+                  data-tooltip-id="github"
+                  data-tooltip-variant="dark"
+                >
+                  <FaGithub />
+                </NavLink>
+                <Tooltip
+                  id="github"
+                  place="top"
+                  content="Github"
+                  style={{ backgroundColor: '#181717', color: '#fff' }}
+                />
+              </motion.div>
+            </div>
         </div>
 
         <form className={styles.form} onSubmit={sendEmail}>
