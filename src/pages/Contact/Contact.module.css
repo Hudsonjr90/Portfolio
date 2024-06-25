@@ -46,7 +46,6 @@
   background: transparent;
   border-radius: 50%;
   display: inline-flex;
-  font-size: 1.6rem;
   height: 3.5rem;
   justify-content: center;
   margin: 1rem 0 1rem;
@@ -56,7 +55,6 @@
 }
 
 .social_media .whatsapp {
-  color: #fff;
   background: #25d366;
   border: none;
 }
@@ -64,19 +62,16 @@
 .social_media .email {
   background: #ee0a0a;
   border: none;
-  color: #fff;
 }
 
 .social_media .linkedin {
   border: none;
   background: #2867b2;
-  color: #fff;
 }
 
 .social_media .github {
   border: none;
   background: #181717;
-  color: #fff;
 }
 
 .contact form {

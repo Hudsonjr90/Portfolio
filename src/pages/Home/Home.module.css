@@ -26,18 +26,18 @@
 
 .home_content .first_h3 {
   animation: animate 0.8s ease-in-out 1 forwards;
-  font: 700 3rem "Montserrat", sans-serif;
+  font: 700 3rem 'Montserrat', sans-serif;
   opacity: 0;
   position: relative;
 }
 
 .home_content .transparent_text {
   margin: 0 3rem -2rem;
-  font: 700 2.9rem "Orbitron", sans-serif;
+  font: 700 2.9rem 'Orbitron', sans-serif;
 }
 
 .home_content .transparent_text::after {
-  content: "";
+  content: '';
   opacity: 1;
   margin-left: 5px;
   display: inline-block;
@@ -71,7 +71,7 @@
 .home_content .text_reveal > span:nth-child(1) {
   -webkit-text-stroke: 1px var(--main_color);
   color: transparent;
-  font: 700 4.6rem "Orbitron", sans-serif;
+  font: 700 4.6rem 'Orbitron', sans-serif;
   -webkit-mask-image: linear-gradient(#000 0 0);
   mask-image: linear-gradient(#000 0 0);
   animation: text_reveal-1 2s ease-in-out 1s forwards;
@@ -80,14 +80,14 @@
 .home_content .text_reveal > span:nth-child(2) {
   -webkit-text-stroke: 1px var(--text_color);
   color: var(--text_color);
-  font: 700 4.6rem "Orbitron", sans-serif;
+  font: 700 4.6rem 'Orbitron', sans-serif;
   -webkit-mask-image: linear-gradient(#000 0 0);
   mask-image: linear-gradient(#000 0 0);
   animation: text_reveal-2 2s ease-in-out 1s forwards;
 }
 
 .home_content .text_reveal::after {
-  content: "";
+  content: '';
   z-index: 2;
   border: 0.125rem solid var(--main_color);
   border-block: none;
@@ -153,25 +153,21 @@
 }
 
 .social_media .whatsapp {
-  color: #fff;
   background: #25d366;
   border: none;
 }
 
 .social_media .email {
-  color: #fff;
   background: #ee0a0a;
   border: none;
 }
 
 .social_media .linkedin {
-  color: #fff;
   background: #2867b2;
   border: none;
 }
 
 .social_media .github {
-  color: #fff;
   background: #181717;
   border: none;
 }
@@ -200,7 +196,7 @@
 }
 
 .btn_box .btn::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 100%;
   left: 0;
@@ -239,7 +235,6 @@
   align-items: center;
   padding: 0;
   color: var(--main_color);
-  background-color: var(--bg_color);
   font-size: 2.5rem;
   text-align: center;
 }
@@ -268,15 +263,19 @@
 }
 
 .modal_title .down_button {
-  font-size: 2.9rem;
   cursor: pointer;
   margin-left: 35rem;
+  color: var(--main_color);
 }
 
 .modal_title .close_button {
-  font-size: 3rem;
   cursor: pointer;
   margin-right: 1rem;
+  color: var(--main_color);
+}
+
+.modal_title .size_button {
+  font-size: 3rem;
 }
 
 .modal_content {
@@ -304,7 +303,7 @@
 
 /* <========== breakpoints ==========> */
 
-@media screen and (max-width: 2560px){
+@media screen and (max-width: 2560px) {
   .home_img {
     bottom: 20rem;
     right: 60rem;
@@ -326,7 +325,7 @@
 
   .modal_content {
     width: 40.7vw;
-    height: 71vh;
+    height: 69.3vh;
   }
 
   .modal_content img {
@@ -334,23 +333,24 @@
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
     margin-left: 92rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
+  }
+
+  .modal_title .size_button {
+    font-size: 3rem;
   }
 
   .footer {
     font-size: 2rem;
   }
-
 }
 
-@media screen and (max-width: 1920px){
+@media screen and (max-width: 1920px) {
   .home_img {
     bottom: 20rem;
     right: 30rem;
@@ -371,7 +371,7 @@
 
   .modal_content {
     width: 50vw;
-    height: 71vh;
+    height: 75vh;
   }
 
   .modal_content img {
@@ -379,14 +379,16 @@
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
     margin-left: 82rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
+  }
+
+  .modal_title .size_button {
+    font-size: 2.5rem;
   }
 
   .footer {
@@ -422,7 +424,6 @@
     width: 48vw;
   }
 
- 
   .modal_title .down_button {
     font-size: 2.9rem;
     cursor: pointer;
@@ -441,8 +442,8 @@
 
 @media screen and (max-width: 1450px) {
   .home_img {
-    bottom: 2.5rem;
-    right: 8rem;
+    bottom: 15rem;
+    right: 10rem;
   }
 
   .home_img img {
@@ -454,80 +455,80 @@
   }
 
   .modal_container {
-    width: 60vw;
+    width: 85vw;
+    height: 69vh;
     z-index: 2;
   }
 
   .modal_content {
-    width: 60vw;
+    width: 84vw;
     height: 65vh;
   }
 
   .modal_content img {
-    width: 59vw;
+    width: 83vw;
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 58rem;
+    margin-left: 110rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
   }
 
+  .modal_title .size_button{
+    font-size: 3rem;
+  }
+
   .footer {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
+    margin-top: 2rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .home_img {
-    bottom: 3rem;
-    right: 3rem;
+    bottom: 20rem;
+    right: 8rem;
   }
 
   .home_img img {
-    width: 43vw;
+    width: 48vw;
   }
 
   .home_content {
-    height: 40vh;
+    height: 50vh;
   }
 
   .modal_container {
-    width: 70vw;
+    width: 80vw;
+    height: 64vh;
     z-index: 2;
   }
 
   .modal_content {
-    width: 69vw;
+    width: 79vw;
     height: 60vh;
   }
 
   .modal_content img {
-    width: 67vw;
-  }
-
-  .modal_title {
-    padding-left: 18rem;
+    width: 77vw;
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 45rem;
+    margin-left: 70rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
   }
 
   .footer {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
   }
 }
 
@@ -580,20 +581,18 @@
 
 @media screen and (max-width: 768px) {
   .home_img img {
-    width: 50vw;
-
+    width: 60vw;
   }
 
   .home_img {
-    bottom: 9rem;
-    right: 5rem;
+    bottom: 25rem;
+    right: 10rem;
     z-index: -1;
   }
 
   .home_content {
-    height: 60vh;
+    height: 50vh;
   }
-
 
   .text_reveal > span:nth-child(1) {
     font-size: 4rem;
@@ -604,35 +603,37 @@
   }
 
   .modal_container {
-    width: 70vw;
+    width: 90vw;
+    height: 64.5vh;
     z-index: 2;
   }
 
   .modal_content {
-    width: 69vw;
+    width: 89vw;
   }
 
   .modal_content img {
-    width: 66vw;
-  }
-  .modal_title {
-    padding-left: 42rem !important;
+    width: 87vw;
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
+    
     cursor: pointer;
-    margin-left: 15rem;
+    margin-left: 54rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
+ 
     cursor: pointer;
   }
 
+  .modal_title .size_button{
+    font-size: 2.3rem;
+  }
+
   .footer {
-    font-size: 1rem;
-    margin-top: 2rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
   }
 }
 
@@ -680,30 +681,30 @@
 
 @media screen and (max-width: 428px) {
   .modal_container {
-    width: 70vw;
+    width: 90vw;
+    height: 66.5vh;
     z-index: 2;
   }
 
   .modal_content {
-    width: 69vw;
+    width: 89vw;
   }
 
   .modal_content img {
-    width: 66vw;
-  }
-  .modal_title {
-    padding-left: 14rem !important;
+    width: 89vw;
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 10rem;
+    margin-left: 18rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
+  }
+
+  .modal_title .size_button {
+    font-size: 2.5rem;
   }
 
   .home_img img {
@@ -715,10 +716,9 @@
   }
 
   .home_img {
-    bottom: 4rem;
+    bottom: 6rem;
     right: 10rem;
   }
-
 
   .text_reveal span {
     font-size: 4rem !important;
@@ -730,7 +730,7 @@
   }
 }
 
-@media screen and (max-width: 415px){
+@media screen and (max-width: 415px) {
   .home_img {
     bottom: 15rem;
     right: 10rem;
@@ -746,19 +746,31 @@
     height: 75vh;
   }
 
-  .modal_title {
-    padding-left: 16rem !important;
+  .modal_container {
+    width: 90vw;
+    height: 65.3vh;
+    z-index: 2;
+  }
+
+  .modal_content {
+    width: 89vw;
+  }
+
+  .modal_content img {
+    width: 85vw;
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 9rem;
+    margin-left: 18rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
+  }
+
+  .modal_title .size_button {
+    font-size: 2.7rem;
   }
 
   .text_reveal span {
@@ -787,19 +799,31 @@
     height: 75vh;
   }
 
-  .modal_title {
-    padding-left: 16rem !important;
+  .modal_container {
+    width: 90vw;
+    height: 65.3vh;
+    z-index: 2;
+  }
+
+  .modal_content {
+    width: 89vw;
+  }
+
+  .modal_content img {
+    width: 85vw;
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 9rem;
+    margin-left: 15rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
+  }
+
+  .modal_title .size_button {
+    font-size: 2.5rem;
   }
 
   .text_reveal span {
@@ -824,22 +848,34 @@
 
   .home_img img {
     width: 68vw;
-    
   }
 
-  .modal_title {
-    padding-left: 14rem !important;
+  .modal_container {
+    width: 85vw;
+    height: 75.3vh;
+    z-index: 2;
+  }
+
+  .modal_content {
+    width: 84vw;
+    height: 69vh;
+  }
+
+  .modal_content img {
+    width: 81vw;
   }
 
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 9rem;
+    margin-left: 14rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
+  }
+
+  .modal_title .size_button {
+    font-size: 2rem;
   }
 
   .text_reveal span {
@@ -866,19 +902,30 @@
     width: 71vw;
   }
 
-  .modal_title {
-    padding-left: 13rem !important;
+  .modal_container {
+    width: 86vw;
+    z-index: 2;
   }
 
+  .modal_content {
+    width: 85vw;
+    height: 69vh;
+  }
+
+  .modal_content img {
+    width: 82vw;
+  }
   .modal_title .down_button {
-    font-size: 2.9rem;
     cursor: pointer;
-    margin-left: 7.6rem;
+    margin-left: 14rem;
   }
 
   .modal_title .close_button {
-    font-size: 3rem;
     cursor: pointer;
+  }
+
+  .modal_title .size_button {
+    font-size: 2rem;
   }
 
   .text_reveal span {

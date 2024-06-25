@@ -1,8 +1,6 @@
 // CSS
 import styles from './Home.module.css'
-// REACT ROUTER DOM
 import { NavLink } from 'react-router-dom'
-// COMPONENTS
 import Transition from '../../components/Transition'
 import { Modal } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
@@ -10,22 +8,30 @@ import { useTranslation } from 'react-i18next'
 import Typewriter from 'typewriter-effect'
 import { saveAs } from 'file-saver'
 import resumeServer from '../../data/resumeServer'
-// REACT ICONS
+import Tooltip from '@mui/material/Tooltip'
+import Zoom from '@mui/material/Zoom'
 import {
-  FaCircleArrowDown,
-  FaCircleXmark,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedinIn,
-  FaWhatsapp,
-} from 'react-icons/fa6'
+  whatsappTheme,
+  emailTheme,
+  linkedinTheme,
+  githubTheme,
+  modalTheme,
+} from '../../context/ThemeContext'
+import { ThemeProvider } from '@mui/material/styles'
+import {
+  WhatsApp,
+  LinkedIn,
+  Email,
+  GitHub,
+  FileDownload,
+  Close,
+} from '@mui/icons-material'
+import IconButton from '@mui/material/IconButton'
 import { useMediaQuery } from 'react-responsive'
 import HomeDesktopImage from '/imgs/my.png'
 import HomeMobileImage from '/imgs/my-mobile.png'
 import ParticlesBackground from '../../components/ParticlesBackground'
 import { motion } from 'framer-motion'
-import { Tooltip } from 'react-tooltip'
-import 'react-tooltip/dist/react-tooltip.css'
 
 const Home = () => {
   const { t, i18n } = useTranslation()
@@ -152,130 +158,145 @@ const Home = () => {
             </motion.div>
 
             <div className={styles.social_media}>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 3,
-                  delay: 1.2,
-                  ease: [0, 0.71, 0.2, 1.01],
-                  scale: {
-                    type: 'spring',
-                    damping: 5,
-                    stiffness: 100,
-                    restDelta: 0.001,
-                  },
-                }}
-              >
-                <NavLink
-                  to="https://api.whatsapp.com/send?phone=5521969609121"
-                  className={styles.whatsapp}
-                  target="_blank"
-                  data-tooltip-id="whatsapp"
+              <ThemeProvider theme={whatsappTheme}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 3,
+                    delay: 1.2,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                      type: 'spring',
+                      damping: 5,
+                      stiffness: 100,
+                      restDelta: 0.001,
+                    },
+                  }}
                 >
-                  <FaWhatsapp />
-                </NavLink>
-                <Tooltip
-                  id="whatsapp"
-                  place="top"
-                  content="Whatsapp"
-                  style={{ backgroundColor: '#25d366', color: '#fff' }}
-                />
-              </motion.div>
+                  <NavLink
+                    to="https://api.whatsapp.com/send?phone=5521969609121"
+                    className={styles.whatsapp}
+                    target="_blank"
+                  >
+                    <Tooltip
+                      TransitionComponent={Zoom}
+                      title="Whatsapp"
+                      placement="top"
+                      arrow
+                    >
+                      <IconButton>
+                        <WhatsApp sx={{ color: '#fff', fontSize: 22 }} />
+                      </IconButton>
+                    </Tooltip>
+                  </NavLink>
+                </motion.div>
+              </ThemeProvider>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 3,
-                  delay: 1.5,
-                  ease: [0, 0.71, 0.2, 1.01],
-                  scale: {
-                    type: 'spring',
-                    damping: 5,
-                    stiffness: 100,
-                    restDelta: 0.001,
-                  },
-                }}
-              >
-                <NavLink
-                  to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
-                  className={styles.email}
-                  target="_blank"
-                  data-tooltip-id="email"
+              <ThemeProvider theme={emailTheme}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 3,
+                    delay: 1.5,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                      type: 'spring',
+                      damping: 5,
+                      stiffness: 100,
+                      restDelta: 0.001,
+                    },
+                  }}
                 >
-                  <FaEnvelope />
-                </NavLink>
-                <Tooltip
-                  id="email"
-                  place="top"
-                  content="Email"
-                  style={{ backgroundColor: '#ee0a0a', color: '#fff' }}
-                />
-              </motion.div>
+                  <NavLink
+                    to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
+                    className={styles.email}
+                    target="_blank"
+                  >
+                    <Tooltip
+                      TransitionComponent={Zoom}
+                      title="Email"
+                      placement="top"
+                      arrow
+                    >
+                      <IconButton>
+                        <Email sx={{ color: '#fff', fontSize: 22 }} />
+                      </IconButton>
+                    </Tooltip>
+                  </NavLink>
+                </motion.div>
+              </ThemeProvider>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.3,
-                  delay: 1.7,
-                  ease: [0, 0.71, 0.2, 1.01],
-                  scale: {
-                    type: 'spring',
-                    damping: 5,
-                    stiffness: 100,
-                    restDelta: 0.001,
-                  },
-                }}
-              >
-                <NavLink
-                  to="https://www.linkedin.com/in/hudsonkennedyjr"
-                  className={styles.linkedin}
-                  target="_blank"
-                  data-tooltip-id="linkedin"
+              <ThemeProvider theme={linkedinTheme}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 1.7,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                      type: 'spring',
+                      damping: 5,
+                      stiffness: 100,
+                      restDelta: 0.001,
+                    },
+                  }}
                 >
-                  <FaLinkedinIn />
-                </NavLink>
-                <Tooltip
-                  id="linkedin"
-                  place="top"
-                  content="LinkedIn"
-                  style={{ backgroundColor: '#2867b2', color: '#fff' }}
-                />
-              </motion.div>
+                  <NavLink
+                    to="https://www.linkedin.com/in/hudsonkennedyjr"
+                    className={styles.linkedin}
+                    target="_blank"
+                  >
+                    <Tooltip
+                      TransitionComponent={Zoom}
+                      title="Linkedin"
+                      placement="top"
+                      arrow
+                    >
+                      <IconButton>
+                        <LinkedIn sx={{ color: '#fff', fontSize: 22 }} />
+                      </IconButton>
+                    </Tooltip>
+                  </NavLink>
+                </motion.div>
+              </ThemeProvider>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 3,
-                  delay: 1.9,
-                  ease: [0, 0.71, 0.2, 1.01],
-                  scale: {
-                    type: 'spring',
-                    damping: 5,
-                    stiffness: 100,
-                    restDelta: 0.001,
-                  },
-                }}
-              >
-                <NavLink
-                  to="https://github.com/Hudsonjr90"
-                  className={styles.github}
-                  target="_blank"
-                  data-tooltip-id="github"
-                  data-tooltip-variant="dark"
+              <ThemeProvider theme={githubTheme}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 3,
+                    delay: 1.9,
+                    ease: [0, 0.71, 0.2, 1.01],
+                    scale: {
+                      type: 'spring',
+                      damping: 5,
+                      stiffness: 100,
+                      restDelta: 0.001,
+                    },
+                  }}
                 >
-                  <FaGithub />
-                </NavLink>
-                <Tooltip
-                  id="github"
-                  place="top"
-                  content="Github"
-                  style={{ backgroundColor: '#181717', color: '#fff' }}
-                />
-              </motion.div>
+                  <NavLink
+                    to="https://github.com/Hudsonjr90"
+                    className={styles.github}
+                    target="_blank"
+                  >
+                    <Tooltip
+                      TransitionComponent={Zoom}
+                      title="Github"
+                      placement="top"
+                      arrow
+                    >
+                      <IconButton>
+                        <GitHub sx={{ color: '#fff', fontSize: 22 }} />
+                      </IconButton>
+                    </Tooltip>
+                  </NavLink>
+                </motion.div>
+              </ThemeProvider>
             </div>
 
             <div className={styles.btn_box}>
@@ -324,20 +345,34 @@ const Home = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title className={styles.modal_title}>
-            <FaCircleArrowDown
-              className={styles.down_button}
-              onClick={handleDownload}
-              data-tooltip-id="down_btn"
-            />
-            <FaCircleXmark
-              className={styles.close_button}
-              data-tooltip-id="close_btn"
-              onClick={() => {
-                setShowModal(false)
-              }}
-            />
-            <Tooltip id="down_btn" place="left" content={t('home.download')} />
-            <Tooltip id="close_btn" place="right" content={t('home.close')} />
+            <ThemeProvider theme={modalTheme}>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={t('home.download')}
+                placement="left"
+                arrow
+              >
+                <IconButton
+                  className={styles.down_button}
+                  onClick={handleDownload}
+                >
+                  <FileDownload className={styles.size_button} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={t('home.close')}
+                placement="right"
+                arrow
+              >
+                <IconButton
+                  className={styles.close_button}
+                  onClick={() => setShowModal(false)}
+                >
+                  <Close className={styles.size_button} />
+                </IconButton>
+              </Tooltip>
+            </ThemeProvider>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className={styles.modal_content}>
