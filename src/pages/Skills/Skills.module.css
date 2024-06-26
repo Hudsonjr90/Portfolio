@@ -148,22 +148,16 @@
   border-radius: 20px;
 }
 
-.show_cloud {
-  font-size: 5rem;
-  cursor: pointer;
-  color: var(--main_color);
-  background: var(--bg_color);
+.show_cloud, .show_search  {
+  font-size: 2rem !important;
+  cursor: pointer!important;
+  color: var(--main_color) !important;
+  border: 1px solid var(--main_color) !important;;
+  background-color: var(--bg_color) !important;
 }
 
-.show_search {
-  font-size: 3rem;
-  cursor: pointer;
-  color: var(--main_color);
-  background: var(--bg_color);
-}
 
 @media screen and (max-width: 2560px) {
-
   .icons_container {
     display: flex;
     gap: 2rem;
@@ -505,7 +499,6 @@
     margin: 11rem 0 2rem;
   }
 
-  
   .icons_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

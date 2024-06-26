@@ -1,15 +1,9 @@
+import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import styles from './Skills.module.css'
 import { motion } from 'framer-motion'
 import Transition from '../../components/Transition'
 import { iconComponents, mainIcons } from '../../data/iconsServer'
 import WordCloud from '../../components/WordCloud'
-import {
-  SetStateAction,
-  useState,
-  useEffect,
-  useCallback,
-  useMemo,
-} from 'react'
 import ReactPaginate from 'react-paginate'
 import { useTranslation } from 'react-i18next'
 import ProgressBar from 'react-customizable-progressbar'
@@ -20,8 +14,11 @@ import { loadFull } from 'tsparticles'
 import { useTheme } from '../../context/ThemeContext'
 import { FaSearch } from 'react-icons/fa'
 import { GiSunCloud } from 'react-icons/gi'
-import { Tooltip } from 'react-tooltip';
-import 'react-tooltip/dist/react-tooltip.css'
+import Tooltip from '@mui/material/Tooltip'
+import Zoom from '@mui/material/Zoom'
+import IconButton from '@mui/material/IconButton'
+import { ThemeProvider } from '@mui/material/styles'
+import { searchTheme, cloudTheme } from '../../context/ThemeContext'
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -159,14 +156,14 @@ const Skills = () => {
   const [currentPage, setCurrentPage] = useState(0)
   const [showCloud, setShowCloud] = useState(false)
 
-  const handleCategoryChange = (category: SetStateAction<string>) => {
+  const handleCategoryChange = (category: string) => {
     setSelectedCategory(category)
     setCurrentPage(0)
   }
 
-  const handleSearchTermChange = (event: {
-    target: { value: SetStateAction<string> }
-  }) => {
+  const handleSearchTermChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     setSearchTerm(event.target.value)
   }
 
@@ -223,7 +220,7 @@ const Skills = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
-    }, 7000) 
+    }, 7000)
 
     return () => clearInterval(interval)
   }, [totalPages])
@@ -237,21 +234,41 @@ const Skills = () => {
           <span>{t('skills.text')}</span>
         </h2>
         <div>
-          <button className={styles.toggle} onClick={toggleCloud}>
+          <motion.button initial={{ opacity: 0, y: '-100%' }}
+              animate={{ opacity: 1, y: '0%' }}
+              transition={{
+                duration: 2.5,
+                delay: 0.3,
+                ease: [0.3, 0, 0.2, 1],
+              }} className={styles.toggle} onClick={toggleCloud}>
             {showCloud ? (
-              <FaSearch
-                className={styles.show_search}
-                data-tooltip-id="search-tooltip"
-              />
+              <ThemeProvider theme={searchTheme}>
+                <Tooltip
+                  TransitionComponent={Zoom}
+                  title="Search"
+                  placement="top"
+                  arrow
+                >
+                  <IconButton className={styles.show_search}>
+                    <FaSearch />
+                  </IconButton>
+                </Tooltip>
+              </ThemeProvider>
             ) : (
-              <GiSunCloud
-                className={styles.show_cloud}
-                data-tooltip-id="cloud-tooltip"
-              />
+              <ThemeProvider theme={cloudTheme}>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title="Cloud"
+                placement="top"
+                arrow
+              >
+                <IconButton className={styles.show_cloud}>
+                  <GiSunCloud />
+                </IconButton>
+              </Tooltip>
+              </ThemeProvider>
             )}
-          </button>
-          <Tooltip id="search-tooltip" place="top" content="Search" />
-          <Tooltip id="cloud-tooltip" place="top" content="Cloud" />
+          </motion.button>
         </div>
 
         {showCloud ? (
@@ -368,4 +385,5 @@ const Skills = () => {
     </Transition>
   )
 }
+
 export default Skills
