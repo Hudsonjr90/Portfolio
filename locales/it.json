@@ -190,8 +190,10 @@
   "skills": {
     "title": "Le Mie",
     "text": " Competenze",
-   
-    "search": "Cerca..."
+    "search": "Cerca...",
+    "noResults" : "Nessuna competenza trovata",
+    "cloudWord": "Nuvola di parole",
+    "searchable": "Filtro e ricerca"
   },
 
   "projects": {

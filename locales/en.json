@@ -190,7 +190,10 @@
   "skills": {
     "title": " My",
     "text": " Skills",
-    "search": "Search..."
+    "search": "Search...",
+    "noResults": "No skills found",
+    "cloudWord": "Word Cloud",
+    "searchable": "Search and Filter"
   },
 
   "projects": {
@@ -229,25 +232,25 @@
         "description": "Global Currency Converter, made in Udemy course"
       },
       {
-         "description": "A small web app to speed up the draw of teams in football"
+        "description": "A small web app to speed up the draw of teams in football"
       },
       {
-         "description": "Website of a task organizer (to-do list)"
+        "description": "Website of a task organizer (to-do list)"
       },
       {
-         "description": "Simple BMI calculator for body mass calculation"
+        "description": "Simple BMI calculator for body mass calculation"
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       }
     ]
   },

@@ -11,14 +11,14 @@ import CountUp from 'react-countup'
 import Particles from 'react-tsparticles'
 import { Engine, IOptions } from 'tsparticles-engine'
 import { loadFull } from 'tsparticles'
-import { useTheme } from '../../context/ThemeContext'
+import { useTheme, searchTheme, cloudTheme } from '../../context/ThemeContext'
 import { FaSearch } from 'react-icons/fa'
 import { GiSunCloud } from 'react-icons/gi'
 import Tooltip from '@mui/material/Tooltip'
 import Zoom from '@mui/material/Zoom'
 import IconButton from '@mui/material/IconButton'
 import { ThemeProvider } from '@mui/material/styles'
-import { searchTheme, cloudTheme } from '../../context/ThemeContext'
+
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -155,6 +155,7 @@ const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [currentPage, setCurrentPage] = useState(0)
   const [showCloud, setShowCloud] = useState(false)
+  const [noResults, setNoResults] = useState(false)
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category)
@@ -183,6 +184,10 @@ const Skills = () => {
       return categoryMatch && searchTermMatch
     })
   }, [mainIcons, selectedCategory, searchTerm])
+
+  useEffect(() => {
+    setNoResults(filteredIcons.length === 0)
+  }, [filteredIcons])
 
   const [itemsPerPage, setItemsPerPage] = useState(14)
 
@@ -218,12 +223,16 @@ const Skills = () => {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
-    }, 7000)
-
-    return () => clearInterval(interval)
-  }, [totalPages])
+    if (noResults) {
+      setCurrentPage(0)
+    } else {
+      const interval = setInterval(() => {
+        setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
+      }, 7000)
+  
+      return () => clearInterval(interval)
+    }
+  }, [noResults, totalPages])
 
   return (
     <Transition onAnimationComplete={() => {}}>
@@ -245,7 +254,7 @@ const Skills = () => {
               <ThemeProvider theme={searchTheme}>
                 <Tooltip
                   TransitionComponent={Zoom}
-                  title="Search"
+                  title={t('skills.searchable')}
                   placement="top"
                   arrow
                 >
@@ -258,7 +267,7 @@ const Skills = () => {
               <ThemeProvider theme={cloudTheme}>
               <Tooltip
                 TransitionComponent={Zoom}
-                title="Cloud"
+                title={t('skills.cloudWord')}
                 placement="top"
                 arrow
               >
@@ -309,53 +318,68 @@ const Skills = () => {
                 <FaSearch />
               </motion.div>
             </motion.div>
-            <motion.div
-              className={styles.icons_container}
-              variants={container}
-              initial="hidden"
-              animate="visible"
-            >
-              {visibleIcons.map((icon) => {
-                const IconComponent = iconComponents[icon.name]
-                return (
-                  <motion.div
-                    key={icon.id}
-                    variants={container}
-                    className={styles.box_icon}
-                  >
-                    <span className={styles.icon_description}>{icon.name}</span>
-                    <ProgressBar
-                      radius={65}
-                      strokeWidth={4}
-                      strokeColor="var(--main_color)"
-                      trackStrokeWidth={9}
-                      trackStrokeColor="var(--second_bg_color)"
-                      pointerRadius={9}
-                      pointerStrokeWidth={8}
-                      pointerStrokeColor="var(--main_color)"
-                      progress={icon.percentage}
-                      initialAnimation={true}
-                      transition="2.5s ease 0.5s"
-                      trackTransition="0s ease"
+            {visibleIcons.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0, x: '-100%' }}
+                animate={{ opacity: 1, x: '0%' }}
+                transition={{
+                  duration: 2.5,
+                  delay: 0.3,
+                  ease: [0.3, 0, 0.2, 1],
+                }}
+                className={styles.no_results}
+              >
+                <p>{t('skills.noResults')}</p>
+              </motion.div>
+            ) : (
+              <motion.div
+                className={styles.icons_container}
+                variants={container}
+                initial="hidden"
+                animate="visible"
+              >
+                {visibleIcons.map((icon) => {
+                  const IconComponent = iconComponents[icon.name]
+                  return (
+                    <motion.div
+                      key={icon.id}
+                      variants={container}
+                      className={styles.box_icon}
                     >
-                      <div className={styles.icon_wrapper}>
-                        {IconComponent && (
-                          <IconComponent className={styles.icon} />
-                        )}
-                      </div>
-                      <div className={styles.indicator}>
-                        <CountUp
-                          start={0}
-                          end={icon.percentage}
-                          duration={2.5}
-                          suffix={'%'}
-                        />
-                      </div>
-                    </ProgressBar>
-                  </motion.div>
-                )
-              })}
-            </motion.div>
+                      <span className={styles.icon_description}>{icon.name}</span>
+                      <ProgressBar
+                        radius={65}
+                        strokeWidth={4}
+                        strokeColor="var(--main_color)"
+                        trackStrokeWidth={9}
+                        trackStrokeColor="var(--second_bg_color)"
+                        pointerRadius={9}
+                        pointerStrokeWidth={8}
+                        pointerStrokeColor="var(--main_color)"
+                        progress={icon.percentage}
+                        initialAnimation={true}
+                        transition="2.5s ease 0.5s"
+                        trackTransition="0s ease"
+                      >
+                        <div className={styles.icon_wrapper}>
+                          {IconComponent && (
+                            <IconComponent className={styles.icon} />
+                          )}
+                        </div>
+                        <div className={styles.indicator}>
+                          <CountUp
+                            start={0}
+                            end={icon.percentage}
+                            duration={2.5}
+                            suffix={'%'}
+                          />
+                        </div>
+                      </ProgressBar>
+                    </motion.div>
+                  )
+                })}
+              </motion.div>
+            )}
             <motion.div
               initial={{ opacity: 0, x: '-100%' }}
               animate={{ opacity: 1, x: '0%' }}

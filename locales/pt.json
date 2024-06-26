@@ -190,7 +190,10 @@
   "skills": {
     "title": " Minhas",
     "text": " Habilidades",
-    "search": "Buscar..."
+    "search": "Buscar...",
+    "noResults" : "Nenhuma habilidade encontrada",
+    "cloudWord" : "Nuvem de palavras",
+    "searchable": "Filtro e Busca"
   },
 
   "projects": {

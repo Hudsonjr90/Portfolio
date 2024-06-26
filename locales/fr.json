@@ -190,7 +190,10 @@
   "skills": {
     "title": " Mes",
     "text": " Compétences",
-    "search": "Rechercher..."
+    "search": "Rechercher...",
+    "noResults": "Aucune compétence trouvée",
+    "cloudWord": "Nuage de mots",
+    "searchable": "Filtrage et recherche"
   },
 
   "projects": {
@@ -232,22 +235,22 @@
         "description": "Une petite application web pour accélérer le tirage au sort des équipes de football"
       },
       {
-         "description": "Site web d’un organisateur de tâches (to-do list)"
+        "description": "Site web d’un organisateur de tâches (to-do list)"
       },
       {
-         "description": "Calculateur d’IMC simple pour le calcul de la masse corporelle"
+        "description": "Calculateur d’IMC simple pour le calcul de la masse corporelle"
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       }
     ]
   },

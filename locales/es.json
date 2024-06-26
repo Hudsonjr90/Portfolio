@@ -190,7 +190,10 @@
   "skills": {
     "title": " Mis",
     "text": " Habilidades",
-    "search": "Buscar..."
+    "search": "Buscar...",
+    "noResults": "No se encontraron habilidades",
+    "cloudWord": "Nube de palabras",
+    "searchable": "Filtrado y búsqueda"
   },
 
   "projects": {
@@ -232,22 +235,22 @@
         "description": "Una pequeña aplicación web para agilizar el sorteo de equipos en el fútbol"
       },
       {
-         "description": "Sitio web de un organizador de tareas (lista de tareas pendientes)"
+        "description": "Sitio web de un organizador de tareas (lista de tareas pendientes)"
       },
       {
-         "description": "Calculadora de IMC simple para el cálculo de la masa corporal"
+        "description": "Calculadora de IMC simple para el cálculo de la masa corporal"
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       },
       {
-         "description": ""
+        "description": ""
       }
     ]
   },

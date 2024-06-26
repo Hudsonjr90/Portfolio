@@ -156,6 +156,11 @@
   background-color: var(--bg_color) !important;
 }
 
+.no_results{
+  display: flex;
+  justify-content: center;
+  color:var(--main_color);
+}
 
 @media screen and (max-width: 2560px) {
   .icons_container {
@@ -868,7 +873,7 @@
 
   .pagination li a {
     width: auto;
-    padding: 0.4rem 1rem;
+    padding: 0rem 1rem;
     text-align: center;
   }
 
