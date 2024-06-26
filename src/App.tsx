@@ -4,7 +4,6 @@ import './App.css'
 import { Routes, Route, useLocation } from 'react-router-dom'
 // COMPONENTS
 import Navbar from './components/Navbar'
-import SkeletonLoad from './components/Skeleton' 
 // PAGES
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
@@ -20,23 +19,10 @@ import { I18nextProvider } from 'react-i18next'
 import i18n from '../i18n'
 // FRAMER MOTION
 import { AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
 
 function App() {
   const location = useLocation()
-  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 2000) 
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (isLoading) {
-    return <SkeletonLoad /> 
-  }
 
   return (
     <ThemeProvider>
