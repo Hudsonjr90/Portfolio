@@ -36,7 +36,7 @@ import { motion } from 'framer-motion'
 const Home = () => {
   const { t, i18n } = useTranslation()
 
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
   const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage
 
@@ -115,26 +115,21 @@ const Home = () => {
           <div className={styles.home_content}>
             <ParticlesBackground />
 
-            <h3 className={styles.first_h3}>
-              <motion.div
-                initial={{ opacity: 0, x: '80%' }}
-                animate={{ opacity: 1, x: '0%', rotate: 360 }}
-                transition={{
-                  type: 'spring',
-                  duration: 2,
-                  delay: 0.3,
-                  ease: [0.3, 0, 0.2, 1],
-                }}
-              >
-                {t('home.title')} <span>Commit</span>
-              </motion.div>
-            </h3>
-
-            <h1 className={styles.text_reveal}>
-              <span>Hudson Kennedy</span>
-              <span aria-hidden="true">Hudson Kennedy</span>
-            </h1>
-
+            <motion.div
+              initial={{ opacity: 0, x: '80%' }}
+              animate={{ opacity: 1, x: '0%', rotate: 360 }}
+              transition={{
+                type: 'spring',
+                duration: 2,
+                delay: 0.3,
+                ease: [0.3, 0, 0.2, 1],
+              }}
+            >
+              <h1 className={styles.text_reveal}>
+                <span>Hudson Kennedy</span>
+                <span aria-hidden="true">Hudson Kennedy</span>
+              </h1>
+            </motion.div>
             <motion.div
               animate={{ x: [30, 150, 10], opacity: 1, scale: 1 }}
               transition={{

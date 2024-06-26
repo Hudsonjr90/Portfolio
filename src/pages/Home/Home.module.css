@@ -32,7 +32,7 @@
 }
 
 .home_content .transparent_text {
-  margin: 0 3rem -2rem;
+  margin: 0 -3rem -2rem;
   font: 700 2.9rem 'Orbitron', sans-serif;
 }
 
@@ -46,6 +46,7 @@
 
 .home_content .text_reveal {
   display: grid;
+  margin-left: -3rem;
 }
 
 .home_content .text_reveal::after,
@@ -442,12 +443,12 @@
 
 @media screen and (max-width: 1450px) {
   .home_img {
-    bottom: 15rem;
+    bottom: 5rem;
     right: 10rem;
   }
 
   .home_img img {
-    width: 34vw;
+    width: 32vw;
   }
 
   .home_content {
@@ -484,18 +485,18 @@
 
   .footer {
     font-size: 1.9rem;
-    margin-top: 2rem;
+    margin-top: -1rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .home_img {
-    bottom: 20rem;
+    bottom: 8rem;
     right: 8rem;
   }
 
   .home_img img {
-    width: 48vw;
+    width: 40vw;
   }
 
   .home_content {
@@ -528,7 +529,7 @@
 
   .footer {
     font-size: 1.8rem;
-    margin-top: 2.5rem;
+    margin-top: -1rem;
   }
 }
 
@@ -581,7 +582,7 @@
 
 @media screen and (max-width: 768px) {
   .home_img img {
-    width: 60vw;
+    width: 33vw;
   }
 
   .home_img {
