@@ -166,6 +166,7 @@ const Skills = () => {
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     setSearchTerm(event.target.value)
+    setCurrentPage(0)
   }
 
   useEffect(() => {
@@ -209,7 +210,6 @@ const Skills = () => {
 
   const handlePageClick = ({ selected }: { selected: number }) => {
     setCurrentPage(selected)
-    setSearchTerm('')
   }
 
   const visibleIcons = useMemo(() => {
@@ -223,16 +223,14 @@ const Skills = () => {
   }
 
   useEffect(() => {
-    if (noResults) {
-      setCurrentPage(0)
-    } else {
+    if (filteredIcons.length > 0 && searchTerm === '') {
       const interval = setInterval(() => {
         setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
       }, 7000)
   
       return () => clearInterval(interval)
     }
-  }, [noResults, totalPages])
+  }, [filteredIcons.length, totalPages, searchTerm])
 
   return (
     <Transition onAnimationComplete={() => {}}>
