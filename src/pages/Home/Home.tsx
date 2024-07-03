@@ -116,18 +116,17 @@ const Home = () => {
             <ParticlesBackground />
 
             <motion.div
-              initial={{ opacity: 0, x: '80%' }}
-              animate={{ opacity: 1, x: '0%', rotate: 360 }}
-              transition={{
-                type: 'spring',
-                duration: 2,
-                delay: 0.3,
-                ease: [0.3, 0, 0.2, 1],
-              }}
+             animate={{ y: [30, 150, 10], opacity: 1, scale: 1 }}
+             transition={{
+               duration: 3,
+               delay: 0.3,
+               ease: [0.5, 0.71, 1, 1.5],
+             }}
+             initial={{ opacity: 0, scale: 0.5 }}
+             
             >
               <h1 className={styles.text_reveal}>
-                <span>Hudson Kennedy</span>
-                <span aria-hidden="true">Hudson Kennedy</span>
+                Hudson Kennedy
               </h1>
             </motion.div>
             <motion.div
