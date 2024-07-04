@@ -1,4 +1,3 @@
-// CSS
 import styles from './Home.module.css'
 import { NavLink } from 'react-router-dom'
 import Transition from '../../components/Transition'
@@ -129,6 +128,7 @@ const Home = () => {
                 Hudson Kennedy
               </h1>
             </motion.div>
+
             <motion.div
               animate={{ x: [30, 150, 10], opacity: 1, scale: 1 }}
               transition={{
@@ -137,7 +137,6 @@ const Home = () => {
                 ease: [0.5, 0.71, 1, 1.5],
               }}
               initial={{ opacity: 0, scale: 0.5 }}
-              whileHover={{ scale: 1.2 }}
               className={styles.transparent_text}
             >
               <Typewriter

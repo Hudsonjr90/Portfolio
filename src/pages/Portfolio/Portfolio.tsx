@@ -1,61 +1,81 @@
-// CSS
-import "./Portfolio.css"
-import styles from "./Portfolio.module.css"
-// HOOKS
-import { useState, useEffect, useCallback } from "react"
-// REACT ROUTER DOM
-import { NavLink } from "react-router-dom"
-// COMPONENT
-import Transition from "../../components/Transition"
-import { useTranslation } from "react-i18next"
-import Particles from "react-tsparticles"
-import { Engine, IOptions } from "tsparticles-engine"
-import { loadFull } from "tsparticles"
-import { useTheme } from "../../context/ThemeContext"
-import portfolioServer from "../../data/portfolioServer"
-// SWIPER
-import { Swiper, SwiperSlide } from "swiper/react"
-import { EffectCoverflow } from "swiper/modules"
+import { useState, useEffect, useCallback } from 'react';
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Button,
+} from '@mui/material';
+import Transition from '../../components/Transition';
+import { useTranslation } from 'react-i18next';
+import Particles from 'react-tsparticles';
+import { Engine, IOptions } from 'tsparticles-engine';
+import { loadFull } from 'tsparticles';
+import { useTheme } from '../../context/ThemeContext';
+import ReactPaginate from 'react-paginate';
+import styles from './Portfolio.module.css';
+import portfolioServer from '../../data/portfolioServer';
+import { NavLink } from 'react-router-dom';
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]
     : T[P] extends object
     ? RecursivePartial<T[P]>
-    : T[P]
-}
+    : T[P];
+};
 
 const Portfolio = () => {
-  const { t } = useTranslation()
-
-  const [slidePerview, setSlidePerview] = useState<number>(1)
-  const [initialSlide] = useState<number>(0)
-  const [transitionCompleted, setTransitionCompleted] = useState(false)
+  const { t } = useTranslation();
+  const [currentItems, setCurrentItems] = useState(portfolioServer.slice(0, 3));
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0); 
+  const [transitionCompleted, setTransitionCompleted] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth < 580) {
-        setSlidePerview(1)
-      } else {
-        setSlidePerview(3)
+    const endOffset = itemOffset + 3;
+    setCurrentItems(portfolioServer.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(portfolioServer.length / 3));
+  }, [itemOffset]);
+
+  const handlePageClick = (event: { selected: number }) => {
+    const newOffset = (event.selected * 3) % portfolioServer.length;
+    setItemOffset(newOffset);
+    setCurrentPage(event.selected); 
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (!isPaused) {
+        setItemOffset((prevOffset) => {
+          let newOffset = prevOffset + 3;
+          let newPage = currentPage + 1;
+
+          if (newOffset >= portfolioServer.length) {
+            newOffset = 0;
+            newPage = 0;
+          }
+
+          setCurrentPage(newPage); 
+          return newOffset;
+        });
       }
-    }
+    }, 5000); 
 
-    handleResize()
+    return () => clearInterval(intervalId);
+  }, [isPaused, currentPage]);
 
-    window.addEventListener("resize", handleResize)
-
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  })
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
 
   const particlesInit = useCallback((engine: Engine) => {
-    loadFull(engine)
-    return Promise.resolve()
-  }, [])
+    loadFull(engine);
+    return Promise.resolve();
+  }, []);
 
-  const { mainColor } = useTheme()
+  const { mainColor } = useTheme();
 
   const particlesConfig: RecursivePartial<IOptions> = {
     particles: {
@@ -70,7 +90,7 @@ const Portfolio = () => {
         value: mainColor,
       },
       shape: {
-        type: "polygon",
+        type: 'polygon',
         stroke: {
           width: 0,
           color: mainColor,
@@ -102,17 +122,17 @@ const Portfolio = () => {
       line_linked: {
         enable: false,
         distance: 150,
-        color: "#ffffff",
+        color: '#ffffff',
         opacity: 0.4,
         width: 1,
       },
       move: {
         enable: true,
         speed: 4,
-        direction: "top-right",
+        direction: 'top-right',
         random: false,
         straight: true,
-        out_mode: "out",
+        out_mode: 'out',
         bounce: false,
         attract: { enable: false, rotateX: 600, rotateY: 1200 },
       },
@@ -121,11 +141,11 @@ const Portfolio = () => {
       events: {
         onhover: {
           enable: true,
-          mode: "repulse",
+          mode: 'repulse',
         },
         onclick: {
           enable: false,
-          mode: "push",
+          mode: 'push',
         },
         resize: true,
       },
@@ -156,7 +176,7 @@ const Portfolio = () => {
       },
     },
     retina_detect: true,
-  }
+  };
 
   return (
     <Transition onAnimationComplete={() => setTransitionCompleted(true)}>
@@ -164,90 +184,79 @@ const Portfolio = () => {
         <section className={styles.portfolio}>
           <Particles options={particlesConfig} init={particlesInit} />
           <h2 className={styles.heading}>
-            <span>//</span> {t("projects.title")}{" "}
-            <span>{t("projects.text")}</span>
+            <span>//</span> {t('projects.title')}{' '}
+            <span>{t('projects.text')}</span>
           </h2>
 
-          <Swiper
-            className="animation-cards"
-            modules={[EffectCoverflow]}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            loop={false}
-            coverflowEffect={{
-              rotate: 50,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
-              slideShadows: true,
-            }}
-            slidesPerView={slidePerview}
-           
-            navigation
-            initialSlide={initialSlide}
-            autoplay={{ delay: 3000 }} 
-            onSwiper={(swiper) => {
-              swiper.el.onmouseover = () => {
-                swiper.autoplay.stop()
-              }
-              swiper.el.onmouseout = () => {
-                swiper.autoplay.start()
-              }
-            }}
-          >
-            {portfolioServer.map((item) => (
-              <SwiperSlide key={item.id} className="teste">
-                <div className={styles.portfolio_container}>
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className={styles.item_slide}
-                  />
-                  <div className={styles.portfolio_content}>
-                    <h2 className={styles.name}>{item.name}</h2>
-                    <p className={styles.description}>
-                      {t(`projects.data.${item.id}.description`)}
-                    </p>
-
-                    <div className={styles.technologies}>
-                      <h3>{t("projects.subtitle")}</h3>
-                      <ul>
-                        {item.technologies &&
-                          item.technologies.map((tech, index) => (
-                            <li key={index}>{tech}</li>
-                          ))}
-                      </ul>
-                    </div>
-
-                    <div className={styles.links}>
-                      <NavLink
-                        to={item.linkDeploy || ""}
-                        className={styles.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Deploy
-                      </NavLink>
-
-                      <NavLink
-                        to={item.linkRepository || ""}
-                        className={styles.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </NavLink>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
+          <div className={styles.portfolio_grid}>
+            {currentItems.map((item) => (
+              <Card 
+                key={item.id} 
+                className={styles.card}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <CardMedia
+                  component="img"
+                  alt={item.name}
+                  height="300"
+                  image={item.image}
+                />
+                <CardContent className={styles.cardContent}>
+                  {t(`projects.data.${item.id}.description`)}
+                </CardContent>
+                <CardContent>
+                  <li className={styles.tech_title}>
+                    {t('projects.subtitle')}
+                  </li>
+                  {item.technologies.map((tech, index) => (
+                    <li className={styles.tech_list} key={index}>
+                      {tech}
+                    </li>
+                  ))}
+                </CardContent>
+                <CardActions className={styles.cardActions}>
+                  <Button className={styles.links}>
+                    <NavLink
+                      to={item.linkDeploy || ''}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      Deploy
+                    </NavLink>
+                  </Button>
+                  <Button className={styles.links}>
+                    <NavLink
+                      to={item.linkRepository || ''}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      Code
+                    </NavLink>
+                  </Button>
+                </CardActions>
+              </Card>
             ))}
-          </Swiper>
+          </div>
+          <ReactPaginate
+            previousLabel={'←'}
+            nextLabel={'→'}
+            breakLabel={'...'}
+            breakClassName={'break-me'}
+            pageCount={pageCount}
+            pageRangeDisplayed={5}
+            marginPagesDisplayed={0}
+            onPageChange={handlePageClick}
+            containerClassName={styles.pagination}
+            activeClassName={styles.activePage}
+            forcePage={currentPage} 
+          />
         </section>
       )}
     </Transition>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;
