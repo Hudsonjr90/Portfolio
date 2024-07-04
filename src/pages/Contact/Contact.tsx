@@ -1,7 +1,7 @@
 // CSS
 import styles from './Contact.module.css'
 // HOOKS
-import { SetStateAction, useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 // REACT ROUTER DOM
 import { NavLink } from 'react-router-dom'
 // COMPONENT

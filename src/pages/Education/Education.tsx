@@ -4,7 +4,7 @@ import CardComponent from "../../components/CardComponent"
 import { useTranslation } from "react-i18next"
 import Particles from "react-tsparticles"
 import { Engine, IOptions } from "tsparticles-engine"
-import { useCallback, useState } from "react"
+import { useCallback } from "react"
 import { loadFull } from "tsparticles"
 import { useTheme } from "../../context/ThemeContext"
 

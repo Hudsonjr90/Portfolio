@@ -19,7 +19,6 @@ import Zoom from '@mui/material/Zoom'
 import IconButton from '@mui/material/IconButton'
 import { ThemeProvider } from '@mui/material/styles'
 
-
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]
@@ -227,7 +226,7 @@ const Skills = () => {
       const interval = setInterval(() => {
         setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
       }, 7000)
-  
+
       return () => clearInterval(interval)
     }
   }, [filteredIcons.length, totalPages, searchTerm])
@@ -240,14 +239,18 @@ const Skills = () => {
           <span>//</span> {t('skills.title')}
           <span>{t('skills.text')}</span>
         </h2>
-        <div>
-          <motion.button initial={{ opacity: 0, y: '-100%' }}
-              animate={{ opacity: 1, y: '0%' }}
-              transition={{
-                duration: 2.5,
-                delay: 0.3,
-                ease: [0.3, 0, 0.2, 1],
-              }} className={styles.toggle} onClick={toggleCloud}>
+        <motion.div>
+          <motion.button
+            initial={{ opacity: 0, y: '-100%' }}
+            animate={{ opacity: 1, y: '0%' }}
+            transition={{
+              duration: 2.5,
+              delay: 0.3,
+              ease: [0.3, 0, 0.2, 1],
+            }}
+            className={styles.toggle}
+            onClick={toggleCloud}
+          >
             {showCloud ? (
               <ThemeProvider theme={searchTheme}>
                 <Tooltip
@@ -263,20 +266,20 @@ const Skills = () => {
               </ThemeProvider>
             ) : (
               <ThemeProvider theme={cloudTheme}>
-              <Tooltip
-                TransitionComponent={Zoom}
-                title={t('skills.cloudWord')}
-                placement="top"
-                arrow
-              >
-                <IconButton className={styles.show_cloud}>
-                  <GiSunCloud />
-                </IconButton>
-              </Tooltip>
+                <Tooltip
+                  TransitionComponent={Zoom}
+                  title={t('skills.cloudWord')}
+                  placement="top"
+                  arrow
+                >
+                  <IconButton className={styles.show_cloud}>
+                    <GiSunCloud />
+                  </IconButton>
+                </Tooltip>
               </ThemeProvider>
             )}
           </motion.button>
-        </div>
+        </motion.div>
 
         {showCloud ? (
           <WordCloud />
@@ -327,7 +330,7 @@ const Skills = () => {
                 }}
                 className={styles.no_results}
               >
-                <p>{t('skills.noResults')}</p>
+                {noResults && <p>{t('skills.noResults')}</p>}
               </motion.div>
             ) : (
               <motion.div
@@ -344,7 +347,9 @@ const Skills = () => {
                       variants={container}
                       className={styles.box_icon}
                     >
-                      <span className={styles.icon_description}>{icon.name}</span>
+                      <span className={styles.icon_description}>
+                        {icon.name}
+                      </span>
                       <ProgressBar
                         radius={65}
                         strokeWidth={4}
