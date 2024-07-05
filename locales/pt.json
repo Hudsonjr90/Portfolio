@@ -208,7 +208,7 @@
         "description": "Pokedex usando API para consultar e listar Pokemóns."
       },
       {
-        "description": "Jogo criado em React, feito com Typescript, para poder praticar e exercitar um pouco mais na linguagem. Jogo simples, cujo ainda terá algumas atualizações e modificações também."
+        "description": "Jogo criado com React e Typescript para exercitar um pouco mais na linguagem."
       },
       {
         "description": "Uma homenagem histórica e uma recriação precisa do jogo de fliperama original Pac-Man."
@@ -220,7 +220,7 @@
         "description": "Um relógio analógico e um relógio digital, feito com TypeScript e Styled-Components"
       },
       {
-        "description": "Um formulário de cartão de crédito com microinterações suaves e agradáveis. Inclui formatação de números, validação e detecção automática de tipo de cartão. Construído com vuejs e totalmente responsivo."
+        "description": "Construído com vuejs e totalmente responsivo, formulário de cartão de crédito."
       },
       {
         "description": "Rastreador de Feriados do Cantão Suíço"

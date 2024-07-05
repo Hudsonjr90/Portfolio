@@ -45,7 +45,7 @@ const portfolioServer = [
     image: memory,
     name: 'Memory React Game',
     description:
-      'Jogo criado em React, feito com Typescript, para poder praticar e exercitar um pouco mais na linguagem. Jogo simples, cujo ainda terá algumas atualizações e modificações também.',
+      'Jogo criado com React e Typescript para exercitar um pouco mais na linguagem.',
     technologies: ['React', 'Typescript', 'CSS', 'NodeJs', 'Bootstrap'],
     linkDeploy: 'https://reactmemorygame.vercel.app',
     linkRepository: 'https://github.com/Hudsonjr90/Reactmemorygame',
@@ -85,7 +85,7 @@ const portfolioServer = [
     image: card,
     name: 'CreditCard-Form Vue',
     description:
-      'Um formulário de cartão de crédito com microinterações suaves e agradáveis. Inclui formatação de números, validação e detecção automática de tipo de cartão. Construído com vuejs e totalmente responsivo.',
+      'Um formulário de cartão de crédito, construído com vuejs e totalmente responsivo.',
     technologies: ['Vue', 'Javascript', 'Sass/Scss'],
     linkDeploy: 'https://credit-card-form-payment.vercel.app',
     linkRepository: 'https://github.com/Hudsonjr90/CreditCard-Form',
