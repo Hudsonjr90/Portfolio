@@ -40,6 +40,7 @@
 
 .cardActions {
   justify-content: center;
+  background-color: var(--card_bg);
 }
 
 .cardActions .links {
@@ -66,19 +67,11 @@
   transition: 0.5s ease;
 }
 
-.links .link::before {
-  background: #ffffff;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transition: 0.5s;
-  width: 0;
-}
 
-.cardActions .links .link:hover::before {
+.cardActions .links .link:hover {
   width: 100%;
+  color: var(--card_bg);
+  background-color: var(--card_color);
 }
 
 @keyframes animate {
@@ -95,8 +88,8 @@
 }
 
 .tech_list {
-  color: var(--card_color);
-  background-color: var(--card_bg);
+  color: var(--card_bg);
+  background-color: var(--card_color);
   border-radius: 0.5rem;
   display: inline flex;
   font-size: 1.2rem;

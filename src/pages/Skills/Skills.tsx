@@ -239,8 +239,7 @@ const Skills = () => {
           <span>//</span> {t('skills.title')}
           <span>{t('skills.text')}</span>
         </h2>
-        <motion.div>
-          <motion.button
+        <motion.div
             initial={{ opacity: 0, y: '-100%' }}
             animate={{ opacity: 1, y: '0%' }}
             transition={{
@@ -278,7 +277,6 @@ const Skills = () => {
                 </Tooltip>
               </ThemeProvider>
             )}
-          </motion.button>
         </motion.div>
 
         {showCloud ? (
@@ -353,12 +351,12 @@ const Skills = () => {
                       <ProgressBar
                         radius={65}
                         strokeWidth={4}
-                        strokeColor="var(--main_color)"
+                        strokeColor={mainColor}
                         trackStrokeWidth={9}
                         trackStrokeColor="var(--second_bg_color)"
                         pointerRadius={9}
                         pointerStrokeWidth={8}
-                        pointerStrokeColor="var(--main_color)"
+                        pointerStrokeColor={mainColor}
                         progress={icon.percentage}
                         initialAnimation={true}
                         transition="2.5s ease 0.5s"

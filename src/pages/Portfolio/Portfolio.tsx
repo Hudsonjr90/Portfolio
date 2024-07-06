@@ -198,26 +198,6 @@ const Portfolio = () => {
     retina_detect: true,
   }
 
-  // const variants = {
-  //   enter: (direction: number) => {
-  //     return {
-  //       x: direction > 0 ? 1000 : -1000,
-  //       opacity: 0,
-  //     }
-  //   },
-  //   center: {
-  //     zIndex: 1,
-  //     x: 0,
-  //     opacity: 1,
-  //   },
-  //   exit: (direction: number) => {
-  //     return {
-  //       zIndex: 0,
-  //       x: direction < 0 ? 1000 : -1000,
-  //       opacity: 0,
-  //     }
-  //   },
-  // }
 
   return (
     <Transition onAnimationComplete={() => setTransitionCompleted(true)}>
@@ -230,7 +210,6 @@ const Portfolio = () => {
           </h2>
 
           <motion.div
-            // variants={variants}
             initial="enter"
             animate="center"
             exit="exit"
@@ -256,7 +235,7 @@ const Portfolio = () => {
                 <CardContent className={styles.cardContent}>
                   {t(`projects.data.${item.id}.description`)}
                 </CardContent>
-                <CardContent>
+                <CardContent className={styles.cardContent}>
                   <li className={styles.tech_title}>
                     {t('projects.subtitle')}
                   </li>
