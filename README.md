@@ -54,10 +54,10 @@
  - Envio de formulário de E-mail
  - Links ativos
  - Navegação Dinâmica entre páginas(SPA)
+ - Internacionalização
 
  ## 🎯 Todo 
 
- - implementar outros idiomas 
  - ajustar paletas de cores no light mode
  - inserir mais projetos desenvolvidos
  - etc...
