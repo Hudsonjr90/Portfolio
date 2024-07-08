@@ -1,6 +1,6 @@
 import styles from './Home.module.css'
 import { NavLink } from 'react-router-dom'
-import Transition from '../../components/Transition'
+import Transition from '../../components/Transition/Transition'
 import { Modal } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -29,8 +29,8 @@ import IconButton from '@mui/material/IconButton'
 import { useMediaQuery } from 'react-responsive'
 import HomeDesktopImage from '/imgs/my.png'
 import HomeMobileImage from '/imgs/my-mobile.png'
-import ParticlesBackground from '../../components/ParticlesBackground'
 import { motion } from 'framer-motion'
+import ParticlesA from '../../components/Particles/ParticlesA'
 
 const Home = () => {
   const { t, i18n } = useTranslation()
@@ -112,7 +112,7 @@ const Home = () => {
       <Transition onAnimationComplete={() => {}}>
         <section className={styles.home}>
           <div className={styles.home_content}>
-            <ParticlesBackground />
+            <ParticlesA />
 
             <motion.div
              animate={{ y: [30, 150, 10], opacity: 1, scale: 1 }}

@@ -1,39 +1,21 @@
-// CSS
 import styles from './Contact.module.css'
-// HOOKS
-import { useState, useCallback } from 'react'
-// REACT ROUTER DOM
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-// COMPONENT
-import Transition from '../../components/Transition'
+import Transition from '../../components/Transition/Transition'
 import { useTranslation } from 'react-i18next'
 import PhoneInput from 'react-phone-number-input/input'
-import Particles from 'react-tsparticles'
-import { Engine, IOptions } from 'tsparticles-engine'
-import { loadFull } from 'tsparticles'
-import { useTheme } from '../../context/ThemeContext'
-// EMAILJS
 import emailjs from '@emailjs/browser'
-// SWEETALERT
 import Swal from 'sweetalert2'
-// FRAMER MOTION
 import { motion } from 'framer-motion'
-// REACT ICONS
 import Tooltip from '@mui/material/Tooltip'
 import Zoom from '@mui/material/Zoom'
 import { whatsappTheme, emailTheme, linkedinTheme, githubTheme} from '../../context/ThemeContext'
 import { ThemeProvider } from '@mui/material/styles'
 import { WhatsApp, LinkedIn, Email, GitHub } from '@mui/icons-material'
 import IconButton from '@mui/material/IconButton'
+import ParticlesB from '../../components/Particles/ParticlesB'
 
 
-type RecursivePartial<T> = {
-  [P in keyof T]?: T[P] extends (infer U)[]
-    ? RecursivePartial<U>[]
-    : T[P] extends object
-    ? RecursivePartial<T[P]>
-    : T[P]
-}
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -108,117 +90,10 @@ const Contact = () => {
       )
   }
 
-  const particlesInit = useCallback((engine: Engine) => {
-    loadFull(engine)
-    return Promise.resolve()
-  }, [])
-
-  const { mainColor } = useTheme()
-
-  const particlesConfig: RecursivePartial<IOptions> = {
-    particles: {
-      number: {
-        value: 50,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      color: {
-        value: mainColor,
-      },
-      shape: {
-        type: 'polygon',
-        stroke: {
-          width: 0,
-          color: mainColor,
-        },
-        polygon: {
-          sides: 3,
-        },
-      },
-      opacity: {
-        value: 1,
-        random: true,
-        anim: {
-          enable: false,
-          speed: 1,
-          opacity_min: 0.1,
-          sync: false,
-        },
-      },
-      size: {
-        value: 3,
-        random: true,
-        anim: {
-          enable: true,
-          speed: 4.872463273808071,
-          size_min: 0.1,
-          sync: false,
-        },
-      },
-      line_linked: {
-        enable: false,
-        distance: 150,
-        color: '#ffffff',
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 4,
-        direction: 'top-right',
-        random: false,
-        straight: true,
-        out_mode: 'out',
-        bounce: false,
-        attract: { enable: false, rotateX: 600, rotateY: 1200 },
-      },
-    },
-    interactivity: {
-      events: {
-        onhover: {
-          enable: true,
-          mode: 'repulse',
-        },
-        onclick: {
-          enable: false,
-          mode: 'push',
-        },
-        resize: true,
-      },
-      modes: {
-        grab: {
-          distance: 400,
-          line_linked: {
-            opacity: 1,
-          },
-        },
-        bubble: {
-          distance: 400,
-          size: 40,
-          duration: 2,
-          opacity: 8,
-          speed: 3,
-        },
-        repulse: {
-          distance: 150,
-          duration: 0.4,
-        },
-        push: {
-          particles_nb: 4,
-        },
-        remove: {
-          particles_nb: 2,
-        },
-      },
-    },
-    retina_detect: true,
-  }
 
   return (
     <Transition onAnimationComplete={() => {}}>
-      <Particles options={particlesConfig} init={particlesInit} />
+      <ParticlesB />
       <section className={styles.contact}>
         <div className={styles.header_container}>
           <h2>

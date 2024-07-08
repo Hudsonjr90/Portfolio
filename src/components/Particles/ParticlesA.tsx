@@ -5,7 +5,7 @@ import Particles from "react-tsparticles"
 import { loadFull } from "tsparticles"
 import { Engine, IOptions } from 'tsparticles-engine'
 // CONTEXT
-import { useTheme } from '../context/ThemeContext'
+import { useTheme } from '../../context/ThemeContext'
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
@@ -15,7 +15,7 @@ type RecursivePartial<T> = {
       : T[P]
 }
 
-const ParticlesBackground = () => {
+const ParticlesA = () => {
     const particlesInit = useCallback((engine: Engine) => {
         loadFull(engine)
         return Promise.resolve()
@@ -139,5 +139,4 @@ const ParticlesBackground = () => {
     )
 }
 
-export default ParticlesBackground
-
+export default ParticlesA

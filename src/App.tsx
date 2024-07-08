@@ -1,10 +1,6 @@
-// CSS
 import './App.css'
-// REACT ROUTER DOM
 import { Routes, Route, useLocation } from 'react-router-dom'
-// COMPONENTS
-import Navbar from './components/Navbar'
-// PAGES
+import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Testimonials from './pages/Testimonials/Testimonials'
@@ -13,11 +9,9 @@ import Experiences from './pages/Experiences/Experiences'
 import Portfolio from './pages/Portfolio/Portfolio'
 import Skills from './pages/Skills/Skills'
 import Contact from './pages/Contact/Contact'
-// CONTEXT
 import { ThemeProvider } from './context/ThemeContext'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '../i18n'
-// FRAMER MOTION
 import { AnimatePresence } from 'framer-motion'
 
 function App() {

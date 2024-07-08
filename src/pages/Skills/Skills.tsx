@@ -1,142 +1,28 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import styles from './Skills.module.css'
 import { motion } from 'framer-motion'
-import Transition from '../../components/Transition'
+import Transition from '../../components/Transition/Transition'
 import { iconComponents, mainIcons } from '../../data/iconsServer'
-import WordCloud from '../../components/WordCloud'
+import WordCloud from '../../components/WordCloud/WordCloud'
 import ReactPaginate from 'react-paginate'
 import { useTranslation } from 'react-i18next'
 import ProgressBar from 'react-customizable-progressbar'
 import CountUp from 'react-countup'
-import Particles from 'react-tsparticles'
-import { Engine, IOptions } from 'tsparticles-engine'
-import { loadFull } from 'tsparticles'
-import { useTheme, searchTheme, cloudTheme } from '../../context/ThemeContext'
 import { FaSearch } from 'react-icons/fa'
 import { GiSunCloud } from 'react-icons/gi'
 import Tooltip from '@mui/material/Tooltip'
 import Zoom from '@mui/material/Zoom'
 import IconButton from '@mui/material/IconButton'
 import { ThemeProvider } from '@mui/material/styles'
+import ParticlesB from '../../components/Particles/ParticlesB'
+import { cloudTheme, searchTheme, useTheme } from '../../context/ThemeContext'
 
-type RecursivePartial<T> = {
-  [P in keyof T]?: T[P] extends (infer U)[]
-    ? RecursivePartial<U>[]
-    : T[P] extends object
-    ? RecursivePartial<T[P]>
-    : T[P]
-}
+
 
 const Skills = () => {
   const { t } = useTranslation()
 
-  const particlesInit = useCallback((engine: Engine) => {
-    loadFull(engine)
-    return Promise.resolve()
-  }, [])
-
   const { mainColor } = useTheme()
-
-  const particlesConfig: RecursivePartial<IOptions> = {
-    particles: {
-      number: {
-        value: 50,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      color: {
-        value: mainColor,
-      },
-      shape: {
-        type: 'polygon',
-        stroke: {
-          width: 0,
-          color: mainColor,
-        },
-        polygon: {
-          sides: 3,
-        },
-      },
-      opacity: {
-        value: 1,
-        random: true,
-        anim: {
-          enable: false,
-          speed: 1,
-          opacity_min: 0.1,
-          sync: false,
-        },
-      },
-      size: {
-        value: 3,
-        random: true,
-        anim: {
-          enable: true,
-          speed: 4.872463273808071,
-          size_min: 0.1,
-          sync: false,
-        },
-      },
-      line_linked: {
-        enable: false,
-        distance: 150,
-        color: '#ffffff',
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 4,
-        direction: 'top-right',
-        random: false,
-        straight: true,
-        out_mode: 'out',
-        bounce: false,
-        attract: { enable: false, rotateX: 600, rotateY: 1200 },
-      },
-    },
-    interactivity: {
-      events: {
-        onhover: {
-          enable: true,
-          mode: 'repulse',
-        },
-        onclick: {
-          enable: false,
-          mode: 'push',
-        },
-        resize: true,
-      },
-      modes: {
-        grab: {
-          distance: 400,
-          line_linked: {
-            opacity: 1,
-          },
-        },
-        bubble: {
-          distance: 400,
-          size: 40,
-          duration: 2,
-          opacity: 8,
-          speed: 3,
-        },
-        repulse: {
-          distance: 150,
-          duration: 0.4,
-        },
-        push: {
-          particles_nb: 4,
-        },
-        remove: {
-          particles_nb: 2,
-        },
-      },
-    },
-    retina_detect: true,
-  }
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -233,7 +119,7 @@ const Skills = () => {
 
   return (
     <Transition onAnimationComplete={() => {}}>
-      <Particles options={particlesConfig} init={particlesInit} />
+      <ParticlesB />
       <section className={styles.skills}>
         <h2 className={styles.heading}>
           <span>//</span> {t('skills.title')}

@@ -1,6 +1,6 @@
 // HOOKS
 import { useState, useEffect } from "react"
-import { useResponsiveNavbar } from "../hooks/useResponsiveNavbar"
+import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar"
 // REACT ROUTER DOM
 import { NavLink } from "react-router-dom"
 // REACT ICONS
@@ -8,9 +8,9 @@ import { FaMoon, FaSun, FaPalette } from "react-icons/fa6"
 // CSS 
 import styles from "./Navbar.module.css"
 // CONTEXT
-import { useTheme } from '../context/ThemeContext'
+import { useTheme } from '../../context/ThemeContext'
 import { useTranslation } from "react-i18next"
-import LanguageSwitcher from "./LanguageSwitcher"
+import LanguageSwitcher from "../Language/LanguageSwitcher"
 
 const Navbar = () => {
     const { t } = useTranslation()

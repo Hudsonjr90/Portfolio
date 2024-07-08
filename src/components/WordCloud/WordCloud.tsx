@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Cloud from "react-d3-cloud"
-import { mainIcons } from "../data/iconsServer"
-import { useTheme } from "../context/ThemeContext"
+import { mainIcons } from "../../data/iconsServer"
+import { useTheme } from "../../context/ThemeContext"
 import { motion } from "framer-motion"
 import styles from "./WordCloud.module.css"
 

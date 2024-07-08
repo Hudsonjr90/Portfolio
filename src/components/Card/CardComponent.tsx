@@ -3,7 +3,7 @@ import styles from "./CardComponent.module.css"
 import Paginate from "react-paginate"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import cardsServer from "../data/cardsServer"
+import cardsServer from "../../data/cardsServer"
 import { useTranslation } from "react-i18next"
 
 const CardComponent = () => {
