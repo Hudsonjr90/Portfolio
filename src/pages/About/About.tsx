@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Transition from '../../components/Transition/Transition'
 import { useTranslation } from 'react-i18next'
 import ParticlesB from '../../components/Particles/ParticlesB'
-import About_img from '../../assets/imgs/about.png'
+import About_img from '/imgs/about.png'
 import { motion } from 'framer-motion'
 
 
