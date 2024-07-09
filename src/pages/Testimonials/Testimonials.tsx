@@ -126,13 +126,13 @@ const Testimonials = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              className={`${styles.imgCard} ${
-                isFlipped ? styles.flipAnimation : ""
-              }`}
               transition={{
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.2 },
               }}
+              className={`${styles.imgCard} ${
+                isFlipped ? styles.flipAnimation : ""
+              }`}
               onMouseEnter={handleMouseEnter}
             />
           </AnimatePresence>

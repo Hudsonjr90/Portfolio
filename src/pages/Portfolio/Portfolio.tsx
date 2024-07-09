@@ -93,13 +93,13 @@ const Portfolio = () => {
           </h2>
 
           <motion.div
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: 'spring', stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: "0%" }}
+              transition={{
+                duration: 2,
+                delay: 0.7,
+                ease: [0.2, 0, 0.2, 1],
+              }}
             className={styles.portfolio_grid}
           >
             {currentItems.map((item) => (

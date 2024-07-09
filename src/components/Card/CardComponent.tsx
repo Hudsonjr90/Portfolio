@@ -1,10 +1,10 @@
-import Card from "react-bootstrap/Card"
-import styles from "./CardComponent.module.css"
-import Paginate from "react-paginate"
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import cardsServer from "../../data/cardsServer"
-import { useTranslation } from "react-i18next"
+import Card from 'react-bootstrap/Card'
+import styles from './CardComponent.module.css'
+import Paginate from 'react-paginate'
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import cardsServer from '../../data/cardsServer'
+import { useTranslation } from 'react-i18next'
 
 const CardComponent = () => {
   const { t } = useTranslation()
@@ -32,8 +32,8 @@ const CardComponent = () => {
     }
 
     handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   const offset = currentPage * cardsPerPage
@@ -60,38 +60,40 @@ const CardComponent = () => {
     return () => clearInterval(intervalId)
   }, [currentPage, pageCount, hoveredCard])
 
+ 
+
   const currentPageData = cardsServer
     .slice(offset, offset + cardsPerPage)
     .map((card) => (
-      <Card
-        className={styles.card_content}
-        key={card.id}
-        onMouseEnter={() => handleMouseEnter(card.id)}
-        onMouseLeave={handleMouseLeave}
-      >
-        <Card.Img
-          src={card.img}
-          alt="Card image"
-          className={hoveredCard === card.id ? styles.blur : ""}
-        />
-        <Card.ImgOverlay>
-          <Card.Text
-            className={`${styles.card_text} ${
-              hoveredCard === card.id ? styles.showText : ""
-            }`}
-          >
-            {t(`education.cards.${card.id}.text`)}
-          </Card.Text>
-        </Card.ImgOverlay>
-      </Card>
+     
+        <Card
+          className={styles.card_content}
+          key={card.id}
+          onMouseEnter={() => handleMouseEnter(card.id)}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Card.Img
+            src={card.img}
+            alt="Card image"
+            className={hoveredCard === card.id ? styles.blur : ''}
+          />
+          <Card.ImgOverlay>
+            <Card.Text
+              className={`${styles.card_text} ${
+                hoveredCard === card.id ? styles.showText : ''
+              }`}
+            >
+              {t(`education.cards.${card.id}.text`)}
+            </Card.Text>
+          </Card.ImgOverlay>
+        </Card>
     ))
-
 
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, x: "-80%" }}
-        animate={{ opacity: 1, x: "0%" }}
+        initial={{ opacity: 0, x: '-80%' }}
+        animate={{ opacity: 1, x: '0%' }}
         transition={{
           duration: 2,
           delay: 0.3,
@@ -102,8 +104,8 @@ const CardComponent = () => {
         {currentPageData}
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: "80%" }}
-        animate={{ opacity: 1, y: "0%" }}
+        initial={{ opacity: 0, y: '80%' }}
+        animate={{ opacity: 1, y: '0%' }}
         transition={{
           duration: 2,
           delay: 0.3,
@@ -119,8 +121,8 @@ const CardComponent = () => {
           }}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}
-          previousLabel={"<<"}
-          nextLabel={">>"}
+          previousLabel={'<<'}
+          nextLabel={'>>'}
           forcePage={currentPage}
         />
       </motion.div>
