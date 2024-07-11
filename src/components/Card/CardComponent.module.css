@@ -144,7 +144,7 @@
 
   .card_text {
     text-align: center;
-    padding: 0 33rem;
+    padding: 0 40rem;
     letter-spacing: -1px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -194,7 +194,7 @@
 
   .card_text {
     text-align: center;
-    padding: 0 30rem;
+    padding: 0 35rem;
     letter-spacing: -1px;
     opacity: 0;
     transition: opacity 0.3s ease;
