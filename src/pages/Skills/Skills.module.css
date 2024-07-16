@@ -352,7 +352,7 @@
   }
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1500px) {
   .skills {
     max-width: 1600px;
     max-height: 100vh;
@@ -408,7 +408,7 @@
 
   .filters .icon_search svg {
     display: block;
-    margin-left: -53rem;
+    margin-left: -56rem;
     margin-top: -0.1rem;
   }
 
