@@ -3,7 +3,7 @@ declare module '*.css' {
     export default content
 }
 
-declare module "*.png" {
+declare module "*.webp" {
     const value: any
     export default value
   }

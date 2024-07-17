@@ -27,8 +27,8 @@ import {
 } from '@mui/icons-material'
 import IconButton from '@mui/material/IconButton'
 import { useMediaQuery } from 'react-responsive'
-import HomeDesktopImage from '/imgs/my.png'
-import HomeMobileImage from '/imgs/my-mobile.png'
+import HomeDesktopImage from '/imgs/my.webp'
+import HomeMobileImage from '/imgs/my-mobile.webp'
 import { motion } from 'framer-motion'
 import ParticlesA from '../../components/Particles/ParticlesA'
 

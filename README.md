@@ -8,7 +8,7 @@
 
  ## 🎨 Layout 💻 && 📱 Mobile  
 
- <img src="./public/imgs/readme.png"/>
+ <img src="./public/imgs/readme.webp"/>
 
 
  ## ⚙️ Pré-requisitos
