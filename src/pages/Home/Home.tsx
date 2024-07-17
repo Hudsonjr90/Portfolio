@@ -115,18 +115,15 @@ const Home = () => {
             <ParticlesA />
 
             <motion.div
-             animate={{ y: [30, 150, 10], opacity: 1, scale: 1 }}
-             transition={{
-               duration: 3,
-               delay: 0.3,
-               ease: [0.5, 0.71, 1, 1.5],
-             }}
-             initial={{ opacity: 0, scale: 0.5 }}
-             
+              animate={{ y: [30, 150, 10], opacity: 1, scale: 1 }}
+              transition={{
+                duration: 3,
+                delay: 0.3,
+                ease: [0.5, 0.71, 1, 1.5],
+              }}
+              initial={{ opacity: 0, scale: 0.5 }}
             >
-              <h1 className={styles.text_reveal}>
-                Hudson Kennedy
-              </h1>
+              <h1 className={styles.text_reveal}>Hudson Kennedy</h1>
             </motion.div>
 
             <motion.div
@@ -292,7 +289,17 @@ const Home = () => {
               </ThemeProvider>
             </div>
 
-            <div className={styles.btn_box}>
+            <motion.div
+              className={styles.btn_box}
+              initial={{ opacity: 0, y: '100%' }}
+              animate={{ opacity: 1, y: '0%' }}
+              whileHover={{ scale: 1.2 }}
+              transition={{
+                duration: 2,
+                delay: 0.7,
+                ease: [0.2, 0, 0.2, 1],
+              }}
+            >
               <button
                 className={styles.btn}
                 onClick={() => {
@@ -301,13 +308,13 @@ const Home = () => {
               >
                 {t('home.resume')}
               </button>
-            </div>
+            </motion.div>
           </div>
 
           <motion.div
             className={styles.home_img}
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: '0%' }}
+            initial={{ opacity: 0, y: '100%' }}
+            animate={{ opacity: 1, y: '0%' }}
             whileHover={{ scale: 1.2 }}
             transition={{
               duration: 2,
@@ -320,8 +327,9 @@ const Home = () => {
         </section>
         <motion.div
           className={styles.footer}
-          initial={{ opacity: 0, y: '-100%' }}
+          initial={{ opacity: 0, y: '100%' }}
           animate={{ opacity: 1, y: '0%' }}
+          whileHover={{ scale: 1.2 }}
           transition={{
             duration: 2,
             delay: 0.7,
