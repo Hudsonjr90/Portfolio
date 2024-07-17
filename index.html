@@ -15,8 +15,8 @@
   <!-- outras tags head -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" media="(min-width: 768px)" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" media="(min-width: 768px)" rel="stylesheet">
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:site_name" content="Portfolio">
@@ -45,7 +45,7 @@
   <div id="root"></div>
 
   <!-- Script to Load React App -->
-  <script type="module" src="/src/main.tsx"></script>
+  <script defer type="module" src="/src/main.tsx" loading="lazy"></script>
 </body>
 
 </html>
