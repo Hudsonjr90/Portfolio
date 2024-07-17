@@ -20,25 +20,19 @@
  
  - React
  - React Router DOM
- - React Icons(para ícones)
+ - React Icons & MUI (para ícones)
  - Redux
  - i18next (para intenacionalização para idioma americano)
  - Animate Presence (para a seção de depoimentos)
  - React Paginate (para montar paginação dos cards)
  - React Bootstrap Card (para a seção de formação)
  - React Vertical Timeline (para a seção de experiências)
- - Swiper (para a seção de portfólio)
+ - MUI (para a seção de portfólio)
  - EmailJS (para o formulário de contato)
  - SweetAlert (para notificações)
  - Framer Motion (para algumas animações)
  - Particles.js(animação de partículas)
  - Typescript
- - Javascript
- - CSS
- - HTML
- - Vscode
- - Git
- - Vite
  - Outras tecnologias específicas de cada projeto listadas nos respectivos itens do portfólio
    
  ## 📁 Estrutura de Diretórios
@@ -60,7 +54,7 @@
 
  - ajustar paletas de cores no light mode
  - inserir mais projetos desenvolvidos
- - etc...
+ 
 
  ## 🤝 Contribuição
 

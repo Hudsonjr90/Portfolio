@@ -6,7 +6,7 @@ import { iconComponents, mainIcons } from '../../data/iconsServer'
 import WordCloud from '../../components/WordCloud/WordCloud'
 import ReactPaginate from 'react-paginate'
 import { useTranslation } from 'react-i18next'
-import ProgressBar from 'react-customizable-progressbar'
+import ProgressBar from "../../components/Progressbar/ProgressBar"
 import CountUp from 'react-countup'
 import { FaSearch } from 'react-icons/fa'
 import { GiSunCloud } from 'react-icons/gi'
