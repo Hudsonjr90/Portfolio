@@ -1,11 +1,11 @@
 import styles from './About.module.css'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import Transition from '../../components/Transition/Transition'
 import { useTranslation } from 'react-i18next'
 import ParticlesB from '../../components/Particles/ParticlesB'
 import About_img from '/imgs/about.webp'
 import { motion } from 'framer-motion'
-
+import LazyLoad from 'react-lazyload'
 
 const About = () => {
   const { t } = useTranslation()
@@ -16,28 +16,37 @@ const About = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isInView, setIsInView] = useState(false)
 
+  const setIsLoadedCallback = useCallback(() => {
+    setIsLoaded(true)
+  }, [])
+
   return (
     <Transition onAnimationComplete={() => {}}>
       <section className={styles.about}>
         <ParticlesB />
         <div className={styles.container_img}>
-          <motion.div
-            initial={false}
-            animate={
-              isLoaded && isInView
-                ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
-                : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
-            }
-            transition={{ duration: 1, delay: 1 }}
-            viewport={{ once: true }}
-            onViewportEnter={() => setIsInView(true)}
-          >
-            <img
-              src={About_img}
-              alt="about_img"
-              onLoad={() => setIsLoaded(true)}
-            />
-          </motion.div>
+          <LazyLoad once>
+            <motion.div
+              initial={false}
+              animate={
+                isLoaded && isInView
+                  ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
+                  : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
+              }
+              transition={{ duration: 1, delay: 1 }}
+              viewport={{ once: true }}
+              onViewportEnter={() => setIsInView(true)}
+            >
+              <img
+                src={About_img}
+                alt="about_img"
+                onLoad={setIsLoadedCallback}
+                width="100%"
+                height="auto"
+                loading="lazy"
+              />
+            </motion.div>
+          </LazyLoad>
         </div>
 
         <div>

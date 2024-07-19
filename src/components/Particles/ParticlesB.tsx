@@ -1,27 +1,29 @@
-import { useCallback } from 'react'
-import Particles from "react-tsparticles"
-import { loadFull } from "tsparticles"
+import React, { useCallback, useMemo } from 'react'
+import { motion } from 'framer-motion'
+import Particles from 'react-tsparticles'
+import { loadFull } from 'tsparticles'
 import { Engine, IOptions } from 'tsparticles-engine'
 import { useTheme } from '../../context/ThemeContext'
 
 type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
-      ? RecursivePartial<U>[]
-      : T[P] extends object
-      ? RecursivePartial<T[P]>
-      : T[P]
+    ? RecursivePartial<U>[]
+    : T[P] extends object
+    ? RecursivePartial<T[P]>
+    : T[P]
 }
 
-const ParticlesB = () => {
-    const particlesInit = useCallback((engine: Engine) => {
-        loadFull(engine)
-        return Promise.resolve()
-    }, [])
+const ParticlesB = React.memo(() => {
+  const particlesInit = useCallback((engine: Engine) => {
+    loadFull(engine)
+    return Promise.resolve()
+  }, [])
 
-    const {mainColor} = useTheme()
+  const { mainColor } = useTheme()
 
-    const particlesConfig: RecursivePartial<IOptions> = {
-        particles: {
+  const particlesConfig = useMemo<RecursivePartial<IOptions>>(() => {
+    return {
+      particles: {
           number: {
             value: 80,
             density: {
@@ -118,18 +120,20 @@ const ParticlesB = () => {
             }
           }
         },
-        retina_detect: true
+        retina_detect: true,
       }
-    
+  }, [mainColor])
 
-    return (
-        <div>
-            <Particles
-                options={particlesConfig}
-                init={particlesInit}
-            />
-        </div>
-    )
-}
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <Particles options={particlesConfig} init={particlesInit} />
+    </motion.div>
+  )
+})
 
 export default ParticlesB

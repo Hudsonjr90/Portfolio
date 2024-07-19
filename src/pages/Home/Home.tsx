@@ -2,7 +2,7 @@ import styles from './Home.module.css'
 import { NavLink } from 'react-router-dom'
 import Transition from '../../components/Transition/Transition'
 import { Modal } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import Typewriter from 'typewriter-effect'
 import { saveAs } from 'file-saver'
@@ -26,22 +26,26 @@ import {
   Close,
 } from '@mui/icons-material'
 import IconButton from '@mui/material/IconButton'
-import { useMediaQuery } from 'react-responsive'
 import HomeDesktopImage from '/imgs/my.webp'
 import HomeMobileImage from '/imgs/my-mobile.webp'
 import { motion } from 'framer-motion'
 import ParticlesA from '../../components/Particles/ParticlesA'
+import React from 'react'
 
-const Home = () => {
+const Home = React.memo(() => {
   const { t, i18n } = useTranslation()
-
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
-
-  const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage
 
   const [showModal, setShowModal] = useState(false)
   const [selectedImages, setSelectedImages] = useState<string[]>([])
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null)
+
+  const handleOpenModal = useCallback(() => {
+    setShowModal(true)
+  }, [])
+
+  const handleCloseModal = useCallback(() => {
+    setShowModal(false)
+  }, [])
 
   useEffect(() => {
     const loadContent = () => {
@@ -78,7 +82,7 @@ const Home = () => {
     loadContent()
   }, [i18n.language])
 
-  const handleDownload = () => {
+  const handleDownload = useCallback(() => {
     if (selectedPdf) {
       const fileName = selectedPdf.split('/').pop()?.replace('.pdf', '')
       if (fileName) {
@@ -90,28 +94,25 @@ const Home = () => {
           .catch((error) => {
             console.error('Error downloading PDF:', error)
           })
-        setShowModal(false)
+        handleCloseModal()
       }
     }
-  }
+  }, [selectedPdf, handleCloseModal])
 
-  const [typedStrings, setTypedStrings] = useState<string[]>([])
-
-  useEffect(() => {
-    const strings = [
+  const typedStrings = useMemo(() => {
+    return [
       t('home.function1'),
       t('home.function2'),
       t('home.function3'),
       t('home.function4'),
     ]
-    setTypedStrings(strings)
   }, [t])
 
   return (
     <>
       <Transition onAnimationComplete={() => {}}>
-        <section className={styles.home}>
-          <div className={styles.home_content}>
+        <motion.section className={styles.home}>
+          <motion.div className={styles.home_content}>
             <ParticlesA />
 
             <motion.div
@@ -147,7 +148,7 @@ const Home = () => {
               />
             </motion.div>
 
-            <div className={styles.social_media}>
+            <motion.div className={styles.social_media}>
               <ThemeProvider theme={whatsappTheme}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
@@ -287,7 +288,7 @@ const Home = () => {
                   </NavLink>
                 </motion.div>
               </ThemeProvider>
-            </div>
+            </motion.div>
 
             <motion.div
               className={styles.btn_box}
@@ -302,14 +303,12 @@ const Home = () => {
             >
               <button
                 className={styles.btn}
-                onClick={() => {
-                  setShowModal(true)
-                }}
+                onClick={handleOpenModal}
               >
                 {t('home.resume')}
               </button>
             </motion.div>
-          </div>
+          </motion.div>
 
           <motion.div
             className={styles.home_img}
@@ -322,9 +321,13 @@ const Home = () => {
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <img src={imageUrl} alt="home_img" />
+            <picture>
+              <source media="(max-width: 768px)" srcSet={HomeMobileImage} />
+              <source media="(min-width: 769px)" srcSet={HomeDesktopImage} />
+              <img src={HomeDesktopImage} alt="home_img" />
+            </picture>
           </motion.div>
-        </section>
+        </motion.section>
         <motion.div
           className={styles.footer}
           initial={{ opacity: 0, y: '100%' }}
@@ -341,7 +344,7 @@ const Home = () => {
       </Transition>
       <Modal
         show={showModal}
-        onHide={() => setShowModal(false)}
+        onHide={handleCloseModal}
         className={styles.modal_container}
       >
         <Modal.Header closeButton>
@@ -368,7 +371,7 @@ const Home = () => {
               >
                 <IconButton
                   className={styles.close_button}
-                  onClick={() => setShowModal(false)}
+                  onClick={handleCloseModal}
                 >
                   <Close className={styles.size_button} />
                 </IconButton>
@@ -388,6 +391,6 @@ const Home = () => {
       </Modal>
     </>
   )
-}
+})
 
 export default Home
