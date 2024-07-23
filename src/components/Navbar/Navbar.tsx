@@ -97,10 +97,12 @@ const Navbar = () => {
             className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ''}`}
             style={{ ['--i' as string]: 0 }}
+            role="none"
           >
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
             >
               {t('menu.home')}
             </NavLink>
@@ -114,10 +116,12 @@ const Navbar = () => {
             className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ''}`}
             style={{ ['--i' as string]: 1 }}
+            role="none"
           >
             <NavLink
               to="/about"
               className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
             >
               {t('menu.about')}
             </NavLink>
@@ -131,10 +135,12 @@ const Navbar = () => {
             className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ''}`}
             style={{ ['--i' as string]: 1 }}
+            role="none"
           >
             <NavLink
               to="/education"
               className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
             >
               {t('menu.academic-education')}
             </NavLink>
@@ -148,10 +154,12 @@ const Navbar = () => {
             className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ''}`}
             style={{ ['--i' as string]: 1 }}
+            role="none"
           >
             <NavLink
               to="/testimonials"
               className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
             >
               {t('menu.testimonials')}
             </NavLink>
@@ -165,10 +173,12 @@ const Navbar = () => {
             className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ''}`}
             style={{ ['--i' as string]: 1 }}
+            role="none"
           >
             <NavLink
               to="/experiences"
               className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
             >
               {t('menu.experiences')}
             </NavLink>
@@ -182,10 +192,12 @@ const Navbar = () => {
             className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ''}`}
             style={{ ['--i' as string]: 1 }}
+            role="none"
           >
             <NavLink
               to="/skills"
               className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
             >
               {t('menu.skills')}
             </NavLink>
@@ -199,10 +211,12 @@ const Navbar = () => {
             className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ''}`}
             style={{ ['--i' as string]: 2 }}
+            role="none"
           >
             <NavLink
               to="/portfolio"
               className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
             >
               {t('menu.portfolio')}
             </NavLink>
@@ -216,10 +230,12 @@ const Navbar = () => {
             className={`${styles.active_menu}
                                     ${showMenu ? styles.animation_menu : ''}`}
             style={{ ['--i' as string]: 3 }}
+            role="none"
           >
             <NavLink
               to="/contact"
               className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
             >
               {t('menu.contact')}
             </NavLink>
