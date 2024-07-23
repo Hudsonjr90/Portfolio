@@ -1,13 +1,8 @@
-// HOOKS
 import { useState, useEffect } from "react"
 import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar"
-// REACT ROUTER DOM
 import { NavLink } from "react-router-dom"
-// REACT ICONS
 import { FaMoon, FaSun, FaPalette } from "react-icons/fa6"
-// CSS 
 import styles from "./Navbar.module.css"
-// CONTEXT
 import { useTheme } from '../../context/ThemeContext'
 import { useTranslation } from "react-i18next"
 import LanguageSwitcher from "../Language/LanguageSwitcher"
@@ -243,7 +238,7 @@ const Navbar = () => {
             </nav>
 
             <div className={styles.icons_container} id="container">
-                <label >
+                <label role="button">
                     <input
                         type="checkbox"
                         className={styles.input_darc_light_mode}
@@ -251,13 +246,14 @@ const Navbar = () => {
                             handleToggleLightMode()
                             handleAudio()
                         }}
+                        aria-label="Alternar modo claro/escuro"
                     />
 
                     <FaMoon className={styles.moon_icon} />
                     <FaSun className={styles.sun_icon} />
                 </label>
 
-                <label style={{ display: paletteInputInvisible ? "none" : "" }}>
+                <label role="button" style={{ display: paletteInputInvisible ? "none" : "" }}>
                     <input
                         type="checkbox"
                         className={styles.input_palette_colors}
@@ -265,6 +261,7 @@ const Navbar = () => {
                             handlePaletteToggle()
                             handleAudio()
                         }}
+                        aria-label="Abrir paleta de cores"
                     />
 
                     <FaPalette className={styles.palette} />
@@ -276,35 +273,40 @@ const Navbar = () => {
                             className={`${styles.ball} ${styles.ball_0}`}
                             style={{ ["--p" as string]: 1 }}
                             onClick={() => handleColorSelection("ball_0")}
+                            aria-label="Selecionar cor 1"
                         ></button>
 
                         <button
                             className={`${styles.ball} ${styles.ball_1}`}
                             style={{ ["--p" as string]: 2 }}
                             onClick={() => handleColorSelection("ball_1")}
+                            aria-label="Selecionar cor 2"
                         ></button>
 
                         <button
                             className={`${styles.ball} ${styles.ball_2}`}
                             style={{ ["--p" as string]: 3 }}
                             onClick={() => handleColorSelection("ball_2")}
+                            aria-label="Selecionar cor 3"
                         ></button>
 
                         <button
                             className={`${styles.ball} ${styles.ball_3}`}
                             style={{ ["--p" as string]: 4 }}
                             onClick={() => handleColorSelection("ball_3")}
+                            aria-label="Selecionar cor 4"
                         ></button>
 
                         <button
                             className={`${styles.ball} ${styles.ball_4}`}
                             style={{ ["--p" as string]: 5 }}
                             onClick={() => handleColorSelection("ball_4")}
+                            aria-label="Selecionar cor 5"
                         ></button>                        
                     </div>
                 </label>
 
-                <label>
+                <label role="button">
                 <LanguageSwitcher />
                 </label>
 

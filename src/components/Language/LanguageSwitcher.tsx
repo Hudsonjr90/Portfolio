@@ -43,6 +43,7 @@ const LanguageSwitcher = () => {
             toggleSidebar()
             handleAudio()
           }}
+          aria-label="Selecionar idioma"
         >
           {currentLanguage === 'pt' && <Br className={styles.flags} />}
           {currentLanguage === 'en' && <Us className={styles.flags} />}
