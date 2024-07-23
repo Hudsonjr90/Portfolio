@@ -85,7 +85,10 @@ const Navbar = () => {
       </NavLink>
 
       <nav>
-        <ul className={`${styles.links_list} ${showMenu ? styles.active : ''}`} role="menu">
+        <ul
+          className={`${styles.links_list} ${showMenu ? styles.active : ''}`}
+          role="menu"
+        >
           <li
             onClick={() => {
               handleLinkClick()
@@ -225,7 +228,7 @@ const Navbar = () => {
       </nav>
 
       <div className={styles.icons_container} id="container">
-        <label role="button">
+        <label>
           <input
             type="checkbox"
             className={styles.input_darc_light_mode}
@@ -241,10 +244,7 @@ const Navbar = () => {
           <FaSun className={styles.sun_icon} />
         </label>
 
-        <label
-          role="button"
-          style={{ display: paletteInputInvisible ? 'none' : '' }}
-        >
+        <label style={{ display: paletteInputInvisible ? 'none' : '' }}>
           <input
             type="checkbox"
             className={styles.input_palette_colors}
@@ -267,6 +267,7 @@ const Navbar = () => {
               style={{ ['--p' as string]: 1 }}
               onClick={() => handleColorSelection('ball_0')}
               aria-label="Selecionar cor 1"
+              role="button"
             ></button>
 
             <button
@@ -274,6 +275,7 @@ const Navbar = () => {
               style={{ ['--p' as string]: 2 }}
               onClick={() => handleColorSelection('ball_1')}
               aria-label="Selecionar cor 2"
+              role="button"
             ></button>
 
             <button
@@ -281,6 +283,7 @@ const Navbar = () => {
               style={{ ['--p' as string]: 3 }}
               onClick={() => handleColorSelection('ball_2')}
               aria-label="Selecionar cor 3"
+              role="button"
             ></button>
 
             <button
@@ -288,6 +291,7 @@ const Navbar = () => {
               style={{ ['--p' as string]: 4 }}
               onClick={() => handleColorSelection('ball_3')}
               aria-label="Selecionar cor 4"
+              role="button"
             ></button>
 
             <button
@@ -295,12 +299,13 @@ const Navbar = () => {
               style={{ ['--p' as string]: 5 }}
               onClick={() => handleColorSelection('ball_4')}
               aria-label="Selecionar cor 5"
+              role="button"
             ></button>
           </div>
         </label>
 
-        <label role="button">
-          <button aria-label="abrir componente dos idiomas">
+        <label>
+          <button role="button" aria-label="abrir componente dos idiomas">
             <LanguageSwitcher />
           </button>
         </label>
@@ -312,6 +317,7 @@ const Navbar = () => {
           }}
           className={`${styles.btn_menu}
                 ${showMenu ? styles.active : ''}`}
+          role="button"
         >
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>
