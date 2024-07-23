@@ -31,9 +31,14 @@ import HomeMobileImage from '/imgs/my-mobile.webp'
 import { motion } from 'framer-motion'
 import ParticlesA from '../../components/Particles/ParticlesA'
 import React from 'react'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 const Home = React.memo(() => {
   const { t, i18n } = useTranslation()
+
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
+  const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage
 
   const [showModal, setShowModal] = useState(false)
   const [selectedImages, setSelectedImages] = useState<string[]>([])
@@ -301,10 +306,7 @@ const Home = React.memo(() => {
                 ease: [0.2, 0, 0.2, 1],
               }}
             >
-              <button
-                className={styles.btn}
-                onClick={handleOpenModal}
-              >
+              <button className={styles.btn} onClick={handleOpenModal}>
                 {t('home.resume')}
               </button>
             </motion.div>
@@ -321,11 +323,7 @@ const Home = React.memo(() => {
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <picture>
-              <source media="(max-width: 768px)" srcSet={HomeMobileImage} width="800" height="250"/>
-              <source media="(min-width: 769px)" srcSet={HomeDesktopImage} width="800" height="500" />
-              <img src={HomeDesktopImage} alt="home_img" loading="lazy"  />
-            </picture>
+            <img src={imageUrl} alt="home_img" />
           </motion.div>
         </motion.section>
         <motion.div
