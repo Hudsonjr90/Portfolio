@@ -320,10 +320,8 @@ const Navbar = () => {
           </div>
         </label>
 
-        <label>
-          <button role="button" aria-label="abrir componente dos idiomas">
-            <LanguageSwitcher />
-          </button>
+        <label role="button" aria-label="componente dos idiomas">
+          <LanguageSwitcher />
         </label>
 
         <button
