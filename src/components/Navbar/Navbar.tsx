@@ -247,6 +247,7 @@ const Navbar = () => {
                             handleAudio()
                         }}
                         aria-label="Alternar modo claro/escuro"
+                        role="switch"
                     />
 
                     <FaMoon className={styles.moon_icon} />
@@ -262,6 +263,7 @@ const Navbar = () => {
                             handleAudio()
                         }}
                         aria-label="Abrir paleta de cores"
+                        role="switch"
                     />
 
                     <FaPalette className={styles.palette} />
@@ -306,7 +308,7 @@ const Navbar = () => {
                     </div>
                 </label>
 
-                <label role="button">
+                <label role="button" aria-label="abrir componente dos idiomas" >
                 <LanguageSwitcher />
                 </label>
 
