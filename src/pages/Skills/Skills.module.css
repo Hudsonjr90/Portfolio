@@ -148,21 +148,22 @@
   border-radius: 20px;
 }
 
-.show_cloud, .show_search  {
+.show_cloud,
+.show_search {
   font-size: 2rem !important;
-  cursor: pointer!important;
+  cursor: pointer !important;
   color: var(--main_color) !important;
-  border: 1px solid var(--main_color) !important;;
+  border: 1px solid var(--main_color) !important;
   background-color: var(--bg_color) !important;
 }
 
-.no_results{
+.no_results {
   display: flex;
   justify-content: center;
-  color:var(--main_color);
+  color: var(--main_color);
 }
 
-@media screen and (max-width: 2560px) {
+@media screen and (min-width:1560px) and (max-width: 2560px) {
   .icons_container {
     display: flex;
     gap: 2rem;
@@ -246,8 +247,8 @@
 
   .filters .icon_search svg {
     font-size: 2rem;
-    margin-left: -18rem;
-    margin-top: 0.7rem;
+    margin-left: -14.7rem;
+    margin-top: 0.9rem;
   }
 
   .pagination {

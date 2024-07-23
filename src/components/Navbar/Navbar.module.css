@@ -33,7 +33,7 @@
   color: var(--text_color);
   font-size: 1.7rem;
   font-family: 'Orbitron', sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 0.1rem;
   margin-left: 4rem;
   position: relative;
@@ -193,7 +193,7 @@ label {
     color: var(--text_color);
     font-size: 1.7rem;
     font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0.1rem;
     margin-left: 3rem;
     position: relative;
@@ -221,7 +221,7 @@ label {
     color: var(--text_color);
     font-size: 1.7rem;
     font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0.1rem;
     margin-left: 3rem;
     position: relative;
@@ -249,7 +249,7 @@ label {
     color: var(--text_color);
     font-size: 1.7rem;
     font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0.1rem;
     margin-left: 3rem;
     position: relative;

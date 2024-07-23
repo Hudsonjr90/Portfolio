@@ -2,7 +2,6 @@
   background: transparent;
   color: var(--text_color);
   display: inline-flex;
-  font-weight: 700;
   font-size: 4rem;
   transition: 0.5s ease;
   z-index: 1;

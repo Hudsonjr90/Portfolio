@@ -171,7 +171,7 @@
 
 /* <========== breakpoints ==========> */
 
-@media screen and (max-width: 2560px){
+@media screen and (min-width:1560px) and (max-width: 2560px) {
   .testimonials .heading {
     font-size: 3.7rem;
   }
@@ -190,7 +190,46 @@
     left: 0;
     width: 29vw;
     height: 45vh;
-    margin-left: 55rem;
+    margin-left: 62rem;
+    border: 1px solid var(--main_color);
+    background-color: var(--bg_color);
+    padding: 0 5rem;
+  }
+
+  .flipContent p {
+    overflow-y: auto;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  .pagination li a {
+    width: auto;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 1890px){
+  .testimonials .heading {
+    font-size: 3.4rem;
+  }
+
+  .slider_container img {
+    position: absolute;
+    width: 30vw;
+    height: 45vh;
+    border-radius: 2rem;
+    margin-left: -1rem;
+  }
+
+  .flipContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 29vw;
+    height: 45vh;
+    margin-left: 62rem;
     border: 1px solid var(--main_color);
     background-color: var(--bg_color);
     padding: 0 5rem;
