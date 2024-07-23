@@ -324,7 +324,7 @@ const Home = React.memo(() => {
             <picture>
               <source media="(max-width: 768px)" srcSet={HomeMobileImage} />
               <source media="(min-width: 769px)" srcSet={HomeDesktopImage} />
-              <img src={HomeDesktopImage} alt="home_img" loading="lazy" />
+              <img src={HomeDesktopImage} alt="home_img" loading="lazy" width="800" height="500" />
             </picture>
           </motion.div>
         </motion.section>
