@@ -14,7 +14,7 @@ export default defineConfig({
     exclude: ['js-big-decimal']
   },
   build: {
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 2000,
     rollupOptions: {
       output: {
         manualChunks(id) {
