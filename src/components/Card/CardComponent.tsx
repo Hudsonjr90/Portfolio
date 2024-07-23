@@ -76,6 +76,7 @@ const CardComponent = () => {
             src={card.img}
             alt="Card image"
             className={hoveredCard === card.id ? styles.blur : ''}
+            loading="lazy"
           />
           <Card.ImgOverlay>
             <Card.Text

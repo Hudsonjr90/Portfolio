@@ -114,6 +114,7 @@ const Portfolio = () => {
                   alt={item.name}
                   height="300"
                   image={item.image}
+                  loading="lazy"
                 />
                 <CardContent className={styles.cardContent}>
                   {t(`projects.data.${item.id}.description`)}

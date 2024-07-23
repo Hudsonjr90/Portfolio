@@ -134,6 +134,7 @@ const Testimonials = () => {
                 isFlipped ? styles.flipAnimation : ""
               }`}
               onMouseEnter={handleMouseEnter}
+              loading="lazy"
             />
           </AnimatePresence>
         </motion.div>
