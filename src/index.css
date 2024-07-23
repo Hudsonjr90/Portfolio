@@ -5,13 +5,12 @@
   border: none;
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   list-style: none;
   margin: 0;
   outline: none;
   padding: 0;
   text-decoration: none;
-
 }
 
 ::-webkit-scrollbar {
@@ -38,24 +37,24 @@
   --main_color: #0ef;
   --card_bg: #475775;
   --card_color: #f9f9f9;
-  --placeholder_color: rgba(255, 255, 255, .3); 
-  --second_bg_color:#323946;
+  --placeholder_color: rgba(255, 255, 255, 0.3);
+  --second_bg_color: #323946;
   --text_color: #ededed;
   --scroll-color: #353535;
 }
 
- .light_mode {
-   --bg_color: #f0f3fd;  
-   --main_color: #dc2626; 
-   --card_bg: #bd3838;
-   --card_color: #f6f6f6;
-   --placeholder_color: #808080; 
-   --second_bg_color: #cbd5e1 ;
-   --text_color: #020617; 
-   --scroll-color: #070707;
-    transition: 1.5s;
+.light_mode {
+  --bg_color: #f0f3fd;
+  --main_color: #dc2626;
+  --card_bg: #bd3838;
+  --card_color: #f6f6f6;
+  --placeholder_color: #808080;
+  --second_bg_color: #cbd5e1;
+  --text_color: #020617;
+  --scroll-color: #070707;
+  transition: 1.5s;
 }
-     
+
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -68,7 +67,7 @@ body {
 }
 
 span {
-  color: var(--main_color);   
+  color: var(--main_color);
 }
 
 p {
@@ -84,69 +83,69 @@ h2 {
 
 /* CONTACT STYLE */
 #name {
-  animation: inputLeft .8s ease-in-out .3s 1 forwards;
+  animation: inputLeft 0.8s ease-in-out 0.3s 1 forwards;
   opacity: 0;
 }
 
 #phone {
-  animation: inputLeft .8s ease-in-out .6s 1 forwards;
+  animation: inputLeft 0.8s ease-in-out 0.6s 1 forwards;
   opacity: 0;
 }
 
 @keyframes inputLeft {
   from {
-      filter: blur(33px);
-      opacity: 0;
-      transform: translate(-100px, 0);
+    filter: blur(33px);
+    opacity: 0;
+    transform: translate(-100px, 0);
   }
 
   to {
-      filter: blur(0);
-      opacity: 1;
-      transform: translate(0);
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
 #email {
-  animation: inputRight .8s ease-in-out .3s 1 forwards;
+  animation: inputRight 0.8s ease-in-out 0.3s 1 forwards;
   opacity: 0;
 }
 
 #subject {
-  animation: inputRight .8s ease-in-out .6s 1 forwards;
+  animation: inputRight 0.8s ease-in-out 0.6s 1 forwards;
   opacity: 0;
 }
 
 @keyframes inputRight {
   from {
-      opacity: 0;
-      filter: blur(33px);
-      transform: translate(100px, 0);
+    opacity: 0;
+    filter: blur(33px);
+    transform: translate(100px, 0);
   }
 
   to {
-      filter: blur(0);
-      opacity: 1;
-      transform: translate(0);
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
 #message {
-  animation: textarea .8s ease-in-out .9s 1 forwards;
+  animation: textarea 0.8s ease-in-out 0.9s 1 forwards;
   opacity: 0;
 }
 
 @keyframes textarea {
   from {
-      filter: blur(33px);
-      opacity: 0;
-      transform: translate(0, 100px);
+    filter: blur(33px);
+    opacity: 0;
+    transform: translate(0, 100px);
   }
 
   to {
-      filter: blur(0);
-      opacity: 1;
-      transform: translate(0);
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
@@ -157,6 +156,3 @@ h2 {
     font-size: 50%;
   }
 }
-
-
-
