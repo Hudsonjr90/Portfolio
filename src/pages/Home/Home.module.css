@@ -4,6 +4,8 @@
   justify-content: space-between;
   min-height: 95vh;
   padding: 10rem 6% 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .home_content {
@@ -24,18 +26,13 @@
   }
 }
 
-
 .home_content .transparent_text {
   margin: 0 -1rem 3rem;
-  font: 700 2.5rem 'Orbitron', sans-serif;
 }
-
 
 .home_content .text_reveal {
   display: grid;
-  font: 700 4.6rem 'Orbitron', sans-serif;
 }
-
 
 .social_media {
   display: flex;
@@ -379,7 +376,7 @@
     cursor: pointer;
   }
 
-  .modal_title .size_button{
+  .modal_title .size_button {
     font-size: 3rem;
   }
 
@@ -495,7 +492,7 @@
     height: 50vh;
   }
 
-  .text_reveal  {
+  .text_reveal {
     font-size: 4rem;
   }
 
@@ -514,17 +511,15 @@
   }
 
   .modal_title .down_button {
-    
     cursor: pointer;
     margin-left: 54rem;
   }
 
   .modal_title .close_button {
- 
     cursor: pointer;
   }
 
-  .modal_title .size_button{
+  .modal_title .size_button {
     font-size: 2.3rem;
   }
 
@@ -722,7 +717,7 @@
     font-size: 2.5rem;
   }
 
-  .text_reveal  {
+  .text_reveal {
     font-size: 3.5rem !important;
   }
 

@@ -11,6 +11,7 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
   background-color: var(--bg_color);
   border-bottom: 1px solid var(--main_color);
+  font-weight: 600;
 }
 
 .logo {
@@ -32,7 +33,6 @@
 .links_list a {
   color: var(--text_color);
   font-size: 1.7rem;
-  font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   margin-left: 4rem;
@@ -172,7 +172,7 @@ label {
   display: none;
 }
 
-.lng_switcher{
+.lng_switcher {
   background-color: var(--bg_color);
 }
 
@@ -197,7 +197,6 @@ label {
   .links_list a {
     color: var(--text_color);
     font-size: 1.7rem;
-    font-family: 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.1rem;
     margin-left: 3rem;
@@ -225,7 +224,6 @@ label {
   .links_list a {
     color: var(--text_color);
     font-size: 1.7rem;
-    font-family: 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.1rem;
     margin-left: 3rem;
@@ -253,7 +251,6 @@ label {
   .links_list a {
     color: var(--text_color);
     font-size: 1.7rem;
-    font-family: 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.1rem;
     margin-left: 3rem;

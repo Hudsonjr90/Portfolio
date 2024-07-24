@@ -148,13 +148,12 @@
   border-radius: 20px;
 }
 
-.show_cloud,
-.show_search {
-  font-size: 2rem !important;
-  cursor: pointer !important;
-  color: var(--main_color) !important;
-  border: 1px solid var(--main_color) !important;
-  background-color: var(--bg_color) !important;
+.show_cloud svg,
+.show_search svg {
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--main_color);
+  background-color: var(--bg_color);
 }
 
 .no_results {

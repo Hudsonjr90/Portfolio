@@ -94,7 +94,6 @@ form .input_box {
   border-radius: 0.6rem;
   color: var(--text_color);
   font-size: 1.5rem;
-  font-family: "Poppins", sans-serif;
   margin: 1rem 0;
   outline: none;
   padding: 1.4rem;
@@ -112,7 +111,6 @@ form .input_box {
 
 .field .item::placeholder {
   color: var(--placeholder_color);
-  font-family: "Orbitron", sans-serif;
   font-size: 1.3rem;
 }
 
