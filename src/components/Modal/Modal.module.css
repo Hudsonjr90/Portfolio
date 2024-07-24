@@ -1,0 +1,47 @@
+.modal_container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; /* Ajuste a largura do modal conforme necessário */
+    max-width: 800px; /* Limite máximo da largura do modal */
+    max-height: 90vh; /* Limite máximo da altura do modal */
+    color: var(--main_color);
+    border: 2px solid var(--main_color);
+    background-color: var(--bg_color);
+    z-index: 1000; /* Aumente o valor para garantir que o modal fique acima de outros elementos */
+    overflow: hidden; /* Evita overflow no container principal do modal */
+}
+
+.modal_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    background-color: var(--bg_color); /* Adicione um fundo ao título para diferenciá-lo do conteúdo */
+    border-bottom: 1px solid var(--main_color);
+}
+
+.modal_title .down_button,
+.modal_title .close_button {
+    cursor: pointer;
+    color: var(--main_color);
+}
+
+.modal_title .size_button {
+    font-size: 24px; /* Ajuste o tamanho conforme necessário */
+}
+
+.modal_content {
+    padding: 20px;
+    max-height: calc(90vh - 60px); /* Calcula a altura do conteúdo com base na altura do modal e do título */
+    overflow-y: auto; /* Adiciona rolagem vertical ao conteúdo */
+}
+
+.modal_content img {
+    width: 100%; /* As imagens ocuparão toda a largura disponível */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 1rem; /* Espaçamento inferior entre as imagens */
+}
+
+  

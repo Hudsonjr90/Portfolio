@@ -137,68 +137,6 @@
   text-align: center;
 }
 
-.modal_container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 33vw;
-  max-height: 90vh;
-  color: var(--main_color);
-  border: 2px solid var(--main_color);
-  background-color: var(--bg_color);
-  z-index: 1;
-}
-
-.modal_title {
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid var(--main_color);
-}
-
-.modal_title .down_button {
-  cursor: pointer;
-  margin-left: 35rem;
-  color: var(--main_color);
-}
-
-.modal_title .close_button {
-  cursor: pointer;
-  margin-right: 1rem;
-  color: var(--main_color);
-}
-
-.modal_title .size_button {
-  font-size: 3rem;
-}
-
-.modal_content {
-  width: 32.6vw;
-  max-height: 90vh;
-  overflow-y: auto;
-  background-color: var(--bg_color);
-  margin-left: 0rem;
-  margin-top: -2rem;
-}
-
-.modal_content img {
-  width: 31.9vw;
-  height: auto;
-  margin-bottom: 1rem;
-  margin-left: 0rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal_footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
 /* <========== breakpoints ==========> */
 
 @media screen and (max-width: 2560px) {
@@ -213,34 +151,6 @@
 
   .home_content {
     height: 50rem;
-  }
-
-  .modal_container {
-    width: 40.9vw;
-    height: 75.5vh;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 40.7vw;
-    height: 69.3vh;
-  }
-
-  .modal_content img {
-    width: 40vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 92rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 3rem;
   }
 
   .footer {
@@ -262,33 +172,6 @@
     height: 25rem;
   }
 
-  .modal_container {
-    width: 50.2vw;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 50vw;
-    height: 75vh;
-  }
-
-  .modal_content img {
-    width: 49.2vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 82rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 2.5rem;
-  }
-
   .footer {
     font-size: 1.7rem;
   }
@@ -308,31 +191,6 @@
     height: 25rem;
   }
 
-  .modal_container {
-    width: 48vw;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 48vw;
-    height: 65vh;
-  }
-
-  .modal_content img {
-    width: 48vw;
-  }
-
-  .modal_title .down_button {
-    font-size: 2.9rem;
-    cursor: pointer;
-    margin-left: 42rem;
-  }
-
-  .modal_title .close_button {
-    font-size: 3rem;
-    cursor: pointer;
-  }
-
   .footer {
     font-size: 1.7rem;
   }
@@ -350,34 +208,6 @@
 
   .home_content {
     height: 60vh;
-  }
-
-  .modal_container {
-    width: 85vw;
-    height: 69vh;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 84vw;
-    height: 65vh;
-  }
-
-  .modal_content img {
-    width: 83vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 110rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 3rem;
   }
 
   .footer {
@@ -400,30 +230,6 @@
     height: 50vh;
   }
 
-  .modal_container {
-    width: 80vw;
-    height: 64vh;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 79vw;
-    height: 60vh;
-  }
-
-  .modal_content img {
-    width: 77vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 70rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
   .footer {
     font-size: 1.8rem;
     margin-top: -1rem;
@@ -442,34 +248,6 @@
 
   .home_content {
     height: 80rem;
-  }
-
-  .modal_container {
-    width: 70vw;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 69vw;
-  }
-
-  .modal_content img {
-    width: 66vw;
-  }
-
-  .modal_title {
-    padding-left: 18rem;
-  }
-
-  .modal_title .down_button {
-    font-size: 2.9rem;
-    cursor: pointer;
-    margin-left: 15rem;
-  }
-
-  .modal_title .close_button {
-    font-size: 3rem;
-    cursor: pointer;
   }
 
   .footer {
@@ -496,33 +274,6 @@
     font-size: 4rem;
   }
 
-  .modal_container {
-    width: 90vw;
-    height: 64.5vh;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 89vw;
-  }
-
-  .modal_content img {
-    width: 87vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 54rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 2.3rem;
-  }
-
   .footer {
     font-size: 1.5rem;
     margin-top: 1rem;
@@ -530,33 +281,6 @@
 }
 
 @media screen and (max-width: 470px) {
-  .modal_container {
-    width: 70vw;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 69vw;
-  }
-
-  .modal_content img {
-    width: 66vw;
-  }
-  .modal_title {
-    padding-left: 15rem;
-  }
-
-  .modal_title .down_button {
-    font-size: 2.9rem;
-    cursor: pointer;
-    margin-left: 12rem;
-  }
-
-  .modal_title .close_button {
-    font-size: 3rem;
-    cursor: pointer;
-  }
-
   .home_img img {
     width: 60vw;
   }
@@ -572,33 +296,6 @@
 }
 
 @media screen and (max-width: 428px) {
-  .modal_container {
-    width: 90vw;
-    height: 66.5vh;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 89vw;
-  }
-
-  .modal_content img {
-    width: 89vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 18rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 2.5rem;
-  }
-
   .home_img img {
     width: 60vw;
   }
@@ -613,11 +310,11 @@
   }
 
   .text_reveal {
-    font-size: 4rem !important;
+    font-size: 4rem;
   }
 
   .transparent_text {
-    font-size: 2.9rem !important;
+    font-size: 2.9rem;
   }
 }
 
@@ -637,40 +334,13 @@
     height: 75vh;
   }
 
-  .modal_container {
-    width: 90vw;
-    height: 65.3vh;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 89vw;
-  }
-
-  .modal_content img {
-    width: 85vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 18rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 2.7rem;
-  }
-
   .text_reveal {
-    font-size: 3.5rem !important;
+    font-size: 3.5rem;
   }
 
   .transparent_text {
-    font-size: 2.2rem !important;
-    margin-left: -1rem !important;
+    font-size: 2.2rem;
+    margin-left: -1rem;
   }
 }
 
@@ -690,40 +360,13 @@
     height: 75vh;
   }
 
-  .modal_container {
-    width: 90vw;
-    height: 65.3vh;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 89vw;
-  }
-
-  .modal_content img {
-    width: 85vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 15rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 2.5rem;
-  }
-
   .text_reveal {
-    font-size: 3.5rem !important;
+    font-size: 3.5rem;
   }
 
   .transparent_text {
-    font-size: 2.2rem !important;
-    margin-left: -1rem !important;
+    font-size: 2.2rem;
+    margin-left: -1rem;
   }
 }
 
@@ -741,41 +384,13 @@
     width: 68vw;
   }
 
-  .modal_container {
-    width: 85vw;
-    height: 75.3vh;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 84vw;
-    height: 69vh;
-  }
-
-  .modal_content img {
-    width: 81vw;
-  }
-
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 14rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 2rem;
-  }
-
   .text_reveal {
-    font-size: 3.5rem !important;
+    font-size: 3.5rem;
   }
 
   .transparent_text {
-    font-size: 2.2rem !important;
-    margin-left: -1rem !important;
+    font-size: 2.2rem;
+    margin-left: -1rem;
   }
 }
 
@@ -793,38 +408,12 @@
     width: 71vw;
   }
 
-  .modal_container {
-    width: 86vw;
-    z-index: 2;
-  }
-
-  .modal_content {
-    width: 85vw;
-    height: 69vh;
-  }
-
-  .modal_content img {
-    width: 82vw;
-  }
-  .modal_title .down_button {
-    cursor: pointer;
-    margin-left: 14rem;
-  }
-
-  .modal_title .close_button {
-    cursor: pointer;
-  }
-
-  .modal_title .size_button {
-    font-size: 2rem;
-  }
-
   .text_reveal {
-    font-size: 3.5rem !important;
+    font-size: 3.5rem;
   }
 
   .transparent_text {
-    font-size: 2.2rem !important;
-    margin-left: -1rem !important;
+    font-size: 2.2rem;
+    margin-left: -1rem;
   }
 }

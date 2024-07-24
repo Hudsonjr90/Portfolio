@@ -1,12 +1,9 @@
 import styles from './Home.module.css'
 import { NavLink } from 'react-router-dom'
 import Transition from '../../components/Transition/Transition'
-import { Modal } from 'react-bootstrap'
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import Typewriter from 'typewriter-effect'
-import { saveAs } from 'file-saver'
-import resumeServer from '../../data/resumeServer'
 import Tooltip from '@mui/material/Tooltip'
 import Zoom from '@mui/material/Zoom'
 import {
@@ -14,17 +11,9 @@ import {
   emailTheme,
   linkedinTheme,
   githubTheme,
-  modalTheme,
 } from '../../context/ThemeContext'
 import { ThemeProvider } from '@mui/material/styles'
-import {
-  WhatsApp,
-  LinkedIn,
-  Email,
-  GitHub,
-  FileDownload,
-  Close,
-} from '@mui/icons-material'
+import { WhatsApp, LinkedIn, Email, GitHub } from '@mui/icons-material'
 import IconButton from '@mui/material/IconButton'
 import HomeDesktopImage from '/imgs/my.webp'
 import HomeMobileImage from '/imgs/my-mobile.webp'
@@ -32,17 +21,16 @@ import { motion } from 'framer-motion'
 import ParticlesA from '../../components/Particles/ParticlesA'
 import React from 'react'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import Modal from '../../components/Modal/Modal'
 
 const Home = React.memo(() => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage
 
   const [showModal, setShowModal] = useState(false)
-  const [selectedImages, setSelectedImages] = useState<string[]>([])
-  const [selectedPdf, setSelectedPdf] = useState<string | null>(null)
 
   const handleOpenModal = useCallback(() => {
     setShowModal(true)
@@ -51,58 +39,6 @@ const Home = React.memo(() => {
   const handleCloseModal = useCallback(() => {
     setShowModal(false)
   }, [])
-
-  useEffect(() => {
-    const loadContent = () => {
-      let images: string[] = []
-      let pdfPath: string | null = null
-      switch (i18n.language) {
-        case 'pt':
-          images = resumeServer.br
-          pdfPath = '/cv/HudsonKennedy-BR.pdf'
-          break
-        case 'en':
-          images = resumeServer.us
-          pdfPath = '/cv/HudsonKennedy-US.pdf'
-          break
-        case 'fr':
-          images = resumeServer.fr
-          pdfPath = '/cv/HudsonKennedy-FR.pdf'
-          break
-        case 'it':
-          images = resumeServer.it
-          pdfPath = '/cv/HudsonKennedy-IT.pdf'
-          break
-        case 'es':
-          images = resumeServer.es
-          pdfPath = '/cv/HudsonKennedy-ES.pdf'
-          break
-        default:
-          break
-      }
-      setSelectedImages(images)
-      setSelectedPdf(pdfPath)
-    }
-
-    loadContent()
-  }, [i18n.language])
-
-  const handleDownload = useCallback(() => {
-    if (selectedPdf) {
-      const fileName = selectedPdf.split('/').pop()?.replace('.pdf', '')
-      if (fileName) {
-        fetch(selectedPdf)
-          .then((response) => response.blob())
-          .then((blob) => {
-            saveAs(blob, `${fileName}.pdf`)
-          })
-          .catch((error) => {
-            console.error('Error downloading PDF:', error)
-          })
-        handleCloseModal()
-      }
-    }
-  }, [selectedPdf, handleCloseModal])
 
   const typedStrings = useMemo(() => {
     return [
@@ -340,54 +276,7 @@ const Home = React.memo(() => {
           Copyright© 2024 H.K DEV{' '}
         </motion.div>
       </Transition>
-      <Modal
-        show={showModal}
-        onHide={handleCloseModal}
-        className={styles.modal_container}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title className={styles.modal_title}>
-            <ThemeProvider theme={modalTheme}>
-              <Tooltip
-                TransitionComponent={Zoom}
-                title={t('home.download')}
-                placement="left"
-                arrow
-              >
-                <IconButton
-                  className={styles.down_button}
-                  onClick={handleDownload}
-                >
-                  <FileDownload className={styles.size_button} />
-                </IconButton>
-              </Tooltip>
-              <Tooltip
-                TransitionComponent={Zoom}
-                title={t('home.close')}
-                placement="right"
-                arrow
-              >
-                <IconButton
-                  className={styles.close_button}
-                  onClick={handleCloseModal}
-                >
-                  <Close className={styles.size_button} />
-                </IconButton>
-              </Tooltip>
-            </ThemeProvider>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className={styles.modal_content}>
-          {selectedImages.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Currículo ${i18n.language} - Slide ${index + 1}`}
-              loading="lazy"
-            />
-          ))}
-        </Modal.Body>
-      </Modal>
+      <Modal show={showModal} onClose={handleCloseModal} />
     </>
   )
 })

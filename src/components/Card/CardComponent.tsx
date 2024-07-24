@@ -1,10 +1,11 @@
-import Card from 'react-bootstrap/Card'
+import Card from '@mui/material/Card'
 import styles from './CardComponent.module.css'
 import Paginate from 'react-paginate'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import cardsServer from '../../data/cardsServer'
 import { useTranslation } from 'react-i18next'
+import { CardContent, CardMedia} from '@mui/material'
 
 const CardComponent = () => {
   const { t } = useTranslation()
@@ -60,34 +61,32 @@ const CardComponent = () => {
     return () => clearInterval(intervalId)
   }, [currentPage, pageCount, hoveredCard])
 
- 
-
   const currentPageData = cardsServer
     .slice(offset, offset + cardsPerPage)
     .map((card) => (
-     
-        <Card
-          className={styles.card_content}
-          key={card.id}
-          onMouseEnter={() => handleMouseEnter(card.id)}
-          onMouseLeave={handleMouseLeave}
-        >
-          <Card.Img
-            src={card.img}
-            alt="Card image"
-            className={hoveredCard === card.id ? styles.blur : ''}
-            loading="lazy"
-          />
-          <Card.ImgOverlay>
-            <Card.Text
-              className={`${styles.card_text} ${
-                hoveredCard === card.id ? styles.showText : ''
-              }`}
-            >
-              {t(`education.cards.${card.id}.text`)}
-            </Card.Text>
-          </Card.ImgOverlay>
-        </Card>
+      <Card
+        className={styles.card_content}
+        key={card.id}
+        onMouseEnter={() => handleMouseEnter(card.id)}
+        onMouseLeave={handleMouseLeave}
+      >
+        <CardMedia
+          component="img"
+          src={card.img}
+          alt="Card image"
+          className={hoveredCard === card.id ? styles.blur : ''}
+          loading="lazy"
+        />
+        <CardContent>
+          <div
+            className={`${styles.card_text} ${
+              hoveredCard === card.id ? styles.showText : ''
+            }`}
+          >
+            {t(`education.cards.${card.id}.text`)}
+          </div>
+        </CardContent>
+      </Card>
     ))
 
   return (
