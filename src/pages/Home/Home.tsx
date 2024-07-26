@@ -255,7 +255,7 @@ const Home = React.memo(() => {
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <img src={imageUrl} alt="home_img" />
+            <img src={imageUrl} alt="home_img" loading="eager" />
           </motion.div>
         </motion.section>
         <motion.div
