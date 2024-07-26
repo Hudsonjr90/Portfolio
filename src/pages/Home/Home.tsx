@@ -1,44 +1,40 @@
-import styles from './Home.module.css'
-import { NavLink } from 'react-router-dom'
-import Transition from '../../components/Transition/Transition'
-import { useState, useCallback, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import Typewriter from 'typewriter-effect'
-import Tooltip from '@mui/material/Tooltip'
-import Zoom from '@mui/material/Zoom'
+import React, { useState, useCallback, useMemo } from 'react';
+import { NavLink } from 'react-router-dom';
+import Transition from '../../components/Transition/Transition';
+import { useTranslation } from 'react-i18next';
+import Typewriter from 'typewriter-effect';
+import Tooltip from '@mui/material/Tooltip';
+import Zoom from '@mui/material/Zoom';
 import {
   whatsappTheme,
   emailTheme,
   linkedinTheme,
   githubTheme,
-} from '../../context/ThemeContext'
-import { ThemeProvider } from '@mui/material/styles'
-import { WhatsApp, LinkedIn, Email, GitHub } from '@mui/icons-material'
-import IconButton from '@mui/material/IconButton'
-import HomeDesktopImage from '/imgs/my.webp'
-import HomeMobileImage from '/imgs/my-mobile.webp'
-import { motion } from 'framer-motion'
-import ParticlesA from '../../components/Particles/ParticlesA'
-import React from 'react'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import Modal from '../../components/Modal/Modal'
+} from '../../context/ThemeContext';
+import { ThemeProvider } from '@mui/material/styles';
+import { WhatsApp, LinkedIn, Email, GitHub } from '@mui/icons-material';
+import IconButton from '@mui/material/IconButton';
+import HomeDesktopImage from '/imgs/my.webp';
+import HomeMobileImage from '/imgs/my-mobile.webp';
+import { motion } from 'framer-motion';
+import ParticlesA from '../../components/Particles/ParticlesA';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Modal from '../../components/Modal/Modal';
+import styles from './Home.module.css';
 
 const Home = React.memo(() => {
-  const { t } = useTranslation()
-
-  const isMobile = useMediaQuery('(max-width: 768px)')
-
-  const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage
-
-  const [showModal, setShowModal] = useState(false)
+  const { t } = useTranslation();
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage;
+  const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = useCallback(() => {
-    setShowModal(true)
-  }, [])
+    setShowModal(true);
+  }, []);
 
   const handleCloseModal = useCallback(() => {
-    setShowModal(false)
-  }, [])
+    setShowModal(false);
+  }, []);
 
   const typedStrings = useMemo(() => {
     return [
@@ -46,8 +42,8 @@ const Home = React.memo(() => {
       t('home.function2'),
       t('home.function3'),
       t('home.function4'),
-    ]
-  }, [t])
+    ];
+  }, [t]);
 
   return (
     <>
@@ -259,7 +255,7 @@ const Home = React.memo(() => {
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <img src={imageUrl} alt="home_img" />
+            <img src={imageUrl} alt="home_img" loading="lazy" />
           </motion.div>
         </motion.section>
         <motion.div
@@ -278,7 +274,7 @@ const Home = React.memo(() => {
       </Transition>
       <Modal show={showModal} onClose={handleCloseModal} />
     </>
-  )
-})
+  );
+});
 
-export default Home
+export default Home;
