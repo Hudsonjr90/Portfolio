@@ -85,7 +85,7 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>H.K Dev</div>
+      <div className={styles.logo}>{t('home.logo')}</div>
 
       <nav>
         <ul
