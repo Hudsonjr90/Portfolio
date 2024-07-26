@@ -71,37 +71,56 @@
   border: none;
 }
 
+@keyframes button_contact {
+  from {
+    opacity: 0;
+    filter: blur(33px);
+    transform: translate(0, 100px);
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 .btn_box {
-  opacity: 0;
+  animation: button_contact 0.8s ease-in-out 1.2s 1 forwards;
   position: relative;
+  opacity: 0;
 }
 
 .btn_box .btn {
-  border-radius: 0.6rem;
   background: var(--main_color);
-  border: 0.2rem solid var(--main_color);
+  border-radius: 0.6rem;
   box-shadow: 0 0 1rem var(--main_color);
+  border: 0.2rem solid var(--main_color);
   color: var(--bg_color);
+  cursor: pointer;
   display: inline-block;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   letter-spacing: 0.1rem;
-  overflow: hidden;
+  margin-top: 1rem;
   position: relative;
   padding: 1.2rem 3.2rem;
+  overflow: hidden;
+  outline: none;
   transition: 0.5s ease;
-  cursor: pointer;
+  z-index: 1;
 }
 
 .btn_box .btn::before {
-  content: '';
-  position: absolute;
+  background: var(--bg_color);
+  content: "";
   height: 100%;
   left: 0;
+  position: absolute;
   top: 0;
   transition: 0.5s;
   width: 0;
-  box-shadow: none;
+  z-index: -1;
 }
 
 .btn_box .btn:hover::before {
@@ -111,7 +130,6 @@
 .btn_box .btn:hover {
   box-shadow: none;
   color: var(--main_color);
-  background: var(--bg_color);
 }
 
 .home_img {
