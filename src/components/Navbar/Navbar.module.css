@@ -273,6 +273,10 @@ label {
 }
 
 @media screen and (max-width: 1550px) {
+  .logo{
+     font-size: 2rem;
+  }
+
   .header {
     align-items: center;
     display: flex;
@@ -307,6 +311,10 @@ label {
 }
 
 @media screen and (max-width: 1450px) {
+  .logo{
+    font-size: 1.8rem;
+ }
+
   .header {
     align-items: center;
     display: flex;
@@ -341,6 +349,10 @@ label {
 }
 
 @media screen and (max-width: 1024px) {
+  .logo{
+    font-size: 1.7rem;
+ }
+
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
@@ -416,6 +428,10 @@ label {
 }
 
 @media screen and (max-width: 991px) {
+  .logo{
+    font-size: 1.6rem;
+ }
+
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
@@ -491,6 +507,10 @@ label {
 }
 
 @media screen and (max-width: 768px) {
+  .logo{
+    font-size: 1.5rem;
+ }
+
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
