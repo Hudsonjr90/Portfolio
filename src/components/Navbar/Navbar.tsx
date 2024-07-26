@@ -16,7 +16,8 @@ const Navbar = () => {
   const [lightMode, setLightMode] = useState<boolean>(false)
   const [paletteOpen, setPaletteOpen] = useState<boolean>(false)
   const [selectedColor, setSelectedColor] = useState<string | null>(null)
-  const [paletteInputInvisible, setPaletteInputInvisible] = useState<boolean>(false)
+  const [paletteInputInvisible, setPaletteInputInvisible] =
+    useState<boolean>(false)
   const [currentLanguage, setCurrentLanguage] = useState<string>('pt')
   const [SidebarOpen, setSidebarOpen] = useState(false)
 
@@ -80,7 +81,6 @@ const Navbar = () => {
   useEffect(() => {
     setSidebarOpen(false)
   }, [currentLanguage])
-
 
   return (
     <header className={styles.header}>
@@ -347,31 +347,56 @@ const Navbar = () => {
                 animate={{ x: 0 }}
                 transition={{ type: 'spring', stiffness: 120 }}
               >
-                <button onClick={() => { changeLanguage('pt'); handleAudio() }}>
+                <button
+                  onClick={() => {
+                    changeLanguage('pt')
+                    handleAudio()
+                  }}
+                >
                   <div className={styles.flags_name}>
                     <Br className={styles.flags} />
                     <span>{t('name.br')}</span>
                   </div>
                 </button>
-                <button onClick={() => { changeLanguage('en'); handleAudio() }}>
+                <button
+                  onClick={() => {
+                    changeLanguage('en')
+                    handleAudio()
+                  }}
+                >
                   <div className={styles.flags_name}>
                     <Us className={styles.flags} />
                     <span>{t('name.us')}</span>
                   </div>
                 </button>
-                <button onClick={() => { changeLanguage('fr'); handleAudio() }}>
+                <button
+                  onClick={() => {
+                    changeLanguage('fr')
+                    handleAudio()
+                  }}
+                >
                   <div className={styles.flags_name}>
                     <Fr className={styles.flags} />
                     <span>{t('name.fr')}</span>
                   </div>
                 </button>
-                <button onClick={() => { changeLanguage('it'); handleAudio() }}>
+                <button
+                  onClick={() => {
+                    changeLanguage('it')
+                    handleAudio()
+                  }}
+                >
                   <div className={styles.flags_name}>
                     <It className={styles.flags} />
                     <span>{t('name.it')}</span>
                   </div>
                 </button>
-                <button onClick={() => { changeLanguage('es'); handleAudio() }}>
+                <button
+                  onClick={() => {
+                    changeLanguage('es')
+                    handleAudio()
+                  }}
+                >
                   <div className={styles.flags_name}>
                     <Es className={styles.flags} />
                     <span>{t('name.es')}</span>
@@ -387,9 +412,9 @@ const Navbar = () => {
             handleClickButton()
             handleAudio()
           }}
-          className={`${styles.btn_menu}
-                ${showMenu ? styles.active : ''}`}
+          className={`${styles.btn_menu} ${showMenu ? styles.active : ''}`}
           role="button"
+          aria-labelledby="menu-label"
         >
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>
