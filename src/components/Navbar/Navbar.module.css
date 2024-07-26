@@ -60,7 +60,8 @@ label {
   justify-content: center;
 }
 .logo{
-  margin-top: 5px;
+  font-size: 2rem;
+  color: var(--text_color);
 }
 
 .input_darc_light_mode {

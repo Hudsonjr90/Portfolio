@@ -1,204 +1,253 @@
-import { useState, useEffect } from 'react';
-import { useResponsiveNavbar } from '../../hooks/useResponsiveNavbar';
-import { NavLink } from 'react-router-dom';
-import { FaMoon, FaSun, FaPalette } from 'react-icons/fa6';
-import Logo from "/imgs/logo.webp"
-import styles from './Navbar.module.css';
-import { useTheme } from '../../context/ThemeContext';
-import { useTranslation } from 'react-i18next';
-import { useAudio } from '../../hooks/useAudio';
-import { Us, Fr, Br, Es, It } from 'react-flags-select';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react'
+import { useResponsiveNavbar } from '../../hooks/useResponsiveNavbar'
+import { NavLink } from 'react-router-dom'
+import { FaMoon, FaSun, FaPalette } from 'react-icons/fa6'
+import styles from './Navbar.module.css'
+import { useTheme } from '../../context/ThemeContext'
+import { useTranslation } from 'react-i18next'
+import { useAudio } from '../../hooks/useAudio'
+import { Us, Fr, Br, Es, It } from 'react-flags-select'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
-  const { handleAudio } = useAudio();
+  const { t, i18n } = useTranslation()
+  const { handleAudio } = useAudio()
 
-  const [lightMode, setLightMode] = useState<boolean>(false);
-  const [paletteOpen, setPaletteOpen] = useState<boolean>(false);
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const [paletteInputInvisible, setPaletteInputInvisible] = useState<boolean>(false);
-  const [currentLanguage, setCurrentLanguage] = useState<string>('pt');
-  const [SidebarOpen, setSidebarOpen] = useState(false);
+  const [lightMode, setLightMode] = useState<boolean>(false)
+  const [paletteOpen, setPaletteOpen] = useState<boolean>(false)
+  const [selectedColor, setSelectedColor] = useState<string | null>(null)
+  const [paletteInputInvisible, setPaletteInputInvisible] =
+    useState<boolean>(false)
+  const [currentLanguage, setCurrentLanguage] = useState<string>('pt')
+  const [SidebarOpen, setSidebarOpen] = useState(false)
 
-  const { mainColor, setMainColor } = useTheme();
-  const { handleClickButton, handleLinkClick, showMenu } = useResponsiveNavbar();
+  const { mainColor, setMainColor } = useTheme()
+  const { handleClickButton, handleLinkClick, showMenu } = useResponsiveNavbar()
 
   const handleToggleLightMode = () => {
-    setLightMode(!lightMode);
-    setPaletteInputInvisible(!lightMode);
-  };
+    setLightMode(!lightMode)
+    setPaletteInputInvisible(!lightMode)
+  }
 
   useEffect(() => {
     if (lightMode) {
-      document.body.classList.add('light_mode');
-      setMainColor('#dc2626');
+      document.body.classList.add('light_mode')
+      setMainColor('#dc2626')
     } else {
-      document.body.classList.remove('light_mode');
-      setMainColor('#0ef');
+      document.body.classList.remove('light_mode')
+      setMainColor('#0ef')
       setTimeout(() => {
-        document.body.style.transition = 'background-color 1.5s, color 1.5s';
-      }, 1500);
+        document.body.style.transition = 'background-color 1.5s, color 1.5s'
+      }, 1500)
     }
-  }, [lightMode]);
+  }, [lightMode])
 
   const handlePaletteToggle = () => {
-    setPaletteOpen(!paletteOpen);
-  };
+    setPaletteOpen(!paletteOpen)
+  }
 
   const handleColorSelection = (color: string) => {
-    setSelectedColor(color);
-  };
+    setSelectedColor(color)
+  }
 
   useEffect(() => {
     if (selectedColor === 'ball_0') {
-      document.documentElement.style.setProperty('--main_color', '#ffb703');
-      setMainColor('#ffb703');
+      document.documentElement.style.setProperty('--main_color', '#ffb703')
+      setMainColor('#ffb703')
     } else if (selectedColor === 'ball_2') {
-      document.documentElement.style.setProperty('--main_color', '#3a86ff');
-      setMainColor('#3a86ff');
+      document.documentElement.style.setProperty('--main_color', '#3a86ff')
+      setMainColor('#3a86ff')
     } else if (selectedColor === 'ball_1') {
-      document.documentElement.style.setProperty('--text_color', '#8ecae6');
-      setMainColor(mainColor);
+      document.documentElement.style.setProperty('--text_color', '#8ecae6')
+      setMainColor(mainColor)
     } else if (selectedColor === 'ball_3') {
-      document.documentElement.style.setProperty('--text_color', '#eb5e28');
-      setMainColor(mainColor);
+      document.documentElement.style.setProperty('--text_color', '#eb5e28')
+      setMainColor(mainColor)
     } else if (selectedColor === 'ball_4') {
-      document.documentElement.style.setProperty('--main_color', '#0ef');
-      document.documentElement.style.setProperty('--text_color', '#fff');
-      setMainColor('#0ef');
+      document.documentElement.style.setProperty('--main_color', '#0ef')
+      document.documentElement.style.setProperty('--text_color', '#fff')
+      setMainColor('#0ef')
     }
-  }, [selectedColor]);
+  }, [selectedColor])
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    setCurrentLanguage(lng || '');
-  };
+    i18n.changeLanguage(lng)
+    setCurrentLanguage(lng || '')
+  }
 
   const toggleSidebar = () => {
-    setSidebarOpen(!SidebarOpen);
-  };
+    setSidebarOpen(!SidebarOpen)
+  }
 
   useEffect(() => {
-    setSidebarOpen(false);
-  }, [currentLanguage]);
+    setSidebarOpen(false)
+  }, [currentLanguage])
 
   return (
     <header className={styles.header}>
-      <nav className={styles.logo}>
-       <img src={Logo} alt='logo' loading='eager'  />
-      </nav>
+      <div className={styles.logo}>H.K Dev</div>
 
       <nav>
-        <ul className={`${styles.links_list} ${showMenu ? styles.active : ''}`} role="menu">
+        <ul
+          className={`${styles.links_list} ${showMenu ? styles.active : ''}`}
+          role="menu"
+        >
           <li
             onClick={() => {
-              handleLinkClick();
-              handleAudio();
+              handleLinkClick()
+              handleAudio()
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ''}`}
+            className={`${styles.active_menu} ${
+              showMenu ? styles.animation_menu : ''
+            }`}
             style={{ ['--i' as string]: 0 }}
             role="none"
           >
-            <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : '')} role="menuitem">
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
+            >
               {t('menu.home')}
             </NavLink>
           </li>
 
           <li
             onClick={() => {
-              handleLinkClick();
-              handleAudio();
+              handleLinkClick()
+              handleAudio()
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ''}`}
+            className={`${styles.active_menu} ${
+              showMenu ? styles.animation_menu : ''
+            }`}
             style={{ ['--i' as string]: 1 }}
             role="none"
           >
-            <NavLink to="/about" className={({ isActive }) => (isActive ? styles.active : '')} role="menuitem">
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
+            >
               {t('menu.about')}
             </NavLink>
           </li>
 
           <li
             onClick={() => {
-              handleLinkClick();
-              handleAudio();
+              handleLinkClick()
+              handleAudio()
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ''}`}
+            className={`${styles.active_menu} ${
+              showMenu ? styles.animation_menu : ''
+            }`}
             style={{ ['--i' as string]: 1 }}
             role="none"
           >
-            <NavLink to="/education" className={({ isActive }) => (isActive ? styles.active : '')} role="menuitem">
+            <NavLink
+              to="/education"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
+            >
               {t('menu.academic-education')}
             </NavLink>
           </li>
 
           <li
             onClick={() => {
-              handleLinkClick();
-              handleAudio();
+              handleLinkClick()
+              handleAudio()
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ''}`}
+            className={`${styles.active_menu} ${
+              showMenu ? styles.animation_menu : ''
+            }`}
             style={{ ['--i' as string]: 1 }}
             role="none"
           >
-            <NavLink to="/testimonials" className={({ isActive }) => (isActive ? styles.active : '')} role="menuitem">
+            <NavLink
+              to="/testimonials"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
+            >
               {t('menu.testimonials')}
             </NavLink>
           </li>
 
           <li
             onClick={() => {
-              handleLinkClick();
-              handleAudio();
+              handleLinkClick()
+              handleAudio()
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ''}`}
+            className={`${styles.active_menu} ${
+              showMenu ? styles.animation_menu : ''
+            }`}
             style={{ ['--i' as string]: 1 }}
             role="none"
           >
-            <NavLink to="/experiences" className={({ isActive }) => (isActive ? styles.active : '')} role="menuitem">
+            <NavLink
+              to="/experiences"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
+            >
               {t('menu.experiences')}
             </NavLink>
           </li>
 
           <li
             onClick={() => {
-              handleLinkClick();
-              handleAudio();
+              handleLinkClick()
+              handleAudio()
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ''}`}
+            className={`${styles.active_menu} ${
+              showMenu ? styles.animation_menu : ''
+            }`}
             style={{ ['--i' as string]: 1 }}
             role="none"
           >
-            <NavLink to="/skills" className={({ isActive }) => (isActive ? styles.active : '')} role="menuitem">
+            <NavLink
+              to="/skills"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
+            >
               {t('menu.skills')}
             </NavLink>
           </li>
 
           <li
             onClick={() => {
-              handleLinkClick();
-              handleAudio();
+              handleLinkClick()
+              handleAudio()
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ''}`}
+            className={`${styles.active_menu} ${
+              showMenu ? styles.animation_menu : ''
+            }`}
             style={{ ['--i' as string]: 2 }}
             role="none"
           >
-            <NavLink to="/portfolio" className={({ isActive }) => (isActive ? styles.active : '')} role="menuitem">
+            <NavLink
+              to="/portfolio"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
+            >
               {t('menu.portfolio')}
             </NavLink>
           </li>
 
           <li
             onClick={() => {
-              handleLinkClick();
-              handleAudio();
+              handleLinkClick()
+              handleAudio()
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ''}`}
+            className={`${styles.active_menu} ${
+              showMenu ? styles.animation_menu : ''
+            }`}
             style={{ ['--i' as string]: 3 }}
             role="none"
           >
-            <NavLink to="/contact" className={({ isActive }) => (isActive ? styles.active : '')} role="menuitem">
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              role="menuitem"
+            >
               {t('menu.contact')}
             </NavLink>
           </li>
@@ -211,8 +260,8 @@ const Navbar = () => {
             type="checkbox"
             className={styles.input_darc_light_mode}
             onClick={() => {
-              handleToggleLightMode();
-              handleAudio();
+              handleToggleLightMode()
+              handleAudio()
             }}
             aria-label="Alternar modo claro/escuro"
             role="switch"
@@ -227,8 +276,8 @@ const Navbar = () => {
             type="checkbox"
             className={styles.input_palette_colors}
             onClick={() => {
-              handlePaletteToggle();
-              handleAudio();
+              handlePaletteToggle()
+              handleAudio()
             }}
             aria-label="Abrir paleta de cores"
             role="switch"
@@ -236,7 +285,11 @@ const Navbar = () => {
 
           <FaPalette className={styles.palette} />
 
-          <div className={`${styles.toggle_palette_theme} ${paletteOpen ? styles.palette_open : ''}`}>
+          <div
+            className={`${styles.toggle_palette_theme} ${
+              paletteOpen ? styles.palette_open : ''
+            }`}
+          >
             <button
               className={`${styles.ball} ${styles.ball_0}`}
               style={{ ['--p' as string]: 1 }}
@@ -284,8 +337,8 @@ const Navbar = () => {
             <button
               className={styles.lng_btn}
               onClick={() => {
-                toggleSidebar();
-                handleAudio();
+                toggleSidebar()
+                handleAudio()
               }}
               aria-label="Selecionar idioma"
             >
@@ -304,8 +357,8 @@ const Navbar = () => {
               >
                 <button
                   onClick={() => {
-                    changeLanguage('pt');
-                    handleAudio();
+                    changeLanguage('pt')
+                    handleAudio()
                   }}
                 >
                   <div className={styles.flags_name}>
@@ -315,8 +368,8 @@ const Navbar = () => {
                 </button>
                 <button
                   onClick={() => {
-                    changeLanguage('en');
-                    handleAudio();
+                    changeLanguage('en')
+                    handleAudio()
                   }}
                 >
                   <div className={styles.flags_name}>
@@ -326,8 +379,8 @@ const Navbar = () => {
                 </button>
                 <button
                   onClick={() => {
-                    changeLanguage('fr');
-                    handleAudio();
+                    changeLanguage('fr')
+                    handleAudio()
                   }}
                 >
                   <div className={styles.flags_name}>
@@ -337,8 +390,8 @@ const Navbar = () => {
                 </button>
                 <button
                   onClick={() => {
-                    changeLanguage('it');
-                    handleAudio();
+                    changeLanguage('it')
+                    handleAudio()
                   }}
                 >
                   <div className={styles.flags_name}>
@@ -348,8 +401,8 @@ const Navbar = () => {
                 </button>
                 <button
                   onClick={() => {
-                    changeLanguage('es');
-                    handleAudio();
+                    changeLanguage('es')
+                    handleAudio()
                   }}
                 >
                   <div className={styles.flags_name}>
@@ -364,8 +417,8 @@ const Navbar = () => {
 
         <button
           onClick={() => {
-            handleClickButton();
-            handleAudio();
+            handleClickButton()
+            handleAudio()
           }}
           className={`${styles.btn_menu} ${showMenu ? styles.active : ''}`}
           role="button"
@@ -377,7 +430,7 @@ const Navbar = () => {
         </button>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
