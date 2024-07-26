@@ -119,8 +119,7 @@
   right: 25rem;
 }
 
-.home_img img {
-  object-fit: none;
+.home_img img { 
   width: 26.5vw;
   border: none;
   border-radius: 50%;

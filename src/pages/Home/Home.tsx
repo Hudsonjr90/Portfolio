@@ -15,17 +15,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import { WhatsApp, LinkedIn, Email, GitHub } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import HomeDesktopImage from '/imgs/my.webp';
-import HomeMobileImage from '/imgs/my-mobile.webp';
 import { motion } from 'framer-motion';
 import ParticlesA from '../../components/Particles/ParticlesA';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import Modal from '../../components/Modal/Modal';
 import styles from './Home.module.css';
 
 const Home = React.memo(() => {
   const { t } = useTranslation();
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const imageUrl = isMobile ? HomeMobileImage : HomeDesktopImage;
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = useCallback(() => {
@@ -255,7 +251,7 @@ const Home = React.memo(() => {
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <img src={imageUrl} alt="home_img" loading="eager" />
+            <img src={HomeDesktopImage} alt="home_img" loading="eager" />
           </motion.div>
         </motion.section>
         <motion.div
