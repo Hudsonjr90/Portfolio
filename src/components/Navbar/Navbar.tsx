@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useResponsiveNavbar } from '../../hooks/useResponsiveNavbar';
 import { NavLink } from 'react-router-dom';
 import { FaMoon, FaSun, FaPalette } from 'react-icons/fa6';
+import Logo from "/imgs/logo.webp"
 import styles from './Navbar.module.css';
 import { useTheme } from '../../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
@@ -85,7 +86,7 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.logo}>
-        &lt; <span className={styles.logo_span}>H.K DEV</span>/&gt;
+       <img src={Logo} alt='logo' loading='eager'  />
       </nav>
 
       <nav>

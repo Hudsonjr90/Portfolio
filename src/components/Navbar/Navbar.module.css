@@ -14,15 +14,6 @@
   font-weight: 600;
 }
 
-.logo {
-  color: var(--text_color);
-  font-size: 2.5rem;
-  font-weight: 600;
-}
-
-.logo_span {
-  text-shadow: 0 0 1rem var(--main_color);
-}
 
 .links_list {
   display: flex;
@@ -67,6 +58,9 @@ label {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+.logo{
+  margin-top: 5px;
 }
 
 .input_darc_light_mode {
@@ -272,9 +266,6 @@ label {
 }
 
 @media screen and (max-width: 1550px) {
-  .logo{
-     font-size: 2rem;
-  }
 
   .header {
     align-items: center;
@@ -310,10 +301,6 @@ label {
 }
 
 @media screen and (max-width: 1450px) {
-  .logo{
-    font-size: 1.8rem;
- }
-
   .header {
     align-items: center;
     display: flex;
@@ -348,10 +335,6 @@ label {
 }
 
 @media screen and (max-width: 1024px) {
-  .logo{
-    font-size: 1.7rem;
- }
-
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
@@ -427,9 +410,6 @@ label {
 }
 
 @media screen and (max-width: 991px) {
-  .logo{
-    font-size: 1.6rem;
- }
 
   .header {
     background: var(--bg_color);
@@ -506,9 +486,6 @@ label {
 }
 
 @media screen and (max-width: 768px) {
-  .logo{
-    font-size: 1.5rem;
- }
 
   .header {
     background: var(--bg_color);
