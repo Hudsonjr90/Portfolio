@@ -414,7 +414,7 @@ const Navbar = () => {
           }}
           className={`${styles.btn_menu} ${showMenu ? styles.active : ''}`}
           role="button"
-          aria-labelledby="menu-label"
+          aria-label="Menu"
         >
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>
