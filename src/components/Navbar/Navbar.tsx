@@ -84,9 +84,9 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      <NavLink to={'/'} className={styles.logo}>
+      <nav className={styles.logo}>
         &lt; <span className={styles.logo_span}>H.K DEV</span>/&gt;
-      </NavLink>
+      </nav>
 
       <nav>
         <ul className={`${styles.links_list} ${showMenu ? styles.active : ''}`} role="menu">
