@@ -28,7 +28,7 @@ const ParticlesB = React.memo(() => {
             value: 80,
             density: {
               enable: true,
-              value_area: 900
+              value_area: 1000
             }
           },
           color: {
@@ -55,7 +55,7 @@ const ParticlesB = React.memo(() => {
             }
           },
           size: {
-            value: 5,
+            value: 2,
             random: true,
             anim: {
               enable: true,
