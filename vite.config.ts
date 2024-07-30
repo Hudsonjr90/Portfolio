@@ -6,7 +6,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   plugins: [
     react(),
-    visualizer({ filename: 'stats.html', open: true }) as any // Cast to any to bypass type checking
+    visualizer({ filename: 'stats.html', open: true }) as any 
   ],
   css: {
     modules: {
