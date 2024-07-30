@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'lodash'],
+    include: ['react', 'react-dom'],
     exclude: ['js-big-decimal'],
     force: true,
     entries: ['src/main.tsx']

@@ -225,14 +225,6 @@ const Home = React.memo(() => {
 
             <motion.div
               className={styles.btn_box}
-              initial={{ opacity: 0, y: '100%' }}
-              animate={{ opacity: 1, y: '0%' }}
-              whileHover={{ scale: 1.2 }}
-              transition={{
-                duration: 2,
-                delay: 0.7,
-                ease: [0.2, 0, 0.2, 1],
-              }}
             >
               <button className={styles.btn} onClick={handleOpenModal}>
                 {t('home.resume')}
