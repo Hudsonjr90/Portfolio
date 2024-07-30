@@ -47,7 +47,7 @@ const About = () => {
                 onLoad={setIsLoadedCallback}
                 width="100%"
                 height="auto"
-                loading="lazy"
+                loading="eager"
               />
             </motion.div>
           </LazyLoad>

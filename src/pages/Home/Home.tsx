@@ -1,24 +1,27 @@
-import React, { useState, useCallback, useMemo } from 'react';
-import { NavLink } from 'react-router-dom';
-import Transition from '../../components/Transition/Transition';
-import { useTranslation } from 'react-i18next';
-import Typewriter from 'typewriter-effect';
-import Tooltip from '@mui/material/Tooltip';
-import Zoom from '@mui/material/Zoom';
+import React, { useState, useCallback, useMemo, Suspense } from "react";
+import { NavLink } from "react-router-dom";
+import Transition from "../../components/Transition/Transition";
+import { useTranslation } from "react-i18next";
+import Typewriter from "typewriter-effect";
+import Tooltip from "@mui/material/Tooltip";
+import Zoom from "@mui/material/Zoom";
 import {
   whatsappTheme,
   emailTheme,
   linkedinTheme,
   githubTheme,
-} from '../../context/ThemeContext';
-import { ThemeProvider } from '@mui/material/styles';
-import { WhatsApp, LinkedIn, Email, GitHub } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
-import HomeDesktopImage from '/imgs/my.webp';
-import { motion } from 'framer-motion';
-import ParticlesA from '../../components/Particles/ParticlesA';
-import Modal from '../../components/Modal/Modal';
-import styles from './Home.module.css';
+} from "../../context/ThemeContext";
+import { ThemeProvider } from "@mui/material/styles";
+import { WhatsApp, LinkedIn, Email, GitHub } from "@mui/icons-material";
+import IconButton from "@mui/material/IconButton";
+import HomeDesktopImage from "/imgs/my.webp";
+import { motion } from "framer-motion";
+import Modal from "../../components/Modal/Modal";
+import styles from "./Home.module.css";
+
+const ParticlesA = React.lazy(
+  () => import("../../components/Particles/ParticlesA")
+);
 
 const Home = React.memo(() => {
   const { t } = useTranslation();
@@ -34,10 +37,10 @@ const Home = React.memo(() => {
 
   const typedStrings = useMemo(() => {
     return [
-      t('home.function1'),
-      t('home.function2'),
-      t('home.function3'),
-      t('home.function4'),
+      t("home.function1"),
+      t("home.function2"),
+      t("home.function3"),
+      t("home.function4"),
     ];
   }, [t]);
 
@@ -46,7 +49,9 @@ const Home = React.memo(() => {
       <Transition onAnimationComplete={() => {}}>
         <motion.section className={styles.home}>
           <motion.div className={styles.home_content}>
-            <ParticlesA />
+            <Suspense fallback={<div>Loading...</div>}>
+              <ParticlesA />
+            </Suspense>
 
             <motion.div
               animate={{ y: [30, 150, 10], opacity: 1, scale: 1 }}
@@ -91,7 +96,7 @@ const Home = React.memo(() => {
                     delay: 1.2,
                     ease: [0, 0.71, 0.2, 1.01],
                     scale: {
-                      type: 'spring',
+                      type: "spring",
                       damping: 5,
                       stiffness: 100,
                       restDelta: 0.001,
@@ -110,7 +115,7 @@ const Home = React.memo(() => {
                       arrow
                     >
                       <IconButton>
-                        <WhatsApp sx={{ color: '#fff', fontSize: 22 }} />
+                        <WhatsApp sx={{ color: "#fff", fontSize: 22 }} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -126,7 +131,7 @@ const Home = React.memo(() => {
                     delay: 1.5,
                     ease: [0, 0.71, 0.2, 1.01],
                     scale: {
-                      type: 'spring',
+                      type: "spring",
                       damping: 5,
                       stiffness: 100,
                       restDelta: 0.001,
@@ -145,7 +150,7 @@ const Home = React.memo(() => {
                       arrow
                     >
                       <IconButton>
-                        <Email sx={{ color: '#fff', fontSize: 22 }} />
+                        <Email sx={{ color: "#fff", fontSize: 22 }} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -161,7 +166,7 @@ const Home = React.memo(() => {
                     delay: 1.7,
                     ease: [0, 0.71, 0.2, 1.01],
                     scale: {
-                      type: 'spring',
+                      type: "spring",
                       damping: 5,
                       stiffness: 100,
                       restDelta: 0.001,
@@ -180,7 +185,7 @@ const Home = React.memo(() => {
                       arrow
                     >
                       <IconButton>
-                        <LinkedIn sx={{ color: '#fff', fontSize: 22 }} />
+                        <LinkedIn sx={{ color: "#fff", fontSize: 22 }} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -196,7 +201,7 @@ const Home = React.memo(() => {
                     delay: 1.9,
                     ease: [0, 0.71, 0.2, 1.01],
                     scale: {
-                      type: 'spring',
+                      type: "spring",
                       damping: 5,
                       stiffness: 100,
                       restDelta: 0.001,
@@ -215,7 +220,7 @@ const Home = React.memo(() => {
                       arrow
                     >
                       <IconButton>
-                        <GitHub sx={{ color: '#fff', fontSize: 22 }} />
+                        <GitHub sx={{ color: "#fff", fontSize: 22 }} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -223,19 +228,17 @@ const Home = React.memo(() => {
               </ThemeProvider>
             </motion.div>
 
-            <motion.div
-              className={styles.btn_box}
-            >
+            <motion.div className={styles.btn_box}>
               <button className={styles.btn} onClick={handleOpenModal}>
-                {t('home.resume')}
+                {t("home.resume")}
               </button>
             </motion.div>
           </motion.div>
 
           <motion.div
             className={styles.home_img}
-            initial={{ opacity: 0, y: '100%' }}
-            animate={{ opacity: 1, y: '0%' }}
+            initial={{ opacity: 0, y: "100%" }}
+            animate={{ opacity: 1, y: "0%" }}
             whileHover={{ scale: 1.2 }}
             transition={{
               duration: 2,
@@ -248,8 +251,8 @@ const Home = React.memo(() => {
         </motion.section>
         <motion.div
           className={styles.footer}
-          initial={{ opacity: 0, y: '100%' }}
-          animate={{ opacity: 1, y: '0%' }}
+          initial={{ opacity: 0, y: "100%" }}
+          animate={{ opacity: 1, y: "0%" }}
           whileHover={{ scale: 1.2 }}
           transition={{
             duration: 2,
@@ -257,7 +260,7 @@ const Home = React.memo(() => {
             ease: [0.2, 0, 0.2, 1],
           }}
         >
-          Copyright© 2024 H.K DEV{' '}
+          Copyright© 2024 H.K DEV{" "}
         </motion.div>
       </Transition>
       <Modal show={showModal} onClose={handleCloseModal} />
