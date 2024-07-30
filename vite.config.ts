@@ -6,7 +6,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   plugins: [
     react(),
-    visualizer({ filename: 'stats.html', open: true })
+    visualizer({ filename: 'stats.html', open: true }) as any // Cast to any to bypass type checking
   ],
   css: {
     modules: {
@@ -14,7 +14,10 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['js-big-decimal']
+    include: ['react', 'react-dom', 'lodash'],
+    exclude: ['js-big-decimal'],
+    force: true,
+    entries: ['src/main.tsx']
   },
   build: {
     chunkSizeWarningLimit: 2000,
