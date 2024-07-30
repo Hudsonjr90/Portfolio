@@ -1,105 +1,105 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from "react";
 import {
   Card,
   CardMedia,
   CardContent,
   CardActions,
   Button,
-} from '@mui/material'
-import Transition from '../../components/Transition/Transition'
-import { useTranslation } from 'react-i18next'
-import ReactPaginate from 'react-paginate'
-import styles from './Portfolio.module.css'
-import portfolioServer from '../../data/portfolioServer'
-import { NavLink } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import ParticlesB from '../../components/Particles/ParticlesB'
+} from "@mui/material";
+import Transition from "../../components/Transition/Transition";
+import { useTranslation } from "react-i18next";
+import ReactPaginate from "react-paginate";
+import styles from "./Portfolio.module.css";
+import portfolioServer from "../../data/portfolioServer";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
+const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 
 const Portfolio = () => {
-  const { t } = useTranslation()
-  const [currentItems, setCurrentItems] = useState(portfolioServer.slice(0, 3))
-  const [pageCount, setPageCount] = useState(0)
-  const [itemOffset, setItemOffset] = useState(0)
-  const [currentPage, setCurrentPage] = useState(0)
-  const [transitionCompleted, setTransitionCompleted] = useState(false)
-  const [isPaused, setIsPaused] = useState(false)
-  const [itemsPerPage, setItemsPerPage] = useState(3)
+  const { t } = useTranslation();
+  const [currentItems, setCurrentItems] = useState(portfolioServer.slice(0, 3));
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [transitionCompleted, setTransitionCompleted] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
 
   useEffect(() => {
     const updateItemsPerPage = () => {
-      const width = window.innerWidth
+      const width = window.innerWidth;
       if (width <= 768) {
-        setItemsPerPage(1)
+        setItemsPerPage(1);
       } else if (width > 768 && width <= 1550) {
-        setItemsPerPage(2)
+        setItemsPerPage(2);
       } else {
-        setItemsPerPage(3)
+        setItemsPerPage(3);
       }
-    }
+    };
 
-    updateItemsPerPage()
-    window.addEventListener('resize', updateItemsPerPage)
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
 
-    return () => window.removeEventListener('resize', updateItemsPerPage)
-  }, [])
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
 
   useEffect(() => {
-    const endOffset = itemOffset + itemsPerPage
-    setCurrentItems(portfolioServer.slice(itemOffset, endOffset))
-    setPageCount(Math.ceil(portfolioServer.length / itemsPerPage))
-  }, [itemOffset, itemsPerPage])
+    const endOffset = itemOffset + itemsPerPage;
+    setCurrentItems(portfolioServer.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(portfolioServer.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage]);
 
   const handlePageClick = (event: { selected: number }) => {
-    const newOffset = (event.selected * itemsPerPage) % portfolioServer.length
-    setItemOffset(newOffset)
-    setCurrentPage(event.selected)
-  }
+    const newOffset = (event.selected * itemsPerPage) % portfolioServer.length;
+    setItemOffset(newOffset);
+    setCurrentPage(event.selected);
+  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (!isPaused) {
         setItemOffset((prevOffset) => {
-          let newOffset = prevOffset + itemsPerPage
-          let newPage = currentPage + 1
+          let newOffset = prevOffset + itemsPerPage;
+          let newPage = currentPage + 1;
 
           if (newOffset >= portfolioServer.length) {
-            newOffset = 0
-            newPage = 0
+            newOffset = 0;
+            newPage = 0;
           }
 
-          setCurrentPage(newPage)
-          return newOffset
-        })
+          setCurrentPage(newPage);
+          return newOffset;
+        });
       }
-    }, 5000)
+    }, 5000);
 
-    return () => clearInterval(intervalId)
-  }, [isPaused, currentPage, itemsPerPage])
+    return () => clearInterval(intervalId);
+  }, [isPaused, currentPage, itemsPerPage]);
 
-  const handleMouseEnter = () => setIsPaused(true)
-  const handleMouseLeave = () => setIsPaused(false)
-
-
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
 
   return (
     <Transition onAnimationComplete={() => setTransitionCompleted(true)}>
       {transitionCompleted && (
         <section className={styles.portfolio}>
-          <ParticlesB />
+          <Suspense fallback={<div>Loading...</div>}>
+            <ParticlesB />
+          </Suspense>
           <h2 className={styles.heading}>
-            <span>//</span> {t('projects.title')}{' '}
-            <span>{t('projects.text')}</span>
+            <span>//</span> {t("projects.title")}{" "}
+            <span>{t("projects.text")}</span>
           </h2>
 
           <motion.div
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: "0%" }}
-              transition={{
-                duration: 2,
-                delay: 0.7,
-                ease: [0.2, 0, 0.2, 1],
-              }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: "0%" }}
+            transition={{
+              duration: 2,
+              delay: 0.7,
+              ease: [0.2, 0, 0.2, 1],
+            }}
             className={styles.portfolio_grid}
           >
             {currentItems.map((item) => (
@@ -121,7 +121,7 @@ const Portfolio = () => {
                 </CardContent>
                 <CardContent className={styles.cardContent}>
                   <li className={styles.tech_title}>
-                    {t('projects.subtitle')}
+                    {t("projects.subtitle")}
                   </li>
                   {item.technologies.map((tech, index) => (
                     <li className={styles.tech_list} key={index}>
@@ -132,7 +132,7 @@ const Portfolio = () => {
                 <CardActions className={styles.cardActions}>
                   <Button className={styles.links}>
                     <NavLink
-                      to={item.linkDeploy || ''}
+                      to={item.linkDeploy || ""}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.link}
@@ -142,7 +142,7 @@ const Portfolio = () => {
                   </Button>
                   <Button className={styles.links}>
                     <NavLink
-                      to={item.linkRepository || ''}
+                      to={item.linkRepository || ""}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.link}
@@ -155,8 +155,8 @@ const Portfolio = () => {
             ))}
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: '80%' }}
-            animate={{ opacity: 1, y: '0%' }}
+            initial={{ opacity: 0, y: "80%" }}
+            animate={{ opacity: 1, y: "0%" }}
             transition={{
               duration: 2,
               delay: 0.3,
@@ -164,10 +164,10 @@ const Portfolio = () => {
             }}
           >
             <ReactPaginate
-              previousLabel={'←'}
-              nextLabel={'→'}
-              breakLabel={'...'}
-              breakClassName={'break-me'}
+              previousLabel={"←"}
+              nextLabel={"→"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
               pageCount={pageCount}
               pageRangeDisplayed={5}
               marginPagesDisplayed={0}
@@ -180,7 +180,7 @@ const Portfolio = () => {
         </section>
       )}
     </Transition>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;

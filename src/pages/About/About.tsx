@@ -1,11 +1,13 @@
 import styles from './About.module.css'
-import { useState, useCallback } from 'react'
+import React, { useState, useCallback, Suspense } from 'react'
 import Transition from '../../components/Transition/Transition'
 import { useTranslation } from 'react-i18next'
-import ParticlesB from '../../components/Particles/ParticlesB'
 import About_img from '/imgs/about.webp'
 import { motion } from 'framer-motion'
 import LazyLoad from 'react-lazyload'
+
+const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
+
 
 const About = () => {
   const { t } = useTranslation()
@@ -23,7 +25,9 @@ const About = () => {
   return (
     <Transition onAnimationComplete={() => {}}>
       <section className={styles.about}>
+      <Suspense fallback={<div>Loading...</div>}>
         <ParticlesB />
+      </Suspense>
         <div className={styles.container_img}>
           <LazyLoad once>
             <motion.div

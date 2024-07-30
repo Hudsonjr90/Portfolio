@@ -1,5 +1,5 @@
 import styles from './Contact.module.css'
-import { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Transition from '../../components/Transition/Transition'
 import { useTranslation } from 'react-i18next'
@@ -13,8 +13,8 @@ import { whatsappTheme, emailTheme, linkedinTheme, githubTheme} from '../../cont
 import { ThemeProvider } from '@mui/material/styles'
 import { WhatsApp, LinkedIn, Email, GitHub } from '@mui/icons-material'
 import IconButton from '@mui/material/IconButton'
-import ParticlesB from '../../components/Particles/ParticlesB'
 
+const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 
 
 const Contact = () => {
@@ -93,7 +93,9 @@ const Contact = () => {
 
   return (
     <Transition onAnimationComplete={() => {}}>
-      <ParticlesB />
+     <Suspense fallback={<div>Loading...</div>}>
+        <ParticlesB />
+      </Suspense>
       <section className={styles.contact}>
         <div className={styles.header_container}>
           <h2>

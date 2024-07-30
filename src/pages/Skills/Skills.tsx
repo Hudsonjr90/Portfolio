@@ -15,7 +15,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import ReactPaginate from 'react-paginate';
 import { cloudTheme, searchTheme, useTheme } from '../../context/ThemeContext';
 
-// Defina os componentes dinâmicos
 const WordCloud = React.lazy(() => import('../../components/WordCloud/WordCloud'));
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 

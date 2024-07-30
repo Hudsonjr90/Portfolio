@@ -1,25 +1,26 @@
-import { SetStateAction, useEffect, useState } from "react"
-import styles from "./Testimonials.module.css"
-import Transition from "../../components/Transition/Transition"
-import { motion, AnimatePresence } from "framer-motion"
-import ReactPaginate from "react-paginate"
-import { useTranslation } from "react-i18next"
-import { wrap } from "popmotion"
-import imagesServer from "../../data/imageServer"
-import testimonialServer from "../../data/testimonialsServer"
-import ParticlesB from "../../components/Particles/ParticlesB"
+import React, { SetStateAction, Suspense, useEffect, useState } from "react";
+import styles from "./Testimonials.module.css";
+import Transition from "../../components/Transition/Transition";
+import { motion, AnimatePresence } from "framer-motion";
+import ReactPaginate from "react-paginate";
+import { useTranslation } from "react-i18next";
+import { wrap } from "popmotion";
+import imagesServer from "../../data/imageServer";
+import testimonialServer from "../../data/testimonialsServer";
 
+const ParticlesB = React.lazy(
+  () => import("../../components/Particles/ParticlesB")
+);
 
 const Testimonials = () => {
-  const { t } = useTranslation()
- 
+  const { t } = useTranslation();
 
   const variants = {
     enter: (direction: number) => {
       return {
         x: direction > 0 ? 1000 : -1000,
         opacity: 0,
-      }
+      };
     },
     center: {
       zIndex: 1,
@@ -31,63 +32,65 @@ const Testimonials = () => {
         zIndex: 0,
         x: direction < 0 ? 1000 : -1000,
         opacity: 0,
-      }
+      };
     },
-  }
+  };
 
-  const [currentPage, setCurrentPage] = useState(0)
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  const [isFlipped, setFlipped] = useState(false)
+  const [currentPage, setCurrentPage] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isFlipped, setFlipped] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
+      setWindowWidth(window.innerWidth);
+    };
 
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handlePageClick = (data: { selected: SetStateAction<number> }) => {
-    setCurrentPage(data.selected)
-  }
+    setCurrentPage(data.selected);
+  };
 
-  const pageCount = Math.ceil(testimonialServer.length / 1)
+  const pageCount = Math.ceil(testimonialServer.length / 1);
   const imageIndex = wrap(
     0,
-    windowWidth > 768 ? imagesServer.desktop.length : imagesServer.mobile.length,
+    windowWidth > 768
+      ? imagesServer.desktop.length
+      : imagesServer.mobile.length,
     currentPage
-  )
+  );
 
   const handleMouseEnter = () => {
-    setFlipped(true)
-  }
+    setFlipped(true);
+  };
 
   const handleMouseLeave = () => {
-    setFlipped(false)
-  }
+    setFlipped(false);
+  };
 
   const autoChangePage = () => {
     if (!isFlipped) {
-      const nextPage = (currentPage + 1) % pageCount
-      setCurrentPage(nextPage)
+      const nextPage = (currentPage + 1) % pageCount;
+      setCurrentPage(nextPage);
     }
-  }
+  };
 
   useEffect(() => {
-    const intervalId = setInterval(autoChangePage, 5000)
+    const intervalId = setInterval(autoChangePage, 5000);
 
-    return () => clearInterval(intervalId)
-  }, [currentPage, pageCount, isFlipped])
-
-
+    return () => clearInterval(intervalId);
+  }, [currentPage, pageCount, isFlipped]);
 
   return (
     <Transition onAnimationComplete={() => {}}>
-      <ParticlesB />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ParticlesB />
+      </Suspense>
       <section className={styles.testimonials}>
         <h2 className={styles.heading}>
           <span>//</span>
@@ -156,7 +159,7 @@ const Testimonials = () => {
             pageRangeDisplayed={5}
             marginPagesDisplayed={0}
             onPageChange={({ selected: selectedPage }) => {
-              handlePageClick({ selected: selectedPage })
+              handlePageClick({ selected: selectedPage });
             }}
             containerClassName={styles.pagination}
             activeClassName={styles.activePage}
@@ -165,7 +168,7 @@ const Testimonials = () => {
         </motion.div>
       </section>
     </Transition>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

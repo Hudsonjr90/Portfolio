@@ -3,7 +3,7 @@ import styles from "./Education.module.css";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 
-// Defina os componentes dinâmicos
+
 const CardComponent = React.lazy(() => import('../../components/Card/CardComponent'));
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 
