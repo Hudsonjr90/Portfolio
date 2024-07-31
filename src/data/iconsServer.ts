@@ -17,6 +17,7 @@ import {
   FaMarkdown,
   FaGitlab,
   FaWordpress,
+  FaMagento
 } from "react-icons/fa6"
 import {
   SiTailwindcss,
@@ -53,7 +54,8 @@ import {
   SiAmazonaws,
   SiSketch,
   SiAdobexd,
-  SiNuxtdotjs
+  SiNuxtdotjs,
+  SiEslint
 } from "react-icons/si"
 import {
   BiLogoTypescript,
@@ -67,7 +69,7 @@ import {
   BiLogoMongodb,
   BiLogoNetlify,
   BiLogoHeroku,
-  BiBoltCircle,
+  BiBoltCircle
 } from "react-icons/bi"
 
 const iconComponents: { [index: string]: React.ElementType } = {
@@ -135,7 +137,9 @@ const iconComponents: { [index: string]: React.ElementType } = {
   AWS: SiAmazonaws,
   Sketch: SiSketch,
   AdobeXD: SiAdobexd,
-  Nuxtjs: SiNuxtdotjs
+  Nuxtjs: SiNuxtdotjs,
+  Eslint: SiEslint,
+  Magento: FaMagento
 }
 
 const mainIcons = [
@@ -204,6 +208,9 @@ const mainIcons = [
   { id: 61, name: "Sketch", category: "Design", percentage: 10 },
   { id: 62, name: "AdobeXD", category: "Design", percentage: 10 },
   { id: 63, name: "Nuxtjs", category: "Frontend", percentage: 10 },
+  { id: 64, name: "Eslint", category: "Tools", percentage: 60 },
+  { id: 65, name: "Magento", category: "Tools", percentage: 70 },
+
 ]
 
 export { iconComponents, mainIcons }
