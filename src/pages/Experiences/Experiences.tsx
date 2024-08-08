@@ -3,7 +3,7 @@ import styles from "./Experiences.module.css"
 import Transition from "../../components/Transition/Transition"
 import { useTranslation } from "react-i18next"
 
-import { FaBriefcase } from "react-icons/fa6"
+import Job from '@mui/icons-material/BusinessCenter';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -25,7 +25,7 @@ const TimelineElement = ({ title, subtitle, description, date }: Experience) => 
       background: "var(--bg_color)",
       color: "var(--main_color)",
     }}
-    icon={<FaBriefcase />}
+    icon={<Job  />}
   >
     <h3 className={styles.vertical_timeline_title}>{title}</h3>
     <h4 className={styles.vertical_timeline_subtitle}>{subtitle}</h4>

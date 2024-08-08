@@ -30,6 +30,12 @@
   }
 }
 
+.filters {
+  display: flex;
+  justify-content:space-around;
+  padding: 3rem;
+}
+
 .icons_container {
   display: flex;
   gap: 2rem;
@@ -70,51 +76,6 @@
   height: 100%;
   user-select: none;
   font-size: 2rem;
-}
-
-.filters {
-  display: flex;
-  justify-content: space-between;
-  padding: 5rem;
-}
-
-.filters select {
-  width: 11vw;
-  height: 4vh;
-  color: var(--main_color);
-  border: 1px solid var(--main_color);
-  background-color: var(--bg_color);
-  padding-left: 1rem;
-}
-
-.filters option {
-  color: var(--main_color);
-  padding-left: 1rem;
-}
-
-.filters input {
-  color: var(--main_color);
-  border-bottom: 1px solid var(--main_color);
-  background-color: var(--bg_color);
-  padding-left: 3rem;
-  margin-left: 85rem;
-  width: 7vw;
-}
-
-.filters input[type='text']::placeholder {
-  color: var(--main_color);
-  padding: 0rem;
-}
-
-.filters .icon_search {
-  color: var(--main_color);
-  display: flex;
-}
-
-.filters .icon_search svg {
-  font-size: 2rem;
-  margin-left: -15rem;
-  margin-top: 0.7rem;
 }
 
 .pagination {
@@ -205,51 +166,6 @@
     font-size: 2rem;
   }
 
-  .filters {
-    display: flex;
-    justify-content: space-between;
-    padding: 5rem;
-  }
-
-  .filters select {
-    width: 11vw;
-    height: 4vh;
-    color: var(--main_color);
-    border: 1px solid var(--main_color);
-    background-color: var(--bg_color);
-    padding-left: 1rem;
-  }
-
-  .filters option {
-    color: var(--main_color);
-    padding-left: 1rem;
-  }
-
-  .filters input {
-    color: var(--main_color);
-    border-bottom: 1px solid var(--main_color);
-    background-color: var(--bg_color);
-    padding-left: 3rem;
-    margin-left: 85rem;
-    width: 7vw;
-  }
-
-  .filters input[type='text']::placeholder {
-    color: var(--main_color);
-    padding: 0rem;
-  }
-
-  .filters .icon_search {
-    color: var(--main_color);
-    display: flex;
-  }
-
-  .filters .icon_search svg {
-    font-size: 2rem;
-    margin-left: -14.7rem;
-    margin-top: 0.9rem;
-  }
-
   .pagination {
     display: flex;
     justify-content: center;
@@ -311,32 +227,6 @@
     margin-top: -7rem;
   }
 
-  .filters {
-    flex-direction: row;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .filters select {
-    width: 20vw;
-    height: 5vh;
-    margin-bottom: 2rem;
-    margin-left: 20rem;
-  }
-
-  .filters input {
-    width: 15vw;
-    height: 5vh;
-    margin-left: -1rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -57.5rem;
-    margin-top: -0.2rem;
-  }
-
   .pagination li a {
     width: auto;
     padding: 0 1rem;
@@ -386,32 +276,6 @@
     margin-top: -7rem;
   }
 
-  .filters {
-    flex-direction: row;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .filters select {
-    width: 20vw;
-    height: 5vh;
-    margin-bottom: 2rem;
-    margin-left: 20rem;
-  }
-
-  .filters input {
-    width: 15vw;
-    height: 5vh;
-    margin-left: -1rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -56rem;
-    margin-top: -0.1rem;
-  }
-
   .pagination li a {
     width: auto;
     padding: 0 1rem;
@@ -457,32 +321,6 @@
     margin-top: -7rem;
   }
 
-  .filters {
-    flex-direction: row;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .filters select {
-    width: 18vw;
-    height: 5vh;
-    margin-bottom: 2rem;
-    margin-left: 20rem;
-  }
-
-  .filters input {
-    width: 15vw;
-    height: 5vh;
-    margin-left: -1rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -34rem;
-    margin-top: -0.1rem;
-  }
-
   .pagination li a {
     width: auto;
     padding: 0 1rem;
@@ -526,32 +364,6 @@
 
   .indicator {
     margin-top: -7.2rem;
-  }
-
-  .filters {
-    flex-direction: row;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .filters select {
-    width: 30vw;
-    height: 4vh;
-    margin-bottom: 2rem;
-    margin-left: 5rem;
-  }
-
-  .filters input {
-    width: 15vw;
-    height: 3vh;
-    margin-left: -1rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -27.5rem;
-    margin-top: 0.1rem;
   }
 
   .pagination li a {
@@ -601,32 +413,6 @@
 
   .indicator {
     margin-top: -8rem;
-  }
-
-  .filters {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .filters select {
-    width: 25vw;
-    height: 4vh;
-    margin-bottom: 2rem;
-    margin-left: -2rem;
-  }
-
-  .filters input {
-    width: 15vw;
-    height: 3vh;
-    margin-left: -1rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -8rem;
-    margin-top: -2.2rem;
   }
 
   .pagination li a {
@@ -681,32 +467,6 @@
 
   .indicator {
     margin-top: -8.5rem;
-  }
-
-  .filters {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .filters select {
-    width: 40vw;
-    height: 4vh;
-    margin-bottom: 2rem;
-    margin-left: -2rem;
-  }
-
-  .filters input {
-    width: 20vw;
-    height: 5vh;
-    margin-left: -1rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -8rem;
-    margin-top: -3.7rem;
   }
 
   .pagination li a {
@@ -765,33 +525,6 @@
     margin-top: -6.6rem;
   }
 
-  .filters {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-    margin-left: 5rem;
-  }
-
-  .filters select {
-    width: 49vw;
-    height: 4vh;
-    margin-bottom: 2rem;
-    margin-left: -4rem;
-  }
-
-  .filters input {
-    width: 25vw;
-    height: 4.1vh;
-    margin-left: -5rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -9rem;
-    margin-top: -3.3rem;
-  }
-
   .pagination li a {
     width: auto;
     padding: 0.9rem 1rem;
@@ -844,33 +577,6 @@
     margin-top: -5.8rem;
   }
 
-  .filters {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-    margin-left: 5rem;
-  }
-
-  .filters select {
-    width: 49vw;
-    height: 5vh;
-    padding-left: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .filters input {
-    width: 25vw;
-    height: 4.1vh;
-    border-bottom: 1px solid var(--main_color);
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -7.9rem;
-    margin-top: -2.7rem;
-  }
-
   .pagination li a {
     width: auto;
     padding: 0rem 1rem;
@@ -919,32 +625,6 @@
 
   .indicator {
     margin-top: -6.3rem;
-  }
-
-  .filters {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .filters select {
-    width: 52vw;
-    height: 4vh;
-    margin-bottom: 2rem;
-    margin-left: 1rem;
-  }
-
-  .filters input {
-    width: 30vw;
-    height: 4.1vh;
-    margin-left: 2rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -6.5rem;
-    margin-top: -3.3rem;
   }
 
   .pagination li a {
@@ -996,33 +676,6 @@
     margin-top: -7.1rem;
   }
 
-  .filters {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
-  }
-
-  .filters select {
-    width: 52vw;
-    height: 4vh;
-    margin-bottom: 2rem;
-    margin-left: 1rem;
-  }
-
-  .filters input {
-    width: 30vw;
-    height: 4.1vh;
-    margin-left: 2rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -6.5rem;
-    margin-top: -3.3rem;
-  }
-
   .pagination li a {
     width: auto;
     padding: 0.8rem 1rem;
@@ -1071,33 +724,6 @@
 
   .indicator {
     margin-top: -6.7rem;
-  }
-
-  .filters {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .filters select {
-    width: 65vw;
-    height: 4vh;
-    margin-bottom: 2rem;
-    margin-left: -2rem;
-  }
-
-  .filters input {
-    width: 30vw;
-    height: 5vh;
-    margin-left: -3rem;
-    margin-bottom: 1.1rem;
-  }
-
-  .filters .icon_search svg {
-    display: block;
-    margin-left: -9rem;
-    margin-top: -4.2rem;
   }
 
   .pagination li a {
