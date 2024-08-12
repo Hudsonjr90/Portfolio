@@ -36,6 +36,7 @@
   padding: 3rem;
 }
 
+
 .icons_container {
   display: flex;
   gap: 2rem;
@@ -104,18 +105,7 @@
   background-color: var(--bg_color);
 }
 
-.toggle {
-  border: none;
-  border-radius: 20px;
-}
 
-.show_cloud svg,
-.show_search svg {
-  font-size: 3rem;
-  cursor: pointer;
-  color: var(--main_color);
-  background-color: var(--bg_color);
-}
 
 .no_results {
   display: flex;
