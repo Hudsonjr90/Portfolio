@@ -21,7 +21,6 @@
  - React
  - React Router DOM
  - React Icons & MUI (para ícones)
- - Redux
  - i18next (para intenacionalização para idioma americano)
  - Animate Presence (para a seção de depoimentos)
  - React Paginate (para montar paginação dos cards)
