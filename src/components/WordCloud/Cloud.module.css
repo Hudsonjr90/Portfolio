@@ -22,4 +22,22 @@
     white-space: nowrap;
   }
   
-  
+  @media screen and (max-width: 470px){
+    .circleContainer{
+      width: 100vw;
+      height: 50vh;
+    }
+  }
+
+  @media screen and (max-width: 428px){
+    .circleContainer{
+      width: 90vw;
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    .circleContainer{
+      width: 88vw;
+      height: 40vh;
+    }
+  }
