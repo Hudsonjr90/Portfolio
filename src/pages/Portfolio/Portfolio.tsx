@@ -92,68 +92,69 @@ const Portfolio = () => {
             <span>{t("projects.text")}</span>
           </h2>
 
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            transition={{
-              duration: 2,
-              delay: 0.7,
-              ease: [0.2, 0, 0.2, 1],
-            }}
-            className={styles.portfolio_grid}
-          >
+          <div className={styles.portfolio_grid}>
             {currentItems.map((item) => (
-              <Card
+              <motion.div
                 key={item.id}
-                className={styles.card}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                initial={{ opacity: 0, x: "100%" }}
+                animate={{ opacity: 1, x: "0%" }}
+                transition={{
+                  duration: 2,
+                  delay: 0.7,
+                  ease: [0.2, 0, 0.2, 1],
+                }}
               >
-                <CardMedia
-                  component="img"
-                  alt={item.name}
-                  height="300"
-                  image={item.image}
-                  loading="lazy"
-                />
-                <CardContent className={styles.cardContent}>
-                  {t(`projects.data.${item.id}.description`)}
-                </CardContent>
-                <CardContent className={styles.cardContent}>
-                  <li className={styles.tech_title}>
-                    {t("projects.subtitle")}
-                  </li>
-                  {item.technologies.map((tech, index) => (
-                    <li className={styles.tech_list} key={index}>
-                      {tech}
+                <Card
+                  className={styles.card}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <CardMedia
+                    component="img"
+                    alt={item.name}
+                    height="300"
+                    image={item.image}
+                    loading="lazy"
+                  />
+                  <CardContent className={styles.cardContent}>
+                    {t(`projects.data.${item.id}.description`)}
+                  </CardContent>
+                  <CardContent className={styles.cardContent}>
+                    <li className={styles.tech_title}>
+                      {t("projects.subtitle")}
                     </li>
-                  ))}
-                </CardContent>
-                <CardActions className={styles.cardActions}>
-                  <Button className={styles.links}>
-                    <NavLink
-                      to={item.linkDeploy || ""}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Deploy
-                    </NavLink>
-                  </Button>
-                  <Button className={styles.links}>
-                    <NavLink
-                      to={item.linkRepository || ""}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Code
-                    </NavLink>
-                  </Button>
-                </CardActions>
-              </Card>
+                    {item.technologies.map((tech, index) => (
+                      <li className={styles.tech_list} key={index}>
+                        {tech}
+                      </li>
+                    ))}
+                  </CardContent>
+                  <CardActions className={styles.cardActions}>
+                    <Button className={styles.links}>
+                      <NavLink
+                        to={item.linkDeploy || ""}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.link}
+                      >
+                        Deploy
+                      </NavLink>
+                    </Button>
+                    <Button className={styles.links}>
+                      <NavLink
+                        to={item.linkRepository || ""}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.link}
+                      >
+                        Code
+                      </NavLink>
+                    </Button>
+                  </CardActions>
+                </Card>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: "80%" }}
             animate={{ opacity: 1, y: "0%" }}
