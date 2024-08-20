@@ -258,7 +258,7 @@ const Navbar = () => {
         <label>
           <input
             type="checkbox"
-            className={styles.input_darc_light_mode}
+            className={styles.input_dark_light_mode}
             onClick={() => {
               handleToggleLightMode()
               handleAudio()

@@ -59,12 +59,13 @@ label {
   display: flex;
   justify-content: center;
 }
+
 .logo{
   font-size: 2rem;
-  color: var(--text_color);
+  color: var(--main_color);
 }
 
-.input_darc_light_mode {
+.input_dark_light_mode {
   cursor: pointer;
   height: 2rem;
   position: absolute;
@@ -72,7 +73,7 @@ label {
   width: 2rem;
 }
 
-.input_darc_light_mode:checked ~ .sun_icon {
+.input_dark_light_mode:checked ~ .sun_icon {
   transition-delay: 0s;
   transform: rotate(360deg) scale(0);
 }
@@ -84,7 +85,7 @@ label {
   transition-delay: 0.6s;
 }
 
-.input_darc_light_mode:checked ~ .moon_icon {
+.input_dark_light_mode:checked ~ .moon_icon {
   transition-delay: 0.6s;
   transform: scale(1) rotate(360deg);
 }
