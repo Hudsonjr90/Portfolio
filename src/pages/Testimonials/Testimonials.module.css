@@ -1,16 +1,16 @@
 .testimonials {
-  max-width: 1900px;
+  max-width: 2600px;
   max-height: 100vh;
   margin: 0 auto;
-  overflow: hidden;
   padding: 0 4rem;
   width: 100%;
+  overflow-y: auto;
 }
 
 .testimonials .heading {
   animation: animate 0.8s ease-in-out 1 forwards;
-  font-size: 3rem;
-  margin: 12rem 0 6rem;
+  font-size: 4rem;
+  margin: 12rem 0 4rem;
   opacity: 0;
   text-align: center;
 }

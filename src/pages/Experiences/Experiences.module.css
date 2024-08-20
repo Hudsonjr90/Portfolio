@@ -41,6 +41,7 @@
  .vertical_timeline_description{
   font-size: 1.125rem !important;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
  }
 
  @media screen and (max-width: 2560px){

@@ -113,53 +113,22 @@
   "testimonials": {
     "title": "Some",
     "text": " Testimonials",
-    "cards": [
-      {
-        "text": "Hudson is a super dedicated professional and committed to delivery, he has always demonstrated proactivity, resourcefulness, as well as initiative and the ability to solve problems objectively and with technical knowledge."
-      },
-      {
-        "text": "Excellent work partner and a great person! His sense of responsibility stands out among the others, never leaving anything behind or unresolved. I learned a lot from Hudson and I will definitely take these lessons into life."
-      },
-      {
-        "text": "Hudson is an excellent work partner, always looking to improve and develop new skills. He is always willing to help. Dedicated and committed."
-      },
-      {
-        "text": "Exemplary professional! Very dedicated, diligent and proactive. And great interpersonal relationships. I highly recommend it!"
-      },
-      {
-        "text": "Great Professional, always seeking to learn, improve and master new subjects. Assisting the team in resolving problems."
-      },
-      {
-        "text": "Hudson for me was an excellent instructor. He taught me how to handle a platform, which is nowhere near my area. Exemplary and extremely capable professional. You have everything to take off in your Developer career."
-      },
-      {
-        "text": "I worked with Hudson at Vilt. Even though it was a short period, I had the opportunity to meet this wonderful, lively and collaborative person. We participated in training and some challenges together, during this time he, as a more experienced person, proved to be a good advisor and a great motivator for everyone around him and especially for the more junior people. Always willing to help, he will be a great ally within any team."
-      },
-      {
-        "text": "I had the opportunity to work with Hudson. It was a very interesting experience, as he is a very dedicated and competent professional when it comes to frontend. A pleasant surprise and I highly recommend it. Success Hudson!"
-      },
-      {
-        "text": "Hudson is a complete professional, always proactive and willing to help, but in the time we worked together he really stood out for his skill in frontend development and knowledge of UX/UI, always very detailed. He has become a reference for me, I am sure he will contribute a lot to the team he will be part of!"
-      },
-      {
-        "text": "Working with Hudson was an excellent experience. His understanding of FrontEnd is evident in each implementation and support of the team. He is proactive, creative and always seeks innovative and elegant solutions."
-      },
-      {
-        "text": "I had the pleasure of having Hudson on my team. A focused and creative developer, always seeking to solve the challenges we encounter in the project. Proactive and available to help teammates, aiming for the best to achieve objectives!"
-      },
-      {
-        "text": "A great professional and in-depth knowledge of Front-end, not limited to the use of frameworks for the 'magic' to happen. Highly recommended!"
-      },
-      {
-        "text": "I had the pleasure of working with colleague Hudson Kennedy on the Cast development team on the MG-Florestas project and can attest to his exceptional skills and dedication. Hudson is a talented and passionate front-end developer, always demonstrating a deep understanding of the latest technologies and best practices. During our time together at Cast, he played a key role in the success of the project. What impressed me most about Hudson is his ability to face complex challenges with creativity and efficiency. His attention to detail and commitment to delivering high-quality products have always set him apart. In addition to his impressive technical skills, Hudson was an incredible member of the team. His clear communication and willingness to collaborate made the work environment more productive and pleasant. I recommend Hudson without reservation and am confident he will continue to have a positive impact wherever he goes. If you're looking for a talented and committed front-end developer, Hudson Kennedy is the right choice. Please feel free to get in touch if you require additional information. Sincerely, Gei Batista."
-      },
-      {
-        "text": "Hudson was one of the candidates I had the pleasure of meeting. A very polite person, with an incredible life story and led our chat in a very relaxed way, always explaining his experiences in great detail. An excellent profile to be evaluated."
-      },
-      {
-        "text": "Hudson is a perfect professional, committed to what he does, he always completes his projects with excellence"
-      }
-    ]
+    "subtitle1": "I had the pleasure of working with Hudson Kennedy at DT3 (Bender M), where he demonstrated exceptional skills and exemplary dedication. His ability to solve problems analytically and creatively, combined with his excellent communication skills, made him a valuable member of the team. Hudson always anticipated the team's needs, proposing improvements and innovative solutions that resulted in significant success in our Sprints. I highly recommend him for any future position, as I know he will continue to achieve great success in his career.",
+    "subtitle2": "Excellent work partner and a great person! His sense of responsibility stands out among others, never leaving anything behind or without a solution. I learned a lot from Hudson and will carry these lessons with me for life.",
+    "subtitle3": "Hudson is an excellent work partner, always seeking improvement and developing new skills. He is always willing to help. Dedicated and committed.",
+    "subtitle4": "Exemplary professional! Very dedicated, resolute, and proactive. And with excellent interpersonal skills. Highly recommended!",
+    "subtitle5": "Great professional, always seeking to learn, improve, and master new subjects. Helping the team solve problems.",
+    "subtitle6": "For me, Hudson was an excellent instructor. He taught me to handle a platform that is not at all in my field. Exemplary professional and of great capacity. He has everything to take off in his career as a Developer.",
+    "subtitle7": "I worked with Hudson at Vilt. Even though it was a short period, I had the opportunity to get to know this wonderful person, very animated and collaborative. We participated in training and some challenges together, during this time, as a more experienced person, he showed himself to be a good guide and an excellent motivator for everyone around him and especially for the younger people. Always willing to help, he will be a great ally in any team.",
+    "subtitle8": "I had the opportunity to work with Hudson. It was a very interesting experience, as he is a very dedicated and competent professional in the frontend. A pleasant surprise and highly recommended. Success Hudson!",
+    "subtitle9": "Hudson is a complete professional, always proactive and willing to help, but during the time we worked together, he really stood out for his skill in frontend development and knowledge of UX/UI, always very detail-oriented. He became a reference for me, I am sure he will contribute a lot to the team he joins!",
+    "subtitle10": "Working with Hudson was an excellent experience. His understanding of FrontEnd is evident in every implementation and support to the team. He is proactive, creative, and always seeks innovative and elegant solutions.",
+    "subtitle11": "I had the pleasure of having Hudson on my team. A focused and creative developer, always seeking solutions to the challenges we encounter in the project. Proactive and available to help teammates, aiming for the best in delivering objectives!",
+    "subtitle12": "A great professional and a deep connoisseur of the front-end, not limited to using frameworks to make the 'magic' happen. Highly recommended!",
+    "subtitle13": "I had the pleasure of working with colleague Hudson Kennedy in the development team at Cast, on the MG-Florestas project, and I can attest to his exceptional skills and dedication. Hudson is a talented and passionate front-end developer, always demonstrating a deep understanding of the latest technologies and best practices. During our time together at Cast, he played a fundamental role in the success of the project. What impressed me most about Hudson is his ability to tackle complex challenges with creativity and efficiency. His attention to detail and commitment to delivering high-quality products always set him apart. In addition to his impressive technical skills, Hudson was an incredible team member. His clear communication and willingness to collaborate made the work environment more productive and enjoyable. I recommend Hudson without reservation and am confident that he will continue to have a positive impact wherever he goes. If you are looking for a talented and committed front-end developer, Hudson Kennedy is the right choice. Feel free to contact me if you need additional information. Sincerely, Gei Batista.",
+    "subtitle14": "Hudson was one of the candidates I had the pleasure of meeting. A very educated person, with an incredible life story and led our conversation in a very relaxed manner, always explaining with great richness of detail his experiences. An excellent profile to be evaluated.",
+    "subtitle15": "Hudson is a perfect professional, committed to what he does, always completing his projects with excellence.",
+    "subtitle16": "Hudson is a super dedicated professional and committed to delivery, always demonstrating proactivity, ease, as well as initiative and the ability to solve problems objectively and with technical knowledge."
   },
 
   "experiences": {

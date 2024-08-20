@@ -2,15 +2,17 @@ import React, { Suspense } from "react";
 import styles from "./Testimonials.module.css";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
-import TestimonialComponent from "../../components/Card/TestimonialComponent";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
 );
 
+const TestimonialComponent = React.lazy(
+  () => import("../../components/Testimonial/TestimonialComponent")
+);
+
 const Testimonials = () => {
   const { t } = useTranslation();
-
 
   return (
     <Transition onAnimationComplete={() => {}}>
@@ -23,7 +25,9 @@ const Testimonials = () => {
           {t("testimonials.title")}
           <span>{t("testimonials.text")}</span>
         </h2>
-        <TestimonialComponent/>
+        <Suspense fallback={<div>Loading...</div>}>
+          <TestimonialComponent />
+        </Suspense>
       </section>
     </Transition>
   );

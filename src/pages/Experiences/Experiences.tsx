@@ -16,10 +16,10 @@ const TimelineElement = ({ title, subtitle, description, date }: Experience) => 
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentStyle={{
-      background: "var(--bg_color)",
+      background: "var(--second_bg_color)",
       color: "var(--main_color)",
     }}
-    contentArrowStyle={{ borderRight: "none" }}
+    contentArrowStyle={{ borderRight: "10px solid var(--second_bg_color)" }}
     date={date}
     iconStyle={{
       background: "var(--bg_color)",
