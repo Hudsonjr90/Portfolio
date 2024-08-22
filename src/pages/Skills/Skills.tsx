@@ -11,12 +11,10 @@ import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { ThemeProvider } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
 import { cloudTheme, searchTheme, useTheme } from "../../context/ThemeContext";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
 
 const Cloud = React.lazy(
   () => import("../../components/WordCloud/Cloud")
@@ -25,6 +23,16 @@ const Cloud = React.lazy(
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
 );
+
+const categoryOptions = [
+  { value: "all", label: "All" },
+  { value: "frontend", label: "Frontend" },
+  { value: "backend", label: "Backend" },
+  { value: "database", label: "Database" },
+  { value: "tools", label: "Tools" },
+  { value: "deploy", label: "Deploy" },
+  { value: "design", label: "Design" },
+];
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -135,7 +143,7 @@ const Skills = () => {
           <span>//</span> {t("skills.title")}
           <span>{t("skills.text")}</span>
         </h2>
-      <motion.span
+        <motion.span
           initial={{ opacity: 0, y: "-100%" }}
           animate={{ opacity: 1, y: "0%" }}
           transition={{
@@ -181,175 +189,130 @@ const Skills = () => {
           </Suspense>
         ) : (
           <>
-
-        <motion.div
-          initial={{ opacity: 0, x: "-100%" }}
-          animate={{ opacity: 1, x: "0%" }}
-          transition={{
-            duration: 2.5,
-            delay: 0.3,
-            ease: [0.3, 0, 0.2, 1],
-          }}
-          className={styles.filters}
-        >
-          <Select
-            value={selectedCategory}
-            onChange={handleCategoryChange}
-            displayEmpty
-            inputProps={{ "aria-label": "Without label",
-             }}
-            sx={{
-              "& .MuiSelect-select": {
-                color: "var(--main_color)",
-                fontSize: "12px",
-              },
-              "& .MuiSelect-select.Mui-focus": {
-                color: "var(--main_color)",
-              },
-              "& .MuiSvgIcon-root": {
-                color: "var(--main_color)",
-                fontSize: "20px",
-              },
-              "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: "var(--main_color)",
-              },
-              "& .MuiOutlinedInput-notchedOutline.Mui-focus": {
-                borderColor: "var(--main_color)",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "var(--main_color)",
-              },
-            }}
-          >
-            <MenuItem value="all">All</MenuItem>
-            <MenuItem value="frontend">Frontend</MenuItem>
-            <MenuItem value="backend">Backend</MenuItem>
-            <MenuItem value="database">Database</MenuItem>
-            <MenuItem value="tools">Tools</MenuItem>
-            <MenuItem value="deploy">Deploy</MenuItem>
-            <MenuItem value="design">Design</MenuItem>
-          </Select>
-          <TextField
-            value={searchTerm}
-            onChange={handleSearchTermChange}
-            label={t("skills.search")}
-            variant="outlined"
-            InputProps={{
-              endAdornment: <SearchIcon />,
-            }}
-            sx={{
-              "& .MuiInputBase-input": {
-                color: "var(--main_color)",
-              },
-              "& .MuiSvgIcon-root": {
-                color: "var(--main_color)",
-                fontSize: "20px",
-              },
-              "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: "var(--main_color)",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "var(--main_color)",
-              },
-              "& .Mui-active .MuiOutlinedInput-notchedOutline": {
-                borderColor: "var(--main_color)",
-              },
-              "& .MuiInputLabel-root": {
-                color: "var(--main_color)",
-                fontSize: "12px",
-              },
-              "& .MuiInputLabel-root.Mui-focus": {
-                color: "var(--main_color)",
-              },
-            }}
-          />
-        </motion.div>
-        {visibleIcons.length === 0 ? (
-          <motion.div
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            transition={{
-              duration: 2.5,
-              delay: 0.3,
-              ease: [0.3, 0, 0.2, 1],
-            }}
-            className={styles.no_results}
-          >
-            {noResults && <p>{t("skills.noResults")}</p>}
-          </motion.div>
-        ) : (
-          <motion.div
-            className={styles.icons_container}
-            variants={container}
-            initial="hidden"
-            animate="visible"
-          >
-            {visibleIcons.map((icon) => {
-              const IconComponent = iconComponents[icon.name];
-              return (
-                <motion.div
-                  key={icon.id}
-                  variants={container}
-                  className={styles.box_icon}
+            <motion.div
+              initial={{ opacity: 0, x: "-100%" }}
+              animate={{ opacity: 1, x: "0%" }}
+              transition={{
+                duration: 2.5,
+                delay: 0.3,
+                ease: [0.3, 0, 0.2, 1],
+              }}
+              className={styles.filters}
+            >
+              <div className={styles.selectContainer}>
+                <select
+                  value={selectedCategory}
+                  onChange={handleCategoryChange}
+                  className={styles.customSelect}
                 >
-                  <span className={styles.icon_description}>{icon.name}</span>
-                  <ProgressBar
-                    radius={65}
-                    strokeWidth={4}
-                    strokeColor={mainColor}
-                    trackStrokeWidth={9}
-                    trackStrokeColor="var(--second_bg_color)"
-                    pointerRadius={9}
-                    pointerStrokeWidth={8}
-                    pointerStrokeColor={mainColor}
-                    progress={icon.percentage}
-                    initialAnimation={true}
-                    transition="2.5s ease 0.5s"
-                    trackTransition="0s ease"
-                  >
-                    <div className={styles.icon_wrapper}>
-                      {IconComponent && (
-                        <IconComponent className={styles.icon} />
-                      )}
-                    </div>
-                    <div className={styles.indicator}>
-                      <CountUp
-                        start={0}
-                        end={icon.percentage}
-                        duration={2.5}
-                        suffix={"%"}
-                      />
-                    </div>
-                  </ProgressBar>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        )}
-        <motion.div
-          initial={{ opacity: 0, x: "-100%" }}
-          animate={{ opacity: 1, x: "0%" }}
-          transition={{
-            duration: 2.5,
-            delay: 0.3,
-            ease: [0.3, 0, 0.2, 1],
-          }}
-        >
-          <ReactPaginate
-            pageCount={totalPages}
-            pageRangeDisplayed={5}
-            marginPagesDisplayed={0}
-            onPageChange={({ selected: selectedPage }) => {
-              handlePageClick({ selected: selectedPage });
-            }}
-            containerClassName={styles.pagination}
-            activeClassName={styles.activePage}
-            previousLabel={"<<"}
-            nextLabel={">>"}
-            forcePage={currentPage}
-          />
-        </motion.div>
- </>
+                  {categoryOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+                <ArrowDropDownIcon className={styles.selectIcon} />
+              </div>
+              <div className={styles.searchContainer}>
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={handleSearchTermChange}
+                  placeholder=" "
+                  className={styles.customTextField}
+                />
+                <label className={styles.customTextFieldLabel}>
+                  {t("skills.search")}
+                </label>
+                <SearchIcon className={styles.searchIcon} />
+              </div>
+            </motion.div>
+            {visibleIcons.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0, x: "-100%" }}
+                animate={{ opacity: 1, x: "0%" }}
+                transition={{
+                  duration: 2.5,
+                  delay: 0.3,
+                  ease: [0.3, 0, 0.2, 1],
+                }}
+                className={styles.no_results}
+              >
+                {noResults && <p>{t("skills.noResults")}</p>}
+              </motion.div>
+            ) : (
+              <motion.div
+                className={styles.icons_container}
+                variants={container}
+                initial="hidden"
+                animate="visible"
+              >
+                {visibleIcons.map((icon) => {
+                  const IconComponent = iconComponents[icon.name];
+                  return (
+                    <motion.div
+                      key={icon.id}
+                      variants={container}
+                      className={styles.box_icon}
+                    >
+                      <span className={styles.icon_description}>{icon.name}</span>
+                      <ProgressBar
+                        radius={65}
+                        strokeWidth={4}
+                        strokeColor={mainColor}
+                        trackStrokeWidth={9}
+                        trackStrokeColor="var(--second_bg_color)"
+                        pointerRadius={9}
+                        pointerStrokeWidth={8}
+                        pointerStrokeColor={mainColor}
+                        progress={icon.percentage}
+                        initialAnimation={true}
+                        transition="2.5s ease 0.5s"
+                        trackTransition="0s ease"
+                      >
+                        <div className={styles.icon_wrapper}>
+                          {IconComponent && (
+                            <IconComponent className={styles.icon} />
+                          )}
+                        </div>
+                        <div className={styles.indicator}>
+                          <CountUp
+                            start={0}
+                            end={icon.percentage}
+                            duration={2.5}
+                            suffix={"%"}
+                          />
+                        </div>
+                      </ProgressBar>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            )}
+            <motion.div
+              initial={{ opacity: 0, x: "-100%" }}
+              animate={{ opacity: 1, x: "0%" }}
+              transition={{
+                duration: 2.5,
+                delay: 0.3,
+                ease: [0.3, 0, 0.2, 1],
+              }}
+            >
+              <ReactPaginate
+                pageCount={totalPages}
+                pageRangeDisplayed={5}
+                marginPagesDisplayed={0}
+                onPageChange={({ selected: selectedPage }) => {
+                  handlePageClick({ selected: selectedPage });
+                }}
+                containerClassName={styles.pagination}
+                activeClassName={styles.activePage}
+                previousLabel={"<<"}
+                nextLabel={">>"}
+                forcePage={currentPage}
+              />
+            </motion.div>
+          </>
         )}
       </section>
     </Transition>

@@ -36,6 +36,117 @@
   padding: 3rem;
 }
 
+.customSelect {
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid var(--main_color);
+  border-radius: 4px;
+  color: var(--main_color);
+  background-color: var(--bg_color);
+  margin-right: 10px;
+  appearance: none;
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  transition: border-color 0.3s ease;
+}
+
+.customSelect:focus {
+  border-color: var(--main_color);
+  outline: none;
+  box-shadow: 0 0 5px var(--main_color);
+}
+
+.searchContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.customTextField {
+  padding: 10px;
+  padding-right: 30px; 
+  font-size: 12px;
+  border: 1px solid var(--main_color);
+  border-radius: 4px;
+  color: var(--main_color);
+  background-color: var(--bg_color);
+  width: 75%;
+  transition: border-color 0.3s ease;
+}
+
+.customTextField:focus {
+  border-color: var(--main_color);
+  outline: none;
+  box-shadow: 0 0 5px var(--main_color);
+}
+
+.customTextField::placeholder {
+  color: transparent;
+}
+
+.customTextFieldLabel {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main_color);
+  font-size: 12px;
+  pointer-events: none;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.customTextField:focus + .customTextFieldLabel,
+.customTextField:not(:placeholder-shown) + .customTextFieldLabel {
+  top: -1px;
+  font-size: 10px;
+  color: var(--main_color);
+  background-color: var(--bg_color);
+}
+
+.searchIcon {
+  position: absolute;
+  right: 65px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main_color);
+  font-size: 20px;
+}
+
+.customSelect {
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid var(--main_color);
+  border-radius: 4px;
+  color: var(--main_color);
+  background-color: var(--bg_color);
+  margin-right: 10px;
+  appearance: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  position: relative;
+  padding-right: 30px; 
+}
+
+.customSelect:focus {
+  border-color: var(--main_color);
+  outline: none;
+  box-shadow: 0 0 5px var(--main_color);
+}
+
+.selectIcon {
+  position: relative;
+  right: 40px;
+  top: 40%;
+  transform: translateY(-50%);
+  color: var(--main_color);
+  font-size: 2rem !important;
+  pointer-events: none; 
+}
+
+
 
 .icons_container {
   display: flex;
