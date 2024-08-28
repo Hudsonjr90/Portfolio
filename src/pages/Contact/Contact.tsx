@@ -11,7 +11,8 @@ import Tooltip from '@mui/material/Tooltip'
 import Zoom from '@mui/material/Zoom'
 import { whatsappTheme, emailTheme, linkedinTheme, githubTheme} from '../../context/ThemeContext'
 import { ThemeProvider } from '@mui/material/styles'
-import { WhatsApp, LinkedIn, Email, GitHub } from '@mui/icons-material'
+import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import IconButton from '@mui/material/IconButton'
 
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
@@ -103,7 +104,7 @@ const Contact = () => {
             {t('contact.title')} <span>{t('contact.text')}</span>
           </h2>
 
-          <div className={styles.social_media}>
+          <motion.div className={styles.social_media}>
               <ThemeProvider theme={whatsappTheme}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
@@ -113,7 +114,7 @@ const Contact = () => {
                     delay: 1.2,
                     ease: [0, 0.71, 0.2, 1.01],
                     scale: {
-                      type: 'spring',
+                      type: "spring",
                       damping: 5,
                       stiffness: 100,
                       restDelta: 0.001,
@@ -132,7 +133,7 @@ const Contact = () => {
                       arrow
                     >
                       <IconButton>
-                        <WhatsApp sx={{ color: '#fff', fontSize: 22 }} />
+                        <FaWhatsapp className={styles.icon} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -148,7 +149,7 @@ const Contact = () => {
                     delay: 1.5,
                     ease: [0, 0.71, 0.2, 1.01],
                     scale: {
-                      type: 'spring',
+                      type: "spring",
                       damping: 5,
                       stiffness: 100,
                       restDelta: 0.001,
@@ -167,7 +168,7 @@ const Contact = () => {
                       arrow
                     >
                       <IconButton>
-                        <Email sx={{ color: '#fff', fontSize: 22 }} />
+                        <MdEmail className={styles.icon} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -183,7 +184,7 @@ const Contact = () => {
                     delay: 1.7,
                     ease: [0, 0.71, 0.2, 1.01],
                     scale: {
-                      type: 'spring',
+                      type: "spring",
                       damping: 5,
                       stiffness: 100,
                       restDelta: 0.001,
@@ -202,7 +203,7 @@ const Contact = () => {
                       arrow
                     >
                       <IconButton>
-                        <LinkedIn sx={{ color: '#fff', fontSize: 22 }} />
+                        <FaLinkedin className={styles.icon} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -218,7 +219,7 @@ const Contact = () => {
                     delay: 1.9,
                     ease: [0, 0.71, 0.2, 1.01],
                     scale: {
-                      type: 'spring',
+                      type: "spring",
                       damping: 5,
                       stiffness: 100,
                       restDelta: 0.001,
@@ -235,16 +236,15 @@ const Contact = () => {
                       title="Github"
                       placement="top"
                       arrow
-                      
                     >
                       <IconButton>
-                        <GitHub sx={{ color: '#fff', fontSize: 22 }} />
+                        <FaGithub className={styles.icon} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
                 </motion.div>
               </ThemeProvider>
-            </div>
+            </motion.div>
         </div>
 
         <form className={styles.form} onSubmit={sendEmail}>

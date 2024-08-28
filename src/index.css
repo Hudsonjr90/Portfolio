@@ -34,8 +34,6 @@
 :root {
   --bg_color: #1f242d;
   --main_color: #0ef;
-  --card_bg: #475775;
-  --card_color: #f9f9f9;
   --placeholder_color: rgba(255, 255, 255, 0.3);
   --second_bg_color: #323946;
   --text_color: #ededed;
@@ -45,8 +43,6 @@
 .light_mode {
   --bg_color: #f0f3fd;
   --main_color: #dc2626;
-  --card_bg: #bd3838;
-  --card_color: #f6f6f6;
   --placeholder_color: #808080;
   --second_bg_color: #cbd5e1;
   --text_color: #020617;

@@ -12,7 +12,8 @@ import {
   githubTheme,
 } from "../../context/ThemeContext";
 import { ThemeProvider } from "@mui/material/styles";
-import { WhatsApp, LinkedIn, Email, GitHub } from "@mui/icons-material";
+import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
 import HomeDesktopImage from "/imgs/my.webp";
 import { motion } from "framer-motion";
@@ -115,7 +116,7 @@ const Home = React.memo(() => {
                       arrow
                     >
                       <IconButton>
-                        <WhatsApp sx={{ color: "#fff", fontSize: 22 }} />
+                        <FaWhatsapp className={styles.icon} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -150,7 +151,7 @@ const Home = React.memo(() => {
                       arrow
                     >
                       <IconButton>
-                        <Email sx={{ color: "#fff", fontSize: 22 }} />
+                        <MdEmail className={styles.icon} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -185,7 +186,7 @@ const Home = React.memo(() => {
                       arrow
                     >
                       <IconButton>
-                        <LinkedIn sx={{ color: "#fff", fontSize: 22 }} />
+                        <FaLinkedin className={styles.icon} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>
@@ -220,7 +221,7 @@ const Home = React.memo(() => {
                       arrow
                     >
                       <IconButton>
-                        <GitHub sx={{ color: "#fff", fontSize: 22 }} />
+                        <FaGithub className={styles.icon} />
                       </IconButton>
                     </Tooltip>
                   </NavLink>

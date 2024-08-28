@@ -2,7 +2,7 @@ import styles from './Modal.module.css';
 import { useState, useEffect, useCallback } from 'react';
 import { saveAs } from 'file-saver';
 import { modalTheme } from '../../context/ThemeContext';
-import { FileDownload, Close } from '@mui/icons-material';
+import { FaDownload, FaWindowClose } from "react-icons/fa";
 import IconButton from '@mui/material/IconButton';
 import resumeServer from '../../data/resumeServer';
 import Tooltip from '@mui/material/Tooltip';
@@ -79,12 +79,12 @@ const Modal = ({ show, onClose }: ModalProps) => {
         <ThemeProvider theme={modalTheme}>
           <Tooltip TransitionComponent={Zoom} title={t('home.download')} placement="left" arrow>
             <IconButton className={styles.down_button} onClick={handleDownload}>
-              <FileDownload className={styles.size_button} />
+              <FaDownload className={styles.size_button} />
             </IconButton>
           </Tooltip>
           <Tooltip TransitionComponent={Zoom} title={t('home.close')} placement="right" arrow>
             <IconButton className={styles.close_button} onClick={onClose}>
-              <Close className={styles.size_button} />
+              <FaWindowClose className={styles.size_button} />
             </IconButton>
           </Tooltip>
         </ThemeProvider>

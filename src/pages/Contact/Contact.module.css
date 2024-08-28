@@ -4,8 +4,6 @@
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  padding: 0rem 6% 10rem;
-  overflow-y: hidden;
 }
 
 .header_container {
@@ -52,6 +50,11 @@
   position: relative;
   transition: 0.8s ease;
   width: 3.5rem;
+}
+
+.social_media .icon{
+  color: #fff;
+  font-size: 18px;
 }
 
 .social_media .whatsapp {

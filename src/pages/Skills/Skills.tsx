@@ -6,12 +6,12 @@ import { iconComponents, mainIcons } from "../../data/iconsServer";
 import { useTranslation } from "react-i18next";
 import ProgressBar from "../../components/Progressbar/ProgressBar";
 import CountUp from "react-countup";
-import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
+import { FaCloudflare } from "react-icons/fa";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { FaSearch } from "react-icons/fa";
+import { MdArrowDropDown } from "react-icons/md";
 import { ThemeProvider } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
 import { cloudTheme, searchTheme, useTheme } from "../../context/ThemeContext";
@@ -163,7 +163,7 @@ const Skills = () => {
                 arrow
               >
                 <IconButton className={styles.show_search}>
-                  <SearchIcon />
+                <FaSearch />
                 </IconButton>
               </Tooltip>
             </ThemeProvider>
@@ -176,7 +176,7 @@ const Skills = () => {
                 arrow
               >
                 <IconButton className={styles.show_cloud}>
-                  <ThunderstormIcon />
+                <FaCloudflare />
                 </IconButton>
               </Tooltip>
             </ThemeProvider>
@@ -211,7 +211,7 @@ const Skills = () => {
                     </option>
                   ))}
                 </select>
-                <ArrowDropDownIcon className={styles.selectIcon} />
+                <MdArrowDropDown className={styles.selectIcon} />
               </div>
               <div className={styles.searchContainer}>
                 <input
@@ -224,7 +224,7 @@ const Skills = () => {
                 <label className={styles.customTextFieldLabel}>
                   {t("skills.search")}
                 </label>
-                <SearchIcon className={styles.searchIcon} />
+                <FaSearch className={styles.searchIcon} />
               </div>
             </motion.div>
             {visibleIcons.length === 0 ? (

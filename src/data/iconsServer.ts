@@ -17,7 +17,8 @@ import {
   FaMarkdown,
   FaGitlab,
   FaWordpress,
-  FaMagento
+  FaMagento,
+  FaAws
 } from "react-icons/fa6"
 import {
   SiTailwindcss,
@@ -51,11 +52,13 @@ import {
   SiJasmine,
   SiPostman,
   SiCypress,
-  SiAmazonaws,
   SiSketch,
   SiAdobexd,
   SiNuxtdotjs,
-  SiEslint
+  SiEslint,
+  SiRuby,
+  SiRubyonrails,
+  // SiRubymine
 } from "react-icons/si"
 import {
   BiLogoTypescript,
@@ -134,12 +137,15 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Postman: SiPostman,
   Thunderclient: BiBoltCircle,
   Cypress: SiCypress,
-  AWS: SiAmazonaws,
+  AWS: FaAws,
   Sketch: SiSketch,
   AdobeXD: SiAdobexd,
   Nuxtjs: SiNuxtdotjs,
   Eslint: SiEslint,
-  Magento: FaMagento
+  Magento: FaMagento,
+  Ruby: SiRuby,
+  Rubyonrails: SiRubyonrails,
+  // Rubymine: SiRubymine
 }
 
 const mainIcons = [
@@ -210,6 +216,9 @@ const mainIcons = [
   { id: 63, name: "Nuxtjs", category: "Frontend", percentage: 10 },
   { id: 64, name: "Eslint", category: "Tools", percentage: 60 },
   { id: 65, name: "Magento", category: "Tools", percentage: 70 },
+  { id: 66, name: "Ruby", category: "Backend", percentage: 10 },
+  { id: 67, name: "Rubyonrails", category: "Backend", percentage: 10 },
+  // { id: 68, name: "Rubymine", category: "Tools", percentage: 10 },
 
 ]
 

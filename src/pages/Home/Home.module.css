@@ -51,6 +51,11 @@
   width: 3.5rem;
 }
 
+.social_media .icon{
+  color: #fff;
+  font-size: 18px;
+}
+
 .social_media .whatsapp {
   background: #25d366;
   border: none;
