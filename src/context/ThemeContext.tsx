@@ -9,7 +9,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [mainColor, setMainColor] = useState("#0ef");
+  const [mainColor, setMainColor] = useState("#0ef6cc");
 
   return (
     <ThemeContext.Provider value={{ mainColor, setMainColor }}>

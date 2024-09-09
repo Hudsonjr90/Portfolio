@@ -32,10 +32,10 @@ const Navbar = () => {
   useEffect(() => {
     if (lightMode) {
       document.body.classList.add('light_mode')
-      setMainColor('#dc2626')
+      setMainColor('#f65151')
     } else {
       document.body.classList.remove('light_mode')
-      setMainColor('#0ef')
+      setMainColor('#0ef6cc')
       setTimeout(() => {
         document.body.style.transition = 'background-color 1.5s, color 1.5s'
       }, 1500)
@@ -64,9 +64,9 @@ const Navbar = () => {
       document.documentElement.style.setProperty('--text_color', '#eb5e28')
       setMainColor(mainColor)
     } else if (selectedColor === 'ball_4') {
-      document.documentElement.style.setProperty('--main_color', '#0ef')
+      document.documentElement.style.setProperty('--main_color', '#0ef6cc')
       document.documentElement.style.setProperty('--text_color', '#fff')
-      setMainColor('#0ef')
+      setMainColor('#0ef6cc')
     }
   }, [selectedColor])
 

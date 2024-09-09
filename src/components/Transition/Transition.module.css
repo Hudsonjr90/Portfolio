@@ -1,5 +1,5 @@
 .slide_in {
-  background: var(--second_bg_color);
+  background: var(--bg_color);
   height: 100vh;
   left: 0;
   position: fixed;
@@ -10,7 +10,7 @@
 }
 
 .slide_out {
-  background: var(--second_bg_color);
+  background: var(--bg_color);
   height: 100vh;
   left: 0;
   position: fixed;

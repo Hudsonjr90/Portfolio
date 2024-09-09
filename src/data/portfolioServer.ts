@@ -12,6 +12,8 @@ import conversor from '/imgs/imgProjects/conversor.webp'
 import sorteio from '/imgs/imgProjects/sorteio.webp'
 import task from '/imgs/imgProjects/task.webp'
 import imc from '/imgs/imgProjects/imc.webp'
+import kfc from '/imgs/imgProjects/kfc.webp'
+import pokeHistory from '/imgs/imgProjects/pokehistory.webp'
 
 const portfolioServer = [
   {
@@ -146,24 +148,24 @@ const portfolioServer = [
     linkDeploy: 'https://calcimc.vercel.app/',
     linkRepository: 'https://github.com/Hudsonjr90/Calculadora-IMC',
   },
-  // {
-  //   id: 13,
-  //   image: ,
-  //   name: "",
-  //   description: "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // },
-  // {
-  //   id: 14,
-  //   image: ,
-  //   name: "",
-  //   description: "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // },
+  {
+    id: 13,
+    image: kfc,
+    name: "KFC Landing Page",
+    description: "Landing Page simples, criado através de um teste técnico",
+    technologies: ["HTML", "CSS", "JS"],
+    linkDeploy: "https://kfclandingpage.vercel.app",
+    linkRepository: "https://github.com/Hudsonjr90/kfclandingpage",
+  },
+  {
+    id: 14,
+    image: pokeHistory,
+    name: "Poke History",
+    description: "Projeto para pesquisar seus pokémons favoritos e saber sobre a história do mundo destas criaturinhas",
+    technologies: ["HTML", "CSS", "JS"],
+    linkDeploy: "https://pokedex-hudsonjr90.vercel.app",
+    linkRepository: "https://github.com/Hudsonjr90/PokeHistory",
+  },
   // {
   //   id: 15,
   //   image: ,

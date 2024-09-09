@@ -14,7 +14,9 @@ import portfolioServer from "../../data/portfolioServer";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
+const ParticlesB = React.lazy(
+  () => import("../../components/Particles/ParticlesB")
+);
 
 const Portfolio = () => {
   const { t } = useTranslation();
@@ -72,7 +74,7 @@ const Portfolio = () => {
           return newOffset;
         });
       }
-    }, 5000);
+    },10000);
 
     return () => clearInterval(intervalId);
   }, [isPaused, currentPage, itemsPerPage]);
@@ -117,6 +119,10 @@ const Portfolio = () => {
                     loading="lazy"
                   />
                   <CardContent className={styles.cardContent}>
+                     {item.name} 
+                  </CardContent>
+                  <CardContent className={styles.cardContent}>
+                
                     {t(`projects.data.${item.id}.description`)}
                   </CardContent>
                   <CardContent className={styles.cardContent}>
