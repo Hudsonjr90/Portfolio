@@ -52,10 +52,10 @@ export const emailTheme = createTheme({
         tooltip: {
           fontFamily: "Orbitron, sans-serif",
           fontSize: "1.3rem",
-          backgroundColor: "#ee0a0a",
+          backgroundColor: "#f65151",
         },
         arrow: {
-          color: "#ee0a0a",
+          color: "#f65151",
         },
       },
     },
