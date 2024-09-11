@@ -5,7 +5,7 @@ import Transition from "../../components/Transition/Transition";
 import { iconComponents, mainIcons } from "../../data/iconsServer";
 import { useTranslation } from "react-i18next";
 import ProgressBar from "../../components/Progressbar/ProgressBar";
-import CountUp from "react-countup";
+//import CountUp from "react-countup";
 import { FaCloudflare } from "react-icons/fa";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
@@ -14,11 +14,9 @@ import { FaSearch } from "react-icons/fa";
 import { MdArrowDropDown } from "react-icons/md";
 import { ThemeProvider } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
-import { cloudTheme, searchTheme, useTheme } from "../../context/ThemeContext";
+import { simpleTheme, useTheme } from "../../context/ThemeContext";
 
-const Cloud = React.lazy(
-  () => import("../../components/WordCloud/Cloud")
-);
+const Cloud = React.lazy(() => import("../../components/WordCloud/Cloud"));
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -155,7 +153,7 @@ const Skills = () => {
           onClick={toggleCloud}
         >
           {showCloud ? (
-            <ThemeProvider theme={searchTheme}>
+            <ThemeProvider theme={simpleTheme}>
               <Tooltip
                 TransitionComponent={Zoom}
                 title={t("skills.searchable")}
@@ -163,12 +161,12 @@ const Skills = () => {
                 arrow
               >
                 <IconButton className={styles.show_search}>
-                <FaSearch />
+                  <FaSearch />
                 </IconButton>
               </Tooltip>
             </ThemeProvider>
           ) : (
-            <ThemeProvider theme={cloudTheme}>
+            <ThemeProvider theme={simpleTheme}>
               <Tooltip
                 TransitionComponent={Zoom}
                 title={t("skills.cloudWord")}
@@ -176,7 +174,7 @@ const Skills = () => {
                 arrow
               >
                 <IconButton className={styles.show_cloud}>
-                <FaCloudflare />
+                  <FaCloudflare />
                 </IconButton>
               </Tooltip>
             </ThemeProvider>
@@ -255,35 +253,34 @@ const Skills = () => {
                       variants={container}
                       className={styles.box_icon}
                     >
-                      <span className={styles.icon_description}>{icon.name}</span>
-                      <ProgressBar
-                        radius={65}
-                        strokeWidth={4}
-                        strokeColor={mainColor}
-                        trackStrokeWidth={9}
-                        trackStrokeColor="var(--second_bg_color)"
-                        pointerRadius={9}
-                        pointerStrokeWidth={8}
-                        pointerStrokeColor={mainColor}
-                        progress={icon.percentage}
-                        initialAnimation={true}
-                        transition="2.5s ease 0.5s"
-                        trackTransition="0s ease"
-                      >
-                        <div className={styles.icon_wrapper}>
-                          {IconComponent && (
-                            <IconComponent className={styles.icon} />
-                          )}
-                        </div>
-                        <div className={styles.indicator}>
-                          <CountUp
-                            start={0}
-                            end={icon.percentage}
-                            duration={2.5}
-                            suffix={"%"}
-                          />
-                        </div>
-                      </ProgressBar>
+                     <div className={styles.icon_description}>
+                     {t(`${icon.level}`)}
+                      </div>
+                        <ProgressBar
+                          radius={70}
+                          strokeWidth={4}
+                          strokeColor={mainColor}
+                          trackStrokeWidth={9}
+                          trackStrokeColor="var(--second_bg_color)"
+                          pointerRadius={6}
+                          pointerStrokeWidth={5}
+                          pointerStrokeColor={mainColor}
+                          progress={icon.percentage}
+                          initialAnimation={true}
+                          transition="2.5s ease 0.5s"
+                          trackTransition="0s ease"
+                        >
+                         
+                            <div className={styles.icon_wrapper}>
+                              {IconComponent && (
+                                <IconComponent className={styles.icon} />
+                              )}
+                            </div>
+                         
+                          <div className={styles.indicator}>
+                           {icon.name}
+                          </div>
+                        </ProgressBar>
                     </motion.div>
                   );
                 })}

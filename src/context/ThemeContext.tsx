@@ -96,7 +96,7 @@ export const githubTheme = createTheme({
   },
 });
 
-export const modalTheme = createTheme({
+export const simpleTheme = createTheme({
   components: {
     MuiTooltip: {
       styleOverrides: {
@@ -113,37 +113,21 @@ export const modalTheme = createTheme({
   },
 });
 
-export const searchTheme = createTheme({
-  components: {
-    MuiTooltip: {
-      styleOverrides: {
-        tooltip: {
-          fontFamily: "Orbitron, sans-serif",
-          fontSize: "1.3rem",
-          backgroundColor: "var(--main_color)",
-        },
-        arrow: {
-          color: "var(--main_color)",
-        },
-      },
-    },
-  },
-});
+// export const searchTheme = createTheme({
+//   components: {
+//     MuiTooltip: {
+//       styleOverrides: {
+//         tooltip: {
+//           fontFamily: "Orbitron, sans-serif",
+//           fontSize: "1.3rem",
+//           backgroundColor: "var(--main_color)",
+//         },
+//         arrow: {
+//           color: "var(--main_color)",
+//         },
+//       },
+//     },
+//   },
+// });
 
-export const cloudTheme = createTheme({
-  components: {
-    MuiTooltip: {
-      styleOverrides: {
-        tooltip: {
-          fontFamily: "Orbitron, sans-serif",
-          fontSize: "1.3rem",
-          backgroundColor: "var(--main_color)",
-        },
-        arrow: {
-          color: "var(--main_color)",
-        },
-      },
-    },
-  },
-});
 

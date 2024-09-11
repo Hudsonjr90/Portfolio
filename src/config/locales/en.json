@@ -162,7 +162,11 @@
     "search": "Search...",
     "noResults": "No skills found",
     "cloudWord": "Word Cloud",
-    "searchable": "Search and Filter"
+    "searchable": "Search and Filter",
+    "expert" : "Expert",
+    "advanced" :  "Advanced",
+    "intermediate" : "Intermediate",
+    "basic" : "Basic"
   },
 
   "projects": {

@@ -162,7 +162,11 @@
     "search": "Rechercher...",
     "noResults": "Aucune compétence trouvée",
     "cloudWord": "Nuage de mots",
-    "searchable": "Filtrage et recherche"
+    "searchable": "Filtrage et recherche",
+    "expert" : "Expert",
+    "advanced" :  "Avancé",
+    "intermediate" : "Intermédiaire",
+    "basic" : "Basique"
   },
 
   "projects": {

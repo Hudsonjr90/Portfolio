@@ -163,7 +163,11 @@
     "search": "Buscar...",
     "noResults": "Nenhuma habilidade encontrada",
     "cloudWord": "Nuvem de palavras",
-    "searchable": "Filtro e Busca"
+    "searchable": "Filtro e Busca",
+    "expert" : "Especialista",
+    "advanced" :  "Avançado",
+    "intermediate" : "Intermediário",
+    "basic" : "Básico" 
   },
 
   "projects": {

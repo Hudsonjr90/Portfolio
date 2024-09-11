@@ -169,12 +169,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 6rem;
-  color: var(--main_color);
+  
 }
 
 .icon_description {
   text-align: center;
   font-size: 1.9rem;
+  color: var(--main_color);
 }
 
 .indicator {
@@ -188,6 +189,7 @@
   height: 100%;
   user-select: none;
   font-size: 2rem;
+  color: var(--main_color);
 }
 
 .pagination {
@@ -272,12 +274,12 @@
     justify-content: center;
     text-align: center;
     position: absolute;
-    margin-top: -135px;
+    margin-top: -130px;
     margin-left: 5px;
     width: 100%;
     height: 100%;
     user-select: none;
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 
   .pagination {

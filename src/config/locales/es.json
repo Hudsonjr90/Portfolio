@@ -163,7 +163,11 @@
     "search": "Buscar...",
     "noResults": "No se encontraron habilidades",
     "cloudWord": "Nube de palabras",
-    "searchable": "Filtrado y búsqueda"
+    "searchable": "Filtrado y búsqueda",
+    "expert" : "Especialista",
+    "advanced" :  "Avanzado",
+    "intermediate" : "Intermedio",
+    "basic" : "Básico"
   },
 
   "projects": {
