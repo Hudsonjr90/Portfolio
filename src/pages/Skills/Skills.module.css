@@ -146,8 +146,6 @@
   pointer-events: none; 
 }
 
-
-
 .icons_container {
   display: flex;
   gap: 2rem;
@@ -169,7 +167,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 6rem;
-  
+  color: var(--main_color);
 }
 
 .icon_description {
@@ -232,7 +230,6 @@
   background-color: var(--bg_color);
 }
 
-
 .no_results {
   display: flex;
   justify-content: center;
@@ -275,7 +272,7 @@
     text-align: center;
     position: absolute;
     margin-top: -130px;
-    margin-left: 5px;
+    margin-left: 3px;
     width: 100%;
     height: 100%;
     user-select: none;
@@ -341,6 +338,8 @@
 
   .indicator {
     margin-top: -7rem;
+    margin-left: 2px;
+    font-size: 1.3rem;
   }
 
   .pagination li a {
@@ -390,6 +389,8 @@
 
   .indicator {
     margin-top: -7rem;
+    margin-left: 2px;
+    font-size: 1.3rem;
   }
 
   .pagination li a {
@@ -435,6 +436,8 @@
 
   .indicator {
     margin-top: -7rem;
+    margin-left: 2px;
+    font-size: 1.2rem;
   }
 
   .pagination li a {
@@ -512,6 +515,11 @@
     gap: 1rem;
   }
 
+  .filters{
+   margin-left: 8rem;
+  }
+  
+
   .icon {
     height: 7rem;
     width: 7rem;
@@ -529,11 +537,13 @@
 
   .indicator {
     margin-top: -8rem;
+    margin-left: 2px;
+    font-size: 1.3rem;
   }
 
   .pagination li a {
     width: auto;
-    padding: 0.2rem 1rem;
+    padding: 0.8rem 1rem;
     text-align: center;
   }
 
@@ -674,6 +684,10 @@
     height: 10rem;
     width: 10rem;
     margin-bottom: 2rem;
+  }
+
+  .filters{
+    margin-left: 5rem;  
   }
 
   .box_icon {

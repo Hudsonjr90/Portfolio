@@ -113,21 +113,3 @@ export const simpleTheme = createTheme({
   },
 });
 
-// export const searchTheme = createTheme({
-//   components: {
-//     MuiTooltip: {
-//       styleOverrides: {
-//         tooltip: {
-//           fontFamily: "Orbitron, sans-serif",
-//           fontSize: "1.3rem",
-//           backgroundColor: "var(--main_color)",
-//         },
-//         arrow: {
-//           color: "var(--main_color)",
-//         },
-//       },
-//     },
-//   },
-// });
-
-
