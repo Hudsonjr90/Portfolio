@@ -21,7 +21,7 @@ const testimonialServer = [
     img: "/imgs/imgsMobile/linkedin3.webp",
   },
   {
-    title: "Tássia Felicio",
+    title: "Rafael Araujo",
     subtitle: "testimonials.subtitle4",
     img: "/imgs/imgsMobile/linkedin4.webp",
   },
@@ -81,10 +81,11 @@ const testimonialServer = [
     img: "/imgs/imgsMobile/linkedin15.webp",
   },
   {
-    title: "Rafael Araujo",
+    title: "Tássia Felicio",
     subtitle: "testimonials.subtitle16",
     img: "/imgs/imgsMobile/linkedin16.webp",
   },
+
 ];
 
 export default testimonialServer;

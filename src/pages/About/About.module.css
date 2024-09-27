@@ -11,6 +11,8 @@
 .container_img img {
   margin-bottom: 3rem;
   width: 27vw;
+  border: 1px solid var(--main_color);
+  border-radius: 50%;
 }
 
 .about_content {

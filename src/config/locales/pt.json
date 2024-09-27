@@ -117,7 +117,7 @@
     "subtitle1": "Tive o prazer de trabalhar com o Hudson Kennedy na DT3 (Bender M), onde ele demonstrou habilidades excepcionais e uma dedicação exemplar. Sua capacidade de resolver problemas de forma analítica e criativa, combinada com suas excelentes habilidades de comunicação, fez dele um membro valioso da equipe. Hudson sempre se antecipou às necessidades da equipe, propondo melhorias e soluções inovadoras que resultaram em sucesso significativo em nossas Sprints. Recomendo fortemente para qualquer posição que ele venha a buscar no futuro, pois sei que ele continuará a alcançar grandes sucessos em sua carreira.",
     "subtitle2": "Excelente parceiro de trabalho e uma ótima pessoa! Seu senso de responsabilidade se destaca dentre os demais, nunca deixando nada pra trás ou sem solução. Aprendi muito com o Hudson e com certeza levo esses aprendizados para a vida.",
     "subtitle3": "Hudson é um excelente parceiro de trabalho, sempre buscando aprimoramento e desenvolver novas habilidades. Está sempre disposto a ajudar. Dedicado e comprometido.",
-    "subtitle4": "Profissional exemplar! Muito dedicado, assíduo resolutivo e proativo. E de uma ótima convivência interpessoal. Super recomendo!",
+    "subtitle4": "Hudson é um profissional super dedicado e comprometido com a entrega, sempre demonstrou pro-atividade, desenvoltura, bem como a iniciativa e capacidade de resolver problemas de forma objetiva e com conhecimento técnico.",
     "subtitle5": "Ótimo Profissional, sempre buscando aprender, melhorar e dominar novos assuntos. Auxiliando a equipe na resolução de problemas.",
     "subtitle6": "Hudson para mim, foi um excelente instrutor. Me ensinou a manusear uma plataforma, que nem de longe é da minha área. Profissional exemplar e de extrema capacidade. tem tudo para decolar em sua carreira de Desenvolvedor.",
     "subtitle7": "Trabalhei com o Hudson na Vilt. Mesmo sendo um período curto, tive a oportunidade de conhecer essa pessoa maravilhosa, bem animada e colaborativa. Participamos de treinamentos e alguns desafios juntos, durantes esse tempo ele como uma pessoa mais experiente se mostrou um bom orientador e um ótimo motivador para todos a sua volta e principalmente para as pessoas mais juniores. Sempre disposto a ajudar, ele será um grande aliado dentro de qualquer equipe.",
@@ -129,7 +129,7 @@
     "subtitle13": "Eu tive o prazer de trabalhar com o colega Hudson Kennedy na equipe de desenvolvimento da Cast, no projeto MG-Florestas e posso atestar suas habilidades excepcionais e dedicação. Hudson é um desenvolvedor front-end talentoso e apaixonado, sempre demonstrando um profundo entendimento das mais recentes tecnologias e melhores práticas. Durante nosso tempo juntos na Cast, ele desempenhou um papel fundamental no sucesso do projeto. O que mais me impressionou em Hudson é a sua capacidade de enfrentar desafios complexos com criatividade e eficiência. Sua atenção aos detalhes e comprometimento com a entrega de produtos de alta qualidade sempre o destacaram. Além de suas habilidades técnicas impressionantes, Hudson foi membro incrível da equipe. Sua comunicação clara e disposição para colaborar tornaram o ambiente de trabalho mais produtivo e agradável. Recomendo Hudson sem reservas e estou confiante de que ele continuará a ter um impacto positivo onde quer que vá. Se você está procurando um desenvolvedor front-end talentoso e comprometido, Hudson Kennedy é a escolha certa. Sinta-se à vontade para entrar em contato se precisar de informações adicionais. Atenciosamente, Gei Batista.",
     "subtitle14": "Hudson foi um dos candidatos que tive o prazer de conhecer. Uma pessoa muito educada, com uma história de vida incrível e levou o nosso bate-papo de uma maneira bem descontraída, sempre explicando com muita riqueza de detalhes as suas experiências. Um excelente perfil a ser avaliado.  ",
     "subtitle15": "Hudson é um perfeito profissional, comprometido no que faz, sempre conclui seus projetos com excelência",
-    "subtitle16": "Hudson é um profissional super dedicado e comprometido com a entrega, sempre demonstrou pro-atividade, desenvoltura, bem como a iniciativa e capacidade de resolver problemas de forma objetiva e com conhecimento técnico."
+    "subtitle16": "Profissional exemplar! Muito dedicado, assíduo resolutivo e proativo. E de uma ótima convivência interpessoal. Super recomendo!"
   },
 
   "experiences": {
@@ -164,10 +164,10 @@
     "noResults": "Nenhuma habilidade encontrada",
     "cloudWord": "Nuvem de palavras",
     "searchable": "Filtro e Busca",
-    "expert" : "Especialista",
-    "advanced" :  "Avançado",
-    "intermediate" : "Intermediário",
-    "basic" : "Básico" 
+    "expert": "Especialista",
+    "advanced": "Avançado",
+    "intermediate": "Intermediário",
+    "basic": "Básico"
   },
 
   "projects": {

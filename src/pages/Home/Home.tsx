@@ -15,7 +15,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
-import HomeDesktopImage from "/imgs/my.webp";
+import HomeDesktopImage from "/imgs/about.webp";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
@@ -261,7 +261,7 @@ const Home = React.memo(() => {
             ease: [0.2, 0, 0.2, 1],
           }}
         >
-          Copyright© 2024 H.K DEV{" "}
+          © 2024 H.K DEV
         </motion.div>
       </Transition>
       <Modal show={showModal} onClose={handleCloseModal} />
