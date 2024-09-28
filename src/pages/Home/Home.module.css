@@ -144,9 +144,9 @@
 
 .home_img img { 
   width: 26.5vw;
-  border: none;
+  border: 1px solid var(--main_color);
   border-radius: 50%;
-  background-color: var(--main_color);
+
 }
 
 .footer {
