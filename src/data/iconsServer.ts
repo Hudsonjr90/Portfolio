@@ -58,6 +58,7 @@ import {
   SiEslint,
   SiRuby,
   SiRubyonrails,
+  SiNestjs,
   // SiRubymine
 } from "react-icons/si";
 import {
@@ -145,6 +146,7 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Magento: FaMagento,
   Ruby: SiRuby,
   Rubyonrails: SiRubyonrails,
+  NestJs: SiNestjs,
   // Rubymine: SiRubymine
 };
 
@@ -259,8 +261,8 @@ const mainIcons = [
     id: 17,
     name: "Express",
     category: "Backend",
-    percentage: 30,
-    level: "skills.basic",
+    percentage: 50,
+    level: "skills.intermediate",
   },
   {
     id: 18,
@@ -297,7 +299,7 @@ const mainIcons = [
     percentage: 70,
     level: "skills.advanced",
   },
-  { id: 23, name: "PHP", category: "Backend", percentage: 30, level: "skills.basic" },
+  { id: 23, name: "PHP", category: "Backend", percentage: 40, level: "skills.basic" },
   {
     id: 24,
     name: "Python",
@@ -316,7 +318,7 @@ const mainIcons = [
     id: 26,
     name: "Java",
     category: "Backend",
-    percentage: 10,
+    percentage: 40,
     level: "skills.basic",
   },
   {
@@ -379,21 +381,21 @@ const mainIcons = [
     id: 35,
     name: "Swagger",
     category: "Backend",
-    percentage: 10,
+    percentage: 40,
     level: "skills.basic",
   },
   {
     id: 36,
     name: "Laravel",
     category: "Backend",
-    percentage: 30,
+    percentage: 40,
     level: "skills.basic",
   },
   {
     id: 37,
     name: "Springboot",
     category: "Backend",
-    percentage: 10,
+    percentage: 30,
     level: "skills.basic",
   },
   {
@@ -593,6 +595,13 @@ const mainIcons = [
     category: "Backend",
     percentage: 10,
     level: "skills.basic",
+  },
+  {
+    id: 68,
+    name: "NestJs",
+    category: "Backend",
+    percentage: 50,
+    level: "skills.intermediate",
   },
   // { id: 68, name: "Rubymine", category: "Tools", percentage: 10 },
 ];
