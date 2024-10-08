@@ -91,10 +91,10 @@ const cardsServer = [
   },
   {
     id: 15,
-    img: "/imgs/imgEducation/sebrae-EF.webp",
-    text: "Sebrae - Curso Educação Financeira Empresarial",
-    file: "/formations/educacao-financeira.pdf"
-  },
+    img: "/imgs/imgEducation/testes.webp",
+    text: "Digital Innovation - Testes Automatizados com Cypress",
+    file: "/formations/testes-automatizados"
+  },  
   {
     id: 16,
     img: "/imgs/imgEducation/sebrae-GF.webp",
@@ -139,10 +139,10 @@ const cardsServer = [
   },
   {
     id: 23,
-    img: "/imgs/imgEducation/testes.webp",
-    text: "Digital Innovation - Testes Automatizados com Cypress",
-    file: "/formations/testes-automatizados"
-  }
+    img: "/imgs/imgEducation/sebrae-EF.webp",
+    text: "Sebrae - Curso Educação Financeira Empresarial",
+    file: "/formations/educacao-financeira.pdf"
+  },
 ];
 
 export default cardsServer;
