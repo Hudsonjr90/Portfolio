@@ -39,7 +39,7 @@
     "text": " Formations",
     "cards": [
       {
-        "text": "Digital Innovation - Bootcamp Banco Pan (Développement Frontend avec Angular)"
+        "text": "Innovation numérique - Bootcamp Banco Pan (Développement Frontend avec Angular)"
       },
       {
         "text": "Université de Harvard - Master faisant partie du programme de troisième cycle en informatique"
@@ -51,19 +51,19 @@
         "text": "Estácio de Sá Collège - Gestion d'entreprise"
       },
       {
-        "text": "Digital Innovation - Travailler avec des composants en React"
+        "text": "Innovation numérique - Travailler avec des composants en React"
       },
       {
-        "text": "Digital Innovation - Architecture des composants et gestion de la complexité en frontend"
+        "text": "Innovation numérique - Architecture des composants et gestion de la complexité en frontend"
       },
       {
-        "text": "Digital Innovation - Logique de programmation essentielle"
+        "text": "Innovation numérique - Logique de programmation essentielle"
       },
       {
-        "text": "Digital Innovation - Javascript ES6 Essentiel"
+        "text": "Innovation numérique - Javascript ES6 Essentiel"
       },
       {
-        "text": "Digital Innovation - Techniques avancées en Angular 8"
+        "text": "Innovation numérique - Techniques avancées en Angular 8"
       },
       {
         "text": "Professionnel Adobe - AEM (Développeur Front-end)"
@@ -75,10 +75,10 @@
         "text": "VueJs Brasil - Cours Vuejs (De Base à Avancé)"
       },
       {
-        "text": "Digital Innovation - Directives Vue.js et Propriétés de Composants"
+        "text": "Innovation numérique - Directives Vue.js et Propriétés de Composants"
       },
       {
-        "text": "Digital Innovation - Composants, Méthodes et Cycle de vie avec Vue.js"
+        "text": "Innovation numérique - Composants, Méthodes et Cycle de vie avec Vue.js"
       },
       {
         "text": "Udemy - Cours Javascript et Typescript du De Base à l'Avancé"
@@ -106,6 +106,9 @@
       },
       {
         "text": "Cursos 24h - Assistant Administratif"
+      },
+      {
+        "text": "Innovation numérique - Tests automatisés avec Cypress"
       }
     ]
   },
