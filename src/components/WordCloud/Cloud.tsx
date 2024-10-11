@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import WordCloud, { Options } from "react-wordcloud";
-import { mainIcons } from "../../data/iconsServer"; // Seus dados de palavras e categorias
+import ReactWordcloud from 'react-wordcloud-words-style'
+import { OptionsProp } from 'react-wordcloud-words-style/types/index'
+import { mainIcons } from "../../data/iconsServer";
 import styles from "./Cloud.module.css";
 import { useTranslation } from "react-i18next";
 
-const options: Options = {
+const options: OptionsProp = {
   colors: ["var(--main_color)", "var(--cloud_text)", "var(--text_color)"],
   deterministic: false,
   enableOptimizations: false,
@@ -59,7 +60,7 @@ const Cloud = () => {
       className={styles.container}
     >
       <div className={styles.circleContainer}>
-        <WordCloud options={options} words={words} />
+        <ReactWordcloud options={options} words={words} />
       </div>
     </motion.div>
   );
