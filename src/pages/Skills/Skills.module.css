@@ -100,7 +100,7 @@
 
 .customTextField:focus + .customTextFieldLabel,
 .customTextField:not(:placeholder-shown) + .customTextFieldLabel {
-  top: -1px;
+  top: 1rem;
   font-size: 10px;
   color: var(--main_color);
   background-color: var(--bg_color);
@@ -224,10 +224,9 @@
 
 .show_cloud svg,
 .show_search svg {
-  font-size: 3rem;
+  font-size: 5rem;
   cursor: pointer;
   color: var(--main_color);
-  background-color: var(--bg_color);
 }
 
 .no_results {
@@ -687,8 +686,32 @@
   }
 
   .filters{
-    margin-left: 5rem;  
+    margin-left: 7rem;  
   }
+
+  .customSelect{
+    margin-right: 1rem;
+    padding: 1.2rem;
+  }
+
+  .selectIcon{
+    top: -2.3rem;
+    left: 7.5rem;
+  }
+
+  .customTextFieldLabel{
+    margin-top: -1rem;
+  }
+
+  .searchIcon{
+    margin-top: -1rem;
+    margin-right: -1.2rem;
+  }
+
+  .show_cloud svg,
+.show_search svg {
+  font-size: 3rem;
+}
 
   .box_icon {
     margin: 0 -1rem 4rem;

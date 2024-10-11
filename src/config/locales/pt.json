@@ -244,6 +244,7 @@
     "subject": "Assunto *",
     "message": "Sua Mensagem *",
     "submit": "Enviar Mensagem",
-    "error": "Campo obrigatório"
+    "error": "Campo obrigatório",
+    "invalid": "Dados incorretos"
   }
 }

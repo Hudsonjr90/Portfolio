@@ -5,22 +5,18 @@ import Transition from "../../components/Transition/Transition";
 import { iconComponents, mainIcons } from "../../data/iconsServer";
 import { useTranslation } from "react-i18next";
 import ProgressBar from "../../components/Progressbar/ProgressBar";
-//import CountUp from "react-countup";
-import { FaCloudflare } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { GiCloudDownload } from "react-icons/gi";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import IconButton from "@mui/material/IconButton";
-import { FaSearch } from "react-icons/fa";
 import { MdArrowDropDown } from "react-icons/md";
 import { ThemeProvider } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
 import { simpleTheme, useTheme } from "../../context/ThemeContext";
 
 const Cloud = React.lazy(() => import("../../components/WordCloud/Cloud"));
-
-const ParticlesB = React.lazy(
-  () => import("../../components/Particles/ParticlesB")
-);
+const ParticlesB = React.lazy(() => import("../../components/Particles/ParticlesB"));
 
 const categoryOptions = [
   { value: "all", label: "All" },
@@ -117,8 +113,12 @@ const Skills = () => {
     return filteredIcons.slice(startIndex, endIndex);
   }, [currentPage, itemsPerPage, filteredIcons]);
 
-  const toggleCloud = () => {
-    setShowCloud(!showCloud);
+  const handleCloudClick = () => {
+    setShowCloud(true);
+  };
+
+  const handleDefaultClick = () => {
+    setShowCloud(false);
   };
 
   useEffect(() => {
@@ -141,45 +141,38 @@ const Skills = () => {
           <span>//</span> {t("skills.title")}
           <span>{t("skills.text")}</span>
         </h2>
-        <motion.span
-          initial={{ opacity: 0, y: "-100%" }}
+        <motion.div initial={{ opacity: 0, y: "-100%" }}
           animate={{ opacity: 1, y: "0%" }}
           transition={{
             duration: 2.5,
             delay: 0.3,
             ease: [0.3, 0, 0.2, 1],
-          }}
-          className={styles.toggle}
-          onClick={toggleCloud}
-        >
-          {showCloud ? (
-            <ThemeProvider theme={simpleTheme}>
-              <Tooltip
-                TransitionComponent={Zoom}
-                title={t("skills.searchable")}
-                placement="top"
-                arrow
-              >
-                <IconButton className={styles.show_search}>
-                  <FaSearch />
-                </IconButton>
-              </Tooltip>
-            </ThemeProvider>
-          ) : (
-            <ThemeProvider theme={simpleTheme}>
-              <Tooltip
-                TransitionComponent={Zoom}
-                title={t("skills.cloudWord")}
-                placement="top"
-                arrow
-              >
-                <IconButton className={styles.show_cloud}>
-                  <FaCloudflare />
-                </IconButton>
-              </Tooltip>
-            </ThemeProvider>
-          )}
-        </motion.span>
+          }}className={styles.toggleButtons}>
+          <ThemeProvider theme={simpleTheme}>
+            <Tooltip
+              TransitionComponent={Zoom}
+              title={t("skills.searchable")}
+              placement="top"
+              arrow
+            >
+              <IconButton className={styles.show_search} onClick={handleDefaultClick}>
+                <FaSearch />
+              </IconButton>
+            </Tooltip>
+          </ThemeProvider>
+          <ThemeProvider theme={simpleTheme}>
+            <Tooltip
+              TransitionComponent={Zoom}
+              title={t("skills.cloudWord")}
+              placement="top"
+              arrow
+            >
+              <IconButton className={styles.show_cloud} onClick={handleCloudClick}>
+                <GiCloudDownload />
+              </IconButton>
+            </Tooltip>
+          </ThemeProvider>
+        </motion.div>
 
         {showCloud ? (
           <Suspense fallback={<div>Loading...</div>}>
@@ -270,13 +263,13 @@ const Skills = () => {
                           transition="2.5s ease 0.5s"
                           trackTransition="0s ease"
                         >
-                         
+
                             <div className={styles.icon_wrapper}>
                               {IconComponent && (
                                 <IconComponent className={styles.icon} />
                               )}
                             </div>
-                         
+
                           <div className={styles.indicator}>
                            {icon.name}
                           </div>

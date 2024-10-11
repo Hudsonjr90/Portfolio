@@ -38,6 +38,7 @@
   --second_bg_color: #323946;
   --text_color: #ededed;
   --scroll-color: #353535;
+  --cloud_text: #00ff00;
 }
 
 .light_mode {
@@ -47,6 +48,7 @@
   --second_bg_color: #cbd5e1;
   --text_color: #020617;
   --scroll-color: #070707;
+  --cloud_text: #3f74b1dc;
   transition: 1.5s;
 }
 

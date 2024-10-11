@@ -9,14 +9,13 @@ import Swal from 'sweetalert2'
 import { motion } from 'framer-motion'
 import Tooltip from '@mui/material/Tooltip'
 import Zoom from '@mui/material/Zoom'
-import { whatsappTheme, emailTheme, linkedinTheme, githubTheme} from '../../context/ThemeContext'
+import { whatsappTheme, emailTheme, linkedinTheme, githubTheme } from '../../context/ThemeContext'
 import { ThemeProvider } from '@mui/material/styles'
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from '@mui/material/IconButton'
 
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
-
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -33,30 +32,73 @@ const Contact = () => {
   const [subjectError, setSubjectError] = useState<boolean>(false)
   const [messageError, setMessageError] = useState<boolean>(false)
 
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    // Remover caracteres de formatação
+    const cleanedPhone = phone.replace(/\D/g, '');
+    // Verificar se o número de telefone tem pelo menos 9 ou 8 dígitos
+    return cleanedPhone.length >= 8 && cleanedPhone.length <= 15;
+  };
+
+  const validateField = (_field: string, value: string, setError: (error: boolean) => void, validationFn?: (value: string) => boolean) => {
+    if (value === '' || (validationFn && !validationFn(value))) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+  };
+
+  const validateForm = () => {
+    let isValid = true;
+
+    if (name === '') {
+      setNameError(true);
+      isValid = false;
+    } else {
+      setNameError(false);
+    }
+
+    if (!validateEmail(email)) {
+      setEmailError(true);
+      isValid = false;
+    } else {
+      setEmailError(false);
+    }
+
+    if (!validatePhone(phone)) {
+      setPhoneError(true);
+      isValid = false;
+    } else {
+      setPhoneError(false);
+    }
+
+    if (subject === '') {
+      setSubjectError(true);
+      isValid = false;
+    } else {
+      setSubjectError(false);
+    }
+
+    if (message === '') {
+      setMessageError(true);
+      isValid = false;
+    } else {
+      setMessageError(false);
+    }
+
+    return isValid;
+  };
+
   function sendEmail(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
-    if (
-      name === '' ||
-      email === '' ||
-      phone === '' ||
-      subject === '' ||
-      message === ''
-    ) {
-      setNameError(name === '')
-      setEmailError(email === '')
-      setPhoneError(phone === '')
-      setSubjectError(subject === '')
-      setMessageError(message === '')
-
-      return
+    if (!validateForm()) {
+      return;
     }
-
-    setNameError(false)
-    setEmailError(false)
-    setPhoneError(false)
-    setSubjectError(false)
-    setMessageError(false)
 
     const templateParams = {
       from_name: name,
@@ -90,7 +132,6 @@ const Contact = () => {
         },
       )
   }
-
 
   return (
     <Transition onAnimationComplete={() => {}}>
@@ -257,8 +298,9 @@ const Contact = () => {
                 id="name"
                 onChange={(e) => {
                   setName(e.target.value)
-                  setNameError(false)
+                  validateField('name', e.target.value, setNameError)
                 }}
+                onBlur={(e) => validateField('name', e.target.value, setNameError)}
                 value={name}
               />
 
@@ -280,8 +322,9 @@ const Contact = () => {
                 id="email"
                 onChange={(e) => {
                   setEmail(e.target.value)
-                  setEmailError(false)
+                  validateField('email', e.target.value, setEmailError, validateEmail)
                 }}
+                onBlur={(e) => validateField('email', e.target.value, setEmailError, validateEmail)}
                 value={email}
               />
 
@@ -308,9 +351,10 @@ const Contact = () => {
                 onChange={(value) => {
                   if (typeof value === 'string') {
                     setPhone(value)
-                    setPhoneError(false)
+                    validateField('phone', value, setPhoneError, validatePhone)
                   }
                 }}
+                onBlur={(e: { target: { value: string } }) => validateField('phone', e.target.value, setPhoneError, validatePhone)}
               />
 
               <div
@@ -331,8 +375,9 @@ const Contact = () => {
                 className={`${styles.item} ${subjectError ? styles.error : ''}`}
                 onChange={(e) => {
                   setSubject(e.target.value)
-                  setSubjectError(false)
+                  validateField('subject', e.target.value, setSubjectError)
                 }}
+                onBlur={(e) => validateField('subject', e.target.value, setSubjectError)}
                 value={subject}
               />
 
@@ -357,8 +402,9 @@ const Contact = () => {
               className={`${styles.item} ${messageError ? styles.error : ''}`}
               onChange={(e) => {
                 setMessage(e.target.value)
-                setMessageError(false)
+                validateField('message', e.target.value, setMessageError)
               }}
+              onBlur={(e) => validateField('message', e.target.value, setMessageError)}
               value={message}
             ></textarea>
 
