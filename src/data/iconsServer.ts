@@ -59,6 +59,7 @@ import {
   SiRuby,
   SiRubyonrails,
   SiNestjs,
+  SiPrisma
   // SiRubymine
 } from "react-icons/si";
 import {
@@ -147,6 +148,7 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Ruby: SiRuby,
   Rubyonrails: SiRubyonrails,
   NestJs: SiNestjs,
+  Prisma: SiPrisma
   // Rubymine: SiRubymine
 };
 
@@ -602,6 +604,13 @@ const mainIcons = [
     category: "Backend",
     percentage: 50,
     level: "skills.intermediate",
+  },
+  {
+    id: 69,
+    name: "Prisma",
+    category: "Tools",
+    percentage: 20,
+    level: "skills.basic",
   },
   // { id: 68, name: "Rubymine", category: "Tools", percentage: 10 },
 ];
