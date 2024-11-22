@@ -6,8 +6,8 @@ export interface Testimonial {
 
 const testimonialServer = [
   {
-    title: "Carlos Ferreira",
-    subtitle: "testimonials.subtitle1",
+    title: "Rafael Araujo",
+    subtitle: "testimonials.subtitle4",
     img: "/imgs/imgsMobile/linkedin1.webp",
   },
   {
@@ -21,8 +21,8 @@ const testimonialServer = [
     img: "/imgs/imgsMobile/linkedin3.webp",
   },
   {
-    title: "Rafael Araujo",
-    subtitle: "testimonials.subtitle4",
+    title: "Carlos Ferreira",
+    subtitle: "testimonials.subtitle1",
     img: "/imgs/imgsMobile/linkedin4.webp",
   },
   {
