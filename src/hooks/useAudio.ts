@@ -1,19 +1,18 @@
-
-import { useState } from 'react'
+import { useState } from 'react';
 
 export const useAudio = () => {
-  const [soundClick, setSoundClick] = useState<boolean>(false)
+  const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
 
   const handleAudio = () => {
-    const audio = new Audio('/sounds/button_click.mp3')
+    if (!soundEnabled) return;
 
-    if (soundClick) {
-      audio.pause()
-      setSoundClick(false)
-    } else {
-      audio.play()
-    }
-  }
+    const audio = new Audio('/sounds/button_click.mp3');
+    audio.play();
+  };
 
-  return { handleAudio }
-}
+  const toggleSound = () => {
+    setSoundEnabled((prev) => !prev);
+  };
+
+  return { handleAudio, toggleSound, soundEnabled };
+};

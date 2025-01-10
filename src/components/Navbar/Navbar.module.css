@@ -171,7 +171,7 @@ label {
   background: transparent;
   color: var(--text_color);
   display: inline-flex;
-  font-size: 4rem;
+  font-size: 3.9rem;
   transition: 0.5s ease;
   z-index: 1;
   cursor: pointer;
@@ -236,6 +236,14 @@ label {
   padding: 0.5rem 0rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.sound_icon {
+  color: var(--text_color);
+  background-color: var(--bg_color);
+  font-size: 3rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
 /* <========== breakpoints ==========> */
