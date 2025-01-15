@@ -12,14 +12,21 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const { handleAudio, toggleSound, soundEnabled } = useAudio();
+  const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } = useAudio();
 
-  const [lightMode, setLightMode] = useState<boolean>(false);
+  const [lightMode, setLightMode] = useState<boolean>(() => {
+    const savedLightMode = localStorage.getItem("lightMode");
+    return savedLightMode ? JSON.parse(savedLightMode) : false;
+  });
   const [paletteOpen, setPaletteOpen] = useState<boolean>(false);
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedColor, setSelectedColor] = useState<string | null>(() => {
+    return localStorage.getItem("selectedColor") || null;
+  });
   const [paletteInputInvisible, setPaletteInputInvisible] =
     useState<boolean>(false);
-  const [currentLanguage, setCurrentLanguage] = useState<string>("pt");
+  const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
+    return localStorage.getItem("currentLanguage") || "pt";
+  });
   const [SidebarOpen, setSidebarOpen] = useState(false);
 
   const { mainColor, setMainColor } = useTheme();
@@ -27,8 +34,10 @@ const Navbar = () => {
     useResponsiveNavbar();
 
   const handleToggleLightMode = () => {
-    setLightMode(!lightMode);
-    setPaletteInputInvisible(!lightMode);
+    const newLightMode = !lightMode;
+    setLightMode(newLightMode);
+    setPaletteInputInvisible(!newLightMode);
+    localStorage.setItem("lightMode", JSON.stringify(newLightMode));
   };
 
   useEffect(() => {
@@ -50,6 +59,7 @@ const Navbar = () => {
 
   const handleColorSelection = (color: string) => {
     setSelectedColor(color);
+    localStorage.setItem("selectedColor", color);
   };
 
   useEffect(() => {
@@ -75,6 +85,7 @@ const Navbar = () => {
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setCurrentLanguage(lng || "");
+    localStorage.setItem("currentLanguage", lng);
   };
 
   const toggleSidebar = () => {
@@ -84,6 +95,17 @@ const Navbar = () => {
   useEffect(() => {
     setSidebarOpen(false);
   }, [currentLanguage]);
+
+  useEffect(() => {
+    const savedSoundEnabled = localStorage.getItem("soundEnabled");
+    if (savedSoundEnabled !== null) {
+      setSoundEnabled(JSON.parse(savedSoundEnabled));
+    }
+  }, [setSoundEnabled]);
+
+  useEffect(() => {
+    localStorage.setItem("soundEnabled", JSON.stringify(soundEnabled));
+  }, [soundEnabled]);
 
   return (
     <header className={styles.header}>
