@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
 export const useAudio = () => {
-  const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
+  const [soundEnabled, setSoundEnabled] = useState<boolean>(() => {
+    const savedSoundEnabled = localStorage.getItem("soundEnabled");
+    return savedSoundEnabled ? JSON.parse(savedSoundEnabled) : true;
+  });
 
   const handleAudio = () => {
     if (!soundEnabled) return;
@@ -11,8 +14,14 @@ export const useAudio = () => {
   };
 
   const toggleSound = () => {
-    setSoundEnabled((prev) => !prev);
+    setSoundEnabled(!soundEnabled);
+    localStorage.setItem("soundEnabled", JSON.stringify(!soundEnabled));
   };
 
-  return { handleAudio, toggleSound, soundEnabled };
+  return {
+    handleAudio,
+    toggleSound,
+    soundEnabled,
+    setSoundEnabled,
+  };
 };
