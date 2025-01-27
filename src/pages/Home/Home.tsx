@@ -261,7 +261,7 @@ const Home = React.memo(() => {
             ease: [0.2, 0, 0.2, 1],
           }}
         >
-          © 2024 H.K DEV
+          © 2025 H.K DEV
         </motion.div>
       </Transition>
       <Modal show={showModal} onClose={handleCloseModal} />
