@@ -1,35 +1,30 @@
-import Card from "react-bootstrap/Card";
-import styles from "./CardComponent.module.css";
-import Paginate from "react-paginate";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import cardsServer from "../../data/cardsServer";
 import { useTranslation } from "react-i18next";
-import { Button } from "react-bootstrap";
+import Paginate from "react-paginate";
 import { FaDownload } from "react-icons/fa";
+import styles from "./CardComponent.module.css";
 
 const CardComponent = () => {
   const { t } = useTranslation();
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [showDownloadButton, setShowDownloadButton] = useState(false);
 
   const handleMouseEnter = (id: number) => {
     setHoveredCard(id);
-    setShowDownloadButton(true);
   };
 
   const handleMouseLeave = () => {
     setHoveredCard(null);
-    setShowDownloadButton(false);
   };
 
   const handleDownload = (cardId: number) => {
     const card = cardsServer.find((c) => c.id === cardId);
-  
-    if (card && card.file && card.text) { 
+
+    if (card && card.file && card.text) {
       const link = document.createElement("a");
-      link.href = card.file; 
+      link.href = card.file;
       link.setAttribute("download", `${card.text}.pdf`);
       link.style.visibility = "hidden";
       document.body.appendChild(link);
@@ -37,17 +32,16 @@ const CardComponent = () => {
       document.body.removeChild(link);
     }
   };
-  
 
   const [currentPage, setCurrentPage] = useState(0);
-  const [cardsPerPage, setCardsPerPage] = useState(1);
+  const [cardsPerPage, setCardsPerPage] = useState(4);
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 769) {
-        setCardsPerPage(2);
-      } else {
         setCardsPerPage(1);
+      } else {
+        setCardsPerPage(4);
       }
     }
 
@@ -67,54 +61,41 @@ const CardComponent = () => {
     setCurrentPage(selectedPage);
   };
 
-  const autoChangePage = () => {
-    if (!hoveredCard) {
-      const nextPage = (currentPage + 1) % pageCount;
-      setCurrentPage(nextPage);
-    }
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(autoChangePage, 5000);
-
-    return () => clearInterval(intervalId);
-  }, [currentPage, pageCount, hoveredCard]);
-
   const currentPageData = cardsServer
     .slice(offset, offset + cardsPerPage)
     .map((card) => (
-      <Card
-        className={styles.card_content}
-        key={card.id}
-        onMouseEnter={() => handleMouseEnter(card.id)}
-        onMouseLeave={handleMouseLeave}
-      >
-        <Card.Img
-          src={card.img}
-          alt="Card image"
-          className={hoveredCard === card.id ? styles.blur : ""}
-          loading="lazy"
-        />
-        <Card.ImgOverlay>
-          <Card.Text
-            className={`${styles.card_text} ${hoveredCard === card.id ? styles.showText : ""}`}
-          >
-            {t(`education.cards.${card.id}.text`)}
-          </Card.Text>
-          {showDownloadButton && (
-            <Button
-              className={styles.download_button}
-              variant="outline-primary"
-              size="sm"
-              onClick={() => handleDownload(card.id)}
-            >
-             {t('home.download')}
-            <FaDownload className={styles.size_button} />
-            </Button>
-            
-          )}
-        </Card.ImgOverlay>
-      </Card>
+        <div
+          className={styles.card}
+          key={card.id}
+          onMouseEnter={() => handleMouseEnter(card.id)}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className={styles.card_image_container}>
+            <img
+              src={card.img}
+              alt="Card image"
+              className={`${styles.card_image} ${hoveredCard === card.id ? styles.blur : ""}`}
+              loading="lazy"
+            />
+          </div>
+          <div className={styles.card_content}>
+            <h3 className={styles.card_title}>
+              {t(`education.cards.${card.id}.title`)}
+            </h3>
+            <p className={styles.card_description}>
+              {t(`education.cards.${card.id}.text`)}
+            </p>
+            {hoveredCard === card.id && (
+              <button
+                className={styles.download_button}
+                onClick={() => handleDownload(card.id)}
+              >
+                {t("home.download")}
+                <FaDownload />
+              </button>
+            )}
+          </div>
+        </div>
     ));
 
   return (
