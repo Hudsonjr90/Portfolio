@@ -39,76 +39,100 @@
     "text": " Formations",
     "cards": [
       {
-        "text": "Innovation numérique - Bootcamp Banco Pan (Développement Frontend avec Angular)"
+        "text": "Bootcamp Banco Pan(Développement Frontend avec Angular)",
+        "title": "Innovation Digitale"
       },
       {
-        "text": "Université de Harvard - Master faisant partie du programme de troisième cycle en informatique"
+        "text": "Maîtrise dans le cadre du programme de troisième cycle en Informatique",
+        "title": "Université de Harvard"
       },
       {
-        "text": "Collège unique de MG - Cours de troisième cycle en génie logiciel"
+        "text": "Troisième cycle en Génie Logiciel",
+        "title": "Faculdade Única de MG"
       },
       {
-        "text": "Estácio de Sá Collège - Gestion d'entreprise"
+        "text": "Processus de Gestion",
+        "title": "Université Estácio de Sá"
       },
       {
-        "text": "Innovation numérique - Travailler avec des composants en React"
+        "text": "Travailler avec les Composants en React",
+        "title": "Innovation Digitale"
       },
       {
-        "text": "Innovation numérique - Architecture des composants et gestion de la complexité en frontend"
+        "text": "Architecture des Composants et la gestion de la complexité dans le front-end",
+        "title": "Innovation Digitale"
       },
       {
-        "text": "Innovation numérique - Logique de programmation essentielle"
+        "text": "Logique de Programmation Essentielle",
+        "title": "Innovation Digitale"
       },
       {
-        "text": "Innovation numérique - Javascript ES6 Essentiel"
+        "text": "Javascript ES6 Essentiel",
+        "title": "Innovation Digitale"
       },
       {
-        "text": "Innovation numérique - Techniques avancées en Angular 8"
+        "text": "Techniques Avancées en Angular 8",
+        "title": "Innovation Digitale"
       },
       {
-        "text": "Professionnel Adobe - AEM (Développeur Front-end)"
+        "text": "Adobe Professionnel - AEM(Développeur Front-end)",
+        "title": "Adobe Professionnel"
       },
       {
-        "text": "Professionnel Adobe - AEM (Praticien Commercial de Sites)"
+        "text": "Adobe Professionnel - AEM(Sites Business Practitioner)",
+        "title": "Adobe Professionnel"
       },
       {
-        "text": "VueJs Brasil - Cours Vuejs (De Base à Avancé)"
+        "text": "VueJs Brésil - Cours Vuejs (Basique à Avancé)",
+        "title": "VueJs Brésil"
       },
       {
-        "text": "Innovation numérique - Directives Vue.js et Propriétés de Composants"
+        "text": "Directives et Propriétés des Composants Vue.js",
+        "title": "Innovation Digitale"
       },
       {
-        "text": "Innovation numérique - Composants, Méthodes et Cycle de vie avec Vue.js"
+        "text": "Composants, Méthodes et Cycle de vie avec Vue.js",
+        "title": "Innovation Digitale"
       },
       {
-        "text": "Udemy - Cours Javascript et Typescript du De Base à l'Avancé"
+        "text": "Cours de Javascript et Typescript de Basique à Avancé",
+        "title": "Udemy"
       },
       {
-        "text": "Sebrae - Cours d'éducation financière pour les entreprises"
+        "text": "Cours d'Éducation Financière d'Entreprise",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Cours de gestion financière"
+        "text": "Cours de Gestion Financière",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Cours sur la réussite client (Comment Acquérir et Fidéliser les Clients)"
+        "text": "Cours de Customer Success (Comment Acquérir et Retenir des Clients)",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Cours de Marketing Digital pour les Entrepreneurs"
+        "text": "Cours de Marketing digital pour entrepreneurs",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Cours sur la Stratégie Financière pour la Croissance"
+        "text": "Cours de Stratégie Financière pour la Croissance",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Cours de Planification Stratégique pour les Entrepreneurs"
+        "text": "Cours de Planification Stratégique pour Entrepreneurs",
+        "title": "Sebrae"
       },
       {
-        "text": "FGV - Cours de Sécurité Numérique"
+        "text": "Cours de Sécurité Digitale",
+        "title": "FGV"
       },
       {
-        "text": "Cursos 24h - Assistant Administratif"
+        "text": "Assistant Administratif",
+        "title": "Cours 24h"
       },
       {
-        "text": "Innovation numérique - Tests automatisés avec Cypress"
+        "text": "Tests Automatisés avec Cypress",
+        "title": "Innovation Digitale"
       }
     ]
   },
@@ -166,10 +190,10 @@
     "noResults": "Aucune compétence trouvée",
     "cloudWord": "Nuage de mots",
     "searchable": "Filtrage et recherche",
-    "expert" : "Expert",
-    "advanced" :  "Avancé",
-    "intermediate" : "Intermédiaire",
-    "basic" : "Basique"
+    "expert": "Expert",
+    "advanced": "Avancé",
+    "intermediate": "Intermédiaire",
+    "basic": "Basique"
   },
 
   "projects": {

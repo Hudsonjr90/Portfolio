@@ -39,76 +39,100 @@
     "text": " Educazione Accademica",
     "cards": [
       {
-        "text": "Innovazione Digitale - Bootcamp Banco Pan (Sviluppo Frontend con Angular)"
+        "text": "Bootcamp Banco Pan(Sviluppo Frontend con Angular)",
+        "title": "Innovazione Digitale"
       },
       {
-        "text": "Università di Harvard - Master che opera all'interno del programma di post-laurea in Informatica"
+        "text": "Master all'interno del programma di post-laurea in Informatica",
+        "title": "Università di Harvard"
       },
       {
-        "text": "Collegio Unico di MG - Post-laurea in Ingegneria del Software"
+        "text": "Post-laurea in Ingegneria del Software",
+        "title": "Faculdade Única de MG"
       },
       {
-        "text": "Estácio de Sá Collegio - Gestione dei Processi"
+        "text": "Processi Gestionali",
+        "title": "Università Estácio de Sá"
       },
       {
-        "text": "Innovazione Digitale - Lavorare con Componenti in React"
+        "text": "Lavorare con i Componenti in React",
+        "title": "Innovazione Digitale"
       },
       {
-        "text": "Innovazione Digitale - Architettura dei Componenti e gestione della complessità nel front-end"
+        "text": "Architettura dei Componenti e la gestione della complessità nel front-end",
+        "title": "Innovazione Digitale"
       },
       {
-        "text": "Innovazione Digitale - Logica di Programmazione Essenziale"
+        "text": "Logica di Programmazione Essenziale",
+        "title": "Innovazione Digitale"
       },
       {
-        "text": "Innovazione Digitale - Javascript ES6 Essenziale"
+        "text": "Javascript ES6 Essenziale",
+        "title": "Innovazione Digitale"
       },
       {
-        "text": "Innovazione Digitale - Tecniche Avanzate in Angular 8"
+        "text": "Tecniche Avanzate in Angular 8",
+        "title": "Innovazione Digitale"
       },
       {
-        "text": "Professionista Adobe - AEM (Sviluppatore Front-end)"
+        "text": "Adobe Professionale - AEM(Sviluppatore Front-end)",
+        "title": "Adobe Professionale"
       },
       {
-        "text": "Professionista Adobe - AEM (Sites Business Practitioner)"
+        "text": "Adobe Professionale - AEM(Sites Business Practitioner)",
+        "title": "Adobe Professionale"
       },
       {
-        "text": "VueJs Brasil - Corso Vuejs (Dal Base all'Avanzato)"
+        "text": "VueJs Brasil - Corso Vuejs(Base ad Avanzato)",
+        "title": "VueJs Brasil"
       },
       {
-        "text": "Innovazione Digitale - Direttive e Proprietà dei Componenti Vue.js"
+        "text": "Direttive e Proprietà dei Componenti Vue.js",
+        "title": "Innovazione Digitale"
       },
       {
-        "text": "Innovazione Digitale - Componenti, Metodi e Ciclo di vita con Vue.js"
+        "text": "Componenti, Metodi e Ciclo di vita con Vue.js",
+        "title": "Innovazione Digitale"
       },
       {
-        "text": "Udemy - Corso Javascript e Typescript dal Base all'Avanzato"
+        "text": "Corso di Javascript e Typescript da Base ad Avanzato",
+        "title": "Udemy"
       },
       {
-        "text": "Sebrae - Corso di Educazione Finanziaria Aziendale"
+        "text": "Corso di Educazione Finanziaria Aziendale",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Corso di Gestione Finanziaria"
+        "text": "Corso di Gestione Finanziaria",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Corso Customer Success (Come Conquistare e Mantenere Clienti)"
+        "text": "Corso di Customer Success (Come Acquisire e Mantenere Clienti)",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Corso di Marketing Digitale per Imprenditori"
+        "text": "Corso di Marketing digitale per imprenditori",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Corso di Strategia Finanziaria per la Crescita"
+        "text": "Corso di Strategia Finanziaria per la Crescita",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Corso di Pianificazione Strategica per Imprenditori"
+        "text": "Corso di Pianificazione Strategica per Imprenditori",
+        "title": "Sebrae"
       },
       {
-        "text": "FGV - Corso di Sicurezza Digitale"
+        "text": "Corso di Sicurezza Digitale",
+        "title": "FGV"
       },
       {
-        "text": "Corsi 24h - Assistente Amministrativo"
+        "text": "Assistente Amministrativo",
+        "title": "Corsi 24h"
       },
       {
-        "text": "Innovazione Digitale - Test automatizzati con Cypress"
+        "text": "Test Automatizzati con Cypress",
+        "title": "Innovazione Digitale"
       }
     ]
   },

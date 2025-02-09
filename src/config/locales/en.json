@@ -39,76 +39,100 @@
     "text": " Academics",
     "cards": [
       {
-        "text": "Digital Innovation - Banco Pan Bootcamp (Frontend Development with Angular)"
+        "text": "Bootcamp Banco Pan(Frontend Development with Angular)",
+        "title": "Digital Innovation"
       },
       {
-        "text": "Harvard University - Master's degree within the Computer Science postgraduate program"
+        "text": "Master's degree within the postgraduate program in Computer Science",
+        "title": "Harvard University"
       },
       {
-        "text": "Single College of MG - Postgraduate course in Software Engineering"
+        "text": "Postgraduate degree in Software Engineering",
+        "title": "Faculdade Única de MG"
       },
       {
-        "text": "Estácio de Sá College - Business Management"
+        "text": "Management Processes",
+        "title": "Estácio de Sá University"
       },
       {
-        "text": "Digital Innovation - Working with Components in React"
+        "text": "Working with Components in React",
+        "title": "Digital Innovation"
       },
       {
-        "text": "Digital Innovation - Component Architecture and complexity management in front-end"
+        "text": "Component Architecture and managing complexity in the front-end",
+        "title": "Digital Innovation"
       },
       {
-        "text": "Digital Innovation - Essential Programming Logic"
+        "text": "Essential Programming Logic",
+        "title": "Digital Innovation"
       },
       {
-        "text": "Digital Innovation - Essential Javascript ES6"
+        "text": "Essential JavaScript ES6",
+        "title": "Digital Innovation"
       },
       {
-        "text": "Digital Innovation - Advanced Techniques in Angular 8"
+        "text": "Advanced Techniques in Angular 8",
+        "title": "Digital Innovation"
       },
       {
-        "text": "Adobe Professional - AEM (Front-end Developer)"
+        "text": "Adobe Professional - AEM(Front-end Developer)",
+        "title": "Adobe Professional"
       },
       {
-        "text": "Adobe Professional - AEM (Sites Business Practitioner)"
+        "text": "Adobe Professional - AEM(Sites Business Practitioner)",
+        "title": "Adobe Professional"
       },
       {
-        "text": "VueJs Brasil - Vuejs Course (Basic to Advanced)"
+        "text": "VueJs Brasil - Vuejs Course (Basic to Advanced)",
+        "title": "VueJs Brasil"
       },
       {
-        "text": "Digital Innovation - Vue.js Directives and Component Properties"
+        "text": "Directives and Properties of Vue.js Components",
+        "title": "Digital Innovation"
       },
       {
-        "text": "Digital Innovation - Components, Methods, and Lifecycle with Vue.js"
+        "text": "Components, Methods, and Lifecycle with Vue.js",
+        "title": "Digital Innovation"
       },
       {
-        "text": "Udemy - Javascript and Typescript Course from Basic to Advanced"
+        "text": "JavaScript and TypeScript Course from Basic to Advanced",
+        "title": "Udemy"
       },
       {
-        "text": "Sebrae - Business Financial Education Course"
+        "text": "Corporate Financial Education Course",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Financial Management Course"
+        "text": "Financial Management Course",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Customer Success Course (How to Acquire and Retain Customers)"
+        "text": "Customer Success Course (How to Acquire and Retain Customers)",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Digital Marketing Course for Entrepreneurs"
+        "text": "Digital Marketing Course for Entrepreneurs",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Financial Strategy for Growth Course"
+        "text": "Financial Strategy Course for Growth",
+        "title": "Sebrae"
       },
       {
-        "text": "Sebrae - Strategic Planning for Entrepreneurs Course"
+        "text": "Strategic Planning Course for Entrepreneurs",
+        "title": "Sebrae"
       },
       {
-        "text": "FGV - Digital Security Course"
+        "text": "Digital Security Course",
+        "title": "FGV"
       },
       {
-        "text": "Cursos 24h - Administrative Assistant"
+        "text": "Administrative Assistant",
+        "title": "Cursos 24h"
       },
       {
-        "text": "Digital Innovation - Automated Testing with Cypress"
+        "text": "Automated Testing with Cypress",
+        "title": "Digital Innovation"
       }
     ]
   },
@@ -166,10 +190,10 @@
     "noResults": "No skills found",
     "cloudWord": "Word Cloud",
     "searchable": "Search and Filter",
-    "expert" : "Expert",
-    "advanced" :  "Advanced",
-    "intermediate" : "Intermediate",
-    "basic" : "Basic"
+    "expert": "Expert",
+    "advanced": "Advanced",
+    "intermediate": "Intermediate",
+    "basic": "Basic"
   },
 
   "projects": {
