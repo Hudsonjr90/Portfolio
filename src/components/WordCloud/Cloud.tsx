@@ -1,39 +1,17 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import WordCloud, { Options } from "react-wordcloud";
+import { useEffect, useRef, useState } from "react";
+import * as echarts from "echarts";
+import "echarts-wordcloud";
 import { mainIcons } from "../../data/iconsServer";
 import styles from "./Cloud.module.css";
-import { useTranslation } from "react-i18next";
-
-const options: Options = {
-  colors: ["var(--main_color)", "var(--cloud_text)", "var(--text_color)"],
-  deterministic: false,
-  enableOptimizations: false,
-  enableTooltip: false,
-  fontFamily: "Montserrat",
-  fontSizes: [18, 36],
-  fontStyle: "normal",
-  fontWeight: "bold",
-  padding: 1,
-  randomSeed: "seed",
-  rotationAngles: [-90, 0],
-  rotations: 2,
-  scale: "linear",
-  spiral: "rectangular",
-  svgAttributes: {},
-  textAttributes: {},
-  tooltipOptions: {},
-  transitionDuration: 500,
-};
 
 const Cloud = () => {
-  const { t } = useTranslation();
+  const chartRef = useRef<HTMLDivElement>(null);
 
   const [words, setWords] = useState(() => {
     const wordsArray = mainIcons.flatMap(icon => [
-      { text: icon.name, value: icon.percentage },
-      { text: icon.category, value: icon.percentage / 2 },
-      {text: t(icon.level), value: icon.percentage / 2 } 
+      { name: icon.name, value: icon.percentage },
+      { name: icon.category, value: icon.percentage / 2 }
     ]);
     return wordsArray;
   });
@@ -47,6 +25,49 @@ const Cloud = () => {
     return () => clearInterval(interval);
   }, []);
 
+
+  useEffect(() => {
+    if (chartRef.current) {
+      const chart = echarts.init(chartRef.current);
+
+      const root = document.documentElement;
+      const mainColor = getComputedStyle(root).getPropertyValue('--main_color').trim();
+      const cloudText = getComputedStyle(root).getPropertyValue('--cloud_text').trim();
+      const textColor = getComputedStyle(root).getPropertyValue('--text_color').trim();
+
+      const option = {
+        series: [{
+          type: 'wordCloud',
+          shape: 'circle',
+          left: 'center',
+          top: 'center',
+          width: '100%',
+          height: '100%',
+          right: null,
+          bottom: null,
+          sizeRange: [18, 36],
+          rotationRange: [-90, 0],
+          rotationStep: 45,
+          gridSize: 8,
+          drawOutOfBound: false,
+          textStyle: {
+            fontFamily: 'Orbitron, sans-serif',
+            fontWeight: 'bold',
+            color: () => {
+              const colors = [mainColor, cloudText, textColor];
+              return colors[Math.floor(Math.random() * colors.length)];
+            },
+          },
+          data: words
+        }]
+      };
+      chart.setOption(option);
+      return () => {
+        chart.dispose();
+      };
+    }
+  }, [words]);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: "100%" }}
@@ -58,9 +79,7 @@ const Cloud = () => {
       }}
       className={styles.container}
     >
-      <div className={styles.circleContainer}>
-        <WordCloud options={options} words={words} />
-      </div>
+      <div className={styles.circleContainer} ref={chartRef} />
     </motion.div>
   );
 };

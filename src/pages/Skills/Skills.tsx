@@ -121,15 +121,7 @@ const Skills = () => {
     setShowCloud(false);
   };
 
-  useEffect(() => {
-    if (filteredIcons.length > 0 && searchTerm === "") {
-      const interval = setInterval(() => {
-        setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
-      }, 7000);
-
-      return () => clearInterval(interval);
-    }
-  }, [filteredIcons.length, totalPages, searchTerm]);
+  
 
   return (
     <Transition onAnimationComplete={() => {}}>
