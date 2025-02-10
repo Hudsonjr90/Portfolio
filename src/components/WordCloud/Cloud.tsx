@@ -4,17 +4,14 @@ import * as echarts from "echarts";
 import "echarts-wordcloud";
 import { mainIcons } from "../../data/iconsServer";
 import styles from "./Cloud.module.css";
-import { useTranslation } from "react-i18next";
 
 const Cloud = () => {
-  const { t } = useTranslation();
   const chartRef = useRef<HTMLDivElement>(null);
 
   const [words, setWords] = useState(() => {
     const wordsArray = mainIcons.flatMap(icon => [
       { name: icon.name, value: icon.percentage },
-      { name: icon.category, value: icon.percentage / 2 },
-      { name: t(icon.level), value: icon.percentage / 2 }
+      { name: icon.category, value: icon.percentage / 2 }
     ]);
     return wordsArray;
   });
