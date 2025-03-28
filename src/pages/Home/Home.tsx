@@ -19,6 +19,8 @@ import HomeDesktopImage from "/imgs/home.webp";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
+import "atropos/css";
+import { Atropos } from "atropos/react";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -247,7 +249,11 @@ const Home = React.memo(() => {
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <img src={HomeDesktopImage} alt="home_img" loading="eager" />
+            <Atropos 
+            shadow={false}
+            highlight={false}>
+              <img src={HomeDesktopImage} alt="home_img" loading="eager" />
+            </Atropos>
           </motion.div>
         </motion.section>
         <motion.div
