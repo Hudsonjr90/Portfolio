@@ -15,7 +15,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
-import HomeDesktopImage from "/imgs/home.webp";
+import Model from "/imgs/my.webp";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
@@ -242,7 +242,7 @@ const Home = React.memo(() => {
             className={styles.home_img}
             initial={{ opacity: 0, y: "100%" }}
             animate={{ opacity: 1, y: "0%" }}
-            whileHover={{ scale: 1.2 }}
+
             transition={{
               duration: 2,
               delay: 0.7,
@@ -252,7 +252,7 @@ const Home = React.memo(() => {
             <Atropos 
             shadow={false}
             highlight={false}>
-              <img src={HomeDesktopImage} alt="home_img" loading="eager" />
+              <img src={Model} alt="home_img" loading="eager" />
             </Atropos>
           </motion.div>
         </motion.section>
