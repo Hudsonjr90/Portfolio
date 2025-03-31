@@ -15,7 +15,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
-import Model from "/imgs/my.webp";
+import Model from "/imgs/model.webp";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";

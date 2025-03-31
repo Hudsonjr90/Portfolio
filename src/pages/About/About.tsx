@@ -2,7 +2,7 @@ import styles from './About.module.css'
 import React, { useState, useCallback, Suspense } from 'react'
 import Transition from '../../components/Transition/Transition'
 import { useTranslation } from 'react-i18next'
-import About_img from '/imgs/model.webp'
+import About_img from '/imgs/my.webp'
 import { motion } from 'framer-motion'
 import LazyLoad from 'react-lazyload'
 
