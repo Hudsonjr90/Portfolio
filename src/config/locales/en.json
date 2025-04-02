@@ -35,107 +35,107 @@
   },
 
   "education": {
-    "title": " My",
-    "text": " Academics",
-    "cards": [
-      {
-        "text": "Bootcamp Banco Pan(Frontend Development with Angular)",
-        "title": "Digital Innovation"
-      },
-      {
-        "text": "Master's degree within the postgraduate program in Computer Science",
-        "title": "Harvard University"
-      },
-      {
-        "text": "Postgraduate degree in Software Engineering",
-        "title": "Faculdade Única de MG"
-      },
-      {
-        "text": "Management Processes",
-        "title": "Estácio de Sá University"
-      },
-      {
-        "text": "Working with Components in React",
-        "title": "Digital Innovation"
-      },
-      {
-        "text": "Component Architecture and managing complexity in the front-end",
-        "title": "Digital Innovation"
-      },
-      {
-        "text": "Essential Programming Logic",
-        "title": "Digital Innovation"
-      },
-      {
-        "text": "Essential JavaScript ES6",
-        "title": "Digital Innovation"
-      },
-      {
-        "text": "Advanced Techniques in Angular 8",
-        "title": "Digital Innovation"
-      },
-      {
-        "text": "Adobe Professional - AEM(Front-end Developer)",
-        "title": "Adobe Professional"
-      },
-      {
-        "text": "Adobe Professional - AEM(Sites Business Practitioner)",
-        "title": "Adobe Professional"
-      },
-      {
-        "text": "VueJs Brasil - Vuejs Course (Basic to Advanced)",
-        "title": "VueJs Brasil"
-      },
-      {
-        "text": "Directives and Properties of Vue.js Components",
-        "title": "Digital Innovation"
-      },
-      {
-        "text": "Components, Methods, and Lifecycle with Vue.js",
-        "title": "Digital Innovation"
-      },
-      {
-        "text": "JavaScript and TypeScript Course from Basic to Advanced",
-        "title": "Udemy"
-      },
-      {
-        "text": "Corporate Financial Education Course",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Financial Management Course",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Customer Success Course (How to Acquire and Retain Customers)",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Digital Marketing Course for Entrepreneurs",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Financial Strategy Course for Growth",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Strategic Planning Course for Entrepreneurs",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Digital Security Course",
-        "title": "FGV"
-      },
-      {
-        "text": "Administrative Assistant",
-        "title": "Cursos 24h"
-      },
-      {
-        "text": "Automated Testing with Cypress",
-        "title": "Digital Innovation"
-      }
-    ]
-  },
+  "title": " My",
+  "text": " Academics",
+  "cards": [
+    {
+      "text": "Bootcamp Banco Pan (Frontend Development with Angular)",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Master's degree within the Computer Science graduate program",
+      "title": "Harvard University"
+    },
+    {
+      "text": "Postgraduate in Software Engineering",
+      "title": "Faculdade Única de MG"
+    },
+    {
+      "text": "Managerial Processes",
+      "title": "Estácio de Sá University"
+    },
+    {
+      "text": "Working with Components in React",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Component Architecture and Complexity Management in Frontend",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Essential Programming Logic",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Javascript ES6 Essentials",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Advanced Techniques in Angular 8",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Adobe Professional - AEM (Front-end Developer)",
+      "title": "Adobe Professional"
+    },
+    {
+      "text": "Adobe Professional - AEM (Sites Business Practitioner)",
+      "title": "Adobe Professional"
+    },
+    {
+      "text": "VueJs Brazil - Vue.js Course (Basic to Advanced)",
+      "title": "VueJs Brazil"
+    },
+    {
+      "text": "Directives and Component Properties in Vue.js",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Components, Methods, and Lifecycle with Vue.js",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Javascript and Typescript Course from Basic to Advanced",
+      "title": "Udemy"
+    },
+    {
+      "text": "Automated Testing with Cypress",
+      "title": "Digital Innovation"
+    },
+    {
+      "text": "Financial Management Course",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Customer Success Course (How to Win and Retain Clients)",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Digital Marketing for Entrepreneurs",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Financial Strategy for Growth",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Sebrae - Strategic Planning for Entrepreneurs",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Digital Security Course",
+      "title": "FGV"
+    },
+    {
+      "text": "Administrative Assistant",
+      "title": "Cursos 24h"
+    },
+    {
+      "text": "Business Financial Education Course",
+      "title": "Sebrae"
+    }
+  ]
+},
 
   "testimonials": {
     "title": "Some",

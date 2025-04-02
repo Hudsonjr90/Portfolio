@@ -34,108 +34,108 @@
     "text": "- Desarrollador web apasionado y dedicado, he acumulado una sólida experiencia en 10 años, complementada por habilidades interpersonales que considero fundamentales en el universo de la programación. Me he especializado en tecnologías web, poseyendo un conocimiento profundo que se extiende a través de varias herramientas y lenguajes. Mi pasión por el aprendizaje continuo y mi compromiso con la evolución constante me impulsan a aplicar mi amplia experiencia en el desarrollo de soluciones web innovadoras e impactantes. Mi naturaleza comunicativa me hace siempre dispuesto a desempeñar un papel vital en propuestas innovadoras. ¡Construyamos algo increíble juntos!"
   },
 
-  "education": {
-    "title": " Mi",
-    "text": " Educación Académica",
-    "cards": [
-      {
-        "text": "Bootcamp Banco Pan(Desarrollo Frontend con Angular)",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Maestría dentro del programa de posgrado en Ciencias de la Computación",
-        "title": "Universidad de Harvard"
-      },
-      {
-        "text": "Posgrado en Ingeniería de Software",
-        "title": "Faculdade Única de MG"
-      },
-      {
-        "text": "Procesos Gerenciales",
-        "title": "Universidad Estácio de Sá"
-      },
-      {
-        "text": "Trabajando con Componentes en React",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Arquitectura de Componentes y la gestión de la complejidad en el front-end",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Lógica de Programación Esencial",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Javascript ES6 Esencial",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Técnicas Avanzadas en Angular 8",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Adobe Profesional - AEM(Desarrollador Front-end)",
-        "title": "Adobe Profesional"
-      },
-      {
-        "text": "Adobe Profesional - AEM(Sites Business Practitioner)",
-        "title": "Adobe Profesional"
-      },
-      {
-        "text": "VueJs Brasil - Curso Vuejs(Básico a Avanzado)",
-        "title": "VueJs Brasil"
-      },
-      {
-        "text": "Directivas y Propiedades de Componentes Vue.js",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Componentes, Métodos y Ciclo de vida con Vue.js",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Curso de Javascript y Typescript de Básico a Avanzado",
-        "title": "Udemy"
-      },
-      {
-        "text": "Curso de Educación Financiera Empresarial",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Gestión Financiera",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Customer Success (Cómo Adquirir y Retener Clientes)",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Marketing digital para emprendedores",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Estrategia Financiera para el Crecimiento",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Planificación Estratégica para Emprendedores",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Seguridad Digital",
-        "title": "FGV"
-      },
-      {
-        "text": "Asistente Administrativo",
-        "title": "Cursos 24h"
-      },
-      {
-        "text": "Pruebas Automatizadas con Cypress",
-        "title": "Innovación Digital"
-      }
-    ]
-  },
+"education": {
+  "title": " Mi",
+  "text": " Educación Académica",
+  "cards": [
+    {
+      "text": "Bootcamp Banco Pan (Desarrollo Frontend con Angular)",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Maestría dentro del programa de posgrado en Ciencias de la Computación",
+      "title": "Universidad de Harvard"
+    },
+    {
+      "text": "Posgrado en Ingeniería de Software",
+      "title": "Faculdade Única de MG"
+    },
+    {
+      "text": "Procesos Gerenciales",
+      "title": "Universidad Estácio de Sá"
+    },
+    {
+      "text": "Trabajando con Componentes en React",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Arquitectura de Componentes y la gestión de la complejidad en el front-end",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Lógica de Programación Esencial",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Javascript ES6 Esencial",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Técnicas Avanzadas en Angular 8",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Adobe Profesional - AEM (Desarrollador Front-end)",
+      "title": "Adobe Profesional"
+    },
+    {
+      "text": "Adobe Profesional - AEM (Sites Business Practitioner)",
+      "title": "Adobe Profesional"
+    },
+    {
+      "text": "VueJs Brasil - Curso Vue.js (Básico a Avanzado)",
+      "title": "VueJs Brasil"
+    },
+    {
+      "text": "Directivas y Propiedades de Componentes Vue.js",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Componentes, Métodos y Ciclo de vida con Vue.js",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Curso de Javascript y Typescript de Básico a Avanzado",
+      "title": "Udemy"
+    },
+    {
+      "text": "Pruebas Automatizadas con Cypress",
+      "title": "Innovación Digital"
+    },
+    {
+      "text": "Curso de Gestión Financiera",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Curso de Customer Success (Cómo Adquirir y Retener Clientes)",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Curso de Marketing Digital para Emprendedores",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Curso de Estrategia Financiera para el Crecimiento",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Curso de Planificación Estratégica para Emprendedores",
+      "title": "Sebrae"
+    },
+    {
+      "text": "Curso de Seguridad Digital",
+      "title": "FGV"
+    },
+    {
+      "text": "Asistente Administrativo",
+      "title": "Cursos 24h"
+    },
+    {
+      "text": "Curso de Educación Financiera Empresarial",
+      "title": "Sebrae"
+    }
+  ]
+},
 
   "testimonials": {
     "title": " Algunos",

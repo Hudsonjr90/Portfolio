@@ -4,7 +4,6 @@ import Transition from '../../components/Transition/Transition'
 import { useTranslation } from 'react-i18next'
 import About_img from '/imgs/my.webp'
 import { motion } from 'framer-motion'
-import LazyLoad from 'react-lazyload'
 
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 
@@ -29,7 +28,7 @@ const About = () => {
         <ParticlesB />
       </Suspense>
         <div className={styles.container_img}>
-          <LazyLoad once>
+          <Suspense fallback={<div>Loading image...</div>}>
             <motion.div
               initial={false}
               animate={
@@ -40,6 +39,7 @@ const About = () => {
               transition={{ duration: 1, delay: 1 }}
               viewport={{ once: true }}
               onViewportEnter={() => setIsInView(true)}
+              whileHover={{scale: 1.2}}
             >
               <img
                 src={About_img}
@@ -50,7 +50,7 @@ const About = () => {
                 loading="eager"
               />
             </motion.div>
-          </LazyLoad>
+          </Suspense>
         </div>
 
         <div>

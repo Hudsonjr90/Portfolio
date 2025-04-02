@@ -35,7 +35,6 @@ import {
   SiSwagger,
   SiLaravel,
   SiSpringboot,
-  SiCsharp,
   SiElectron,
   SiJenkins,
   SiJquery,
@@ -59,8 +58,11 @@ import {
   SiRuby,
   SiRubyonrails,
   SiNestjs,
-  SiPrisma
-  // SiRubymine
+  SiPrisma,
+  SiRubymine,
+  SiIntellijidea,
+  SiDbeaver,
+  SiAndroidstudio
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -76,6 +78,8 @@ import {
   BiLogoHeroku,
   BiBoltCircle,
 } from "react-icons/bi";
+import { TbBrandCSharp } from "react-icons/tb";
+import { VscVscode } from "react-icons/vsc";
 
 const iconComponents: { [index: string]: React.ElementType } = {
   HTML: BiLogoHtml5,
@@ -117,7 +121,7 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Swagger: SiSwagger,
   Laravel: SiLaravel,
   Springboot: SiSpringboot,
-  Csharp: SiCsharp,
+  Csharp: TbBrandCSharp,
   Electron: SiElectron,
   Jenkins: SiJenkins,
   Jquery: SiJquery,
@@ -148,14 +152,17 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Ruby: SiRuby,
   Rubyonrails: SiRubyonrails,
   NestJs: SiNestjs,
-  Prisma: SiPrisma
-  // Rubymine: SiRubymine
+  Prisma: SiPrisma,
+  Rubymine: SiRubymine,
+  VsCode: VscVscode,
+  IntelliJ: SiIntellijidea,
+  Dbeaver: SiDbeaver,
+  Android: SiAndroidstudio
 };
 
 export interface Skills {
   level: string;
- }
-
+}
 
 const mainIcons = [
   {
@@ -200,8 +207,20 @@ const mainIcons = [
     percentage: 80,
     level: "skills.advanced",
   },
-  { id: 6, name: "Npm", category: "Tools", percentage: 80, level: "skills.advanced" },
-  { id: 7, name: "Yarn", category: "Tools", percentage: 80, level: "skills.advanced" },
+  {
+    id: 6,
+    name: "Npm",
+    category: "Tools",
+    percentage: 80,
+    level: "skills.advanced",
+  },
+  {
+    id: 7,
+    name: "Yarn",
+    category: "Tools",
+    percentage: 80,
+    level: "skills.advanced",
+  },
   {
     id: 8,
     name: "Node",
@@ -209,7 +228,13 @@ const mainIcons = [
     percentage: 70,
     level: "skills.advanced",
   },
-  { id: 9, name: "Git", category: "Tools", percentage: 80, level: "skills.advanced" },
+  {
+    id: 9,
+    name: "Git",
+    category: "Tools",
+    percentage: 80,
+    level: "skills.advanced",
+  },
   {
     id: 10,
     name: "Github",
@@ -301,7 +326,13 @@ const mainIcons = [
     percentage: 70,
     level: "skills.advanced",
   },
-  { id: 23, name: "PHP", category: "Backend", percentage: 40, level: "skills.basic" },
+  {
+    id: 23,
+    name: "PHP",
+    category: "Backend",
+    percentage: 40,
+    level: "skills.basic",
+  },
   {
     id: 24,
     name: "Python",
@@ -470,7 +501,13 @@ const mainIcons = [
     percentage: 10,
     level: "skills.basic",
   },
-  { id: 48, name: "Jest", category: "Tools", percentage: 30, level: "skills.basic" },
+  {
+    id: 48,
+    name: "Jest",
+    category: "Tools",
+    percentage: 30,
+    level: "skills.basic",
+  },
   {
     id: 49,
     name: "Jasmine",
@@ -548,7 +585,13 @@ const mainIcons = [
     percentage: 10,
     level: "skills.basic",
   },
-  { id: 60, name: "AWS", category: "Tools", percentage: 10, level: "skills.basic" },
+  {
+    id: 60,
+    name: "AWS",
+    category: "Tools",
+    percentage: 10,
+    level: "skills.basic",
+  },
   {
     id: 61,
     name: "Sketch",
@@ -608,11 +651,45 @@ const mainIcons = [
   {
     id: 69,
     name: "Prisma",
-    category: "Tools",
+    category: "Database",
     percentage: 20,
     level: "skills.basic",
   },
-  // { id: 68, name: "Rubymine", category: "Tools", percentage: 10 },
+  { id: 68, 
+    name: "Rubymine", 
+    category: "Tools", 
+    percentage: 10,
+    level: "skills.basic"
+  },
+  {
+    id: 69,
+    name: "VsCode",
+    category: "Tools",
+    percentage: 80,
+    level: "skills.advanced",
+  },
+  {
+    id: 70,
+    name: "IntelliJ",
+    category: "Tools",
+    percentage: 10,
+    level: "skills.basic",
+  },
+  {
+    id: 71,
+    name: "Android",
+    category: "Tools",
+    percentage: 10,
+    level: "skills.basic",
+  },
+  {
+    id: 72,
+    name: "Dbeaver",
+    category: "Database",
+    percentage: 10,
+    level: "skills.basic",
+  }
+
 ];
 
 export { iconComponents, mainIcons };
