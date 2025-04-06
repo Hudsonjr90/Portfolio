@@ -71,7 +71,7 @@ const Home = React.memo(() => {
         clearInterval(interval);
         setDisplayedText(targetText); 
       }
-    }, 500); 
+    }, 60); 
   
     return () => clearInterval(interval); 
   }, []);
