@@ -79,12 +79,35 @@ const Home = React.memo(() => {
               className={styles.transparent_text}
             >
               <Typewriter
+                onInit={(typewriter) => {
+                  const randomizeWord = (word: string) => {
+                    const randomChars =
+                      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                    return word
+                      .split("")
+                      .map(
+                        () =>
+                          randomChars[
+                            Math.floor(Math.random() * randomChars.length)
+                          ]
+                      )
+                      .join("");
+                  };
+
+                  typedStrings.forEach((word) => {
+                    typewriter
+                      .typeString(randomizeWord(word)) 
+                      .deleteAll(10) 
+                      .typeString(word)
+                      .pauseFor(1000) 
+                      .deleteAll(30);
+                  });
+
+                  typewriter.start();
+                }}
                 options={{
-                  strings: typedStrings,
-                  autoStart: true,
+                  autoStart: false, 
                   loop: true,
-                  delay: 40,
-                  deleteSpeed: 30,
                 }}
               />
             </motion.div>
@@ -242,16 +265,13 @@ const Home = React.memo(() => {
             className={styles.home_img}
             initial={{ opacity: 0, y: "100%" }}
             animate={{ opacity: 1, y: "0%" }}
-
             transition={{
               duration: 2,
               delay: 0.7,
               ease: [0.2, 0, 0.2, 1],
             }}
           >
-            <Atropos 
-            shadow={false}
-            highlight={false}>
+            <Atropos shadow={false} highlight={false}>
               <img src={Model} alt="home_img" loading="eager" />
             </Atropos>
           </motion.div>
