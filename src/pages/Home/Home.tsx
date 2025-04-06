@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, Suspense } from "react";
+import React, { useState, useCallback, useMemo, useEffect, Suspense } from "react";
 import { NavLink } from "react-router-dom";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
@@ -29,6 +29,8 @@ const ParticlesA = React.lazy(
 const Home = React.memo(() => {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
+  const [displayedText, setDisplayedText] = useState("");
+  const targetText = "Hudson Kennedy";
 
   const handleOpenModal = useCallback(() => {
     setShowModal(true);
@@ -46,6 +48,33 @@ const Home = React.memo(() => {
       t("home.function4"),
     ];
   }, [t]);
+
+  useEffect(() => {
+    const randomChars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let currentText = "";
+    let iteration = 0;
+  
+    const interval = setInterval(() => {
+      if (iteration < targetText.length) {
+        currentText = targetText
+          .split("")
+          .map((_, index) =>
+            index <= iteration
+              ? targetText[index]
+              : randomChars[Math.floor(Math.random() * randomChars.length)]
+          )
+          .join("");
+        setDisplayedText(currentText);
+        iteration++;
+      } else {
+        clearInterval(interval);
+        setDisplayedText(targetText); 
+      }
+    }, 500); 
+  
+    return () => clearInterval(interval); 
+  }, []);
 
   return (
     <>
@@ -65,7 +94,7 @@ const Home = React.memo(() => {
               }}
               initial={{ opacity: 0, scale: 0.5 }}
             >
-              <h1 className={styles.text_reveal}>Hudson Kennedy</h1>
+              <h1 className={styles.text_reveal}>{displayedText}</h1>
             </motion.div>
 
             <motion.div
@@ -79,35 +108,12 @@ const Home = React.memo(() => {
               className={styles.transparent_text}
             >
               <Typewriter
-                onInit={(typewriter) => {
-                  const randomizeWord = (word: string) => {
-                    const randomChars =
-                      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-                    return word
-                      .split("")
-                      .map(
-                        () =>
-                          randomChars[
-                            Math.floor(Math.random() * randomChars.length)
-                          ]
-                      )
-                      .join("");
-                  };
-
-                  typedStrings.forEach((word) => {
-                    typewriter
-                      .typeString(randomizeWord(word)) 
-                      .deleteAll(10) 
-                      .typeString(word)
-                      .pauseFor(1000) 
-                      .deleteAll(30);
-                  });
-
-                  typewriter.start();
-                }}
-                options={{
-                  autoStart: false, 
+                 options={{
+                  strings: typedStrings,
+                  autoStart: true,
                   loop: true,
+                  delay: 40,
+                  deleteSpeed: 30,
                 }}
               />
             </motion.div>
