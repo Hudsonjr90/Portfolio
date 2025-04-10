@@ -3,7 +3,7 @@ import { useState } from 'react';
 export const useAudio = () => {
   const [soundEnabled, setSoundEnabled] = useState<boolean>(() => {
     const savedSoundEnabled = localStorage.getItem("soundEnabled");
-    return savedSoundEnabled ? JSON.parse(savedSoundEnabled) : true;
+    return savedSoundEnabled ? JSON.parse(savedSoundEnabled) : false;
   });
 
   const handleAudio = () => {
