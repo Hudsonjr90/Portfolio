@@ -84,7 +84,7 @@ const Navbar = () => {
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-    setCurrentLanguage(lng || "");
+    setCurrentLanguage(lng);
     localStorage.setItem("currentLanguage", lng);
   };
 
@@ -95,6 +95,12 @@ const Navbar = () => {
   useEffect(() => {
     setSidebarOpen(false);
   }, [currentLanguage]);
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("currentLanguage") || "pt";
+    i18n.changeLanguage(savedLanguage); // Atualiza o idioma no i18n ao carregar
+    setCurrentLanguage(savedLanguage); // Atualiza o estado local
+  }, []);
 
   useEffect(() => {
     const savedSoundEnabled = localStorage.getItem("soundEnabled");
