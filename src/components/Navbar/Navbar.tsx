@@ -98,8 +98,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("currentLanguage") || "pt";
-    i18n.changeLanguage(savedLanguage); // Atualiza o idioma no i18n ao carregar
-    setCurrentLanguage(savedLanguage); // Atualiza o estado local
+    i18n.changeLanguage(savedLanguage); 
+    setCurrentLanguage(savedLanguage);
   }, []);
 
   useEffect(() => {
