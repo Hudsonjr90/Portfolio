@@ -24,8 +24,8 @@ const Navbar = () => {
   });
   const [paletteInputInvisible, setPaletteInputInvisible] =
     useState<boolean>(false);
-  const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
-    return localStorage.getItem("currentLanguage") || "pt";
+  const [currentLanguage, setCurrentLanguage] = useState<string | null>(() => {
+    return localStorage.getItem("currentLanguage");
   });
   const [SidebarOpen, setSidebarOpen] = useState(false);
 
@@ -97,8 +97,10 @@ const Navbar = () => {
   }, [currentLanguage]);
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("currentLanguage") || "pt";
-    i18n.changeLanguage(savedLanguage); 
+    const savedLanguage = localStorage.getItem("currentLanguage");
+    if (savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+    }
     setCurrentLanguage(savedLanguage);
   }, []);
 
