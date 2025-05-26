@@ -11,7 +11,7 @@ import "react-vertical-timeline-component/style.min.css"
 import ParticlesB from "../../components/Particles/ParticlesB"
 import experiencesServer, { Experience } from "../../data/experiencesServer"
 
-const TimelineElement = ({ title, subtitle, description, date, image }: Experience) => (
+const TimelineElement = ({ title, subtitle, description, image }: Experience) => (
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentStyle={{
@@ -19,7 +19,6 @@ const TimelineElement = ({ title, subtitle, description, date, image }: Experien
       color: "var(--main_color)",
     }}
     contentArrowStyle={{ borderRight: "10px solid var(--second_bg_color)" }}
-    date={date}
     iconStyle={{
       background: "var(--bg_color)",
       color: "var(--main_color)",

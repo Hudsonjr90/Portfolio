@@ -13,6 +13,8 @@ import { ThemeProvider } from './context/ThemeContext'
 import { I18nextProvider } from 'react-i18next'
 import i18n from './config/i18n'
 import { AnimatePresence } from 'framer-motion'
+import 'devicon/devicon.min.css';
+
 
 function App() {
   const location = useLocation()

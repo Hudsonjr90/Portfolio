@@ -34,108 +34,108 @@
     "text": "- Desarrollador web apasionado y dedicado, he acumulado una sólida experiencia en 10 años, complementada por habilidades interpersonales que considero fundamentales en el universo de la programación. Me he especializado en tecnologías web, poseyendo un conocimiento profundo que se extiende a través de varias herramientas y lenguajes. Mi pasión por el aprendizaje continuo y mi compromiso con la evolución constante me impulsan a aplicar mi amplia experiencia en el desarrollo de soluciones web innovadoras e impactantes. Mi naturaleza comunicativa me hace siempre dispuesto a desempeñar un papel vital en propuestas innovadoras. ¡Construyamos algo increíble juntos!"
   },
 
-"education": {
-  "title": " Mi",
-  "text": " Educación Académica",
-  "cards": [
-    {
-      "text": "Bootcamp Banco Pan (Desarrollo Frontend con Angular)",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Maestría dentro del programa de posgrado en Ciencias de la Computación",
-      "title": "Universidad de Harvard"
-    },
-    {
-      "text": "Posgrado en Ingeniería de Software",
-      "title": "Faculdade Única de MG"
-    },
-    {
-      "text": "Procesos Gerenciales",
-      "title": "Universidad Estácio de Sá"
-    },
-    {
-      "text": "Trabajando con Componentes en React",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Arquitectura de Componentes y la gestión de la complejidad en el front-end",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Lógica de Programación Esencial",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Javascript ES6 Esencial",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Técnicas Avanzadas en Angular 8",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Adobe Profesional - AEM (Desarrollador Front-end)",
-      "title": "Adobe Profesional"
-    },
-    {
-      "text": "Adobe Profesional - AEM (Sites Business Practitioner)",
-      "title": "Adobe Profesional"
-    },
-    {
-      "text": "VueJs Brasil - Curso Vue.js (Básico a Avanzado)",
-      "title": "VueJs Brasil"
-    },
-    {
-      "text": "Directivas y Propiedades de Componentes Vue.js",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Componentes, Métodos y Ciclo de vida con Vue.js",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Curso de Javascript y Typescript de Básico a Avanzado",
-      "title": "Udemy"
-    },
-    {
-      "text": "Pruebas Automatizadas con Cypress",
-      "title": "Innovación Digital"
-    },
-    {
-      "text": "Curso de Gestión Financiera",
-      "title": "Sebrae"
-    },
-    {
-      "text": "Curso de Customer Success (Cómo Adquirir y Retener Clientes)",
-      "title": "Sebrae"
-    },
-    {
-      "text": "Curso de Marketing Digital para Emprendedores",
-      "title": "Sebrae"
-    },
-    {
-      "text": "Curso de Estrategia Financiera para el Crecimiento",
-      "title": "Sebrae"
-    },
-    {
-      "text": "Curso de Planificación Estratégica para Emprendedores",
-      "title": "Sebrae"
-    },
-    {
-      "text": "Curso de Seguridad Digital",
-      "title": "FGV"
-    },
-    {
-      "text": "Asistente Administrativo",
-      "title": "Cursos 24h"
-    },
-    {
-      "text": "Curso de Educación Financiera Empresarial",
-      "title": "Sebrae"
-    }
-  ]
-},
+  "education": {
+    "title": " Mi",
+    "text": " Educación Académica",
+    "cards": [
+      {
+        "text": "Bootcamp Banco Pan (Desarrollo Frontend con Angular)",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Maestría dentro del programa de posgrado en Ciencias de la Computación",
+        "title": "Universidad de Harvard"
+      },
+      {
+        "text": "Posgrado en Ingeniería de Software",
+        "title": "Faculdade Única de MG"
+      },
+      {
+        "text": "Procesos Gerenciales",
+        "title": "Universidad Estácio de Sá"
+      },
+      {
+        "text": "Trabajando con Componentes en React",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Arquitectura de Componentes y la gestión de la complejidad en el front-end",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Lógica de Programación Esencial",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Javascript ES6 Esencial",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Técnicas Avanzadas en Angular 8",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Adobe Profesional - AEM (Desarrollador Front-end)",
+        "title": "Adobe Profesional"
+      },
+      {
+        "text": "Adobe Profesional - AEM (Sites Business Practitioner)",
+        "title": "Adobe Profesional"
+      },
+      {
+        "text": "VueJs Brasil - Curso Vue.js (Básico a Avanzado)",
+        "title": "VueJs Brasil"
+      },
+      {
+        "text": "Directivas y Propiedades de Componentes Vue.js",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Componentes, Métodos y Ciclo de vida con Vue.js",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Curso de Javascript y Typescript de Básico a Avanzado",
+        "title": "Udemy"
+      },
+      {
+        "text": "Pruebas Automatizadas con Cypress",
+        "title": "Innovación Digital"
+      },
+      {
+        "text": "Curso de Gestión Financiera",
+        "title": "Sebrae"
+      },
+      {
+        "text": "Curso de Customer Success (Cómo Adquirir y Retener Clientes)",
+        "title": "Sebrae"
+      },
+      {
+        "text": "Curso de Marketing Digital para Emprendedores",
+        "title": "Sebrae"
+      },
+      {
+        "text": "Curso de Estrategia Financiera para el Crecimiento",
+        "title": "Sebrae"
+      },
+      {
+        "text": "Curso de Planificación Estratégica para Emprendedores",
+        "title": "Sebrae"
+      },
+      {
+        "text": "Curso de Seguridad Digital",
+        "title": "FGV"
+      },
+      {
+        "text": "Asistente Administrativo",
+        "title": "Cursos 24h"
+      },
+      {
+        "text": "Curso de Educación Financiera Empresarial",
+        "title": "Sebrae"
+      }
+    ]
+  },
 
   "testimonials": {
     "title": " Algunos",
@@ -168,13 +168,14 @@
     "subtitle4": "Ingeniero Frontend",
     "subtitle5": "Desarrollador Fullstack",
     "subtitle6": "Desarrollador Front-End Senior",
-    "description1": "Tomé un curso de informática industrial en ETERJ y trabajé en proyectos freelance, utilizando Angular Js, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
-    "description2": "Emisión de facturas, migración del sitio de Wordpress a React con NodeJs, usando redux, router proptypes, emailjs/browser, swiper, sweetalert, etc... optimización y carga de imágenes y responsable de la integración del ERP Bling y de la integración de los marketplaces",
-    "description3": "Consultoría Fullstack, utilizando Java/NodeJs en el Backend, Angular/React en el Frontend, así como programas de Adobe Experience Manager(AEM), con servicios para Porto, CVC, etc.",
-    "description4": "Trabajo freelance, donde trabajé en la creación de arquitectura y optimización de páginas y carga de imágenes, utilizando Vue3 en el Frontend, PHP y Laravel en el Backend, así como Docker y Webpack para configurar contenedores de aplicaciones, diseños y estilos con Sass/Scss, etc...",
-    "description5": "Actuando directamente en directivas de mantenimiento/refactorización de código y tratamientos, utilizando Java/springboot, NodeJs/Express en el Backend, PostgreSQL, Typescript con Angular/React en el Frontend",
-    "description6": "Trabajo freelance, donde trabajé en la arquitectura del proyecto, actualizando la versión Angular 14 a la versión 15, ajustes de dependencias, correcciones de sintaxis, diseños y estilos con Sass/Scss, etc...",
-    "description7": "Trabajo freelance, Creación y mantenimiento de diseños e interfaces con React, Styled-Components y Tailwind CSS, creación de pruebas unitarias con Cypress y Jest, optimización de páginas y componentes.",
+    "description1": "Hice un curso de informática industrial en ETERJ y trabajos como freelancer utilizando AngularJs, VB.net, HTML, Javascript, Jquery, Bootstrap, Sass.",
+    "description2": "Emisión de facturas, migración de sitio web en WordPress a React con NodeJs usando Redux, Router, PropTypes, emailjs/browser, Swiper, SweetAlert, etc... optimización y carga de imágenes y responsable de la integración del ERP Bling y de los marketplaces.",
+    "description3": "Consultoría Fullstack utilizando Java/NodeJs en el backend, Angular/React en el frontend y Adobe Experience Manager (AEM) en servicios para Porto, CVC, entre otros.",
+    "description4": "Trabajo como profesional independiente, en la creación de arquitectura y optimización de páginas y carga de imágenes utilizando Vue3 en el frontend, PHP y Laravel en el backend, además de Docker y Webpack para montar contenedores de la aplicación, layouts y estilos con Sass/Scss, etc...",
+    "description5": "Participación directa en directivas y mantenimiento/refactorización de código utilizando Java/Spring Boot, NodeJs/Express en el backend, PostgreSQL y Typescript con Angular/React en el frontend.",
+    "description6": "Trabajo como profesional independiente, en la arquitectura del proyecto, actualizando Angular de la versión 14 a la 15, ajustes de dependencias, corrección de errores de sintaxis, layouts y estilos con Sass/Scss, etc...",
+    "description7": "Trabajo como profesional independiente, utilizando NestJs y gRPC en el backend con Prisma para modelado de base de datos en PostgreSQL, VueJs con Quasar en el frontend, Typescript, pruebas con Cypress, refactorización y creación de componentes y API.",
+    "description8": "Trabajo como profesional independiente, creación y mantenimiento de layouts e interfaces con React, Styled-Components y Tailwind CSS, pruebas unitarias con Cypress y Jest, optimización de páginas y componentes.",
     "date1": "Febrero 2012 - A la fecha",
     "date2": "Febrero 2019 - Junio 2021",
     "date3": "Enero 2022 - Abril 2022",

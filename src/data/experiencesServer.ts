@@ -51,10 +51,17 @@ const experiencesServer = [
     image: "/imgs/imgExperiences/tdb.png",
   },
   {
-    title: "Cubo Connect",
-    subtitle: "experiences.subtitle6",
+    title: "Afilio / Dynaton",
+    subtitle: "experiences.subtitle7",
     description: "experiences.description7",
     date: "experiences.date7",
+    image: "/imgs/imgExperiences/afilio.png",
+  },
+  {
+    title: "Cubo Connect",
+    subtitle: "experiences.subtitle8",
+    description: "experiences.description8",
+    date: "experiences.date8",
     image: "/imgs/imgExperiences/cubo.png",
   },
 ];

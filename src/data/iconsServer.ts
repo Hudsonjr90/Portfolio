@@ -1,3 +1,4 @@
+import React from "react";
 import { GrMysql } from "react-icons/gr";
 import { GiPineapple } from "react-icons/gi";
 import {
@@ -64,7 +65,11 @@ import {
   SiDbeaver,
   SiAndroidstudio,
   SiQuasar,
-  SiApacheecharts
+  SiApacheecharts,
+  SiEclipseide,
+  SiFastify,
+  SiInsomnia,
+  SiSvelte
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -80,8 +85,15 @@ import {
   BiLogoHeroku,
   BiBoltCircle,
 } from "react-icons/bi";
+import { DiRedis } from "react-icons/di";
 import { TbBrandCSharp } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
+import DeviconIcon from "./DeviconIcon";
+
+const GrpcIcon: React.FC = () => (
+  React.createElement(DeviconIcon, { name: "grpc", colored: false, size: 90 })
+);
+
 
 const iconComponents: { [index: string]: React.ElementType } = {
   HTML: BiLogoHtml5,
@@ -162,6 +174,12 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Android: SiAndroidstudio,
   Quasar: SiQuasar,
   Echarts: SiApacheecharts,
+  Grpc: GrpcIcon,
+  Eclipse: SiEclipseide,
+  Fastify: SiFastify,
+  Insomnia: SiInsomnia,
+  Redis: DiRedis,
+  Svelte: SiSvelte,
 };
 
 export interface Skills {
@@ -706,6 +724,48 @@ const mainIcons = [
     category: "Tools",
     percentage: 30,
     level: "skills.basic",
+  },
+  {
+    id: 75,
+    name: "Grpc",
+    category: "Tools",
+    percentage: 50,
+    level: "skills.intermediate",
+  },
+  {
+    id: 76,
+    name: "Eclipse",
+    category: "Tools",
+    percentage: 40,
+    level: "skills.basic",
+  },
+  {
+    id: 77,
+    name: "Fastify",
+    category: "Backend",
+    percentage: 20,
+    level: "skills.basic",
+  },
+  {
+    id: 78,
+    name: "Insomnia",
+    category: "Tools",
+    percentage: 30,
+    level: "skills.basic",
+  },
+  {
+    id: 79,
+    name: "Redis",
+    category: "Database",
+    percentage: 10,
+    level: "skills.basic",
+  },
+  {
+    id: 80,
+    name: "Svelte",
+    category: "Frontend",
+    percentage: 60,
+    level: "skills.intermediate",
   },
 
 ];
