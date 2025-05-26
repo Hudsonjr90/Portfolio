@@ -62,7 +62,9 @@ import {
   SiRubymine,
   SiIntellijidea,
   SiDbeaver,
-  SiAndroidstudio
+  SiAndroidstudio,
+  SiQuasar,
+  SiApacheecharts
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -157,7 +159,9 @@ const iconComponents: { [index: string]: React.ElementType } = {
   VsCode: VscVscode,
   IntelliJ: SiIntellijidea,
   Dbeaver: SiDbeaver,
-  Android: SiAndroidstudio
+  Android: SiAndroidstudio,
+  Quasar: SiQuasar,
+  Echarts: SiApacheecharts,
 };
 
 export interface Skills {
@@ -688,7 +692,21 @@ const mainIcons = [
     category: "Database",
     percentage: 10,
     level: "skills.basic",
-  }
+  },
+  {
+    id: 73,
+    name: "Quasar",
+    category: "Frontend",
+    percentage: 50,
+    level: "skills.intermediate",
+  },
+  {
+    id: 74,
+    name: "Echarts",
+    category: "Tools",
+    percentage: 30,
+    level: "skills.basic",
+  },
 
 ];
 

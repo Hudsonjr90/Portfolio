@@ -3,7 +3,6 @@ import styles from "./Experiences.module.css"
 import Transition from "../../components/Transition/Transition"
 import { useTranslation } from "react-i18next"
 
-import { FaUser } from "react-icons/fa";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -12,7 +11,7 @@ import "react-vertical-timeline-component/style.min.css"
 import ParticlesB from "../../components/Particles/ParticlesB"
 import experiencesServer, { Experience } from "../../data/experiencesServer"
 
-const TimelineElement = ({ title, subtitle, description, date }: Experience) => (
+const TimelineElement = ({ title, subtitle, description, date, image }: Experience) => (
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentStyle={{
@@ -25,7 +24,7 @@ const TimelineElement = ({ title, subtitle, description, date }: Experience) => 
       background: "var(--bg_color)",
       color: "var(--main_color)",
     }}
-    icon={<FaUser />}
+   icon={<img src={image} alt="mood" className={styles.experiences_timeline_img}/>}
   >
     <h3 className={styles.vertical_timeline_title}>{title}</h3>
     <h4 className={styles.vertical_timeline_subtitle}>{subtitle}</h4>
@@ -60,6 +59,7 @@ const Experiences = () => {
               subtitle={experience.subtitle}
               description={experience.description}
               date={experience.date}
+              image={experience.image}
             />
           ))}
         </VerticalTimeline>

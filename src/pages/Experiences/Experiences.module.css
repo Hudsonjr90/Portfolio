@@ -1,5 +1,4 @@
 .experiences {
-    max-width: 2600px;
     max-height: 100vh;
     margin: 0 auto;
     padding: 0 4rem;
@@ -44,6 +43,10 @@
   font-family: 'Montserrat', sans-serif;
  }
 
+ .experiences_timeline_img{
+  width: 60px;
+ }
+
  @media screen and (max-width: 2560px){
   .experiences .heading{
     font-size: 3.7rem;
@@ -68,6 +71,9 @@
 @media screen and (max-width: 1024px){
   .experiences .heading{
     font-size: 3.1rem;
+  }
+  .experiences_img{
+    width: 40px;
   }
 }
 

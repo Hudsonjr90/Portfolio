@@ -12,7 +12,8 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } = useAudio();
+  const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } =
+    useAudio();
 
   const [lightMode, setLightMode] = useState<boolean>(() => {
     const savedLightMode = localStorage.getItem("lightMode");
@@ -24,8 +25,8 @@ const Navbar = () => {
   });
   const [paletteInputInvisible, setPaletteInputInvisible] =
     useState<boolean>(false);
-  const [currentLanguage, setCurrentLanguage] = useState<string | null>(() => {
-    return localStorage.getItem("currentLanguage");
+  const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
+    return localStorage.getItem("currentLanguage") || "pt";
   });
   const [SidebarOpen, setSidebarOpen] = useState(false);
 
@@ -97,10 +98,8 @@ const Navbar = () => {
   }, [currentLanguage]);
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("currentLanguage");
-    if (savedLanguage) {
-      i18n.changeLanguage(savedLanguage);
-    }
+    const savedLanguage = localStorage.getItem("currentLanguage") || "pt";
+    i18n.changeLanguage(savedLanguage);
     setCurrentLanguage(savedLanguage);
   }, []);
 
