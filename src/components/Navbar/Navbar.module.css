@@ -171,7 +171,7 @@ label {
   background: transparent;
   color: var(--text_color);
   display: inline-flex;
-  font-size: 4rem;
+  font-size: 2rem;
   transition: 0.5s ease;
   z-index: 1;
   cursor: pointer;
@@ -246,6 +246,15 @@ label {
   cursor: pointer;
 }
 
+.separator {
+  width: 2px;
+  height: 40px;
+  background: var(--main_color);
+  margin: 0 16px;
+  border-radius: 2px;
+  align-self: center;
+}
+
 /* <========== breakpoints ==========> */
 
 @media screen and (max-width: 2560px) {
@@ -310,14 +319,14 @@ label {
   }
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (min-width: 1025px) and (max-width: 1450px) {
   .header {
     align-items: center;
     display: flex;
     justify-content: space-between;
     left: 0;
     position: fixed;
-    padding: 1.1rem 2%;
+    padding: 1rem 2%;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -326,12 +335,17 @@ label {
     border-bottom: 1px solid var(--main_color);
   }
 
+  .logo {
+    font-size: 1rem;
+    color: var(--main_color);
+  }
+
   .links_list a {
     color: var(--text_color);
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
-    margin-left: 1rem;
+    margin-left: -1rem;
     position: relative;
     transition: 0.3s;
   }
@@ -341,6 +355,11 @@ label {
     height: auto;
     margin-top: 1.5rem;
     margin-left: -30.9rem;
+  }
+
+  .lng_btn{
+    font-size: 1.2rem;
+    padding: 1.4rem 0.2rem;
   }
 }
 
@@ -417,7 +436,14 @@ label {
     transition-delay: calc(0.2s * var(--i));
     transform: translateY(0);
   }
+  .separator{
+    display: none;
+  }
+  .lng_btn{
+    padding: 2rem 0rem;
+  }
 }
+
 
 @media screen and (max-width: 991px) {
 

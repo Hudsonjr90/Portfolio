@@ -268,8 +268,9 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-
+       
       <div className={styles.icons_container} id="container">
+        <div className={styles.separator}></div>
         <button
           onClick={toggleSound}
           className={styles.sound_icon}
@@ -363,11 +364,21 @@ const Navbar = () => {
               }}
               aria-label="Selecionar idioma"
             >
-              {currentLanguage === "pt" && <Br className={styles.flags} />}
-              {currentLanguage === "en" && <Us className={styles.flags} />}
-              {currentLanguage === "fr" && <Fr className={styles.flags} />}
-              {currentLanguage === "it" && <It className={styles.flags} />}
-              {currentLanguage === "es" && <Es className={styles.flags} />}
+              {currentLanguage === "pt" && (
+                <span>PT</span>
+              )}
+              {currentLanguage === "en" && (
+                <span>EN</span>
+              )}
+              {currentLanguage === "fr" && (
+                <span>FR</span>
+              )}
+              {currentLanguage === "it" && (
+                <span>IT</span>
+              )}
+              {currentLanguage === "es" && (
+                <span>ES</span>
+              )}
             </button>
             {SidebarOpen && (
               <motion.div
