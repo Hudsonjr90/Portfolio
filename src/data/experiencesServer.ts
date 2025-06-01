@@ -9,7 +9,7 @@ export interface Experience {
 
 const experiencesServer = [
   {
-    title: "Eterj/Capitona Rio",
+    title: "Eterj - Escola Técnica do Estado do Rio de Janeiro",
     subtitle: "experiences.subtitle1",
     description: "experiences.description1",
     date: "experiences.date1",
@@ -21,6 +21,13 @@ const experiencesServer = [
     description: "experiences.description2",
     date: "experiences.date2",
     image: "/imgs/imgExperiences/dt3.png",
+  },
+  {
+    title: "Capitona Rio",
+    subtitle: "experiences.subtitle1",
+    description: "experiences.description9",
+    date: "experiences.date9",
+    image: "/imgs/imgExperiences/capitona.png",
   },
   {
     title: "VILT Brasil Sistemas de Informação",
@@ -52,14 +59,14 @@ const experiencesServer = [
   },
   {
     title: "Afilio / Dynaton",
-    subtitle: "experiences.subtitle7",
+    subtitle: "experiences.subtitle5",
     description: "experiences.description7",
     date: "experiences.date7",
     image: "/imgs/imgExperiences/afilio.png",
   },
   {
     title: "Cubo Connect",
-    subtitle: "experiences.subtitle8",
+    subtitle: "experiences.subtitle6",
     description: "experiences.description8",
     date: "experiences.date8",
     image: "/imgs/imgExperiences/cubo.png",

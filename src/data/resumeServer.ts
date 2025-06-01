@@ -1,38 +1,43 @@
 const resumeServer = {
   
   br: [
-    "/imgs/imgCv/HudsonKennedyBR-1.webp",
-    "/imgs/imgCv/HudsonKennedyBR-2.webp",
-    "/imgs/imgCv/HudsonKennedyBR-3.webp",
-    "/imgs/imgCv/HudsonKennedyBR-4.webp",
+    "/imgs/imgCv/BR-1.webp",
+    "/imgs/imgCv/BR-2.webp",
+    "/imgs/imgCv/BR-3.webp",
+    "/imgs/imgCv/BR-4.webp",
+    "/imgs/imgCv/BR-5.webp",
   ],
 
   us: [
-    "/imgs/imgCv/HudsonKennedyUS-1.webp",
-    "/imgs/imgCv/HudsonKennedyUS-2.webp",
-    "/imgs/imgCv/HudsonKennedyUS-3.webp",
-    "/imgs/imgCv/HudsonKennedyUS-4.webp",
+    "/imgs/imgCv/US-1.webp",
+    "/imgs/imgCv/US-2.webp",
+    "/imgs/imgCv/US-3.webp",
+    "/imgs/imgCv/US-4.webp",
+    "/imgs/imgCv/US-5.webp",
   ],
 
   fr: [
-    "/imgs/imgCv/HudsonKennedyFR-1.webp",
-    "/imgs/imgCv/HudsonKennedyFR-2.webp",
-    "/imgs/imgCv/HudsonKennedyFR-3.webp",
-    "/imgs/imgCv/HudsonKennedyFR-4.webp",
+    "/imgs/imgCv/FR-1.webp",
+    "/imgs/imgCv/FR-2.webp",
+    "/imgs/imgCv/FR-3.webp",
+    "/imgs/imgCv/FR-4.webp",
+    "/imgs/imgCv/FR-5.webp",
   ],
 
   it: [
-    "/imgs/imgCv/HudsonKennedyIT-1.webp",
-    "/imgs/imgCv/HudsonKennedyIT-2.webp",
-    "/imgs/imgCv/HudsonKennedyIT-3.webp",
-    "/imgs/imgCv/HudsonKennedyIT-4.webp",
+    "/imgs/imgCv/IT-1.webp",
+    "/imgs/imgCv/IT-2.webp",
+    "/imgs/imgCv/IT-3.webp",
+    "/imgs/imgCv/IT-4.webp",
+    "/imgs/imgCv/IT-5.webp",
   ],
 
   es: [
-    "/imgs/imgCv/HudsonKennedyES-1.webp",
-    "/imgs/imgCv/HudsonKennedyES-2.webp",
-    "/imgs/imgCv/HudsonKennedyES-3.webp",
-    "/imgs/imgCv/HudsonKennedyES-4.webp",
+    "/imgs/imgCv/ES-1.webp",
+    "/imgs/imgCv/ES-2.webp",
+    "/imgs/imgCv/ES-3.webp",
+    "/imgs/imgCv/ES-4.webp",
+    "/imgs/imgCv/ES-5.webp",
   ],
 
 }
