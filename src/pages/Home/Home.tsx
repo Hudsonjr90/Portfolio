@@ -1,4 +1,10 @@
-import React, { useState, useCallback, useMemo, useEffect, Suspense } from "react";
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useEffect,
+  Suspense,
+} from "react";
 import { NavLink } from "react-router-dom";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
@@ -15,7 +21,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
-import Model from "/imgs/code.gif";
+import about from "/imgs/code.gif";
+import myself from "/imgs/my.webp";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
@@ -25,12 +32,17 @@ import { Atropos } from "atropos/react";
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
 );
+  const defaultImg = about;
+  const hoverImg = myself;
 
 const Home = React.memo(() => {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
+  const [currentImg, setCurrentImg] = useState(defaultImg);
   const targetText = "Hudson Kennedy";
+
+
 
   const handleOpenModal = useCallback(() => {
     setShowModal(true);
@@ -54,7 +66,7 @@ const Home = React.memo(() => {
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     let currentText = "";
     let iteration = 0;
-  
+
     const interval = setInterval(() => {
       if (iteration < targetText.length) {
         currentText = targetText
@@ -69,11 +81,11 @@ const Home = React.memo(() => {
         iteration++;
       } else {
         clearInterval(interval);
-        setDisplayedText(targetText); 
+        setDisplayedText(targetText);
       }
-    }, 400); 
-  
-    return () => clearInterval(interval); 
+    }, 400);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -108,7 +120,7 @@ const Home = React.memo(() => {
               className={styles.transparent_text}
             >
               <Typewriter
-                 options={{
+                options={{
                   strings: typedStrings,
                   autoStart: true,
                   loop: true,
@@ -276,9 +288,11 @@ const Home = React.memo(() => {
               delay: 0.7,
               ease: [0.2, 0, 0.2, 1],
             }}
+            onHoverStart={() => setCurrentImg(hoverImg)}
+            onHoverEnd={() => setCurrentImg(defaultImg)}
           >
             <Atropos shadow={false} highlight={false}>
-              <img src={Model} alt="home_img" loading="eager" />
+              <img src={currentImg} alt="home_img" loading="eager" />
             </Atropos>
           </motion.div>
         </motion.section>

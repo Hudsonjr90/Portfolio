@@ -60,9 +60,8 @@ label {
   justify-content: center;
 }
 
-.logo{
-  font-size: 2rem;
-  color: var(--main_color);
+.logo_img {
+  width: 8rem;
 }
 
 .input_dark_light_mode {

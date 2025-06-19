@@ -9,6 +9,8 @@ import { useAudio } from "../../hooks/useAudio";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { Us, Fr, Br, Es, It } from "react-flags-select";
 import { motion } from "framer-motion";
+import logoDark from "/imgs/hkdev.webp";
+import logoLight from "/imgs/hkdev_light.webp";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -116,7 +118,15 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>{t("home.logo")}</div>
+      <div className={styles.logo}>
+        <img
+          src={lightMode ? logoLight : logoDark}
+          alt="Logo"
+          height="auto"
+          loading="eager"
+          className={styles.logo_img}
+        />
+      </div>
 
       <nav>
         <ul
@@ -268,7 +278,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-       
+
       <div className={styles.icons_container} id="container">
         <div className={styles.separator}></div>
         <button
@@ -364,21 +374,11 @@ const Navbar = () => {
               }}
               aria-label="Selecionar idioma"
             >
-              {currentLanguage === "pt" && (
-                <span>PT</span>
-              )}
-              {currentLanguage === "en" && (
-                <span>EN</span>
-              )}
-              {currentLanguage === "fr" && (
-                <span>FR</span>
-              )}
-              {currentLanguage === "it" && (
-                <span>IT</span>
-              )}
-              {currentLanguage === "es" && (
-                <span>ES</span>
-              )}
+              {currentLanguage === "pt" && <span>PT</span>}
+              {currentLanguage === "en" && <span>EN</span>}
+              {currentLanguage === "fr" && <span>FR</span>}
+              {currentLanguage === "it" && <span>IT</span>}
+              {currentLanguage === "es" && <span>ES</span>}
             </button>
             {SidebarOpen && (
               <motion.div
