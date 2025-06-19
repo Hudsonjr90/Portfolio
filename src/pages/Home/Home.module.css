@@ -51,7 +51,7 @@
   width: 3.5rem;
 }
 
-.social_media .icon{
+.social_media .icon {
   color: #fff;
   font-size: 18px;
 }
@@ -142,11 +142,10 @@
   right: 25rem;
 }
 
-.home_img img { 
+.home_img img {
   width: 26.5vw;
   border: 1px solid var(--main_color);
   border-radius: 50%;
-
 }
 
 .footer {
@@ -156,7 +155,11 @@
   padding: 0;
   color: var(--main_color);
   font-size: 2.5rem;
-  text-align: center;
+}
+
+.footer span {
+  font-weight: 600;
+  margin-left: 0.5rem;
 }
 
 /* <========== breakpoints ==========> */

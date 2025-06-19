@@ -16,7 +16,9 @@ import ReactPaginate from "react-paginate";
 import { simpleTheme, useTheme } from "../../context/ThemeContext";
 
 const Cloud = React.lazy(() => import("../../components/WordCloud/Cloud"));
-const ParticlesB = React.lazy(() => import("../../components/Particles/ParticlesB"));
+const ParticlesB = React.lazy(
+  () => import("../../components/Particles/ParticlesB")
+);
 
 const categoryOptions = [
   { value: "all", label: "All" },
@@ -121,8 +123,6 @@ const Skills = () => {
     setShowCloud(false);
   };
 
-  
-
   return (
     <Transition onAnimationComplete={() => {}}>
       <Suspense fallback={<div>Loading...</div>}>
@@ -133,39 +133,41 @@ const Skills = () => {
           <span>//</span> {t("skills.title")}
           <span>{t("skills.text")}</span>
         </h2>
-        <motion.div initial={{ opacity: 0, y: "-100%" }}
-          animate={{ opacity: 1, y: "0%" }}
-          transition={{
-            duration: 2.5,
-            delay: 0.3,
-            ease: [0.3, 0, 0.2, 1],
-          }}className={styles.toggleButtons}>
-          <ThemeProvider theme={simpleTheme}>
-            <Tooltip
-              TransitionComponent={Zoom}
-              title={t("skills.searchable")}
-              placement="top"
-              arrow
-            >
-              <IconButton className={styles.show_search} onClick={handleDefaultClick}>
-                <FaSearch />
-              </IconButton>
-            </Tooltip>
-          </ThemeProvider>
-          <ThemeProvider theme={simpleTheme}>
-            <Tooltip
-              TransitionComponent={Zoom}
-              title={t("skills.cloudWord")}
-              placement="top"
-              arrow
-            >
-              <IconButton className={styles.show_cloud} onClick={handleCloudClick}>
-                <GiCloudDownload />
-              </IconButton>
-            </Tooltip>
-          </ThemeProvider>
-        </motion.div>
-
+        <div className={styles.toggleButtons}>
+          {showCloud ? (
+            <ThemeProvider theme={simpleTheme}>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={t("skills.searchable")}
+                placement="top"
+                arrow
+              >
+                <IconButton
+                  className={styles.show_search}
+                  onClick={handleDefaultClick}
+                >
+                  <FaSearch />
+                </IconButton>
+              </Tooltip>
+            </ThemeProvider>
+          ) : (
+            <ThemeProvider theme={simpleTheme}>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={t("skills.cloudWord")}
+                placement="top"
+                arrow
+              >
+                <IconButton
+                  className={styles.show_cloud}
+                  onClick={handleCloudClick}
+                >
+                  <GiCloudDownload />
+                </IconButton>
+              </Tooltip>
+            </ThemeProvider>
+          )}
+        </div>
         {showCloud ? (
           <Suspense fallback={<div>Loading...</div>}>
             <Cloud />
@@ -196,6 +198,50 @@ const Skills = () => {
                 </select>
                 <MdArrowDropDown className={styles.selectIcon} />
               </div>
+              {/* <motion.div
+                initial={{ opacity: 0, y: "-100%" }}
+                animate={{ opacity: 1, y: "0%" }}
+                transition={{
+                  duration: 2.5,
+                  delay: 0.3,
+                  ease: [0.3, 0, 0.2, 1],
+                }}
+                className={styles.toggleButtons}
+              >
+                {showCloud ? (
+                  <ThemeProvider theme={simpleTheme}>
+                    <Tooltip
+                      TransitionComponent={Zoom}
+                      title={t("skills.searchable")}
+                      placement="top"
+                      arrow
+                    >
+                      <IconButton
+                        className={styles.show_search}
+                        onClick={handleDefaultClick}
+                      >
+                        <FaSearch />
+                      </IconButton>
+                    </Tooltip>
+                  </ThemeProvider>
+                ) : (
+                  <ThemeProvider theme={simpleTheme}>
+                    <Tooltip
+                      TransitionComponent={Zoom}
+                      title={t("skills.cloudWord")}
+                      placement="top"
+                      arrow
+                    >
+                      <IconButton
+                        className={styles.show_cloud}
+                        onClick={handleCloudClick}
+                      >
+                        <GiCloudDownload />
+                      </IconButton>
+                    </Tooltip>
+                  </ThemeProvider>
+                )}
+              </motion.div> */}
               <div className={styles.searchContainer}>
                 <input
                   type="text"
@@ -238,34 +284,31 @@ const Skills = () => {
                       variants={container}
                       className={styles.box_icon}
                     >
-                     <div className={styles.icon_description}>
-                     {t(`${icon.level}`)}
+                      <div className={styles.icon_description}>
+                        {t(`${icon.level}`)}
                       </div>
-                        <ProgressBar
-                          radius={70}
-                          strokeWidth={4}
-                          strokeColor={mainColor}
-                          trackStrokeWidth={9}
-                          trackStrokeColor="var(--second_bg_color)"
-                          pointerRadius={6}
-                          pointerStrokeWidth={5}
-                          pointerStrokeColor={mainColor}
-                          progress={icon.percentage}
-                          initialAnimation={true}
-                          transition="2.5s ease 0.5s"
-                          trackTransition="0s ease"
-                        >
+                      <ProgressBar
+                        radius={70}
+                        strokeWidth={4}
+                        strokeColor={mainColor}
+                        trackStrokeWidth={9}
+                        trackStrokeColor="var(--second_bg_color)"
+                        pointerRadius={6}
+                        pointerStrokeWidth={5}
+                        pointerStrokeColor={mainColor}
+                        progress={icon.percentage}
+                        initialAnimation={true}
+                        transition="2.5s ease 0.5s"
+                        trackTransition="0s ease"
+                      >
+                        <div className={styles.icon_wrapper}>
+                          {IconComponent && (
+                            <IconComponent className={styles.icon} />
+                          )}
+                        </div>
 
-                            <div className={styles.icon_wrapper}>
-                              {IconComponent && (
-                                <IconComponent className={styles.icon} />
-                              )}
-                            </div>
-
-                          <div className={styles.indicator}>
-                           {icon.name}
-                          </div>
-                        </ProgressBar>
+                        <div className={styles.indicator}>{icon.name}</div>
+                      </ProgressBar>
                     </motion.div>
                   );
                 })}

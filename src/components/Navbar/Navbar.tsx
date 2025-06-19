@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 import { NavLink } from "react-router-dom";
-import { FaMoon, FaSun, FaPalette } from "react-icons/fa6";
+import { FaMoon, FaSun } from "react-icons/fa6";
 import styles from "./Navbar.module.css";
-import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { useAudio } from "../../hooks/useAudio";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
@@ -14,76 +13,28 @@ import logoLight from "/imgs/hkdev_light.webp";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } =
-    useAudio();
+  const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } = useAudio();
 
   const [lightMode, setLightMode] = useState<boolean>(() => {
     const savedLightMode = localStorage.getItem("lightMode");
     return savedLightMode ? JSON.parse(savedLightMode) : false;
   });
-  const [paletteOpen, setPaletteOpen] = useState<boolean>(false);
-  const [selectedColor, setSelectedColor] = useState<string | null>(() => {
-    return localStorage.getItem("selectedColor") || null;
-  });
-  const [paletteInputInvisible, setPaletteInputInvisible] =
-    useState<boolean>(false);
   const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
     return localStorage.getItem("currentLanguage") || "pt";
   });
-  const [SidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const { mainColor, setMainColor } = useTheme();
-  const { handleClickButton, handleLinkClick, showMenu } =
-    useResponsiveNavbar();
+  const { handleClickButton, handleLinkClick, showMenu } = useResponsiveNavbar();
 
   const handleToggleLightMode = () => {
     const newLightMode = !lightMode;
     setLightMode(newLightMode);
-    setPaletteInputInvisible(!newLightMode);
     localStorage.setItem("lightMode", JSON.stringify(newLightMode));
   };
 
   useEffect(() => {
-    if (lightMode) {
-      document.body.classList.add("light_mode");
-      setMainColor("#f65151");
-    } else {
-      document.body.classList.remove("light_mode");
-      setMainColor("#0ef6cc");
-      setTimeout(() => {
-        document.body.style.transition = "background-color 1.5s, color 1.5s";
-      }, 1500);
-    }
+    document.body.classList.toggle("light_mode", lightMode);
   }, [lightMode]);
-
-  const handlePaletteToggle = () => {
-    setPaletteOpen(!paletteOpen);
-  };
-
-  const handleColorSelection = (color: string) => {
-    setSelectedColor(color);
-    localStorage.setItem("selectedColor", color);
-  };
-
-  useEffect(() => {
-    if (selectedColor === "ball_0") {
-      document.documentElement.style.setProperty("--main_color", "#ffb703");
-      setMainColor("#ffb703");
-    } else if (selectedColor === "ball_2") {
-      document.documentElement.style.setProperty("--main_color", "#3a86ff");
-      setMainColor("#3a86ff");
-    } else if (selectedColor === "ball_1") {
-      document.documentElement.style.setProperty("--text_color", "#8ecae6");
-      setMainColor(mainColor);
-    } else if (selectedColor === "ball_3") {
-      document.documentElement.style.setProperty("--text_color", "#eb5e28");
-      setMainColor(mainColor);
-    } else if (selectedColor === "ball_4") {
-      document.documentElement.style.setProperty("--main_color", "#0ef6cc");
-      document.documentElement.style.setProperty("--text_color", "#fff");
-      setMainColor("#0ef6cc");
-    }
-  }, [selectedColor]);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -92,7 +43,7 @@ const Navbar = () => {
   };
 
   const toggleSidebar = () => {
-    setSidebarOpen(!SidebarOpen);
+    setSidebarOpen(!sidebarOpen);
   };
 
   useEffect(() => {
@@ -139,7 +90,7 @@ const Navbar = () => {
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as string]: 0 }}
+            style={{ ["--i" as any]: 0 }}
             role="none"
           >
             <NavLink
@@ -150,14 +101,13 @@ const Navbar = () => {
               {t("menu.home")}
             </NavLink>
           </li>
-
           <li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as string]: 1 }}
+            style={{ ["--i" as any]: 1 }}
             role="none"
           >
             <NavLink
@@ -168,14 +118,13 @@ const Navbar = () => {
               {t("menu.about")}
             </NavLink>
           </li>
-
           <li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as string]: 1 }}
+            style={{ ["--i" as any]: 1 }}
             role="none"
           >
             <NavLink
@@ -186,14 +135,13 @@ const Navbar = () => {
               {t("menu.academic-education")}
             </NavLink>
           </li>
-
           <li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as string]: 1 }}
+            style={{ ["--i" as any]: 1 }}
             role="none"
           >
             <NavLink
@@ -204,14 +152,13 @@ const Navbar = () => {
               {t("menu.testimonials")}
             </NavLink>
           </li>
-
           <li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as string]: 1 }}
+            style={{ ["--i" as any]: 1 }}
             role="none"
           >
             <NavLink
@@ -222,14 +169,13 @@ const Navbar = () => {
               {t("menu.experiences")}
             </NavLink>
           </li>
-
           <li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as string]: 1 }}
+            style={{ ["--i" as any]: 1 }}
             role="none"
           >
             <NavLink
@@ -240,14 +186,13 @@ const Navbar = () => {
               {t("menu.skills")}
             </NavLink>
           </li>
-
           <li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as string]: 2 }}
+            style={{ ["--i" as any]: 2 }}
             role="none"
           >
             <NavLink
@@ -258,14 +203,13 @@ const Navbar = () => {
               {t("menu.portfolio")}
             </NavLink>
           </li>
-
           <li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as string]: 3 }}
+            style={{ ["--i" as any]: 3 }}
             role="none"
           >
             <NavLink
@@ -300,68 +244,8 @@ const Navbar = () => {
             aria-label="Alternar modo claro/escuro"
             role="switch"
           />
-
           <FaMoon className={styles.moon_icon} />
           <FaSun className={styles.sun_icon} />
-        </label>
-
-        <label style={{ display: paletteInputInvisible ? "none" : "" }}>
-          <input
-            type="checkbox"
-            className={styles.input_palette_colors}
-            onClick={() => {
-              handlePaletteToggle();
-              handleAudio();
-            }}
-            aria-label="Abrir paleta de cores"
-            role="switch"
-          />
-
-          <FaPalette className={styles.palette} />
-
-          <div
-            className={`${styles.toggle_palette_theme} ${paletteOpen ? styles.palette_open : ""}`}
-          >
-            <button
-              className={`${styles.ball} ${styles.ball_0}`}
-              style={{ ["--p" as string]: 1 }}
-              onClick={() => handleColorSelection("ball_0")}
-              aria-label="Selecionar cor 1"
-              role="button"
-            ></button>
-
-            <button
-              className={`${styles.ball} ${styles.ball_1}`}
-              style={{ ["--p" as string]: 2 }}
-              onClick={() => handleColorSelection("ball_1")}
-              aria-label="Selecionar cor 2"
-              role="button"
-            ></button>
-
-            <button
-              className={`${styles.ball} ${styles.ball_2}`}
-              style={{ ["--p" as string]: 3 }}
-              onClick={() => handleColorSelection("ball_2")}
-              aria-label="Selecionar cor 3"
-              role="button"
-            ></button>
-
-            <button
-              className={`${styles.ball} ${styles.ball_3}`}
-              style={{ ["--p" as string]: 4 }}
-              onClick={() => handleColorSelection("ball_3")}
-              aria-label="Selecionar cor 4"
-              role="button"
-            ></button>
-
-            <button
-              className={`${styles.ball} ${styles.ball_4}`}
-              style={{ ["--p" as string]: 5 }}
-              onClick={() => handleColorSelection("ball_4")}
-              aria-label="Selecionar cor 5"
-              role="button"
-            ></button>
-          </div>
         </label>
 
         <div className={styles.lng_box}>
@@ -380,7 +264,7 @@ const Navbar = () => {
               {currentLanguage === "it" && <span>IT</span>}
               {currentLanguage === "es" && <span>ES</span>}
             </button>
-            {SidebarOpen && (
+            {sidebarOpen && (
               <motion.div
                 className={styles.sidebar}
                 initial={{ x: "80%" }}

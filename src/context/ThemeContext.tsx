@@ -104,6 +104,7 @@ export const simpleTheme = createTheme({
           fontFamily: "Orbitron, sans-serif",
           fontSize: "1.3rem",
           backgroundColor: "var(--main_color)",
+          color: "var(--second_text_color)",
         },
         arrow: {
           color: "var(--main_color)",

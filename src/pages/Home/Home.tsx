@@ -18,7 +18,12 @@ import {
   githubTheme,
 } from "../../context/ThemeContext";
 import { ThemeProvider } from "@mui/material/styles";
-import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaLinkedin,
+  FaGithub,
+  FaRegCopyright,
+} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
 import about from "/imgs/code.gif";
@@ -28,12 +33,13 @@ import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
 import "atropos/css";
 import { Atropos } from "atropos/react";
+import { getCurrentYear } from "../../utils/functions";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
 );
-  const defaultImg = about;
-  const hoverImg = myself;
+const defaultImg = about;
+const hoverImg = myself;
 
 const Home = React.memo(() => {
   const { t } = useTranslation();
@@ -41,8 +47,6 @@ const Home = React.memo(() => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentImg, setCurrentImg] = useState(defaultImg);
   const targetText = "Hudson Kennedy";
-
-
 
   const handleOpenModal = useCallback(() => {
     setShowModal(true);
@@ -307,7 +311,7 @@ const Home = React.memo(() => {
             ease: [0.2, 0, 0.2, 1],
           }}
         >
-          © 2025 H.K DEV
+          HK Dev🚀 <FaRegCopyright /> <span> {getCurrentYear()}</span>
         </motion.div>
       </Transition>
       <Modal show={showModal} onClose={handleCloseModal} />
