@@ -47,20 +47,6 @@
   width: 60px;
  }
 
- @media screen and (max-width: 2560px){
-  .experiences .heading{
-    font-size: 3.7rem;
-  }
- }
-
-
-@media screen and (max-width: 1550px){
-  .experiences .heading{
-    font-size: 3.3rem;
-  }
-}
-
-
 @media screen and (max-width: 1450px){
   .experiences .heading{
     font-size: 3.2rem;
@@ -87,5 +73,4 @@
   .experiences .heading{
     font-size: 2.7rem;
   }
-
  }

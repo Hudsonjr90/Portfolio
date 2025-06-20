@@ -50,19 +50,17 @@
 }
 
 
-@media screen and ( max-width: 1024px){}
+@media screen and ( max-width: 1024px){
+  .education .heading {
+    font-size: 3.2rem;
+  }
+}
 
 
-@media screen and (max-width: 767px){}
-
-
-@media screen and (max-width: 470px){}
-
-
-@media screen and (max-width: 428px){}
-
-
-@media screen and (max-width: 375px){}
-
+@media screen and (max-width: 767px){
+  .education .heading {
+    font-size: 3.1rem;
+  }
+}
 
 
