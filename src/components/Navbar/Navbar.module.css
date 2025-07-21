@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   left: 0;
   position: fixed;
-  padding: 0.3rem 8%;
+  padding: 0.5rem 5%;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -244,15 +244,6 @@ label {
   font-size: 3rem;
   margin-top: 0.9rem;
   cursor: pointer;
-}
-
-.separator {
-  width: 2px;
-  height: 40px;
-  background: var(--main_color);
-  margin: 0 16px;
-  border-radius: 2px;
-  align-self: center;
 }
 
 /* <========== breakpoints ==========> */

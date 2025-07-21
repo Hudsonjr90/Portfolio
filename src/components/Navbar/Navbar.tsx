@@ -224,7 +224,6 @@ const Navbar = () => {
       </nav>
 
       <div className={styles.icons_container} id="container">
-        <div className={styles.separator}></div>
         <button
           onClick={toggleSound}
           className={styles.sound_icon}
