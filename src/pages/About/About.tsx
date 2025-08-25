@@ -4,6 +4,7 @@ import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import about from "/imgs/home.webp";
 import { motion } from "framer-motion";
+import ChatBot from "../../components/Chat/ChatBot";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -74,6 +75,7 @@ const About = () => {
             <p>{t("about.text")}</p>
           </motion.div>
         </div>
+        <ChatBot />
       </section>
     </Transition>
   );

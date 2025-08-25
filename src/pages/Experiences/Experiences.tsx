@@ -1,17 +1,23 @@
-import styles from "./Experiences.module.css"
+import styles from "./Experiences.module.css";
 
-import Transition from "../../components/Transition/Transition"
-import { useTranslation } from "react-i18next"
+import Transition from "../../components/Transition/Transition";
+import { useTranslation } from "react-i18next";
 
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from "react-vertical-timeline-component"
-import "react-vertical-timeline-component/style.min.css"
-import ParticlesB from "../../components/Particles/ParticlesB"
-import experiencesServer, { Experience } from "../../data/experiencesServer"
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import ParticlesB from "../../components/Particles/ParticlesB";
+import experiencesServer, { Experience } from "../../data/experiencesServer";
+import ChatBot from "../../components/Chat/ChatBot";
 
-const TimelineElement = ({ title, subtitle, description, image }: Experience) => (
+const TimelineElement = ({
+  title,
+  subtitle,
+  description,
+  image,
+}: Experience) => (
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentStyle={{
@@ -23,23 +29,25 @@ const TimelineElement = ({ title, subtitle, description, image }: Experience) =>
       background: "var(--bg_color)",
       color: "var(--main_color)",
     }}
-   icon={<img src={image} alt="mood" className={styles.experiences_timeline_img}/>}
+    icon={
+      <img src={image} alt="mood" className={styles.experiences_timeline_img} />
+    }
   >
     <h3 className={styles.vertical_timeline_title}>{title}</h3>
     <h4 className={styles.vertical_timeline_subtitle}>{subtitle}</h4>
     <p className={styles.vertical_timeline_description}>{description}</p>
   </VerticalTimelineElement>
-)
+);
 
 const Experiences = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const translatedExperiences = experiencesServer.map((experience) => ({
     ...experience,
     subtitle: t(experience.subtitle),
     description: t(experience.description),
     date: t(experience.date),
-  }))
+  }));
 
   return (
     <Transition onAnimationComplete={() => {}}>
@@ -62,9 +70,10 @@ const Experiences = () => {
             />
           ))}
         </VerticalTimeline>
+        <ChatBot />
       </section>
     </Transition>
-  )
-}
+  );
+};
 
-export default Experiences
+export default Experiences;

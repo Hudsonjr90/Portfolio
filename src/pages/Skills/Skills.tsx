@@ -14,6 +14,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { ThemeProvider } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
 import { simpleTheme, useTheme } from "../../context/ThemeContext";
+import ChatBot from "../../components/Chat/ChatBot";
 
 const Cloud = React.lazy(() => import("../../components/WordCloud/Cloud"));
 const ParticlesB = React.lazy(
@@ -339,6 +340,7 @@ const Skills = () => {
             </motion.div>
           </>
         )}
+        <ChatBot />
       </section>
     </Transition>
   );

@@ -14,6 +14,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from '@mui/material/IconButton'
+import ChatBot from '../../components/Chat/ChatBot'
 
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 
@@ -424,6 +425,7 @@ const Contact = () => {
             </button>
           </div>
         </form>
+         <ChatBot />
       </section>
     </Transition>
   )

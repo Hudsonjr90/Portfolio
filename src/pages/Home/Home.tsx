@@ -34,6 +34,7 @@ import styles from "./Home.module.css";
 import "atropos/css";
 import { Atropos } from "atropos/react";
 import { getCurrentYear } from "../../utils/functions";
+import ChatBot from "../../components/Chat/ChatBot";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -315,6 +316,7 @@ const Home = React.memo(() => {
         </motion.div>
       </Transition>
       <Modal show={showModal} onClose={handleCloseModal} />
+      <ChatBot />
     </>
   );
 });
