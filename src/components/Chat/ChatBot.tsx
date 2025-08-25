@@ -1,17 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FiMessageCircle, FiX } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import styles from "./chatbot.module.css";
 
 const initialMessages: { sender: string; text: string }[] = [];
 
 const options = [
+	{ label: "Home", route: "/" },
 	{ label: "Sobre", route: "/about" },
 	{ label: "Formações", route: "/education" },
-    { label: "Depoimentos", route: "/testimonials" },
-    { label: "Experiências", route: "/experiences" },
-    { label: "Habilidades", route: "/skills" },
+	{ label: "Depoimentos", route: "/testimonials" },
+	{ label: "Experiências", route: "/experiences" },
+	{ label: "Habilidades", route: "/skills" },
 	{ label: "Portfolio", route: "/portfolio" },
 	{ label: "Contato", route: "/contact" },
 ];
@@ -24,6 +25,7 @@ const ChatBot: React.FC = () => {
 	const [showOptions, setShowOptions] = useState(true);
 	const [open, setOpen] = useState(false);
 	const navigate = useNavigate();
+	const location = useLocation();
 	const messagesEndRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -86,11 +88,13 @@ const ChatBot: React.FC = () => {
 							<div className={styles.botMsg} style={{ marginBottom: 12 }}>
 								Olá! Sou o assistente do portfólio. Como posso ajudar?
 							</div>
-							{options.map((opt) => (
-								<button key={opt.label} className={styles.optionBtn} onClick={() => handleOptionClick(opt)}>
-									{opt.label}
-								</button>
-							))}
+							{options
+								.filter(opt => opt.route !== location.pathname)
+								.map((opt) => (
+									<button key={opt.label} className={styles.optionBtn} onClick={() => handleOptionClick(opt)}>
+										{opt.label}
+									</button>
+								))}
 						</div>
 					)}
 				</div>
