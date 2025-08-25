@@ -4,9 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./chatbot.module.css";
 
-const initialMessages = [
-	{ sender: "bot", text: "Olá! Sou o assistente do portfólio. Como posso ajudar?" },
-];
+const initialMessages: { sender: string; text: string }[] = [];
 
 const options = [
 	{ label: "Sobre", route: "/about" },
@@ -19,7 +17,7 @@ const options = [
 ];
 
 const ChatBot: React.FC = () => {
-	const [messages, setMessages] = useState(() => {
+	const [messages, setMessages] = useState<{ sender: string; text: string }[]>(() => {
 		const saved = localStorage.getItem("chatbot_history");
 		return saved ? JSON.parse(saved) : initialMessages;
 	});
@@ -76,7 +74,7 @@ const ChatBot: React.FC = () => {
 						</button>
 					</div>
 					<div className={styles.chatBody}>
-						{messages.map((msg: { sender: string; text: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Iterable<React.ReactNode> | null | undefined; }, idx: React.Key | null | undefined) => (
+						{messages.map((msg, idx) => (
 							<div key={idx} className={msg.sender === "bot" ? styles.botMsg : styles.userMsg}>
 								{msg.text}
 							</div>
@@ -85,6 +83,9 @@ const ChatBot: React.FC = () => {
 					</div>
 					{showOptions && (
 						<div className={styles.options}>
+							<div className={styles.botMsg} style={{ marginBottom: 12 }}>
+								Olá! Sou o assistente do portfólio. Como posso ajudar?
+							</div>
 							{options.map((opt) => (
 								<button key={opt.label} className={styles.optionBtn} onClick={() => handleOptionClick(opt)}>
 									{opt.label}
@@ -92,7 +93,6 @@ const ChatBot: React.FC = () => {
 							))}
 						</div>
 					)}
-					{/* Campo de input removido, apenas opções disponíveis */}
 				</div>
 			)}
 		</>
