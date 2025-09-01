@@ -1,48 +1,46 @@
-import styles from './Contact.module.css'
-import React, { Suspense, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import Transition from '../../components/Transition/Transition'
-import { useTranslation } from 'react-i18next'
-import PhoneInput from 'react-phone-number-input/input'
-import emailjs from '@emailjs/browser'
-import Swal from 'sweetalert2'
-import { motion } from 'framer-motion'
-import Tooltip from '@mui/material/Tooltip'
-import Zoom from '@mui/material/Zoom'
-import { whatsappTheme, emailTheme, linkedinTheme, githubTheme } from '../../context/ThemeContext'
-import { ThemeProvider } from '@mui/material/styles'
+import styles from './Contact.module.css';
+import React, { Suspense, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import Transition from '../../components/Transition/Transition';
+import { useTranslation } from 'react-i18next';
+import PhoneInput from 'react-phone-number-input/input';
+import Swal from 'sweetalert2';
+import { motion } from 'framer-motion';
+import Tooltip from '@mui/material/Tooltip';
+import Zoom from '@mui/material/Zoom';
+import { whatsappTheme, emailTheme, linkedinTheme, githubTheme } from '../../context/ThemeContext';
+import { ThemeProvider } from '@mui/material/styles';
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import IconButton from '@mui/material/IconButton'
+import IconButton from '@mui/material/IconButton';
+import axios from 'axios';
 
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 
 const Contact = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
-  const [name, setName] = useState<string>('')
-  const [email, setEmail] = useState<string>('')
-  const [phone, setPhone] = useState<string>('')
-  const [subject, setSubject] = useState<string>('')
-  const [message, setMessage] = useState<string>('')
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [phone, setPhone] = useState<string>('');
+  const [subject, setSubject] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
-  const [nameError, setNameError] = useState<boolean>(false)
-  const [emailError, setEmailError] = useState<boolean>(false)
-  const [phoneError, setPhoneError] = useState<boolean>(false)
-  const [subjectError, setSubjectError] = useState<boolean>(false)
-  const [messageError, setMessageError] = useState<boolean>(false)
+  const [nameError, setNameError] = useState<boolean>(false);
+  const [emailError, setEmailError] = useState<boolean>(false);
+  const [phoneError, setPhoneError] = useState<boolean>(false);
+  const [subjectError, setSubjectError] = useState<boolean>(false);
+  const [messageError, setMessageError] = useState<boolean>(false);
 
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
+  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validatePhone = (phone: string) => phone.replace(/\D/g, '').length >= 8;
 
-  const validatePhone = (phone: string) => {
-    const cleanedPhone = phone.replace(/\D/g, '');
-    return cleanedPhone.length >= 8 && cleanedPhone.length <= 15;
-  };
-
-  const validateField = (_field: string, value: string, setError: (error: boolean) => void, validationFn?: (value: string) => boolean) => {
+  const validateField = (
+    _field: string,
+    value: string,
+    setError: (error: boolean) => void,
+    validationFn?: (value: string) => boolean
+  ) => {
     if (value === '' || (validationFn && !validationFn(value))) {
       setError(true);
     } else {
@@ -53,82 +51,50 @@ const Contact = () => {
   const validateForm = () => {
     let isValid = true;
 
-    if (name === '') {
-      setNameError(true);
-      isValid = false;
-    } else {
-      setNameError(false);
-    }
-
-    if (!validateEmail(email)) {
-      setEmailError(true);
-      isValid = false;
-    } else {
-      setEmailError(false);
-    }
-
-    if (!validatePhone(phone)) {
-      setPhoneError(true);
-      isValid = false;
-    } else {
-      setPhoneError(false);
-    }
-
-    if (subject === '') {
-      setSubjectError(true);
-      isValid = false;
-    } else {
-      setSubjectError(false);
-    }
-
-    if (message === '') {
-      setMessageError(true);
-      isValid = false;
-    } else {
-      setMessageError(false);
-    }
+    if (name === '') { setNameError(true); isValid = false; } else { setNameError(false); }
+    if (!validateEmail(email)) { setEmailError(true); isValid = false; } else { setEmailError(false); }
+    if (!validatePhone(phone)) { setPhoneError(true); isValid = false; } else { setPhoneError(false); }
+    if (subject === '') { setSubjectError(true); isValid = false; } else { setSubjectError(false); }
+    if (message === '') { setMessageError(true); isValid = false; } else { setMessageError(false); }
 
     return isValid;
   };
 
-  function sendEmail(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
+  async function sendEmail(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
 
-    if (!validateForm()) {
-      return;
+    if (!validateForm()) return;
+
+    try {
+      const response = await axios.post("https://api.web3forms.com/submit", {
+        access_key: import.meta.env.VITE_APP_ACCESS_KEY,
+        name,
+        email,
+        phone,
+        subject,
+        message,
+      });
+
+      if (response.status === 200) {
+        Swal.fire({
+          title: 'Ótimo!',
+          text: 'Mensagem enviada com sucesso!',
+          icon: 'success',
+        });
+        setName('');
+        setEmail('');
+        setPhone('');
+        setSubject('');
+        setMessage('');
+      }
+    } catch (error) {
+      Swal.fire({
+        title: 'Erro!',
+        text: 'Não foi possível enviar sua mensagem. Tente novamente mais tarde.',
+        icon: 'error',
+      });
+      console.error("Erro ao enviar formulário:", error);
     }
-
-    const templateParams = {
-      from_name: name,
-      email: email,
-      phone: phone,
-      subject: subject,
-      message: message,
-    }
-
-    emailjs
-      .send('gmailMessage', 'replyKey', templateParams, 'pg7uosKesPGRIzFWI')
-      .then(
-        (response) => {
-          if (response.status === 200) {
-            Swal.fire({
-              title: 'Ótimo!',
-              text: 'Mensagem enviada com sucesso!',
-              icon: 'success',
-            })
-          }
-
-          console.log('EMAIL ENVIADO', response.status, response.text)
-          setName('')
-          setEmail('')
-          setPhone('')
-          setSubject('')
-          setMessage('')
-        },
-        (error) => {
-          console.log('ERRO AO ENVIAR O EMAIL ', error)
-        },
-      )
   }
 
   return (
