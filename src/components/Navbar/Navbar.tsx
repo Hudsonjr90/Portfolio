@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import styles from "./Navbar.module.css";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../../context/ThemeContext";
 import { useAudio } from "../../hooks/useAudio";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { Us, Fr, Br, Es, It } from "react-flags-select";
@@ -14,6 +15,7 @@ import logoLight from "/imgs/hkdev_light.webp";
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } = useAudio();
+  const { setMainColor } = useTheme();
 
   const [lightMode, setLightMode] = useState<boolean>(() => {
     const savedLightMode = localStorage.getItem("lightMode");
@@ -30,6 +32,7 @@ const Navbar = () => {
     const newLightMode = !lightMode;
     setLightMode(newLightMode);
     localStorage.setItem("lightMode", JSON.stringify(newLightMode));
+    setMainColor(newLightMode ? "#f65151" : "#0ef6cc");
   };
 
   useEffect(() => {
