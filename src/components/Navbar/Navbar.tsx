@@ -260,11 +260,11 @@ const Navbar = () => {
               }}
               aria-label="Selecionar idioma"
             >
-              {currentLanguage === "pt" && <span>PT</span>}
-              {currentLanguage === "en" && <span>EN</span>}
-              {currentLanguage === "fr" && <span>FR</span>}
-              {currentLanguage === "it" && <span>IT</span>}
-              {currentLanguage === "es" && <span>ES</span>}
+                {currentLanguage === "pt" && <><Br className={styles.flags} /></>}
+                {currentLanguage === "en" && <><Us className={styles.flags} /></>}
+                {currentLanguage === "fr" && <><Fr className={styles.flags} /></>}
+                {currentLanguage === "it" && <><It className={styles.flags} /></>}
+                {currentLanguage === "es" && <><Es className={styles.flags} /></>}
             </button>
             {sidebarOpen && (
               <motion.div

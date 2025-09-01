@@ -13,7 +13,6 @@ import styles from "./Portfolio.module.css";
 import portfolioServer from "../../data/portfolioServer";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import ChatBot from "../../components/Chat/ChatBot";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -185,7 +184,6 @@ const Portfolio = () => {
               forcePage={currentPage}
             />
           </motion.div>
-           <ChatBot />
         </section>
       )}
     </Transition>

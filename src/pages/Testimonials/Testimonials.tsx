@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import styles from "./Testimonials.module.css";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
-import ChatBot from "../../components/Chat/ChatBot";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -29,7 +28,6 @@ const Testimonials = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <TestimonialComponent />
         </Suspense>
-         <ChatBot />
       </section>
     </Transition>
   );

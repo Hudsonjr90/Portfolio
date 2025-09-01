@@ -10,7 +10,6 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import ParticlesB from "../../components/Particles/ParticlesB";
 import experiencesServer, { Experience } from "../../data/experiencesServer";
-import ChatBot from "../../components/Chat/ChatBot";
 
 const TimelineElement = ({
   title,
@@ -70,7 +69,6 @@ const Experiences = () => {
             />
           ))}
         </VerticalTimeline>
-        <ChatBot />
       </section>
     </Transition>
   );

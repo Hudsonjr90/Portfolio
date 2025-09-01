@@ -176,6 +176,12 @@ label {
   z-index: 1;
   cursor: pointer;
   padding: 1.2rem 0.2rem;
+  align-items: center;
+}
+
+.lng_btn .flags {
+  font-size: 4rem;
+  margin-right: 0.5rem;
 }
 
 .lng_box .lng_btn::before {

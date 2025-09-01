@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import styles from "./Education.module.css";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
-import ChatBot from '../../components/Chat/ChatBot';
 
 
 const CardComponent = React.lazy(() => import('../../components/Card/CardComponent'));
@@ -24,7 +23,6 @@ const Education = () => {
           <ParticlesB />
           <CardComponent />
         </Suspense>
-         <ChatBot />
       </section>
     </Transition>
   );

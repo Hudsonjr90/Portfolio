@@ -14,7 +14,6 @@ import { ThemeProvider } from '@mui/material/styles'
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from '@mui/material/IconButton'
-import ChatBot from '../../components/Chat/ChatBot'
 
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 
@@ -39,9 +38,7 @@ const Contact = () => {
   };
 
   const validatePhone = (phone: string) => {
-    // Remover caracteres de formatação
     const cleanedPhone = phone.replace(/\D/g, '');
-    // Verificar se o número de telefone tem pelo menos 9 ou 8 dígitos
     return cleanedPhone.length >= 8 && cleanedPhone.length <= 15;
   };
 
@@ -425,7 +422,6 @@ const Contact = () => {
             </button>
           </div>
         </form>
-         <ChatBot />
       </section>
     </Transition>
   )
