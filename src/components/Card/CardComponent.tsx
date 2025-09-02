@@ -8,20 +8,13 @@ import styles from "./CardComponent.module.css";
 
 const CardComponent = () => {
   const { t } = useTranslation();
-
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  const handleMouseEnter = (id: number) => {
-    setHoveredCard(id);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredCard(null);
-  };
+  const handleMouseEnter = (id: number) => setHoveredCard(id);
+  const handleMouseLeave = () => setHoveredCard(null);
 
   const handleDownload = (cardId: number) => {
     const card = cardsServer.find((c) => c.id === cardId);
-
     if (card && card.file && card.text) {
       const link = document.createElement("a");
       link.href = card.file;
@@ -64,17 +57,44 @@ const CardComponent = () => {
   const currentPageData = cardsServer
     .slice(offset, offset + cardsPerPage)
     .map((card) => (
+      <div
+        className={styles.card_wrapper}
+        key={card.id}
+        onMouseEnter={() => handleMouseEnter(card.id)}
+        onMouseLeave={handleMouseLeave}
+      >
+        {/* Halo animado */}
+        {hoveredCard === card.id && (
+          <motion.div
+            className={styles.card_glow}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: [0, 0.5, 0], scale: [0, 1, 0] }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+          />
+        )}
+
+        {/* Card 3D */}
         <div
-          className={styles.card}
-          key={card.id}
-          onMouseEnter={() => handleMouseEnter(card.id)}
-          onMouseLeave={handleMouseLeave}
+          className={`${styles.card} ${styles.card_3d}`}
+          style={{
+            transform:
+              hoveredCard === card.id
+                ? "rotateX(10deg) scale(1.05)"
+                : "rotateX(0deg) scale(1)",
+          }}
         >
           <div className={styles.card_image_container}>
             <img
               src={card.img}
               alt="Card image"
-              className={`${styles.card_image} ${hoveredCard === card.id ? styles.blur : ""}`}
+              className={`${styles.card_image} ${
+                hoveredCard === card.id ? styles.blur : ""
+              }`}
               loading="lazy"
             />
           </div>
@@ -96,6 +116,7 @@ const CardComponent = () => {
             )}
           </div>
         </div>
+      </div>
     ));
 
   return (
@@ -103,31 +124,22 @@ const CardComponent = () => {
       <motion.div
         initial={{ opacity: 0, x: "-80%" }}
         animate={{ opacity: 1, x: "0%" }}
-        transition={{
-          duration: 2,
-          delay: 0.3,
-          ease: [0.3, 0, 0.2, 1],
-        }}
+        transition={{ duration: 2, delay: 0.3, ease: [0.3, 0, 0.2, 1] }}
         className={styles.card_container}
       >
         {currentPageData}
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: "80%" }}
         animate={{ opacity: 1, y: "0%" }}
-        transition={{
-          duration: 2,
-          delay: 0.3,
-          ease: [0.3, 0, 0.2, 1],
-        }}
+        transition={{ duration: 2, delay: 0.3, ease: [0.3, 0, 0.2, 1] }}
       >
         <Paginate
           pageCount={pageCount}
           pageRangeDisplayed={5}
           marginPagesDisplayed={0}
-          onPageChange={({ selected: selectedPage }) => {
-            handlePageClick({ selected: selectedPage });
-          }}
+          onPageChange={({ selected }) => handlePageClick({ selected })}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}
           previousLabel={"<<"}
