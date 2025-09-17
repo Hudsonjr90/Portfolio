@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, useCallback, Suspense } from "react";
 import {
   Card,
   CardMedia,
@@ -14,9 +14,7 @@ import portfolioServer from "../../data/portfolioServer";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const ParticlesB = React.lazy(
-  () => import("../../components/Particles/ParticlesB")
-);
+const ParticlesB = React.lazy(() => import("../../components/Particles/ParticlesB"));
 
 const Portfolio = () => {
   const { t } = useTranslation();
@@ -25,62 +23,40 @@ const Portfolio = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [transitionCompleted, setTransitionCompleted] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
   const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  useEffect(() => {
-    const updateItemsPerPage = () => {
-      const width = window.innerWidth;
-      if (width <= 768) {
-        setItemsPerPage(1);
-      } else if (width > 768 && width <= 1550) {
-        setItemsPerPage(2);
-      } else {
-        setItemsPerPage(3);
-      }
-    };
-
-    updateItemsPerPage();
-    window.addEventListener("resize", updateItemsPerPage);
-
-    return () => window.removeEventListener("resize", updateItemsPerPage);
+  const updateItemsPerPage = useCallback(() => {
+    const width = window.innerWidth;
+    if (width <= 768) {
+      setItemsPerPage(1);
+    } else if (width > 768 && width <= 1550) {
+      setItemsPerPage(2);
+    } else {
+      setItemsPerPage(3);
+    }
   }, []);
 
-  useEffect(() => {
+  const updateCurrentItems = useCallback(() => {
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(portfolioServer.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(portfolioServer.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
-  const handlePageClick = (event: { selected: number }) => {
+  useEffect(() => {
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, [updateItemsPerPage]);
+
+  useEffect(() => {
+    updateCurrentItems();
+  }, [itemOffset, itemsPerPage, updateCurrentItems]);
+
+  const handlePageClick = useCallback((event: {selected: number}) => {
     const newOffset = (event.selected * itemsPerPage) % portfolioServer.length;
     setItemOffset(newOffset);
     setCurrentPage(event.selected);
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (!isPaused) {
-        setItemOffset((prevOffset) => {
-          let newOffset = prevOffset + itemsPerPage;
-          let newPage = currentPage + 1;
-
-          if (newOffset >= portfolioServer.length) {
-            newOffset = 0;
-            newPage = 0;
-          }
-
-          setCurrentPage(newPage);
-          return newOffset;
-        });
-      }
-    },10000);
-
-    return () => clearInterval(intervalId);
-  }, [isPaused, currentPage, itemsPerPage]);
-
-  const handleMouseEnter = () => setIsPaused(true);
-  const handleMouseLeave = () => setIsPaused(false);
+  }, [itemsPerPage]);
 
   return (
     <Transition onAnimationComplete={() => setTransitionCompleted(true)}>
@@ -90,10 +66,8 @@ const Portfolio = () => {
             <ParticlesB />
           </Suspense>
           <h2 className={styles.heading}>
-            <span>//</span> {t("projects.title")}{" "}
-            <span>{t("projects.text")}</span>
+            <span>//</span> {t("projects.title")} <span>{t("projects.text")}</span>
           </h2>
-
           <div className={styles.portfolio_grid}>
             {currentItems.map((item) => (
               <motion.div
@@ -106,11 +80,7 @@ const Portfolio = () => {
                   ease: [0.2, 0, 0.2, 1],
                 }}
               >
-                <Card
-                  className={styles.card}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                >
+                <Card className={styles.card}>
                   <CardMedia
                     component="img"
                     alt={item.name}
@@ -119,16 +89,13 @@ const Portfolio = () => {
                     loading="lazy"
                   />
                   <CardContent className={styles.cardContent}>
-                     {item.name} 
+                    {item.name}
                   </CardContent>
                   <CardContent className={styles.cardContent}>
-                
                     {t(`projects.data.${item.id}.description`)}
                   </CardContent>
                   <CardContent className={styles.cardContent}>
-                    <li className={styles.tech_title}>
-                      {t("projects.subtitle")}
-                    </li>
+                    <li className={styles.tech_title}>{t("projects.subtitle")}</li>
                     {item.technologies.map((tech, index) => (
                       <li className={styles.tech_list} key={index}>
                         {tech}

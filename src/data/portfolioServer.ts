@@ -14,6 +14,7 @@ import task from '/imgs/imgProjects/task.webp'
 import imc from '/imgs/imgProjects/imc.webp'
 import kfc from '/imgs/imgProjects/kfc.webp'
 import pokeHistory from '/imgs/imgProjects/pokehistory.webp'
+import barberShop from '/imgs/imgProjects/barber.webp'
 
 const portfolioServer = [
   {
@@ -166,15 +167,15 @@ const portfolioServer = [
     linkDeploy: "https://pokedex-hudsonjr90.vercel.app",
     linkRepository: "https://github.com/Hudsonjr90/PokeHistory",
   },
-  // {
-  //   id: 15,
-  //   image: ,
-  //   name: "",
-  //   description: "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // }
+  {
+    id: 15,
+    image: barberShop,
+    name: "Barber shop",
+    description: "Um site para um barbearia, com agendamento online.",
+    technologies: ["NextJs", "React", "Sass", "Typescript", "Prisma", "NestJs"],
+    linkDeploy: "",
+    linkRepository: "",
+  },
   // {
   //   id: 16,
   //   image: ,
