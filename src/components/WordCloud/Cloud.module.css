@@ -1,43 +1,125 @@
 .container {
-    max-width: 1800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .circleContainer {
-    position: relative;
-    width: 650px;
-    height: 650px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 0, 0, 0.5);
-    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.wordContainer {
+  position: absolute;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation-play-state: running; 
+}
+
+.wordContainer:hover {
+  animation-play-state: paused !important;
+}
+
+.wordContainer.dragging {
+  animation-play-state: paused !important;
+  cursor: grabbing;
+  z-index: 1000;
+}
+
+.wordContainer:active {
+  cursor: grabbing;
+}
+
+/* Força retomada da animação quando não está sendo arrastada */
+.wordContainer:not(.dragging) {
+  animation-play-state: running !important;
+}
+
+.word {
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.word:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Animações de flutuação */
+@keyframes floatLeftRight {
+  0% { transform: translateX(-20vw); }
+  100% { transform: translateX(120vw); }
+}
+
+@keyframes floatRightLeft {
+  0% { transform: translateX(120vw); }
+  100% { transform: translateX(-20vw); }
+}
+
+@keyframes floatTopBottom {
+  0% { transform: translateY(-20vh); }
+  100% { transform: translateY(120vh); }
+}
+
+@keyframes floatBottomTop {
+  0% { transform: translateY(120vh); }
+  100% { transform: translateY(-20vh); }
+}
+
+@keyframes floatDiagonal1 {
+  0% { transform: translate(-20vw, -20vh); }
+  100% { transform: translate(120vw, 120vh); }
+}
+
+@keyframes floatDiagonal2 {
+  0% { transform: translate(120vw, -20vh); }
+  100% { transform: translate(-20vw, 120vh); }
+}
+
+@keyframes floatDiagonal3 {
+  0% { transform: translate(-20vw, 120vh); }
+  100% { transform: translate(120vw, -20vh); }
+}
+
+@keyframes floatDiagonal4 {
+  0% { transform: translate(120vw, 120vh); }
+  100% { transform: translate(-20vw, -20vh); }
+}
+
+/* Classes de animação com durações variadas */
+.float1 { animation: floatLeftRight 30s linear infinite; }
+.float2 { animation: floatRightLeft 25s linear infinite; }
+.float3 { animation: floatTopBottom 35s linear infinite; }
+.float4 { animation: floatBottomTop 28s linear infinite; }
+.float5 { animation: floatDiagonal1 40s linear infinite; }
+.float6 { animation: floatDiagonal2 33s linear infinite; }
+.float7 { animation: floatDiagonal3 38s linear infinite; }
+.float8 { animation: floatDiagonal4 32s linear infinite; }
+
+@media screen and (max-width: 768px) {
   .word {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    font-weight: 700;
-    white-space: nowrap;
+    font-size: 0.8em;
   }
   
-  @media screen and (max-width: 470px){
-    .circleContainer{
-      width: 100vw;
-      height: 50vh;
-    }
+  .word:hover {
+    transform: scale(1.3);
   }
-
-  @media screen and (max-width: 428px){
-    .circleContainer{
-      width: 90vw;
-    }
-  }
-
-  @media screen and (max-width: 400px){
-    .circleContainer{
-      width: 88vw;
-      height: 40vh;
-    }
-  }
+  
+  /* Animações mais rápidas no mobile */
+  .float1 { animation-duration: 20s; }
+  .float2 { animation-duration: 18s; }
+  .float3 { animation-duration: 22s; }
+  .float4 { animation-duration: 19s; }
+  .float5 { animation-duration: 25s; }
+  .float6 { animation-duration: 21s; }
+  .float7 { animation-duration: 23s; }
+  .float8 { animation-duration: 20s; }
+}
