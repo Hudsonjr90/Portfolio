@@ -475,7 +475,8 @@ label {
     cursor: pointer;
     display: block;
     height: 6.5rem;
-    margin-right: 1rem;
+    margin-left: 0rem;
+    margin-top: 0.7rem;
     position: relative;
     width: 2.4rem;
   }
@@ -535,6 +536,10 @@ label {
     height: auto;
     margin-top: 2.1rem;
     margin-left: -25.9rem;
+  }
+
+  .icons_container {
+    margin-left: 12rem;
   }
 }
 

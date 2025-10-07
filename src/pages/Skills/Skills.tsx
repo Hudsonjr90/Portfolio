@@ -5,7 +5,7 @@ import Transition from "../../components/Transition/Transition";
 import { iconComponents, mainIcons } from "../../data/iconsServer";
 import { useTranslation } from "react-i18next";
 import ProgressBar from "../../components/Progressbar/ProgressBar";
-import { FaSearch, FaChartBar, FaArrowLeft } from "react-icons/fa";
+import { FaSearch, FaChartBar, FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { IoCloudOutline } from "react-icons/io5";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
@@ -92,10 +92,13 @@ const Skills = () => {
   }, [filteredIcons]);
 
   const [itemsPerPage, setItemsPerPage] = useState(14);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 769) {
+      const mobile = window.innerWidth < 769;
+      setIsMobile(mobile);
+      if (mobile) {
         setItemsPerPage(4);
       } else {
         setItemsPerPage(14);
@@ -155,21 +158,19 @@ const Skills = () => {
           .sort((a, b) => b.percentage - a.percentage)
       : [];
 
-    // Calcular altura dinâmica para o gráfico de barras baseado no número de skills
-    const maxVisibleSkills = 15;
-    const skillHeight = 40; // altura por skill em pixels
-    const baseHeight = 300; // altura mínima
+    const maxVisibleSkills = isMobile ? 10 : 15; 
+    const skillHeight = isMobile ? 35 : 40; 
+    const baseHeight = isMobile ? 250 : 300;
     const calculatedHeight = selectedPieCategory 
       ? Math.max(baseHeight, Math.min(categorySkills.length * skillHeight, maxVisibleSkills * skillHeight))
-      : 500;
+      : isMobile ? 400 : 500;
 
-    // Cores por categoria
     const categoryColors: { [key: string]: string } = {
-      frontend: mainColor,
-      backend: '#ee6666',
-      database: '#32be84ff',
+      frontend: '#021f27ff',
+      backend: '#5a0707ff',
+      database: '#054e30ff',
       tools: '#1c4f9bff',
-      deploy: '#73c0de',
+      deploy: '#09475fff',
       design: '#9e9517ff'
     };
 
@@ -186,12 +187,12 @@ const Skills = () => {
         top: '0%',
         textStyle: {
           color: mainColor,
-          fontSize: 24,
+          fontSize: isMobile ? 18 : 24,
           fontWeight: 'bold'
         },
         subtextStyle: {
           color: mainColor,
-          fontSize: 14,
+          fontSize: isMobile ? 12 : 14,
           opacity: 0.8
         }
       },
@@ -202,7 +203,7 @@ const Skills = () => {
         borderWidth: 2,
         textStyle: {
           color: '#fff',
-          fontSize: 14
+          fontSize: isMobile ? 12 : 14
         },
         formatter: function(params: any) {
           if (selectedPieCategory) {
@@ -217,17 +218,16 @@ const Skills = () => {
           }
         }
       },
-      // Configurações específicas para scroll quando necessário
       dataZoom: selectedPieCategory && categorySkills.length > maxVisibleSkills ? [
         {
           type: 'slider',
           yAxisIndex: 0,
-          width: 20,
-          right: 10,
+          width: isMobile ? 15 : 20,
+          right: isMobile ? 5 : 10,
           start: 0,
           end: (maxVisibleSkills / categorySkills.length) * 100,
           handleIcon: 'M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
-          handleSize: '80%',
+          handleSize: isMobile ? '60%' : '80%',
           handleStyle: {
             color: mainColor,
             shadowBlur: 3,
@@ -269,7 +269,7 @@ const Skills = () => {
             show: true,
             position: 'right',
             color: mainColor,
-            fontSize: 12,
+            fontSize: isMobile ? 10 : 12,
             fontWeight: 'bold',
             formatter: '{c}%'
           }
@@ -278,7 +278,7 @@ const Skills = () => {
         {
           name: t("skills.category"),
           type: 'pie',
-          radius: ['30%', '70%'],
+          radius: isMobile ? ['25%', '65%'] : ['30%', '70%'],
           center: ['50%', '60%'],
           data: categoryDistribution.map(category => ({
             value: category.value,
@@ -295,12 +295,16 @@ const Skills = () => {
           })),
           label: {
             show: true,
-            position: 'outside',
+            position: isMobile ? 'inside' : 'outside',
             color: mainColor,
-            fontSize: 12,
+            fontSize: isMobile ? 10 : 12,
             fontWeight: 'bold',
             formatter: function(params: any) {
-              return `${params.data.name}\n${params.data.value}%\n(${params.data.skillCount} ${t("skills.skillsLabel")})`;
+              if (isMobile) {
+                return `${params.data.name}\n${params.data.value}%`;
+              } else {
+                return `${params.data.name}\n${params.data.value}%\n(${params.data.skillCount} ${t("skills.skillsLabel")})`;
+              }
             }
           },
           emphasis: {
@@ -309,7 +313,7 @@ const Skills = () => {
               shadowOffsetX: 0,
               shadowColor: mainColor,
               scale: true,
-              scaleSize: 1.1
+              scaleSize: isMobile ? 1.05 : 1.1
             }
           }
         }
@@ -319,6 +323,7 @@ const Skills = () => {
         max: 100,
         axisLabel: {
           color: mainColor,
+          fontSize: isMobile ? 10 : 12,
           formatter: '{value}%'
         },
         axisLine: {
@@ -332,7 +337,7 @@ const Skills = () => {
         data: categorySkills.map(skill => skill.name),
         axisLabel: {
           color: mainColor,
-          fontSize: 11
+          fontSize: isMobile ? 9 : 11
         },
         axisLine: {
           lineStyle: {
@@ -536,8 +541,8 @@ const Skills = () => {
                         }}
                         containerClassName={styles.pagination}
                         activeClassName={styles.activePage}
-                        previousLabel={"<<"}
-                        nextLabel={">>"}
+                        previousLabel={<FaChevronLeft />}
+                        nextLabel={<FaChevronRight />}
                         forcePage={currentPage}
                       />
                     </motion.div>
@@ -571,10 +576,14 @@ const Skills = () => {
                         width: '100%',
                         overflow: selectedPieCategory && filteredIcons.filter(icon => 
                           icon.category.toLowerCase() === selectedPieCategory.toLowerCase()
-                        ).length > 15 ? 'hidden' : 'visible'
+                        ).length > (isMobile ? 10 : 15) ? 'hidden' : 'visible'
                       }}
                       onEvents={{
                         'click': handleChartClick
+                      }}
+                      opts={{ 
+                        renderer: 'canvas',
+                        devicePixelRatio: isMobile ? 1 : 2 
                       }}
                     />
                   </motion.div>
