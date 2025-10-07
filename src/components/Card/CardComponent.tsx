@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import cardsServer from "../../data/cardsServer";
 import { useTranslation } from "react-i18next";
 import Paginate from "react-paginate";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./CardComponent.module.css";
 
 const CardComponent = () => {
@@ -31,8 +31,15 @@ const CardComponent = () => {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 769) {
+      const width = window.innerWidth;
+      if (width < 480) {
         setCardsPerPage(1);
+      } else if (width < 768) {
+        setCardsPerPage(1);
+      } else if (width < 992) {
+        setCardsPerPage(2);
+      } else if (width < 1200) {
+        setCardsPerPage(3);
       } else {
         setCardsPerPage(4);
       }
@@ -142,8 +149,8 @@ const CardComponent = () => {
           onPageChange={({ selected }) => handlePageClick({ selected })}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}
-          previousLabel={"<<"}
-          nextLabel={">>"}
+          previousLabel={<FaChevronLeft />}
+          nextLabel={<FaChevronRight />}
           forcePage={currentPage}
         />
       </motion.div>

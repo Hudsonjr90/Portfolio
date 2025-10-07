@@ -9,6 +9,7 @@ import {
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import ReactPaginate from "react-paginate";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./Portfolio.module.css";
 import portfolioServer from "../../data/portfolioServer";
 import { NavLink } from "react-router-dom";
@@ -138,8 +139,8 @@ const Portfolio = () => {
             }}
           >
             <ReactPaginate
-              previousLabel={"←"}
-              nextLabel={"→"}
+              previousLabel={<FaChevronLeft />}
+              nextLabel={<FaChevronRight />}
               breakLabel={"..."}
               breakClassName={"break-me"}
               pageCount={pageCount}

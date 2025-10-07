@@ -118,19 +118,46 @@
 .pagination li a {
   cursor: pointer;
   margin: 5px;
-  padding: 5px;
+  padding: 8px;
   color: var(--main_color);
   border: 1px solid var(--main_color);
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 3vw;
   height: 3vh;
+  min-width: 40px;
+  min-height: 32px;
+  user-select: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 14px;
 }
 
-.pagination li.activePage {
-  color: var(--main_color);
+.pagination li a:hover {
+  background-color: var(--main_color);
+  color: var(--bg_color);
+  transform: scale(1.05);
+}
+
+.pagination li a svg {
+  font-size: 12px;
+}
+
+.pagination li:first-child a,
+.pagination li:last-child a {
+  font-weight: bold;
+}
+
+.pagination li:first-child a svg,
+.pagination li:last-child a svg {
+  font-size: 14px;
+}
+
+.pagination li.activePage a {
+  background-color: var(--main_color);
+  color: var(--bg_color);
   border: 1px solid var(--main_color);
-  background-color: var(--bg_color);
 }
 
 @media screen and (max-width: 1450px) {
@@ -150,13 +177,15 @@
   }
   .pagination li a {
     width: auto;
-    padding: 0.2rem 1rem;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 8px 12px;
     text-align: center;
-    border-radius: 0;
+    border-radius: 4px;
   }
 
-  .pagination li.activePage {
-    border-radius: 0;
+  .pagination li.activePage a {
+    border-radius: 4px;
   }
 
   .pagination {
@@ -196,13 +225,25 @@
   }
   .pagination li a {
     width: auto;
-    padding: 0.4rem 1rem;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 6px 8px;
     text-align: center;
-    border-radius: 0;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .pagination li a svg {
+    font-size: 10px;
+  }
+  
+  .pagination li:first-child a svg,
+  .pagination li:last-child a svg {
+    font-size: 12px;
   }
 
-  .pagination li.activePage {
-    border-radius: 0;
+  .pagination li.activePage a {
+    border-radius: 4px;
   }
 
   .pagination {
