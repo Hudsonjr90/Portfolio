@@ -193,10 +193,23 @@
     "noResults": "No se encontraron habilidades",
     "cloudWord": "Nube de palabras",
     "searchable": "Filtrado y búsqueda",
+    "chart": "Panel",
     "expert": "Especialista",
     "advanced": "Avanzado",
     "intermediate": "Intermedio",
-    "basic": "Básico"
+    "basic": "Básico",
+    "dashboardTitle": "Panel de Habilidades",
+    "dashboardSubtitle": "{{count}} habilidades de competencia",
+    "proficiency": "Competencia",
+    "category": "Categoría",
+    "pieView": "Distribución de Principales Habilidades",
+    "rankingView": "Ranking Completo de Habilidades",
+    "mySkills": "Mis Habilidades",
+    "proficiencyLevel": "Competencia",
+    "averageLevel": "Nivel Promedio",
+    "totalSkills": "Total de Habilidades",
+    "clickToViewDetails": "Haga clic para ver detalles",
+    "skillsLabel": "habilidades"
   },
 
   "projects": {

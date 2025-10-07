@@ -13,6 +13,7 @@
   width: 27vw;
   border: 1px solid var(--main_color);
   border-radius: 50%;
+  user-select: none;
 }
 
 .about_content {

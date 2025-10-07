@@ -235,6 +235,188 @@
   color: var(--main_color);
 }
 
+.toggleButtons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.viewModeButtons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background-color: var(--second_bg_color);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.viewButton {
+  transition: all 0.3s ease !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+}
+
+.viewButton:hover {
+  transform: scale(1.1);
+  background-color: rgba(var(--main_color_rgb), 0.1) !important;
+}
+
+.activeView {
+  background-color: rgba(var(--main_color_rgb), 0.2) !important;
+  transform: scale(1.05);
+}
+
+.viewBtn {
+  background: transparent !important;
+  border: 2px solid var(--main_color) !important;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  transition: all 0.3s ease !important;
+}
+
+.viewBtn:hover {
+  background: var(--main_color) !important;
+  color: var(--bg_color) !important;
+}
+
+.viewBtn.active {
+  background: var(--main_color) !important;
+  color: var(--bg_color) !important;
+}
+
+.viewBtn svg {
+  font-size: 1.5rem !important;
+  color: var(--main_color) !important;
+}
+
+.viewBtn.active svg,
+.viewBtn:hover svg {
+  color: var(--bg_color) !important;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--second_bg_color) 0%, rgba(255,255,255,0.02) 100%);
+  border-radius: 20px;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid var(--main_color);
+  position: relative;
+  overflow: hidden;
+}
+
+.chartContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+
+.viewModeButtons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.viewButton {
+  transition: all 0.3s ease !important;
+  border-radius: 8px !important;
+}
+
+.viewButton:hover {
+  transform: scale(1.1);
+  background-color: rgba(var(--main_color_rgb), 0.1) !important;
+}
+
+.activeView {
+  background-color: rgba(var(--main_color_rgb), 0.2) !important;
+  transform: scale(1.05);
+}
+
+.chartContainer {
+  width: 100%;
+  background: var(--bg_color);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--main_color_rgb), 0.2);
+  padding: 2rem;
+  margin: 2rem 0;
+  min-height: 600px;
+  max-height: 80vh;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.chartContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chartContainer::-webkit-scrollbar-track {
+  background: var(--second_bg_color);
+  border-radius: 4px;
+}
+
+.chartContainer::-webkit-scrollbar-thumb {
+  background: var(--main_color);
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+.chartContainer::-webkit-scrollbar-thumb:hover {
+  background: var(--main_color);
+  opacity: 1;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0 1rem 0;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+.backButton {
+  background-color: rgba(var(--bg_color_rgb), 0.9) !important;
+  border: 2px solid var(--main_color) !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.backButton:hover {
+  background-color: var(--main_color) !important;
+  transform: scale(1.1);
+}
+
+.backButton:hover svg {
+  color: var(--bg_color) !important;
+}
+
+
 @media screen and (max-width: 1450px) {
   .skills {
     max-width: 1600px;
@@ -447,5 +629,22 @@
   .searchIcon{
     margin-top: -1rem;
     margin-right: -1.2rem;
+  }
+
+    .toggleButtons {
+    gap: 0.5rem;
+  }
+  
+  .viewBtn {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .viewBtn svg {
+    font-size: 1.2rem !important;
+  }
+  
+  .chartContainer {
+    padding: 1rem;
   }
 }

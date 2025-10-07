@@ -193,10 +193,23 @@
     "noResults": "Nessuna competenza trovata",
     "cloudWord": "Nuvola di parole",
     "searchable": "Filtro e ricerca",
+    "chart": "Dashboard",
     "expert": "Esperto",
     "advanced": "Avanzato",
     "intermediate": "Intermedio",
-    "basic": "Base"
+    "basic": "Base",
+    "dashboardTitle": "Dashboard Competenze",
+    "dashboardSubtitle": "{{count}} competenze di competenza",
+    "proficiency": "Competenza",
+    "category": "Categoria",
+    "pieView": "Distribuzione delle Principali Competenze",
+    "rankingView": "Classifica Completa delle Competenze",
+    "mySkills": "Le Mie Competenze",
+    "proficiencyLevel": "Competenza",
+    "averageLevel": "Livello Medio",
+    "totalSkills": "Totale Competenze",
+    "clickToViewDetails": "Clicca per vedere i dettagli",
+    "skillsLabel": "competenze"
   },
 
   "projects": {

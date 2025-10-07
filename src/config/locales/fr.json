@@ -193,10 +193,23 @@
     "noResults": "Aucune compétence trouvée",
     "cloudWord": "Nuage de mots",
     "searchable": "Filtrage et recherche",
+    "chart": "Tableau de Bord",
     "expert": "Expert",
     "advanced": "Avancé",
     "intermediate": "Intermédiaire",
-    "basic": "Basique"
+    "basic": "Basique",
+    "dashboardTitle": "Tableau de Bord de Compétences",
+    "dashboardSubtitle": "{{count}} compétences de maîtrise",
+    "proficiency": "Maîtrise",
+    "category": "Catégorie",
+    "pieView": "Distribution des Principales Compétences",
+    "rankingView": "Classement Complet des Compétences",
+    "mySkills": "Mes Compétences",
+    "proficiencyLevel": "Maîtrise",
+    "averageLevel": "Niveau Moyen",
+    "totalSkills": "Total des Compétences",
+    "clickToViewDetails": "Cliquez pour voir les détails",
+    "skillsLabel": "compétences"
   },
 
   "projects": {

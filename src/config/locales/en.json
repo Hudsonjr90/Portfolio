@@ -193,10 +193,23 @@
     "noResults": "No skills found",
     "cloudWord": "Word Cloud",
     "searchable": "Search and Filter",
+    "chart": "Dashboard",
     "expert": "Expert",
     "advanced": "Advanced",
     "intermediate": "Intermediate",
-    "basic": "Basic"
+    "basic": "Basic",
+    "dashboardTitle": "Skills Dashboard",
+    "dashboardSubtitle": "{{count}} skills of proficiency",
+    "proficiency": "Proficiency",
+    "category": "Category",
+    "pieView": "Top Skills Distribution",
+    "rankingView": "Complete Skills Ranking",
+    "mySkills": "My Skills",
+    "proficiencyLevel": "Proficiency",
+    "averageLevel": "Average Level",
+    "totalSkills": "Total Skills",
+    "clickToViewDetails": "Click to view details",
+    "skillsLabel": "skills"
   },
 
   "projects": {
