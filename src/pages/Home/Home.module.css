@@ -131,3 +131,34 @@
     font-size: 2.3rem;
   }
 }
+
+@media screen and (max-width: 480px) {
+
+  .home_img img {
+    width: 80vw;
+  }
+
+   .home_img {
+    bottom: 10rem;
+    right: 5rem;
+    z-index: -1;
+  }
+
+  .home_content {
+    height: 50vh;
+  }
+
+  .text_reveal {
+    font-size: 3rem;
+  }
+
+  .transparent_text {
+    font-size: 1.8rem;
+    margin: 1.5rem -0.5rem 2rem;
+  }
+
+  .btn_box .btn {
+    font-size: 1.4rem;
+    padding: 1rem 2.5rem;
+  }
+}
