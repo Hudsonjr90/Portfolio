@@ -135,25 +135,25 @@
 @media screen and (max-width: 480px) {
 
   .home_img img {
-    width: 80vw;
+    width: 60vw;
   }
 
    .home_img {
     bottom: 10rem;
-    right: 5rem;
+    right: 10rem;
     z-index: -1;
   }
 
   .home_content {
-    height: 50vh;
+    height: 60vh;
   }
 
   .text_reveal {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .transparent_text {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     margin: 1.5rem -0.5rem 2rem;
   }
 
