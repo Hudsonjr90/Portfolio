@@ -7,7 +7,7 @@ interface WordItem {
   id: number;
   name: string;
   size: number;
-  color: string;
+  colorVar: string; 
   x: number;
   y: number;
   animationClass: string;
@@ -24,25 +24,20 @@ const Cloud = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const getRandomColor = () => {
-    const root = document.documentElement;
-    const mainColor = getComputedStyle(root).getPropertyValue("--main_color").trim();
-    const cloudText = getComputedStyle(root).getPropertyValue("--cloud_text").trim();
-    const textColor = getComputedStyle(root).getPropertyValue("--text_color").trim();
-
-    const colors = [mainColor, cloudText, textColor];
-    return colors[Math.floor(Math.random() * colors.length)];
+    const colorVars = ["var(--main_color)", "var(--cloud_text)", "var(--text_color)"];
+    return colorVars[Math.floor(Math.random() * colorVars.length)];
   };
 
   const getRandomStartPosition = () => {
     const side = Math.floor(Math.random() * 4);
     switch (side) {
-      case 0: // Topo
+      case 0: 
         return { x: Math.random() * 100, y: -10 };
-      case 1: // Direita
+      case 1: 
         return { x: 110, y: Math.random() * 100 };
-      case 2: // Baixo
+      case 2: 
         return { x: Math.random() * 100, y: 110 };
-      case 3: // Esquerda
+      case 3: 
         return { x: -10, y: Math.random() * 100 };
       default:
         return { x: 0, y: 0 };
@@ -58,10 +53,9 @@ const Cloud = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    // Armazenar posição inicial do mouse
     setMouseDownPos({ x: e.clientX, y: e.clientY });
     setDraggedWord(wordId);
-    setIsDragging(false); // Ainda não está arrastando
+    setIsDragging(false);
 
     const wordElement = e.currentTarget as HTMLElement;
     const rect = wordElement.getBoundingClientRect();
@@ -73,7 +67,6 @@ const Cloud = () => {
         y: e.clientY - rect.top,
       });
 
-      // Pausar animação temporariamente apenas para este word
       setWords((prev) =>
         prev.map((word) =>
           word.id === wordId ? { ...word, isDragging: true } : word
@@ -86,17 +79,14 @@ const Cloud = () => {
     const handleGlobalMouseMove = (e: MouseEvent) => {
       if (draggedWord === null || !containerRef.current) return;
 
-      // Calcular distância do movimento para detectar se é realmente um drag
       const distance = Math.sqrt(
         Math.pow(e.clientX - mouseDownPos.x, 2) + Math.pow(e.clientY - mouseDownPos.y, 2)
       );
 
-      // Se moveu mais de 5 pixels, considera como drag
       if (distance > 5 && !isDragging) {
         setIsDragging(true);
       }
 
-      // Só atualizar posição se estiver realmente arrastando
       if (isDragging || distance > 5) {
         const containerRect = containerRef.current.getBoundingClientRect();
         const newX = ((e.clientX - containerRect.left - dragOffset.x) / containerRect.width) * 100;
@@ -115,7 +105,6 @@ const Cloud = () => {
 
     const handleGlobalMouseUp = () => {
       if (draggedWord !== null) {
-        // Se foi realmente um drag, dar uma nova posição inicial para retomar animação
         if (isDragging) {
           const newAnimationClass = getRandomAnimationClass();
           
@@ -125,14 +114,12 @@ const Cloud = () => {
                 ? { 
                     ...word, 
                     isDragging: false,
-                    // Resetar para nova animação após 1 segundo
                     animationClass: newAnimationClass,
                   } 
                 : word
             )
           );
 
-          // Após 2 segundos, dar nova trajetória para a palavra
           setTimeout(() => {
             const finalStartPos = getRandomStartPosition();
             const finalAnimationClass = getRandomAnimationClass();
@@ -151,7 +138,6 @@ const Cloud = () => {
             );
           }, 2000);
         } else {
-          // Se foi apenas um clique, apenas retomar animação
           setWords((prev) =>
             prev.map((word) =>
               word.id === draggedWord ? { ...word, isDragging: false } : word
@@ -159,7 +145,6 @@ const Cloud = () => {
           );
         }
 
-        // Reset de todos os estados
         setDraggedWord(null);
         setDragOffset({ x: 0, y: 0 });
         setIsDragging(false);
@@ -182,29 +167,44 @@ const Cloud = () => {
     mainIcons.forEach((icon, index) => {
       const startPos1 = getRandomStartPosition();
       wordsArray.push({
-        id: index * 2,
+        id: index * 3,
         name: icon.name,
         size: Math.max(16, Math.min(32, icon.percentage * 0.8)),
-        color: getRandomColor(),
+        colorVar: getRandomColor(),
         x: startPos1.x,
         y: startPos1.y,
         animationClass: getRandomAnimationClass(),
-        delay: Math.random() * 10,
+        delay: Math.random() * 12,
         isDragging: false,
       });
 
       const startPos2 = getRandomStartPosition();
       wordsArray.push({
-        id: index * 2 + 1,
+        id: index * 3 + 1,
         name: icon.category,
         size: Math.max(12, Math.min(24, icon.percentage * 0.5)),
-        color: getRandomColor(),
+        colorVar: getRandomColor(),
         x: startPos2.x,
         y: startPos2.y,
         animationClass: getRandomAnimationClass(),
-        delay: Math.random() * 10 + 5,
+        delay: Math.random() * 12 + 4,
         isDragging: false,
       });
+
+      if (icon.level) {
+        const startPos3 = getRandomStartPosition();
+        wordsArray.push({
+          id: index * 3 + 2,
+          name: icon.level.replace('skills.', '').toUpperCase(),
+          size: Math.max(10, Math.min(20, icon.percentage * 0.4)),
+          colorVar: getRandomColor(),
+          x: startPos3.x,
+          y: startPos3.y,
+          animationClass: getRandomAnimationClass(),
+          delay: Math.random() * 12 + 8,
+          isDragging: false,
+        });
+      }
     });
 
     setWords(wordsArray);
@@ -234,7 +234,7 @@ const Cloud = () => {
             className={styles.word}
             style={{
               fontSize: `${word.size}px`,
-              color: word.color,
+              color: word.colorVar,
               fontFamily: 'Orbitron, sans-serif',
               fontWeight: 'bold',
               textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',

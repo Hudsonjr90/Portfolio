@@ -25,6 +25,7 @@ const Portfolio = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [transitionCompleted, setTransitionCompleted] = useState(false);
   const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
 
   const updateItemsPerPage = useCallback(() => {
     const width = window.innerWidth;
@@ -59,6 +60,16 @@ const Portfolio = () => {
     setCurrentPage(event.selected);
   }, [itemsPerPage]);
 
+  const toggleCardFlip = useCallback((cardId: number) => {
+    setFlippedCards(prev => {
+      const newSet = new Set<number>();
+      if (!prev.has(cardId)) {
+        newSet.add(cardId);
+      }
+      return newSet;
+    });
+  }, []);
+
   return (
     <Transition onAnimationComplete={() => setTransitionCompleted(true)}>
       {transitionCompleted && (
@@ -80,52 +91,75 @@ const Portfolio = () => {
                   delay: 0.7,
                   ease: [0.2, 0, 0.2, 1],
                 }}
+                className={styles.cardWrapper}
               >
-                <Card className={styles.card}>
-                  <CardMedia
-                    component="img"
-                    alt={item.name}
-                    height="300"
-                    image={item.image}
-                    loading="lazy"
-                  />
-                  <CardContent className={styles.cardContent}>
-                    {item.name}
-                  </CardContent>
-                  <CardContent className={styles.cardContent}>
-                    {t(`projects.data.${item.id}.description`)}
-                  </CardContent>
-                  <CardContent className={styles.cardContent}>
-                    <li className={styles.tech_title}>{t("projects.subtitle")}</li>
-                    {item.technologies.map((tech, index) => (
-                      <li className={styles.tech_list} key={index}>
-                        {tech}
-                      </li>
-                    ))}
-                  </CardContent>
-                  <CardActions className={styles.cardActions}>
-                    <Button className={styles.links}>
-                      <NavLink
-                        to={item.linkDeploy || ""}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.link}
-                      >
-                        Deploy
-                      </NavLink>
-                    </Button>
-                    <Button className={styles.links}>
-                      <NavLink
-                        to={item.linkRepository || ""}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.link}
-                      >
-                        Code
-                      </NavLink>
-                    </Button>
-                  </CardActions>
-                </Card>
+                <div 
+                  className={`${styles.cardContainer} ${flippedCards.has(item.id) ? styles.flipped : ''}`}
+                  onClick={() => toggleCardFlip(item.id)}
+                >
+                  {/* Frente do card - apenas imagem */}
+                  <div className={styles.cardFront}>
+                    <CardMedia
+                      component="img"
+                      alt={item.name}
+                      height="300"
+                      image={item.image}
+                      loading="lazy"
+                      className={styles.cardImage}
+                    />
+                    <div className={styles.clickHint}>
+                      {t("projects.clickToFlip")}
+                    </div>
+                  </div>
+                  
+                  {/* Verso do card - conteúdo e ações */}
+                  <div className={styles.cardBack}>
+                    <Card className={styles.card}>
+                      <CardContent className={styles.cardContent}>
+                        <h3 className={styles.cardTitle}>{item.name}</h3>
+                      </CardContent>
+                      <CardContent className={styles.cardContent}>
+                        <p className={styles.cardDescription}>
+                          {t(`projects.data.${item.id}.description`)}
+                        </p>
+                      </CardContent>
+                      <CardContent className={styles.cardContent}>
+                        <div className={styles.tech_title}>{t("projects.subtitle")}</div>
+                        <div className={styles.techList}>
+                          {item.technologies.map((tech, index) => (
+                            <span className={styles.tech_list} key={index}>
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </CardContent>
+                      <CardActions className={styles.cardActions}>
+                        <Button className={styles.links}>
+                          <NavLink
+                            to={item.linkDeploy || ""}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.link}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Deploy
+                          </NavLink>
+                        </Button>
+                        <Button className={styles.links}>
+                          <NavLink
+                            to={item.linkRepository || ""}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.link}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Code
+                          </NavLink>
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
