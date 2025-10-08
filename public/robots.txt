@@ -1,2 +1,14 @@
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://hudsonkennedy.dev.br/sitemap.xml
+
+# Arquivos importantes para SEO
+Allow: /imgs/
+Allow: /sounds/
+Allow: /cv/
+Allow: /formations/
+
+# Crawl-delay para não sobrecarregar o servidor
+Crawl-delay: 1

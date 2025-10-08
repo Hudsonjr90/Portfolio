@@ -285,5 +285,40 @@
     "message": "Your Message *",
     "submit": "Send Message *",
     "error": "Required field"
+  },
+
+  "seo": {
+    "home": {
+      "description": "Hudson Kennedy - Full Stack Developer specialized in React, TypeScript, Vue.js and modern technologies. 10+ years of web development experience.",
+      "keywords": "Hudson Kennedy, Full Stack Developer, React, TypeScript, Vue.js, JavaScript, Web Developer, Frontend, Backend, Portfolio"
+    },
+    "about": {
+      "description": "Meet Hudson Kennedy - Computer Scientist and Full Stack Developer passionate about creating innovative and impactful web solutions.",
+      "keywords": "Hudson Kennedy, About, Computer Scientist, Developer, Biography, Professional Profile, Experience"
+    },
+    "skills": {
+      "description": "Explore Hudson Kennedy's technical skills in web development: React, TypeScript, Vue.js, Node.js, Python and much more.",
+      "keywords": "Skills, React, TypeScript, Vue.js, Node.js, Python, JavaScript, CSS, HTML, Technologies"
+    },
+    "portfolio": {
+      "description": "Check out projects developed by Hudson Kennedy: modern web applications using React, Vue.js, TypeScript and other technologies.",
+      "keywords": "Portfolio, Projects, React, Vue.js, TypeScript, Web Applications, Development, GitHub, Deploy"
+    },
+    "education": {
+      "description": "Hudson Kennedy's academic background and certifications: Harvard Master's degree, development specializations and various technical certifications.",
+      "keywords": "Education, Harvard, Certifications, Courses, Specialization, Development, Technology"
+    },
+    "experiences": {
+      "description": "Hudson Kennedy's professional experience: 10+ years working as a developer in companies and freelance projects.",
+      "keywords": "Experience, Work, Career, Developer, Freelancer, Projects, Companies, Professional"
+    },
+    "testimonials": {
+      "description": "Testimonials and recommendations from colleagues and clients about Hudson Kennedy's work as a developer.",
+      "keywords": "Testimonials, Recommendations, Feedback, Clients, Colleagues, Work, Professional, Quality"
+    },
+    "contact": {
+      "description": "Contact Hudson Kennedy for web development projects, consulting or professional opportunities.",
+      "keywords": "Contact, Email, WhatsApp, LinkedIn, GitHub, Project, Consulting, Work, Opportunity"
+    }
   }
 }

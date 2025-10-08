@@ -289,5 +289,40 @@
     "message": "Sua Mensagem *",
     "submit": "Enviar Mensagem",
     "error": "Campo obrigatório"
+  },
+
+  "seo": {
+    "home": {
+      "description": "Hudson Kennedy - Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas. 10+ anos de experiência em desenvolvimento web.",
+      "keywords": "Hudson Kennedy, Desenvolvedor Full Stack, React, TypeScript, Vue.js, JavaScript, Desenvolvedor Web, Frontend, Backend, Portfolio"
+    },
+    "about": {
+      "description": "Conheça Hudson Kennedy - Cientista da Computação e Desenvolvedor Full Stack apaixonado por criar soluções web inovadoras e impactantes.",
+      "keywords": "Hudson Kennedy, Sobre, Cientista da Computação, Desenvolvedor, Biografia, Perfil Profissional, Experiência"
+    },
+    "skills": {
+      "description": "Explore as habilidades técnicas de Hudson Kennedy em desenvolvimento web: React, TypeScript, Vue.js, Node.js, Python e muito mais.",
+      "keywords": "Habilidades, Skills, React, TypeScript, Vue.js, Node.js, Python, JavaScript, CSS, HTML, Tecnologias"
+    },
+    "portfolio": {
+      "description": "Confira os projetos desenvolvidos por Hudson Kennedy: aplicações web modernas usando React, Vue.js, TypeScript e outras tecnologias.",
+      "keywords": "Portfolio, Projetos, React, Vue.js, TypeScript, Aplicações Web, Desenvolvimento, GitHub, Deploy"
+    },
+    "education": {
+      "description": "Formação acadêmica e certificações de Hudson Kennedy: Mestrado Harvard, especializações em desenvolvimento e diversas certificações técnicas.",
+      "keywords": "Formação, Educação, Harvard, Certificações, Cursos, Especialização, Desenvolvimento, Tecnologia"
+    },
+    "experiences": {
+      "description": "Experiência profissional de Hudson Kennedy: 10+ anos atuando como desenvolvedor em empresas e projetos freelancer.",
+      "keywords": "Experiência, Trabalho, Carreira, Desenvolvedor, Freelancer, Projetos, Empresas, Profissional"
+    },
+    "testimonials": {
+      "description": "Depoimentos e recomendações de colegas e clientes sobre o trabalho de Hudson Kennedy como desenvolvedor.",
+      "keywords": "Depoimentos, Recomendações, Feedback, Clientes, Colegas, Trabalho, Profissional, Qualidade"
+    },
+    "contact": {
+      "description": "Entre em contato com Hudson Kennedy para projetos de desenvolvimento web, consultoria ou oportunidades profissionais.",
+      "keywords": "Contato, Email, WhatsApp, LinkedIn, GitHub, Projeto, Consultoria, Trabalho, Oportunidade"
+    }
   }
 }
