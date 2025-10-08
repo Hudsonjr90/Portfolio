@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Testimonials from './pages/Testimonials/Testimonials'
@@ -67,9 +68,8 @@ function App() {
             </Routes>
           </AnimatePresence>
         </div>
+        <Footer />
       </I18nextProvider>
     </ThemeProvider>
   )
-}
-
-export default App
+}export default App

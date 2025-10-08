@@ -18,7 +18,7 @@
 
 .about_content {
   background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 0 12px 4px 40px;
   backdrop-filter: blur(20px);
   box-shadow: var(--main_color) 0 0 1rem;
   margin-bottom: 8rem;
@@ -37,73 +37,52 @@
   margin-bottom: 1rem;
 }
 
+.textContainer {
+  position: relative;
+}
+
+.aboutText {
+  transition: all 0.3s ease;
+}
+
+.toggleButton {
+  background: transparent;
+  border: 2px solid var(--main_color);
+  border-radius: 0 12px 4px 40px;
+  color: var(--main_color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-left: auto;
+  padding: 0.8rem 1.5rem;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.toggleButton:hover {
+  background: var(--main_color);
+  color: var(--bg_color);
+  transform: translateY(-2px);
+}
+
 /* <========== breakpoints ==========> */
-@media screen and (max-width: 1450px) {
-  .about_content h2 {
-    font-size: 2.7rem;
-  }
-
-  .about_content p {
-    font-size: 1.5rem;
-  }
-
-  .container_img img {
-    margin-bottom: 3rem;
-    width: 22vw;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .about_content{
-    width: 40vw;
-  }
-  .about_content h2 {
-    font-size: 2.2rem;
-  }
-
-  .about_content p {
-    font-size: 1.4rem;
-  }
-
-  .container_img img {
-    width: 20vw;
-  }
-
-}
-
-@media screen and (max-width: 991px) {
-  .about {
-    gap: 2rem;
-  }
-
-  .about_content {
-    width: 50vw;
-  }
-
-  .container_img img {
-    width: 40vw;
-  }
-
-  .about_content h2 {
-    font-size: 2rem;
-  }
-
-  .about_content p {
-    font-size: 1.5rem;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .about {
-    gap: 6rem;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 8rem 4% 4rem; 
   }
 
   .about_content {
-    width: auto;
+    width: 100%;
+    margin-bottom: 2rem; 
   }
 
   .container_img img {
-    width: 30vw;
+    width: 60vw;
+    max-width: 300px;
   }
 
   .about_content h2 {
@@ -112,5 +91,26 @@
 
   .about_content p {
     font-size: 1.5rem;
+  }
+
+  .toggleButton {
+    display: block;
+    width: fit-content;
+  }
+
+  .aboutText.collapsed {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+  }
+
+  .aboutText.expanded {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    overflow: visible;
   }
 }

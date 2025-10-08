@@ -17,9 +17,14 @@ const About = () => {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const setIsLoadedCallback = useCallback(() => {
     setIsLoaded(true);
+  }, []);
+
+  const toggleExpanded = useCallback(() => {
+    setIsExpanded(prev => !prev);
   }, []);
 
   return (
@@ -71,7 +76,18 @@ const About = () => {
               <span>Hudson Kennedy</span>
             </h2>
 
-            <p>{t("about.text")}</p>
+            <div className={styles.textContainer}>
+              <p className={`${styles.aboutText} ${isExpanded ? styles.expanded : styles.collapsed}`}>
+                {t("about.text")}
+              </p>
+              <button 
+                className={styles.toggleButton}
+                onClick={toggleExpanded}
+                aria-label={isExpanded ? t("about.showLess") : t("about.showMore")}
+              >
+                {isExpanded ? t("about.showLess") : t("about.showMore")}
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>

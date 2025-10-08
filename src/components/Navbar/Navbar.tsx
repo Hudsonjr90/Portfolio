@@ -73,13 +73,15 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img
-          src={lightMode ? logoLight : logoDark}
-          alt="Logo"
-          height="auto"
-          loading="eager"
-          className={styles.logo_img}
-        />
+        <NavLink to="/" onClick={handleAudio}>
+          <img
+            src={lightMode ? logoLight : logoDark}
+            alt="Logo"
+            height="auto"
+            loading="eager"
+            className={styles.logo_img}
+          />
+        </NavLink>
       </div>
 
       <nav>

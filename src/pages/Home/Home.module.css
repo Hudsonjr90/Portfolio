@@ -34,48 +34,6 @@
   display: grid;
 }
 
-.social_media {
-  display: flex;
-}
-
-.social_media a {
-  align-items: center;
-  border-radius: 50%;
-  display: inline-flex;
-  font-size: 1.6rem;
-  height: 3.5rem;
-  justify-content: center;
-  margin: 1rem 1.5rem 3rem 0;
-  position: relative;
-  transition: 0.8s ease;
-  width: 3.5rem;
-}
-
-.social_media .icon {
-  color: #fff;
-  font-size: 18px;
-}
-
-.social_media .whatsapp {
-  background: #25d366;
-  border: none;
-}
-
-.social_media .email {
-  background: #f65151;
-  border: none;
-}
-
-.social_media .linkedin {
-  background: #2867b2;
-  border: none;
-}
-
-.social_media .github {
-  background: #181717;
-  border: none;
-}
-
 @keyframes button_contact {
   from {
     opacity: 0;
@@ -149,20 +107,6 @@
   user-select: none;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  color: var(--main_color);
-  font-size: 2.5rem;
-}
-
-.footer span {
-  font-weight: 600;
-  margin-left: 0.5rem;
-}
-
 /* <========== breakpoints ==========> */
 
 @media screen and (max-width: 1450px) {
@@ -177,11 +121,6 @@
 
   .home_content {
     height: 60vh;
-  }
-
-  .footer {
-    font-size: 1.9rem;
-    margin-top: -1rem;
   }
 }
 
@@ -198,11 +137,6 @@
   .home_content {
     height: 50vh;
   }
-
-  .footer {
-    font-size: 1.8rem;
-    margin-top: -1rem;
-  }
 }
 
 @media screen and (max-width: 991px) {
@@ -217,10 +151,6 @@
 
   .home_content {
     height: 80rem;
-  }
-
-  .footer {
-    font-size: 1.3rem;
   }
 }
 
@@ -241,10 +171,5 @@
 
   .text_reveal {
     font-size: 4rem;
-  }
-
-  .footer {
-    font-size: 1.5rem;
-    margin-top: 1rem;
   }
 }

@@ -64,6 +64,15 @@ label {
   width: 8rem;
 }
 
+.logo a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+  transform: scale(1.05);
+}
+
 
 .input_dark_light_mode {
   cursor: pointer;

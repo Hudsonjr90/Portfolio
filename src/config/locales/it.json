@@ -31,7 +31,9 @@
 
   "about": {
     "title": " Chi è ",
-    "text": "- Sviluppatore web appassionato e dedicato, ho accumulato una solida esperienza in 10 anni, completata da competenze interpersonali che considero fondamentali nell'universo della programmazione. Mi sono specializzato nelle tecnologie web, possedendo una conoscenza approfondita che si estende su diversi strumenti e linguaggi. La mia passione per l'apprendimento continuo e il mio impegno a evolvere costantemente mi spingono ad applicare la mia vasta esperienza nello sviluppo di soluzioni web innovative e impattanti. La mia natura comunicativa mi rende sempre pronto a svolgere un ruolo vitale in proposte innovative. Costruiamo qualcosa di incredibile insieme!"
+    "text": "- Sviluppatore web appassionato e dedicato, ho accumulato una solida esperienza in 10 anni, completata da competenze interpersonali che considero fondamentali nell'universo della programmazione. Mi sono specializzato nelle tecnologie web, possedendo una conoscenza approfondita che si estende su diversi strumenti e linguaggi. La mia passione per l'apprendimento continuo e il mio impegno a evolvere costantemente mi spingono ad applicare la mia vasta esperienza nello sviluppo di soluzioni web innovative e impattanti. La mia natura comunicativa mi rende sempre pronto a svolgere un ruolo vitale in proposte innovative. Costruiamo qualcosa di incredibile insieme!",
+    "showMore": "Vedi di più",
+    "showLess": "Vedi di meno"
   },
 
   "education": {

@@ -29,26 +29,9 @@
 }
 
 /* <========== breakpoints ==========> */
-@media screen and (max-width: 1450px){
-  .testimonials .heading {
-    font-size: 3.2rem;
-  }
-}
-
-@media screen and (max-width: 1024px){
-  .testimonials .heading {
-    font-size: 3.1rem;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .testimonials .heading {
-    font-size: 5.2rem;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .testimonials .heading {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
