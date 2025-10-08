@@ -1,8 +1,10 @@
 .portfolio {
-  width: 100%;
+  min-height: 100vh;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 2rem;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .portfolio .heading {
@@ -18,17 +20,19 @@
 .portfolio_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 3rem;
+  grid-gap: 2rem;
   margin-bottom: 5rem;
   align-items: start;
   justify-items: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .cardWrapper {
   perspective: 1000px;
   height: 350px;
   width: 100%;
-  max-width: 400px;
+  max-width: min(400px, calc(100vw - 4rem));
 }
 
 .cardContainer {
@@ -237,7 +241,7 @@
   justify-content: center;
   list-style: none;
   padding: 0;
-  margin-top: 2rem;
+  margin-top: 16rem;
 }
 
 .pagination li a {
@@ -286,6 +290,31 @@
 }
 
 
+
+@media screen and (max-width: 1200px) {
+  .portfolio {
+    padding: 0 1.5rem;
+  }
+  .portfolio_grid {
+    grid-gap: 1.5rem;
+  }
+  .cardWrapper {
+    max-width: min(350px, calc(100vw - 3rem));
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .portfolio {
+    padding: 0 1rem;
+  }
+  .portfolio_grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+  }
+  .cardWrapper {
+    max-width: min(320px, calc(50vw - 2rem));
+  }
+}
 
 @media screen and (max-width: 768px) {
   .portfolio .heading {

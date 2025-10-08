@@ -25,10 +25,8 @@ function App() {
   const location = useLocation()
   const { t } = useTranslation()
   
-  // Hook para gerenciar SEO dinâmico
   useSEO()
   
-  // Hook para gerenciar dados estruturados (Schema.org)
   useStructuredData()
 
   useEffect(() => {
