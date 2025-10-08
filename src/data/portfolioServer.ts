@@ -33,10 +33,8 @@ const portfolioServer = [
     name: 'Nuxt Vue Pokedex ',
     description: 'Pokedex usando API para consultar e listar Pokemóns',
     technologies: [
-      'Vue 3',
       'NuxtJs',
       'Tailwind',
-      'SCSS',
       'Typescript',
       'API Rest',
     ],

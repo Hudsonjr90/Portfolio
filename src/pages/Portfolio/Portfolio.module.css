@@ -63,7 +63,7 @@
 }
 
 .cardBack {
-  border-radius: 0 12px 4px 40px;
+  border-radius: 0 40px 4px 12px;
 }
 
 .cardFront {
@@ -117,14 +117,13 @@
   font-size: 1.5rem;
   background-color: var(--bg_color);
   color: var(--main_color);
-  letter-spacing: 0.1rem;
   padding: 1rem;
 }
 
 .cardTitle {
   font-size: 1.8rem;
   font-weight: bold;
-  margin: 0 0 1rem 0;
+  margin: 0 0 3rem 0;
   color: var(--main_color);
   text-align: center;
 }
@@ -132,7 +131,7 @@
 .cardDescription {
   font-size: 1.3rem;
   line-height: 1.5;
-  margin: 0;
+  margin: 0 0 3rem 0;
   color: var(--text_color);
   text-align: justify;
 }
@@ -141,12 +140,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .cardActions {
   justify-content: center;
   background-color: var(--bg_color);
+  border-top: 1px solid var(--main_color);
 }
 
 .cardActions .links {

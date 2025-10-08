@@ -118,13 +118,11 @@ const Portfolio = () => {
                     <Card className={styles.card}>
                       <CardContent className={styles.cardContent}>
                         <h3 className={styles.cardTitle}>{item.name}</h3>
-                      </CardContent>
-                      <CardContent className={styles.cardContent}>
+                     
                         <p className={styles.cardDescription}>
                           {t(`projects.data.${item.id}.description`)}
                         </p>
-                      </CardContent>
-                      <CardContent className={styles.cardContent}>
+                     
                         <div className={styles.tech_title}>{t("projects.subtitle")}</div>
                         <div className={styles.techList}>
                           {item.technologies.map((tech, index) => (
