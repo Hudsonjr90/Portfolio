@@ -180,6 +180,23 @@
   background-color: var(--main_color);
 }
 
+.cardActions .links.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cardActions .links.disabled .link {
+  color: var(--text_color);
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cardActions .links.disabled:hover .link {
+  color: var(--text_color);
+  background-color: transparent;
+}
+
 @keyframes animate {
   from {
     filter: blur(33px);

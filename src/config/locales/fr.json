@@ -218,6 +218,8 @@
     "title": " Principaux",
     "text": " Projets",
     "subtitle": "Technologies Utilisées",
+    "clickToFlip": "Cliquez pour retourner",
+    "inDevelopment": "En développement",
     "data": [
       {
         "description": "Site Web simple, suivant les orientations du cours orienté objet sur Udemy"
@@ -270,8 +272,7 @@
       {
         "description": ""
       }
-    ],
-    "clickToFlip": "Cliquez pour retourner"
+    ]
   },
 
   "contact": {

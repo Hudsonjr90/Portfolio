@@ -5,6 +5,7 @@ import {
   CardContent,
   CardActions,
   Button,
+  Tooltip,
 } from "@mui/material";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
@@ -134,28 +135,56 @@ const Portfolio = () => {
                         </div>
                       </CardContent>
                       <CardActions className={styles.cardActions}>
-                        <Button className={styles.links}>
-                          <NavLink
-                            to={item.linkDeploy || ""}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.link}
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            Deploy
-                          </NavLink>
-                        </Button>
-                        <Button className={styles.links}>
-                          <NavLink
-                            to={item.linkRepository || ""}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.link}
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            Code
-                          </NavLink>
-                        </Button>
+                        <Tooltip 
+                          title={!item.linkDeploy ? t("projects.inDevelopment") : ""}
+                          placement="top"
+                          arrow
+                        >
+                          <span>
+                            <Button 
+                              className={`${styles.links} ${!item.linkDeploy ? styles.disabled : ''}`}
+                              disabled={!item.linkDeploy}
+                            >
+                              <NavLink
+                                to={item.linkDeploy || "#"}
+                                target={item.linkDeploy ? "_blank" : "_self"}
+                                rel="noopener noreferrer"
+                                className={styles.link}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  if (!item.linkDeploy) e.preventDefault();
+                                }}
+                              >
+                                Deploy
+                              </NavLink>
+                            </Button>
+                          </span>
+                        </Tooltip>
+                        <Tooltip 
+                          title={!item.linkRepository ? t("projects.inDevelopment") : ""}
+                          placement="top"
+                          arrow
+                        >
+                          <span>
+                            <Button 
+                              className={`${styles.links} ${!item.linkRepository ? styles.disabled : ''}`}
+                              disabled={!item.linkRepository}
+                            >
+                              <NavLink
+                                to={item.linkRepository || "#"}
+                                target={item.linkRepository ? "_blank" : "_self"}
+                                rel="noopener noreferrer"
+                                className={styles.link}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  if (!item.linkRepository) e.preventDefault();
+                                }}
+                              >
+                                Code
+                              </NavLink>
+                            </Button>
+                          </span>
+                        </Tooltip>
                       </CardActions>
                     </Card>
                   </div>

@@ -218,6 +218,8 @@
     "title": " Main",
     "text": " Projects",
     "subtitle": "Used Technologies",
+    "clickToFlip": "Click to flip",
+    "inDevelopment": "In development",
     "data": [
       {
         "description": "Simple website, following object-oriented Course guidance on Udemy."
@@ -270,8 +272,7 @@
       {
         "description": ""
       }
-    ],
-    "clickToFlip": "Click to flip"
+    ]
   },
 
   "contact": {
