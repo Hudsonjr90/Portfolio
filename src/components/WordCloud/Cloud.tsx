@@ -29,18 +29,34 @@ const Cloud = () => {
   };
 
   const getRandomStartPosition = () => {
-    const side = Math.floor(Math.random() * 4);
-    switch (side) {
-      case 0: 
-        return { x: Math.random() * 100, y: -10 };
-      case 1: 
-        return { x: 110, y: Math.random() * 100 };
-      case 2: 
-        return { x: Math.random() * 100, y: 110 };
-      case 3: 
-        return { x: -10, y: Math.random() * 100 };
-      default:
-        return { x: 0, y: 0 };
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+      // Para mobile: apenas posições verticais (topo e fundo)
+      const side = Math.floor(Math.random() * 2);
+      switch (side) {
+        case 0: // Top
+          return { x: Math.random() * 70 + 15, y: -5 };
+        case 1: // Bottom
+          return { x: Math.random() * 70 + 15, y: 105 };
+        default:
+          return { x: 50, y: -5 };
+      }
+    } else {
+      // Para desktop: posições mais amplas
+      const side = Math.floor(Math.random() * 4);
+      switch (side) {
+        case 0: 
+          return { x: Math.random() * 100, y: -10 };
+        case 1: 
+          return { x: 110, y: Math.random() * 100 };
+        case 2: 
+          return { x: Math.random() * 100, y: 110 };
+        case 3: 
+          return { x: -10, y: Math.random() * 100 };
+        default:
+          return { x: 0, y: 0 };
+      }
     }
   };
 
@@ -92,8 +108,12 @@ const Cloud = () => {
         const newX = ((e.clientX - containerRect.left - dragOffset.x) / containerRect.width) * 100;
         const newY = ((e.clientY - containerRect.top - dragOffset.y) / containerRect.height) * 100;
 
-        const clampedX = Math.max(0, Math.min(95, newX));
-        const clampedY = Math.max(0, Math.min(95, newY));
+        const isMobile = window.innerWidth <= 768;
+        const maxX = isMobile ? 90 : 95;
+        const maxY = isMobile ? 90 : 95;
+
+        const clampedX = Math.max(0, Math.min(maxX, newX));
+        const clampedY = Math.max(0, Math.min(maxY, newY));
 
         setWords((prev) =>
           prev.map((word) =>
@@ -163,13 +183,16 @@ const Cloud = () => {
 
   useEffect(() => {
     const wordsArray: WordItem[] = [];
+    const isMobile = window.innerWidth <= 768;
 
     mainIcons.forEach((icon, index) => {
       const startPos1 = getRandomStartPosition();
       wordsArray.push({
         id: index * 3,
         name: icon.name,
-        size: Math.max(16, Math.min(32, icon.percentage * 0.8)),
+        size: isMobile ? 
+          Math.max(12, Math.min(20, icon.percentage * 0.5)) : 
+          Math.max(16, Math.min(32, icon.percentage * 0.8)),
         colorVar: getRandomColor(),
         x: startPos1.x,
         y: startPos1.y,
@@ -182,7 +205,9 @@ const Cloud = () => {
       wordsArray.push({
         id: index * 3 + 1,
         name: icon.category,
-        size: Math.max(12, Math.min(24, icon.percentage * 0.5)),
+        size: isMobile ? 
+          Math.max(10, Math.min(16, icon.percentage * 0.3)) : 
+          Math.max(12, Math.min(24, icon.percentage * 0.5)),
         colorVar: getRandomColor(),
         x: startPos2.x,
         y: startPos2.y,
@@ -196,7 +221,9 @@ const Cloud = () => {
         wordsArray.push({
           id: index * 3 + 2,
           name: icon.level.replace('skills.', '').toUpperCase(),
-          size: Math.max(10, Math.min(20, icon.percentage * 0.4)),
+          size: isMobile ? 
+            Math.max(8, Math.min(14, icon.percentage * 0.25)) : 
+            Math.max(10, Math.min(20, icon.percentage * 0.4)),
           colorVar: getRandomColor(),
           x: startPos3.x,
           y: startPos3.y,
