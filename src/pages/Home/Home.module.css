@@ -109,58 +109,13 @@
 
 /* <========== breakpoints ==========> */
 
-@media screen and (max-width: 1450px) {
-  .home_img {
-    bottom: 5rem;
-    right: 10rem;
-  }
-
-  .home_img img {
-    width: 32vw;
-  }
-
-  .home_content {
-    height: 60vh;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .home_img {
-    bottom: 8rem;
-    right: 8rem;
-  }
-
-  .home_img img {
-    width: 40vw;
-  }
-
-  .home_content {
-    height: 50vh;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .home_img {
-    bottom: 15rem;
-    right: 15rem;
-  }
-
-  .home_img img {
-    width: 60vw;
-  }
-
-  .home_content {
-    height: 80rem;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .home_img img {
-    width: 33vw;
+    width: 65vw;
   }
 
   .home_img {
-    bottom: 25rem;
+    bottom: 20rem;
     right: 10rem;
     z-index: -1;
   }
@@ -171,5 +126,8 @@
 
   .text_reveal {
     font-size: 4rem;
+  }
+  .transparent_text {
+    font-size: 2.3rem;
   }
 }
