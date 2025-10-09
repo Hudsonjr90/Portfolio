@@ -21,8 +21,12 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 2000,
+    assetsDir: "assets",
     rollupOptions: {
       output: {
+        assetFileNames: "assets/[name]-[hash][extname]",
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
         manualChunks(id) {
           if (id.includes("node_modules")) {
             const moduleName = id.split("/")[2];
