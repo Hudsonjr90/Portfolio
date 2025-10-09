@@ -20,7 +20,6 @@
     style.textContent = `
       html {
         zoom: ${correctionFactor} !important;
-        font-size: 10px !important;
       }
       
       body {
