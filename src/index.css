@@ -59,9 +59,36 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 10px !important;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  /* Reset de zoom para consistência entre domínios */
+  zoom: 1 !important;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+}
+
+/* Correção para displays de alta resolução */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  html {
+    font-size: 10px !important;
+    zoom: 1 !important;
+  }
+}
+
+/* Força tamanhos consistentes independente do zoom do navegador */
+* {
+  -webkit-text-size-adjust: none !important;
+  -moz-text-size-adjust: none !important;
+  -ms-text-size-adjust: none !important;
+}
+
+/* Correção específica para diferentes zoom levels */
+@media (min-width: 1920px) {
+  html {
+    font-size: 10px !important;
+    zoom: 1 !important;
+  }
 }
 
 body {
@@ -155,6 +182,6 @@ h2 {
 
 @media (max-width: 768px) {
   html {
-    font-size: 50%;
+    font-size: 8px !important; /* Equivalente a 50% de 16px */
   }
 }
