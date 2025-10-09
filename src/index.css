@@ -83,14 +83,6 @@ html {
   -ms-text-size-adjust: none !important;
 }
 
-/* Correção específica para diferentes zoom levels */
-@media (min-width: 1920px) {
-  html {
-    font-size: 10px !important;
-    zoom: 1 !important;
-  }
-}
-
 body {
   background: var(--bg_color);
   color: var(--text_color);
