@@ -284,6 +284,10 @@
   padding: 12px !important;
 }
 
+.viewButton svg {
+  font-size: 1.8rem !important;
+}
+
 .viewButton:hover {
   transform: scale(1.1);
   background-color: rgba(var(--main_color_rgb), 0.1) !important;
@@ -292,6 +296,11 @@
 .activeView {
   background-color: rgba(var(--main_color_rgb), 0.2) !important;
   transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(var(--main_color_rgb), 0.3) !important;
+}
+
+.activeView svg {
+  font-size: 2.2rem !important;
 }
 
 .viewBtn {
@@ -570,5 +579,13 @@
   
   .viewButton {
     padding: 8px !important;
+  }
+  
+  .viewButton svg {
+    font-size: 1.5rem !important;
+  }
+  
+  .activeView svg {
+    font-size: 1.6rem !important;
   }
 }

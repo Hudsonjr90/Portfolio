@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { mainIcons } from "../../data/iconsServer";
 import styles from "./Cloud.module.css";
 
@@ -16,6 +17,7 @@ interface WordItem {
 }
 
 const Cloud = () => {
+  const { t } = useTranslation();
   const [words, setWords] = useState<WordItem[]>([]);
   const [draggedWord, setDraggedWord] = useState<number | null>(null);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
@@ -216,26 +218,38 @@ const Cloud = () => {
         isDragging: false,
       });
 
-      if (icon.level) {
-        const startPos3 = getRandomStartPosition();
-        wordsArray.push({
-          id: index * 3 + 2,
-          name: icon.level.replace('skills.', '').toUpperCase(),
-          size: isMobile ? 
-            Math.max(8, Math.min(14, icon.percentage * 0.25)) : 
-            Math.max(10, Math.min(20, icon.percentage * 0.4)),
-          colorVar: getRandomColor(),
-          x: startPos3.x,
-          y: startPos3.y,
-          animationClass: getRandomAnimationClass(),
-          delay: Math.random() * 12 + 8,
-          isDragging: false,
-        });
-      }
-    });
+      const startPos3 = getRandomStartPosition();
+      wordsArray.push({
+        id: index * 3 + 2,
+        name: t(icon.level),
+        size: isMobile ? 
+          Math.max(8, Math.min(14, icon.percentage * 0.25)) : 
+          Math.max(10, Math.min(20, icon.percentage * 0.4)),
+        colorVar: getRandomColor(),
+        x: startPos3.x,
+        y: startPos3.y,
+        animationClass: getRandomAnimationClass(),
+        delay: Math.random() * 12 + 8,
+        isDragging: false,
+      });
 
+      const startPos4 = getRandomStartPosition();
+      wordsArray.push({
+        id: index * 3 + 3,
+        name: icon.percentage + "%",    
+        size: isMobile ? 
+          Math.max(8, Math.min(14, icon.percentage * 0.25)) : 
+          Math.max(10, Math.min(20, icon.percentage * 0.4)),
+        colorVar: getRandomColor(),
+        x: startPos4.x,
+        y: startPos4.y,
+        animationClass: getRandomAnimationClass(),
+        delay: Math.random() * 12 + 8,
+        isDragging: false,
+      });
+    });
     setWords(wordsArray);
-  }, []);
+  }, [t]);
 
   return (
     <motion.div
