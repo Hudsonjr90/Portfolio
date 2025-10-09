@@ -1,0 +1,124 @@
+.chartContainer {
+  position: relative;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  background: var(--bg_color);
+  box-shadow: var(--main_color) 0 0 1rem;
+}
+
+.backButton {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--bg_color);
+  color: var(--main_color);
+  padding: 0.8rem 1.2rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--main_color), 0.4);
+  background: linear-gradient(135deg, var(--main_color)E6, var(--main_color));
+}
+
+.chartContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--main_color), transparent, var(--main_color));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Animação de entrada */
+.chartContainer {
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .chartContainer {
+    padding: 1rem;
+    margin: 3rem 0;
+    border-radius: 15px;
+  }
+  
+  .chartContainer::before {
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chartContainer {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .chartContainer::before {
+    border-radius: 12px;
+  }
+}
+
+/* Efeitos especiais para gráficos neon */
+.dark .chartContainer {
+  position: relative;
+}
+
+.dark .chartContainer::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    var(--main_color), 
+    transparent, 
+    var(--main_color), 
+    transparent, 
+    var(--main_color)
+  );
+  border-radius: 22px;
+  z-index: -2;
+  opacity: 0.5;
+  filter: blur(6px);
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.3;
+    filter: blur(6px);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(8px);
+  }
+}

@@ -34,18 +34,10 @@ const Cloud = () => {
     const isMobile = window.innerWidth <= 768;
     
     if (isMobile) {
-      // Para mobile: apenas posições verticais (topo e fundo)
-      const side = Math.floor(Math.random() * 2);
-      switch (side) {
-        case 0: // Top
-          return { x: Math.random() * 70 + 15, y: -5 };
-        case 1: // Bottom
-          return { x: Math.random() * 70 + 15, y: 105 };
-        default:
-          return { x: 50, y: -5 };
-      }
+      // Para mobile: efeito chuva - sempre começando do topo
+      return { x: Math.random() * 90 + 5, y: -10 };
     } else {
-      // Para desktop: posições mais amplas
+      // Para desktop: posições aleatórias em todas as direções
       const side = Math.floor(Math.random() * 4);
       switch (side) {
         case 0: 
@@ -63,8 +55,17 @@ const Cloud = () => {
   };
 
   const getRandomAnimationClass = () => {
-    const animations = ["float1", "float2", "float3", "float4", "float5", "float6", "float7", "float8"];
-    return animations[Math.floor(Math.random() * animations.length)];
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+      // Para mobile: apenas animações de chuva (de cima para baixo)
+      const rainAnimations = ["float3", "float4"];
+      return rainAnimations[Math.floor(Math.random() * rainAnimations.length)];
+    } else {
+      // Para desktop: todas as animações aleatórias
+      const animations = ["float1", "float2", "float3", "float4", "float5", "float6", "float7", "float8"];
+      return animations[Math.floor(Math.random() * animations.length)];
+    }
   };
 
   const handleMouseDown = (e: React.MouseEvent, wordId: number) => {

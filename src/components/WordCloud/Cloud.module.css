@@ -94,6 +94,40 @@
   100% { transform: translate(-20vw, -20vh); }
 }
 
+@keyframes rainFall1 {
+  0% { 
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+@keyframes rainFall2 {
+  0% { 
+    transform: translateY(-15vh);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(115vh);
+    opacity: 0;
+  }
+}
+
 /* Classes de animação com durações variadas */
 .float1 { animation: floatLeftRight 30s linear infinite; }
 .float2 { animation: floatRightLeft 25s linear infinite; }
@@ -124,5 +158,31 @@
   
   .word:hover {
     transform: scale(1.2);
+  }
+
+  /* Sobrescreve animações para efeito chuva no mobile */
+  .float3 { 
+    animation: rainFall1 15s linear infinite; 
+  }
+  
+  .float4 { 
+    animation: rainFall2 18s linear infinite; 
+  }
+
+  /* Adiciona variações de velocidade para as palavras */
+  .wordContainer:nth-child(3n) .float3 {
+    animation-duration: 12s;
+  }
+
+  .wordContainer:nth-child(4n) .float4 {
+    animation-duration: 20s;
+  }
+
+  .wordContainer:nth-child(5n) .float3 {
+    animation-duration: 16s;
+  }
+
+  .wordContainer:nth-child(6n) .float4 {
+    animation-duration: 14s;
   }
 }

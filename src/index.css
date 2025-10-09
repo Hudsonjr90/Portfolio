@@ -33,7 +33,9 @@
 
 :root {
   --bg_color: #2b2726;
+  --bg_color_rgb: 43, 39, 38;
   --main_color: #0ef6cc;
+  --main_color_rgb: 14, 246, 204;
   --placeholder_color: rgba(255, 255, 255, 0.3);
   --second_bg_color: #323946;
   --text_color: #ededed;
@@ -44,7 +46,9 @@
 
 .light_mode {
   --bg_color: #fef4f4;
+  --bg_color_rgb: 254, 244, 244;
   --main_color: #f65151;
+  --main_color_rgb: 246, 81, 81;
   --placeholder_color: #808080;
   --second_bg_color: #cbd5e1;
   --text_color: #020617;
