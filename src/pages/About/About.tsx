@@ -45,7 +45,6 @@ const About = () => {
               transition={{ duration: 1, delay: 1 }}
               viewport={{ once: true }}
               onViewportEnter={() => setIsInView(true)}
-              whileHover={{ scale: 1.2 }}
             >
               <img
                 src={about}

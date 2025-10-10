@@ -28,10 +28,14 @@ const CardComponent = () => {
 
   const [currentPage, setCurrentPage] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(4);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function handleResize() {
       const width = window.innerWidth;
+      const mobile = width < 768;
+      setIsMobile(mobile);
+      
       if (width < 480) {
         setCardsPerPage(1);
       } else if (width < 768) {
@@ -67,62 +71,124 @@ const CardComponent = () => {
       <div
         className={styles.card_wrapper}
         key={card.id}
-        onMouseEnter={() => handleMouseEnter(card.id)}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={() => !isMobile && handleMouseEnter(card.id)}
+        onMouseLeave={() => !isMobile && handleMouseLeave()}
       >
-        {/* Halo animado */}
-        {hoveredCard === card.id && (
-          <motion.div
-            className={styles.card_glow}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: [0, 0.5, 0], scale: [0, 1, 0] }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut",
-            }}
-          />
-        )}
-
-        {/* Card 3D */}
-        <div
-          className={`${styles.card} ${styles.card_3d}`}
-          style={{
-            transform:
-              hoveredCard === card.id
-                ? "rotateX(10deg) scale(1.05)"
-                : "rotateX(0deg) scale(1)",
-          }}
-        >
-          <div className={styles.card_image_container}>
-            <img
-              src={card.img}
-              alt="Card image"
-              className={`${styles.card_image} ${
-                hoveredCard === card.id ? styles.blur : ""
-              }`}
-              loading="lazy"
-            />
-          </div>
-          <div className={styles.card_content}>
-            <h3 className={styles.card_title}>
-              {t(`education.cards.${card.id}.title`)}
-            </h3>
-            <p className={styles.card_description}>
-              {t(`education.cards.${card.id}.text`)}
-            </p>
-            {hoveredCard === card.id && (
+        {isMobile ? (
+          /* Card tradicional para mobile */
+          <div className={styles.mobile_card}>
+            <div className={styles.mobile_card_image_container}>
+              <img
+                src={card.img}
+                alt="Card image"
+                className={styles.mobile_card_image}
+                loading="lazy"
+              />
+            </div>
+            <div className={styles.mobile_card_content}>
+              <h3 className={styles.mobile_card_title}>
+                {t(`education.cards.${card.id}.title`)}
+              </h3>
+              <p className={styles.mobile_card_description}>
+                {t(`education.cards.${card.id}.text`)}
+              </p>
               <button
-                className={styles.download_button}
+                className={styles.mobile_card_button}
                 onClick={() => handleDownload(card.id)}
               >
                 {t("home.download")}
                 <FaDownload />
               </button>
+            </div>
+          </div>
+        ) : (
+          /* Card com efeito holograma para desktop */
+          <div className={styles.card_container_3d}>
+            {/* Card base que deita */}
+            <div
+              className={`${styles.card} ${styles.card_base}`}
+              style={{
+                transform: hoveredCard === card.id
+                  ? "rotateX(75deg) translateZ(-20px)"
+                  : "rotateX(0deg) translateZ(0px)",
+              }}
+            >
+              <img
+                src={card.img}
+                alt="Card image"
+                className={styles.card_image}
+                loading="lazy"
+              />
+            </div>
+
+            {/* Holograma 3D que surge no hover */}
+            {hoveredCard === card.id && (
+              <motion.div
+                className={styles.hologram}
+                initial={{ 
+                  opacity: 0, 
+                  scale: 0.5, 
+                  rotateX: -90,
+                  translateZ: -50
+                }}
+                animate={{ 
+                  opacity: 1, 
+                  scale: 1, 
+                  rotateX: 0,
+                  translateZ: 100
+                }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  opacity: { duration: 0.3 },
+                  scale: { duration: 0.5 },
+                  rotateX: { duration: 0.6 },
+                  translateZ: { duration: 0.6 }
+                }}
+              >
+                {/* Efeito de glow do holograma */}
+                <div className={styles.hologram_glow} />
+                
+                {/* Conteúdo do holograma */}
+                <div className={styles.hologram_content}>
+                  <motion.h3 
+                    className={styles.hologram_title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.4 }}
+                  >
+                    {t(`education.cards.${card.id}.title`)}
+                  </motion.h3>
+                  
+                  <motion.p 
+                    className={styles.hologram_description}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.4 }}
+                  >
+                    {t(`education.cards.${card.id}.text`)}
+                  </motion.p>
+                  
+                  <motion.button
+                    className={styles.hologram_button}
+                    onClick={() => handleDownload(card.id)}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4, duration: 0.4 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t("home.download")}
+                    <FaDownload />
+                  </motion.button>
+                </div>
+                
+                {/* Linhas de scanner holográfico */}
+                <div className={styles.hologram_scanner} />
+              </motion.div>
             )}
           </div>
-        </div>
+        )}
       </div>
     ));
 
@@ -144,8 +210,8 @@ const CardComponent = () => {
       >
         <Paginate
           pageCount={pageCount}
-          pageRangeDisplayed={5}
-          marginPagesDisplayed={0}
+          pageRangeDisplayed={isMobile ? 2 : 5}
+          marginPagesDisplayed={isMobile ? 0 : 0}
           onPageChange={({ selected }) => handlePageClick({ selected })}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}

@@ -9,124 +9,173 @@
   padding: 0 1rem;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: var(--second_bg_color);
-  border: 1px solid rgba(var(--main_color_rgb), 0.2);
+/* Container 3D para o efeito holograma */
+.card_container_3d {
+  position: relative;
+  width: 320px;
+  height: 240px;
+  transform-style: preserve-3d;
+}
+
+/* Card base que deita - agora menor, só para imagem */
+.card_base {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center bottom;
+  backface-visibility: hidden;
   border-radius: 1rem;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  transition: all 0.3s ease;
-  width: 400px;
-  height: 400px;
-  position: relative;
+  border: 2px solid rgba(var(--main_color_rgb), 0.2);
+  background-color: var(--second_bg_color);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(var(--main_color_rgb), 0.3);
+.card_base:hover {
   border-color: var(--main_color);
+  box-shadow: 0 8px 25px rgba(var(--main_color_rgb), 0.3);
 }
 
-.card_image_container {
-  position: relative;
-  width: 100%;
-  height: 60%;
-  overflow: hidden;
-}
-
-.card_image {
+.card_base .card_image {
   width: 100%;
   height: 100%;
-  object-fit: fill;
-  border-radius: 1rem 1rem 0 0;
-  transition: filter 0.3s ease;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
 }
 
-.card_content {
+.hologram {
+  position: absolute;
+  top: 0%;
+  left: 0%;
   width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--main_color_rgb), 0.1) 0%,
+    rgba(var(--main_color_rgb), 0.05) 50%,
+    rgba(var(--main_color_rgb), 0.1) 100%
+  );
+  border: 2px solid rgba(var(--main_color_rgb), 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 30px rgba(var(--main_color_rgb), 0.3),
+    inset 0 0 20px rgba(var(--main_color_rgb), 0.1);
+  z-index: 100;
+}
+
+
+.hologram_glow {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(var(--main_color_rgb), 0.4),
+    transparent
+  );
+  border-radius: 20px;
+  opacity: 0.6;
+  animation: hologramGlow 2s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes hologramGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+.hologram_content {
+  position: relative;
   padding: 1.5rem;
-  color: var(--text_color);
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
 }
 
-.card_title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
+.hologram_title {
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--main_color);
-  line-height: 1.3;
+  margin-bottom: 0.8rem;
+  text-shadow: 
+    0 0 10px rgba(var(--main_color_rgb), 0.5),
+    0 0 20px rgba(var(--main_color_rgb), 0.3);
+  line-height: 1.2;
 }
 
-.card_description {
-  font-size: 0.95rem;
-  line-height: 1.5;
+.hologram_description {
+  font-size: 0.9rem;
   color: var(--text_color);
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
   opacity: 0.9;
-  margin-bottom: 1.5rem;
-  flex: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.download_button {
-  background-color: var(--main_color);
-  border: 1px solid var(--main_color);
+.hologram_button {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--main_color_rgb), 0.8) 0%,
+    rgba(var(--main_color_rgb), 1) 100%
+  );
+  border: 2px solid var(--main_color);
   color: var(--bg_color);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: auto;
-  width: 100%;
-  font-weight: 500;
+  gap: 0.6rem;
+  font-weight: 600;
   font-size: 0.9rem;
-  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 15px rgba(var(--main_color_rgb), 0.3),
+    inset 0 1px 3px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-.download_button:hover {
-  background-color: transparent;
-  color: var(--main_color);
+.hologram_button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(var(--main_color_rgb), 0.3);
+  box-shadow: 
+    0 6px 20px rgba(var(--main_color_rgb), 0.4),
+    inset 0 1px 3px rgba(255, 255, 255, 0.3);
 }
 
-.card_wrapper {
-  position: relative;
-  perspective: 1000px;
-  margin: 1rem;
-}
-
-.card_3d {
-  transform-style: preserve-3d;
-  transition: transform 0.7s ease;
-  z-index: 10;
-  position: relative;
-}
-
-.card_glow {
+.hologram_button:before {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 180px;
-  height: 180px;
-  background: rgba(56, 189, 248, 0.08);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  z-index: 0;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
+.hologram_button:hover:before {
+  left: 100%;
+}
 .pagination {
   display: flex;
   justify-content: center;
@@ -192,6 +241,16 @@
     width: 350px;
     height: 380px;
   }
+
+  .card_container_3d {
+    width: 300px;
+    height: 220px;
+  }
+
+  .hologram {
+    width: 320px;
+    height: 180px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -216,6 +275,24 @@
   
   .card_description {
     font-size: 0.9rem;
+  }
+
+  .card_container_3d {
+    width: 280px;
+    height: 200px;
+  }
+
+  .hologram {
+    width: 300px;
+    height: 160px;
+  }
+
+  .hologram_title {
+    font-size: 1.2rem;
+  }
+
+  .hologram_description {
+    font-size: 0.85rem;
   }
 }
 
@@ -265,6 +342,41 @@
     font-size: 0.9rem;
     width: 100%;
     justify-content: center;
+  }
+
+  /* Responsivo para holograma mobile */
+  .card_wrapper {
+    perspective: 800px;
+  }
+
+  .card_container_3d {
+    width: 240px;
+    height: 180px;
+  }
+
+  .hologram {
+    width: 260px;
+    height: 140px;
+  }
+
+  .hologram_content {
+    padding: 1rem;
+  }
+
+  .hologram_title {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .hologram_description {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .hologram_button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
   }
 
   .pagination {
@@ -326,6 +438,37 @@
     padding: 0.7rem 1.2rem;
     font-size: 0.85rem;
   }
+
+  .card_container_3d {
+    width: 220px;
+    height: 160px;
+  }
+
+  .hologram {
+    width: 240px;
+    height: 120px;
+  }
+
+  .hologram_content {
+    padding: 0.8rem;
+  }
+
+  .hologram_title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hologram_description {
+    font-size: 0.75rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .hologram_button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    gap: 0.4rem;
+  }
   
   .pagination li a {
     min-width: 32px;
@@ -341,5 +484,128 @@
   .pagination li:first-child a svg,
   .pagination li:last-child a svg {
     font-size: 12px;
+  }
+}
+
+.mobile_card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--second_bg_color);
+  border: 2px solid rgba(var(--main_color_rgb), 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.mobile_card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(var(--main_color_rgb), 0.3);
+  border-color: var(--main_color);
+}
+
+.mobile_card_image_container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.mobile_card_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mobile_card:hover .mobile_card_image {
+  transform: scale(1.05);
+}
+
+.mobile_card_content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile_card_title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--main_color);
+  margin: 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.mobile_card_description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text_color);
+  opacity: 0.9;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile_card_button {
+  background: linear-gradient(
+    135deg,
+    var(--main_color) 0%,
+    rgba(var(--main_color_rgb), 0.8) 100%
+  );
+  border: 2px solid var(--main_color);
+  color: var(--bg_color);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.mobile_card_button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--main_color_rgb), 0.4);
+  background: transparent;
+  color: var(--main_color);
+}
+
+/* Responsividade específica para mobile cards */
+@media screen and (max-width: 480px) {
+  .mobile_card {
+    max-width: 320px;
+  }
+
+  .mobile_card_image_container {
+    height: 180px;
+  }
+
+  .mobile_card_content {
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+
+  .mobile_card_title {
+    font-size: 1.1rem;
+  }
+
+  .mobile_card_description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .mobile_card_button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
   }
 }

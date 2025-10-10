@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
 import styles from './CircularChart.module.css';
 import { FaArrowLeft } from 'react-icons/fa6';
+import { FaSearch } from 'react-icons/fa';
 
 interface ChartData {
   name: string;
@@ -25,6 +26,10 @@ interface CircularChartProps {
   isMobile?: boolean;
   showBackButton?: boolean;
   onBackClick?: () => void;
+  showSearch?: boolean;
+  searchValue?: string;
+  onSearchChange?: (value: string) => void;
+  searchPlaceholder?: string;
 }
 
 const CircularChart: React.FC<CircularChartProps> = ({
@@ -38,6 +43,10 @@ const CircularChart: React.FC<CircularChartProps> = ({
   isMobile = false,
   showBackButton = false,
   onBackClick,
+  showSearch = false,
+  searchValue = '',
+  onSearchChange,
+  searchPlaceholder = 'Search skills...',
 }) => {
   const { t } = useTranslation();
   const { mainColor } = useTheme();
@@ -325,6 +334,21 @@ const CircularChart: React.FC<CircularChartProps> = ({
           <FaArrowLeft />
         </button>
       )}
+            {/* Campo de busca integrado */}
+      {showSearch && (
+        <div className={styles.searchContainer}>
+          <label className={styles.searchLabel}>
+            <FaSearch className={styles.searchIcon} />
+            <input
+              type="text"
+              value={searchValue}
+              onChange={(e) => onSearchChange?.(e.target.value)}
+              placeholder={searchPlaceholder}
+              className={styles.searchInput}
+            />
+          </label>
+        </div>
+      )}
       
       <ReactECharts
         option={chartOption}
@@ -341,7 +365,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         }}
         notMerge={true}
         lazyUpdate={true}
-      />
+      /> 
     </div>
   );
 };
