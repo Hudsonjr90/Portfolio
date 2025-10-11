@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo, useEffect, useState, useRef } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 import { useTranslation } from 'react-i18next';
@@ -51,6 +51,11 @@ const CircularChart: React.FC<CircularChartProps> = ({
   const { t } = useTranslation();
   const { mainColor } = useTheme();
   const [themeKey, setThemeKey] = useState(0);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  
+  const handleSearchWrapperClick = () => {
+    searchInputRef.current?.focus();
+  };
   
   useEffect(() => {
     const detectThemeChange = () => {
@@ -81,14 +86,14 @@ const CircularChart: React.FC<CircularChartProps> = ({
   const neonColors = useMemo(() => {
     if (isDarkMode) {
       return isMobile ? [
-        '#00ffff',
-        '#ff00ff',
-        '#00ff00',
-        '#ffff00',
-        '#ff8000',
-        '#8000ff',
-        '#ff0040',
-        '#40ff00',
+        '#4a90e2', 
+        '#8e44ad',
+        '#27ae60',
+        '#f39c12',
+        '#e74c3c',
+        '#16a085',
+        '#9b59b6',
+        '#2c3e50',
       ] : [
         '#0ef6cc', 
         '#00ff88',
@@ -101,14 +106,14 @@ const CircularChart: React.FC<CircularChartProps> = ({
       ];
     } else {
       return isMobile ? [
-        '#d63031',
-        '#74b9ff',
-        '#00b894',
-        '#fdcb6e',
-        '#6c5ce7',
-        '#e17055',
-        '#fd79a8',
-        '#55a3ff', 
+        '#5dade2',
+        '#af7ac5',
+        '#58d68d',
+        '#f7dc6f',
+        '#f1948a',
+        '#73c6b6',
+        '#bb8fce',
+        '#85c1e9',
       ] : [
         '#f65151',
         '#ff6b6b',
@@ -125,12 +130,12 @@ const CircularChart: React.FC<CircularChartProps> = ({
   const categoryColors: { [key: string]: string } = useMemo(() => {
     if (isMobile) {
       return {
-        frontend: isDarkMode ? '#00ffff' : '#d63031',
-        backend: isDarkMode ? '#ff00ff' : '#2d3436',
-        database: isDarkMode ? '#00ff00' : '#00b894',
-        tools: isDarkMode ? '#ffff00' : '#0984e3',
-        deploy: isDarkMode ? '#ff8000' : '#e17055',
-        design: isDarkMode ? '#8000ff' : '#6c5ce7',
+        frontend: isDarkMode ? '#4a90e2' : '#5dade2',
+        backend: isDarkMode ? '#8e44ad' : '#af7ac5',
+        database: isDarkMode ? '#27ae60' : '#58d68d',
+        tools: isDarkMode ? '#f39c12' : '#f7dc6f',
+        deploy: isDarkMode ? '#e74c3c' : '#f1948a',
+        design: isDarkMode ? '#9b59b6' : '#bb8fce',
       };
     }
     
@@ -156,8 +161,10 @@ const CircularChart: React.FC<CircularChartProps> = ({
           color: mainColor,
           fontSize: isMobile ? 18 : 24,
           fontWeight: 'bold',
-          textShadowColor: isDarkMode ? 'rgba(14, 246, 204, 0.5)' : 'rgba(246, 81, 81, 0.3)',
-          textShadowBlur: isDarkMode ? 10 : 5,
+          textShadowColor: isMobile ? 
+            (isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)') :
+            (isDarkMode ? 'rgba(14, 246, 204, 0.5)' : 'rgba(246, 81, 81, 0.3)'),
+          textShadowBlur: isMobile ? 3 : (isDarkMode ? 10 : 5),
           textShadowOffsetX: 0,
           textShadowOffsetY: 0,
         },
@@ -181,8 +188,12 @@ const CircularChart: React.FC<CircularChartProps> = ({
           fontWeight: 'bold',
         },
         extraCssText: `
-          backdrop-filter: blur(${isMobile ? '15px' : '10px'});
-          box-shadow: 0 ${isMobile ? '12px' : '8px'} ${isMobile ? '48px' : '32px'} ${isDarkMode ? 'rgba(0, 255, 255, 0.4)' : 'rgba(214, 48, 49, 0.4)'};
+          backdrop-filter: blur(${isMobile ? '8px' : '10px'});
+          box-shadow: 0 ${isMobile ? '4px' : '8px'} ${isMobile ? '16px' : '32px'} ${
+            isMobile ? 
+              (isDarkMode ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.15)') :
+              (isDarkMode ? 'rgba(0, 255, 255, 0.4)' : 'rgba(214, 48, 49, 0.4)')
+          };
         `,
         formatter: function (params: any) {
           const data = params.data;
@@ -201,9 +212,10 @@ const CircularChart: React.FC<CircularChartProps> = ({
         right: isMobile ? '15%' : '8%',
         top: isMobile ? 'bottom' : 'center',
         textStyle: {
-          color: mainColor,
+          color: isDarkMode ? '#fff' : '#333',
           fontSize: isMobile ? 10 : 12,
           fontWeight: 'bold',
+          fontFamily: 'Montserrat, sans-serif',
         },
         itemGap: isMobile ? 10 : 12,
         icon: 'circle',
@@ -221,13 +233,13 @@ const CircularChart: React.FC<CircularChartProps> = ({
           avoidLabelOverlap: false,
           itemStyle: {
             borderColor: isDarkMode ? '#0a0a0a' : '#ffffff',
-            borderWidth: isMobile ? 3 : 2,  
-            shadowBlur: isMobile ? (isDarkMode ? 25 : 20) : (isDarkMode ? 20 : 15),
+            borderWidth: isMobile ? 2 : 2,  
+            shadowBlur: isMobile ? (isDarkMode ? 8 : 6) : (isDarkMode ? 20 : 15),
             shadowColor: isMobile ? 
-              (isDarkMode ? 'rgba(0, 255, 255, 0.8)' : 'rgba(214, 48, 49, 0.6)') :
+              (isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.2)') :
               (isDarkMode ? 'rgba(14, 246, 204, 0.6)' : 'rgba(246, 81, 81, 0.4)'),
             shadowOffsetX: 0,
-            shadowOffsetY: 0,
+            shadowOffsetY: isMobile ? 2 : 0,
           },
           label: {
             show: true,
@@ -245,7 +257,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
               return `${params.name}\n${params.value}%\n${params.data.skillCount ? `(${params.data.skillCount})` : ''}`;
             },
             textBorderColor: isMobile ? 'rgba(0,0,0,1)' : (isDarkMode ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.8)'),
-            textBorderWidth: isMobile ? 4 : 1,
+            textBorderWidth: isMobile ? 2 : 1,
           },
           labelLine: {
             show: !isMobile,
@@ -259,11 +271,13 @@ const CircularChart: React.FC<CircularChartProps> = ({
           },
           emphasis: {
             scale: true,
-            scaleSize: isMobile ? 1.05 : 1.1,
+            scaleSize: isMobile ? 1.02 : 1.1,
             itemStyle: {
-              shadowBlur: isDarkMode ? 40 : 25,
-              shadowColor: mainColor,
-              borderWidth: 3,
+              shadowBlur: isMobile ? (isDarkMode ? 12 : 8) : (isDarkMode ? 40 : 25),
+              shadowColor: isMobile ? 
+                (isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)') : 
+                mainColor,
+              borderWidth: isMobile ? 2 : 3,
             },
             label: {
               fontSize: isMobile ? 12 : 14,
@@ -289,14 +303,14 @@ const CircularChart: React.FC<CircularChartProps> = ({
                 color: isMobile ? 
                   (isDarkMode ? 
                     new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                      { offset: 0, color: baseColor },
-                      { offset: 0.5, color: baseColor + 'E6' }, 
-                      { offset: 1, color: baseColor + 'B3' },   
+                      { offset: 0, color: baseColor + 'F0' },
+                      { offset: 0.5, color: baseColor + 'D0' }, 
+                      { offset: 1, color: baseColor + 'B0' },   
                     ]) :
                     new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                      { offset: 0, color: baseColor },
-                      { offset: 0.5, color: baseColor + 'F0' }, 
-                      { offset: 1, color: baseColor + 'D9' },   
+                      { offset: 0, color: baseColor + 'F5' },
+                      { offset: 0.5, color: baseColor + 'E0' }, 
+                      { offset: 1, color: baseColor + 'CC' },   
                     ])
                   ) :
                   (isDarkMode ? 
@@ -334,19 +348,20 @@ const CircularChart: React.FC<CircularChartProps> = ({
           <FaArrowLeft />
         </button>
       )}
-            {/* Campo de busca integrado */}
+  
       {showSearch && (
         <div className={styles.searchContainer}>
-          <label className={styles.searchLabel}>
+          <div className={styles.searchWrapper} onClick={handleSearchWrapperClick}>
             <FaSearch className={styles.searchIcon} />
             <input
+              ref={searchInputRef}
               type="text"
               value={searchValue}
               onChange={(e) => onSearchChange?.(e.target.value)}
               placeholder={searchPlaceholder}
               className={styles.searchInput}
             />
-          </label>
+          </div>
         </div>
       )}
       

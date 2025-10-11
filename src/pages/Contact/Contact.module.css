@@ -193,3 +193,102 @@ form .textarea_field .error_txt {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .contact {
+    padding: 4rem 4% 2rem;
+    margin-top: -3rem;
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: 8rem;
+  }
+
+  .header_container h2 {
+    font-size: 2.8rem;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+  }
+
+  .social_media .icon_container {
+    position: relative;
+    top: 1rem;
+  }
+
+  .contact form {
+    width: 95%;
+  }
+
+  form .input_box {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .input_box .input_field {
+    width: 100%;
+  }
+
+  .field .item {
+    font-size: 1.4rem;
+    padding: 1.2rem;
+    margin: 0.8rem 0;
+    border-radius: 0.8rem;
+  }
+
+  .field .item::placeholder {
+    font-size: 1.2rem;
+  }
+
+  .field .error_message {
+    font-size: 1.2rem;
+    margin: -0.3rem 0 0.5rem;
+  }
+
+  form .textarea_field .item {
+    min-height: 120px;
+    max-height: 180px;
+  }
+
+  .btn_box .btn {
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 0.8rem;
+  }
+
+  /* Ajustes específicos para PhoneInput */
+  .field .item[type="tel"] {
+    font-size: 1.4rem;
+  }
+}
+
+/* Media query para telas muito pequenas (360px e menores) */
+@media screen and (max-width: 360px) {
+  .contact {
+    padding: 3rem 3% 2rem;
+  }
+
+  .header_container h2 {
+    font-size: 2.4rem;
+  }
+
+  .contact form {
+    width: 98%;
+  }
+
+  .field .item {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+
+  .field .item::placeholder {
+    font-size: 1.1rem;
+  }
+
+  .btn_box .btn {
+    font-size: 1.4rem;
+    padding: 0.9rem 2rem;
+  }
+}
+

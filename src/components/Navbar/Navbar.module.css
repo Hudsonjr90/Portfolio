@@ -550,6 +550,10 @@ label {
   .icons_container {
     margin-left: 12rem;
   }
+
+  .icons_container .sound_icon {
+    margin-top: 0.5rem;
+  }
 }
 
 
