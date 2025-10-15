@@ -236,7 +236,7 @@ const TestimonialComponent: React.FC = () => {
                 onClick={handlePrevPage}
                 disabled={pageCount <= 1}
                 aria-label="Página anterior"
-                style={{ left: '30rem' }}
+                style={{ left: '30rem', zIndex: 1 }}
               >
                 <FaChevronLeft />
               </motion.button>
@@ -249,7 +249,7 @@ const TestimonialComponent: React.FC = () => {
                 onClick={handleNextPage}
                 disabled={pageCount <= 1}
                 aria-label="Próxima página"
-                style={{ right: '30rem' }}
+                style={{ right: '30rem', zIndex: 1 }}
               >
                 <FaChevronRight />
               </motion.button>
