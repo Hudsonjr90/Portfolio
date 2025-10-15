@@ -4,8 +4,9 @@ import * as echarts from 'echarts';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
 import styles from './CircularChart.module.css';
-import { FaArrowLeft } from 'react-icons/fa6';
-import { FaSearch } from 'react-icons/fa';
+import { FaArrowLeft, FaSearch, FaChartPie, FaChartBar, FaChartLine } from 'react-icons/fa';
+
+type ChartType = 'pie' | 'bar' | 'line';
 
 interface ChartData {
   name: string;
@@ -30,6 +31,7 @@ interface CircularChartProps {
   searchValue?: string;
   onSearchChange?: (value: string) => void;
   searchPlaceholder?: string;
+  showChartTypeToggle?: boolean;
 }
 
 const CircularChart: React.FC<CircularChartProps> = ({
@@ -47,10 +49,12 @@ const CircularChart: React.FC<CircularChartProps> = ({
   searchValue = '',
   onSearchChange,
   searchPlaceholder = 'Search skills...',
+  showChartTypeToggle = false,
 }) => {
   const { t } = useTranslation();
   const { mainColor } = useTheme();
   const [themeKey, setThemeKey] = useState(0);
+  const [chartType, setChartType] = useState<ChartType>('pie');
   const searchInputRef = useRef<HTMLInputElement>(null);
   
   const handleSearchWrapperClick = () => {
@@ -86,14 +90,14 @@ const CircularChart: React.FC<CircularChartProps> = ({
   const neonColors = useMemo(() => {
     if (isDarkMode) {
       return isMobile ? [
-        '#4a90e2', 
-        '#8e44ad',
-        '#27ae60',
-        '#f39c12',
-        '#e74c3c',
-        '#16a085',
-        '#9b59b6',
-        '#2c3e50',
+        '#00d4ff',  
+        '#ff4081',
+        '#00ff88',
+        '#ffab00',
+        '#9c27b0',
+        '#ff1744',
+        '#00e676',  
+        '#ffc107', 
       ] : [
         '#0ef6cc', 
         '#00ff88',
@@ -106,14 +110,14 @@ const CircularChart: React.FC<CircularChartProps> = ({
       ];
     } else {
       return isMobile ? [
-        '#5dade2',
-        '#af7ac5',
-        '#58d68d',
-        '#f7dc6f',
-        '#f1948a',
-        '#73c6b6',
-        '#bb8fce',
-        '#85c1e9',
+        '#2196f3',  
+        '#e91e63',  
+        '#4caf50',  
+        '#ff9800',  
+        '#9c27b0',  
+        '#f44336',  
+        '#00bcd4',  
+        '#ffeb3b',  
       ] : [
         '#f65151',
         '#ff6b6b',
@@ -130,12 +134,12 @@ const CircularChart: React.FC<CircularChartProps> = ({
   const categoryColors: { [key: string]: string } = useMemo(() => {
     if (isMobile) {
       return {
-        frontend: isDarkMode ? '#4a90e2' : '#5dade2',
-        backend: isDarkMode ? '#8e44ad' : '#af7ac5',
-        database: isDarkMode ? '#27ae60' : '#58d68d',
-        tools: isDarkMode ? '#f39c12' : '#f7dc6f',
-        deploy: isDarkMode ? '#e74c3c' : '#f1948a',
-        design: isDarkMode ? '#9b59b6' : '#bb8fce',
+        frontend: isDarkMode ? '#00d4ff' : '#2196f3',
+        backend: isDarkMode ? '#ff4081' : '#e91e63',
+        database: isDarkMode ? '#00ff88' : '#4caf50',
+        tools: isDarkMode ? '#ffab00' : '#ff9800',
+        deploy: isDarkMode ? '#ff1744' : '#f44336',
+        design: isDarkMode ? '#9c27b0' : '#9c27b0',
       };
     }
     
@@ -150,7 +154,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
   }, [isDarkMode, isMobile]);
 
   const chartOption = useMemo(() => {
-    return {
+    const baseConfig = {
       backgroundColor: 'transparent',
       title: title ? {
         text: title,
@@ -161,6 +165,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
           color: mainColor,
           fontSize: isMobile ? 18 : 24,
           fontWeight: 'bold',
+          fontFamily: 'Orbitron, sans-serif',
           textShadowColor: isMobile ? 
             (isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)') :
             (isDarkMode ? 'rgba(14, 246, 204, 0.5)' : 'rgba(246, 81, 81, 0.3)'),
@@ -172,10 +177,11 @@ const CircularChart: React.FC<CircularChartProps> = ({
           color: mainColor,
           fontSize: isMobile ? 12 : 14,
           opacity: 0.8,
+          fontFamily: 'Orbitron, sans-serif',
         },
       } : undefined,
       tooltip: {
-        trigger: 'item',
+        trigger: chartType === 'pie' ? 'item' : 'axis',
         backgroundColor: isMobile ? 
           (isDarkMode ? 'rgba(0,0,0,0.98)' : 'rgba(255,255,255,0.98)') : 
           (isDarkMode ? 'rgba(0,0,0,0.95)' : 'rgba(255,255,255,0.95)'),
@@ -186,6 +192,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
           color: isDarkMode ? '#fff' : '#333',
           fontSize: isMobile ? 14 : 14,
           fontWeight: 'bold',
+          fontFamily: 'Orbitron, sans-serif',
         },
         extraCssText: `
           backdrop-filter: blur(${isMobile ? '8px' : '10px'});
@@ -196,146 +203,327 @@ const CircularChart: React.FC<CircularChartProps> = ({
           };
         `,
         formatter: function (params: any) {
-          const data = params.data;
           const textColor = isMobile ? (isDarkMode ? '#ffffff' : '#000000') : mainColor;
-          return `
-            <div style="padding: ${isMobile ? '8px' : '5px'};">
-              <strong style="color: ${textColor}; font-size: ${isMobile ? '16px' : '16px'};">${data.name}</strong><br/>
-              <span style="color: ${textColor};">${t('skills.proficiency')}: ${data.value}%</span><br/>
-              ${data.skillCount ? `<span style="opacity: 0.8; color: ${textColor};">${t('skills.totalSkills')}: ${data.skillCount}</span>` : ''}
-            </div>
-          `;
+          
+          if (chartType === 'pie') {
+            const data = params.data;
+            return `
+              <div style="padding: ${isMobile ? '8px' : '5px'};">
+                <strong style="color: ${textColor}; font-size: ${isMobile ? '16px' : '16px'};">${data.name}</strong><br/>
+                <span style="color: ${textColor};">${t('skills.proficiency')}: ${data.value}%</span><br/>
+                ${data.skillCount ? `<span style="opacity: 0.8; color: ${textColor};">${t('skills.totalSkills')}: ${data.skillCount}</span>` : ''}
+                ${showBackButton && data.category ? `<br/><span style="opacity: 0.8; color: ${textColor};">Categoria: ${data.category}</span>` : ''}
+              </div>
+            `;
+          } else {
+
+            const dataItem = Array.isArray(params) ? params[0] : params;
+            const itemData = dataItem.data || dataItem;
+            
+            return `
+              <div style="padding: ${isMobile ? '8px' : '5px'};">
+                <strong style="color: ${textColor}; font-size: ${isMobile ? '16px' : '16px'};">${itemData.name || dataItem.name}</strong><br/>
+                <span style="color: ${textColor};">${t('skills.proficiency')}: ${itemData.value || dataItem.value}%</span>
+                ${showBackButton && itemData.category ? `<br/><span style="opacity: 0.8; color: ${textColor};">Categoria: ${itemData.category}</span>` : ''}
+                ${itemData.skillCount ? `<br/><span style="opacity: 0.8; color: ${textColor};">${t('skills.totalSkills')}: ${itemData.skillCount}</span>` : ''}
+              </div>
+            `;
+          }
         },
       },
-      legend: showLegend ? {
-        orient: isMobile ? 'horizontal' : 'vertical',
-        right: isMobile ? '15%' : '8%',
-        top: isMobile ? 'bottom' : 'center',
-        textStyle: {
-          color: isDarkMode ? '#fff' : '#333',
-          fontSize: isMobile ? 10 : 12,
-          fontWeight: 'bold',
-          fontFamily: 'Montserrat, sans-serif',
-        },
-        itemGap: isMobile ? 10 : 12,
-        icon: 'circle',
-        itemWidth: isMobile ? 12 : 16,
-        itemHeight: isMobile ? 12 : 16,
-      } : undefined,
-      series: [
-        {
-          name: 'Habilidades',
-          type: 'pie',
-          radius: roseType ? ['30%', '75%'] : ['40%', '75%'],
-          center: ['50%', '55%'],
-          roseType: roseType ? 'radius' : false,
-          startAngle: 90,
-          avoidLabelOverlap: false,
-          itemStyle: {
-            borderColor: isDarkMode ? '#0a0a0a' : '#ffffff',
-            borderWidth: isMobile ? 2 : 2,  
-            shadowBlur: isMobile ? (isDarkMode ? 8 : 6) : (isDarkMode ? 20 : 15),
-            shadowColor: isMobile ? 
-              (isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.2)') :
-              (isDarkMode ? 'rgba(14, 246, 204, 0.6)' : 'rgba(246, 81, 81, 0.4)'),
-            shadowOffsetX: 0,
-            shadowOffsetY: isMobile ? 2 : 0,
-          },
-          label: {
-            show: true,
-            position: isMobile ? 'inside' : 'outside',
-            color: mainColor, 
-            padding: isMobile ? [6, 10] : 0,
-            borderRadius: isMobile ? 6 : 0,
-            fontWeight: 'bold',
-            fontFamily: 'Montserrat, sans-serif',
-            fontSize: isMobile ? 14 : 12,
-            formatter: function(params: any) {
-              if (isMobile) {
-                return `${params.name}\n${params.value}%`;
-              }
-              return `${params.name}\n${params.value}%\n${params.data.skillCount ? `(${params.data.skillCount})` : ''}`;
-            },
-            textBorderColor: isMobile ? 'rgba(0,0,0,1)' : (isDarkMode ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.8)'),
-            textBorderWidth: isMobile ? 2 : 1,
-          },
-          labelLine: {
-            show: !isMobile,
-            lineStyle: {
-              color: mainColor,
-              width: 2,
-            },
-            smooth: 0.3,
-            length: 15,
-            length2: 20,
-          },
-          emphasis: {
-            scale: true,
-            scaleSize: isMobile ? 1.02 : 1.1,
-            itemStyle: {
-              shadowBlur: isMobile ? (isDarkMode ? 12 : 8) : (isDarkMode ? 40 : 25),
-              shadowColor: isMobile ? 
-                (isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)') : 
-                mainColor,
-              borderWidth: isMobile ? 2 : 3,
-            },
-            label: {
-              fontSize: isMobile ? 12 : 14,
-              fontWeight: 'bold',
-            },
-          },
-          animationType: 'scale',
-          animationEasing: 'elasticOut',
-          animationDelay: (idx: number) => idx * 100,
-          animationDuration: 1500,
-          data: data.map((item, index) => {
-            const baseColor = item.category ? 
-              categoryColors[item.category] || neonColors[index % neonColors.length] :
-              neonColors[index % neonColors.length];
-            
-            return {
-              value: item.value,
-              name: item.name,
-              skillCount: item.skillCount,
-              category: item.category,
-              skills: item.skills,
-              itemStyle: {
-                color: isMobile ? 
-                  (isDarkMode ? 
-                    new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                      { offset: 0, color: baseColor + 'F0' },
-                      { offset: 0.5, color: baseColor + 'D0' }, 
-                      { offset: 1, color: baseColor + 'B0' },   
-                    ]) :
-                    new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                      { offset: 0, color: baseColor + 'F5' },
-                      { offset: 0.5, color: baseColor + 'E0' }, 
-                      { offset: 1, color: baseColor + 'CC' },   
-                    ])
-                  ) :
-                  (isDarkMode ? 
-                    new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                      { offset: 0, color: baseColor },
-                      { offset: 0.5, color: baseColor + 'CC' },
-                      { offset: 1, color: baseColor + '66' },
-                    ]) :
-                    new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                      { offset: 0, color: baseColor },
-                      { offset: 0.5, color: baseColor + 'E6' },
-                      { offset: 1, color: baseColor + 'B3' },
-                    ])
-                  ),
-              },
-            };
-          }),
-        },
-      ],
       animation: true,
       animationThreshold: 2000,
       animationDuration: 1500,
       animationEasing: 'elasticOut',
     };
-  }, [data, mainColor, isDarkMode, title, subtitle, isMobile, showLegend, roseType, neonColors, categoryColors, t, themeKey]);
+
+    switch (chartType) {
+      case 'pie':
+        return {
+          ...baseConfig,
+          legend: showLegend ? {
+            orient: isMobile ? 'horizontal' : 'vertical',
+            right: isMobile ? '15%' : '8%',
+            top: isMobile ? 'bottom' : 'center',
+            textStyle: {
+              color: isDarkMode ? '#fff' : '#333',
+              fontSize: isMobile ? 10 : 12,
+              fontWeight: 'bold',
+              fontFamily: 'Orbitron, sans-serif',
+            },
+            itemGap: isMobile ? 10 : 12,
+            icon: 'circle',
+            itemWidth: isMobile ? 12 : 16,
+            itemHeight: isMobile ? 12 : 16,
+          } : undefined,
+          series: [
+            {
+              name: 'Habilidades',
+              type: 'pie',
+              radius: roseType ? ['30%', '75%'] : ['40%', '75%'],
+              center: ['50%', '55%'],
+              roseType: roseType ? 'radius' : false,
+              startAngle: 90,
+              avoidLabelOverlap: false,
+              itemStyle: {
+                borderColor: isDarkMode ? '#0a0a0a' : '#ffffff',
+                borderWidth: isMobile ? 2 : 2,  
+                shadowBlur: isMobile ? (isDarkMode ? 8 : 6) : (isDarkMode ? 20 : 15),
+                shadowColor: isMobile ? 
+                  (isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.2)') :
+                  (isDarkMode ? 'rgba(14, 246, 204, 0.6)' : 'rgba(246, 81, 81, 0.4)'),
+                shadowOffsetX: 0,
+                shadowOffsetY: isMobile ? 2 : 0,
+              },
+              label: {
+                show: true,
+                position: isMobile ? 'inside' : 'outside',
+                color: mainColor, 
+                padding: isMobile ? [6, 10] : 0,
+                borderRadius: isMobile ? 6 : 0,
+                fontWeight: 'bold',
+                fontFamily: 'Orbitron, sans-serif',
+                fontSize: isMobile ? 14 : 12,
+                formatter: function(params: any) {
+                  if (isMobile) {
+                    return `${params.name}\n${params.value}%`;
+                  }
+                  return `${params.name}\n${params.value}%\n${params.data.skillCount ? `(${params.data.skillCount})` : ''}`;
+                },
+                textBorderColor: isMobile ? 'rgba(0,0,0,1)' : (isDarkMode ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.8)'),
+                textBorderWidth: isMobile ? 2 : 1,
+              },
+              labelLine: {
+                show: !isMobile,
+                lineStyle: {
+                  color: mainColor,
+                  width: 2,
+                },
+                smooth: 0.3,
+                length: 15,
+                length2: 20,
+              },
+              emphasis: {
+                scale: true,
+                scaleSize: isMobile ? 1.02 : 1.1,
+                itemStyle: {
+                  shadowBlur: isMobile ? (isDarkMode ? 12 : 8) : (isDarkMode ? 40 : 25),
+                  shadowColor: isMobile ? 
+                    (isDarkMode ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)') : 
+                    mainColor,
+                  borderWidth: isMobile ? 2 : 3,
+                },
+                label: {
+                  fontSize: isMobile ? 12 : 14,
+                  fontWeight: 'bold',
+                },
+              },
+              animationType: 'scale',
+              animationEasing: 'elasticOut',
+              animationDelay: (idx: number) => idx * 100,
+              animationDuration: 1500,
+              data: data.map((item, index) => {
+                const baseColor = item.category ? 
+                  categoryColors[item.category] || neonColors[index % neonColors.length] :
+                  neonColors[index % neonColors.length];
+                
+                return {
+                  value: item.value,
+                  name: item.name,
+                  skillCount: item.skillCount,
+                  category: item.category,
+                  skills: item.skills,
+                  itemStyle: {
+                    color: isMobile ? 
+                      (isDarkMode ? 
+                        new echarts.graphic.LinearGradient(0, 0, 1, 1, [
+                          { offset: 0, color: baseColor + 'F0' },
+                          { offset: 0.5, color: baseColor + 'D0' }, 
+                          { offset: 1, color: baseColor + 'B0' },   
+                        ]) :
+                        new echarts.graphic.LinearGradient(0, 0, 1, 1, [
+                          { offset: 0, color: baseColor + 'F5' },
+                          { offset: 0.5, color: baseColor + 'E0' }, 
+                          { offset: 1, color: baseColor + 'CC' },   
+                        ])
+                      ) :
+                      (isDarkMode ? 
+                        new echarts.graphic.LinearGradient(0, 0, 1, 1, [
+                          { offset: 0, color: baseColor },
+                          { offset: 0.5, color: baseColor + 'CC' },
+                          { offset: 1, color: baseColor + '66' },
+                        ]) :
+                        new echarts.graphic.LinearGradient(0, 0, 1, 1, [
+                          { offset: 0, color: baseColor },
+                          { offset: 0.5, color: baseColor + 'E6' },
+                          { offset: 1, color: baseColor + 'B3' },
+                        ])
+                      ),
+                  },
+                };
+              }),
+            },
+          ],
+        };
+
+      case 'bar':
+        return {
+          ...baseConfig,
+          grid: {
+            left: '10%',
+            right: '10%',
+            top: title ? '20%' : '10%',
+            bottom: '15%',
+            containLabel: true,
+          },
+          xAxis: {
+            type: 'category',
+            data: data.map(item => item.name),
+            axisLabel: {
+              color: mainColor,
+              fontSize: isMobile ? 10 : 12,
+              rotate: isMobile ? 45 : 0,
+              fontFamily: 'Orbitron, sans-serif',
+            },
+            axisLine: {
+              lineStyle: {
+                color: mainColor,
+              },
+            },
+          },
+          yAxis: {
+            type: 'value',
+            max: 100,
+            axisLabel: {
+              color: mainColor,
+              fontSize: isMobile ? 10 : 12,
+              formatter: '{value}%',
+              fontFamily: 'Orbitron, sans-serif',
+            },
+            axisLine: {
+              lineStyle: {
+                color: mainColor,
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
+              },
+            },
+          },
+          series: [
+            {
+              name: 'Proficiência',
+              type: 'bar',
+              data: data.map((item, index) => {
+                const baseColor = item.category ? 
+                  categoryColors[item.category] || neonColors[index % neonColors.length] :
+                  neonColors[index % neonColors.length];
+                
+                return {
+                  value: item.value,
+                  name: item.name,
+                  category: item.category,
+                  skillCount: item.skillCount,
+                  skills: item.skills,
+                  itemStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                      { offset: 0, color: baseColor + '80' },
+                      { offset: 0.5, color: baseColor + 'B0' },
+                      { offset: 1, color: baseColor },
+                    ]),
+                    borderRadius: [4, 4, 0, 0],
+                  },
+                };
+              }),
+              animationDelay: (idx: number) => idx * 100,
+            },
+          ],
+        };
+
+      case 'line':
+        return {
+          ...baseConfig,
+          grid: {
+            left: '10%',
+            right: '10%',
+            top: title ? '20%' : '10%',
+            bottom: '15%',
+            containLabel: true,
+          },
+          xAxis: {
+            type: 'category',
+            data: data.map(item => item.name),
+            axisLabel: {
+              color: mainColor,
+              fontSize: isMobile ? 10 : 12,
+              rotate: isMobile ? 45 : 0,
+              fontFamily: 'Orbitron, sans-serif',
+            },
+            axisLine: {
+              lineStyle: {
+                color: mainColor,
+              },
+            },
+          },
+          yAxis: {
+            type: 'value',
+            max: 100,
+            axisLabel: {
+              color: mainColor,
+              fontSize: isMobile ? 10 : 12,
+              formatter: '{value}%',
+              fontFamily: 'Orbitron, sans-serif',
+            },
+            axisLine: {
+              lineStyle: {
+                color: mainColor,
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
+              },
+            },
+          },
+          series: [
+            {
+              name: 'Proficiência',
+              type: 'line',
+              data: data.map((item) => ({
+                value: item.value,
+                name: item.name,
+                category: item.category,
+                skillCount: item.skillCount,
+                skills: item.skills,
+              })),
+              smooth: true,
+              lineStyle: {
+                color: mainColor,
+                width: 3,
+                shadowColor: mainColor,
+                shadowBlur: 10,
+              },
+              itemStyle: {
+                color: mainColor,
+                borderColor: isDarkMode ? '#fff' : '#000',
+                borderWidth: 2,
+              },
+              areaStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: mainColor + '60' },
+                  { offset: 1, color: mainColor + '10' },
+                ]),
+              },
+              animationDelay: (idx: number) => idx * 50,
+            },
+          ],
+        };
+
+      default:
+        return baseConfig;
+    }
+  }, [data, mainColor, isDarkMode, title, subtitle, isMobile, showLegend, roseType, neonColors, categoryColors, t, themeKey, chartType]);
 
   return (
     <div className={`${styles.chartContainer} ${isDarkMode ? styles.dark : styles.light}`}>
@@ -347,6 +535,32 @@ const CircularChart: React.FC<CircularChartProps> = ({
         >
           <FaArrowLeft />
         </button>
+      )}
+
+      {showChartTypeToggle && (
+        <div className={styles.chartToggle}>
+          <button
+            onClick={() => setChartType('pie')}
+            className={`${styles.toggleButton} ${chartType === 'pie' ? styles.active : ''}`}
+            aria-label="Gráfico de Pizza"
+          >
+            <FaChartPie />
+          </button>
+          <button
+            onClick={() => setChartType('bar')}
+            className={`${styles.toggleButton} ${chartType === 'bar' ? styles.active : ''}`}
+            aria-label="Gráfico de Barras"
+          >
+            <FaChartBar />
+          </button>
+          <button
+            onClick={() => setChartType('line')}
+            className={`${styles.toggleButton} ${chartType === 'line' ? styles.active : ''}`}
+            aria-label="Gráfico de Linha"
+          >
+            <FaChartLine />
+          </button>
+        </div>
       )}
   
       {showSearch && (

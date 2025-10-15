@@ -252,6 +252,7 @@ const Skills = () => {
               searchValue={searchTerm}
               onSearchChange={(value) => setSearchTerm(value)}
               searchPlaceholder={t("skills.search")}
+              showChartTypeToggle={true}
             />
           </motion.div>
         )}
