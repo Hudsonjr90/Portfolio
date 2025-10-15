@@ -176,6 +176,13 @@
 .hologram_button:hover:before {
   left: 100%;
 }
+
+.pagination_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25rem;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
