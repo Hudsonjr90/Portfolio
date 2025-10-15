@@ -4,13 +4,89 @@ margin: 0 auto;
 padding: 3rem 1rem;
 }
 
-
 .heading {
 text-align: center;
 font-size: 2rem;
 font-weight: 700;
 color: var(--main_color);
 margin-bottom: 2rem;
+}
+
+.desktopGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 6rem; /* Espaço para as setas fixas */
+}
+
+@media (max-width: 1400px) {
+  .desktopGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    padding: 0 5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .desktopGrid {
+    display: none; /* Hide grid on smaller screens, use Swiper instead */
+  }
+}
+
+/* Setas de navegação */
+.navArrow {
+  background: var(--second_bg_color);
+  border: 2px solid var(--main_color);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--main_color);
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  position: absolute;
+  top: 70vh;
+  transform: translateY(-50%);
+  z-index: 1000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.navArrow:hover {
+  background: var(--main_color);
+  color: var(--bg_color);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(var(--main_color_rgb), 0.4);
+}
+
+.navArrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.navArrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+.navArrow:disabled:hover {
+  background: var(--second_bg_color);
+  color: var(--main_color);
+  transform: translateY(-50%);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Hide arrows on mobile */
+@media (max-width: 1199px) {
+  .navArrow {
+    display: none;
+  }
 }
 
 
@@ -39,10 +115,13 @@ margin-bottom: 2rem;
   align-items: center;
   justify-content: center;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  height: 320px;
+  height: 380px;
   position: relative;
   overflow: visible;
   cursor: pointer;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .card:hover {
@@ -52,7 +131,7 @@ margin-bottom: 2rem;
 
 .card.expanded {
   height: auto;
-  min-height: 320px;
+  min-height: 380px;
   justify-content: flex-start;
   padding-top: 2rem;
   padding-bottom: 3rem;
@@ -99,11 +178,9 @@ margin-bottom: 2rem;
 }
 
 .text {
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   color: var(--main_color);
   opacity: 0.9;
-  line-height: 1.7;
   padding: 0 1rem;
   text-align: center;
   font-weight: 400;

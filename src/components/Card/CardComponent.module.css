@@ -9,11 +9,11 @@
   padding: 0 1rem;
 }
 
-/* Container 3D para o efeito holograma */
+/* Container 3D para o efeito holograma - Desktop maior */
 .card_container_3d {
   position: relative;
-  width: 320px;
-  height: 240px;
+  width: 400px;
+  height: 300px;
   transform-style: preserve-3d;
 }
 
@@ -180,7 +180,7 @@
 .pagination_container {
   display: flex;
   justify-content: center;
-  margin-top: 25rem;
+  margin-top: 15rem;
 }
 
 .pagination {
@@ -245,18 +245,18 @@
   }
   
   .card {
-    width: 350px;
-    height: 380px;
+    width: 380px;
+    height: 420px;
   }
 
   .card_container_3d {
-    width: 300px;
-    height: 220px;
+    width: 350px;
+    height: 260px;
   }
 
   .hologram {
-    width: 320px;
-    height: 180px;
+    width: 370px;
+    height: 220px;
   }
 }
 
@@ -268,8 +268,8 @@
   }
   
   .card {
-    width: 320px;
-    height: 360px;
+    width: 340px;
+    height: 380px;
   }
   
   .card_content {
@@ -285,21 +285,21 @@
   }
 
   .card_container_3d {
-    width: 280px;
-    height: 200px;
+    width: 320px;
+    height: 240px;
   }
 
   .hologram {
-    width: 300px;
-    height: 160px;
+    width: 340px;
+    height: 200px;
   }
 
   .hologram_title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .hologram_description {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -314,13 +314,13 @@
   
   .card {
     width: 90%;
-    max-width: 400px;
+    max-width: 420px;
     height: auto;
-    min-height: 350px;
+    min-height: 380px;
   }
 
   .card_image_container {
-    height: 200px;
+    height: 220px;
   }
   
   .card_image {
@@ -351,19 +351,19 @@
     justify-content: center;
   }
 
-  /* Responsivo para holograma mobile */
+  /* Responsivo para holograma mobile - tamanho melhor */
   .card_wrapper {
     perspective: 800px;
   }
 
   .card_container_3d {
-    width: 240px;
-    height: 180px;
+    width: 280px;
+    height: 210px;
   }
 
   .hologram {
-    width: 260px;
-    height: 140px;
+    width: 300px;
+    height: 170px;
   }
 
   .hologram_content {
@@ -371,12 +371,12 @@
   }
 
   .hologram_title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 0.6rem;
   }
 
   .hologram_description {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin-bottom: 1rem;
     line-height: 1.3;
   }
@@ -418,12 +418,12 @@
   
   .card {
     width: 100%;
-    max-width: 340px;
-    min-height: 320px;
+    max-width: 360px;
+    min-height: 350px;
   }
 
   .card_image_container {
-    height: 180px;
+    height: 200px;
   }
 
   .card_content {
@@ -447,13 +447,13 @@
   }
 
   .card_container_3d {
-    width: 220px;
-    height: 160px;
+    width: 260px;
+    height: 190px;
   }
 
   .hologram {
-    width: 240px;
-    height: 120px;
+    width: 280px;
+    height: 150px;
   }
 
   .hologram_content {
@@ -461,12 +461,12 @@
   }
 
   .hologram_title {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
   }
 
   .hologram_description {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     margin-bottom: 0.8rem;
     line-height: 1.2;
   }
@@ -504,7 +504,7 @@
   overflow: hidden;
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 350px;
+  max-width: 380px;
   margin: 0 auto;
 }
 
@@ -517,7 +517,7 @@
 .mobile_card_image_container {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -590,11 +590,11 @@
 /* Responsividade específica para mobile cards */
 @media screen and (max-width: 480px) {
   .mobile_card {
-    max-width: 320px;
+    max-width: 350px;
   }
 
   .mobile_card_image_container {
-    height: 180px;
+    height: 200px;
   }
 
   .mobile_card_content {
@@ -603,16 +603,16 @@
   }
 
   .mobile_card_title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .mobile_card_description {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     line-height: 1.4;
   }
 
   .mobile_card_button {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.85rem;
+    padding: 0.8rem 1.3rem;
+    font-size: 0.9rem;
   }
 }
