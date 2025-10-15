@@ -82,14 +82,14 @@ const Portfolio = () => {
             <span>//</span> {t("projects.title")} <span>{t("projects.text")}</span>
           </h2>
           <div className={styles.portfolio_grid}>
-            {currentItems.map((item) => (
+            {currentItems.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, x: "100%" }}
-                animate={{ opacity: 1, x: "0%" }}
+                initial={{ opacity: 0, y: "-100%" }}
+                animate={{ opacity: 1, y: "0%" }}
                 transition={{
-                  duration: 2,
-                  delay: 0.7,
+                  duration: 1.5,
+                  delay: 0.7 + (index * 0.3),
                   ease: [0.2, 0, 0.2, 1],
                 }}
                 className={styles.cardWrapper}
@@ -137,6 +137,24 @@ const Portfolio = () => {
                           title={!item.linkDeploy ? t("projects.inDevelopment") : ""}
                           placement="top"
                           arrow
+                          componentsProps={{
+                            tooltip: {
+                              sx: {
+                                fontSize: '1.1rem',
+                                padding: '8px 12px',
+                                backgroundColor: 'var(--second_bg_color)',
+                                color: 'var(--main_color)',
+                                fontWeight: 700,
+                                borderRadius: '8px',
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                              }
+                            },
+                            arrow: {
+                              sx: {
+                                color: 'var(--second_bg_color)',
+                              }
+                            }
+                          }}
                         >
                           <span>
                             <Button 
@@ -162,6 +180,24 @@ const Portfolio = () => {
                           title={!item.linkRepository ? t("projects.inDevelopment") : ""}
                           placement="top"
                           arrow
+                          componentsProps={{
+                            tooltip: {
+                              sx: {
+                                fontSize: '1.1rem',
+                                padding: '8px 12px',
+                                backgroundColor: 'var(--second_bg_color)',
+                                color: 'var(--main_color)',
+                                fontWeight: 700,
+                                borderRadius: '8px',
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                              }
+                            },
+                            arrow: {
+                              sx: {
+                                color: 'var(--second_bg_color)',
+                              }
+                            }
+                          }}
                         >
                           <span>
                             <Button 

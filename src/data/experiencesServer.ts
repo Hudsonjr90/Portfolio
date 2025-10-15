@@ -6,14 +6,13 @@ export interface Experience {
   image: string;
 }
 
-
 const experiencesServer = [
   {
     title: "Eterj - Escola Técnica do Estado do Rio de Janeiro",
     subtitle: "experiences.subtitle1",
     description: "experiences.description1",
     date: "experiences.date1",
-    image: "/imgs/imgExperiences/eterj.png", 
+    image: "/imgs/imgExperiences/eterj.png",
   },
   {
     title: "DT3 Sports",
@@ -58,19 +57,19 @@ const experiencesServer = [
     image: "/imgs/imgExperiences/tdb.png",
   },
   {
-    title: "Afilio / Dynaton",
-    subtitle: "experiences.subtitle5",
-    description: "experiences.description7",
-    date: "experiences.date7",
-    image: "/imgs/imgExperiences/afilio.png",
-  },
-  {
     title: "Cubo Connect",
     subtitle: "experiences.subtitle6",
     description: "experiences.description8",
     date: "experiences.date8",
     image: "/imgs/imgExperiences/cubo.png",
   },
+  {
+    title: "Afilio / Dynaton",
+    subtitle: "experiences.subtitle5",
+    description: "experiences.description7",
+    date: "experiences.date7",
+    image: "/imgs/imgExperiences/afilio.png",
+  },
 ];
-  
- export default experiencesServer 
+
+export default experiencesServer;

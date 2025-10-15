@@ -131,10 +131,13 @@
 
 .cardDescription {
   font-size: 1.3rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0 0 3rem 0;
   color: var(--text_color);
-  text-align: justify;
+  text-align: left;
+  word-spacing: normal;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .techList {
