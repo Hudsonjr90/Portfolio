@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import {
@@ -21,6 +22,16 @@ import { getCurrentYear } from "../../utils/functions";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Efeito de carregamento para animação sequencial
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <motion.footer
       className={styles.footer}
@@ -32,88 +43,199 @@ const Footer = () => {
         ease: [0.2, 0, 0.2, 1],
       }}
     >
-      <div className={styles.socialMedia}>
-        <ThemeProvider theme={whatsappTheme}>
-          <NavLink
-            to="https://api.whatsapp.com/send?phone=5521969609121"
-            className={styles.whatsapp}
-            target="_blank"
-          >
-            <Tooltip
-              TransitionComponent={Zoom}
-              title="Whatsapp"
-              placement="top"
-              arrow
+      <motion.div 
+        className={styles.socialMedia}
+        initial="hidden"
+        animate={isLoaded ? "visible" : "hidden"}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+              delayChildren: 0.3,
+            },
+          },
+        }}
+      >
+        <motion.div
+          variants={{
+            hidden: { 
+              opacity: 0, 
+              y: 30,
+              scale: 0.5,
+              rotate: -45 
+            },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              scale: 1,
+              rotate: 0,
+              transition: {
+                type: "spring",
+                stiffness: 120,
+                damping: 8,
+              },
+            },
+          }}
+        >
+          <ThemeProvider theme={whatsappTheme}>
+            <NavLink
+              to="https://api.whatsapp.com/send?phone=5521969609121"
+              className={styles.whatsapp}
+              target="_blank"
             >
-              <IconButton>
-                <FaWhatsapp className={styles.icon} />
-              </IconButton>
-            </Tooltip>
-          </NavLink>
-        </ThemeProvider>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title="Whatsapp"
+                placement="top"
+                arrow
+              >
+                <IconButton>
+                  <FaWhatsapp className={styles.icon} />
+                </IconButton>
+              </Tooltip>
+            </NavLink>
+          </ThemeProvider>
+        </motion.div>
 
-        <ThemeProvider theme={emailTheme}>
-          <NavLink
-            to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
-            className={styles.email}
-            target="_blank"
-          >
-            <Tooltip
-              TransitionComponent={Zoom}
-              title="Email"
-              placement="top"
-              arrow
+        <motion.div
+          variants={{
+            hidden: { 
+              opacity: 0, 
+              y: 30,
+              scale: 0.5,
+              rotate: -45 
+            },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              scale: 1,
+              rotate: 0,
+              transition: {
+                type: "spring",
+                stiffness: 120,
+                damping: 8,
+              },
+            },
+          }}
+        >
+          <ThemeProvider theme={emailTheme}>
+            <NavLink
+              to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
+              className={styles.email}
+              target="_blank"
             >
-              <IconButton>
-                <MdEmail className={styles.icon} />
-              </IconButton>
-            </Tooltip>
-          </NavLink>
-        </ThemeProvider>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title="Email"
+                placement="top"
+                arrow
+              >
+                <IconButton>
+                  <MdEmail className={styles.icon} />
+                </IconButton>
+              </Tooltip>
+            </NavLink>
+          </ThemeProvider>
+        </motion.div>
 
-        <ThemeProvider theme={linkedinTheme}>
-          <NavLink
-            to="https://www.linkedin.com/in/hudsonkennedyjr"
-            className={styles.linkedin}
-            target="_blank"
-          >
-            <Tooltip
-              TransitionComponent={Zoom}
-              title="Linkedin"
-              placement="top"
-              arrow
+        <motion.div
+          variants={{
+            hidden: { 
+              opacity: 0, 
+              y: 30,
+              scale: 0.5,
+              rotate: -45 
+            },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              scale: 1,
+              rotate: 0,
+              transition: {
+                type: "spring",
+                stiffness: 120,
+                damping: 8,
+              },
+            },
+          }}
+        >
+          <ThemeProvider theme={linkedinTheme}>
+            <NavLink
+              to="https://www.linkedin.com/in/hudsonkennedyjr"
+              className={styles.linkedin}
+              target="_blank"
             >
-              <IconButton>
-                <FaLinkedin className={styles.icon} />
-              </IconButton>
-            </Tooltip>
-          </NavLink>
-        </ThemeProvider>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title="Linkedin"
+                placement="top"
+                arrow
+              >
+                <IconButton>
+                  <FaLinkedin className={styles.icon} />
+                </IconButton>
+              </Tooltip>
+            </NavLink>
+          </ThemeProvider>
+        </motion.div>
 
-        <ThemeProvider theme={githubTheme}>
-          <NavLink
-            to="https://github.com/Hudsonjr90"
-            className={styles.github}
-            target="_blank"
-          >
-            <Tooltip
-              TransitionComponent={Zoom}
-              title="Github"
-              placement="top"
-              arrow
+        <motion.div
+          variants={{
+            hidden: { 
+              opacity: 0, 
+              y: 30,
+              scale: 0.5,
+              rotate: -45 
+            },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              scale: 1,
+              rotate: 0,
+              transition: {
+                type: "spring",
+                stiffness: 120,
+                damping: 8,
+              },
+            },
+          }}
+        >
+          <ThemeProvider theme={githubTheme}>
+            <NavLink
+              to="https://github.com/Hudsonjr90"
+              className={styles.github}
+              target="_blank"
             >
-              <IconButton>
-                <FaGithub className={styles.icon} />
-              </IconButton>
-            </Tooltip>
-          </NavLink>
-        </ThemeProvider>
-      </div>
+              <Tooltip
+                TransitionComponent={Zoom}
+                title="Github"
+                placement="top"
+                arrow
+              >
+                <IconButton>
+                  <FaGithub className={styles.icon} />
+                </IconButton>
+              </Tooltip>
+            </NavLink>
+          </ThemeProvider>
+        </motion.div>
+      </motion.div>
 
       <motion.div
         className={styles.branding}
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, y: 20, scale: 0.8 }}
+        animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.8 }}
+        transition={{
+          duration: 0.6,
+          delay: 1.1, // Aparece depois dos ícones
+          ease: "easeOut",
+        }}
+        whileHover={{ 
+          scale: 1.1,
+          transition: { duration: 0.3 }
+        }}
       >
         HK Dev <FaRegCopyright /> <span>{getCurrentYear()}</span>
       </motion.div>

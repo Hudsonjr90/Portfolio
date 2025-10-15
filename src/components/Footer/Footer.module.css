@@ -17,62 +17,51 @@
 .socialMedia {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .socialMedia a {
   transition: all 0.3s ease;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .socialMedia a:hover {
   transform: translateY(-3px);
 }
 
+/* Estilos para os botões Material-UI */
+.socialMedia :global(.MuiIconButton-root) {
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 0;
+}
+
 .icon {
-  font-size: 2.5rem;
+  font-size: 2.2rem !important;
   transition: all 0.3s ease;
 }
 
-.whatsapp .icon {
-  color: #25d366;
+.whatsapp :global(.MuiIconButton-root) {
+  background: #25d366 !important;
+  color: #fff !important;
 }
 
-.email .icon {
-  color: #d44638;
+.email :global(.MuiIconButton-root) {
+  background: #f65151 !important;
+  color: #fff !important;
 }
 
-.linkedin .icon {
-  color: #0077b5;
+.linkedin :global(.MuiIconButton-root) {
+  background: #2867b2 !important;
+  color: #fff !important;
 }
 
-.github .icon {
-  color: var(--main_color);
-}
-
-.socialMedia .icon {
-  color: #fff;
-  font-size: 18px;
-}
-
-.socialMedia .whatsapp {
-  background: #25d366;
-  border: none;
-}
-
-.socialMedia .email {
-  background: #f65151;
-  border: none;
-}
-
-.socialMedia .linkedin {
-  background: #2867b2;
-  border: none;
-}
-
-.socialMedia .github {
-  background: #181717;
-  border: none;
+.github :global(.MuiIconButton-root) {
+  background: #181717 !important;
+  color: #fff !important;
 }
 
 .branding {
@@ -95,8 +84,13 @@
     padding: 1.2rem 4%;
   }
   
+  .socialMedia :global(.MuiIconButton-root) {
+    width: 4rem;
+    height: 4rem;
+  }
+  
   .icon {
-    font-size: 2.2rem;
+    font-size: 2rem !important;
   }
   
   .branding {
@@ -110,7 +104,12 @@
   }
   
   .socialMedia {
-    gap: 0.6rem;
+    gap: 1.5rem;
+  }
+  
+  .socialMedia :global(.MuiIconButton-root) {
+    width: 3.5rem;
+    height: 3.5rem;
   }
   
   .branding {
@@ -118,7 +117,7 @@
   }
   
   .icon {
-    font-size: 2rem;
+    font-size: 1.8rem !important;
   }
 }
 
@@ -128,11 +127,16 @@
   }
   
   .socialMedia {
-    gap: 0.4rem;
+    gap: 1rem;
+  }
+  
+  .socialMedia :global(.MuiIconButton-root) {
+    width: 3rem;
+    height: 3rem;
   }
   
   .icon {
-    font-size: 1.8rem;
+    font-size: 1.6rem !important;
   }
   
   .branding {

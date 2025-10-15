@@ -8,7 +8,6 @@ import React, {
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import Typewriter from "typewriter-effect";
-import about from "/imgs/code.gif";
 import myself from "/imgs/my.webp";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
@@ -20,14 +19,11 @@ import { Atropos } from "atropos/react";
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
 );
-const defaultImg = about;
-const hoverImg = myself;
 
 const Home = React.memo(() => {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
-  const [currentImg, setCurrentImg] = useState(defaultImg);
   const targetText = "Hudson Kennedy";
 
   const handleOpenModal = useCallback(() => {
@@ -132,11 +128,9 @@ const Home = React.memo(() => {
               delay: 0.7,
               ease: [0.2, 0, 0.2, 1],
             }}
-            onHoverStart={() => setCurrentImg(hoverImg)}
-            onHoverEnd={() => setCurrentImg(defaultImg)}
           >
             <Atropos shadow={false} highlight={false}>
-              <img src={currentImg} alt="home_img" loading="eager" />
+              <img src={myself} alt="home_img" loading="eager" />
             </Atropos>
           </motion.div>
         </motion.section>

@@ -4,11 +4,13 @@ import { NavLink } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import styles from "./Navbar.module.css";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../../context/ThemeContext";
+import { logoTheme, useTheme } from "../../context/ThemeContext";
+import { ThemeProvider } from "@mui/material/styles";
 import { useAudio } from "../../hooks/useAudio";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { Us, Fr, Br, Es, It } from "react-flags-select";
 import { motion } from "framer-motion";
+import Tooltip from "@mui/material/Tooltip";
 import logoDark from "/imgs/hkdev.webp";
 import logoLight from "/imgs/hkdev_light.webp";
 
@@ -16,7 +18,7 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } = useAudio();
   const { setMainColor } = useTheme();
-
+  const [isLoaded, setIsLoaded] = useState(false);
   const [lightMode, setLightMode] = useState<boolean>(() => {
     const savedLightMode = localStorage.getItem("lightMode");
     return savedLightMode ? JSON.parse(savedLightMode) : false;
@@ -70,26 +72,66 @@ const Navbar = () => {
     localStorage.setItem("soundEnabled", JSON.stringify(soundEnabled));
   }, [soundEnabled]);
 
+  // Efeito de carregamento para animação sequencial
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <NavLink to="/" onClick={handleAudio}>
-          <img
-            src={lightMode ? logoLight : logoDark}
-            alt="Logo"
-            height="auto"
-            loading="eager"
-            className={styles.logo_img}
-          />
-        </NavLink>
-      </div>
+      <motion.div 
+        className={styles.logo}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ 
+          duration: 0.8, 
+          ease: "easeOut",
+          delay: 0.1 
+        }}
+      >
+        <ThemeProvider theme={logoTheme}>
+           <NavLink 
+            to="/" 
+            onClick={handleAudio}
+          >
+            <Tooltip 
+          title={t("menu.home")} 
+          placement="right"
+          arrow
+        >
+            <img
+              src={lightMode ? logoLight : logoDark}
+              alt="Logo"
+              height="auto"
+              loading="eager"
+              className={styles.logo_img}
+            />
+          </Tooltip>
+          </NavLink>       
+        </ThemeProvider>
+      </motion.div>
 
       <nav>
-        <ul
+        <motion.ul
           className={`${styles.links_list} ${showMenu ? styles.active : ""}`}
           role="menu"
+          initial="hidden"
+          animate={isLoaded ? "visible" : "hidden"}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.3,
+              },
+            },
+          }}
         >
-          <li
+          <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
@@ -97,23 +139,23 @@ const Navbar = () => {
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
             style={{ ["--i" as any]: 0 }}
             role="none"
-          >
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              role="menuitem"
-            >
-              {t("menu.home")}
-            </NavLink>
-          </li>
-          <li
-            onClick={() => {
-              handleLinkClick();
-              handleAudio();
+            variants={{
+              hidden: { 
+                opacity: 0, 
+                y: -20,
+                scale: 0.8 
+              },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
             }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 1 }}
-            role="none"
           >
             <NavLink
               to="/about"
@@ -122,8 +164,8 @@ const Navbar = () => {
             >
               {t("menu.about")}
             </NavLink>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
@@ -131,6 +173,23 @@ const Navbar = () => {
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
             style={{ ["--i" as any]: 1 }}
             role="none"
+            variants={{
+              hidden: { 
+                opacity: 0, 
+                y: -20,
+                scale: 0.8 
+              },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
+            }}
           >
             <NavLink
               to="/education"
@@ -139,15 +198,32 @@ const Navbar = () => {
             >
               {t("menu.academic-education")}
             </NavLink>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 1 }}
+            style={{ ["--i" as any]: 2 }}
             role="none"
+            variants={{
+              hidden: { 
+                opacity: 0, 
+                y: -20,
+                scale: 0.8 
+              },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
+            }}
           >
             <NavLink
               to="/testimonials"
@@ -156,15 +232,32 @@ const Navbar = () => {
             >
               {t("menu.testimonials")}
             </NavLink>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 1 }}
+            style={{ ["--i" as any]: 3 }}
             role="none"
+            variants={{
+              hidden: { 
+                opacity: 0, 
+                y: -20,
+                scale: 0.8 
+              },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
+            }}
           >
             <NavLink
               to="/experiences"
@@ -173,15 +266,32 @@ const Navbar = () => {
             >
               {t("menu.experiences")}
             </NavLink>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 1 }}
+            style={{ ["--i" as any]: 4 }}
             role="none"
+            variants={{
+              hidden: { 
+                opacity: 0, 
+                y: -20,
+                scale: 0.8 
+              },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
+            }}
           >
             <NavLink
               to="/skills"
@@ -190,15 +300,32 @@ const Navbar = () => {
             >
               {t("menu.skills")}
             </NavLink>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 2 }}
+            style={{ ["--i" as any]: 5 }}
             role="none"
+            variants={{
+              hidden: { 
+                opacity: 0, 
+                y: -20,
+                scale: 0.8 
+              },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
+            }}
           >
             <NavLink
               to="/portfolio"
@@ -207,15 +334,32 @@ const Navbar = () => {
             >
               {t("menu.portfolio")}
             </NavLink>
-          </li>
-          <li
+          </motion.li>
+          <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 3 }}
+            style={{ ["--i" as any]: 6 }}
             role="none"
+            variants={{
+              hidden: { 
+                opacity: 0, 
+                y: -20,
+                scale: 0.8 
+              },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
+            }}
           >
             <NavLink
               to="/contact"
@@ -224,11 +368,21 @@ const Navbar = () => {
             >
               {t("menu.contact")}
             </NavLink>
-          </li>
-        </ul>
+          </motion.li>
+        </motion.ul>
       </nav>
 
-      <div className={styles.icons_container} id="container">
+      <motion.div 
+        className={styles.icons_container} 
+        id="container"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ 
+          duration: 0.8, 
+          ease: "easeOut",
+          delay: 0.2 
+        }}
+      >
         <button
           onClick={toggleSound}
           className={styles.sound_icon}
@@ -348,7 +502,7 @@ const Navbar = () => {
           <span className={styles.bar}></span>
           <span className={styles.bar}></span>
         </button>
-      </div>
+      </motion.div>
     </header>
   );
 };

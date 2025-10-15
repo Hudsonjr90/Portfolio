@@ -21,6 +21,49 @@ const TestimonialComponent: React.FC = () => {
     subtitle: t(s.subtitle),
   }));
 
+  // Função para determinar a animação inicial baseada na posição do card
+  const getCardAnimation = (index: number) => {
+    // Calcula slides por view diretamente
+    const width = window.innerWidth;
+    let currentSlidesPerView = 1;
+    if (width >= 1400) currentSlidesPerView = 4;
+    else if (width >= 1200) currentSlidesPerView = 3;
+    else if (width >= 768) currentSlidesPerView = 2;
+    
+    // Só aplica animações direcionais para os primeiros cards visíveis
+    if (index >= currentSlidesPerView) {
+      return { opacity: 0, y: 30 }; // Cards fora da vista inicial usam animação padrão
+    }
+    
+    const position = index; // Para os primeiros cards, a posição é o próprio índice
+    
+    switch (currentSlidesPerView) {
+      case 4:
+        switch (position) {
+          case 0: return { opacity: 0, x: -100, y: 0 }; // Esquerda
+          case 1: return { opacity: 0, x: 0, y: 100 };   // Baixo
+          case 2: return { opacity: 0, x: 0, y: -100 };  // Cima
+          case 3: return { opacity: 0, x: 100, y: 0 };   // Direita
+          default: return { opacity: 0, y: 30 };
+        }
+      case 3:
+        switch (position) {
+          case 0: return { opacity: 0, x: -100, y: 0 };  // Esquerda
+          case 1: return { opacity: 0, x: 0, y: 100 };   // Baixo
+          case 2: return { opacity: 0, x: 100, y: 0 };   // Direita
+          default: return { opacity: 0, y: 30 };
+        }
+      case 2:
+        switch (position) {
+          case 0: return { opacity: 0, x: -100, y: 0 };  // Esquerda
+          case 1: return { opacity: 0, x: 100, y: 0 };   // Direita
+          default: return { opacity: 0, y: 30 };
+        }
+      default:
+        return { opacity: 0, y: 50 }; // Mobile - apenas de baixo
+    }
+  };
+
   const calculateTextHeight = (index: number) => {
     const textElement = textRefs.current[index];
     if (textElement && textElement.parentElement) {
@@ -153,20 +196,32 @@ const TestimonialComponent: React.FC = () => {
           640: { slidesPerView: 1, spaceBetween: 20 },
           768: { slidesPerView: 2, spaceBetween: 30 },
           1200: { slidesPerView: 3, spaceBetween: 30 },
+          1400: { slidesPerView: 4, spaceBetween: 25 },
         }}
         className={styles.swiper}
       >
         {testimonials.map((test, i) => {
           const textHeight = textHeights[i] || 0;
           
+          // Calcula slides per view para o delay
+          const width = window.innerWidth;
+          let currentSlidesPerView = 1;
+          if (width >= 1400) currentSlidesPerView = 4;
+          else if (width >= 1200) currentSlidesPerView = 3;
+          else if (width >= 768) currentSlidesPerView = 2;
+          
           return (
             <SwiperSlide key={i}>
               <motion.div
                 className={`${styles.card} ${expandedCard === i ? styles.expanded : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
+                initial={getCardAnimation(i)}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: i < currentSlidesPerView ? i * 0.15 : 0,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                viewport={{ once: true, margin: "-50px" }}
                 onMouseEnter={() => handleCardMouseEnter(i)}
                 onMouseLeave={handleCardMouseLeave}
                 onClick={() => handleCardClick(i)}
