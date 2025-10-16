@@ -14,6 +14,7 @@ interface ChartData {
   skillCount?: number;
   category?: string;
   skills?: any[];
+  level?: string;
 }
 
 interface CircularChartProps {
@@ -212,7 +213,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
                 <strong style="color: ${textColor}; font-size: ${isMobile ? '16px' : '16px'};">${data.name}</strong><br/>
                 <span style="color: ${textColor};">${t('skills.proficiency')}: ${data.value}%</span><br/>
                 ${data.skillCount ? `<span style="opacity: 0.8; color: ${textColor};">${t('skills.totalSkills')}: ${data.skillCount}</span>` : ''}
-                ${showBackButton && data.category ? `<br/><span style="opacity: 0.8; color: ${textColor};">Categoria: ${data.category}</span>` : ''}
+                ${showBackButton && data.category && data.level ? `<span style="opacity: 0.8; color: ${textColor};">${t('skills.category')}: ${data.category}</span><br/><span style="opacity: 0.8; color: ${textColor};">${t(data.level)}</span>` : ''}
               </div>
             `;
           } else {
@@ -223,8 +224,8 @@ const CircularChart: React.FC<CircularChartProps> = ({
             return `
               <div style="padding: ${isMobile ? '8px' : '5px'};">
                 <strong style="color: ${textColor}; font-size: ${isMobile ? '16px' : '16px'};">${itemData.name || dataItem.name}</strong><br/>
-                <span style="color: ${textColor};">${t('skills.proficiency')}: ${itemData.value || dataItem.value}%</span>
-                ${showBackButton && itemData.category ? `<br/><span style="opacity: 0.8; color: ${textColor};">Categoria: ${itemData.category}</span>` : ''}
+                <span style="color: ${textColor};">${t('skills.proficiency')}: ${itemData.value || dataItem.value}%${itemData.level ? ` - ${t(itemData.level)}` : ''}</span>
+                ${showBackButton && itemData.category ? `<br/><span style="opacity: 0.8; color: ${textColor};">${t('skills.category')}: ${itemData.category}</span>` : ''}
                 ${itemData.skillCount ? `<br/><span style="opacity: 0.8; color: ${textColor};">${t('skills.totalSkills')}: ${itemData.skillCount}</span>` : ''}
               </div>
             `;
@@ -333,6 +334,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
                   skillCount: item.skillCount,
                   category: item.category,
                   skills: item.skills,
+                  level: item.level,
                   itemStyle: {
                     color: isMobile ? 
                       (isDarkMode ? 
@@ -367,6 +369,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         };
 
       case 'bar':
+        const sortedBarData = [...data].sort((a, b) => a.value - b.value);
         return {
           ...baseConfig,
           grid: {
@@ -378,7 +381,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
           },
           xAxis: {
             type: 'category',
-            data: data.map(item => item.name),
+            data: sortedBarData.map(item => item.name),
             axisLabel: {
               color: mainColor,
               fontSize: isMobile ? 10 : 12,
@@ -415,7 +418,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
             {
               name: 'Proficiência',
               type: 'bar',
-              data: data.map((item, index) => {
+              data: sortedBarData.map((item, index) => {
                 const baseColor = item.category ? 
                   categoryColors[item.category] || neonColors[index % neonColors.length] :
                   neonColors[index % neonColors.length];
@@ -426,6 +429,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
                   category: item.category,
                   skillCount: item.skillCount,
                   skills: item.skills,
+                  level: item.level,
                   itemStyle: {
                     color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
                       { offset: 0, color: baseColor + '80' },
@@ -442,6 +446,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         };
 
       case 'line':
+        const sortedLineData = [...data].sort((a, b) => a.value - b.value);
         return {
           ...baseConfig,
           grid: {
@@ -453,7 +458,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
           },
           xAxis: {
             type: 'category',
-            data: data.map(item => item.name),
+            data: sortedLineData.map(item => item.name),
             axisLabel: {
               color: mainColor,
               fontSize: isMobile ? 10 : 12,
@@ -490,12 +495,13 @@ const CircularChart: React.FC<CircularChartProps> = ({
             {
               name: 'Proficiência',
               type: 'line',
-              data: data.map((item) => ({
+              data: sortedLineData.map((item) => ({
                 value: item.value,
                 name: item.name,
                 category: item.category,
                 skillCount: item.skillCount,
                 skills: item.skills,
+                level: item.level,
               })),
               smooth: true,
               lineStyle: {

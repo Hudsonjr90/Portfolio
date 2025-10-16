@@ -77,6 +77,7 @@ const Skills = () => {
           name: skill.name,
           value: skill.percentage,
           category: skill.category,
+          level: skill.level,
         }));
     } else {
       if (!isMobile && searchTerm.trim()) {
@@ -111,6 +112,7 @@ const Skills = () => {
               name: skill.name,
               value: skill.percentage,
               category: skill.category,
+              level: skill.level,
             }));
         }
       } else {
