@@ -101,10 +101,35 @@
   left: 10%;
   right: 10%;
   height: 4px;
-  background: linear-gradient(90deg, var(--bg_color), var(--main_color), var(--bg_color));
+  background: linear-gradient(
+    90deg, 
+    var(--bg_color) 0%, 
+    var(--main_color) 25%, 
+    var(--bg_color) 50%, 
+    var(--main_color) 75%, 
+    var(--bg_color) 100%
+  );
+  background-size: 200% 100%;
   border-radius: 2px;
   transform: translateY(-50%);
   z-index: -1;
+  animation: wavePulse 3s ease-in-out infinite;
+}
+
+
+@keyframes wavePulse {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
 }
 
 @media screen and (max-width: 1200px) {

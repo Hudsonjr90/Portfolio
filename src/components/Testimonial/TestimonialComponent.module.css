@@ -137,6 +137,15 @@ margin-bottom: 2rem;
   padding-bottom: 3rem;
 }
 
+/* No desktop, quando expandido, o card se adapta melhor ao texto */
+@media (min-width: 1200px) {
+  .card.expanded {
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem;
+  }
+}
+
 
 .avatar {
   width: 120px;
@@ -145,12 +154,25 @@ margin-bottom: 2rem;
   object-fit: cover;
   margin-bottom: 1.5rem;
   border: 4px solid var(--main_color);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .card:hover .avatar {
   transform: scale(1.05);
   border-width: 5px;
+}
+
+/* No desktop, esconde a imagem quando o card está expandido */
+@media (min-width: 1200px) {
+  .card.expanded .avatar {
+    opacity: 0;
+    transform: scale(0.8);
+    margin-bottom: 0;
+    height: 0;
+    pointer-events: none;
+  }
 }
 
 
@@ -160,6 +182,15 @@ margin-bottom: 2rem;
   color: var(--main_color);
   margin-bottom: 1rem;
   line-height: 1.3;
+  transition: all 0.3s ease;
+}
+
+/* No desktop, quando expandido, o nome fica mais próximo do texto */
+@media (min-width: 1200px) {
+  .card.expanded .name {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
 }
 
 .textContainer {
@@ -184,6 +215,16 @@ margin-bottom: 2rem;
   padding: 0 1rem;
   text-align: center;
   font-weight: 400;
+  line-height: 1.6;
+}
+
+/* No desktop, texto fica mais legível quando expandido */
+@media (min-width: 1200px) {
+  .card.expanded .text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    padding: 0 0.5rem;
+  }
 }
 
 
