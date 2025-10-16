@@ -16,6 +16,12 @@ const testimonialServer = [
     img: "/imgs/imgsMobile/linkedin17.webp",
   },
   {
+    title: "Rodrigo Rangel",
+    subtitle: "testimonials.subtitle18",
+    img: "/imgs/imgsMobile/linkedin18.webp",
+
+  },
+  {
     title: "Fellipe Menezes",
     subtitle: "testimonials.subtitle2",
     img: "/imgs/imgsMobile/linkedin2.webp",
