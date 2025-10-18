@@ -18,6 +18,7 @@ import i18n from './config/i18n'
 import { AnimatePresence } from 'framer-motion'
 import { useSEO } from './hooks/useSEO'
 import { useStructuredData } from './hooks/useStructuredData'
+import SecurityMonitor from './components/SecurityMonitor/SecurityMonitor'
 import 'devicon/devicon.min.css';
 
 
@@ -59,6 +60,7 @@ function App() {
   return (
     <ThemeProvider>
       <I18nextProvider i18n={i18n}>
+        <SecurityMonitor />
         <Navbar />
         <div className="container" id="container">
           <AnimatePresence mode="wait">

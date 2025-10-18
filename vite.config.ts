@@ -21,6 +21,7 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 2000,
+    sourcemap: true, // Habilita source maps para produção
     rollupOptions: {
       output: {
         manualChunks(id) {

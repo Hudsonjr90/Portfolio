@@ -21,6 +21,15 @@ const createRouteHTML = (route, seoData) => {
     .replace(/name="twitter:image:alt"\s+content="[^"]*"/, `name="twitter:image:alt" content="${seoData.title}"`)
     .replace(/rel="canonical"\s+href="[^"]*"/, `rel="canonical" href="${seoData.url}"`);
   
+  // Adicionar comentário para identificar página gerada para SEO
+  modifiedHTML = modifiedHTML.replace(
+    '<body>',
+    `<body>
+  <!-- This page was generated for SEO optimization by generate-seo-pages.cjs -->
+  <!-- Generated on: ${new Date().toISOString()} -->
+  <!-- Route: ${route} -->`
+  );
+  
   return modifiedHTML;
 };
 

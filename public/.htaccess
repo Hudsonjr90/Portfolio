@@ -31,10 +31,34 @@ RewriteRule . /index.html [L]
   mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
 </ifModule>
 
-# Headers de segurança
+# Headers de segurança completos
+
+# Content Security Policy (CSP) - Proteção contra XSS
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' data: https:; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self' https:; require-trusted-types-for 'script';"
+
+# X-Frame-Options - Proteção contra clickjacking
 Header always set X-Frame-Options DENY
+
+# X-Content-Type-Options - Previne MIME type sniffing
 Header always set X-Content-Type-Options nosniff
+
+# X-XSS-Protection - Proteção XSS (legacy, mas ainda útil)
 Header always set X-XSS-Protection "1; mode=block"
+
+# HSTS - HTTP Strict Transport Security
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# COOP - Cross-Origin-Opener-Policy
+Header always set Cross-Origin-Opener-Policy "same-origin"
+
+# COEP - Cross-Origin-Embedder-Policy
+Header always set Cross-Origin-Embedder-Policy "require-corp"
+
+# Referrer Policy - Controla informações de referrer
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Permissions Policy - Controla recursos do navegador
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
 
 # Forçar HTTPS (descomente se necessário)
 # RewriteCond %{HTTPS} !=on

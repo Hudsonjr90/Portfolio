@@ -64,6 +64,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Fix for deprecated H1UserAgentFontSizeInSection */
+h1 {
+  font-size: 4.5rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
 body {
   background: var(--bg_color);
   color: var(--text_color);
