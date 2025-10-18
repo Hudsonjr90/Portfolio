@@ -1,15 +1,27 @@
 
 * {
   box-sizing: border-box;
-  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+body, button, input, textarea {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 0;
+}
+
+a {
   text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, textarea {
+  border: none;
+  outline: none;
 }
 
 ::-webkit-scrollbar {
@@ -19,7 +31,7 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 1rem;
   background: var(--scroll-color);
-  transition: all 0.5s ease-in-out;
+  will-change: background;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -55,7 +67,7 @@
   --second_text_color: #ededed;
   --scroll-color: #070707;
   --cloud_text: #3f74b1dc;
-  transition: 1.5s;
+  transition: background-color 1.5s, color 1.5s;
 }
 
 html {
@@ -99,67 +111,66 @@ h2 {
 #name {
   animation: inputLeft 0.8s ease-in-out 0.3s 1 forwards;
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 #phone {
   animation: inputLeft 0.8s ease-in-out 0.6s 1 forwards;
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 @keyframes inputLeft {
   from {
-    filter: blur(33px);
     opacity: 0;
-    transform: translate(-100px, 0);
+    transform: translate3d(-100px, 0, 0);
   }
 
   to {
-    filter: blur(0);
     opacity: 1;
-    transform: translate(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 #email {
   animation: inputRight 0.8s ease-in-out 0.3s 1 forwards;
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 #subject {
   animation: inputRight 0.8s ease-in-out 0.6s 1 forwards;
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 @keyframes inputRight {
   from {
     opacity: 0;
-    filter: blur(33px);
-    transform: translate(100px, 0);
+    transform: translate3d(100px, 0, 0);
   }
 
   to {
-    filter: blur(0);
     opacity: 1;
-    transform: translate(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 #message {
   animation: textarea 0.8s ease-in-out 0.9s 1 forwards;
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 @keyframes textarea {
   from {
-    filter: blur(33px);
     opacity: 0;
-    transform: translate(0, 100px);
+    transform: translate3d(0, 100px, 0);
   }
 
   to {
-    filter: blur(0);
     opacity: 1;
-    transform: translate(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 

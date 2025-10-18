@@ -130,7 +130,14 @@ const Home = React.memo(() => {
             }}
           >
             <Atropos shadow={false} highlight={false}>
-              <img src={myself} alt="home_img" loading="eager" />
+              <img 
+                src={myself} 
+                alt="Hudson Kennedy - Desenvolvedor Full Stack" 
+                width="400"
+                height="400"
+                loading="eager"
+                style={{ objectFit: 'cover' }}
+              />
             </Atropos>
           </motion.div>
         </motion.section>

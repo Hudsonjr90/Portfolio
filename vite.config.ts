@@ -8,6 +8,12 @@ export default defineConfig({
     react(),
     visualizer({ filename: "stats.html", open: true }) as any,
   ],
+  esbuild: {
+    // Target modern browsers to reduce polyfills
+    target: 'es2020',
+    // Remove console.log in production
+    drop: ['console', 'debugger'],
+  },
   css: {
     modules: {
       generateScopedName: "[name]__[local]___[hash:base64:5]",
@@ -21,22 +27,60 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 2000,
-    sourcemap: true, // Habilita source maps para produção
+    sourcemap: true,
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            const moduleName = id.split("/")[2];
-            if (
-              ["react", "react-dom", "react-router-dom"].includes(moduleName)
-            ) {
-              return "vendor";
-            }
-            if (moduleName.startsWith("@")) {
-              return moduleName.split("/")[0];
-            }
-            return "libs";
-          }
+        manualChunks: {
+          // Core React libraries
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          
+          // UI Libraries
+          'ui-libs': [
+            '@mui/material',
+            '@emotion/react', 
+            '@emotion/styled',
+            'framer-motion',
+            'react-bootstrap'
+          ],
+          
+          // Chart libraries (used only in Skills page)
+          'chart-libs': [
+            'echarts',
+            'echarts-for-react',
+            'echarts-wordcloud'
+          ],
+          
+          // Icon libraries
+          'icon-libs': [
+            'react-icons',
+            'devicon'
+          ],
+          
+          // Utils and smaller libs
+          'utils': [
+            'i18next',
+            'react-i18next',
+            'axios',
+            'sweetalert2',
+            'file-saver',
+            'react-flags-select'
+          ],
+          
+          // Particles (only used in some pages)
+          'particles': [
+            'react-tsparticles',
+            'tsparticles',
+            'tsparticles-engine'
+          ],
+          
+          // Specialized components
+          'components': [
+            'react-vertical-timeline-component',
+            'react-paginate',
+            'typewriter-effect',
+            'atropos',
+            'swiper'
+          ]
         },
       },
     },

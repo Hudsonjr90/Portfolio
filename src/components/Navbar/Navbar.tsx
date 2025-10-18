@@ -105,9 +105,11 @@ const Navbar = () => {
             <img
               src={lightMode ? logoLight : logoDark}
               alt="Logo"
-              height="auto"
+              width="80"
+              height="80"
               loading="eager"
               className={styles.logo_img}
+              aria-label={t("menu.home")}
             />
           </Tooltip>
           </NavLink>       

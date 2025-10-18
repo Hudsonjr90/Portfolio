@@ -30,6 +30,7 @@
 
 .socialMedia a:hover {
   transform: translateY(-3px);
+  will-change: transform; /* Optimize for composition */
 }
 
 /* Estilos para os botões Material-UI */

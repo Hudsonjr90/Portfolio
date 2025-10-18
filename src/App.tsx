@@ -1,23 +1,26 @@
 import './App.css'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
+import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
-import Home from './pages/Home/Home'
-import About from './pages/About/About'
-import Testimonials from './pages/Testimonials/Testimonials'
-import Education from './pages/Education/Education'
-import Experiences from './pages/Experiences/Experiences'
-import Portfolio from './pages/Portfolio/Portfolio'
-import Skills from './pages/Skills/Skills'
-import Contact from './pages/Contact/Contact'
+// Lazy load pages for better performance
+const Home = React.lazy(() => import('./pages/Home/Home'))
+const About = React.lazy(() => import('./pages/About/About'))
+const Testimonials = React.lazy(() => import('./pages/Testimonials/Testimonials'))
+const Education = React.lazy(() => import('./pages/Education/Education'))
+const Experiences = React.lazy(() => import('./pages/Experiences/Experiences'))
+const Portfolio = React.lazy(() => import('./pages/Portfolio/Portfolio'))
+const Skills = React.lazy(() => import('./pages/Skills/Skills'))
+const Contact = React.lazy(() => import('./pages/Contact/Contact'))
 import { ThemeProvider } from './context/ThemeContext'
 import { I18nextProvider } from 'react-i18next'
 import i18n from './config/i18n'
 import { AnimatePresence } from 'framer-motion'
 import { useSEO } from './hooks/useSEO'
 import { useStructuredData } from './hooks/useStructuredData'
+import { usePerformanceMonitoring, useResourceLoading } from './hooks/usePerformanceMonitoring'
 import SecurityMonitor from './components/SecurityMonitor/SecurityMonitor'
 import 'devicon/devicon.min.css';
 
@@ -29,6 +32,17 @@ function App() {
   useSEO()
   
   useStructuredData()
+  
+  // Monitoramento de performance
+  usePerformanceMonitoring((metrics) => {
+    // Em produção, você pode enviar estas métricas para um serviço de analytics
+    if (process.env.NODE_ENV === 'production') {
+      // Exemplo: analytics.track('performance', metrics)
+      console.log('Performance metrics:', metrics);
+    }
+  })
+  
+  useResourceLoading()
 
   useEffect(() => {
     const getPageTitle = () => {
@@ -64,16 +78,28 @@ function App() {
         <Navbar />
         <div className="container" id="container">
           <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-              <Route index element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/testimonials" element={<Testimonials />} />
-              <Route path="/education" element={<Education />} />
-              <Route path="/experiences" element={<Experiences />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
+            <Suspense fallback={
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center',
+                height: '50vh',
+                color: 'var(--main_color)' 
+              }}>
+                Loading...
+              </div>
+            }>
+              <Routes location={location} key={location.pathname}>
+                <Route index element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/testimonials" element={<Testimonials />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/experiences" element={<Experiences />} />
+                <Route path="/skills" element={<Skills />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </Suspense>
           </AnimatePresence>
         </div>
         <Footer />

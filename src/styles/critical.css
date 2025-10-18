@@ -1,0 +1,112 @@
+/* Critical CSS - Inline styles for above-the-fold content */
+
+/* CSS Variables - Essential for theme switching */
+:root {
+  --bg_color: #2b2726;
+  --bg_color_rgb: 43, 39, 38;
+  --main_color: #0ef6cc;
+  --main_color_rgb: 14, 246, 204;
+  --placeholder_color: rgba(255, 255, 255, 0.3);
+  --second_bg_color: #323946;
+  --text_color: #ededed;
+  --second_text_color: #020617;
+  --scroll-color: #353535;
+  --cloud_text: #00ff00;
+}
+
+.light_mode {
+  --bg_color: #fef4f4;
+  --bg_color_rgb: 254, 244, 244;
+  --main_color: #f65151;
+  --main_color_rgb: 246, 81, 81;
+  --placeholder_color: #808080;
+  --second_bg_color: #cbd5e1;
+  --text_color: #020617;
+  --second_text_color: #ededed;
+  --scroll-color: #070707;
+  --cloud_text: #3f74b1dc;
+  transition: 1.5s;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg_color);
+  color: var(--text_color);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+/* Critical layout - Container */
+.container {
+  min-height: 100vh;
+}
+
+/* Critical - Header/Navbar styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(var(--bg_color_rgb), 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Critical - Home section styles */
+.home {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 95vh;
+  padding: 10rem 6% 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Critical - Loading fallback */
+.loading-fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: var(--main_color);
+  font-size: 1.8rem;
+}
+
+/* Critical - Typography */
+h1 {
+  font-size: 4.5rem;
+  line-height: 1.2;
+}
+
+span {
+  color: var(--main_color);
+}
+
+/* Media queries for critical styles */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+  }
+  
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+}

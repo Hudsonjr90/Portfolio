@@ -37,14 +37,12 @@
 @keyframes button_contact {
   from {
     opacity: 0;
-    filter: blur(33px);
-    transform: translate(0, 100px);
+    transform: translate3d(0, 100px, 0) scale(0.8);
   }
 
   to {
-    filter: blur(0);
     opacity: 1;
-    transform: translate(0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -52,6 +50,7 @@
   animation: button_contact 0.8s ease-in-out 1.2s 1 forwards;
   position: relative;
   opacity: 0;
+  will-change: transform, opacity; /* Optimize for composition */
 }
 
 .btn_box .btn {
