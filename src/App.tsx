@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
-// Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const About = React.lazy(() => import('./pages/About/About'))
 const Testimonials = React.lazy(() => import('./pages/Testimonials/Testimonials'))
@@ -32,12 +31,10 @@ function App() {
   useSEO()
   
   useStructuredData()
-  
-  // Monitoramento de performance
+
   usePerformanceMonitoring((metrics) => {
-    // Em produção, você pode enviar estas métricas para um serviço de analytics
     if (process.env.NODE_ENV === 'production') {
-      // Exemplo: analytics.track('performance', metrics)
+
       console.log('Performance metrics:', metrics);
     }
   })
