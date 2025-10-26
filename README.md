@@ -33,6 +33,13 @@
 
  - `/src`: Código-fonte da aplicação.
  - `/public`: Arquivos públicos.
+ - `/assets`: Imagens e outros recursos estáticos.
+ - `/components`: Componentes reutilizáveis da aplicação.
+ - `/pages`: Páginas principais da aplicação.
+ - `/styles`: Arquivos de estilo (CSS/SCSS).
+ - `/utils`: Funções utilitárias e helpers.
+ - `/services`: Serviços para comunicação com APIs externas.
+ - `/i18n`: Arquivos de configuração para internacionalização.
  
  ## 🚀 Funcionalidades
  
@@ -43,7 +50,12 @@
  - Links ativos
  - Navegação Dinâmica entre páginas(SPA)
  - Internacionalização
-
+ - Responsividade para dispositivos móveis
+ - Seção de depoimentos com animações
+ - Paginação de cards
+ - Linha do tempo para experiências profissionais
+ - Seção de portfólio com cards interativos
+ 
  ## 🤝 Contribuição
 
 Se você deseja contribuir com este projeto, siga estas etapas:
