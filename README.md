@@ -1,20 +1,15 @@
  # 👨‍💻 Portfolio H.K Dev 
 <div align="center"><br>  
- Este é meu segundo portfólio pessoal feito com ReactJS e Typescript, apresento aqui alguns dos meus projetos  
+ Este é meu portfólio pessoal feito com ReactJS e Typescript, apresento aqui alguns dos meus projetos  
  e informações sobre mim.  
  Cresci muito como desenvolvedor Front End fazendo este projeto, Foi feito com muito esforço, muita dedicação  
  e muita atenção aos detalhes.  
  </div>
 
- ## 🎨 Layout 💻 && 📱 Mobile  
-
- <img src="./public/imgs/readme.webp"/>
-
-
  ## ⚙️ Pré-requisitos
 
- - Node.js (v14.0.0 ou superior)
- - npm (v6.0.0 ou superior)
+ - Node.js (v18.0.0 ou superior)
+ - npm (v8.0.0 ou superior)
 
  ## 🛠️ Tecnologias Utilizadas
  
@@ -48,12 +43,6 @@
  - Links ativos
  - Navegação Dinâmica entre páginas(SPA)
  - Internacionalização
-
- ## 🎯 Todo 
-
- - ajustar paletas de cores no light mode
- - inserir mais projetos desenvolvidos
- 
 
  ## 🤝 Contribuição
 
