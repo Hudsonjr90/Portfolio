@@ -133,10 +133,7 @@ const Home = React.memo(() => {
               <img 
                 src={myself} 
                 alt="Hudson Kennedy - Desenvolvedor Full Stack" 
-                width="400"
-                height="400"
                 loading="eager"
-                style={{ objectFit: 'cover' }}
               />
             </Atropos>
           </motion.div>
