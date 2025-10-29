@@ -16,6 +16,7 @@ import kfc from '/imgs/imgProjects/kfc.webp'
 import pokeHistory from '/imgs/imgProjects/pokehistory.webp'
 import barberShop from '/imgs/imgProjects/barber.webp'
 import poll from '/imgs/imgProjects/poll.webp'
+import nuxtNews from '/imgs/imgProjects/nuxt.webp'
 
 const portfolioServer = [
   {
@@ -101,7 +102,6 @@ const portfolioServer = [
     linkDeploy: 'https://swiss-holiday-tracker.vercel.app',
     linkRepository: 'https://github.com/Hudsonjr90/swiss-holiday-tracker',
   },
-
   {
     id: 8,
     image: login,
@@ -179,20 +179,20 @@ const portfolioServer = [
     id: 16,
     image: poll,
     name: "Poll App",
-    description: "Sistema de enquetes realtime com NestJS + Fastify + Prisma.",
-    technologies: ["NestJS", "Fastify", "Prisma", "TypeScript", "HTML", "CSS", "Docker", "PostgreSQL", "websockets"],
+    description: "Sistema de enquetes realtime",
+    technologies: ["NestJS", "Fastify", "Prisma", "TypeScript", "React", "Material-UI", "Axios", "Docker", "PostgreSQL", "Websockets"],
+    linkDeploy: "",
+    linkRepository: "",
+  },
+  {
+    id: 17,
+    image: nuxtNews,
+    name: "Nuxt News",
+    description: "Um aplicativo de notícias em tempo real usando a NewsAPI.",
+    technologies: ["Nuxt.js", "Vue.js", "Axios", "Tailwind CSS", "NewsAPI", "Pinia", "TypeScript", "Vite"],
     linkDeploy: "",
     linkRepository: "",
   }
-  // {
-  //   id: 17,
-  //   image: ,
-  //   name: "",
-  //   description: "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // }
   // {
   //   id: 18,
   //   image: ,

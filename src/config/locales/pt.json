@@ -275,7 +275,7 @@
         "description": "Sistema de enquetes realtime"
       },
       {
-        "description": ""
+        "description": "Um aplicativo de notícias em tempo real usando a NewsAPI."
       }
     ]
   },

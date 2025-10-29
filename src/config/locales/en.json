@@ -268,10 +268,13 @@
         "description": "A project to search for your favorite Pokémon and learn about the history of these little creatures' world"
       },
       {
+        "description": "A site for a barbershop, with online booking."
+      },
+      {
         "description": "Real-time polling system"
       },
       {
-        "description": ""
+        "description": "A real-time news application using NewsAPI."
       }
     ]
   },

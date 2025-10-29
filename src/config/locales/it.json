@@ -268,10 +268,13 @@
         "description": "Progetto per cercare i tuoi Pokémon preferiti e scoprire la storia del mondo di queste piccole creature"
       },
       {
+        "description": "Un sito per un barbiere, con prenotazione online."
+      },
+      {
         "description": "Sistema di sondaggi in tempo reale"
       },
       {
-        "description": ""
+        "description": "Un'applicazione di notizie in tempo reale utilizzando NewsAPI."
       }
     ]
   },
