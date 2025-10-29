@@ -337,7 +337,7 @@ const Navbar = () => {
               {t("menu.portfolio")}
             </NavLink>
           </motion.li>
-          <motion.li
+          {/* <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
@@ -370,7 +370,7 @@ const Navbar = () => {
             >
               {t("menu.contact")}
             </NavLink>
-          </motion.li>
+          </motion.li> */}
         </motion.ul>
       </nav>
 

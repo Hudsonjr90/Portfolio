@@ -15,6 +15,7 @@ import imc from '/imgs/imgProjects/imc.webp'
 import kfc from '/imgs/imgProjects/kfc.webp'
 import pokeHistory from '/imgs/imgProjects/pokehistory.webp'
 import barberShop from '/imgs/imgProjects/barber.webp'
+import poll from '/imgs/imgProjects/poll.webp'
 
 const portfolioServer = [
   {
@@ -174,15 +175,15 @@ const portfolioServer = [
     linkDeploy: "",
     linkRepository: "",
   },
-  // {
-  //   id: 16,
-  //   image: ,
-  //   name: "",
-  //   description: "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // }
+  {
+    id: 16,
+    image: poll,
+    name: "Poll App",
+    description: "Sistema de enquetes realtime com NestJS + Fastify + Prisma.",
+    technologies: ["NestJS", "Fastify", "Prisma", "TypeScript", "HTML", "CSS", "Docker", "PostgreSQL", "websockets"],
+    linkDeploy: "",
+    linkRepository: "",
+  }
   // {
   //   id: 17,
   //   image: ,

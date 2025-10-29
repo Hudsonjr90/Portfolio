@@ -12,7 +12,6 @@ const Education = React.lazy(() => import('./pages/Education/Education'))
 const Experiences = React.lazy(() => import('./pages/Experiences/Experiences'))
 const Portfolio = React.lazy(() => import('./pages/Portfolio/Portfolio'))
 const Skills = React.lazy(() => import('./pages/Skills/Skills'))
-const Contact = React.lazy(() => import('./pages/Contact/Contact'))
 import { ThemeProvider } from './context/ThemeContext'
 import { I18nextProvider } from 'react-i18next'
 import i18n from './config/i18n'
@@ -58,8 +57,6 @@ function App() {
           return `${t('menu.skills')} | H.K Dev`
         case '/portfolio':
           return `${t('menu.portfolio')} | H.K Dev`
-        case '/contact':
-          return `${t('menu.contact')} | H.K Dev`
         default:
           return 'H.K Dev'
       }
@@ -94,7 +91,7 @@ function App() {
                 <Route path="/experiences" element={<Experiences />} />
                 <Route path="/skills" element={<Skills />} />
                 <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/contact" element={<Contact />} />
+                
               </Routes>
             </Suspense>
           </AnimatePresence>
