@@ -136,7 +136,7 @@
       {
         "text": "Curso Educação Financeira Empresarial",
         "title": "Sebrae"
-      }      
+      }
     ]
   },
 
@@ -269,10 +269,10 @@
         "description": "Projeto para pesquisar seus pokémons favoritos e saber sobre a história do mundo destas criaturinhas"
       },
       {
-        "description": "Um site para um barbearia, com agendamento online."
+        "description": "Sistema de enquetes realtime"
       },
       {
-        "description": "Sistema de enquetes realtime"
+        "description": "Um site para um barbearia, com agendamento online."
       },
       {
         "description": "Um aplicativo de notícias em tempo real usando a NewsAPI."
