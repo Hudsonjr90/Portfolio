@@ -270,12 +270,11 @@
        {
         "description": "Real-time polling system"
       },
+       {
+        "description": "A real-time news application using NewsAPI."
+      },
       {
         "description": "A site for a barbershop, with online booking."
-      },
-     
-      {
-        "description": "A real-time news application using NewsAPI."
       }
     ]
   },

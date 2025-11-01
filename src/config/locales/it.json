@@ -271,11 +271,10 @@
         "description": "Sistema di sondaggi in tempo reale"
       },
       {
-        "description": "Un sito per un barbiere, con prenotazione online."
-      },
-     
-      {
         "description": "Un'applicazione di notizie in tempo reale utilizzando NewsAPI."
+      },
+      {
+        "description": "Un sito per un barbiere, con prenotazione online."
       }
     ]
   },

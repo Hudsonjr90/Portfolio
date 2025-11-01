@@ -271,11 +271,10 @@
         "description": "Système de sondages en temps réel avec"
       },
       {
-        "description": "Un site pour un salon de coiffure, avec réservation en ligne."
-      },
-
-      {
         "description": "Une application de nouvelles en temps réel utilisant NewsAPI."
+      },
+      {
+        "description": "Un site pour un salon de coiffure, avec réservation en ligne."
       }
     ]
   },

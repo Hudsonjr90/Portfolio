@@ -272,11 +272,11 @@
         "description": "Sistema de enquetes realtime"
       },
       {
-        "description": "Um site para um barbearia, com agendamento online."
+        "description": "Um aplicativo de notícias em tempo real usando a NewsAPI."
       },
       {
-        "description": "Um aplicativo de notícias em tempo real usando a NewsAPI."
-      }
+        "description": "Um site para um barbearia, com agendamento online."
+      }   
     ]
   },
 

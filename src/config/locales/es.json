@@ -270,12 +270,11 @@
         {
         "description": " Sistema de encuestas en tiempo real"
       },
+       {
+        "description": "Una aplicación de noticias en tiempo real utilizando NewsAPI."
+      },
       {
         "description": "Un sitio para una barbería, con reserva en línea."
-      },
-    
-      {
-        "description": "Una aplicación de noticias en tiempo real utilizando NewsAPI."
       }
     ]
   },

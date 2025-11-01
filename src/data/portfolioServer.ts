@@ -182,17 +182,8 @@ const portfolioServer = [
     linkDeploy: "https://poll-app-frontend-peach.vercel.app/",
     linkRepository: "https://github.com/Hudsonjr90/PollApp-Frontend",
   },
-  {
+    {
     id: 16,
-    image: barberShop,
-    name: "Barber shop",
-    description: "Um site para um barbearia, com agendamento online.",
-    technologies: ["NextJs", "React", "Sass", "Typescript", "Prisma", "NestJs"],
-    linkDeploy: "",
-    linkRepository: "",
-  },
-  {
-    id: 17,
     image: nuxtNews,
     name: "Nuxt News",
     description: "Um aplicativo de notícias em tempo real usando a NewsAPI.",
@@ -209,6 +200,16 @@ const portfolioServer = [
     linkDeploy: "",
     linkRepository: "",
   },
+  {
+    id: 17,
+    image: barberShop,
+    name: "Barber shop",
+    description: "Um site para um barbearia, com agendamento online.",
+    technologies: ["NextJs", "React", "Sass", "Typescript", "Prisma", "NestJs"],
+    linkDeploy: "",
+    linkRepository: "",
+  },
+
   // {
   //   id: 18,
   //   image: ,
