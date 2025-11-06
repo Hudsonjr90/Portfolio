@@ -261,6 +261,42 @@ label {
   cursor: pointer;
 }
 
+.particles_icon {
+  color: var(--text_color);
+  background-color: var(--bg_color);
+  font-size: 3rem;
+  margin-top: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.particles_icon:hover {
+  transform: scale(1.1);
+}
+
+.particles_icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--main_color) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  opacity: 0;
+  z-index: -1;
+}
+
+.particles_icon:active::before {
+  width: 4rem;
+  height: 4rem;
+  opacity: 0.3;
+}
+
 /* <========== breakpoints ==========> */
 
 @media screen and (min-width: 1025px) and (max-width: 1450px) {

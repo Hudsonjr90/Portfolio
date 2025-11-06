@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 import { NavLink } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa6";
+import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import { HiSparkles } from "react-icons/hi2";
+import { IoSparkles } from "react-icons/io5";
 import styles from "./Navbar.module.css";
 import { useTranslation } from "react-i18next";
-import { logoTheme, useTheme } from "../../context/ThemeContext";
+import { logoTheme, navbarTheme, useTheme } from "../../context/ThemeContext";
+import { useParticles } from "../../context/ParticlesContext";
 import { ThemeProvider } from "@mui/material/styles";
 import { useAudio } from "../../hooks/useAudio";
-import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { Us, Fr, Br, Es, It } from "react-flags-select";
 import { motion } from "framer-motion";
 import Tooltip from "@mui/material/Tooltip";
@@ -18,6 +21,7 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } = useAudio();
   const { setMainColor } = useTheme();
+  const { particlesEnabled,toggleParticles } = useParticles();
   const [isLoaded, setIsLoaded] = useState(false);
   const [lightMode, setLightMode] = useState<boolean>(() => {
     const savedLightMode = localStorage.getItem("lightMode");
@@ -385,30 +389,49 @@ const Navbar = () => {
           delay: 0.2 
         }}
       >
-        <button
-          onClick={toggleSound}
-          className={styles.sound_icon}
-          aria-label="Toggle Sound"
-        >
-          {soundEnabled ? <FaVolumeUp /> : <FaVolumeMute />}
-        </button>
+        <ThemeProvider theme={navbarTheme}>
+          <Tooltip title={t("navbar.sound")} placement="left" arrow>
+            <button
+              onClick={toggleSound}
+              className={styles.sound_icon}
+              aria-label="Toggle Sound"
+            >
+              {soundEnabled ? <FaVolumeUp /> : <FaVolumeMute />}
+            </button>
+          </Tooltip>
 
-        <label>
-          <input
-            type="checkbox"
-            className={styles.input_dark_light_mode}
-            onClick={() => {
-              handleToggleLightMode();
-              handleAudio();
-            }}
-            aria-label="Alternar modo claro/escuro"
-            role="switch"
-          />
-          <FaMoon className={styles.moon_icon} />
-          <FaSun className={styles.sun_icon} />
-        </label>
+          <Tooltip title={t("navbar.effect")} placement="bottom" arrow>
+            <button
+              onClick={() => {
+                toggleParticles();
+                handleAudio();
+              }}
+              className={styles.particles_icon}
+              aria-label="Toggle Particles"
+            >
+              {particlesEnabled ? <HiSparkles /> : <IoSparkles />}
+            </button>
+          </Tooltip>
 
-        <div className={styles.lng_box}>
+          <Tooltip title={t("navbar.theme")} placement="bottom" arrow>
+            <label>
+              <input
+                type="checkbox"
+                className={styles.input_dark_light_mode}
+                onClick={() => {
+                  handleToggleLightMode();
+                  handleAudio();
+                }}
+                aria-label="Alternar modo claro/escuro"
+                role="switch"
+              />
+              <FaMoon className={styles.moon_icon} />
+              <FaSun className={styles.sun_icon} />
+            </label>
+          </Tooltip>
+
+          <Tooltip title={t("navbar.language")} placement="right" arrow>
+            <div className={styles.lng_box}>
           <div className={styles.slide}>
             <button
               className={styles.lng_btn}
@@ -490,20 +513,24 @@ const Navbar = () => {
             )}
           </div>
         </div>
+        </Tooltip>
 
-        <button
-          onClick={() => {
-            handleClickButton();
-            handleAudio();
-          }}
-          className={`${styles.btn_menu} ${showMenu ? styles.active : ""}`}
-          role="button"
-          aria-label="Menu"
-        >
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-        </button>
+        <Tooltip title={t("menu.home")} placement="bottom" arrow>
+          <button
+            onClick={() => {
+              handleClickButton();
+              handleAudio();
+            }}
+            className={`${styles.btn_menu} ${showMenu ? styles.active : ""}`}
+            role="button"
+            aria-label="Menu"
+          >
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+          </button>
+        </Tooltip>
+        </ThemeProvider>
       </motion.div>
     </header>
   );

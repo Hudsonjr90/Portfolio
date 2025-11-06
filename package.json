@@ -4,8 +4,8 @@
   "version": "3.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite  --open",
-    "dev:host": "vite --open --host",
+    "dev": "vite  ",
+    "host": "vite --host",
     "build": "tsc -b && vite build && npm run generate:seo",
     "build:basic": "tsc -b && vite build",
     "generate:seo": "node generate-seo-pages.cjs",

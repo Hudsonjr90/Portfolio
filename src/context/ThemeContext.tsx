@@ -177,3 +177,26 @@ export const logoTheme = createTheme({
     },
   },
 });
+
+export const navbarTheme = createTheme({
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontFamily: "Orbitron, sans-serif",
+          fontSize: "1.2rem",
+          backgroundColor: "var(--second_bg_color)",
+          color: "var(--text_color)",
+          border: "1px solid var(--main_color)",
+          borderRadius: "8px",
+        },
+        arrow: {
+          color: "var(--second_bg_color)",
+          "&:before": {
+            border: "1px solid var(--main_color)",
+          },
+        },
+      },
+    },
+  },
+});

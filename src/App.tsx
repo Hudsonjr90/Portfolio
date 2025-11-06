@@ -13,6 +13,7 @@ const Experiences = React.lazy(() => import('./pages/Experiences/Experiences'))
 const Portfolio = React.lazy(() => import('./pages/Portfolio/Portfolio'))
 const Skills = React.lazy(() => import('./pages/Skills/Skills'))
 import { ThemeProvider } from './context/ThemeContext'
+import { ParticlesProvider } from './context/ParticlesContext'
 import { I18nextProvider } from 'react-i18next'
 import i18n from './config/i18n'
 import { AnimatePresence } from 'framer-motion'
@@ -67,37 +68,40 @@ function App() {
 
   return (
     <ThemeProvider>
-      <I18nextProvider i18n={i18n}>
-        <SecurityMonitor />
-        <Navbar />
-        <div className="container" id="container">
-          <AnimatePresence mode="wait">
-            <Suspense fallback={
-              <div style={{ 
-                display: 'flex', 
-                justifyContent: 'center', 
-                alignItems: 'center',
-                height: '50vh',
-                color: 'var(--main_color)' 
-              }}>
-                Loading...
-              </div>
-            }>
-              <Routes location={location} key={location.pathname}>
-                <Route index element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/testimonials" element={<Testimonials />} />
-                <Route path="/education" element={<Education />} />
-                <Route path="/experiences" element={<Experiences />} />
-                <Route path="/skills" element={<Skills />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                
-              </Routes>
-            </Suspense>
-          </AnimatePresence>
-        </div>
-        <Footer />
-      </I18nextProvider>
+      <ParticlesProvider>
+        <I18nextProvider i18n={i18n}>
+          <SecurityMonitor />
+          <Navbar />
+          <div className="container" id="container">
+            <AnimatePresence mode="wait">
+              <Suspense fallback={
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center',
+                  height: '50vh',
+                  color: 'var(--main_color)' 
+                }}>
+                  Loading...
+                </div>
+              }>
+                <Routes location={location} key={location.pathname}>
+                  <Route index element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/testimonials" element={<Testimonials />} />
+                  <Route path="/education" element={<Education />} />
+                  <Route path="/experiences" element={<Experiences />} />
+                  <Route path="/skills" element={<Skills />} />
+                  <Route path="/portfolio" element={<Portfolio />} />
+                </Routes>
+              </Suspense>
+            </AnimatePresence>
+          </div>
+          <Footer />
+        </I18nextProvider>
+      </ParticlesProvider>
     </ThemeProvider>
   )
-}export default App
+}
+
+export default App
