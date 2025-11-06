@@ -22,7 +22,7 @@ interface ParticlesProviderProps {
 export const ParticlesProvider: React.FC<ParticlesProviderProps> = ({ children }) => {
   const [particlesEnabled, setParticlesEnabled] = useState<boolean>(() => {
     const saved = localStorage.getItem('particlesEnabled');
-    return saved !== null ? JSON.parse(saved) : true;
+    return saved !== null ? JSON.parse(saved) : false;
   });
 
   const toggleParticles = () => {

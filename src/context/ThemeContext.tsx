@@ -10,7 +10,11 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [mainColor, setMainColor] = useState("#0ef6cc");
+  const [mainColor, setMainColor] = useState(() => {
+    const savedLightMode = localStorage.getItem("lightMode");
+    const isLightMode = savedLightMode ? JSON.parse(savedLightMode) : false;
+    return isLightMode ? "#f65151" : "#0ef6cc";
+  });
 
   const updateFavicon = (color: string) => {
     const existingFavicon = document.querySelector('link[rel="icon"]');
@@ -185,16 +189,13 @@ export const navbarTheme = createTheme({
         tooltip: {
           fontFamily: "Orbitron, sans-serif",
           fontSize: "1.2rem",
-          backgroundColor: "var(--second_bg_color)",
-          color: "var(--text_color)",
+          backgroundColor: "var(--main_color)",
+          color: "var(--second_text_color)",
           border: "1px solid var(--main_color)",
           borderRadius: "8px",
         },
-        arrow: {
-          color: "var(--second_bg_color)",
-          "&:before": {
-            border: "1px solid var(--main_color)",
-          },
+       arrow: {
+          color: "var(--main_color)",
         },
       },
     },

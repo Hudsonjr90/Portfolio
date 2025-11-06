@@ -19,9 +19,9 @@ import logoLight from "/imgs/hkdev_light.webp";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const { handleAudio, toggleSound, soundEnabled, setSoundEnabled } = useAudio();
+  const { handleAudio, toggleSound, soundEnabled } = useAudio();
   const { setMainColor } = useTheme();
-  const { particlesEnabled,toggleParticles } = useParticles();
+  const { particlesEnabled, toggleParticles } = useParticles();
   const [isLoaded, setIsLoaded] = useState(false);
   const [lightMode, setLightMode] = useState<boolean>(() => {
     const savedLightMode = localStorage.getItem("lightMode");
@@ -32,7 +32,8 @@ const Navbar = () => {
   });
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const { handleClickButton, handleLinkClick, showMenu } = useResponsiveNavbar();
+  const { handleClickButton, handleLinkClick, showMenu } =
+    useResponsiveNavbar();
 
   const handleToggleLightMode = () => {
     const newLightMode = !lightMode;
@@ -43,7 +44,9 @@ const Navbar = () => {
 
   useEffect(() => {
     document.body.classList.toggle("light_mode", lightMode);
-  }, [lightMode]);
+    // Sincroniza a cor principal com o tema atual
+    setMainColor(lightMode ? "#f65151" : "#0ef6cc");
+  }, [lightMode, setMainColor]);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -65,17 +68,6 @@ const Navbar = () => {
     setCurrentLanguage(savedLanguage);
   }, []);
 
-  useEffect(() => {
-    const savedSoundEnabled = localStorage.getItem("soundEnabled");
-    if (savedSoundEnabled !== null) {
-      setSoundEnabled(JSON.parse(savedSoundEnabled));
-    }
-  }, [setSoundEnabled]);
-
-  useEffect(() => {
-    localStorage.setItem("soundEnabled", JSON.stringify(soundEnabled));
-  }, [soundEnabled]);
-
   // Efeito de carregamento para animação sequencial
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -86,37 +78,30 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      <motion.div 
+      <motion.div
         className={styles.logo}
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ 
-          duration: 0.8, 
+        transition={{
+          duration: 0.8,
           ease: "easeOut",
-          delay: 0.1 
+          delay: 0.1,
         }}
       >
         <ThemeProvider theme={logoTheme}>
-           <NavLink 
-            to="/" 
-            onClick={handleAudio}
-          >
-            <Tooltip 
-          title={t("menu.home")} 
-          placement="right"
-          arrow
-        >
-            <img
-              src={lightMode ? logoLight : logoDark}
-              alt="Logo"
-              width="80"
-              height="80"
-              loading="eager"
-              className={styles.logo_img}
-              aria-label={t("menu.home")}
-            />
-          </Tooltip>
-          </NavLink>       
+          <NavLink to="/" onClick={handleAudio}>
+            <Tooltip title={t("menu.home")} placement="right" arrow>
+              <img
+                src={lightMode ? logoLight : logoDark}
+                alt="Logo"
+                width="80"
+                height="80"
+                loading="eager"
+                className={styles.logo_img}
+                aria-label={t("menu.home")}
+              />
+            </Tooltip>
+          </NavLink>
         </ThemeProvider>
       </motion.div>
 
@@ -146,13 +131,13 @@ const Navbar = () => {
             style={{ ["--i" as any]: 0 }}
             role="none"
             variants={{
-              hidden: { 
-                opacity: 0, 
+              hidden: {
+                opacity: 0,
                 y: -20,
-                scale: 0.8 
+                scale: 0.8,
               },
-              visible: { 
-                opacity: 1, 
+              visible: {
+                opacity: 1,
                 y: 0,
                 scale: 1,
                 transition: {
@@ -180,13 +165,13 @@ const Navbar = () => {
             style={{ ["--i" as any]: 1 }}
             role="none"
             variants={{
-              hidden: { 
-                opacity: 0, 
+              hidden: {
+                opacity: 0,
                 y: -20,
-                scale: 0.8 
+                scale: 0.8,
               },
-              visible: { 
-                opacity: 1, 
+              visible: {
+                opacity: 1,
                 y: 0,
                 scale: 1,
                 transition: {
@@ -214,13 +199,13 @@ const Navbar = () => {
             style={{ ["--i" as any]: 2 }}
             role="none"
             variants={{
-              hidden: { 
-                opacity: 0, 
+              hidden: {
+                opacity: 0,
                 y: -20,
-                scale: 0.8 
+                scale: 0.8,
               },
-              visible: { 
-                opacity: 1, 
+              visible: {
+                opacity: 1,
                 y: 0,
                 scale: 1,
                 transition: {
@@ -248,13 +233,13 @@ const Navbar = () => {
             style={{ ["--i" as any]: 3 }}
             role="none"
             variants={{
-              hidden: { 
-                opacity: 0, 
+              hidden: {
+                opacity: 0,
                 y: -20,
-                scale: 0.8 
+                scale: 0.8,
               },
-              visible: { 
-                opacity: 1, 
+              visible: {
+                opacity: 1,
                 y: 0,
                 scale: 1,
                 transition: {
@@ -282,13 +267,13 @@ const Navbar = () => {
             style={{ ["--i" as any]: 4 }}
             role="none"
             variants={{
-              hidden: { 
-                opacity: 0, 
+              hidden: {
+                opacity: 0,
                 y: -20,
-                scale: 0.8 
+                scale: 0.8,
               },
-              visible: { 
-                opacity: 1, 
+              visible: {
+                opacity: 1,
                 y: 0,
                 scale: 1,
                 transition: {
@@ -316,13 +301,13 @@ const Navbar = () => {
             style={{ ["--i" as any]: 5 }}
             role="none"
             variants={{
-              hidden: { 
-                opacity: 0, 
+              hidden: {
+                opacity: 0,
                 y: -20,
-                scale: 0.8 
+                scale: 0.8,
               },
-              visible: { 
-                opacity: 1, 
+              visible: {
+                opacity: 1,
                 y: 0,
                 scale: 1,
                 transition: {
@@ -378,15 +363,15 @@ const Navbar = () => {
         </motion.ul>
       </nav>
 
-      <motion.div 
-        className={styles.icons_container} 
+      <motion.div
+        className={styles.icons_container}
         id="container"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ 
-          duration: 0.8, 
+        transition={{
+          duration: 0.8,
           ease: "easeOut",
-          delay: 0.2 
+          delay: 0.2,
         }}
       >
         <ThemeProvider theme={navbarTheme}>
@@ -417,8 +402,9 @@ const Navbar = () => {
             <label>
               <input
                 type="checkbox"
+                checked={lightMode}
                 className={styles.input_dark_light_mode}
-                onClick={() => {
+                onChange={() => {
                   handleToggleLightMode();
                   handleAudio();
                 }}
@@ -432,104 +418,124 @@ const Navbar = () => {
 
           <Tooltip title={t("navbar.language")} placement="right" arrow>
             <div className={styles.lng_box}>
-          <div className={styles.slide}>
+              <div className={styles.slide}>
+                <button
+                  className={styles.lng_btn}
+                  onClick={() => {
+                    toggleSidebar();
+                    handleAudio();
+                  }}
+                  aria-label="Selecionar idioma"
+                >
+                  {currentLanguage === "pt" && (
+                    <>
+                      <Br className={styles.flags} />
+                    </>
+                  )}
+                  {currentLanguage === "en" && (
+                    <>
+                      <Us className={styles.flags} />
+                    </>
+                  )}
+                  {currentLanguage === "fr" && (
+                    <>
+                      <Fr className={styles.flags} />
+                    </>
+                  )}
+                  {currentLanguage === "it" && (
+                    <>
+                      <It className={styles.flags} />
+                    </>
+                  )}
+                  {currentLanguage === "es" && (
+                    <>
+                      <Es className={styles.flags} />
+                    </>
+                  )}
+                </button>
+                {sidebarOpen && (
+                  <motion.div
+                    className={styles.sidebar}
+                    initial={{ x: "80%" }}
+                    animate={{ x: 0 }}
+                    transition={{ type: "spring", stiffness: 120 }}
+                  >
+                    <button
+                      onClick={() => {
+                        changeLanguage("pt");
+                        handleAudio();
+                      }}
+                    >
+                      <div className={styles.flags_name}>
+                        <Br className={styles.flags} />
+                        <span>{t("name.br")}</span>
+                      </div>
+                    </button>
+                    <button
+                      onClick={() => {
+                        changeLanguage("en");
+                        handleAudio();
+                      }}
+                    >
+                      <div className={styles.flags_name}>
+                        <Us className={styles.flags} />
+                        <span>{t("name.us")}</span>
+                      </div>
+                    </button>
+                    <button
+                      onClick={() => {
+                        changeLanguage("fr");
+                        handleAudio();
+                      }}
+                    >
+                      <div className={styles.flags_name}>
+                        <Fr className={styles.flags} />
+                        <span>{t("name.fr")}</span>
+                      </div>
+                    </button>
+                    <button
+                      onClick={() => {
+                        changeLanguage("it");
+                        handleAudio();
+                      }}
+                    >
+                      <div className={styles.flags_name}>
+                        <It className={styles.flags} />
+                        <span>{t("name.it")}</span>
+                      </div>
+                    </button>
+                    <button
+                      onClick={() => {
+                        changeLanguage("es");
+                        handleAudio();
+                      }}
+                    >
+                      <div className={styles.flags_name}>
+                        <Es className={styles.flags} />
+                        <span>{t("name.es")}</span>
+                      </div>
+                    </button>
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </Tooltip>
+
+          <Tooltip title={t("menu.home")} placement="bottom" arrow>
             <button
-              className={styles.lng_btn}
               onClick={() => {
-                toggleSidebar();
+                handleClickButton();
                 handleAudio();
               }}
-              aria-label="Selecionar idioma"
+              className={`${styles.btn_menu} ${showMenu ? styles.active : ""}`}
+              role="button"
+              aria-label="Menu"
             >
-                {currentLanguage === "pt" && <><Br className={styles.flags} /></>}
-                {currentLanguage === "en" && <><Us className={styles.flags} /></>}
-                {currentLanguage === "fr" && <><Fr className={styles.flags} /></>}
-                {currentLanguage === "it" && <><It className={styles.flags} /></>}
-                {currentLanguage === "es" && <><Es className={styles.flags} /></>}
+              <span className={styles.bar}></span>
+              <span className={styles.bar}></span>
+              <span className={styles.bar}></span>
             </button>
-            {sidebarOpen && (
-              <motion.div
-                className={styles.sidebar}
-                initial={{ x: "80%" }}
-                animate={{ x: 0 }}
-                transition={{ type: "spring", stiffness: 120 }}
-              >
-                <button
-                  onClick={() => {
-                    changeLanguage("pt");
-                    handleAudio();
-                  }}
-                >
-                  <div className={styles.flags_name}>
-                    <Br className={styles.flags} />
-                    <span>{t("name.br")}</span>
-                  </div>
-                </button>
-                <button
-                  onClick={() => {
-                    changeLanguage("en");
-                    handleAudio();
-                  }}
-                >
-                  <div className={styles.flags_name}>
-                    <Us className={styles.flags} />
-                    <span>{t("name.us")}</span>
-                  </div>
-                </button>
-                <button
-                  onClick={() => {
-                    changeLanguage("fr");
-                    handleAudio();
-                  }}
-                >
-                  <div className={styles.flags_name}>
-                    <Fr className={styles.flags} />
-                    <span>{t("name.fr")}</span>
-                  </div>
-                </button>
-                <button
-                  onClick={() => {
-                    changeLanguage("it");
-                    handleAudio();
-                  }}
-                >
-                  <div className={styles.flags_name}>
-                    <It className={styles.flags} />
-                    <span>{t("name.it")}</span>
-                  </div>
-                </button>
-                <button
-                  onClick={() => {
-                    changeLanguage("es");
-                    handleAudio();
-                  }}
-                >
-                  <div className={styles.flags_name}>
-                    <Es className={styles.flags} />
-                    <span>{t("name.es")}</span>
-                  </div>
-                </button>
-              </motion.div>
-            )}
-          </div>
-        </div>
-        </Tooltip>
-
-        <Tooltip title={t("menu.home")} placement="bottom" arrow>
-          <button
-            onClick={() => {
-              handleClickButton();
-              handleAudio();
-            }}
-            className={`${styles.btn_menu} ${showMenu ? styles.active : ""}`}
-            role="button"
-            aria-label="Menu"
-          >
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-          </button>
-        </Tooltip>
+          </Tooltip>
         </ThemeProvider>
       </motion.div>
     </header>
