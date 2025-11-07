@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, A11y } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Paginate from "react-paginate";
 import 'swiper/css';
 import styles from './TestimonialComponent.module.css';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +22,7 @@ const TestimonialComponent: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [cardsPerPage, setCardsPerPage] = useState(4);
   const [animationKey, setAnimationKey] = useState(0);
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
 
   const testimonials: Testimonial[] = testimonialServer.map((s) => ({
     ...s,
@@ -50,16 +52,12 @@ const TestimonialComponent: React.FC = () => {
   const offset = currentPage * cardsPerPage;
   const pageCount = Math.ceil(testimonials.length / cardsPerPage);
 
-  const handleNextPage = () => {
-    const nextPage = (currentPage + 1) % pageCount;
-    setCurrentPage(nextPage);
-    setAnimationKey(prev => prev + 1);
-    setExpandedCard(null);
-  };
-
-  const handlePrevPage = () => {
-    const prevPage = currentPage === 0 ? pageCount - 1 : currentPage - 1;
-    setCurrentPage(prevPage);
+  const handlePageClick = ({
+    selected: selectedPage,
+  }: {
+    selected: number;
+  }) => {
+    setCurrentPage(selectedPage);
     setAnimationKey(prev => prev + 1);
     setExpandedCard(null);
   };
@@ -162,6 +160,18 @@ const TestimonialComponent: React.FC = () => {
     }, 100);
   };
 
+  const toggleCardFlip = (cardId: number) => {
+    console.log('Toggling card flip for ID:', cardId);
+    setFlippedCards(prev => {
+      const newSet = new Set<number>();
+      if (!prev.has(cardId)) {
+        newSet.add(cardId);
+      }
+      console.log('New flipped cards:', newSet);
+      return newSet;
+    });
+  };
+
   const handleCardClick = (index: number) => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
@@ -225,46 +235,14 @@ const TestimonialComponent: React.FC = () => {
     <section className={styles.container} aria-label="Depoimentos">
       {isDesktop ? (
         <>
-          {/* Setas de navegação fixas */}
-          {pageCount > 1 && (
-            <>
-              <motion.button
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className={styles.navArrow}
-                onClick={handlePrevPage}
-                disabled={pageCount <= 1}
-                aria-label="Página anterior"
-                style={{ left: '30rem', zIndex: 1 }}
-              >
-                <FaChevronLeft />
-              </motion.button>
-
-              <motion.button
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className={styles.navArrow}
-                onClick={handleNextPage}
-                disabled={pageCount <= 1}
-                aria-label="Próxima página"
-                style={{ right: '30rem', zIndex: 1 }}
-              >
-                <FaChevronRight />
-              </motion.button>
-            </>
-          )}
-
           <div className={styles.desktopGrid} key={animationKey}>
             {currentPageData.map((test, i) => {
               const originalIndex = offset + i;
-              const textHeight = textHeights[originalIndex] || 0;
               
               return (
                 <motion.div
                   key={originalIndex}
-                  className={`${styles.card} ${expandedCard === originalIndex ? styles.expanded : ''}`}
+                  className={styles.cardWrapper}
                   initial={getCardAnimation(i)}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ 
@@ -272,33 +250,60 @@ const TestimonialComponent: React.FC = () => {
                     delay: i * 0.15,
                     ease: [0.25, 0.46, 0.45, 0.94]
                   }}
-                  onMouseEnter={() => handleCardMouseEnter(originalIndex)}
-                  onMouseLeave={handleCardMouseLeave}
-                  onClick={() => handleCardClick(originalIndex)}
                 >
-                  <img 
-                    src={test.img} 
-                    alt={test.title} 
-                    className={styles.avatar}
-                  />
-                  <h3 className={styles.name}>{test.title}</h3>
                   <div 
-                    className={`${styles.textContainer} ${expandedCard === originalIndex ? styles.showText : ''}`}
-                    style={expandedCard === originalIndex && textHeight > 0 ? { 
-                      maxHeight: `${textHeight + 30}px` 
-                    } : {}}
+                    className={`${styles.cardContainer} ${flippedCards.has(originalIndex) ? styles.flipped : ''}`}
+                    onClick={() => toggleCardFlip(originalIndex)}
                   >
-                    <p 
-                      ref={el => textRefs.current[originalIndex] = el}
-                      className={styles.text}
-                    >
-                      {test.subtitle}
-                    </p>
+                    {/* Frente do card - avatar e nome */}
+                    <div className={styles.cardFront}>
+                      <img 
+                        src={test.img} 
+                        alt={test.title} 
+                        className={styles.avatar}
+                      />
+                      <h3 className={styles.name}>{test.title}</h3>
+                      <div className={styles.clickHint}>
+                        {t("projects.clickToFlip")}
+                      </div>
+                    </div>
+                    
+                    {/* Verso do card - texto do depoimento */}
+                    <div className={styles.cardBack}>
+                      <div className={styles.testimonialContent}>
+                        <h3 className={styles.nameBack}>{test.title}</h3>
+                        <p className={styles.textBack}>
+                          {test.subtitle}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               );
             })}
           </div>
+
+          {/* Paginação para Desktop */}
+          {pageCount > 1 && (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className={styles.pagination_container}
+            >
+              <Paginate
+                pageCount={pageCount}
+                pageRangeDisplayed={6}
+                marginPagesDisplayed={1}
+                onPageChange={({ selected }) => handlePageClick({ selected })}
+                containerClassName={styles.pagination}
+                activeClassName={styles.activePage}
+                previousLabel={<FaChevronLeft />}
+                nextLabel={<FaChevronRight />}
+                forcePage={currentPage}
+              />
+            </motion.div>
+          )}
         </>
       ) : (
         // Swiper para mobile/tablet
