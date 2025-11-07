@@ -167,7 +167,7 @@ const Skills = () => {
 
   return (
     <Transition onAnimationComplete={() => {}}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>{t("home.loading")}</div>}>
         <ParticlesB />
       </Suspense>
       <section className={styles.skills}>
@@ -219,7 +219,7 @@ const Skills = () => {
           </div>
         </div>
         {viewMode === "cloud" ? (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>{t("home.loading")}</div>}>
             <Cloud />
           </Suspense>
         ) : (

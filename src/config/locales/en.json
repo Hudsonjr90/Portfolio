@@ -11,7 +11,7 @@
   },
 
   "home": {
-    "title": "Better with each",
+    "loading": "Loading...",
     "function1": "Computer Scientist",
     "function2": "Development Specialist",
     "function3": "Software Engineer",

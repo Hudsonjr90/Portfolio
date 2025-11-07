@@ -75,7 +75,7 @@ const Home = React.memo(() => {
       <Transition onAnimationComplete={() => {}}>
         <motion.section className={styles.home}>
           <motion.div className={styles.home_content}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div>{t("home.loading")}</div>}>
               <ParticlesA />
             </Suspense>
 

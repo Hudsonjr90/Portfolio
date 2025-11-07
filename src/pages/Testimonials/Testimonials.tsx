@@ -16,7 +16,7 @@ const Testimonials = () => {
 
   return (
     <Transition onAnimationComplete={() => {}}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>{t("home.loading")}</div>}>
         <ParticlesB />
       </Suspense>
       <section className={styles.testimonials}>
@@ -25,7 +25,7 @@ const Testimonials = () => {
           {t("testimonials.title")}
           <span>{t("testimonials.text")}</span>
         </h2>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{t("home.loading")}</div>}>
           <TestimonialComponent />
         </Suspense>
       </section>

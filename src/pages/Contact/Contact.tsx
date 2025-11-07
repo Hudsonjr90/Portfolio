@@ -90,7 +90,7 @@ const Contact = () => {
 
   return (
     <Transition onAnimationComplete={() => {}}>
-     <Suspense fallback={<div>Loading...</div>}>
+     <Suspense fallback={<div>{t("home.loading")}</div>}>
         <ParticlesB />
       </Suspense>
       <section className={styles.contact}>

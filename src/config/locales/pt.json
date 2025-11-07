@@ -11,7 +11,7 @@
   },
 
   "home": {
-    "title": "Melhor a cada",
+    "loading": "Carregando...",
     "function1": "Cientista da Computação",
     "function2": "Especialista em Desenvolvimento",
     "function3": "Engenheiro de Software",

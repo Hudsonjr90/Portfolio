@@ -42,11 +42,11 @@ const About = () => {
   return (
     <Transition onAnimationComplete={() => {}}>
       <section className={styles.about}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{t("home.loading")}</div>}>
           <ParticlesB />
         </Suspense>
         <div className={styles.container_img}>
-          <Suspense fallback={<div>Loading image...</div>}>
+          <Suspense fallback={<div>{t("home.loading")}</div>}>
             <motion.div
               initial={false}
               animate={

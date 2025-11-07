@@ -75,7 +75,7 @@ const Portfolio = () => {
     <Transition onAnimationComplete={() => setTransitionCompleted(true)}>
       {transitionCompleted && (
         <section className={styles.portfolio}>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>{t("home.loading")}</div>}>
             <ParticlesB />
           </Suspense>
           <h2 className={styles.heading}>

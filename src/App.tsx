@@ -82,7 +82,7 @@ function App() {
                   height: '50vh',
                   color: 'var(--main_color)' 
                 }}>
-                  Loading...
+                  {t("home.loading")}
                 </div>
               }>
                 <Routes location={location} key={location.pathname}>

@@ -19,7 +19,7 @@ const Education = () => {
           <span>{t("education.text")}</span>
         </h2>
 
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{t("home.loading")}</div>}>
           <ParticlesB />
           <CardComponent />
         </Suspense>
