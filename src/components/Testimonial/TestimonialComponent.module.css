@@ -152,17 +152,15 @@ margin-bottom: 2rem;
 
 @media (max-width: 1200px) {
   .desktopGrid {
-    display: none; /* Hide grid on smaller screens, use Swiper instead */
+    display: none; 
   }
 }
 
 
-
-/* Paginação */
 .pagination_container {
   display: flex;
   justify-content: center;
-  margin-top: 4rem; /* Espaçamento fixo após o grid */
+  margin-top: 10rem; 
 }
 
 .pagination {
