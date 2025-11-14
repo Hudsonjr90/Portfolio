@@ -28,7 +28,7 @@ export const useSEO = () => {
     updateMetaTag('property', 'og:title', seoData.title);
     updateMetaTag('property', 'og:description', seoData.description);
     updateMetaTag('property', 'og:url', seoData.url);
-    updateMetaTag('property', 'og:image', seoData.image || 'https://hudsonkennedy.dev.br/imgs/linkImage.webp');
+    updateMetaTag('property', 'og:image', seoData.image || 'https://hudsonkennedy.dev.br/imgs/about.webp');
     updateMetaTag('property', 'og:image:width', '1200');
     updateMetaTag('property', 'og:image:height', '630');
     updateMetaTag('property', 'og:image:alt', seoData.title);
@@ -40,7 +40,7 @@ export const useSEO = () => {
     updateMetaTag('name', 'twitter:creator', '@hudsonkennedy');
     updateMetaTag('name', 'twitter:title', seoData.title);
     updateMetaTag('name', 'twitter:description', seoData.description);
-    updateMetaTag('name', 'twitter:image', seoData.image || 'https://hudsonkennedy.dev.br/imgs/linkImage.webp');
+    updateMetaTag('name', 'twitter:image', seoData.image || 'https://hudsonkennedy.dev.br/imgs/about.webp');
     updateMetaTag('name', 'twitter:image:alt', seoData.title);
 
     // Update canonical URL
@@ -111,7 +111,7 @@ export const useSEO = () => {
           title: `${t('menu.portfolio')} | Hudson Kennedy - Meus Projetos`,
           description: t('seo.portfolio.description'),
           keywords: t('seo.portfolio.keywords'),
-          image: `${baseUrl}/imgs/linkImage.webp`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
@@ -120,7 +120,7 @@ export const useSEO = () => {
           title: `${t('menu.academic-education')} | Hudson Kennedy - Formação`,
           description: t('seo.education.description'),
           keywords: t('seo.education.keywords'),
-          image: `${baseUrl}/imgs/linkImage.webp`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
@@ -129,7 +129,7 @@ export const useSEO = () => {
           title: `${t('menu.experiences')} | Hudson Kennedy - Experiências`,
           description: t('seo.experiences.description'),
           keywords: t('seo.experiences.keywords'),
-          image: `${baseUrl}/imgs/linkImage.webp`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
@@ -138,7 +138,7 @@ export const useSEO = () => {
           title: `${t('menu.testimonials')} | Hudson Kennedy - Depoimentos`,
           description: t('seo.testimonials.description'),
           keywords: t('seo.testimonials.keywords'),
-          image: `${baseUrl}/imgs/linkImage.webp`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
@@ -147,7 +147,7 @@ export const useSEO = () => {
           title: `${t('menu.contact')} | Hudson Kennedy - Entre em Contato`,
           description: t('seo.contact.description'),
           keywords: t('seo.contact.keywords'),
-          image: `${baseUrl}/imgs/linkImage.webp`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
