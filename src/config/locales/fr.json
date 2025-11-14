@@ -296,5 +296,9 @@
     "message": "Votre Message *",
     "submit": "Envoyer le Message *",
     "error": "champs requis"
+  },
+
+  "footer": {
+    "since": "Depuis"
   }
 }

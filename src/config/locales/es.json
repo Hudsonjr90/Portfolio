@@ -296,5 +296,9 @@
     "message": "Tu Mensaje *",
     "submit": "Enviar Mensaje *",
     "error": "Campo obligatorio"
+  },
+
+  "footer": {
+    "since": "Desde"
   }
 }

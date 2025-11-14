@@ -8,7 +8,7 @@ import React, {
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import Typewriter from "typewriter-effect";
-import myself from "/imgs/my.webp";
+import myself from "/imgs/home-v.webp";
 import { motion } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";

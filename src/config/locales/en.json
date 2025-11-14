@@ -298,6 +298,10 @@
     "error": "Required field"
   },
 
+  "footer": {
+    "since": "Since"
+  },
+
   "seo": {
     "home": {
       "description": "Hudson Kennedy - Full Stack Developer specialized in React, TypeScript, Vue.js and modern technologies. 10+ years of web development experience.",

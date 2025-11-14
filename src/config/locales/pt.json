@@ -299,6 +299,10 @@
     "error": "Campo obrigatório"
   },
 
+  "footer": {
+    "since": "Desde"
+  },
+
   "seo": {
     "home": {
       "description": "Hudson Kennedy - Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas. 10+ anos de experiência em desenvolvimento web.",

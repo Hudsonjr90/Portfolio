@@ -2,7 +2,7 @@ import styles from "./About.module.css";
 import React, { useState, useCallback, Suspense } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
-import about from "/imgs/home.webp";
+import about from "/imgs/about.webp";
 import codegif from "/imgs/code.gif";
 import { motion } from "framer-motion";
 

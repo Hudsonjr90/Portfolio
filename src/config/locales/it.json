@@ -296,5 +296,9 @@
     "message": "Il Tuo Messaggio *",
     "submit": "Invia Messaggio *",
     "error": "campo obbligatorio"
+  },
+
+  "footer": {
+    "since": "Dal"
   }
 }
