@@ -19,6 +19,7 @@ const TimelineElement = ({
   subtitle,
   description,
   image,
+  date,
 }: Experience) => (
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
@@ -38,6 +39,7 @@ const TimelineElement = ({
     <h3 className={styles.vertical_timeline_title}>{title}</h3>
     <h4 className={styles.vertical_timeline_subtitle}>{subtitle}</h4>
     <p className={styles.vertical_timeline_description}>{description}</p>
+    <span className={styles.vertical_timeline_date}>{date}</span>
   </VerticalTimelineElement>
 );
 
@@ -105,6 +107,7 @@ const HorizontalTimeline = ({ experiences }: { experiences: Experience[] }) => {
                 <h3 className={styles.card_title}>{experiences[selectedIndex].title}</h3>
                 <h4 className={styles.card_subtitle}>{experiences[selectedIndex].subtitle}</h4>
                 <p className={styles.card_description}>{experiences[selectedIndex].description}</p>
+                <span className={styles.card_date}>{experiences[selectedIndex].date}</span>
               </div>
             </motion.div>
           </AnimatePresence>

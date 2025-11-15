@@ -149,6 +149,7 @@
   "testimonials": {
     "title": " Quelques",
     "text": " Témoignages",
+    "clickToFlip": "Cliquez pour retourner",
     "subtitle1": "J'ai eu le plaisir de travailler avec Hudson Kennedy chez DT3 (Bender M), où il a démontré des compétences exceptionnelles et une dévotion exemplaire. Sa capacité à résoudre des problèmes de manière analytique et créative, combinée à ses excellentes compétences en communication, en a fait un membre précieux de l'équipe. Hudson a toujours anticipé les besoins de l'équipe, proposant des améliorations et des solutions innovantes qui ont conduit à un succès significatif dans nos Sprints. Je le recommande vivement pour toute position future, car je sais qu'il continuera à atteindre de grands succès dans sa carrière.",
     "subtitle2": "Excellent partenaire de travail et une personne formidable ! Son sens des responsabilités se distingue parmi les autres, ne laissant jamais rien derrière ou sans solution. J'ai beaucoup appris de Hudson et je porterai ces enseignements avec moi pour la vie.",
     "subtitle3": "Hudson est un excellent partenaire de travail, toujours à la recherche d'améliorations et de développement de nouvelles compétences. Il est toujours prêt à aider. Dévoué et engagé.",
@@ -185,15 +186,17 @@
     "description5": "Participation directe dans les directives et la maintenance/refactorisation du code en utilisant Java/Spring Boot, NodeJs/Express pour le backend, PostgreSQL et Typescript avec Angular/React pour le frontend.",
     "description6": "Travail en tant qu’indépendant, dans l’architecture du projet, mise à jour d’Angular de la version 14 à la version 15, ajustement des dépendances, correction des erreurs de syntaxe, mise en page et styles avec Sass/Scss, etc...",
     "description7": "Travail en tant qu'indépendant, utilisation de NestJs et du protocole gRPC pour le backend avec Prisma pour la modélisation de bases de données PostgreSQL, VueJs avec Quasar pour le frontend, Typescript, tests avec Cypress, refactorisation et création de composants et d'API.",
-    "description8": "Travail en tant qu’indépendant, création et maintenance d’interfaces et de layouts avec React, Styled-Components et Tailwind CSS, tests unitaires avec Cypress et Jest, optimisation des pages et des composants.",
-    "description9" : "Création du site avec Shopify, jQuery pour les réponses externes et les traitements d'intégration tels que le bureau de poste, la passerelle de paiement, l'ERP Bling et etc.",
-    "date1": "Février 2012 - À ce jour",
+    "description8": "Travail en tant qu'indépendant, création et maintenance d'interfaces et de layouts avec React, Styled-Components et Tailwind CSS, tests unitaires avec Cypress et Jest, optimisation des pages et des composants.",
+    "description9": "Création du site avec Shopify, jQuery pour les réponses externes et les traitements d'intégration tels que le bureau de poste, la passerelle de paiement, l'ERP Bling et etc.",
+    "date1": "Février 2012 - Décembre 2016",
     "date2": "Février 2019 - Juin 2021",
-    "date3": "Janvier 2022 - Avril 2022",
-    "date4": "Avril 2022 - Août 2022",
-    "date5": "Août 2022 - Octobre 2023",
-    "date6": "Novembre 2023 - Janvier 2024",
-    "date7": "Avril 2024 - À ce jour"
+    "date3": "Juillet 2021 - Août 2021",
+    "date4": "Janvier 2022 - Avril 2022",
+    "date5": "Avril 2022 - Août 2022",
+    "date6": "Août 2022 - Octobre 2023",
+    "date7": "Novembre 2023 - Janvier 2024",
+    "date8": "Avril 2024 - Mai 2025",
+    "date9": "Octobre 2024 - à présent"
   },
 
   "skills": {

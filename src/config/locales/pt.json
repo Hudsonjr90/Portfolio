@@ -150,6 +150,7 @@
   "testimonials": {
     "title": " Alguns",
     "text": " Depoimentos",
+    "clickToFlip": "Clique para virar",
     "subtitle1": "Tive o prazer de trabalhar com o Hudson Kennedy na DT3 (Bender M), onde ele demonstrou habilidades excepcionais e uma dedicação exemplar. Sua capacidade de resolver problemas de forma analítica e criativa, combinada com suas excelentes habilidades de comunicação, fez dele um membro valioso da equipe. Hudson sempre se antecipou às necessidades da equipe, propondo melhorias e soluções inovadoras que resultaram em sucesso significativo em nossas Sprints. Recomendo fortemente para qualquer posição que ele venha a buscar no futuro, pois sei que ele continuará a alcançar grandes sucessos em sua carreira.",
     "subtitle2": "Excelente parceiro de trabalho e uma ótima pessoa! Seu senso de responsabilidade se destaca dentre os demais, nunca deixando nada pra trás ou sem solução. Aprendi muito com o Hudson e com certeza levo esses aprendizados para a vida.",
     "subtitle3": "Hudson é um excelente parceiro de trabalho, sempre buscando aprimoramento e desenvolver novas habilidades. Está sempre disposto a ajudar. Dedicado e comprometido.",
@@ -188,13 +189,15 @@
     "description7": "Trabalho como Pessoa Jurídica, usando NestJs e protocolo gRPC no Backend com Prisma para modelagem de banco de dados em PostgreSQL, VueJs com quasar no Frontend, Typescript, além de testes com Cypress, refatoração e criação de componentes e API .",
     "description8": "Trabalho como Pessoa Jurídica, Criação e manutenção de layouts e interfaces com React, Styled-Components e Tailwind CSS, criação de testes unitários com Cypress e Jest, otimização de páginas e componentes.",
     "description9": "Criação de site com shopify, Jquery para tratamentos de respostas e integrações externas, como correios, gateway de pagamentos, ERP Bling e etc..",
-    "date1": "Fevereiro 2012 - até o momento",
+    "date1": "Fevereiro 2012 - Dezembro 2016",
     "date2": "Fevereiro 2019 - Junho 2021",
-    "date3": "Janeiro 2022 - Abril 2022",
-    "date4": "Abril 2022 - Agosto2022",
-    "date5": "Agosto 2022 - Outubro 2023",
-    "date6": "Novembro 2023 - Janeiro 2024",
-    "date7": "abril 2024 - até o momento"
+    "date3": "Julho 2021 - Agosto 2021",
+    "date4": "Janeiro 2022 - Abril 2022",
+    "date5": "Abril 2022 - Agosto 2022",
+    "date6": "Agosto 2022 - Outubro 2023",
+    "date7": "Novembro 2023 - Janeiro 2024",
+    "date8": "Abril 2024 - Maio 2025",
+    "date9": "Outubro 2024 - até o momento"
   },
 
   "skills": {

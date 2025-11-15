@@ -149,6 +149,7 @@
   "testimonials": {
     "title": " Algunos",
     "text": " Testimonios",
+    "clickToFlip": "Haz clic para voltear",
     "subtitle1": "Tuve el placer de trabajar con Hudson Kennedy en DT3 (Bender M), donde demostró habilidades excepcionales y una dedicación ejemplar. Su capacidad para resolver problemas de manera analítica y creativa, combinada con sus excelentes habilidades de comunicación, lo convirtió en un miembro valioso del equipo. Hudson siempre anticipó las necesidades del equipo, proponiendo mejoras y soluciones innovadoras que resultaron en un éxito significativo en nuestras Sprints. Lo recomiendo encarecidamente para cualquier posición futura, ya que sé que continuará logrando grandes éxitos en su carrera.",
     "subtitle2": "Excelente compañero de trabajo y una gran persona! Su sentido de la responsabilidad destaca entre los demás, nunca dejando nada atrás o sin solución. Aprendí mucho de Hudson y llevaré estos aprendizajes conmigo para toda la vida.",
     "subtitle3": "Hudson es un excelente compañero de trabajo, siempre buscando mejorar y desarrollar nuevas habilidades. Siempre está dispuesto a ayudar. Dedicado y comprometido.",
@@ -186,14 +187,16 @@
     "description6": "Trabajo como profesional independiente, en la arquitectura del proyecto, actualizando Angular de la versión 14 a la 15, ajustes de dependencias, corrección de errores de sintaxis, layouts y estilos con Sass/Scss, etc...",
     "description7": "Trabajo como profesional independiente, utilizando NestJs y protocolo gRPC en el backend con Prisma para modelado de base de datos en PostgreSQL, VueJs con Quasar en el frontend, Typescript, pruebas con Cypress, refactorización y creación de componentes y API.",
     "description8": "Trabajo como profesional independiente, creación y mantenimiento de layouts e interfaces con React, Styled-Components y Tailwind CSS, pruebas unitarias con Cypress y Jest, optimización de páginas y componentes.",
-    "description9" : "Creación del sitio con Shopify, jQuery para respuestas externas y tratamientos de integración como la oficina de correos, la pasarela de pago, el bling ERP y etc.",
-    "date1": "Febrero 2012 - A la fecha",
+    "description9": "Creación del sitio con Shopify, jQuery para respuestas externas y tratamientos de integración como la oficina de correos, la pasarela de pago, el bling ERP y etc.",
+    "date1": "Febrero 2012 - Diciembre 2016",
     "date2": "Febrero 2019 - Junio 2021",
-    "date3": "Enero 2022 - Abril 2022",
-    "date4": "Abril 2022 - Agosto 2022",
-    "date5": "Agosto 2022 - Octubre 2023",
-    "date6": "Noviembre 2023 - Enero 2024",
-    "date7": "Abril 2024 - A la fecha"
+    "date3": "Julio 2021 - Agosto 2021",
+    "date4": "Enero 2022 - Abril 2022",
+    "date5": "Abril 2022 - Agosto 2022",
+    "date6": "Agosto 2022 - Octubre 2023",
+    "date7": "Noviembre 2023 - Enero 2024",
+    "date8": "Abril 2024 - Mayo 2025",
+    "date9": "Octubre 2024 - hasta el presente"
   },
 
   "skills": {
