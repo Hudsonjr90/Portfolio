@@ -39,14 +39,14 @@ const routesData = {
     title: 'Início | Hudson Kennedy - Desenvolvedor Full Stack',
     description: 'Hudson Kennedy - Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas. 10+ anos de experiência em desenvolvimento web.',
     keywords: 'Hudson Kennedy, Desenvolvedor Full Stack, React, TypeScript, Vue.js, JavaScript, Desenvolvedor Web, Frontend, Backend, Portfolio',
-    image: 'https://hudsonkennedy.dev.br/imgs/home.webp',
+    image: 'https://hudsonkennedy.dev.br/imgs/linkImage.webp',
     url: 'https://hudsonkennedy.dev.br/'
   },
   '/about': {
     title: 'Sobre | Hudson Kennedy - Quem Sou',
     description: 'Conheça Hudson Kennedy - Cientista da Computação e Desenvolvedor Full Stack apaixonado por criar soluções web inovadoras e impactantes.',
     keywords: 'Hudson Kennedy, Sobre, Cientista da Computação, Desenvolvedor, Biografia, Perfil Profissional, Experiência',
-    image: 'https://hudsonkennedy.dev.br/imgs/my.webp',
+    image: 'https://hudsonkennedy.dev.br/imgs/about.webp',
     url: 'https://hudsonkennedy.dev.br/about'
   },
   '/skills': {
@@ -60,7 +60,7 @@ const routesData = {
     title: 'Projetos | Hudson Kennedy - Meus Projetos',
     description: 'Confira os projetos desenvolvidos por Hudson Kennedy: aplicações web modernas usando React, Vue.js, TypeScript e outras tecnologias.',
     keywords: 'Portfolio, Projetos, React, Vue.js, TypeScript, Aplicações Web, Desenvolvimento, GitHub, Deploy',
-    image: 'https://hudsonkennedy.dev.br/imgs/linkImage.webp',
+    image: 'https://hudsonkennedy.dev.br/imgs/my.webp',
     url: 'https://hudsonkennedy.dev.br/portfolio'
   },
   '/education': {

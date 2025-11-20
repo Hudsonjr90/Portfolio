@@ -84,7 +84,7 @@ export const useSEO = () => {
           title: `${t('menu.home')} | Hudson Kennedy - Desenvolvedor Full Stack`,
           description: t('seo.home.description'),
           keywords: t('seo.home.keywords'),
-          image: `${baseUrl}/imgs/home.webp`,
+          image: `${baseUrl}/imgs/linkImage.webp`,
           url: currentUrl,
         };
 
@@ -93,7 +93,7 @@ export const useSEO = () => {
           title: `${t('menu.about')} | Hudson Kennedy - Quem Sou`,
           description: t('seo.about.description'),
           keywords: t('seo.about.keywords'),
-          image: `${baseUrl}/imgs/my.webp`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
@@ -111,7 +111,7 @@ export const useSEO = () => {
           title: `${t('menu.portfolio')} | Hudson Kennedy - Meus Projetos`,
           description: t('seo.portfolio.description'),
           keywords: t('seo.portfolio.keywords'),
-          image: `${baseUrl}/imgs/about.webp`,
+          image: `${baseUrl}/imgs/my.webp`,
           url: currentUrl,
         };
 
@@ -120,7 +120,7 @@ export const useSEO = () => {
           title: `${t('menu.academic-education')} | Hudson Kennedy - Formação`,
           description: t('seo.education.description'),
           keywords: t('seo.education.keywords'),
-          image: `${baseUrl}/imgs/about.webp`,
+          image: `${baseUrl}/imgs/my.webp`,
           url: currentUrl,
         };
 
@@ -129,7 +129,7 @@ export const useSEO = () => {
           title: `${t('menu.experiences')} | Hudson Kennedy - Experiências`,
           description: t('seo.experiences.description'),
           keywords: t('seo.experiences.keywords'),
-          image: `${baseUrl}/imgs/about.webp`,
+          image: `${baseUrl}/imgs/my.webp`,
           url: currentUrl,
         };
 
