@@ -3,7 +3,6 @@ import React, { useState, useCallback, Suspense } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import about from "/imgs/about.webp";
-import codegif from "/imgs/code.gif";
 import { motion } from "framer-motion";
 
 const ParticlesB = React.lazy(
@@ -19,7 +18,6 @@ const About = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   const setIsLoadedCallback = useCallback(() => {
     setIsLoaded(true);
@@ -27,16 +25,6 @@ const About = () => {
 
   const toggleExpanded = useCallback(() => {
     setIsExpanded(prev => !prev);
-  }, []);
-
-  const handleMouseEnter = useCallback(() => {
-    if (isLoaded && isInView) {
-      setIsHovered(true);
-    }
-  }, [isLoaded, isInView]);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsHovered(false);
   }, []);
 
   return (
@@ -57,20 +45,14 @@ const About = () => {
               transition={{ duration: 1, delay: 1 }}
               viewport={{ once: true }}
               onViewportEnter={() => setIsInView(true)}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              style={{ cursor: isLoaded && isInView ? 'pointer' : 'default' }}
             >
               <img
-                src={isHovered ? codegif : about}
+                src={about}
                 alt="about_img"
                 onLoad={setIsLoadedCallback}
                 width="100%"
                 height="auto"
                 loading="eager"
-                style={{
-                  transition: 'opacity 0.3s ease-in-out',
-                }}
               />
             </motion.div>
           </Suspense>

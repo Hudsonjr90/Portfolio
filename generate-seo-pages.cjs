@@ -53,7 +53,7 @@ const routesData = {
     title: 'Habilidades | Hudson Kennedy - Minhas Habilidades',
     description: 'Explore as habilidades técnicas de Hudson Kennedy em desenvolvimento web: React, TypeScript, Vue.js, Node.js, Python e muito mais.',
     keywords: 'Habilidades, Skills, React, TypeScript, Vue.js, Node.js, Python, JavaScript, CSS, HTML, Tecnologias',
-    image: 'https://hudsonkennedy.dev.br/imgs/code.gif',
+    image: 'https://hudsonkennedy.dev.br/imgs/about.webp',
     url: 'https://hudsonkennedy.dev.br/skills'
   },
   '/portfolio': {

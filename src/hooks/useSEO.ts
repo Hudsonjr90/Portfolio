@@ -102,7 +102,7 @@ export const useSEO = () => {
           title: `${t('menu.skills')} | Hudson Kennedy - Minhas Habilidades`,
           description: t('seo.skills.description'),
           keywords: t('seo.skills.keywords'),
-          image: `${baseUrl}/imgs/code.gif`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
