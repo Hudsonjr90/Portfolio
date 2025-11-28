@@ -186,7 +186,6 @@ export interface Skills {
   level: string;
 }
 
-// Função para determinar o nível baseado na porcentagem
 const getLevelByPercentage = (percentage: number): string => {
   if (percentage >= 81) return "skills.expert";
   if (percentage >= 71) return "skills.advanced"; 

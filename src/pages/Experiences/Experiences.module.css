@@ -47,33 +47,103 @@
   width: 60px;
  }
 
-@media screen and (max-width: 1450px){
-  .experiences .heading{
+ .vertical_timeline_date{
+  font-size: 1rem;
+  margin-top: 2rem;
+  display: block;
+  text-align: center;
+ }
+
+@media screen and (max-width: 1450px) {
+  .experiences .heading {
     font-size: 3.2rem;
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .timeline_icons {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .timeline_icons::before {
+    left: 15%;
+    right: 15%;
+  }
 
-@media screen and (max-width: 1024px){
-  .experiences .heading{
+  .experience_card {
+    max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .experiences .heading {
     font-size: 3.1rem;
   }
-  .experiences_timeline_img{
+  
+  .experiences_timeline_img {
     width: 40px;
   }
 }
 
-@media screen and (max-width: 991px){
-  .experiences .heading{
+@media screen and (max-width: 992px) {
+  .experiences .heading {
     font-size: 3rem;
+  }
+  
+  .timeline_icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .timeline_icons::before {
+    display: none;
+  }
+  
+  .timeline_icon img {
+    width: 45px;
+    height: 45px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .experiences .heading{
+  .experiences .heading {
     font-size: 2.7rem;
   }
- }
+  
+  .experience_card {
+    padding: 1.2rem;
+    max-width: 90%;
+  }
+  
+  .card_title {
+    font-size: 1.2rem;
+  }
+  
+  .card_subtitle {
+    font-size: 1rem;
+  }
+  
+  .card_description {
+    font-size: 0.9rem;
+  }
+  
+  .navigation_arrows {
+    gap: 1rem;
+  }
+  
+  .nav_button {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+  
+  .experience_counter {
+    font-size: 0.8rem;
+    min-width: 45px;
+  }
+
+}
 
 /* Estilos para timeline horizontal no desktop */
 .horizontal_timeline_container {
@@ -132,33 +202,7 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .timeline_icons {
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  
-  .timeline_icons::before {
-    left: 15%;
-    right: 15%;
-  }
-}
 
-@media screen and (max-width: 992px) {
-  .timeline_icon {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .timeline_icons::before {
-    display: none;
-  }
-  
-  .timeline_icon img {
-    width: 45px;
-    height: 45px;
-  }
-}
 
 .timeline_icon_wrapper {
   cursor: pointer;
@@ -166,7 +210,7 @@
 }
 
 .timeline_icon_wrapper.active .timeline_icon {
-  border-color: var(--hover_color);
+  border-color: var(--main_color);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   transform: translateY(-8px);
 }
@@ -176,7 +220,7 @@
   height: 80px;
   border-radius: 50%;
   background: var(--second_bg_color);
-  border: 4px solid var(--main_color);
+  border: 4px solid var(--bg_color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,7 +229,7 @@
 }
 
 .timeline_icon:hover {
-  border-color: var(--hover_color);
+  border-color: var(--main_color);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px);
 }
@@ -219,25 +263,6 @@
 .card_content {
   text-align: center;
   margin-bottom: 1.5rem;
-}
-
-.card_icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: var(--second_bg_color);
-  border: 3px solid var(--main_color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem;
-}
-
-.card_icon img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 50%;
 }
 
 .card_info {
@@ -293,43 +318,3 @@
   text-align: center;
 }
 
-/* Responsividade para o card */
-@media screen and (max-width: 1200px) {
-  .experience_card {
-    max-width: 450px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .experience_card {
-    padding: 1.2rem;
-    max-width: 90%;
-  }
-  
-  .card_title {
-    font-size: 1.2rem;
-  }
-  
-  .card_subtitle {
-    font-size: 1rem;
-  }
-  
-  .card_description {
-    font-size: 0.9rem;
-  }
-  
-  .navigation_arrows {
-    gap: 1rem;
-  }
-  
-  .nav_button {
-    width: 32px;
-    height: 32px;
-    font-size: 1.2rem;
-  }
-  
-  .experience_counter {
-    font-size: 0.8rem;
-    min-width: 45px;
-  }
-}

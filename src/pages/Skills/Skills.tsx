@@ -170,12 +170,12 @@ const Skills = () => {
       <Suspense fallback={<div>{t("home.loading")}</div>}>
         <ParticlesB />
       </Suspense>
-      <section className={styles.skills}>
+      <section className={styles.skills} data-tour="skills-section">
         <h2 className={styles.heading}>
           <span>//</span> {t("skills.title")}
           <span>{t("skills.text")}</span>
         </h2>
-        <div className={styles.toggleButtons}>
+        <div className={styles.toggleButtons} data-tour="view-toggles">
           <div className={styles.viewModeButtons}>
             <ThemeProvider theme={simpleTheme}>
               <Tooltip
@@ -230,6 +230,7 @@ const Skills = () => {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5 }}
             className={styles.chartContainer}
+            data-tour="skills-chart"
           >
             <CircularChart
               data={circularChartData}

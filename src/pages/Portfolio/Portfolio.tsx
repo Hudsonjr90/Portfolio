@@ -74,14 +74,14 @@ const Portfolio = () => {
   return (
     <Transition onAnimationComplete={() => setTransitionCompleted(true)}>
       {transitionCompleted && (
-        <section className={styles.portfolio}>
+        <section className={styles.portfolio} data-tour="portfolio-section">
           <Suspense fallback={<div>{t("home.loading")}</div>}>
             <ParticlesB />
           </Suspense>
           <h2 className={styles.heading}>
             <span>//</span> {t("projects.title")} <span>{t("projects.text")}</span>
           </h2>
-          <div className={styles.portfolio_grid}>
+          <div className={styles.portfolio_grid} data-tour="projects-grid">
             {currentItems.map((item, index) => (
               <motion.div
                 key={item.id}

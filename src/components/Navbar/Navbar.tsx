@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
@@ -16,10 +16,12 @@ import { motion } from "framer-motion";
 import Tooltip from "@mui/material/Tooltip";
 import logoDark from "/imgs/hkdev.webp";
 import logoLight from "/imgs/hkdev_light.webp";
+import TourButton from "../TourButton/TourButton";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const { handleAudio, toggleSound, soundEnabled } = useAudio();
+  const location = useLocation();
   const { setMainColor } = useTheme();
   const { particlesEnabled, toggleParticles } = useParticles();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -77,7 +79,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-tour="navbar">
       <motion.div
         className={styles.logo}
         initial={{ opacity: 0, x: -50 }}
@@ -375,11 +377,14 @@ const Navbar = () => {
         }}
       >
         <ThemeProvider theme={navbarTheme}>
-          <Tooltip title={t("navbar.sound")} placement="left" arrow>
+          <TourButton currentPage={location.pathname === '/' ? 'home' : location.pathname.slice(1)} />
+
+          <Tooltip title={t("navbar.sound")} placement="bottom" arrow>
             <button
               onClick={toggleSound}
               className={styles.sound_icon}
               aria-label="Toggle Sound"
+              data-tour="sound-toggle"
             >
               {soundEnabled ? <FaVolumeUp /> : <FaVolumeMute />}
             </button>
@@ -393,13 +398,14 @@ const Navbar = () => {
               }}
               className={styles.particles_icon}
               aria-label="Toggle Particles"
+              data-tour="particles-toggle"
             >
               {particlesEnabled ? <HiSparkles /> : <IoSparkles />}
             </button>
           </Tooltip>
 
           <Tooltip title={t("navbar.theme")} placement="bottom" arrow>
-            <label>
+            <label data-tour="theme-toggle">
               <input
                 type="checkbox"
                 checked={lightMode}
@@ -417,7 +423,7 @@ const Navbar = () => {
           </Tooltip>
 
           <Tooltip title={t("navbar.language")} placement="right" arrow>
-            <div className={styles.lng_box}>
+            <div className={styles.lng_box} data-tour="language-toggle">
               <div className={styles.slide}>
                 <button
                   className={styles.lng_btn}

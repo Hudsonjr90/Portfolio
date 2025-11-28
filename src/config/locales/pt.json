@@ -306,6 +306,95 @@
     "since": "Desde"
   },
 
+  "tour": {
+    "next": "Próximo",
+    "previous": "Anterior",
+    "done": "Concluir",
+    "close": "Fechar tour",
+    "progress": "{{current}} de {{total}}",
+    "start": "Tour",
+    "navbar": {
+      "title": "Navegação Principal",
+      "description": "Use este menu para navegar entre as diferentes seções do meu portfólio. Cada seção mostra aspectos diferentes da minha carreira."
+    },
+    "theme": {
+      "title": "Alternador de Tema",
+      "description": "Alterne entre o tema claro e escuro para uma experiência visual personalizada."
+    },
+    "language": {
+      "title": "Seletor de Idioma",
+      "description": "Escolha seu idioma preferido. O portfólio está disponível em 5 idiomas diferentes."
+    },
+    "sound": {
+      "title": "Controle de Áudio",
+      "description": "Ative ou desative os efeitos sonoros durante a navegação pelo portfólio."
+    },
+    "particles": {
+      "title": "Efeito de Partículas",
+      "description": "Ative ou desative o efeito de partículas animadas no fundo para melhorar a experiência visual."
+    },
+    "hero": {
+      "title": "Seção Principal",
+      "description": "Esta é minha apresentação inicial. Aqui você encontra meu nome e uma breve descrição do que faço."
+    },
+    "typewriter": {
+      "title": "Animação de Texto",
+      "description": "Este texto animado mostra minhas diferentes áreas de especialização em desenvolvimento."
+    },
+    "resume": {
+      "title": "Botão do Currículo",
+      "description": "Clique aqui para visualizar ou baixar meu currículo completo em formato PDF."
+    },
+    "about": {
+      "title": "Sobre Mim",
+      "description": "Nesta seção você conhece minha história, experiência e paixão pelo desenvolvimento."
+    },
+    "skillsSearch": {
+      "title": "Busca de Habilidades",
+      "description": "Use esta barra de pesquisa para encontrar habilidades específicas no meu conjunto de competências."
+    },
+    "skillsChart": {
+      "title": "Gráfico de Habilidades",
+      "description": "Este gráfico mostra meu nível de proficiência em diferentes tecnologias e ferramentas."
+    },
+    "wordCloud": {
+      "title": "Nuvem de Palavras",
+      "description": "Uma representação visual das minhas principais tecnologias, onde o tamanho indica o nível de expertise."
+    },
+    "portfolioGrid": {
+      "title": "Grade de Projetos",
+      "description": "Aqui estão meus principais projetos. Cada card mostra um projeto diferente com suas tecnologias."
+    },
+    "portfolioCard": {
+      "title": "Cartão do Projeto",
+      "description": "Clique no cartão para virá-lo e ver mais detalhes, tecnologias usadas e links para o projeto."
+    },
+    "portfolioPagination": {
+      "title": "Paginação",
+      "description": "Use estes botões para navegar entre diferentes páginas de projetos."
+    },
+    "timeline": {
+      "title": "Linha do Tempo",
+      "description": "Esta timeline mostra minha jornada profissional com todas as experiências e posições que ocupei."
+    },
+    "testimonials": {
+      "title": "Depoimentos",
+      "description": "Aqui você encontra feedback de colegas e clientes sobre meu trabalho e desempenho profissional."
+    },
+    "education": {
+      "title": "Formação Acadêmica",
+      "description": "Minha jornada educacional, incluindo cursos, certificações e formações que contribuíram para meu desenvolvimento."
+    },
+    "contactForm": {
+      "title": "Formulário de Contato",
+      "description": "Use este formulário para entrar em contato comigo. Todos os campos são obrigatórios para garantir que eu possa responder adequadamente."
+    },
+    "footer": {
+      "title": "Redes Sociais",
+      "description": "Entre em contato comigo através das minhas redes sociais e canais de comunicação."
+    }
+  },
+
   "seo": {
     "home": {
       "description": "Hudson Kennedy - Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas. 10+ anos de experiência em desenvolvimento web.",

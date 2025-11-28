@@ -34,10 +34,8 @@ const Cloud = () => {
     const isMobile = window.innerWidth <= 768;
     
     if (isMobile) {
-      // Para mobile: efeito chuva - sempre começando do topo
       return { x: Math.random() * 90 + 5, y: -10 };
     } else {
-      // Para desktop: posições aleatórias em todas as direções
       const side = Math.floor(Math.random() * 4);
       switch (side) {
         case 0: 
@@ -58,11 +56,9 @@ const Cloud = () => {
     const isMobile = window.innerWidth <= 768;
     
     if (isMobile) {
-      // Para mobile: apenas animações de chuva (de cima para baixo)
       const rainAnimations = ["float3", "float4"];
       return rainAnimations[Math.floor(Math.random() * rainAnimations.length)];
     } else {
-      // Para desktop: todas as animações aleatórias
       const animations = ["float1", "float2", "float3", "float4", "float5", "float6", "float7", "float8"];
       return animations[Math.floor(Math.random() * animations.length)];
     }
@@ -216,36 +212,6 @@ const Cloud = () => {
         y: startPos2.y,
         animationClass: getRandomAnimationClass(),
         delay: Math.random() * 12 + 4,
-        isDragging: false,
-      });
-
-      const startPos3 = getRandomStartPosition();
-      wordsArray.push({
-        id: index * 3 + 2,
-        name: t(icon.level),
-        size: isMobile ? 
-          Math.max(8, Math.min(14, icon.percentage * 0.25)) : 
-          Math.max(10, Math.min(20, icon.percentage * 0.4)),
-        colorVar: getRandomColor(),
-        x: startPos3.x,
-        y: startPos3.y,
-        animationClass: getRandomAnimationClass(),
-        delay: Math.random() * 12 + 8,
-        isDragging: false,
-      });
-
-      const startPos4 = getRandomStartPosition();
-      wordsArray.push({
-        id: index * 3 + 3,
-        name: icon.percentage + "%",    
-        size: isMobile ? 
-          Math.max(8, Math.min(14, icon.percentage * 0.25)) : 
-          Math.max(10, Math.min(20, icon.percentage * 0.4)),
-        colorVar: getRandomColor(),
-        x: startPos4.x,
-        y: startPos4.y,
-        animationClass: getRandomAnimationClass(),
-        delay: Math.random() * 12 + 8,
         isDragging: false,
       });
     });

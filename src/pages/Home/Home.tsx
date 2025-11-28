@@ -73,7 +73,7 @@ const Home = React.memo(() => {
   return (
     <>
       <Transition onAnimationComplete={() => {}}>
-        <motion.section className={styles.home}>
+        <motion.section className={styles.home} data-tour="hero-section">
           <motion.div className={styles.home_content}>
             <Suspense fallback={<div>{t("home.loading")}</div>}>
               <ParticlesA />
@@ -87,6 +87,7 @@ const Home = React.memo(() => {
                 ease: [0.5, 0.71, 1, 1.5],
               }}
               initial={{ opacity: 0, scale: 0.5 }}
+              data-tour="name-title"
             >
               <h1 className={styles.text_reveal}>{displayedText}</h1>
             </motion.div>
@@ -100,6 +101,7 @@ const Home = React.memo(() => {
               }}
               initial={{ opacity: 0, scale: 0.5 }}
               className={styles.transparent_text}
+              data-tour="typewriter"
             >
               <Typewriter
                 options={{
@@ -112,7 +114,7 @@ const Home = React.memo(() => {
               />
             </motion.div>
 
-            <motion.div className={styles.btn_box}>
+            <motion.div className={styles.btn_box} data-tour="resume-button">
               <button className={styles.btn} onClick={handleOpenModal}>
                 {t("home.resume")}
               </button>
@@ -128,6 +130,7 @@ const Home = React.memo(() => {
               delay: 0.7,
               ease: [0.2, 0, 0.2, 1],
             }}
+            data-tour="profile-image"
           >
             <Atropos shadow={false} highlight={false}>
               <img 

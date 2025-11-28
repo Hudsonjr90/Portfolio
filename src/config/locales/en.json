@@ -305,6 +305,95 @@
     "since": "Since"
   },
 
+  "tour": {
+    "next": "Next",
+    "previous": "Previous",
+    "done": "Done",
+    "close": "Close tour",
+    "progress": "{{current}} of {{total}}",
+    "start": "Tour",
+    "navbar": {
+      "title": "Main Navigation",
+      "description": "Use this menu to navigate between different sections of my portfolio. Each section shows different aspects of my career."
+    },
+    "theme": {
+      "title": "Theme Toggle",
+      "description": "Switch between light and dark themes for a personalized visual experience."
+    },
+    "language": {
+      "title": "Language Selector",
+      "description": "Choose your preferred language. The portfolio is available in 5 different languages."
+    },
+    "sound": {
+      "title": "Audio Control",
+      "description": "Enable or disable sound effects while navigating through the portfolio."
+    },
+    "particles": {
+      "title": "Particle Effects",
+      "description": "Enable or disable animated particle effects in the background to enhance the visual experience."
+    },
+    "hero": {
+      "title": "Hero Section",
+      "description": "This is my main introduction. Here you'll find my name and a brief description of what I do."
+    },
+    "typewriter": {
+      "title": "Text Animation",
+      "description": "This animated text shows my different areas of specialization in development."
+    },
+    "resume": {
+      "title": "Resume Button",
+      "description": "Click here to view or download my complete resume in PDF format."
+    },
+    "about": {
+      "title": "About Me",
+      "description": "In this section you'll learn about my story, experience and passion for development."
+    },
+    "skillsSearch": {
+      "title": "Skills Search",
+      "description": "Use this search bar to find specific skills in my competency set."
+    },
+    "skillsChart": {
+      "title": "Skills Chart",
+      "description": "This chart shows my proficiency level in different technologies and tools."
+    },
+    "wordCloud": {
+      "title": "Word Cloud",
+      "description": "A visual representation of my main technologies, where size indicates the level of expertise."
+    },
+    "portfolioGrid": {
+      "title": "Project Grid",
+      "description": "Here are my main projects. Each card shows a different project with its technologies."
+    },
+    "portfolioCard": {
+      "title": "Project Card",
+      "description": "Click on the card to flip it and see more details, technologies used and project links."
+    },
+    "portfolioPagination": {
+      "title": "Pagination",
+      "description": "Use these buttons to navigate between different project pages."
+    },
+    "timeline": {
+      "title": "Timeline",
+      "description": "This timeline shows my professional journey with all the experiences and positions I've held."
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "description": "Here you'll find feedback from colleagues and clients about my work and professional performance."
+    },
+    "education": {
+      "title": "Academic Education",
+      "description": "My educational journey, including courses, certifications and training that contributed to my development."
+    },
+    "contactForm": {
+      "title": "Contact Form",
+      "description": "Use this form to get in touch with me. All fields are required to ensure I can respond appropriately."
+    },
+    "footer": {
+      "title": "Social Networks",
+      "description": "Get in touch with me through my social networks and communication channels."
+    }
+  },
+
   "seo": {
     "home": {
       "description": "Hudson Kennedy - Full Stack Developer specialized in React, TypeScript, Vue.js and modern technologies. 10+ years of web development experience.",

@@ -29,11 +29,11 @@ const About = () => {
 
   return (
     <Transition onAnimationComplete={() => {}}>
-      <section className={styles.about}>
+      <section className={styles.about} data-tour="about-section">
         <Suspense fallback={<div>{t("home.loading")}</div>}>
           <ParticlesB />
         </Suspense>
-        <div className={styles.container_img}>
+        <div className={styles.container_img} data-tour="about-image">
           <Suspense fallback={<div>{t("home.loading")}</div>}>
             <motion.div
               initial={false}
@@ -68,6 +68,7 @@ const About = () => {
               delay: 0.6,
               ease: [0.2, 0, 0.2, 1],
             }}
+            data-tour="about-content"
           >
             <h2>
               <span>//</span>

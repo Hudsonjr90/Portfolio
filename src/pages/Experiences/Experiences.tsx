@@ -100,9 +100,6 @@ const HorizontalTimeline = ({ experiences }: { experiences: Experience[] }) => {
               transition={{ duration: 0.3 }}
               className={styles.card_content}
             >
-              <div className={styles.card_icon}>
-                <img src={experiences[selectedIndex].image} alt={experiences[selectedIndex].title} />
-              </div>
               <div className={styles.card_info}>
                 <h3 className={styles.card_title}>{experiences[selectedIndex].title}</h3>
                 <h4 className={styles.card_subtitle}>{experiences[selectedIndex].subtitle}</h4>

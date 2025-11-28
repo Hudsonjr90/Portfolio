@@ -36,6 +36,7 @@ const Footer = () => {
   return (
     <motion.footer
       className={styles.footer}
+      data-tour="footer"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{

@@ -303,5 +303,94 @@
 
   "footer": {
     "since": "Depuis"
+  },
+
+  "tour": {
+    "next": "Suivant",
+    "previous": "Précédent",
+    "done": "Terminé",
+    "close": "Fermer le tour",
+    "progress": "{{current}} sur {{total}}",
+    "start": "Tour",
+    "navbar": {
+      "title": "Navigation Principale",
+      "description": "Utilisez ce menu pour naviguer entre les différentes sections de mon portfolio. Chaque section montre différents aspects de ma carrière."
+    },
+    "theme": {
+      "title": "Basculer le Thème",
+      "description": "Basculez entre les thèmes clair et sombre pour une expérience visuelle personnalisée."
+    },
+    "language": {
+      "title": "Sélecteur de Langue",
+      "description": "Choisissez votre langue préférée. Le portfolio est disponible en 5 langues différentes."
+    },
+    "sound": {
+      "title": "Contrôle Audio",
+      "description": "Activez ou désactivez les effets sonores lors de la navigation dans le portfolio."
+    },
+    "particles": {
+      "title": "Effets de Particules",
+      "description": "Activez ou désactivez les effets de particules animées en arrière-plan pour améliorer l'expérience visuelle."
+    },
+    "hero": {
+      "title": "Section Héro",
+      "description": "Ceci est ma présentation principale. Ici vous trouverez mon nom et une brève description de ce que je fais."
+    },
+    "typewriter": {
+      "title": "Animation de Texte",
+      "description": "Ce texte animé montre mes différents domaines de spécialisation en développement."
+    },
+    "resume": {
+      "title": "Bouton CV",
+      "description": "Cliquez ici pour voir ou télécharger mon CV complet au format PDF."
+    },
+    "about": {
+      "title": "À Propos de Moi",
+      "description": "Dans cette section, vous découvrirez mon histoire, mon expérience et ma passion pour le développement."
+    },
+    "skillsSearch": {
+      "title": "Recherche de Compétences",
+      "description": "Utilisez cette barre de recherche pour trouver des compétences spécifiques dans mon ensemble de compétences."
+    },
+    "skillsChart": {
+      "title": "Graphique des Compétences",
+      "description": "Ce graphique montre mon niveau de maîtrise dans différentes technologies et outils."
+    },
+    "wordCloud": {
+      "title": "Nuage de Mots",
+      "description": "Une représentation visuelle de mes principales technologies, où la taille indique le niveau d'expertise."
+    },
+    "portfolioGrid": {
+      "title": "Grille de Projets",
+      "description": "Voici mes principaux projets. Chaque carte montre un projet différent avec ses technologies."
+    },
+    "portfolioCard": {
+      "title": "Carte de Projet",
+      "description": "Cliquez sur la carte pour la retourner et voir plus de détails, les technologies utilisées et les liens du projet."
+    },
+    "portfolioPagination": {
+      "title": "Pagination",
+      "description": "Utilisez ces boutons pour naviguer entre différentes pages de projets."
+    },
+    "timeline": {
+      "title": "Chronologie",
+      "description": "Cette chronologie montre mon parcours professionnel avec toutes les expériences et postes que j'ai occupés."
+    },
+    "testimonials": {
+      "title": "Témoignages",
+      "description": "Ici vous trouverez les commentaires de collègues et clients sur mon travail et ma performance professionnelle."
+    },
+    "education": {
+      "title": "Formation Académique",
+      "description": "Mon parcours éducatif, incluant cours, certifications et formations qui ont contribué à mon développement."
+    },
+    "contactForm": {
+      "title": "Formulaire de Contact",
+      "description": "Utilisez ce formulaire pour me contacter. Tous les champs sont obligatoires pour garantir que je puisse répondre adéquatement."
+    },
+    "footer": {
+      "title": "Réseaux Sociaux",
+      "description": "Contactez-moi via mes réseaux sociaux et canaux de communication."
+    }
   }
 }

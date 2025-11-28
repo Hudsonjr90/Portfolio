@@ -269,6 +269,26 @@ label {
   cursor: pointer;
 }
 
+.tour_icon {
+  color: var(--text_color);
+  background-color: var(--bg_color);
+  font-size: 3rem;
+  margin-top: 0.9rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.tour_icon {
+  color: var(--text_color);
+  background-color: var(--bg_color);
+  font-size: 3rem;
+  margin-top: 0.9rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
 /* <========== breakpoints ==========> */
 
 @media screen and (min-width: 1025px) and (max-width: 1450px) {

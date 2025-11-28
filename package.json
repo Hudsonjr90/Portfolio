@@ -24,6 +24,7 @@
     "axios": "^1.11.0",
     "bootstrap": "^5.3.3",
     "devicon": "^2.16.0",
+    "driver.js": "^1.4.0",
     "echarts": "^5.6.0",
     "echarts-for-react": "^3.0.2",
     "echarts-wordcloud": "^2.1.0",
