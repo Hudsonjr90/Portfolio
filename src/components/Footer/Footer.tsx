@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import {
@@ -20,12 +19,11 @@ import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
 import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
+import { getCurrentYear } from "../../utils/functions";
 
 const Footer = () => {
-  const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Efeito de carregamento para animação sequencial
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
@@ -231,7 +229,7 @@ const Footer = () => {
         animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.8 }}
         transition={{
           duration: 0.6,
-          delay: 1.1, // Aparece depois dos ícones
+          delay: 1.1, 
           ease: "easeOut",
         }}
         whileHover={{ 
@@ -239,7 +237,7 @@ const Footer = () => {
           transition: { duration: 0.3 }
         }}
       >
-                HK Dev <FaRegCopyright /> <span>{t("footer.since")} 2013</span>
+                HK Dev <FaRegCopyright /> <span>2013 - {getCurrentYear()}</span>
       </motion.div>
     </motion.footer>
   );
