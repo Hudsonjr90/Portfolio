@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaRoute } from 'react-icons/fa';
+import { LuRoute } from "react-icons/lu";
 import { useTranslation } from 'react-i18next';
 import { usePortfolioTour } from '../../hooks/usePortfolioTour';
 import { navbarTheme } from '../../context/ThemeContext';
@@ -23,7 +23,7 @@ const TourButton: React.FC<TourButtonProps> = ({ currentPage }) => {
           onClick={() => startTour(currentPage)}
           aria-label={t('tour.start')}
         >
-          <FaRoute />
+          <LuRoute />
         </button>
       </Tooltip>
     </ThemeProvider>

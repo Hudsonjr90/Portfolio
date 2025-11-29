@@ -418,7 +418,6 @@ label {
 
 
 @media screen and (max-width: 991px) {
-
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
@@ -494,7 +493,6 @@ label {
 }
 
 @media screen and (max-width: 768px) {
-
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
@@ -544,7 +542,7 @@ label {
     backdrop-filter: 50px (blur);
     flex-direction: column;
     height: 0;
-    left: 0;
+    left: 0px;
     overflow: hidden;
     position: absolute;
     top: 100%;
@@ -576,7 +574,7 @@ label {
   }
 
   .icons_container {
-    margin-left: 12rem;
+    margin-left: 8rem;
   }
 
   .icons_container .sound_icon {
