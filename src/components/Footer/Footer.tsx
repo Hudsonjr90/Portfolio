@@ -14,14 +14,17 @@ import {
   FaLinkedin,
   FaGithub,
   FaRegCopyright,
+  FaHeadset
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
 import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
 import { getCurrentYear } from "../../utils/functions";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -58,6 +61,23 @@ const Footer = () => {
           },
         }}
       >
+         <motion.div
+        className={styles.branding}
+        initial={{ opacity: 0, y: 20, scale: 0.8 }}
+        animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.8 }}
+        transition={{
+          duration: 0.6,
+          delay: 1.1, 
+          ease: "easeOut",
+        }}
+        whileHover={{ 
+          scale: 1.1,
+          transition: { duration: 0.3 }
+        }}
+      >
+        <FaHeadset />
+        {t("footer.title")}
+      </motion.div> 
         <motion.div
           variants={{
             hidden: { 

@@ -290,20 +290,8 @@
     ]
   },
 
-  "contact": {
-    "title": " Contate",
-    "text": " Me!",
-    "name": "Nome Completo *",
-    "email": "Email *",
-    "phone": "Telefone *",
-    "subject": "Assunto *",
-    "message": "Sua Mensagem *",
-    "submit": "Enviar Mensagem",
-    "error": "Campo obrigatório"
-  },
-
   "footer": {
-    "since": "Desde"
+    "title": "Contato"
   },
 
   "tour": {

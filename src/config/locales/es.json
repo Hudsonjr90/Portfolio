@@ -289,20 +289,9 @@
     ]
   },
 
-  "contact": {
-    "title": " Contacto",
-    "text": "¡Yo!",
-    "name": "Nombre Completo *",
-    "email": "Correo Electrónico *",
-    "phone": "Teléfono *",
-    "subject": "Asunto *",
-    "message": "Tu Mensaje *",
-    "submit": "Enviar Mensaje *",
-    "error": "Campo obligatorio"
-  },
 
   "footer": {
-    "since": "Desde"
+    "title": "Contacto"
   },
 
   "tour": {

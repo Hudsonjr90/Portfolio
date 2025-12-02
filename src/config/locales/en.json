@@ -289,20 +289,8 @@
     ]
   },
 
-  "contact": {
-    "title": "Contact",
-    "text": "Me!",
-    "name": "Full Name *",
-    "email": "Email *",
-    "phone": "Phone *",
-    "subject": "Subject *",
-    "message": "Your Message *",
-    "submit": "Send Message *",
-    "error": "Required field"
-  },
-
   "footer": {
-    "since": "Since"
+    "title": "Contact"
   },
 
   "tour": {

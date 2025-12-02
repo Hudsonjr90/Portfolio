@@ -289,20 +289,8 @@
     ]
   },
 
-  "contact": {
-    "title": " Contact",
-    "text": "Moi !",
-    "name": "Nom Complet *",
-    "email": "Email *",
-    "phone": "Téléphone *",
-    "subject": "Sujet *",
-    "message": "Votre Message *",
-    "submit": "Envoyer le Message *",
-    "error": "champs requis"
-  },
-
   "footer": {
-    "since": "Depuis"
+    "title": "Contact"
   },
 
   "tour": {
