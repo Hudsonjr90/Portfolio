@@ -4,16 +4,8 @@ import { motion } from "framer-motion";
 import Transition from "../../components/Transition/Transition";
 import { mainIcons } from "../../data/iconsServer";
 import { useTranslation } from "react-i18next";
-import { FaChartBar } from "react-icons/fa";
-import { IoCloudOutline } from "react-icons/io5";
-import Tooltip from "@mui/material/Tooltip";
-import Zoom from "@mui/material/Zoom";
-import IconButton from "@mui/material/IconButton";
-import { ThemeProvider } from "@mui/material/styles";
-import { simpleTheme, useTheme } from "../../context/ThemeContext";
 import CircularChart from "../../components/Chart/CircularChart";
 
-const Cloud = React.lazy(() => import("../../components/WordCloud/Cloud"));
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
 );
@@ -28,17 +20,13 @@ const categoryOptions = [
   { value: "design", label: "Design" },
 ];
 
-type ViewMode = "chart" | "cloud";
-
 const Skills = () => {
   const { t } = useTranslation();
-  const { mainColor } = useTheme();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPieCategory, setSelectedPieCategory] = useState<string | null>(
     null
   );
-  const [viewMode, setViewMode] = useState<ViewMode>("chart");
   const [isMobile, setIsMobile] = useState(false);
 
   // Lógica de busca avançada - busca por categoria e habilidades (apenas desktop)
@@ -175,7 +163,7 @@ const Skills = () => {
           <span>//</span> {t("skills.title")}
           <span>{t("skills.text")}</span>
         </h2>
-        <div className={styles.toggleButtons} data-tour="view-toggles">
+        {/* <div className={styles.toggleButtons} data-tour="view-toggles">
           <div className={styles.viewModeButtons}>
             <ThemeProvider theme={simpleTheme}>
               <Tooltip
@@ -217,13 +205,8 @@ const Skills = () => {
               </Tooltip>
             </ThemeProvider>
           </div>
-        </div>
-        {viewMode === "cloud" ? (
-          <Suspense fallback={<div>{t("home.loading")}</div>}>
-            <Cloud />
-          </Suspense>
-        ) : (
-          <motion.div
+        </div> */}
+        <motion.div
             key="chart"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -258,7 +241,6 @@ const Skills = () => {
               showChartTypeToggle={true}
             />
           </motion.div>
-        )}
       </section>
     </Transition>
   );

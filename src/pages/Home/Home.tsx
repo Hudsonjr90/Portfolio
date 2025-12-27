@@ -7,9 +7,8 @@ import React, {
 } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
-import Typewriter from "typewriter-effect";
 import myself from "/imgs/home-v.webp";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
 import "atropos/css";
@@ -24,6 +23,7 @@ const Home = React.memo(() => {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const targetText = "Hudson Kennedy";
 
   const handleOpenModal = useCallback(() => {
@@ -70,6 +70,16 @@ const Home = React.memo(() => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => 
+        (prevIndex + 1) % typedStrings.length
+      );
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, [typedStrings.length]);
+
   return (
     <>
       <Transition onAnimationComplete={() => {}}>
@@ -103,15 +113,38 @@ const Home = React.memo(() => {
               className={styles.transparent_text}
               data-tour="typewriter"
             >
-              <Typewriter
-                options={{
-                  strings: typedStrings,
-                  autoStart: true,
-                  loop: true,
-                  delay: 40,
-                  deleteSpeed: 30,
-                }}
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentTextIndex}
+                  initial={{ 
+                    opacity: 0, 
+                    rotateX: 90,
+                    y: 50 
+                  }}
+                  animate={{ 
+                    opacity: 1, 
+                    rotateX: 0,
+                    y: 0 
+                  }}
+                  exit={{ 
+                    opacity: 0, 
+                    rotateX: -90,
+                    y: -50 
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut"
+                  }}
+                  style={{
+                    transformOrigin: "center center",
+                    display: "inline-block",
+                    minHeight: "1.2em",
+                    color: "var(--main_color)"
+                  }}
+                >
+                  {typedStrings[currentTextIndex]}
+                </motion.div>
+              </AnimatePresence>
             </motion.div>
 
             <motion.div className={styles.btn_box} data-tour="resume-button">
