@@ -72,7 +72,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--main_color);
-  cursor: pointer;
+  cursor: default;
 }
 
 .branding span {

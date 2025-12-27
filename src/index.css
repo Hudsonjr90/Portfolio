@@ -6,7 +6,7 @@
 }
 
 body, button, input, textarea {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
 }
@@ -57,7 +57,7 @@ button, input, textarea {
 }
 
 .light_mode {
-  --bg_color: #fef4f4;
+  --bg_color: #b4b4b4;
   --bg_color_rgb: 254, 244, 244;
   --main_color: #f65151;
   --main_color_rgb: 246, 81, 81;
@@ -67,7 +67,6 @@ button, input, textarea {
   --second_text_color: #ededed;
   --scroll-color: #070707;
   --cloud_text: #3f74b1dc;
-  transition: background-color 1.5s, color 1.5s;
 }
 
 html {

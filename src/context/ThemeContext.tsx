@@ -83,7 +83,7 @@ export const whatsappTheme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontFamily: "Orbitron, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: "1.3rem",
           backgroundColor: "#25d366",
         },
@@ -100,7 +100,7 @@ export const emailTheme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontFamily: "Orbitron, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: "1.3rem",
           backgroundColor: "#f65151",
         },
@@ -117,7 +117,7 @@ export const linkedinTheme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontFamily: "Orbitron, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: "1.3rem",
           backgroundColor: "#2867b2",
         },
@@ -134,7 +134,7 @@ export const githubTheme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontFamily: "Orbitron, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: "1.3rem",
           backgroundColor: "#181717",
         },
@@ -151,7 +151,7 @@ export const simpleTheme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontFamily: "Orbitron, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: "1.3rem",
           backgroundColor: "var(--main_color)",
           color: "var(--second_text_color)",
@@ -169,7 +169,7 @@ export const logoTheme = createTheme({
     MuiTooltip: { 
       styleOverrides: {
         tooltip: {
-          fontFamily: "Orbitron, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: "1.3rem",
           backgroundColor: "var(--main_color)",
           color: "var(--second_text_color)",
@@ -187,7 +187,7 @@ export const navbarTheme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontFamily: "Orbitron, sans-serif",
+          fontFamily: "Poppins, sans-serif",
           fontSize: "1.2rem",
           backgroundColor: "var(--main_color)",
           color: "var(--second_text_color)",

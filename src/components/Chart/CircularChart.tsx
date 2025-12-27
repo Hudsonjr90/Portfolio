@@ -166,7 +166,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
           color: mainColor,
           fontSize: isMobile ? 18 : 24,
           fontWeight: 'bold',
-          fontFamily: 'Orbitron, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           textShadowColor: isMobile ? 
             (isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)') :
             (isDarkMode ? 'rgba(14, 246, 204, 0.5)' : 'rgba(246, 81, 81, 0.3)'),
@@ -178,7 +178,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
           color: mainColor,
           fontSize: isMobile ? 12 : 14,
           opacity: 0.8,
-          fontFamily: 'Orbitron, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
         },
       } : undefined,
       tooltip: {
@@ -193,7 +193,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
           color: isDarkMode ? '#fff' : '#333',
           fontSize: isMobile ? 14 : 14,
           fontWeight: 'bold',
-          fontFamily: 'Orbitron, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
         },
         extraCssText: `
           backdrop-filter: blur(${isMobile ? '8px' : '10px'});
@@ -250,7 +250,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
               color: isDarkMode ? '#fff' : '#333',
               fontSize: isMobile ? 10 : 12,
               fontWeight: 'bold',
-              fontFamily: 'Orbitron, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
             },
             itemGap: isMobile ? 10 : 12,
             icon: 'circle',
@@ -283,7 +283,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
                 padding: isMobile ? [6, 10] : 0,
                 borderRadius: isMobile ? 6 : 0,
                 fontWeight: 'bold',
-                fontFamily: 'Orbitron, sans-serif',
+                fontFamily: 'Poppins, sans-serif',
                 fontSize: isMobile ? 14 : 12,
                 formatter: function(params: any) {
                   if (isMobile) {
@@ -386,7 +386,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
               color: mainColor,
               fontSize: isMobile ? 10 : 12,
               rotate: isMobile ? 45 : 0,
-              fontFamily: 'Orbitron, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
             },
             axisLine: {
               lineStyle: {
@@ -401,7 +401,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
               color: mainColor,
               fontSize: isMobile ? 10 : 12,
               formatter: '{value}%',
-              fontFamily: 'Orbitron, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
             },
             axisLine: {
               lineStyle: {
@@ -463,7 +463,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
               color: mainColor,
               fontSize: isMobile ? 10 : 12,
               rotate: isMobile ? 45 : 0,
-              fontFamily: 'Orbitron, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
             },
             axisLine: {
               lineStyle: {
@@ -478,7 +478,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
               color: mainColor,
               fontSize: isMobile ? 10 : 12,
               formatter: '{value}%',
-              fontFamily: 'Orbitron, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
             },
             axisLine: {
               lineStyle: {

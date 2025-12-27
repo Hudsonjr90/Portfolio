@@ -61,7 +61,7 @@ const Footer = () => {
           },
         }}
       >
-         <motion.div
+      <motion.div
         className={styles.branding}
         initial={{ opacity: 0, y: 20, scale: 0.8 }}
         animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.8 }}
