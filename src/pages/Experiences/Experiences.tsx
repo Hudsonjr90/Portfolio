@@ -12,7 +12,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 import ParticlesB from "../../components/Particles/ParticlesB";
 import experiencesServer, { Experience } from "../../data/experiencesServer";
-import SpiralExperiences from "../../components/Experiences/OrbitExperiences";
+import OrbitExperiences from "../../components/Experiences/OrbitExperiences";
 
 const TimelineElement = ({
   title,
@@ -93,7 +93,7 @@ const Experiences = () => {
             ))}
           </VerticalTimeline>
         ) : (
-          <SpiralExperiences experiences={translatedExperiences} />
+          <OrbitExperiences experiences={translatedExperiences} />
         )}
       </section>
     </Transition>
