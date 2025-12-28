@@ -16,7 +16,9 @@ import portfolioServer from "../../data/portfolioServer";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const ParticlesB = React.lazy(() => import("../../components/Particles/ParticlesB"));
+const ParticlesB = React.lazy(
+  () => import("../../components/Particles/ParticlesB")
+);
 
 const Portfolio = () => {
   const { t } = useTranslation();
@@ -55,14 +57,18 @@ const Portfolio = () => {
     updateCurrentItems();
   }, [itemOffset, itemsPerPage, updateCurrentItems]);
 
-  const handlePageClick = useCallback((event: {selected: number}) => {
-    const newOffset = (event.selected * itemsPerPage) % portfolioServer.length;
-    setItemOffset(newOffset);
-    setCurrentPage(event.selected);
-  }, [itemsPerPage]);
+  const handlePageClick = useCallback(
+    (event: { selected: number }) => {
+      const newOffset =
+        (event.selected * itemsPerPage) % portfolioServer.length;
+      setItemOffset(newOffset);
+      setCurrentPage(event.selected);
+    },
+    [itemsPerPage]
+  );
 
   const toggleCardFlip = useCallback((cardId: number) => {
-    setFlippedCards(prev => {
+    setFlippedCards((prev) => {
       const newSet = new Set<number>();
       if (!prev.has(cardId)) {
         newSet.add(cardId);
@@ -79,7 +85,7 @@ const Portfolio = () => {
             <ParticlesB />
           </Suspense>
           <h2 className={styles.heading}>
-             {t("projects.title")} <span>{t("projects.text")}</span>
+            {t("projects.title")} <span>{t("projects.text")}</span>
           </h2>
           <div className={styles.portfolio_grid} data-tour="projects-grid">
             {currentItems.map((item, index) => (
@@ -89,13 +95,13 @@ const Portfolio = () => {
                 animate={{ opacity: 1, y: "0%" }}
                 transition={{
                   duration: 1.5,
-                  delay: 0.7 + (index * 0.3),
+                  delay: 0.7 + index * 0.3,
                   ease: [0.2, 0, 0.2, 1],
                 }}
                 className={styles.cardWrapper}
               >
-                <div 
-                  className={`${styles.cardContainer} ${flippedCards.has(item.id) ? styles.flipped : ''}`}
+                <div
+                  className={`${styles.cardContainer} ${flippedCards.has(item.id) ? styles.flipped : ""}`}
                   onClick={() => toggleCardFlip(item.id)}
                 >
                   {/* Frente do card - apenas imagem */}
@@ -112,18 +118,20 @@ const Portfolio = () => {
                       {t("projects.clickToFlip")}
                     </div>
                   </div>
-                  
+
                   {/* Verso do card - conteúdo e ações */}
                   <div className={styles.cardBack}>
                     <Card className={styles.card}>
                       <CardContent className={styles.cardContent}>
                         <h3 className={styles.cardTitle}>{item.name}</h3>
-                     
+
                         <p className={styles.cardDescription}>
                           {t(`projects.data.${item.id}.description`)}
                         </p>
-                     
-                        <div className={styles.tech_title}>{t("projects.subtitle")}</div>
+
+                        <div className={styles.tech_title}>
+                          {t("projects.subtitle")}
+                        </div>
                         <div className={styles.techList}>
                           {item.technologies.map((tech, index) => (
                             <span className={styles.tech_list} key={index}>
@@ -133,32 +141,34 @@ const Portfolio = () => {
                         </div>
                       </CardContent>
                       <CardActions className={styles.cardActions}>
-                        <Tooltip 
-                          title={!item.linkDeploy ? t("projects.inDevelopment") : ""}
+                        <Tooltip
+                          title={
+                            !item.linkDeploy ? t("projects.inDevelopment") : ""
+                          }
                           placement="top"
                           arrow
                           componentsProps={{
                             tooltip: {
                               sx: {
-                                fontSize: '1.1rem',
-                                padding: '8px 12px',
-                                backgroundColor: 'var(--second_bg_color)',
-                                color: 'var(--main_color)',
+                                fontSize: "1.1rem",
+                                padding: "8px 12px",
+                                backgroundColor: "var(--second_bg_color)",
+                                color: "var(--main_color)",
                                 fontWeight: 700,
-                                borderRadius: '8px',
-                                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                              }
+                                borderRadius: "8px",
+                                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                              },
                             },
                             arrow: {
                               sx: {
-                                color: 'var(--second_bg_color)',
-                              }
-                            }
+                                color: "var(--second_bg_color)",
+                              },
+                            },
                           }}
                         >
                           <span>
-                            <Button 
-                              className={`${styles.links} ${!item.linkDeploy ? styles.disabled : ''}`}
+                            <Button
+                              className={`${styles.links} ${!item.linkDeploy ? styles.disabled : ""}`}
                               disabled={!item.linkDeploy}
                             >
                               <NavLink
@@ -176,37 +186,43 @@ const Portfolio = () => {
                             </Button>
                           </span>
                         </Tooltip>
-                        <Tooltip 
-                          title={!item.linkRepository ? t("projects.inDevelopment") : ""}
+                        <Tooltip
+                          title={
+                            !item.linkRepository
+                              ? t("projects.inDevelopment")
+                              : ""
+                          }
                           placement="top"
                           arrow
                           componentsProps={{
                             tooltip: {
                               sx: {
-                                fontSize: '1.1rem',
-                                padding: '8px 12px',
-                                backgroundColor: 'var(--second_bg_color)',
-                                color: 'var(--main_color)',
+                                fontSize: "1.1rem",
+                                padding: "8px 12px",
+                                backgroundColor: "var(--second_bg_color)",
+                                color: "var(--main_color)",
                                 fontWeight: 700,
-                                borderRadius: '8px',
-                                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                              }
+                                borderRadius: "8px",
+                                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                              },
                             },
                             arrow: {
                               sx: {
-                                color: 'var(--second_bg_color)',
-                              }
-                            }
+                                color: "var(--second_bg_color)",
+                              },
+                            },
                           }}
                         >
                           <span>
-                            <Button 
-                              className={`${styles.links} ${!item.linkRepository ? styles.disabled : ''}`}
+                            <Button
+                              className={`${styles.links} ${!item.linkRepository ? styles.disabled : ""}`}
                               disabled={!item.linkRepository}
                             >
                               <NavLink
                                 to={item.linkRepository || "#"}
-                                target={item.linkRepository ? "_blank" : "_self"}
+                                target={
+                                  item.linkRepository ? "_blank" : "_self"
+                                }
                                 rel="noopener noreferrer"
                                 className={styles.link}
                                 onClick={(e) => {
@@ -229,11 +245,8 @@ const Portfolio = () => {
           <motion.div
             initial={{ opacity: 0, y: "80%" }}
             animate={{ opacity: 1, y: "0%" }}
-            transition={{
-              duration: 2,
-              delay: 0.3,
-              ease: [0.3, 0, 0.2, 1],
-            }}
+            transition={{ duration: 2, delay: 0.3, ease: [0.3, 0, 0.2, 1] }}
+            className={styles.pagination_container}
           >
             <ReactPaginate
               previousLabel={<FaChevronLeft />}
