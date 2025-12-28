@@ -21,7 +21,7 @@ const Testimonials = () => {
       </Suspense>
       <section className={styles.testimonials}>
         <h2 className={styles.heading}>
-          <span>//</span>
+          
           {t("testimonials.title")}
           <span>{t("testimonials.text")}</span>
         </h2>

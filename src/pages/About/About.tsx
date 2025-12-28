@@ -71,9 +71,7 @@ const About = () => {
             data-tour="about-content"
           >
             <h2>
-              <span>//</span>
-              {t("about.title")}
-              <span>Hudson Kennedy</span>
+              {t("about.title")} <span>Hudson Kennedy ?</span>
             </h2>
 
             <div className={styles.textContainer}>

@@ -14,7 +14,7 @@ const Education = () => {
     <Transition onAnimationComplete={() => {}}>
       <section className={styles.education}>
         <h2 className={styles.heading}>
-          <span>//</span>
+          
           {t("education.title")}
           <span>{t("education.text")}</span>
         </h2>

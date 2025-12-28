@@ -79,7 +79,7 @@ const Portfolio = () => {
             <ParticlesB />
           </Suspense>
           <h2 className={styles.heading}>
-            <span>//</span> {t("projects.title")} <span>{t("projects.text")}</span>
+             {t("projects.title")} <span>{t("projects.text")}</span>
           </h2>
           <div className={styles.portfolio_grid} data-tour="projects-grid">
             {currentItems.map((item, index) => (

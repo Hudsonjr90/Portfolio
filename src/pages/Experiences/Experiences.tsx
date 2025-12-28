@@ -161,7 +161,7 @@ const Experiences = () => {
       <ParticlesB />
       <section className={styles.experiences}>
         <h2 className={styles.heading}>
-          <span>//</span>
+          
           {t("experiences.title")}
           <span>{t("experiences.text")}</span>
         </h2>

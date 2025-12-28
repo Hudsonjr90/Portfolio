@@ -12,14 +12,16 @@
 
   "home": {
     "loading": "Loading...",
-    "function1": "Solutions Architect",
-    "function2": "Computer Scientist",
-    "function3": "Development Specialist",
-    "function4": "Software Engineer",
-    "function5": "UI/UX Designer",
     "resume": "Resume",
     "download": "Download",
-    "close": "Close"
+    "close": "Close",
+    "roles": [
+      "Solution Architect",
+      "Software Engineer",
+      "Frontend Specialist",
+      "Fullstack Developer",
+      "UI/UX Designer"
+    ]
   },
 
   "name": {
@@ -39,7 +41,7 @@
 
   "about": {
     "title": " Who is ",
-    "text": "- Passionate and dedicated Web Developer, I have accumulated solid experience over 10 years, complemented by interpersonal skills that I consider fundamental to the programming universe. I specialize in web technologies, possessing comprehensive knowledge that extends across various tools and languages. My passion for constant learning and my commitment to continuously evolving drive me to apply my vast experience in developing innovative and impactful web solutions. My communicative nature makes me always ready to play a vital role in innovative proposals. Let's build something incredible together!",
+    "text": "- I am a Software Engineer with over 10 years of experience developing modern, scalable, and product-oriented web applications. I work as a Fullstack Developer with strong specialization in Frontend, participating from architecture definition to delivering high-performance, well-structured interfaces focused on user experience. Throughout my journey, I have built a solid foundation in software engineering, solution architecture, and development best practices, always seeking to balance technical quality, usability, and business impact. I have ease in collaborating with multidisciplinary teams, transforming complex requirements into clear, efficient, and sustainable solutions. I am driven by continuous learning, technical evolution, and the challenge of creating products that generate real value.",
     "showMore": "More",
     "showLess": "Less"
   },

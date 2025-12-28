@@ -12,14 +12,16 @@
 
   "home": {
     "loading": "Caricamento...",
-    "function1": "Architetto di Soluzioni",
-    "function2": "Scienziato informatico",
-    "function3": "Specialista dello sviluppo",
-    "function4": "Ingegnere del software",
-    "function5": "Progettista UI/UX",
     "resume": "Curriculum",
     "download": "Caricare",
-    "close": "Chiudere"
+    "close": "Chiudere",
+    "roles": [
+      "Architetto di Soluzioni",
+      "Ingegnere del Software",
+      "Specialista Frontend",
+      "Sviluppatore Fullstack",
+      "Designer UI/UX"
+    ]
   },
 
   "name": {
@@ -39,7 +41,7 @@
 
   "about": {
     "title": " Chi è ",
-    "text": "- Sviluppatore web appassionato e dedicato, ho accumulato una solida esperienza in 10 anni, completata da competenze interpersonali che considero fondamentali nell'universo della programmazione. Mi sono specializzato nelle tecnologie web, possedendo una conoscenza approfondita che si estende su diversi strumenti e linguaggi. La mia passione per l'apprendimento continuo e il mio impegno a evolvere costantemente mi spingono ad applicare la mia vasta esperienza nello sviluppo di soluzioni web innovative e impattanti. La mia natura comunicativa mi rende sempre pronto a svolgere un ruolo vitale in proposte innovative. Costruiamo qualcosa di incredibile insieme!",
+    "text": "- Sono un Ingegnere del Software con oltre 10 anni di esperienza nello sviluppo di applicazioni web moderne, scalabili e orientate al prodotto. Lavoro come Sviluppatore Fullstack con forte specializzazione nel Frontend, partecipando dalla definizione dell'architettura alla consegna di interfacce performanti, ben strutturate e focalizzate sull'esperienza utente. Nel corso del mio percorso, ho costruito una solida base in ingegneria del software, architettura delle soluzioni e migliori pratiche di sviluppo, cercando sempre di bilanciare qualità tecnica, usabilità e impatto sul business. Ho facilità nel collaborare con team multidisciplinari, trasformando requisiti complessi in soluzioni chiare, efficienti e sostenibili. Sono motivato dall'apprendimento continuo, dall'evoluzione tecnica e dalla sfida di creare prodotti che generino valore reale.",
     "showMore": "Vedi di più",
     "showLess": "Vedi di meno"
   },

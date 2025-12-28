@@ -160,7 +160,7 @@ const Skills = () => {
       </Suspense>
       <section className={styles.skills} data-tour="skills-section">
         <h2 className={styles.heading}>
-          <span>//</span> {t("skills.title")}
+           {t("skills.title")}
           <span>{t("skills.text")}</span>
         </h2>
         {/* <div className={styles.toggleButtons} data-tour="view-toggles">

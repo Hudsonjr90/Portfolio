@@ -12,15 +12,17 @@
 
   "home": {
     "loading": "Carregando...",
-    "function1": "Arquiteto de Soluções",
-    "function2": "Cientista da Computação",
-    "function3": "Especialista em Desenvolvimento",
-    "function4": "Engenheiro de Software",
-    "function5": "UI/UX Designer",
     "resume": "Currículo",
     "download": "Baixar",
     "close": "Fechar",
-    "logo": "< H.K Dev />"
+
+    "roles": [
+      "Arquiteto de Soluções",
+      "Engenheiro de Software",
+      "Especialista em Frontend",
+      "Desenvolvedor Fullstack",
+      "UI/UX Designer"
+    ]
   },
 
   "name": {
@@ -39,8 +41,8 @@
   },
 
   "about": {
-    "title": " Quem é ",
-    "text": "- Desenvolvedor Web apaixonado e dedicado, acumulei uma sólida experiência ao longo de 10 anos, complementada por habilidades interpessoais que considero fundamentais para o universo da programação. Especializei-me em tecnologias web, possuindo um conhecimento abrangente que se estende por diversas ferramentas e linguagens. Minha paixão pelo aprendizado constante e meu comprometimento em evoluir continuamente me impulsionam a aplicar minha vasta experiência no desenvolvimento de soluções web inovadoras e impactantes. Minha natureza comunicativa torna-me sempre pronto para desempenhar um papel vital em propostas inovadoras. Vamos construir algo incrível juntos!",
+    "title": "Quem é",
+    "text": "- Sou Engenheiro de Software com mais de 10 anos de experiência no desenvolvimento de aplicações web modernas, escaláveis e orientadas a produto. Atuo como Desenvolvedor Fullstack, com forte especialização em Frontend, participando desde a definição da arquitetura até a entrega de interfaces performáticas, bem estruturadas e focadas na experiência do usuário. Ao longo da minha trajetória, construí uma base sólida em engenharia de software, arquitetura de soluções e boas práticas de desenvolvimento, sempre buscando equilibrar qualidade técnica, usabilidade e impacto para o negócio. Tenho facilidade em colaborar com times multidisciplinares, transformando requisitos complexos em soluções claras, eficientes e sustentáveis. Sou movido pelo aprendizado contínuo, pela evolução técnica e pelo desafio de criar produtos que gerem valor real.",
     "showMore": "Ver mais",
     "showLess": "Ver menos"
   },
@@ -287,7 +289,7 @@
       },
       {
         "description": "Um site para um barbearia, com agendamento online."
-      }   
+      }
     ]
   },
 

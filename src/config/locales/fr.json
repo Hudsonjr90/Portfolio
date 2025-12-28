@@ -12,14 +12,16 @@
 
   "home": {
     "loading": "Chargement...",
-    "function1": "Architecte de Solutions",
-    "function2": "Informaticien",
-    "function3": "Spécialiste du développement",
-    "function4": "Ingénieur logiciel",
-    "function5": "Concepteur UI/UX",
     "resume": "Curriculum Vitae",
     "download": "Descendre",
-    "close": "Fermer"
+    "close": "Fermer",
+    "roles": [
+      "Architecte de Solutions",
+      "Ingénieur Logiciel",
+      "Spécialiste Frontend",
+      "Développeur Fullstack",
+      "Designer UI/UX"
+    ]
   },
 
   "name": {
@@ -39,7 +41,7 @@
 
   "about": {
     "title": " Qui est ",
-    "text": "- Développeur web passionné et dévoué, j'ai accumulé une solide expérience sur une période de 10 ans, complétée par des compétences interpersonnelles que je considère comme essentielles dans l'univers de la programmation. Je me suis spécialisé dans les technologies web, possédant une connaissance approfondie qui s'étend sur plusieurs outils et langages. Ma passion pour l'apprentissage continu et mon engagement à évoluer sans cesse m'incitent à appliquer ma vaste expérience au développement de solutions web innovantes et impactantes. Ma nature communicative me rend toujours prêt à jouer un rôle vital dans des propositions novatrices. Construisons quelque chose d'incroyable ensemble!",
+    "text": "- Je suis un Ingénieur Logiciel avec plus de 10 ans d'expérience dans le développement d'applications web modernes, évolutives et orientées produit. J'agis en tant que Développeur Fullstack avec une forte spécialisation en Frontend, participant de la définition de l'architecture à la livraison d'interfaces performantes, bien structurées et focalisées sur l'expérience utilisateur. Au cours de mon parcours, j'ai construit une base solide en ingénierie logicielle, architecture de solutions et bonnes pratiques de développement, cherchant toujours à équilibrer qualité technique, utilisabilité et impact commercial. J'ai de la facilité à collaborer avec des équipes multidisciplinaires, transformant des exigences complexes en solutions claires, efficaces et durables. Je suis motivé par l'apprentissage continu, l'évolution technique et le défi de créer des produits qui génèrent une valeur réelle.",
     "showMore": "Voir plus",
     "showLess": "Voir moins"
   },

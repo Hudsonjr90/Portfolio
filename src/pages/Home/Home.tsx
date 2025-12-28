@@ -35,14 +35,9 @@ const Home = React.memo(() => {
   }, []);
 
   const typedStrings = useMemo(() => {
-    return [
-      t("home.function1"),
-      t("home.function2"),
-      t("home.function3"),
-      t("home.function4"),
-      t("home.function5"),
-    ];
-  }, [t]);
+  const result = t("home.roles", { returnObjects: true });
+  return Array.isArray(result) ? result : [];
+}, [t]);
 
   useEffect(() => {
     const randomChars =

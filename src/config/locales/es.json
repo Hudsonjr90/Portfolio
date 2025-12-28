@@ -12,14 +12,16 @@
 
   "home": {
     "loading": "Cargando...",
-    "functtion1": "Arquitecto de Soluciones",
-    "function2": "Científico informático",
-    "function3": "Especialista en Desarrollo",
-    "function4": "Ingeniero de software",
-    "function5": "Diseñador UI/UX",
     "resume": "Currículum",
     "download": "Descargar",
-    "close": "Fechar"
+    "close": "Fechar",
+    "roles": [
+      "Arquitecto de Soluciones",
+      "Ingeniero de Software",
+      "Especialista en Frontend",
+      "Desarrollador Fullstack",
+      "Diseñador UI/UX"
+    ]
   },
 
   "name": {
@@ -39,7 +41,7 @@
 
   "about": {
     "title": " Quién Soy ",
-    "text": "- Desarrollador web apasionado y dedicado, he acumulado una sólida experiencia en 10 años, complementada por habilidades interpersonales que considero fundamentales en el universo de la programación. Me he especializado en tecnologías web, poseyendo un conocimiento profundo que se extiende a través de varias herramientas y lenguajes. Mi pasión por el aprendizaje continuo y mi compromiso con la evolución constante me impulsan a aplicar mi amplia experiencia en el desarrollo de soluciones web innovadoras e impactantes. Mi naturaleza comunicativa me hace siempre dispuesto a desempeñar un papel vital en propuestas innovadoras. ¡Construyamos algo increíble juntos!",
+    "text": "- Soy un Ingeniero de Software con más de 10 años de experiencia en el desarrollo de aplicaciones web modernas, escalables y orientadas al producto. Actúo como Desarrollador Fullstack con fuerte especialización en Frontend, participando desde la definición de la arquitectura hasta la entrega de interfaces performantes, bien estructuradas y enfocadas en la experiencia del usuario. A lo largo de mi trayectoria, he construido una base sólida en ingeniería de software, arquitectura de soluciones y mejores prácticas de desarrollo, siempre buscando equilibrar calidad técnica, usabilidad e impacto para el negocio. Tengo facilidad para colaborar con equipos multidisciplinarios, transformando requisitos complejos en soluciones claras, eficientes y sustentables. Estoy motivado por el aprendizaje continuo, la evolución técnica y el desafío de crear productos que generen valor real.",
     "showMore": "Ver más",
     "showLess": "Ver menos"
   },
