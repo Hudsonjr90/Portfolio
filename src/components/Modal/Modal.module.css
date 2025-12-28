@@ -81,6 +81,13 @@
     color: var(--main_color);
 }
 
+.modal_title .down_button:hover,
+.modal_title .close_button:hover {
+    color: var(--text_color);
+    background-color: var(--main_color);
+    transform: scale(1.1);
+}
+
 .size_button {
     font-size: 1.8rem;
 }

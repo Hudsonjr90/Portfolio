@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaWindowClose, FaDownload } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
+import { GrClose } from "react-icons/gr";
 import { ThemeProvider } from "@mui/material/styles";
 import { Tooltip, IconButton, Zoom } from "@mui/material";
 import styles from "./Modal.module.css";
@@ -80,7 +81,7 @@ const Modal = ({
                 arrow
               >
                 <IconButton className={styles.close_button} onClick={onClose}>
-                  <FaWindowClose className={styles.size_button} />
+                  <GrClose className={styles.size_button} />
                 </IconButton>
               </Tooltip>
             </ThemeProvider>
