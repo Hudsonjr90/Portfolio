@@ -14,6 +14,7 @@ import {
 import { PiCertificate } from "react-icons/pi";
 import styles from "./CardComponent.module.css";
 import Modal from "../Modal/Modal";
+import OptimizedImage from "../OptimizedImage/OptimizedImage";
 
 const CardComponent = () => {
   const { t } = useTranslation();
@@ -61,6 +62,15 @@ const CardComponent = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Preload das imagens da primeira página para carregamento mais rápido
+  useEffect(() => {
+    const firstPageCards = cardsServer.slice(0, cardsPerPage);
+    firstPageCards.forEach(card => {
+      const img = new Image();
+      img.src = card.img;
+    });
+  }, [cardsPerPage]);
+
   const offset = currentPage * cardsPerPage;
   const pageCount = Math.ceil(cardsServer.length / cardsPerPage);
 
@@ -80,11 +90,11 @@ const CardComponent = () => {
           /* Card tradicional para mobile */
           <div className={styles.mobile_card}>
             <div className={styles.mobile_card_image_container}>
-              <img
+              <OptimizedImage
                 src={card.img}
-                alt="Card image"
+                alt={t(`education.cardTitles.${card.titleKey}`)}
                 className={styles.mobile_card_image}
-                loading="lazy"
+                priority={currentPage === 0}
               />
             </div>
             <div className={styles.mobile_card_content}>
@@ -109,11 +119,11 @@ const CardComponent = () => {
             className={styles.card_container_simple}
             onClick={() => setSelectedCard(card)}
           >
-            <img
+            <OptimizedImage
               src={card.img}
-              alt="Card image"
+              alt={t(`education.cardTitles.${card.titleKey}`)}
               className={styles.card_image}
-              loading="lazy"
+              priority={currentPage === 0}
             />
             <div className={styles.card_overlay}>
               <span className={styles.click_hint}>

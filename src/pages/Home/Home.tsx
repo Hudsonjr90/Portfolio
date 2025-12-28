@@ -24,6 +24,7 @@ const Home = React.memo(() => {
   const [showModal, setShowModal] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [textAnimation, setTextAnimation] = useState(false);
   const targetText = "Hudson Kennedy";
 
   const getResumeLanguage = useCallback(() => {
@@ -89,12 +90,14 @@ const Home = React.memo(() => {
   }, []);
 
   useEffect(() => {
+    if (!textAnimation) return;
+    
     const interval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % typedStrings.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [typedStrings.length]);
+  }, [typedStrings.length, textAnimation]);
 
   return (
     <>
@@ -128,6 +131,7 @@ const Home = React.memo(() => {
               initial={{ opacity: 0, scale: 0.5 }}
               className={styles.transparent_text}
               data-tour="typewriter"
+              onAnimationComplete={() => setTextAnimation(true)}
             >
               <AnimatePresence mode="wait">
                 <motion.div

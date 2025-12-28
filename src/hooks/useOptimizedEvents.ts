@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState, RefObject } from 'react';
 import { addPassiveEventListener, createOptimizedScrollHandler } from '../utils/performance';
 
 export const useOptimizedScroll = (
@@ -53,4 +53,35 @@ export const useOptimizedTouch = (
       cleanupHandlers.forEach(cleanup => cleanup());
     };
   }, [element, onTouchStart, onTouchMove, onTouchEnd]);
+};
+
+export const useIntersectionObserver = (
+  elementRef: RefObject<Element>,
+  options: IntersectionObserverInit = {}
+): boolean => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        setIsVisible(entry.isIntersecting);
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '50px',
+      ...options
+    });
+
+    observer.observe(element);
+
+    return () => {
+      observer.unobserve(element);
+      observer.disconnect();
+    };
+  }, [elementRef, options]);
+
+  return isVisible;
 };

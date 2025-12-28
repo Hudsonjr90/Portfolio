@@ -91,47 +91,62 @@ const CircularChart: React.FC<CircularChartProps> = ({
   const neonColors = useMemo(() => {
     if (isDarkMode) {
       return isMobile ? [
-        '#00d4ff',  
-        '#ff4081',
-        '#00ff88',
-        '#ffab00',
-        '#9c27b0',
-        '#ff1744',
-        '#00e676',  
-        '#ffc107', 
+        '#00d4ff',  '#ff4081',  '#00ff88',  '#ffab00',  '#9c27b0',  '#ff1744',
+        '#00e676',  '#ffc107',  '#e91e63',  '#00bcd4',  '#ff5722',  '#8bc34a',
+        '#ff9800',  '#673ab7',  '#f44336',  '#4caf50',  '#2196f3',  '#ffeb3b',
+        '#795548',  '#607d8b',  '#ff6f00',  '#aa00ff',  '#00e5ff',  '#76ff03',
+        '#ff3d00',  '#3f51b5',  '#e040fb',  '#18ffff',  '#c6ff00',  '#ff1744'
       ] : [
-        '#0ef6cc', 
-        '#00ff88',
-        '#ff0099',
-        '#9933ff',
-        '#ffaa00',
-        '#00aaff',
-        '#ff3366',
-        '#66ff99',
+        '#0ef6cc',  '#00ff88',  '#ff0099',  '#9933ff',  '#ffaa00',  '#00aaff',
+        '#ff3366',  '#66ff99',  '#cc33ff',  '#33ffcc',  '#ff6600',  '#0066ff',
+        '#ff0066',  '#00ff66',  '#6600ff',  '#ff9933',  '#3399ff',  '#ff3399',
+        '#99ff33',  '#3366ff',  '#ff6699',  '#66ffaa',  '#aa66ff',  '#ffaa66',
+        '#66aaff',  '#ff66aa',  '#aaff66',  '#6699ff',  '#ff9966',  '#99ffaa'
       ];
     } else {
       return isMobile ? [
-        '#2196f3',  
-        '#e91e63',  
-        '#4caf50',  
-        '#ff9800',  
-        '#9c27b0',  
-        '#f44336',  
-        '#00bcd4',  
-        '#ffeb3b',  
+        '#2196f3',  '#e91e63',  '#4caf50',  '#ff9800',  '#9c27b0',  '#f44336',
+        '#00bcd4',  '#ffeb3b',  '#795548',  '#607d8b',  '#ff5722',  '#8bc34a',
+        '#673ab7',  '#ffc107',  '#3f51b5',  '#ff6f00',  '#aa00ff',  '#76ff03',
+        '#ff3d00',  '#e040fb',  '#18ffff',  '#c6ff00',  '#ff1744',  '#00e5ff',
+        '#ff9800',  '#4caf50',  '#2196f3',  '#9c27b0',  '#f44336',  '#00bcd4'
       ] : [
-        '#f65151',
-        '#ff6b6b',
-        '#4ecdc4',
-        '#45b7d1',
-        '#f9ca24',
-        '#6c5ce7',
-        '#fd79a8',
-        '#00b894',
+        '#f65151',  '#ff6b6b',  '#4ecdc4',  '#45b7d1',  '#f9ca24',  '#6c5ce7',
+        '#fd79a8',  '#00b894',  '#e17055',  '#0984e3',  '#a29bfe',  '#fd79a8',
+        '#fdcb6e',  '#e84393',  '#00cec9',  '#6c5ce7',  '#fab1a0',  '#74b9ff',
+        '#fd79a8',  '#00b894',  '#fdcb6e',  '#a29bfe',  '#e17055',  '#74b9ff',
+        '#fab1a0',  '#fd79a8',  '#00cec9',  '#6c5ce7',  '#e84393',  '#fdcb6e'
       ];
     }
   }, [isDarkMode, isMobile]);
-
+  // Função para gerar cores únicas baseadas em HSL
+  const generateUniqueColor = useMemo(() => {
+    return (index: number, _total: number) => {
+      // Se ainda temos cores na paleta predefinida, use-as
+      if (index < neonColors.length) {
+        return neonColors[index];
+      }
+      
+      // Gerar cor única usando HSL quando a paleta se esgota
+      // Usa o número áureo para distribuição uniforme de matizes
+      const goldenAngle = 137.508; // Graus
+      const hue = (index * goldenAngle) % 360; 
+      
+      // Varia saturação e luminosidade para criar mais diversidade
+      const saturationVariation = (index % 4) * 15;
+      const lightnessVariation = (index % 3) * 10;
+      
+      const saturation = isDarkMode ? 
+        Math.min(85, 65 + saturationVariation) : 
+        Math.min(90, 55 + saturationVariation);
+        
+      const lightness = isDarkMode ? 
+        Math.min(70, 45 + lightnessVariation) : 
+        Math.min(65, 40 + lightnessVariation);
+      
+      return `hsl(${Math.round(hue)}, ${saturation}%, ${lightness}%)`;
+    };
+  }, [neonColors, isDarkMode]);
   const categoryColors: { [key: string]: string } = useMemo(() => {
     if (isMobile) {
       return {
@@ -314,9 +329,10 @@ const CircularChart: React.FC<CircularChartProps> = ({
               animationDelay: (idx: number) => idx * 100,
               animationDuration: 1500,
               data: data.map((item, index) => {
-                const baseColor = item.category ? 
-                  categoryColors[item.category] || neonColors[index % neonColors.length] :
-                  neonColors[index % neonColors.length];
+                // Usar cor específica da categoria ou gerar cor única
+                const baseColor = item.category && categoryColors[item.category] ? 
+                  categoryColors[item.category] :
+                  generateUniqueColor(index, data.length);
                 
                 return {
                   value: item.value,
@@ -409,9 +425,10 @@ const CircularChart: React.FC<CircularChartProps> = ({
               name: 'Proficiência',
               type: 'bar',
               data: sortedBarData.map((item, index) => {
-                const baseColor = item.category ? 
-                  categoryColors[item.category] || neonColors[index % neonColors.length] :
-                  neonColors[index % neonColors.length];
+                // Usar cor específica da categoria ou gerar cor única
+                const baseColor = item.category && categoryColors[item.category] ? 
+                  categoryColors[item.category] :
+                  generateUniqueColor(index, sortedBarData.length);
                 
                 return {
                   value: item.value,
