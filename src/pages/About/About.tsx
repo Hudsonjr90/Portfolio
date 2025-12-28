@@ -39,8 +39,8 @@ const About = () => {
               initial={false}
               animate={
                 isLoaded && isInView
-                  ? { webkitMaskImage: visibleMask, maskImage: visibleMask }
-                  : { webkitMaskImage: hiddenMask, maskImage: hiddenMask }
+                  ? { WebkitMaskImage: visibleMask, maskImage: visibleMask } as any
+                  : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask } as any
               }
               transition={{ duration: 1, delay: 1 }}
               viewport={{ once: true }}
