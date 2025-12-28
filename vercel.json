@@ -1,5 +1,93 @@
 {
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=86400"
+                }
+            ]
+        }
+    ],
     "rewrites": [
+        {
+            "source": "/about",
+            "destination": "/about.html",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(?:facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|WhatsApp|Googlebot|bingbot|Applebot|TelegramBot|SkypeUriPreview|ia_archiver|Yandexbot|DuckDuckBot|facebot).*"
+                }
+            ]
+        },
+        {
+            "source": "/skills",
+            "destination": "/skills.html",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(?:facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|WhatsApp|Googlebot|bingbot|Applebot|TelegramBot|SkypeUriPreview|ia_archiver|Yandexbot|DuckDuckBot|facebot).*"
+                }
+            ]
+        },
+        {
+            "source": "/portfolio",
+            "destination": "/portfolio.html",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(?:facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|WhatsApp|Googlebot|bingbot|Applebot|TelegramBot|SkypeUriPreview|ia_archiver|Yandexbot|DuckDuckBot|facebot).*"
+                }
+            ]
+        },
+        {
+            "source": "/education",
+            "destination": "/education.html",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(?:facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|WhatsApp|Googlebot|bingbot|Applebot|TelegramBot|SkypeUriPreview|ia_archiver|Yandexbot|DuckDuckBot|facebot).*"
+                }
+            ]
+        },
+        {
+            "source": "/experiences",
+            "destination": "/experiences.html",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(?:facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|WhatsApp|Googlebot|bingbot|Applebot|TelegramBot|SkypeUriPreview|ia_archiver|Yandexbot|DuckDuckBot|facebot).*"
+                }
+            ]
+        },
+        {
+            "source": "/testimonials",
+            "destination": "/testimonials.html",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(?:facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|WhatsApp|Googlebot|bingbot|Applebot|TelegramBot|SkypeUriPreview|ia_archiver|Yandexbot|DuckDuckBot|facebot).*"
+                }
+            ]
+        },
+        {
+            "source": "/contact",
+            "destination": "/contact.html",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(?:facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|WhatsApp|Googlebot|bingbot|Applebot|TelegramBot|SkypeUriPreview|ia_archiver|Yandexbot|DuckDuckBot|facebot).*"
+                }
+            ]
+        },
         {
             "source": "/(.*)",
             "destination": "/"
