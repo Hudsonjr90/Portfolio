@@ -48,10 +48,6 @@ export const useSEO = () => {
 
     // Update language
     document.documentElement.lang = i18n.language === 'pt' ? 'pt-br' : i18n.language;
-    
-    // Log para debug
-    console.log('Meta tags updated for:', seoData.url);
-    console.log('Title:', seoData.title);
   };
 
   const updateMetaTag = (attribute: string, name: string, content: string) => {
@@ -80,13 +76,8 @@ export const useSEO = () => {
 
   const getSEOData = (): SEOData => {
     const baseUrl = 'https://hudsonkennedy.dev.br';
-    // Normalizar pathname removendo trailing slash e garantindo que comece com /
     const normalizedPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/$/, '');
     const currentUrl = `${baseUrl}${normalizedPath}`;
-    
-    // Debug para verificar a rota atual
-    console.log('Current pathname:', location.pathname);
-    console.log('Normalized path:', normalizedPath);
 
     switch (normalizedPath) {
       case '/':
@@ -162,7 +153,6 @@ export const useSEO = () => {
         };
 
       default:
-        console.log('No specific route found, using default SEO data for:', normalizedPath);
         return {
           title: 'Hudson Kennedy - Desenvolvedor Full Stack',
           description: 'Portfólio de Hudson Kennedy, Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas.',
@@ -173,21 +163,16 @@ export const useSEO = () => {
   };
 
   useEffect(() => {
-    // Aguardar um pequeno delay para garantir que as traduções estejam carregadas
     const updateSEO = () => {
-      // Verificar se as traduções estão disponíveis
       if (!t || typeof t !== 'function') {
-        console.log('Translations not loaded yet, retrying...');
         setTimeout(updateSEO, 100);
         return;
       }
       
       const seoData = getSEOData();
-      console.log('Updating SEO with data:', seoData);
       updateMetaTags(seoData);
     };
 
-    // Pequeno delay para garantir que o componente foi montado
     setTimeout(updateSEO, 50);
   }, [location.pathname, i18n.language, t]);
 
