@@ -18,6 +18,7 @@ interface ModalProps {
   pdf?: string;
   images?: string[];
   icon?: React.ReactNode;
+  date?: string;
 }
 
 const Modal = ({
@@ -29,6 +30,7 @@ const Modal = ({
   pdf,
   images = [],
   icon,
+  date,
 }: ModalProps) => {
   const { t } = useTranslation();
 
@@ -92,6 +94,12 @@ const Modal = ({
         {description && (
           <div className={styles.modal_description_container}>
             <p className={styles.modal_description}>{description}</p>
+          </div>
+        )}
+
+        {date && (
+          <div className={styles.modal_date_container}>
+            <span className={styles.modal_date}>{date}</span>
           </div>
         )}
 

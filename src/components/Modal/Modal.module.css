@@ -149,6 +149,20 @@
     margin-bottom: 0;
 }
 
+.modal_date_container {
+    margin-top: 0.5rem;
+    padding: 0 2rem;
+}
+
+.modal_date {
+    color: var(--text_color);
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+
+
 /* Responsividade */
 /* @media screen and (max-width: 768px) {
     .modal_container {
