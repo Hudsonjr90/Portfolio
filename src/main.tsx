@@ -5,6 +5,11 @@ import './index.css'
 import './styles/tour.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { initializeTrustedTypes } from './utils/security'
+import setupLocatorUI from "@locator/runtime";
+
+if (import.meta.env.DEV) {
+  setupLocatorUI();
+}
 
 initializeTrustedTypes();
 

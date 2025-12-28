@@ -53,6 +53,7 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
+    "@locator/runtime": "^0.5.1",
     "@types/file-saver": "^2.0.7",
     "@types/node": "^22.13.17",
     "@types/react": "^18.3.3",

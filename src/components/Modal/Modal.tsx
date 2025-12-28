@@ -1,100 +1,113 @@
-import styles from './Modal.module.css';
-import { useState, useEffect, useCallback } from 'react';
-import { saveAs } from 'file-saver';
-import { simpleTheme } from '../../context/ThemeContext';
-import { FaDownload, FaWindowClose } from "react-icons/fa";
-import IconButton from '@mui/material/IconButton';
-import resumeServer from '../../data/resumeServer';
-import Tooltip from '@mui/material/Tooltip';
-import Zoom from '@mui/material/Zoom';
-import { ThemeProvider } from '@mui/material/styles';
-import { useTranslation } from 'react-i18next';
+import { useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaWindowClose, FaDownload } from "react-icons/fa";
+import { ThemeProvider } from "@mui/material/styles";
+import { Tooltip, IconButton, Zoom } from "@mui/material";
+import styles from "./Modal.module.css";
+import { saveAs } from "file-saver";
+import { useTranslation } from "react-i18next";
+import { navbarTheme } from "../../context/ThemeContext";
 
 interface ModalProps {
   show: boolean;
   onClose: () => void;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  pdf?: string;
+  images?: string[];
+  icon?: React.ReactNode;
 }
 
-const Modal = ({ show, onClose }: ModalProps) => {
-  if (!show) return null;
-
-  const { t, i18n } = useTranslation();
-  const [selectedImages, setSelectedImages] = useState<string[]>([]);
-  const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
+const Modal = ({
+  show,
+  onClose,
+  title,
+  subtitle,
+  description,
+  pdf,
+  images = [],
+  icon,
+}: ModalProps) => {
+  const { t } = useTranslation();
 
   const handleDownload = useCallback(() => {
-    if (selectedPdf) {
-      const fileName = selectedPdf.split('/').pop()?.replace('.pdf', '');
-      if (fileName) {
-        fetch(selectedPdf)
-          .then((response) => response.blob())
-          .then((blob) => {
-            saveAs(blob, `${fileName}.pdf`);
-          })
-          .catch((error) => {
-            console.error('Error downloading PDF:', error);
-          });
-      }
-    }
-  }, [selectedPdf]);
+    if (!pdf) return;
 
-  useEffect(() => {
-    const loadContent = () => {
-      let images: string[] = [];
-      let pdfPath: string | null = null;
-      switch (i18n.language) {
-        case 'pt':
-          images = resumeServer.br;
-          pdfPath = '/cv/HudsonKennedy-BR.pdf';
-          break;
-        case 'en':
-          images = resumeServer.us;
-          pdfPath = '/cv/HudsonKennedy-US.pdf';
-          break;
-        case 'fr':
-          images = resumeServer.fr;
-          pdfPath = '/cv/HudsonKennedy-FR.pdf';
-          break;
-        case 'it':
-          images = resumeServer.it;
-          pdfPath = '/cv/HudsonKennedy-IT.pdf';
-          break;
-        case 'es':
-          images = resumeServer.es;
-          pdfPath = '/cv/HudsonKennedy-ES.pdf';
-          break;
-        default:
-          break;
-      }
-      setSelectedImages(images);
-      setSelectedPdf(pdfPath);
-    };
+    const fileName = pdf.split("/").pop();
+    fetch(pdf)
+      .then((res) => res.blob())
+      .then((blob) => saveAs(blob, fileName))
+      .catch(console.error);
+  }, [pdf]);
 
-    loadContent();
-  }, [i18n.language]);
+  if (!show) return null;
 
   return (
-    <div className={styles.modal_container}>
-      <div className={styles.modal_title}>
-        <ThemeProvider theme={simpleTheme}>
-          <Tooltip TransitionComponent={Zoom} title={t('home.download')} placement="left" arrow>
-            <IconButton className={styles.down_button} onClick={handleDownload}>
-              <FaDownload className={styles.size_button} />
-            </IconButton>
-          </Tooltip>
-          <Tooltip TransitionComponent={Zoom} title={t('home.close')} placement="right" arrow>
-            <IconButton className={styles.close_button} onClick={onClose}>
-              <FaWindowClose className={styles.size_button} />
-            </IconButton>
-          </Tooltip>
-        </ThemeProvider>
-      </div>
-      <div className={styles.modal_content}>
-        {selectedImages.map((image, index) => (
-          <img key={index} src={image} alt={`Currículo ${i18n.language} - Slide ${index + 1}`} loading="lazy" />
-        ))}
-      </div>
-    </div>
+    <AnimatePresence>
+      <motion.div className={styles.modal_container}>
+        {/* HEADER */}
+        <div className={styles.modal_title}>
+          <div className={styles.modal_header_content}>
+            {icon && <span className={styles.modal_icon}>{icon}</span>}
+            <div className={styles.modal_text_content}>
+              {title && <h3 className={styles.modal_title_text}>{title}</h3>}
+              {subtitle && <p className={styles.modal_subtitle}>{subtitle}</p>}
+            </div>
+          </div>
+          
+          <div className={styles.modal_actions}>
+            <ThemeProvider theme={navbarTheme}>
+              {pdf && (
+                <Tooltip
+                  TransitionComponent={Zoom}
+                  title={t("home.download")}
+                  placement="left"
+                  arrow
+                >
+                  <IconButton
+                    className={styles.down_button}
+                    onClick={handleDownload}
+                  >
+                    <FaDownload className={styles.size_button} />
+                  </IconButton>
+                </Tooltip>
+              )}
+              <Tooltip
+                TransitionComponent={Zoom}
+                title={t("home.close")}
+                placement="right"
+                arrow
+              >
+                <IconButton className={styles.close_button} onClick={onClose}>
+                  <FaWindowClose className={styles.size_button} />
+                </IconButton>
+              </Tooltip>
+            </ThemeProvider>
+          </div>
+        </div>
+
+        {/* DESCRIÇÃO */}
+        {description && (
+          <div className={styles.modal_description_container}>
+            <p className={styles.modal_description}>{description}</p>
+          </div>
+        )}
+
+        {/* CONTEÚDO */}
+        <div className={styles.modal_content}>
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`${title} - ${index + 1}`}
+              loading="lazy"
+              className={styles.modal_image}
+            />
+          ))}
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

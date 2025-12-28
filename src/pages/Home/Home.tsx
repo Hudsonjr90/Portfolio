@@ -13,18 +13,40 @@ import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
 import "atropos/css";
 import { Atropos } from "atropos/react";
-
+import resumeServer from "../../data/resumeServer";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
 );
 
 const Home = React.memo(() => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const targetText = "Hudson Kennedy";
+
+  const getResumeLanguage = useCallback(() => {
+    const currentLang = i18n.language;
+    const langMap: Record<string, keyof typeof resumeServer> = {
+      'pt': 'br',
+      'pt-BR': 'br',
+      'en': 'us',
+      'en-US': 'us',
+      'fr': 'fr',
+      'fr-FR': 'fr',
+      'it': 'it',
+      'it-IT': 'it',
+      'es': 'es',
+      'es-ES': 'es'
+    };
+    return langMap[currentLang] || 'br';
+  }, [i18n.language]);
+
+  const currentResume = useMemo(() => {
+    const lang = getResumeLanguage();
+    return resumeServer[lang];
+  }, [getResumeLanguage]);
 
   const handleOpenModal = useCallback(() => {
     setShowModal(true);
@@ -35,9 +57,9 @@ const Home = React.memo(() => {
   }, []);
 
   const typedStrings = useMemo(() => {
-  const result = t("home.roles", { returnObjects: true });
-  return Array.isArray(result) ? result : [];
-}, [t]);
+    const result = t("home.roles", { returnObjects: true });
+    return Array.isArray(result) ? result : [];
+  }, [t]);
 
   useEffect(() => {
     const randomChars =
@@ -68,10 +90,8 @@ const Home = React.memo(() => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => 
-        (prevIndex + 1) % typedStrings.length
-      );
-    }, 3000); 
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % typedStrings.length);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [typedStrings.length]);
@@ -112,30 +132,30 @@ const Home = React.memo(() => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentTextIndex}
-                  initial={{ 
-                    opacity: 0, 
+                  initial={{
+                    opacity: 0,
                     rotateX: 90,
-                    y: 50 
+                    y: 50,
                   }}
-                  animate={{ 
-                    opacity: 1, 
+                  animate={{
+                    opacity: 1,
                     rotateX: 0,
-                    y: 0 
+                    y: 0,
                   }}
-                  exit={{ 
-                    opacity: 0, 
+                  exit={{
+                    opacity: 0,
                     rotateX: -90,
-                    y: -50 
+                    y: -50,
                   }}
                   transition={{
                     duration: 0.6,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                   style={{
                     transformOrigin: "center center",
                     display: "inline-block",
                     minHeight: "1.2em",
-                    color: "var(--main_color)"
+                    color: "var(--main_color)",
                   }}
                 >
                   {typedStrings[currentTextIndex]}
@@ -162,16 +182,23 @@ const Home = React.memo(() => {
             data-tour="profile-image"
           >
             <Atropos shadow={false} highlight={false}>
-              <img 
-                src={myself} 
-                alt="Hudson Kennedy - Desenvolvedor Full Stack" 
+              <img
+                src={myself}
+                alt="Hudson Kennedy - Desenvolvedor Full Stack"
                 loading="eager"
               />
             </Atropos>
           </motion.div>
         </motion.section>
       </Transition>
-      <Modal show={showModal} onClose={handleCloseModal} />
+      <Modal
+        show={showModal}
+        onClose={handleCloseModal}
+        title={t("home.resume")}
+        subtitle={t("home.resumeSubtitle")}
+        images={currentResume.images}
+        pdf={currentResume.pdf}
+      />
     </>
   );
 });

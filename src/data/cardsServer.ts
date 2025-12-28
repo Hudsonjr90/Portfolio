@@ -1,171 +1,267 @@
 const cardsServer = [
-  {
-    id: 0,
-    img: "/imgs/imgEducation/bootcamp.webp",
-    text: "Bootcamp Banco Pan(Desenvolvimento Frontend com Angular)",
-    title: "Digital Innovation",
-    file: "/formations/bootcamp.pdf"
-  },
+  // ============================
+  // 🎓 FORMAÇÃO ACADÊMICA
+  // ============================
   {
     id: 1,
     img: "/imgs/imgEducation/harvard.webp",
-    text: "Mestrado que atua dentro do programa de pós-graduação em Ciência da Computação",
-    title: "Universidade de Harvard",
-    file: "/formations/harvard.pdf"
+    titleKey: "card1",
+    institutionKey: "card1", 
+    descriptionKey: "card1",
+    type: "Mestrado",
+    category: "Acadêmico",
+    year: "2023",
+    file: "/formations/harvard.pdf",
   },
   {
     id: 2,
     img: "/imgs/imgEducation/mba.webp",
-    text: "Pós Graduação em Engenharia de Software",
-    title: "Faculdade Única de MG",
-    file: "/formations/mba.pdf"
+    titleKey: "card2",
+    institutionKey: "card2",
+    descriptionKey: "card2",
+    type: "Pós-graduação",
+    category: "Acadêmico",
+    file: "/formations/mba.pdf",
   },
   {
     id: 3,
     img: "/imgs/imgEducation/estacio.webp",
-    text: "Processos Gerenciais",
-    title: "Faculdade Estácio de Sá",
-    file: "/formations/processos-gerenciais.pdf"
+    titleKey: "card3",
+    institutionKey: "card3",
+    descriptionKey: "card3",
+    type: "Graduação",
+    category: "Acadêmico",
+    file: "/formations/processos-gerenciais.pdf",
   },
+
+  // ============================
+  // 🚀 BOOTCAMP
+  // ============================
   {
     id: 4,
-    img: "/imgs/imgEducation/dio-comp.webp",
-    text: "Trabalhando com Componentes em React",
-    title: "Digital Innovation",
-    file: "/formations/componentes-react.pdf"
+    img: "/imgs/imgEducation/bootcamp.webp",
+    titleKey: "card4",
+    institutionKey: "card4",
+    descriptionKey: "card4",
+    type: "Bootcamp",
+    category: "Técnico",
+    file: "/formations/bootcamp.pdf",
   },
+
+  // ============================
+  // 💻 FRONTEND / TÉCNICO
+  // ============================
   {
     id: 5,
-    img: "/imgs/imgEducation/dio-arq.webp",
-    text: "Arquitetura de Componentes e a gestão da complexidade no front-end",
-    title: "Digital Innovation",
-    file: "/formations/arquitetura-componentes.pdf"
+    img: "/imgs/imgEducation/aem-front.webp",
+    titleKey: "card5",
+    institutionKey: "card5",
+    descriptionKey: "card5",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/aem-frontend.pdf",
   },
   {
     id: 6,
-    img: "/imgs/imgEducation/dio-log.webp",
-    text: "Lógica de Programção Essencial",
-    title: "Digital Innovation",
-    file: "/formations/logica-programacao.pdf"
+    img: "/imgs/imgEducation/aem-sbp.webp",
+    titleKey: "card6",
+    institutionKey: "card6",
+    descriptionKey: "card6",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/aem-sbp.pdf",
   },
   {
     id: 7,
-    img: "/imgs/imgEducation/dio-es6.webp",
-    text: "Javascript ES6 Essencial",
-    title: "Digital Innovation",
-    file: "/formations/javascript-es6.pdf"
+    img: "/imgs/imgEducation/vuejs.webp",
+    titleKey: "card7",
+    institutionKey: "card7",
+    descriptionKey: "card7",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/vuejs.pdf",
   },
   {
     id: 8,
-    img: "/imgs/imgEducation/dio-ang8.webp",
-    text: "Técnicas Avançadas em Angular 8",
-    title: "Digital Innovation",
-    file: "/formations/angular8.pdf"
+    img: "/imgs/imgEducation/udemy.webp",
+    titleKey: "card8",
+    institutionKey: "card8",
+    descriptionKey: "card8",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/javascript-typescript.pdf",
   },
   {
     id: 9,
-    img: "/imgs/imgEducation/aem-front.webp",
-    text: "AEM(Front-end Developer)",
-    title: "Adobe Profissional",
-    file: "/formations/aem-frontend.pdf"
+    img: "/imgs/imgEducation/dio-comp.webp",
+    titleKey: "card9",
+    institutionKey: "card9",
+    descriptionKey: "card9",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/componentes-react.pdf",
   },
   {
     id: 10,
-    img: "/imgs/imgEducation/aem-sbp.webp",
-    text: "AEM(Sites Business Practitioner)",
-    title: "Adobe Profissional",
-    file: "/formations/aem-sbp.pdf"
+    img: "/imgs/imgEducation/dio-arq.webp",
+    titleKey: "card10",
+    institutionKey: "card10",
+    descriptionKey: "card10",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/arquitetura-componentes.pdf",
   },
   {
     id: 11,
-    img: "/imgs/imgEducation/vuejs.webp",
-    text: "Curso Vuejs(Básico ao Avançado)",
-    title: "VueJs Brasil",
-    file: "/formations/vuejs.pdf"
+    img: "/imgs/imgEducation/dio-log.webp",
+    titleKey: "card11",
+    institutionKey: "card11",
+    descriptionKey: "card11",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/logica-programacao.pdf",
   },
   {
     id: 12,
-    img: "/imgs/imgEducation/dio-vue1.webp",
-    text: "Diretivas e Propriedades de Componentes Vue.js",
-    title: "Digital Innovation",
-    file: "/formations/diretivas-vue.pdf"
+    img: "/imgs/imgEducation/dio-es6.webp",
+    titleKey: "card12",
+    institutionKey: "card12",
+    descriptionKey: "card12",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/javascript-es6.pdf",
   },
   {
     id: 13,
-    img: "/imgs/imgEducation/dio-vue2.webp",
-    text: "Componentes, Métodos e Ciclo de vida com Vue.js",
-    title: "Digital Innovation",
-    file: "/formations/componentes-vue.pdf"
+    img: "/imgs/imgEducation/dio-ang8.webp",
+    titleKey: "card13",
+    institutionKey: "card13",
+    descriptionKey: "card13",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/angular8.pdf",
   },
-  {
+  {    
     id: 14,
-    img: "/imgs/imgEducation/udemy.webp",
-    text: "Curso Javascript e Typescript do Básico ao Avançado",
-    title: "Udemy",
-    file: "/formations/javascript-typescript.pdf"
-  },
-  {
-    id: 15,
     img: "/imgs/imgEducation/testes.webp",
-    text: "Testes Automatizados com Cypress",
-    title: "Digital Innovation",
-    file: "/formations/testes-automatizados"
+    titleKey: "card14",
+    institutionKey: "card14",
+    descriptionKey: "card14",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/testes-automatizados.pdf",
   },
-  {
+  {    
+    id: 15,
+    img: "/imgs/imgEducation/dio-vue1.webp",
+    titleKey: "card15",
+    institutionKey: "card15",
+    descriptionKey: "card15",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/diretivas-vue.pdf",
+  },
+  {    
     id: 16,
-    img: "/imgs/imgEducation/sebrae-GF.webp",
-    text: "Curso Gestão Financeira",
-    title: "Sebrae",
-    file: "/formations/gestao-financeira.pdf"
+    img: "/imgs/imgEducation/dio-vue2.webp",
+    titleKey: "card16",
+    institutionKey: "card16",
+    descriptionKey: "card16",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/componentes-vue.pdf",
   },
+
+  // ============================
+  // 🔒 SEGURANÇA
+  // ============================
   {
     id: 17,
-    img: "/imgs/imgEducation/sebrae-CS.webp",
-    text: "Curso Customer Success(Como Conquistar e Manter Clientes)",
-    title: "Sebrae",
-    file: "/formations/customer-success.pdf"
+    img: "/imgs/imgEducation/fgv.webp",
+    titleKey: "card17",
+    institutionKey: "card17",
+    descriptionKey: "card17",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/seguranca-digital.pdf",
   },
+
+  // ============================
+  // 💼 NEGÓCIOS / GESTÃO
+  // ============================
   {
     id: 18,
-    img: "/imgs/imgEducation/sebrae-MD.webp",
-    text: "Curso Marketing digital para empreendedor",
-    title: "Sebrae",
-    file: "/formations/marketing-digital.pdf"
+    img: "/imgs/imgEducation/sebrae-GF.webp",
+    titleKey: "card18",
+    institutionKey: "card18",
+    descriptionKey: "card18",
+    type: "Curso",
+    category: "Negócio",
+    file: "/formations/gestao-financeira.pdf",
   },
   {
     id: 19,
-    img: "/imgs/imgEducation/sebrae-EFC.webp",
-    text: "Curso Estratégia Financeira para o Crescimento",
-    title: "Sebrae",
-    file: "/formations/estrategia-financeira.pdf"
+    img: "/imgs/imgEducation/sebrae-CS.webp",
+    titleKey: "card19",
+    institutionKey: "card19",
+    descriptionKey: "card19",
+    type: "Curso",
+    category: "Negócio",
+    file: "/formations/customer-success.pdf",
   },
   {
     id: 20,
-    img: "/imgs/imgEducation/sebrae-PE.webp",
-    text: "Curso Planejamento Estratégico para Empreendedores",
-    title: "Sebrae",
-    file: "/formations/planejamento-estrategico.pdf"
+    img: "/imgs/imgEducation/sebrae-MD.webp",
+    titleKey: "card20",
+    institutionKey: "card20",
+    descriptionKey: "card20",
+    type: "Curso",
+    category: "Negócio",
+    file: "/formations/marketing-digital.pdf",
   },
   {
     id: 21,
-    img: "/imgs/imgEducation/fgv.webp",
-    text: "Curso Segurança Digital",
-    title: "FGV",
-    file: "/formations/seguranca-digital.pdf"
+    img: "/imgs/imgEducation/sebrae-EFC.webp",
+    titleKey: "card21",
+    institutionKey: "card21",
+    descriptionKey: "card21",
+    type: "Curso",
+    category: "Negócio",
+    file: "/formations/estrategia-financeira.pdf",
   },
   {
     id: 22,
-    img: "/imgs/imgEducation/24h.webp",
-    text: "Auxiliar Administrativo",
-    title: "Cursos 24h",
-    file: "/formations/auxiliar-administrativo.pdf"
+    img: "/imgs/imgEducation/sebrae-PE.webp",
+    titleKey: "card22",
+    institutionKey: "card22",
+    descriptionKey: "card22",
+    type: "Curso",
+    category: "Negócio",
+    file: "/formations/planejamento-estrategico.pdf",
   },
   {
     id: 23,
     img: "/imgs/imgEducation/sebrae-EF.webp",
-    text: "Curso Educação Financeira Empresarial",
-    title: "Sebrae",
-    file: "/formations/educacao-financeira.pdf"
+    titleKey: "card23",
+    institutionKey: "card23",
+    descriptionKey: "card23",
+    type: "Curso",
+    category: "Negócio",
+    file: "/formations/educacao-financeira.pdf",
+  },
+
+  // ============================
+  // 💼 ADMINISTRAÇÃO
+  // ============================
+  {
+    id: 24,
+    img: "/imgs/imgEducation/24h.webp",
+    titleKey: "card24",
+    institutionKey: "card24",
+    descriptionKey: "card24",
+    type: "Curso",
+    category: "Administração",
+    file: "/formations/auxiliar-administrativo.pdf",
   },
 ];
 

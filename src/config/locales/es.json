@@ -13,8 +13,9 @@
   "home": {
     "loading": "Cargando...",
     "resume": "Currículum",
+    "resumeSubtitle": "Ver o descargar archivo PDF",
     "download": "Descargar",
-    "close": "Fechar",
+    "close": "Cerrar",
     "roles": [
       "Arquitecto de Soluciones",
       "Ingeniero de Software",
@@ -49,104 +50,85 @@
   "education": {
     "title": " Mi",
     "text": " Educación Académica",
-    "cards": [
-      {
-        "text": "Bootcamp Banco Pan (Desarrollo Frontend con Angular)",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Maestría dentro del programa de posgrado en Ciencias de la Computación",
-        "title": "Universidad de Harvard"
-      },
-      {
-        "text": "Posgrado en Ingeniería de Software",
-        "title": "Faculdade Única de MG"
-      },
-      {
-        "text": "Procesos Gerenciales",
-        "title": "Universidad Estácio de Sá"
-      },
-      {
-        "text": "Trabajando con Componentes en React",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Arquitectura de Componentes y la gestión de la complejidad en el front-end",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Lógica de Programación Esencial",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Javascript ES6 Esencial",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Técnicas Avanzadas en Angular 8",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Adobe Profesional - AEM (Desarrollador Front-end)",
-        "title": "Adobe Profesional"
-      },
-      {
-        "text": "Adobe Profesional - AEM (Sites Business Practitioner)",
-        "title": "Adobe Profesional"
-      },
-      {
-        "text": "VueJs Brasil - Curso Vue.js (Básico a Avanzado)",
-        "title": "VueJs Brasil"
-      },
-      {
-        "text": "Directivas y Propiedades de Componentes Vue.js",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Componentes, Métodos y Ciclo de vida con Vue.js",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Curso de Javascript y Typescript de Básico a Avanzado",
-        "title": "Udemy"
-      },
-      {
-        "text": "Pruebas Automatizadas con Cypress",
-        "title": "Innovación Digital"
-      },
-      {
-        "text": "Curso de Gestión Financiera",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Customer Success (Cómo Adquirir y Retener Clientes)",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Marketing Digital para Emprendedores",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Estrategia Financiera para el Crecimiento",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Planificación Estratégica para Emprendedores",
-        "title": "Sebrae"
-      },
-      {
-        "text": "Curso de Seguridad Digital",
-        "title": "FGV"
-      },
-      {
-        "text": "Asistente Administrativo",
-        "title": "Cursos 24h"
-      },
-      {
-        "text": "Curso de Educación Financiera Empresarial",
-        "title": "Sebrae"
-      }
-    ]
+    "clickToView": "ver certificado",    
+    "cardTitles": {
+      "card1": "Maestría en Ciencias de la Computación",
+      "card2": "Especialización en Ingeniería de Software",
+      "card3": "Licenciatura en Procesos Gerenciales",
+      "card4": "Bootcamp Desarrollo Frontend con Angular",
+      "card5": "Desarrollador Frontend AEM",
+      "card6": "Especialista en Negocios AEM Sites",
+      "card7": "Vue.js de Básico a Avanzado",
+      "card8": "JavaScript y TypeScript de Básico a Avanzado",
+      "card9": "Trabajando con Componentes React",
+      "card10": "Arquitectura de Componentes Frontend",
+      "card11": "Lógica de Programación Esencial",
+      "card12": "JavaScript ES6 Esencial",
+      "card13": "Técnicas Avanzadas en Angular 8",
+      "card14": "Pruebas Automatizadas con Cypress",
+      "card15": "Directivas y Propiedades de Componentes Vue.js",
+      "card16": "Componentes, Métodos y Ciclo de Vida con Vue.js",
+      "card17": "Seguridad Digital",
+      "card18": "Gestión Financiera",
+      "card19": "Éxito del Cliente",
+      "card20": "Marketing Digital para Emprendedores",
+      "card21": "Estrategia Financiera para el Crecimiento",
+      "card22": "Planificación Estratégica",
+      "card23": "Educación Financiera Empresarial",
+      "card24": "Asistente Administrativo"
+    },
+    "cardInstitutions": {
+      "card1": "Universidad de Harvard",
+      "card2": "Faculdade Única de MG",
+      "card3": "Universidad Estácio de Sá",
+      "card4": "Digital Innovation One · Banco Pan",
+      "card5": "Adobe Professional",
+      "card6": "Adobe Professional",
+      "card7": "VueJS Brasil",
+      "card8": "Udemy",
+      "card9": "Digital Innovation One",
+      "card10": "Digital Innovation One",
+      "card11": "Digital Innovation One",
+      "card12": "Digital Innovation One",
+      "card13": "Digital Innovation One",
+      "card14": "Digital Innovation One",
+      "card15": "Digital Innovation One",
+      "card16": "Digital Innovation One",
+      "card17": "Fundación Getúlio Vargas",
+      "card18": "Sebrae",
+      "card19": "Sebrae",
+      "card20": "Sebrae",
+      "card21": "Sebrae",
+      "card22": "Sebrae",
+      "card23": "Sebrae",
+      "card24": "Cursos 24h"
+    },
+    "cardDescriptions": {
+      "card1": "Programa de posgrado enfocado en Ciencias de la Computación, Ingeniería de Software y Arquitectura de Soluciones.",
+      "card2": "Especialización en ingeniería de software, mejores prácticas, arquitectura de sistemas y calidad de código.",
+      "card3": "Formación enfocada en gestión, procesos organizacionales y visión estratégica de negocios.",
+      "card4": "Bootcamp práctico enfocado en Angular, arquitectura frontend y aplicaciones corporativas.",
+      "card5": "Desarrollo frontend utilizando Adobe Experience Manager.",
+      "card6": "Fundamentos y prácticas de negocio con Adobe Experience Manager Sites.",
+      "card7": "Curso completo sobre fundamentos, componentes, ciclo de vida y arquitectura Vue.js.",
+      "card8": "Curso completo que abarca JavaScript moderno y TypeScript.",
+      "card9": "Creación y reutilización de componentes React.",
+      "card10": "Arquitectura de componentes y gestión de la complejidad en frontend.",
+      "card11": "Fundamentos de la lógica de programación.",
+      "card12": "Características modernas de JavaScript ES6.",
+      "card13": "Angular avanzado y mejores prácticas.",
+      "card14": "Automatización de pruebas end-to-end con Cypress.",
+      "card15": "Directivas y propiedades de componentes Vue.js.",
+      "card16": "Componentes, métodos y ciclo de vida con Vue.js.",
+      "card17": "Fundamentos de seguridad de la información.",
+      "card18": "Gestión financiera aplicada a negocios.",
+      "card19": "Estrategias para conquistar y mantener clientes.",
+      "card20": "Fundamentos del marketing digital.",
+      "card21": "Planificación financiera estratégica.",
+      "card22": "Planificación estratégica para negocios.",
+      "card23": "Educación financiera aplicada a empresas.",
+      "card24": "Formación en asistencia administrativa y gestión."
+    }
   },
 
   "testimonials": {
