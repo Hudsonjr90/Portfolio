@@ -76,18 +76,10 @@
     align-items: center;
 }
 
-.down_button,
-.close_button {
+.modal_title .down_button,
+.modal_title .close_button {
     color: var(--main_color);
-    transition: all 0.3s ease;
 }
-
-/* .down_button:hover,
-.close_button:hover {
-    color: var(--text_color);
-    background-color: var(--main_color);
-    transform: scale(1.1);
-} */
 
 .size_button {
     font-size: 1.8rem;
