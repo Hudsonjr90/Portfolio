@@ -8,6 +8,15 @@ export default defineConfig({
     react(),
     visualizer({ filename: "stats.html", open: true }) as any,
   ],
+  server: {
+    headers: {
+      // Headers de segurança para desenvolvimento
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      'Referrer-Policy': 'strict-origin-when-cross-origin'
+    }
+  },
   esbuild: {
     // Target modern browsers to reduce polyfills
     target: 'es2020',

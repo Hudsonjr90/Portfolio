@@ -85,8 +85,8 @@ export const useResourceLoading = () => {
           console.warn(`Slow resource: ${resource.name} (${resource.duration}ms)`);
         }
         
-        // Detectar recursos não cacheados
-        if (resource.transferSize > 0 && resource.decodedBodySize > 0) {
+        // Detectar recursos não cacheados (apenas em produção)
+        if (process.env.NODE_ENV === 'production' && resource.transferSize > 0 && resource.decodedBodySize > 0) {
           const compressionRatio = resource.transferSize / resource.decodedBodySize;
           if (compressionRatio > 0.8) {
             console.warn(`Poor compression: ${resource.name} (${(compressionRatio * 100).toFixed(1)}%)`);

@@ -1,7 +1,7 @@
 # Netlify headers file for security
 /*
   # Content Security Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' data: https:; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self' https:; require-trusted-types-for 'script';
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' data: https:; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self' https:; require-trusted-types-for 'script';
   
   # X-Frame-Options - Proteção contra clickjacking
   X-Frame-Options: DENY
