@@ -5,7 +5,7 @@ import { FaMoon, FaSun } from "react-icons/fa6";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
 import { IoSparkles } from "react-icons/io5";
-import styles from "./Navbar.module.css";
+import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
 import { logoTheme, navbarTheme, useTheme } from "../../context/ThemeContext";
 import { useParticles } from "../../context/ParticlesContext";
@@ -14,11 +14,10 @@ import { useAudio } from "../../hooks/useAudio";
 import { Us, Fr, Br, Es, It } from "react-flags-select";
 import { motion } from "framer-motion";
 import Tooltip from "@mui/material/Tooltip";
-import logoDark from "/imgs/hkdev.webp";
-import logoLight from "/imgs/hkdev_light.webp";
+import logo from "/imgs/logo.webp";
 import TourButton from "../TourButton/TourButton";
 
-const Navbar = () => {
+const Header = () => {
   const { t, i18n } = useTranslation();
   const { handleAudio, toggleSound, soundEnabled } = useAudio();
   const location = useLocation();
@@ -94,7 +93,7 @@ const Navbar = () => {
           <NavLink to="/" onClick={handleAudio}>
             <Tooltip title={t("menu.home")} placement="right" arrow>
               <img
-                src={lightMode ? logoLight : logoDark}
+                src={logo}
                 alt="Logo"
                 width="80"
                 height="80"
@@ -548,4 +547,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

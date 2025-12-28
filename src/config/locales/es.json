@@ -12,10 +12,11 @@
 
   "home": {
     "loading": "Cargando...",
-    "function1": "Científico informático",
-    "function2": "Especialista en Desarrollo",
-    "function3": "Ingeniero de software",
-    "function4": "Diseñador UI/UX",
+    "functtion1": "Arquitecto de Soluciones",
+    "function2": "Científico informático",
+    "function3": "Especialista en Desarrollo",
+    "function4": "Ingeniero de software",
+    "function5": "Diseñador UI/UX",
     "resume": "Currículum",
     "download": "Descargar",
     "close": "Fechar"

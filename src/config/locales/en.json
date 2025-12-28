@@ -12,10 +12,11 @@
 
   "home": {
     "loading": "Loading...",
-    "function1": "Computer Scientist",
-    "function2": "Development Specialist",
-    "function3": "Software Engineer",
-    "function4": "UI/UX Designer",
+    "function1": "Solutions Architect",
+    "function2": "Computer Scientist",
+    "function3": "Development Specialist",
+    "function4": "Software Engineer",
+    "function5": "UI/UX Designer",
     "resume": "Resume",
     "download": "Download",
     "close": "Close"

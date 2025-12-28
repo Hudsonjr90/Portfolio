@@ -12,10 +12,11 @@
 
   "home": {
     "loading": "Chargement...",
-    "function1": "Informaticien",
-    "function2": "Spécialiste du développement",
-    "function3": "Ingénieur logiciel",
-    "function4": "Concepteur UI/UX",
+    "function1": "Architecte de Solutions",
+    "function2": "Informaticien",
+    "function3": "Spécialiste du développement",
+    "function4": "Ingénieur logiciel",
+    "function5": "Concepteur UI/UX",
     "resume": "Curriculum Vitae",
     "download": "Descendre",
     "close": "Fermer"

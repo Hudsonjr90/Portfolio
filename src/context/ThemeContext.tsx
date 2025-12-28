@@ -84,6 +84,7 @@ export const whatsappTheme = createTheme({
       styleOverrides: {
         tooltip: {
           fontFamily: "Poppins, sans-serif",
+          fontWeight: "bold",
           fontSize: "1.3rem",
           backgroundColor: "#25d366",
         },
@@ -101,6 +102,7 @@ export const emailTheme = createTheme({
       styleOverrides: {
         tooltip: {
           fontFamily: "Poppins, sans-serif",
+          fontWeight: "bold",
           fontSize: "1.3rem",
           backgroundColor: "#f65151",
         },
@@ -118,6 +120,7 @@ export const linkedinTheme = createTheme({
       styleOverrides: {
         tooltip: {
           fontFamily: "Poppins, sans-serif",
+          fontWeight: "bold",
           fontSize: "1.3rem",
           backgroundColor: "#2867b2",
         },
@@ -135,6 +138,7 @@ export const githubTheme = createTheme({
       styleOverrides: {
         tooltip: {
           fontFamily: "Poppins, sans-serif",
+          fontWeight: "bold",
           fontSize: "1.3rem",
           backgroundColor: "#181717",
         },
@@ -152,6 +156,7 @@ export const simpleTheme = createTheme({
       styleOverrides: {
         tooltip: {
           fontFamily: "Poppins, sans-serif",
+          fontWeight: "bold",
           fontSize: "1.3rem",
           backgroundColor: "var(--main_color)",
           color: "var(--second_text_color)",
@@ -170,6 +175,7 @@ export const logoTheme = createTheme({
       styleOverrides: {
         tooltip: {
           fontFamily: "Poppins, sans-serif",
+          fontWeight: "bold",
           fontSize: "1.3rem",
           backgroundColor: "var(--main_color)",
           color: "var(--second_text_color)",
@@ -188,6 +194,7 @@ export const navbarTheme = createTheme({
       styleOverrides: {
         tooltip: {
           fontFamily: "Poppins, sans-serif",
+          fontWeight: "bold",
           fontSize: "1.2rem",
           backgroundColor: "var(--main_color)",
           color: "var(--second_text_color)",

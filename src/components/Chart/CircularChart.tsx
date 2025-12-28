@@ -197,11 +197,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         },
         extraCssText: `
           backdrop-filter: blur(${isMobile ? '8px' : '10px'});
-          box-shadow: 0 ${isMobile ? '4px' : '8px'} ${isMobile ? '16px' : '32px'} ${
-            isMobile ? 
-              (isDarkMode ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.15)') :
-              (isDarkMode ? 'rgba(0, 255, 255, 0.4)' : 'rgba(214, 48, 49, 0.4)')
-          };
+          
         `,
         formatter: function (params: any) {
           const textColor = isMobile ? (isDarkMode ? '#ffffff' : '#000000') : mainColor;
@@ -269,12 +265,6 @@ const CircularChart: React.FC<CircularChartProps> = ({
               itemStyle: {
                 borderColor: isDarkMode ? '#0a0a0a' : '#ffffff',
                 borderWidth: isMobile ? 2 : 2,  
-                shadowBlur: isMobile ? (isDarkMode ? 8 : 6) : (isDarkMode ? 20 : 15),
-                shadowColor: isMobile ? 
-                  (isDarkMode ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.2)') :
-                  (isDarkMode ? 'rgba(14, 246, 204, 0.6)' : 'rgba(246, 81, 81, 0.4)'),
-                shadowOffsetX: 0,
-                shadowOffsetY: isMobile ? 2 : 0,
               },
               label: {
                 show: true,

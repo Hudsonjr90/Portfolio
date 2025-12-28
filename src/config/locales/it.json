@@ -12,10 +12,11 @@
 
   "home": {
     "loading": "Caricamento...",
-    "function1": "Scienziato informatico",
-    "function2": "Specialista dello sviluppo",
-    "function3": "Ingegnere del software",
-    "function4": "Progettista UI/UX",
+    "function1": "Architetto di Soluzioni",
+    "function2": "Scienziato informatico",
+    "function3": "Specialista dello sviluppo",
+    "function4": "Ingegnere del software",
+    "function5": "Progettista UI/UX",
     "resume": "Curriculum",
     "download": "Caricare",
     "close": "Chiudere"

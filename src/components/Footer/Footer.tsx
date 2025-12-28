@@ -14,7 +14,7 @@ import {
   FaLinkedin,
   FaGithub,
   FaRegCopyright,
-  FaHeadset
+  FaHeadset,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
@@ -46,7 +46,7 @@ const Footer = () => {
         ease: [0.2, 0, 0.2, 1],
       }}
     >
-      <motion.div 
+      <motion.div
         className={styles.socialMedia}
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
@@ -61,33 +61,37 @@ const Footer = () => {
           },
         }}
       >
-      <motion.div
-        className={styles.branding}
-        initial={{ opacity: 0, y: 20, scale: 0.8 }}
-        animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.8 }}
-        transition={{
-          duration: 0.6,
-          delay: 1.1, 
-          ease: "easeOut",
-        }}
-        whileHover={{ 
-          scale: 1.1,
-          transition: { duration: 0.3 }
-        }}
-      >
-        <FaHeadset />
-        {t("footer.title")}
-      </motion.div> 
+        <motion.div
+          className={styles.branding}
+          initial={{ opacity: 0, y: 20, scale: 0.8 }}
+          animate={
+            isLoaded
+              ? { opacity: 1, y: 0, scale: 1 }
+              : { opacity: 0, y: 20, scale: 0.8 }
+          }
+          transition={{
+            duration: 0.6,
+            delay: 1.1,
+            ease: "easeOut",
+          }}
+          whileHover={{
+            scale: 1.1,
+            transition: { duration: 0.3 },
+          }}
+        >
+          <FaHeadset />
+          {t("footer.title")}
+        </motion.div>
         <motion.div
           variants={{
-            hidden: { 
-              opacity: 0, 
+            hidden: {
+              opacity: 0,
               y: 30,
               scale: 0.5,
-              rotate: -45 
+              rotate: -45,
             },
-            visible: { 
-              opacity: 1, 
+            visible: {
+              opacity: 1,
               y: 0,
               scale: 1,
               rotate: 0,
@@ -121,14 +125,14 @@ const Footer = () => {
 
         <motion.div
           variants={{
-            hidden: { 
-              opacity: 0, 
+            hidden: {
+              opacity: 0,
               y: 30,
               scale: 0.5,
-              rotate: -45 
+              rotate: -45,
             },
-            visible: { 
-              opacity: 1, 
+            visible: {
+              opacity: 1,
               y: 0,
               scale: 1,
               rotate: 0,
@@ -162,14 +166,14 @@ const Footer = () => {
 
         <motion.div
           variants={{
-            hidden: { 
-              opacity: 0, 
+            hidden: {
+              opacity: 0,
               y: 30,
               scale: 0.5,
-              rotate: -45 
+              rotate: -45,
             },
-            visible: { 
-              opacity: 1, 
+            visible: {
+              opacity: 1,
               y: 0,
               scale: 1,
               rotate: 0,
@@ -203,14 +207,14 @@ const Footer = () => {
 
         <motion.div
           variants={{
-            hidden: { 
-              opacity: 0, 
+            hidden: {
+              opacity: 0,
               y: 30,
               scale: 0.5,
-              rotate: -45 
+              rotate: -45,
             },
-            visible: { 
-              opacity: 1, 
+            visible: {
+              opacity: 1,
               y: 0,
               scale: 1,
               rotate: 0,
@@ -246,18 +250,22 @@ const Footer = () => {
       <motion.div
         className={styles.branding}
         initial={{ opacity: 0, y: 20, scale: 0.8 }}
-        animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.8 }}
+        animate={
+          isLoaded
+            ? { opacity: 1, y: 0, scale: 1 }
+            : { opacity: 0, y: 20, scale: 0.8 }
+        }
         transition={{
           duration: 0.6,
-          delay: 1.1, 
+          delay: 1.1,
           ease: "easeOut",
         }}
-        whileHover={{ 
+        whileHover={{
           scale: 1.1,
-          transition: { duration: 0.3 }
+          transition: { duration: 0.3 },
         }}
       >
-                HK Dev <FaRegCopyright /> <span>2013 - {getCurrentYear()}</span>
+        HK Dev <FaRegCopyright /> 2013 - {getCurrentYear()}
       </motion.div>
     </motion.footer>
   );

@@ -62,6 +62,9 @@ label {
 
 .logo_img {
   width: 8rem;
+  height: 8rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0) invert(1);
 }
 
 .logo a {
@@ -580,6 +583,11 @@ label {
   .icons_container .sound_icon {
     margin-top: 0.5rem;
   }
+}
+
+/* Filtro para tema claro - cor preta */
+:global(.light_mode) .logo_img {
+  filter: brightness(0);
 }
 
 

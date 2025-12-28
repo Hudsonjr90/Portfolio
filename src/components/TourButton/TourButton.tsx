@@ -5,7 +5,7 @@ import { usePortfolioTour } from '../../hooks/usePortfolioTour';
 import { navbarTheme } from '../../context/ThemeContext';
 import { ThemeProvider } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
-import styles from '../Navbar/Navbar.module.css';
+import styles from '../Header/Header.module.css';
 
 interface TourButtonProps {
   currentPage: string;

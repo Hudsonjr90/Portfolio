@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
-import myself from "/imgs/home-v.webp";
+import myself from "/imgs/my.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
@@ -40,6 +40,7 @@ const Home = React.memo(() => {
       t("home.function2"),
       t("home.function3"),
       t("home.function4"),
+      t("home.function5"),
     ];
   }, [t]);
 
@@ -65,7 +66,7 @@ const Home = React.memo(() => {
         clearInterval(interval);
         setDisplayedText(targetText);
       }
-    }, 400);
+    }, 250);
 
     return () => clearInterval(interval);
   }, []);

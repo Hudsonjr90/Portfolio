@@ -71,12 +71,8 @@
   gap: 0.5rem;
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--main_color);
-  cursor: default;
-}
-
-.branding span {
   color: var(--text_color);
+  cursor: default;
 }
 
 /* Media Queries */

@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
-import Navbar from './components/Navbar/Navbar'
+import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const About = React.lazy(() => import('./pages/About/About'))
@@ -71,7 +71,7 @@ function App() {
       <ParticlesProvider>
         <I18nextProvider i18n={i18n}>
           <SecurityMonitor />
-          <Navbar />
+          <Header />
           <div className="container" id="container">
             <AnimatePresence mode="wait">
               <Suspense fallback={
