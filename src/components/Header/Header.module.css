@@ -76,6 +76,10 @@ label {
   transform: scale(1.05);
 }
 
+:global(.light_mode) .logo_img {
+  filter: brightness(0);
+}
+
 
 .input_dark_light_mode {
   cursor: pointer;
@@ -585,9 +589,5 @@ label {
   }
 }
 
-/* Filtro para tema claro - cor preta */
-:global(.light_mode) .logo_img {
-  filter: brightness(0);
-}
 
 

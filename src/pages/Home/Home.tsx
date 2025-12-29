@@ -25,6 +25,8 @@ const Home = React.memo(() => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [textAnimation, setTextAnimation] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [initialAnimationComplete, setInitialAnimationComplete] = useState(false);
   const targetText = "Hudson Kennedy";
 
   const getResumeLanguage = useCallback(() => {
@@ -83,11 +85,57 @@ const Home = React.memo(() => {
       } else {
         clearInterval(interval);
         setDisplayedText(targetText);
+        setInitialAnimationComplete(true);
       }
     }, 250);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (!initialAnimationComplete) return;
+
+    const randomChars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let interval: NodeJS.Timeout | null = null;
+
+    if (isHovered) {
+      interval = setInterval(() => {
+        const scrambledText = targetText
+          .split("")
+          .map((char) =>
+            Math.random() > 0.7
+              ? char
+              : randomChars[Math.floor(Math.random() * randomChars.length)]
+          )
+          .join("");
+        setDisplayedText(scrambledText);
+      }, 100);
+    } else {
+      let iteration = 0;
+      interval = setInterval(() => {
+        if (iteration <= targetText.length) {
+          const currentText = targetText
+            .split("")
+            .map((char, index) =>
+              index < iteration
+                ? char
+                : randomChars[Math.floor(Math.random() * randomChars.length)]
+            )
+            .join("");
+          setDisplayedText(currentText);
+          iteration++;
+        } else {
+          clearInterval(interval!);
+          setDisplayedText(targetText);
+        }
+      }, 50);
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isHovered, initialAnimationComplete]);
 
   useEffect(() => {
     if (!textAnimation) return;
@@ -118,7 +166,17 @@ const Home = React.memo(() => {
               initial={{ opacity: 0, scale: 0.5 }}
               data-tour="name-title"
             >
-              <h1 className={styles.text_reveal}>{displayedText}</h1>
+              <h1 
+                className={styles.text_reveal}
+                onMouseEnter={() => initialAnimationComplete && setIsHovered(true)}
+                onMouseLeave={() => initialAnimationComplete && setIsHovered(false)}
+                style={{ 
+                  cursor: initialAnimationComplete ? 'pointer' : 'default',
+                  userSelect: 'none'
+                }}
+              >
+                {displayedText}
+              </h1>
             </motion.div>
 
             <motion.div

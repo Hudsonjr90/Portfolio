@@ -4,6 +4,7 @@ import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import about from "/imgs/about.webp";
 import { motion } from "framer-motion";
+import { FaUserAstronaut } from "react-icons/fa6";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -71,7 +72,7 @@ const About = () => {
             data-tour="about-content"
           >
             <h2>
-              {t("about.title")} <span>Hudson Kennedy ?</span>
+              {t("about.title")}  <span>Hudson Kennedy ? <FaUserAstronaut /></span>
             </h2>
 
             <div className={styles.textContainer}>

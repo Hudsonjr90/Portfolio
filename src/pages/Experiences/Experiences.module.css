@@ -13,7 +13,7 @@
     opacity: 0;
     text-align: center;
   }
-
+  
   @keyframes animate {
     from {
       filter: blur(33px);
@@ -53,28 +53,6 @@
   display: block;
   text-align: center;
  }
-
-@media screen and (max-width: 1450px) {
-  .experiences .heading {
-    font-size: 3.2rem;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .experiences .heading {
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .experiences .heading {
-    font-size: 3.1rem;
-  }
-  
-  .experiences_timeline_img {
-    width: 40px;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .experiences .heading {

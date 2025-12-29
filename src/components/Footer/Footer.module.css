@@ -75,6 +75,16 @@
   cursor: default;
 }
 
+.branding .logo_img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+
+:global(.light_mode) .branding .logo_img {
+  filter: brightness(0);
+}
+
 /* Media Queries */
 @media screen and (max-width: 991px) {
   .footer {

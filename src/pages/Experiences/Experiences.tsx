@@ -3,6 +3,7 @@ import styles from "./Experiences.module.css";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
+import { FaFileContract } from "react-icons/fa6";;
 
 import {
   VerticalTimeline,
@@ -76,7 +77,7 @@ const Experiences = () => {
       <section className={styles.experiences}>
         <h2 className={styles.heading}>
           {t("experiences.title")}
-          <span>{t("experiences.text")}</span>
+          <span>{t("experiences.text")} <FaFileContract /></span>
         </h2>
 
         {isMobile ? (

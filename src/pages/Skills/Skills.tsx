@@ -5,6 +5,7 @@ import Transition from "../../components/Transition/Transition";
 import { mainIcons } from "../../data/iconsServer";
 import { useTranslation } from "react-i18next";
 import CircularChart from "../../components/Chart/CircularChart";
+import { FaLightbulb } from "react-icons/fa6";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -161,7 +162,7 @@ const Skills = () => {
       <section className={styles.skills} data-tour="skills-section">
         <h2 className={styles.heading}>
            {t("skills.title")}
-          <span>{t("skills.text")}</span>
+          <span>{t("skills.text")} <FaLightbulb /></span>
         </h2>
         {/* <div className={styles.toggleButtons} data-tour="view-toggles">
           <div className={styles.viewModeButtons}>

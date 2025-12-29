@@ -15,6 +15,7 @@ import styles from "./Portfolio.module.css";
 import portfolioServer from "../../data/portfolioServer";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import { FaCodeCompare } from "react-icons/fa6";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -85,7 +86,7 @@ const Portfolio = () => {
             <ParticlesB />
           </Suspense>
           <h2 className={styles.heading}>
-            {t("projects.title")} <span>{t("projects.text")}</span>
+            {t("projects.title")} <span>{t("projects.text")} <FaCodeCompare /></span>
           </h2>
           <div className={styles.portfolio_grid} data-tour="projects-grid">
             {currentItems.map((item, index) => (

@@ -22,6 +22,7 @@ import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
 import { getCurrentYear } from "../../utils/functions";
 import { useTranslation } from "react-i18next";
+import logo from "/imgs/logo.webp";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -265,7 +266,15 @@ const Footer = () => {
           transition: { duration: 0.3 },
         }}
       >
-        HK Dev <FaRegCopyright /> 2013 - {getCurrentYear()}
+        <img
+          src={logo}
+          alt="Logo"
+          width="50"
+          height="50"
+          loading="eager"
+          className={styles.logo_img}
+        />
+        <FaRegCopyright /> 2013 - {getCurrentYear()}
       </motion.div>
     </motion.footer>
   );
