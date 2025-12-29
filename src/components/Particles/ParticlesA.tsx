@@ -90,7 +90,6 @@ const ParticlesA = React.memo(() => {
         },
       },
       interactivity: {
-        detect_on: 'canvas',
         events: {
           onhover: {
             enable: true,
@@ -117,7 +116,7 @@ const ParticlesA = React.memo(() => {
             speed: 3,
           },
           repulse: {
-            distance: 200,
+            distance: 150,
             duration: 0.4,
           },
           push: {
