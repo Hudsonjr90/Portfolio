@@ -3,7 +3,7 @@ import styles from "./Experiences.module.css";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-import { FaFileContract } from "react-icons/fa6";;
+import { FaFileContract } from "react-icons/fa6";
 
 import {
   VerticalTimeline,
@@ -14,6 +14,7 @@ import "react-vertical-timeline-component/style.min.css";
 import ParticlesB from "../../components/Particles/ParticlesB";
 import experiencesServer, { Experience } from "../../data/experiencesServer";
 import OrbitExperiences from "../../components/Experiences/OrbitExperiences";
+import { motion } from "framer-motion";
 
 const TimelineElement = ({
   title,
@@ -77,7 +78,9 @@ const Experiences = () => {
       <section className={styles.experiences}>
         <h2 className={styles.heading}>
           {t("experiences.title")}
-          <span>{t("experiences.text")} <FaFileContract /></span>
+          <span>
+            {t("experiences.text")} <FaFileContract />
+          </span>
         </h2>
 
         {isMobile ? (
@@ -94,7 +97,17 @@ const Experiences = () => {
             ))}
           </VerticalTimeline>
         ) : (
-          <OrbitExperiences experiences={translatedExperiences} />
+          <motion.div
+            initial={{ opacity: 0, y: "-100%" }}
+            animate={{ opacity: 1, y: "0%" }}
+            transition={{
+              duration: 1,
+              delay: 0.3,
+              ease: [0.2, 0, 0.2, 1],
+            }}
+          >
+            <OrbitExperiences experiences={translatedExperiences} />
+          </motion.div>
         )}
       </section>
     </Transition>
