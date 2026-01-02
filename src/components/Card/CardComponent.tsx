@@ -7,7 +7,6 @@ import {
   FaGraduationCap,
   FaUniversity,
   FaLaptopCode,
-  FaDownload,
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
@@ -20,29 +19,12 @@ const CardComponent = () => {
   const { t } = useTranslation();
   const [selectedCard, setSelectedCard] = useState<any | null>(null);
 
-  const handleDownload = (cardId: number) => {
-    const card = cardsServer.find((c) => c.id === cardId);
-    if (card && card.file) {
-      const title = t(`education.cardTitles.${card.titleKey}`);
-      const link = document.createElement("a");
-      link.href = card.file;
-      link.setAttribute("download", `${title}.pdf`);
-      link.style.visibility = "hidden";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  };
-
   const [currentPage, setCurrentPage] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(4);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function handleResize() {
       const width = window.innerWidth;
-      const mobile = width < 768;
-      setIsMobile(mobile);
 
       if (width < 480) {
         setCardsPerPage(1);
@@ -86,52 +68,22 @@ const CardComponent = () => {
     .slice(offset, offset + cardsPerPage)
     .map((card) => (
       <div className={styles.card_wrapper} key={card.id}>
-        {isMobile ? (
-          /* Card tradicional para mobile */
-          <div className={styles.mobile_card}>
-            <div className={styles.mobile_card_image_container}>
-              <OptimizedImage
-                src={card.img}
-                alt={t(`education.cardTitles.${card.titleKey}`)}
-                className={styles.mobile_card_image}
-                priority={currentPage === 0}
-              />
-            </div>
-            <div className={styles.mobile_card_content}>
-              <h3 className={styles.mobile_card_title}>
-                {t(`education.cards.${card.id}.title`)}
-              </h3>
-              <p className={styles.mobile_card_description}>
-                {t(`education.cards.${card.id}.text`)}
-              </p>
-              <button
-                className={styles.mobile_card_button}
-                onClick={() => handleDownload(card.id)}
-              >
-                {t("home.download")}
-                <FaDownload />
-              </button>
-            </div>
+        <div
+          className={styles.card_container_simple}
+          onClick={() => setSelectedCard(card)}
+        >
+          <OptimizedImage
+            src={card.img}
+            alt={t(`education.cardTitles.${card.titleKey}`)}
+            className={styles.card_image}
+            priority={currentPage === 0}
+          />
+          <div className={styles.card_overlay}>
+            <span className={styles.click_hint}>
+              {t("education.clickToView")}
+            </span>
           </div>
-        ) : (
-          /* Card simples para desktop */
-          <div
-            className={styles.card_container_simple}
-            onClick={() => setSelectedCard(card)}
-          >
-            <OptimizedImage
-              src={card.img}
-              alt={t(`education.cardTitles.${card.titleKey}`)}
-              className={styles.card_image}
-              priority={currentPage === 0}
-            />
-            <div className={styles.card_overlay}>
-              <span className={styles.click_hint}>
-                {t("education.clickToView")}
-              </span>
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     ));
 
@@ -168,8 +120,8 @@ const CardComponent = () => {
       >
         <Paginate
           pageCount={pageCount}
-          pageRangeDisplayed={isMobile ? 2 : 6}
-          marginPagesDisplayed={isMobile ? 0 : 0}
+          pageRangeDisplayed={4}
+          marginPagesDisplayed={0}
           onPageChange={({ selected }) => handlePageClick({ selected })}
           containerClassName={styles.pagination}
           activeClassName={styles.activePage}

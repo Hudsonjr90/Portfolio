@@ -40,7 +40,7 @@
  .vertical_timeline_description{
   font-size: 1.125rem !important;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
  }
 
  .experiences_timeline_img{
@@ -58,5 +58,9 @@
   .experiences .heading {
     font-size: 2.7rem;
   }
+
+  .experiences_timeline_img{
+    width: 40px;
+   }
 }
 
