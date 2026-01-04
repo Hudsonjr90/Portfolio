@@ -271,6 +271,9 @@
         "description": "Um aplicativo de notícias em tempo real usando a NewsAPI."
       },
       {
+        "description": "Um aplicativo de finanças pessoais para gerenciar despesas e receitas."
+      },
+      {
         "description": "Um site para um barbearia, com agendamento online."
       }
     ]

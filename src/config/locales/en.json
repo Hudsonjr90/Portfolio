@@ -269,6 +269,9 @@
         "description": "A real-time news application using NewsAPI."
       },
       {
+        "description": "A personal finance application to manage expenses and income."
+      },
+      {
         "description": "A site for a barbershop, with online booking."
       }
     ]

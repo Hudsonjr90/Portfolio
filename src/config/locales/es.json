@@ -50,7 +50,7 @@
   "education": {
     "title": " Mi",
     "text": " Educación Académica",
-    "clickToView": "ver certificado",    
+    "clickToView": "ver certificado",
     "cardTitles": {
       "card1": "Maestría en Ciencias de la Computación",
       "card2": "Especialización en Ingeniería de Software",
@@ -262,18 +262,20 @@
       {
         "description": "Proyecto para buscar tus Pokémon favoritos y conocer la historia del mundo de estas pequeñas criaturas"
       },
-        {
+      {
         "description": " Sistema de encuestas en tiempo real"
       },
-       {
+      {
         "description": "Una aplicación de noticias en tiempo real utilizando NewsAPI."
+      },
+      {
+        "description": "Una aplicación de finanzas personales para gestionar gastos e ingresos."
       },
       {
         "description": "Un sitio para una barbería, con reserva en línea."
       }
     ]
   },
-
 
   "footer": {
     "title": "Contacto"

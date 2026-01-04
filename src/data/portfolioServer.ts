@@ -17,6 +17,7 @@ import pokeHistory from "/imgs/imgProjects/pokehistory.webp";
 import barberShop from "/imgs/imgProjects/barber.webp";
 import poll from "/imgs/imgProjects/poll.webp";
 import nuxtNews from "/imgs/imgProjects/nuxt.webp";
+import finance from "/imgs/imgProjects/finance.webp";
 
 const portfolioServer = [
   {
@@ -197,11 +198,20 @@ const portfolioServer = [
       "TypeScript",
       "Vite",
     ],
-    linkDeploy: "",
-    linkRepository: "",
+    linkDeploy: "https://nuxt-project-liart.vercel.app/",
+    linkRepository: "https://github.com/Hudsonjr90/nuxtProject",
+  },
+    {
+    id: 17,
+    image: finance,
+    name: "Finance App",
+    description: "Um aplicativo de finanças pessoais para gerenciar despesas e receitas.",
+    technologies: ["Nuxt.js", "Vue.js", "Pinia", "TypeScript", "Vite", "Quasar", "Sass", "Chart.js"],
+    linkDeploy: "https://controle-financeiro-dev.vercel.app",
+    linkRepository: "https://github.com/Hudsonjr90/controle-financeiro",
   },
   {
-    id: 17,
+    id: 18,
     image: barberShop,
     name: "Barber shop",
     description: "Um site para um barbearia, com agendamento online.",
@@ -209,16 +219,6 @@ const portfolioServer = [
     linkDeploy: "",
     linkRepository: "",
   },
-
-  // {
-  //   id: 18,
-  //   image: ,
-  //   name: "",
-  //   description: "",
-  //   technologies: ["", "", "", "", "", "", "", "", "",],
-  //   linkDeploy: "",
-  //   linkRepository: "",
-  // }
   // {
   //   id: 19,
   //   image: ,

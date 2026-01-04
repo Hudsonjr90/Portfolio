@@ -269,6 +269,9 @@
         "description": "Une application de nouvelles en temps réel utilisant NewsAPI."
       },
       {
+        "description": "Une application de finances personnelles pour gérer les dépenses et les revenus."
+      },
+      {
         "description": "Un site pour un salon de coiffure, avec réservation en ligne."
       }
     ]
