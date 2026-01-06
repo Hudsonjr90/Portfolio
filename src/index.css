@@ -57,7 +57,7 @@ button, input, textarea {
 }
 
 .light_mode {
-  --bg_color: #b4b4b4;
+  --bg_color: #dddddd;
   --bg_color_rgb: 254, 244, 244;
   --main_color: #f65151;
   --main_color_rgb: 246, 81, 81;

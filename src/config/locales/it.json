@@ -291,6 +291,9 @@
     "messageLabel": "Messaggio",
     "messagePlaceholder": "Parlami del tuo progetto o come posso aiutarti...",
     "sendButton": "Invia Messaggio",
+    "sending": "Invio in corso...",
+    "successMessage": "Messaggio inviato con successo! Ti contatterò presto.",
+    "errorMessage": "Errore nell'invio. Riprova o usa il contatto diretto.",
     "location": {
       "view": "Vedi posizione"
     }

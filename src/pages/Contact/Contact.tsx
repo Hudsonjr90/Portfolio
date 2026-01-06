@@ -3,7 +3,6 @@ import styles from "./Contact.module.css";
 import { useTranslation } from "react-i18next";
 import Transition from "../../components/Transition/Transition";
 import LocationMap from "../../components/LocationMap/LocationMap";
-import { FaHeadset } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tooltip from "@mui/material/Tooltip";
@@ -15,9 +14,12 @@ import {
   githubTheme,
 } from "../../context/ThemeContext";
 import { ThemeProvider } from "@mui/material/styles";
-import { FaWhatsapp, FaLinkedin, FaGithub, FaMapMarkerAlt, FaTimes } from "react-icons/fa";
+import { FaWhatsapp, FaLinkedin, FaGithub, FaMapMarkerAlt, FaHeadset,  } from "react-icons/fa";
+import { FaCircleXmark } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../../config/emailjs-config';
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -28,6 +30,14 @@ const Contact: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showMap, setShowMap] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,6 +58,56 @@ const Contact: React.FC = () => {
 
   const toggleMapView = () => {
     setShowMap(!showMap);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Hudson Kennedy',
+      };
+
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID, 
+        EMAILJS_CONFIG.TEMPLATE_ID, 
+        templateParams, 
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+      
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      setSubmitStatus('error');
+      
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <Transition onAnimationComplete={() => {}}>
@@ -258,7 +318,7 @@ const Contact: React.FC = () => {
             <h3 className={styles.formTitle}>
               {t("contact.formTitle")}
             </h3>
-            <form className={styles.contactForm}>
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
                 <label htmlFor="name" className={styles.label}>
                   {t("contact.nameLabel")}
@@ -267,6 +327,8 @@ const Contact: React.FC = () => {
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   className={styles.input}
                   placeholder={t("contact.namePlaceholder")}
                   required
@@ -281,6 +343,8 @@ const Contact: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   className={styles.input}
                   placeholder={t("contact.emailPlaceholder")}
                   required
@@ -295,6 +359,8 @@ const Contact: React.FC = () => {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
                   className={styles.input}
                   placeholder={t("contact.subjectPlaceholder")}
                   required
@@ -308,6 +374,8 @@ const Contact: React.FC = () => {
                 <textarea
                   id="message"
                   name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   rows={6}
                   className={styles.textarea}
                   placeholder={t("contact.messagePlaceholder")}
@@ -315,9 +383,36 @@ const Contact: React.FC = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className={styles.submitButton}>
-                {t("contact.sendButton")}
+              <button 
+                type="submit" 
+                className={`${styles.submitButton} ${isSubmitting ? styles.submitting : ''}`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? t("contact.sending") : t("contact.sendButton")}
               </button>
+              
+              {/* Feedback de status */}
+              {submitStatus === 'success' && (
+                <motion.div 
+                  className={styles.successMessage}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                >
+                  {t("contact.successMessage")}
+                </motion.div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <motion.div 
+                  className={styles.errorMessage}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                >
+                  {t("contact.errorMessage")}
+                </motion.div>
+              )}
             </form>
             
             {/* Botão para ver localização - apenas no mobile */}
@@ -350,7 +445,7 @@ const Contact: React.FC = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <FaTimes />
+                 <FaCircleXmark />
                 </motion.button>
               )}
             </div>

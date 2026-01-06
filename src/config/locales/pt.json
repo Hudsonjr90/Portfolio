@@ -293,6 +293,9 @@
     "messageLabel": "Mensagem",
     "messagePlaceholder": "Conte-me sobre seu projeto ou como posso te ajudar...",
     "sendButton": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "successMessage": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+    "errorMessage": "Erro ao enviar mensagem. Tente novamente ou use um dos contatos diretos.",
     "location": {
       "view": "Ver localização"
     }

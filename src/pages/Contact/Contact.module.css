@@ -49,7 +49,7 @@
   width: 3.5rem;
 }
 
-.social_media .icon{
+.social_media .icon {
   color: #fff;
   font-size: 18px;
 }
@@ -189,113 +189,7 @@
   color: var(--main_color);
   margin-bottom: 1.5rem;
   font-weight: 600;
-}
-
-/* Responsive */
-@media screen and (max-width: 1024px) {
-  .contentContainer {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    min-height: auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .contact {
-    padding: 0 1rem;
-    min-height: 100vh;
-    padding-bottom: 2rem;
-  }
-  
-  .contact .heading {
-    font-size: 2.8rem;
-    margin-top: 10rem;
-  }
-  
-  .contact .heading .social_media {
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  .social_media a {
-    height: 3rem;
-    width: 3rem;
-  }
-  
-  .contentContainer {
-    margin: 2rem auto 3rem;
-    gap: 2rem;
-    max-width: 95%;
-    min-height: auto;
-    grid-template-columns: 1fr;
-  }
-  
-  .formSection,
-  .mapSection {
-    padding: 1.5rem;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    height: auto;
-  }
-  
-  .formTitle,
-  .mapTitle {
-    font-size: 1.6rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .input,
-  .textarea {
-    padding: 0.7rem;
-    font-size: 0.85rem;
-  }
-  
-  .submitButton {
-    padding: 0.9rem 1.3rem;
-    font-size: 0.95rem;
-  }
-}
-
-/* Media query para telas muito pequenas */
-@media screen and (max-width: 480px) {
-  .contact .heading {
-    font-size: 2.4rem;
-    margin-top: 12rem;
-  }
-  
-  .social_media a {
-    height: 2.8rem;
-    width: 2.8rem;
-  }
-  
-  .contentContainer {
-    margin: 1.5rem auto 2rem;
-    gap: 1.8rem;
-    max-width: 98%;
-  }
-  
-  .formSection,
-  .mapSection {
-    padding: 1.2rem;
-  }
-  
-  .formTitle,
-  .mapTitle {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-  }
-  
-  .input,
-  .textarea {
-    padding: 0.65rem;
-    font-size: 0.8rem;
-  }
-  
-  .submitButton {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
-  }
+  text-align: center;
 }
 
 /* Estilos para alternância mobile */
@@ -329,9 +223,10 @@
 
 .mapHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .closeMapButton {
@@ -339,29 +234,190 @@
   border: 1px solid var(--main-color);
   color: var(--main-color);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
 }
 
 .closeMapButton:hover {
   background: var(--main-color);
   color: var(--bg-color);
-  transform: rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
 }
 
-/* Responsividade para desktop - manter ambos visíveis */
+/* Estilos para feedback do formulário */
+.submitButton.submitting {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: #666;
+}
+
+.submitButton.submitting:hover {
+  background: #666;
+  transform: none;
+}
+
+.successMessage {
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4caf50;
+  color: #4caf50;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.errorMessage {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid #f44336;
+  color: #f44336;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .contentContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+  }
+}
+
 @media (min-width: 769px) {
   .hidden {
     display: block !important;
   }
-  
+
   .locationButton,
   .closeMapButton {
     display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 0 1rem;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+  }
+
+  .contact .heading {
+    font-size: 2.8rem;
+    margin-top: 10rem;
+  }
+
+  .contact .heading .social_media {
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .social_media a {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .contentContainer {
+    margin: 2rem auto 3rem;
+    gap: 2rem;
+    max-width: 95%;
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .formSection,
+  .mapSection {
+    padding: 1.5rem;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .formTitle,
+  .mapTitle {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+
+  .input,
+  .textarea {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .submitButton {
+    padding: 0.9rem 1.3rem;
+    font-size: 0.95rem;
+  }
+
+  .closeMapButton {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+  }
+}
+
+/* Media query para telas muito pequenas */
+@media screen and (max-width: 480px) {
+  .contact .heading {
+    font-size: 2.4rem;
+    margin-top: 12rem;
+  }
+
+  .social_media a {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+
+  .contentContainer {
+    margin: 1.5rem auto 2rem;
+    gap: 1.8rem;
+    max-width: 100%;
+  }
+
+  .formSection,
+  .mapSection {
+    padding: 1.2rem;
+    min-height: 400px;
+  }
+
+  .formTitle,
+  .mapTitle {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .input,
+  .textarea {
+    padding: 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .submitButton {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+    .closeMapButton {
+    width: 4rem;
+    height: 1rem;
+    font-size: 2rem;
   }
 }

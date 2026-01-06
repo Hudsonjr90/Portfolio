@@ -291,6 +291,9 @@
     "messageLabel": "Message",
     "messagePlaceholder": "Tell me about your project or how I can help you...",
     "sendButton": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully! I'll get in touch soon.",
+    "errorMessage": "Error sending message. Please try again or use direct contact.",
     "location": {
       "view": "View location"
     }
