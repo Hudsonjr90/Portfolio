@@ -277,6 +277,25 @@
     ]
   },
 
+  "contact": {
+    "title": " Parlez",
+    "text": " Moi",
+    "locationTitle": "Mon Emplacement",
+    "formTitle": "Envoyer un Message",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom complet",
+    "emailLabel": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "subjectLabel": "Sujet",
+    "subjectPlaceholder": "De quoi s'agit-il?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Parlez-moi de votre projet ou comment je peux vous aider...",
+    "sendButton": "Envoyer le Message",
+    "location": {
+      "view": "Voir l'emplacement"
+    }
+  },
+
   "footer": {
     "title": "Contact"
   },

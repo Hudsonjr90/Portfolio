@@ -277,6 +277,25 @@
     ]
   },
 
+  "contact": {
+    "title": " Parla",
+    "text": " Con Me",
+    "locationTitle": "La Mia Posizione",
+    "formTitle": "Invia un Messaggio",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Il tuo nome completo",
+    "emailLabel": "Email",
+    "emailPlaceholder": "tua@email.com",
+    "subjectLabel": "Oggetto",
+    "subjectPlaceholder": "Di cosa si tratta?",
+    "messageLabel": "Messaggio",
+    "messagePlaceholder": "Parlami del tuo progetto o come posso aiutarti...",
+    "sendButton": "Invia Messaggio",
+    "location": {
+      "view": "Vedi posizione"
+    }
+  },
+
   "footer": {
     "title": "Contatti"
   },

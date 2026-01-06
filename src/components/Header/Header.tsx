@@ -327,7 +327,7 @@ const Header = () => {
               {t("menu.portfolio")}
             </NavLink>
           </motion.li>
-          {/* <motion.li
+          <motion.li
             onClick={() => {
               handleLinkClick();
               handleAudio();
@@ -360,7 +360,7 @@ const Header = () => {
             >
               {t("menu.contact")}
             </NavLink>
-          </motion.li> */}
+          </motion.li>
         </motion.ul>
       </nav>
 

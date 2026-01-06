@@ -277,6 +277,25 @@
     ]
   },
 
+  "contact": {
+    "title": " Get in",
+    "text": " Touch",
+    "locationTitle": "My Location",
+    "formTitle": "Send a Message",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What is this about?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project or how I can help you...",
+    "sendButton": "Send Message",
+    "location": {
+      "view": "View location"
+    }
+  },
+
   "footer": {
     "title": "Contact"
   },

@@ -277,6 +277,25 @@
     ]
   },
 
+  "contact": {
+    "title": " Habla",
+    "text": " Conmigo",
+    "locationTitle": "Mi Ubicación",
+    "formTitle": "Enviar un Mensaje",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre completo",
+    "emailLabel": "Correo",
+    "emailPlaceholder": "tu@email.com",
+    "subjectLabel": "Asunto",
+    "subjectPlaceholder": "¿De qué se trata?",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto o cómo puedo ayudarte...",
+    "sendButton": "Enviar Mensaje",
+    "location": {
+      "view": "Ver ubicación"
+    }
+  },
+
   "footer": {
     "title": "Contacto"
   },

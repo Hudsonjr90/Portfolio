@@ -1,0 +1,367 @@
+.contact {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: block;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.contact .heading {
+  animation: animate 0.8s ease-in-out 1 forwards;
+  font-size: 3.7rem;
+  margin: 12rem 0 3rem;
+  opacity: 0;
+  text-align: center;
+}
+
+@keyframes animate {
+  from {
+    filter: blur(33px);
+    opacity: 0;
+    transform: translate(0, -100px);
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.contact .heading .social_media {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.social_media a {
+  align-items: center;
+  background: transparent;
+  border-radius: 50%;
+  display: inline-flex;
+  height: 3.5rem;
+  justify-content: center;
+  margin: 1rem 0 1rem;
+  position: relative;
+  transition: 0.8s ease;
+  width: 3.5rem;
+}
+
+.social_media .icon{
+  color: #fff;
+  font-size: 18px;
+}
+
+.social_media .whatsapp {
+  background: #25d366;
+  border: none;
+}
+
+.social_media .email {
+  background: #f65151;
+  border: none;
+}
+
+.social_media .linkedin {
+  border: none;
+  background: #2867b2;
+}
+
+.social_media .github {
+  border: none;
+  background: #181717;
+}
+
+.contentContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin: 3rem auto;
+  align-items: stretch;
+  max-width: 1000px;
+  width: 100%;
+  min-height: 500px;
+}
+
+.formSection {
+  padding: 1.5rem;
+  background: var(--bg_color);
+  border-radius: 15px;
+  box-shadow: var(--main_color) 0 0 0.8rem;
+  border: 2px solid var(--main_color);
+  max-width: 450px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  font-size: 1.8rem;
+  color: var(--main_color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex-grow: 1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text_color);
+  font-size: 0.95rem;
+}
+
+.input,
+.textarea {
+  padding: 0.8rem;
+  border: 2px solid var(--main_color);
+  border-radius: 8px;
+  background: var(--bg_color);
+  color: var(--text_color);
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--main_color);
+  box-shadow: 0 0 0 3px rgba(var(--main_color_rgb), 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitButton {
+  background: var(--main_color);
+  color: var(--bg_color);
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.submitButton:hover {
+  background: var(--text_color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(var(--main_color_rgb), 0.3);
+}
+
+.mapSection {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg_color);
+  border-radius: 15px;
+  box-shadow: var(--main_color) 0 0 0.8rem;
+  border: 2px solid var(--main_color);
+  max-width: 450px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapTitle {
+  font-size: 1.8rem;
+  color: var(--main_color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .contentContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 0 1rem;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+  }
+  
+  .contact .heading {
+    font-size: 2.8rem;
+    margin-top: 10rem;
+  }
+  
+  .contact .heading .social_media {
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social_media a {
+    height: 3rem;
+    width: 3rem;
+  }
+  
+  .contentContainer {
+    margin: 2rem auto 3rem;
+    gap: 2rem;
+    max-width: 95%;
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+  
+  .formSection,
+  .mapSection {
+    padding: 1.5rem;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+  }
+  
+  .formTitle,
+  .mapTitle {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .input,
+  .textarea {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+  }
+  
+  .submitButton {
+    padding: 0.9rem 1.3rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Media query para telas muito pequenas */
+@media screen and (max-width: 480px) {
+  .contact .heading {
+    font-size: 2.4rem;
+    margin-top: 12rem;
+  }
+  
+  .social_media a {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+  
+  .contentContainer {
+    margin: 1.5rem auto 2rem;
+    gap: 1.8rem;
+    max-width: 98%;
+  }
+  
+  .formSection,
+  .mapSection {
+    padding: 1.2rem;
+  }
+  
+  .formTitle,
+  .mapTitle {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .input,
+  .textarea {
+    padding: 0.65rem;
+    font-size: 0.8rem;
+  }
+  
+  .submitButton {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilos para alternância mobile */
+.hidden {
+  display: none !important;
+}
+
+.locationButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-color);
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.locationButton:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+}
+
+.mapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.closeMapButton {
+  background: transparent;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closeMapButton:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+  transform: rotate(90deg);
+}
+
+/* Responsividade para desktop - manter ambos visíveis */
+@media (min-width: 769px) {
+  .hidden {
+    display: block !important;
+  }
+  
+  .locationButton,
+  .closeMapButton {
+    display: none !important;
+  }
+}

@@ -279,6 +279,25 @@
     ]
   },
 
+  "contact": {
+    "title": " Fale",
+    "text": " Comigo",
+    "locationTitle": "Minha Localização",
+    "formTitle": "Envie uma Mensagem",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome completo",
+    "emailLabel": "Email",
+    "emailPlaceholder": "seu@email.com",
+    "subjectLabel": "Assunto",
+    "subjectPlaceholder": "Do que se trata?",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Conte-me sobre seu projeto ou como posso te ajudar...",
+    "sendButton": "Enviar Mensagem",
+    "location": {
+      "view": "Ver localização"
+    }
+  },
+
   "footer": {
     "title": "Contato"
   },
