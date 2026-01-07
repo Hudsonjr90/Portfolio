@@ -4,7 +4,6 @@ import { useEffect, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
 import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const About = React.lazy(() => import('./pages/About/About'))
 const Testimonials = React.lazy(() => import('./pages/Testimonials/Testimonials'))
@@ -101,7 +100,6 @@ function App() {
               </Suspense>
             </AnimatePresence>
           </div>
-          <Footer />
         </I18nextProvider>
       </ParticlesProvider>
     </ThemeProvider>

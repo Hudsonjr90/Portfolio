@@ -28,17 +28,17 @@ const Portfolio = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [transitionCompleted, setTransitionCompleted] = useState(false);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
 
   const updateItemsPerPage = useCallback(() => {
     const width = window.innerWidth;
     if (width <= 768) {
-      setItemsPerPage(1);
-    } else if (width > 768 && width <= 1550) {
       setItemsPerPage(2);
+    } else if (width > 768 && width <= 1550) {
+      setItemsPerPage(2); 
     } else {
-      setItemsPerPage(3);
+      setItemsPerPage(4);
     }
   }, []);
 

@@ -411,7 +411,6 @@
 
   .skills .heading {
     font-size: 2.9rem;
-    margin: 10rem 0 1.5rem;
   }
   .icons_container {
     display: grid;
@@ -483,8 +482,8 @@
     top: 20px
   }
   .searchIcon{
-    margin-top: -1rem;
-    margin-right: -1.2rem;
+    margin-top: 0.1rem;
+    margin-right: -1rem;
   }
 
     .toggleButtons {
@@ -550,5 +549,9 @@
   
   .activeView svg {
     font-size: 1.6rem !important;
+  }
+
+  .searchIcon{
+    margin-top: 0.1rem;
   }
 }

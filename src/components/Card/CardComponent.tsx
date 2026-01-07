@@ -20,22 +20,22 @@ const CardComponent = () => {
   const [selectedCard, setSelectedCard] = useState<any | null>(null);
 
   const [currentPage, setCurrentPage] = useState(0);
-  const [cardsPerPage, setCardsPerPage] = useState(4);
+  const [cardsPerPage, setCardsPerPage] = useState(6);
 
   useEffect(() => {
     function handleResize() {
       const width = window.innerWidth;
 
       if (width < 480) {
-        setCardsPerPage(1);
-      } else if (width < 768) {
-        setCardsPerPage(1);
-      } else if (width < 992) {
         setCardsPerPage(2);
-      } else if (width < 1200) {
-        setCardsPerPage(3);
-      } else {
+      } else if (width < 768) {
         setCardsPerPage(4);
+      } else if (width < 992) {
+        setCardsPerPage(4);
+      } else if (width < 1200) {
+        setCardsPerPage(6);
+      } else {
+        setCardsPerPage(6); // 3 acima e 3 embaixo por padrão
       }
     }
 

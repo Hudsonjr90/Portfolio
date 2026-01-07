@@ -6,12 +6,11 @@
   background: var(--bg_color);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--main_color);
-  padding: 1.5rem 0;
+  padding: 0 1.5rem;
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 6%;
+  justify-content: center;
 }
 
 .socialMedia {

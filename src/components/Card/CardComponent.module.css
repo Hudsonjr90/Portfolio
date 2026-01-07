@@ -4,9 +4,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-bottom: 5rem;
+  margin-bottom: -5rem;
   margin-top: 8rem;
   padding: 0 1rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Card simples para desktop - sem holograma */

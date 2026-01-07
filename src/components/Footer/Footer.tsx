@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import {
@@ -13,15 +13,15 @@ import {
   FaWhatsapp,
   FaLinkedin,
   FaGithub,
-  FaRegCopyright,
   FaHeadset,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
+import { useTranslation } from "react-i18next";
+import { FaRegCopyright } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
 import { getCurrentYear } from "../../utils/functions";
-import { useTranslation } from "react-i18next";
 import logo from "/imgs/logo.webp";
 
 const Footer = () => {
