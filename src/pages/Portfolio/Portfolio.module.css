@@ -17,8 +17,8 @@
 
 .portfolio_grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
   margin-bottom: 5rem;
   align-items: start;
   justify-items: center;
@@ -30,7 +30,7 @@
   perspective: 1000px;
   height: 350px;
   width: 100%;
-  max-width: min(400px, calc(100vw - 4rem));
+  max-width: min(320px, calc(25vw - 2rem));
 }
 
 .cardContainer {
@@ -305,6 +305,16 @@
   transform: translateY(-1px);
 }
 
+@media screen and (max-width: 1550px) {
+  .portfolio_grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+  .cardWrapper {
+    max-width: min(400px, calc(50vw - 2rem));
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .portfolio {
     padding: 0 1.5rem;
@@ -313,7 +323,7 @@
     grid-gap: 1.5rem;
   }
   .cardWrapper {
-    max-width: min(350px, calc(100vw - 3rem));
+    max-width: min(350px, calc(50vw - 3rem));
   }
 }
 

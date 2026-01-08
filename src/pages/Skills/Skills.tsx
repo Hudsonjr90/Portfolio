@@ -357,6 +357,7 @@ const Skills = () => {
                     delay: 0.3,
                     ease: [0.3, 0, 0.2, 1],
                   }}
+                  className={styles.pagination_container}
                 >
                   <ReactPaginate
                     pageCount={totalPages}
