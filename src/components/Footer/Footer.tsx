@@ -1,23 +1,23 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import Tooltip from "@mui/material/Tooltip";
-import Zoom from "@mui/material/Zoom";
-import {
-  whatsappTheme,
-  emailTheme,
-  linkedinTheme,
-  githubTheme,
-} from "../../context/ThemeContext";
-import { ThemeProvider } from "@mui/material/styles";
-import {
-  FaWhatsapp,
-  FaLinkedin,
-  FaGithub,
-  FaHeadset,
-} from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import IconButton from "@mui/material/IconButton";
-import { useTranslation } from "react-i18next";
+// import { NavLink } from "react-router-dom";
+// import Tooltip from "@mui/material/Tooltip";
+// import Zoom from "@mui/material/Zoom";
+// import {
+//   whatsappTheme,
+//   emailTheme,
+//   linkedinTheme,
+//   githubTheme,
+// } from "../../context/ThemeContext";
+// import { ThemeProvider } from "@mui/material/styles";
+// import {
+//   FaWhatsapp,
+//   FaLinkedin,
+//   FaGithub,
+//   FaHeadset,
+// } from "react-icons/fa";
+// import { MdEmail } from "react-icons/md";
+// import IconButton from "@mui/material/IconButton";
+//import { useTranslation } from "react-i18next";
 import { FaRegCopyright } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
@@ -25,7 +25,7 @@ import { getCurrentYear } from "../../utils/functions";
 import logo from "/imgs/logo.webp";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Footer = () => {
         ease: [0.2, 0, 0.2, 1],
       }}
     >
-      <motion.div
+      {/* <motion.div
         className={styles.socialMedia}
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
@@ -246,7 +246,7 @@ const Footer = () => {
             </NavLink>
           </ThemeProvider>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
 
       <motion.div
         className={styles.branding}

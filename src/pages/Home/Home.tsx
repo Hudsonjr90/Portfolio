@@ -14,6 +14,7 @@ import styles from "./Home.module.css";
 import "atropos/css";
 import { Atropos } from "atropos/react";
 import resumeServer from "../../data/resumeServer";
+import Footer from "../../components/Footer";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -250,6 +251,10 @@ const Home = React.memo(() => {
                 loading="eager"
               />
             </Atropos>
+          </motion.div>
+
+          <motion.div>
+            <Footer />
           </motion.div>
         </motion.section>
       </Transition>
