@@ -1,32 +1,41 @@
 .container {
-max-width: 1400px;
-margin: 0 auto;
-padding: 3rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
 
 .heading {
-text-align: center;
-font-size: 2rem;
-font-weight: 700;
-color: var(--main_color);
-margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--main_color);
+  margin-bottom: 2rem;
 }
 
 .desktopGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  gap: 1.5rem;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 6rem;
+  padding: 0 4rem;
+}
+
+.tabletGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* Flip Card Styles */
 .cardWrapper {
   perspective: 1000px;
-  height: 320px;
+  height: 280px;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -65,7 +74,7 @@ margin-bottom: 2rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 0.8rem;
   position: relative;
   border-radius: 40px 4px 12px 0;
 }
@@ -75,7 +84,7 @@ margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 0 40px 4px 12px;
 }
 
@@ -141,26 +150,10 @@ margin-bottom: 2rem;
   background: transparent;
 }
 
-@media (max-width: 1400px) {
-  .desktopGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    padding: 0 5rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .desktopGrid {
-    display: none; 
-  }
-}
-
-
 .pagination_container {
   display: flex;
   justify-content: center;
-  margin-top: 10rem; 
+  margin-top: 10rem;
 }
 
 .pagination {
@@ -226,75 +219,57 @@ margin-bottom: 2rem;
   transform: translateY(-1px);
 }
 
-/* Hide pagination on mobile */
-@media (max-width: 1199px) {
-  .pagination_container {
-    display: none;
-  }
+/* Layout customizado para mobile */
+.mobileContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
 }
 
+.mobileCardPage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 450px;
+  padding: 0 1rem;
+  height: auto;
+}
 
+/* Swiper */
 .swiper {
   padding-bottom: 3rem;
-  overflow: hidden;
+  overflow: visible;
+  height: auto;
+  min-height: 500px;
 }
 
-/* Remove os estilos padrão de navegação do Swiper */
 .swiper :global(.swiper-button-next),
 .swiper :global(.swiper-button-prev),
 .swiper :global(.swiper-pagination) {
   display: none !important;
 }
 
-
-/* Estilos para mobile (Swiper) - mantidos para compatibilidade */
+/* Card base styles */
 .card {
-  background: var(--second_bg_color);
-  border-radius: 82px 86px 4px 120px;
+  background: var(--bg_color);
+  border-radius: 25px 30px 4px 40px;
   border: 1px solid var(--main_color);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  padding: 2.5rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1.2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  height: 380px;
+  transition: all 0.4s ease;
+  height: 220px;
   position: relative;
   overflow: visible;
   cursor: pointer;
   width: 100%;
-  max-width: 420px;
+  max-width: 350px;
   margin: 0 auto;
-}
-
-@media (max-width: 1199px) {
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-  }
-
-  .card.expanded {
-    height: 380px;
-    justify-content: flex-start;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    overflow: visible;
-  }
-}
-
-
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.5rem;
-  border: 4px solid var(--main_color);
-  transition: all 0.4s ease;
-  opacity: 1;
-  transform: scale(1);
 }
 
 .card:hover .avatar {
@@ -302,39 +277,34 @@ margin-bottom: 2rem;
   border-width: 5px;
 }
 
-/* No desktop, esconde a imagem quando o card está expandido */
-@media (min-width: 1200px) {
-  .card.expanded .avatar {
-    opacity: 0;
-    transform: scale(0.8);
-    margin-bottom: 0;
-    height: 0;
-    pointer-events: none;
-  }
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--main_color);
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: scale(1);
 }
-
 
 .name {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--main_color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   line-height: 1.3;
   transition: all 0.3s ease;
-}
-
-/* No desktop, quando expandido, o nome fica mais próximo do texto */
-@media (min-width: 1200px) {
-  .card.expanded .name {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-  }
 }
 
 .textContainer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    margin-top 0.3s ease;
   opacity: 0;
   margin-top: 0;
   width: 100%;
@@ -343,33 +313,8 @@ margin-bottom: 2rem;
 
 .textContainer.showText {
   opacity: 1;
-  margin-top: 1.5rem;
-}
-
-/* No desktop, o texto expande dentro do card com altura limitada */
-@media (min-width: 1200px) {
-  .card.expanded .textContainer.showText {
-    max-height: 120px; /* Altura máxima para o texto */
-    overflow-y: auto; /* Scroll se o texto for muito grande */
-    margin-top: 1rem;
-    padding: 0.5rem;
-    border-radius: 8px;
-    background: rgba(var(--main_color_rgb), 0.1);
-  }
-  
-  /* Estilo personalizado da scrollbar */
-  .card.expanded .textContainer.showText::-webkit-scrollbar {
-    width: 4px;
-  }
-  
-  .card.expanded .textContainer.showText::-webkit-scrollbar-thumb {
-    background: var(--main_color);
-    border-radius: 2px;
-  }
-  
-  .card.expanded .textContainer.showText::-webkit-scrollbar-track {
-    background: transparent;
-  }
+  margin-top: 1rem;
+  max-height: 500px;
 }
 
 .text {
@@ -382,58 +327,261 @@ margin-bottom: 2rem;
   line-height: 1.5;
 }
 
-/* Texto em posicionamento absoluto no desktop */
+/* ============================================
+   MEDIA QUERIES - ORGANIZADAS POR BREAKPOINT
+   ============================================ */
+
+/* Breakpoint: 1400px */
+@media (max-width: 1400px) {
+  .desktopGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    max-width: 1200px;
+    padding: 0 3rem;
+  }
+
+  .cardWrapper {
+    height: 260px;
+    max-width: 320px;
+  }
+}
+
+/* Breakpoint: 1200px */
+@media (max-width: 1200px) {
+  .desktopGrid {
+    display: none;
+  }
+}
+
+/* Breakpoint: 1199px (Mobile/Tablet behavior) */
+@media (max-width: 1199px) {
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+  }
+
+  .card.expanded {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    overflow: visible;
+    z-index: 10;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    position: relative;
+    transition:
+      height 0.4s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .card.hidden {
+    display: none;
+  }
+
+  .card.expanded .textContainer.showText {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* Breakpoint: 768px */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    padding: 1.3rem 1rem;
+    height: 200px;
+    margin: 5px auto;
+    max-width: 320px;
+  }
+
+  .card.expanded {
+    width: 100%;
+    margin: 10px auto;
+    min-height: 280px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0.8rem;
+    border-width: 3px;
+  }
+
+  .avatar:hover {
+    border-width: 4px;
+    transform: scale(1.05);
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  .text {
+    font-size: 0.95rem;
+    padding: 0 0.8rem;
+    line-height: 1.4;
+  }
+
+  .swiper {
+    height: auto;
+    min-height: 600px;
+    padding-bottom: 3rem;
+    overflow: visible;
+  }
+
+  .mobileCardPage {
+    min-height: auto;
+  }
+
+  .pagination {
+    margin-top: 1rem;
+  }
+
+  .pagination li a {
+    width: auto;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .pagination li a svg {
+    font-size: 12px;
+  }
+
+  .pagination li:first-child a svg,
+  .pagination li:last-child a svg {
+    font-size: 14px;
+  }
+}
+
+/* Breakpoint: 480px */
+@media (max-width: 480px) {
+  .swiper {
+    min-height: 650px;
+  }
+
+  .card {
+    height: 180px;
+    max-width: 280px;
+  }
+
+  .card.expanded {
+    height: 280px;
+  }
+
+  .mobileCardPage {
+    min-height: 450px;
+  }
+
+    
+  .pagination li a {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .pagination li a svg {
+    font-size: 10px;
+  }
+  
+  .pagination li:first-child a svg,
+  .pagination li:last-child a svg {
+    font-size: 12px;
+  }
+}
+
+/* Breakpoint: 769px+ */
+@media (min-width: 769px) {
+  .card {
+    max-width: none;
+  }
+}
+
+/* Breakpoint: 769px-1199px (Tablet specific) */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .tabletGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    max-width: 800px;
+    padding: 0 1.5rem;
+  }
+  
+  .card {
+    height: 240px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  
+  .card.expanded {
+    min-height: 300px;
+  }
+  
+  .avatar {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 0.9rem;
+  }
+  
+  .name {
+    font-size: 1.05rem;
+  }
+  
+  .text {
+    font-size: 1rem;
+    padding: 0 0.9rem;
+    line-height: 1.45;
+  }
+}
+
+/* Breakpoint: 1200px+ (Desktop specific) */
 @media (min-width: 1200px) {
+  .card.expanded .avatar {
+    opacity: 0;
+    transform: scale(0.8);
+    margin-bottom: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .card.expanded .name {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .card.expanded .textContainer.showText {
+    max-height: 120px;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(var(--main_color_rgb), 0.1);
+  }
+
+  .card.expanded .textContainer.showText::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .card.expanded .textContainer.showText::-webkit-scrollbar-thumb {
+    background: var(--main_color);
+    border-radius: 2px;
+  }
+
+  .card.expanded .textContainer.showText::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
   .card.expanded .text {
     padding: 0;
     color: var(--text_color);
     opacity: 1;
     font-size: 1rem;
     line-height: 1.6;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .container {
-    padding: 2rem 0.5rem;
-  }
-  
-  .card {
-    padding: 2rem 1rem;
-    height: 300px;
-    margin: 0 auto;
-    max-width: 320px;
-  }
-  
-  .avatar {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1.2rem;
-    border-width: 3px;
-  }
-  
-  .avatar:hover {
-    border-width: 4px;
-    transform: scale(1.06);
-  }
-  
-  .name {
-    font-size: 1.3rem;
-  }
-  
-  .text {
-    font-size: 1rem;
-    padding: 0 0.8rem;
-  }
-  
-  .swiper {
-    padding-bottom: 2rem;
-  }
-}
-
-@media (min-width: 769px) {
-  .card {
-    max-width: none;
   }
 }
