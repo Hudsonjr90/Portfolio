@@ -1,6 +1,6 @@
-import { useCallback } from "react";
+import { useCallback, useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { ThemeProvider } from "@mui/material/styles";
 import { Tooltip, IconButton, Zoom } from "@mui/material";
@@ -33,6 +33,22 @@ const Modal = ({
   date,
 }: ModalProps) => {
   const { t } = useTranslation();
+  const [currentPage, setCurrentPage] = useState(0);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Reset page quando modal abrir
+  useEffect(() => {
+    if (show) {
+      setCurrentPage(0);
+    }
+  }, [show]);
+
+  // Scroll para o topo quando mudar de página
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentPage]);
 
   const handleDownload = useCallback(() => {
     if (!pdf) return;
@@ -43,6 +59,22 @@ const Modal = ({
       .then((blob) => saveAs(blob, fileName))
       .catch(console.error);
   }, [pdf]);
+
+  const handleNextPage = useCallback(() => {
+    if (currentPage < images.length - 1) {
+      setCurrentPage(prev => prev + 1);
+    }
+  }, [currentPage, images.length]);
+
+  const handlePreviousPage = useCallback(() => {
+    if (currentPage > 0) {
+      setCurrentPage(prev => prev - 1);
+    }
+  }, [currentPage]);
+
+  const hasMultiplePages = images.length > 1;
+  const isFirstPage = currentPage === 0;
+  const isLastPage = currentPage === images.length - 1;
 
   if (!show) return null;
 
@@ -61,11 +93,55 @@ const Modal = ({
           
           <div className={styles.modal_actions}>
             <ThemeProvider theme={navbarTheme}>
+              {hasMultiplePages && (
+                <div className={styles.pagination_controls}>
+                  <Tooltip
+                    TransitionComponent={Zoom}
+                    title={t("home.previous")}
+                    placement="top"
+                    arrow
+                  >
+                    <span>
+                      <IconButton
+                        className={`${styles.nav_button} ${isFirstPage ? styles.disabled : ''}`}
+                        onClick={handlePreviousPage}
+                        disabled={isFirstPage}
+                      >
+                        <FaChevronLeft className={styles.nav_icon} />
+                      </IconButton>
+                    </span>
+                  </Tooltip>
+                  
+                  <div className={styles.page_indicator}>
+                    <span className={styles.page_text}>
+                      {currentPage + 1} / {images.length}
+                    </span>
+                  </div>
+                  
+                  <Tooltip
+                    TransitionComponent={Zoom}
+                    title={t("home.next")}
+                    placement="top"
+                    arrow
+                  >
+                    <span>
+                      <IconButton
+                        className={`${styles.nav_button} ${isLastPage ? styles.disabled : ''}`}
+                        onClick={handleNextPage}
+                        disabled={isLastPage}
+                      >
+                        <FaChevronRight className={styles.nav_icon} />
+                      </IconButton>
+                    </span>
+                  </Tooltip>
+                </div>
+              )}
+              
               {pdf && (
                 <Tooltip
                   TransitionComponent={Zoom}
                   title={t("home.download")}
-                  placement="left"
+                  placement="top"
                   arrow
                 >
                   <IconButton
@@ -79,7 +155,7 @@ const Modal = ({
               <Tooltip
                 TransitionComponent={Zoom}
                 title={t("home.close")}
-                placement="right"
+                placement="top"
                 arrow
               >
                 <IconButton className={styles.close_button} onClick={onClose}>
@@ -104,16 +180,20 @@ const Modal = ({
         )}
 
         {/* CONTEÚDO */}
-        <div className={styles.modal_content}>
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`${title} - ${index + 1}`}
+        <div className={styles.modal_content} ref={contentRef}>
+          {images.length > 0 && (
+            <motion.img
+              key={currentPage}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              src={images[currentPage]}
+              alt={`${title} - Página ${currentPage + 1}`}
               loading="lazy"
               className={styles.modal_image}
             />
-          ))}
+          )}
         </div>
       </motion.div>
     </AnimatePresence>

@@ -161,103 +161,51 @@
     opacity: 0.7;
 }
 
-
-
-/* Responsividade */
-/* @media screen and (max-width: 768px) {
-    .modal_container {
-        width: 95vw;
-        max-height: 90vh;
-        margin: 0.5rem;
-    }
-
-    .modal_title {
-        padding: 1rem 1.5rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        min-height: auto;
-    }
-
-    .modal_header_content {
-        width: 100%;
-    }
-
-    .modal_actions {
-        align-self: flex-end;
-    }
-
-    .modal_title_text {
-        font-size: 1.5rem;
-    }
-
-    .modal_subtitle {
-        font-size: 1rem;
-    }
-
-    .modal_description_container,
-    .modal_content {
-        padding: 1rem 1.5rem;
-    }
-
-    .modal_description {
-        font-size: 1rem;
-    }
-
-    .modal_icon {
-        font-size: 2rem;
-    }
-
-    .size_button {
-        font-size: 1.5rem;
-    }
+/* Controles de Paginação */
+.pagination_controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(var(--main_color_rgb), 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(var(--main_color_rgb), 0.2);
 }
 
-@media screen and (max-width: 480px) {
-    .modal_container {
-        width: 98vw;
-        max-height: 85vh;
-        margin: 0.25rem;
-    }
+.nav_button {
+    color: var(--main_color);
+    padding: 8px;
+    transition: all 0.3s ease;
+}
 
-    .modal_title {
-        padding: 0.8rem 1rem;
-    }
+.nav_button:hover:not(.disabled) {
+    color: var(--text_color);
+    background-color: var(--main_color);
+    transform: scale(1.1);
+}
 
-    .modal_header_content {
-        gap: 0.8rem;
-    }
+.nav_button.disabled {
+    color: rgba(var(--main_color_rgb), 0.3);
+    cursor: not-allowed;
+}
 
-    .modal_title_text {
-        font-size: 1.3rem;
-    }
+.nav_icon {
+    font-size: 1.2rem;
+}
 
-    .modal_subtitle {
-        font-size: 0.9rem;
-    }
+.page_indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: 0 0.5rem;
+}
 
-    .modal_description_container,
-    .modal_content {
-        padding: 0.8rem 1rem;
-    }
-
-    .modal_description {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-
-    .modal_image {
-        margin-bottom: 1rem;
-    }
-
-    .modal_icon {
-        font-size: 1.8rem;
-        min-width: 35px;
-    }
-
-    .size_button {
-        font-size: 1.3rem;
-    }
-} */
-
-  
+.page_text {
+    color: var(--main_color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}

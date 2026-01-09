@@ -22,7 +22,9 @@
       "Specialista Frontend",
       "Sviluppatore Fullstack",
       "Designer UI/UX"
-    ]
+    ],
+    "previous": "Precedente",
+    "next": "Successivo"
   },
 
   "name": {

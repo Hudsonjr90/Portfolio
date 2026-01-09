@@ -45,7 +45,6 @@ const Header = () => {
 
   useEffect(() => {
     document.body.classList.toggle("light_mode", lightMode);
-    // Sincroniza a cor principal com o tema atual
     setMainColor(lightMode ? "#f65151" : "#0ef6cc");
   }, [lightMode, setMainColor]);
 
@@ -69,7 +68,6 @@ const Header = () => {
     setCurrentLanguage(savedLanguage);
   }, []);
 
-  // Efeito de carregamento para animação sequencial
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
