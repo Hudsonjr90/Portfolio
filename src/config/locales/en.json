@@ -344,6 +344,10 @@
       "title": "Resume Button",
       "description": "Click here to view or download my complete resume in PDF format."
     },
+    "footer": {
+      "title": "Footer Section",
+      "description": "Information about career years and copyright."
+    },
     "about": {
       "title": "About Me",
       "description": "In this section you'll learn about my story, experience and passion for development."
@@ -388,9 +392,13 @@
       "title": "Contact Form",
       "description": "Use this form to get in touch with me. All fields are required to ensure I can respond appropriately."
     },
-    "footer": {
-      "title": "Social Networks",
-      "description": "Get in touch with me through my social networks and communication channels."
+    "contactMap": {
+      "title": "Location Map",
+      "description": "Here you can see my current location. Feel free to visit or contact me!"
+    },
+    "contactSocialMedia": {
+      "title": "Social Media",
+      "description": "Connect with me through my social media and communication channels."
     }
   },
 

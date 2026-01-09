@@ -346,6 +346,10 @@
       "title": "Botão do Currículo",
       "description": "Clique aqui para visualizar ou baixar meu currículo completo em formato PDF."
     },
+    "footer": {
+      "title": "Rodapé",
+      "description": "Informação sobre o tempo de carreira e direitos autorais."
+    },
     "about": {
       "title": "Sobre Mim",
       "description": "Nesta seção você conhece minha história, experiência e paixão pelo desenvolvimento."
@@ -390,7 +394,11 @@
       "title": "Formulário de Contato",
       "description": "Use este formulário para entrar em contato comigo. Todos os campos são obrigatórios para garantir que eu possa responder adequadamente."
     },
-    "footer": {
+    "contactMap": {
+      "title": "Mapa de Localização",
+      "description": "Aqui você pode ver minha localização atual. Sinta-se à vontade para me visitar ou entrar em contato!"
+    },
+    "contactSocialMedia": {
       "title": "Redes Sociais",
       "description": "Entre em contato comigo através das minhas redes sociais e canais de comunicação."
     }

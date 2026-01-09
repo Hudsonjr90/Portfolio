@@ -344,6 +344,10 @@
       "title": "Bouton CV",
       "description": "Cliquez ici pour voir ou télécharger mon CV complet au format PDF."
     },
+    "footer": {
+      "title": "Pied de Page",
+      "description": "Informations sur les années de carrière et les droits d'auteur."
+    },
     "about": {
       "title": "À Propos de Moi",
       "description": "Dans cette section, vous découvrirez mon histoire, mon expérience et ma passion pour le développement."
@@ -388,7 +392,11 @@
       "title": "Formulaire de Contact",
       "description": "Utilisez ce formulaire pour me contacter. Tous les champs sont obligatoires pour garantir que je puisse répondre adéquatement."
     },
-    "footer": {
+    "contactMap": {
+      "title": "Carte de Localisation",
+      "description": "Ici vous pouvez voir ma localisation actuelle. N'hésitez pas à me rendre visite ou à me contacter!"
+    },
+    "contactSocialMedia": {
       "title": "Réseaux Sociaux",
       "description": "Contactez-moi via mes réseaux sociaux et canaux de communication."
     }

@@ -239,11 +239,29 @@ export const usePortfolioTour = () => {
       ],
       contact: [
         {
+          element: '[data-tour="contact-social-media"]',
+          popover: {
+            title: t('tour.contactSocialMedia.title'),
+            description: t('tour.contactSocialMedia.description'),
+            side: 'bottom',
+            align: 'center'
+          }
+        },
+        {
           element: '[data-tour="contact-form"]',
           popover: {
             title: t('tour.contactForm.title'),
             description: t('tour.contactForm.description'),
             side: 'right',
+            align: 'center'
+          }
+        },
+        {
+          element: '[data-tour="contact-map"]', 
+          popover: {
+            title: t('tour.contactMap.title'),
+            description: t('tour.contactMap.description'),
+            side: 'left', 
             align: 'center'
           }
         }

@@ -122,6 +122,7 @@ const Contact: React.FC = () => {
           </span>
         <motion.div
           className={styles.social_media}
+          data-tour="contact-social-media"
           initial="hidden"
           animate={isLoaded ? "visible" : "hidden"}
           variants={{
@@ -314,7 +315,8 @@ const Contact: React.FC = () => {
           {/* Seção do Formulário */}
           <div 
             className={`${styles.formSection} ${isMobile && showMap ? styles.hidden : ''}`}
-          >
+            data-tour="contact-form"
+         >
             <h3 className={styles.formTitle}>
               {t("contact.formTitle")}
             </h3>
@@ -432,6 +434,7 @@ const Contact: React.FC = () => {
           {/* Seção do Mapa */}
           <div 
             className={`${styles.mapSection} ${isMobile && !showMap ? styles.hidden : ''}`}
+            data-tour="contact-map"
           >
             <div className={styles.mapHeader}>
               <h3 className={styles.mapTitle}>

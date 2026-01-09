@@ -344,6 +344,10 @@
       "title": "Pulsante CV",
       "description": "Clicca qui per visualizzare o scaricare il mio curriculum completo in formato PDF."
     },
+    "footer": {
+      "title": "Piè di Pagina",
+      "description": "Informazioni sugli anni di carriera e diritti d'autore."
+    },
     "about": {
       "title": "Chi Sono",
       "description": "In questa sezione conoscerai la mia storia, esperienza e passione per lo sviluppo."
@@ -388,9 +392,13 @@
       "title": "Modulo di Contatto",
       "description": "Usa questo modulo per contattarmi. Tutti i campi sono obbligatori per garantire che io possa rispondere adeguatamente."
     },
-    "footer": {
-      "title": "Social Network",
-      "description": "Contattami attraverso i miei social network e canali di comunicazione."
+    "contactMap": {
+      "title": "Mappa della Posizione",
+      "description": "Qui puoi vedere la mia posizione attuale. Sentiti libero di visitarmi o contattarmi!" 
+    },
+    "contactSocialMedia": {
+      "title": "Social Media",
+      "description": "Connettiti con me attraverso i miei social media e canali di comunicazione."
     }
   }
-}
+ }
