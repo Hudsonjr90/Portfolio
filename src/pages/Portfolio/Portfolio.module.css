@@ -401,3 +401,34 @@
     align-items: center;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .portfolio {
+    padding: 3rem 1rem;
+  }
+  .portfolio .heading {
+    margin: 8rem 0 3rem;
+  }
+  .cardWrapper {
+    height: 280px;
+    max-width: 300px;
+  }
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+  .cardDescription {
+    font-size: 1rem;
+  }
+  .tech_list {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+  }
+  .clickHint {
+    font-size: 1rem;
+    padding: 12px 6px 6px;
+  }
+
+  .pagination_container{
+    margin-top: -1rem;
+  }
+}

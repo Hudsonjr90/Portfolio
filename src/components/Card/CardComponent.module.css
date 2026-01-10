@@ -335,8 +335,7 @@
 
 @media screen and (max-width: 480px) {
   .card_container {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
     padding: 0 1rem;
   }
   
@@ -399,6 +398,10 @@
     padding: 0.6rem 1rem;
     font-size: 0.8rem;
     gap: 0.4rem;
+  }
+
+  .pagination_container {
+    margin-top: 2rem; 
   }
   
   .pagination li a {

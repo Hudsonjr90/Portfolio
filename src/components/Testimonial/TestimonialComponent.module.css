@@ -479,6 +479,10 @@
     min-height: 450px;
   }
 
+  .pagination_container{
+    margin-top: -2rem;
+  }
+
     
   .pagination li a {
     min-width: 32px;
