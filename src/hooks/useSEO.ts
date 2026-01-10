@@ -15,14 +15,11 @@ export const useSEO = () => {
   const { t, i18n } = useTranslation();
 
   const updateMetaTags = (seoData: SEOData) => {
-    // Update title
     document.title = seoData.title;
 
-    // Update meta description
     updateMetaTag("name", "description", seoData.description);
     updateMetaTag("name", "keywords", seoData.keywords);
 
-    // Update Open Graph tags
     updateMetaTag("property", "og:type", "website");
     updateMetaTag("property", "og:site_name", "Hudson Kennedy - Portfolio");
     updateMetaTag("property", "og:title", seoData.title);
@@ -46,7 +43,6 @@ export const useSEO = () => {
           : i18n.language
     );
 
-    // Update Twitter tags
     updateMetaTag("name", "twitter:card", "summary_large_image");
     updateMetaTag("name", "twitter:site", "@hudsonkennedy");
     updateMetaTag("name", "twitter:creator", "@hudsonkennedy");
@@ -59,10 +55,8 @@ export const useSEO = () => {
     );
     updateMetaTag("name", "twitter:image:alt", seoData.title);
 
-    // Update canonical URL
     updateLink("canonical", seoData.url);
 
-    // Update language
     document.documentElement.lang =
       i18n.language === "pt" ? "pt-br" : i18n.language;
   };
