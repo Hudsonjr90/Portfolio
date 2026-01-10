@@ -254,7 +254,6 @@
 
 @media screen and (max-width: 768px) {
   .card_container {
-    flex-direction: column;
     align-items: center;
     gap: 2rem;
     margin-top: 4rem;
