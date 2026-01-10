@@ -1,91 +1,107 @@
- # 👨‍💻 Portfolio H.K Dev 
-<div align="center"><br>  
- Este é meu portfólio pessoal feito com ReactJS e Typescript, apresento aqui alguns dos meus projetos  
- e informações sobre mim.  
- Cresci muito como desenvolvedor Front End fazendo este projeto, Foi feito com muito esforço, muita dedicação  
- e muita atenção aos detalhes.  
- </div>
+# 👨‍💻 Hudson Kennedy — Software Engineer & Frontend Specialist
 
- ## ⚙️ Pré-requisitos
+<div align="center">
+Software Engineer com mais de 10 anos de experiência em desenvolvimento web, aplicações escaláveis e interfaces modernas.  
+Especialista em Frontend com forte atuação em Fullstack, criando soluções de alto impacto com foco em performance, UX e arquitetura.
+</div>
 
- - Node.js (v18.0.0 ou superior)
- - npm (v8.0.0 ou superior)
+---
 
- ## 🛠️ Tecnologias Utilizadas
- 
- - React
- - React Router DOM
- - React Icons & MUI (para ícones)
- - i18next (para intenacionalização para idioma americano)
- - Animate Presence (para a seção de depoimentos)
- - React Paginate (para montar paginação dos cards)
- - MUI Card (para a seção de formação)
- - React Vertical Timeline (para a seção de experiências)
- - MUI Card (para a seção de portfólio)
- - EmailJS (para o formulário de contato)
- - SweetAlert (para notificações)
- - Framer Motion (para algumas animações)
- - Particles.js(animação de partículas)
- - Typescript
- - Outras tecnologias específicas de cada projeto listadas nos respectivos itens do portfólio
-   
- ## 📁 Estrutura de Diretórios
+## 🌐 Live Demo
 
- - `/src`: Código-fonte da aplicação.
- - `/public`: Arquivos públicos.
- - `/assets`: Imagens e outros recursos estáticos.
- - `/components`: Componentes reutilizáveis da aplicação.
- - `/pages`: Páginas principais da aplicação.
- - `/styles`: Arquivos de estilo (CSS/SCSS).
- - `/utils`: Funções utilitárias e helpers.
- - `/services`: Serviços para comunicação com APIs externas.
- - `/i18n`: Arquivos de configuração para internacionalização.
- 
- ## 🚀 Funcionalidades
- 
- - Troca de temas(Light mode e Dark Mode)
- - Paleta de cores para textos
- - Animações dinâmicas
- - Envio de formulário de E-mail
- - Links ativos
- - Navegação Dinâmica entre páginas(SPA)
- - Internacionalização
- - Responsividade para dispositivos móveis
- - Seção de depoimentos com animações
- - Paginação de cards
- - Linha do tempo para experiências profissionais
- - Seção de portfólio com cards interativos
- 
- ## 🤝 Contribuição
+🔗 **https://hudsonkennedy.dev.br**
 
-Se você deseja contribuir com este projeto, siga estas etapas:
+---
 
-1. Fork o repositório.
+## 📌 Sobre este projeto
 
-2. Crie uma branch para sua contribuição:
+Este é o meu portfólio profissional, desenvolvido para apresentar de forma clara e objetiva minha experiência, minhas habilidades técnicas e projetos reais que construí ao longo da minha carreira como **Software Engineer**.
 
-    ```shell
-    git checkout -b minha-contribuicao
+O objetivo deste projeto é servir como:
+- Vitrine profissional
+- Prova de domínio técnico
+- Demonstração de arquitetura frontend moderna
+- Base para networking, recrutamento e oportunidades de trabalho
 
-3. Faça suas alterações e commit:
+A aplicação foi desenvolvida utilizando **React + TypeScript**, com foco em:
+- Performance
+- Componentização
+- Reutilização de código
+- Experiência do usuário
+- Responsividade
+- Internacionalização
 
-    ```shell
-    git commit -m 'Minha contribuição'
+---
 
-4. Envie sua branch:
+## 🧩 Stack Principal
 
-   ```shell
-    git push origin minha-contribuicao
+### Core
+- React
+- TypeScript
+- React Router
 
-5. Abra uma solicitação pull.
+### UI, UX & Motion
+- Material UI (MUI)
+- React Icons
+- Framer Motion
+- Particles.js
+
+### Internacionalização
+- i18next
+
+### Formulários & Feedback
+- EmailJS
+- SweetAlert
+
+### Navegação & Layout
+- React Paginate
+- React Vertical Timeline
+
+---
+
+## 🚀 Funcionalidades
+
+- Interface moderna com modo **Light & Dark**
+- Sistema de **paleta de cores personalizável**
+- Animações suaves e interativas
+- Navegação SPA com React Router
+- Seção de **projetos com paginação**
+- **Timeline profissional** interativa
+- Seção de **depoimentos animados**
+- Sistema de **internacionalização (PT/EN)**
+- **Responsividade completa** (mobile-first)
+- Formulário de contato funcional com envio de e-mail
+
+---
+
+## 📁 Estrutura de Diretórios
+
+```bash
+/src
+ ├── assets        # Imagens, ícones e recursos estáticos
+ ├── components    # Componentes reutilizáveis
+ ├── pages         # Páginas principais
+ ├── services      # Integrações externas (Email, APIs)
+ ├── styles        # Estilos globais e temas
+ ├── utils         # Funções utilitárias
+ └── i18n          # Configuração de idiomas
+
+⚙️ Pré-requisitos
+
+Para rodar o projeto localmente:
+
+- Node.js v18+
+
+- npm v8+
+
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
+npm install
+npm run dev
 
 
-## 🧠 Autor
+📩 Contato
 
-hudsonhugo90@gmail.com
+📧 hudsonhugo90@gmail.com
 
-[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hudsonkennedyjr) <a href="mailto:hudsonhugo90@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red" />
-</a>
-
- ### Obrigado por visitar meu projeto! 👋 
+🔗 LinkedIn: https://www.linkedin.com/in/hudsonkennedyjr
