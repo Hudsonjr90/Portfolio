@@ -143,7 +143,7 @@ export const useSEO = () => {
           title: `${t("menu.academic-education")} | Hudson Kennedy `,
           description: t("seo.education.description"),
           keywords: t("seo.education.keywords"),
-          image: `${baseUrl}/imgs/my.webp`,
+          image: `${baseUrl}/imgs/hkdev.webp`,
           url: currentUrl,
         };
 
@@ -181,6 +181,7 @@ export const useSEO = () => {
             "Portfólio de Hudson Kennedy, Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas.",
           keywords:
             "Hudson Kennedy, Desenvolvedor, Full Stack, React, TypeScript, Vue.js, JavaScript, Portfolio",
+          image: `${baseUrl}/imgs/my.webp`,  
           url: currentUrl,
         };
     }
