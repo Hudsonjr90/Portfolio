@@ -1,105 +1,127 @@
 const fs = require('fs');
 const path = require('path');
 
-// Template base com as meta tags específicas para cada rota
-const createRouteHTML = (route, seoData) => {
-  const baseHTML = fs.readFileSync(path.join(__dirname, 'dist', 'index.html'), 'utf8');
+// Define all the routes for your portfolio
+const routes = [
+  { path: '/', title: 'Hudson Kennedy - Portfolio', description: 'Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas' },
+  { path: '/about', title: 'Sobre - Hudson Kennedy', description: 'Conheça mais sobre Hudson Kennedy, sua experiência e habilidades como Desenvolvedor Full Stack' },
+  { path: '/skills', title: 'Habilidades - Hudson Kennedy', description: 'Tecnologias e habilidades técnicas de Hudson Kennedy em desenvolvimento web e mobile' },
+  { path: '/portfolio', title: 'Portfólio - Hudson Kennedy', description: 'Projetos e trabalhos desenvolvidos por Hudson Kennedy utilizando tecnologias modernas' },
+  { path: '/education', title: 'Educação - Hudson Kennedy', description: 'Formação acadêmica e certificações de Hudson Kennedy' },
+  { path: '/experiences', title: 'Experiências - Hudson Kennedy', description: 'Experiência profissional e trajetória de Hudson Kennedy como desenvolvedor' },
+  { path: '/testimonials', title: 'Depoimentos - Hudson Kennedy', description: 'Depoimentos e recomendações de clientes e colegas sobre o trabalho de Hudson Kennedy' },
+  { path: '/contact', title: 'Contato - Hudson Kennedy', description: 'Entre em contato com Hudson Kennedy para projetos e oportunidades' }
+];
+
+// Generate sitemap.xml
+const generateSitemap = () => {
+  const baseUrl = 'https://hudsonkennedy.dev.br';
+  const currentDate = new Date().toISOString().split('T')[0];
   
-  // Substitui as meta tags com dados específicos da rota
-  let modifiedHTML = baseHTML
-    .replace(/<title>.*?<\/title>/, `<title>${seoData.title}</title>`)
-    .replace(/name="description"\s+content="[^"]*"/, `name="description" content="${seoData.description}"`)
-    .replace(/name="keywords"\s+content="[^"]*"/, `name="keywords" content="${seoData.keywords}"`)
-    .replace(/property="og:title"\s+content="[^"]*"/, `property="og:title" content="${seoData.title}"`)
-    .replace(/property="og:description"\s+content="[^"]*"/, `property="og:description" content="${seoData.description}"`)
-    .replace(/property="og:url"\s+content="[^"]*"/, `property="og:url" content="${seoData.url}"`)
-    .replace(/property="og:image"\s+content="[^"]*"/, `property="og:image" content="${seoData.image}"`)
-    .replace(/property="og:image:alt"\s+content="[^"]*"/, `property="og:image:alt" content="${seoData.title}"`)
-    .replace(/name="twitter:title"\s+content="[^"]*"/, `name="twitter:title" content="${seoData.title}"`)
-    .replace(/name="twitter:description"\s+content="[^"]*"/, `name="twitter:description" content="${seoData.description}"`)
-    .replace(/name="twitter:image"\s+content="[^"]*"/, `name="twitter:image" content="${seoData.image}"`)
-    .replace(/name="twitter:image:alt"\s+content="[^"]*"/, `name="twitter:image:alt" content="${seoData.title}"`)
-    .replace(/rel="canonical"\s+href="[^"]*"/, `rel="canonical" href="${seoData.url}"`);
+  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+  routes.forEach(route => {
+    sitemap += `
+  <url>
+    <loc>${baseUrl}${route.path === '/' ? '' : route.path}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${route.path === '/' ? '1.0' : '0.8'}</priority>
+  </url>`;
+  });
+
+  sitemap += '\n</urlset>';
   
-  // Adicionar comentário para identificar página gerada para SEO
-  modifiedHTML = modifiedHTML.replace(
-    '<body>',
-    `<body>
-  <!-- This page was generated for SEO optimization by generate-seo-pages.cjs -->
-  <!-- Generated on: ${new Date().toISOString()} -->
-  <!-- Route: ${route} -->`
-  );
-  
-  return modifiedHTML;
+  const sitemapPath = path.join(__dirname, 'dist', 'sitemap.xml');
+  fs.writeFileSync(sitemapPath, sitemap);
+  console.log('✅ sitemap.xml generated successfully!');
 };
 
-// Dados SEO para cada rota
-const routesData = {
-  '/': {
-    title: 'Início | Hudson Kennedy - Desenvolvedor Full Stack',
-    description: 'Hudson Kennedy - Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas. 10+ anos de experiência em desenvolvimento web.',
-    keywords: 'Hudson Kennedy, Desenvolvedor Full Stack, React, TypeScript, Vue.js, JavaScript, Desenvolvedor Web, Frontend, Backend, Portfolio',
-    image: 'https://hudsonkennedy.dev.br/imgs/linkImage.webp',
-    url: 'https://hudsonkennedy.dev.br/'
-  },
-  '/about': {
-    title: 'Sobre | Hudson Kennedy - Quem Sou',
-    description: 'Conheça Hudson Kennedy - Cientista da Computação e Desenvolvedor Full Stack apaixonado por criar soluções web inovadoras e impactantes.',
-    keywords: 'Hudson Kennedy, Sobre, Cientista da Computação, Desenvolvedor, Biografia, Perfil Profissional, Experiência',
-    image: 'https://hudsonkennedy.dev.br/imgs/about.webp',
-    url: 'https://hudsonkennedy.dev.br/about'
-  },
-  '/skills': {
-    title: 'Habilidades | Hudson Kennedy - Minhas Habilidades',
-    description: 'Explore as habilidades técnicas de Hudson Kennedy em desenvolvimento web: React, TypeScript, Vue.js, Node.js, Python e muito mais.',
-    keywords: 'Habilidades, Skills, React, TypeScript, Vue.js, Node.js, Python, JavaScript, CSS, HTML, Tecnologias',
-    image: 'https://hudsonkennedy.dev.br/imgs/about.webp',
-    url: 'https://hudsonkennedy.dev.br/skills'
-  },
-  '/portfolio': {
-    title: 'Projetos | Hudson Kennedy - Meus Projetos',
-    description: 'Confira os projetos desenvolvidos por Hudson Kennedy: aplicações web modernas usando React, Vue.js, TypeScript e outras tecnologias.',
-    keywords: 'Portfolio, Projetos, React, Vue.js, TypeScript, Aplicações Web, Desenvolvimento, GitHub, Deploy',
-    image: 'https://hudsonkennedy.dev.br/imgs/my.webp',
-    url: 'https://hudsonkennedy.dev.br/portfolio'
-  },
-  '/education': {
-    title: 'Formações | Hudson Kennedy - Formação',
-    description: 'Formação acadêmica e certificações de Hudson Kennedy: Mestrado Harvard, especializações em desenvolvimento e diversas certificações técnicas.',
-    keywords: 'Formação, Educação, Harvard, Certificações, Cursos, Especialização, Desenvolvimento, Tecnologia',
-    image: 'https://hudsonkennedy.dev.br/imgs/linkImage.webp',
-    url: 'https://hudsonkennedy.dev.br/education'
-  },
-  '/experiences': {
-    title: 'Experiências | Hudson Kennedy - Experiências',
-    description: 'Experiência profissional de Hudson Kennedy: 10+ anos atuando como desenvolvedor em empresas e projetos freelancer.',
-    keywords: 'Experiência, Trabalho, Carreira, Desenvolvedor, Freelancer, Projetos, Empresas, Profissional',
-    image: 'https://hudsonkennedy.dev.br/imgs/linkImage.webp',
-    url: 'https://hudsonkennedy.dev.br/experiences'
-  },
-  '/testimonials': {
-    title: 'Depoimentos | Hudson Kennedy - Depoimentos',
-    description: 'Depoimentos e recomendações de colegas e clientes sobre o trabalho de Hudson Kennedy como desenvolvedor.',
-    keywords: 'Depoimentos, Recomendações, Feedback, Clientes, Colegas, Trabalho, Profissional, Qualidade',
-    image: 'https://hudsonkennedy.dev.br/imgs/linkImage.webp',
-    url: 'https://hudsonkennedy.dev.br/testimonials'
-  },
-  '/contact': {
-    title: 'Contato | Hudson Kennedy - Entre em Contato',
-    description: 'Entre em contato com Hudson Kennedy para projetos de desenvolvimento web, consultoria ou oportunidades profissionais.',
-    keywords: 'Contato, Email, WhatsApp, LinkedIn, GitHub, Projeto, Consultoria, Trabalho, Oportunidade',
-    image: 'https://hudsonkennedy.dev.br/imgs/linkImage.webp',
-    url: 'https://hudsonkennedy.dev.br/contact'
+// Generate robots.txt
+const generateRobots = () => {
+  const robots = `User-agent: *
+Allow: /
+
+Sitemap: https://hudsonkennedy.dev.br/sitemap.xml`;
+
+  const robotsPath = path.join(__dirname, 'dist', 'robots.txt');
+  fs.writeFileSync(robotsPath, robots);
+  console.log('✅ robots.txt generated successfully!');
+};
+
+// Update index.html with better meta tags
+const updateIndexHTML = () => {
+  const indexPath = path.join(__dirname, 'dist', 'index.html');
+  
+  if (!fs.existsSync(indexPath)) {
+    console.error('❌ dist/index.html not found');
+    return;
+  }
+
+  let html = fs.readFileSync(indexPath, 'utf8');
+  
+  // Add structured data for better SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hudson Kennedy",
+    "jobTitle": "Full Stack Developer",
+    "description": "Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas",
+    "url": "https://hudsonkennedy.dev.br",
+    "image": "https://hudsonkennedy.dev.br/imgs/my.webp",
+    "sameAs": [
+      "https://www.linkedin.com/in/hudsonkennedyjr",
+      "https://github.com/Hudsonjr90",
+      "https://hudsonkennedy.dev.br"
+    ],
+    "knowsAbout": [
+      "React",
+      "TypeScript", 
+      "Vue.js",
+      "JavaScript",
+      "Node.js",
+      "Python",
+      "Web Development",
+      "Frontend Development",
+      "Backend Development",
+      "UI/UX Design"
+    ]
+  };
+
+  const structuredDataScript = `<script type="application/ld+json">${JSON.stringify(structuredData, null, 2)}</script>`;
+  
+  // Insert structured data before closing </head>
+  html = html.replace('</head>', `  ${structuredDataScript}\n</head>`);
+  
+  // Ensure meta tags are present
+  if (!html.includes('<meta name="description"')) {
+    const descriptionMeta = '<meta name="description" content="Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas">';
+    html = html.replace('<title>', `  ${descriptionMeta}\n    <title>`);
+  }
+  
+  if (!html.includes('<meta name="keywords"')) {
+    const keywordsMeta = '<meta name="keywords" content="Hudson Kennedy, Full Stack Developer, React, TypeScript, Vue.js, JavaScript, Node.js, Python, Web Development, Portfolio">';
+    html = html.replace('<meta name="description"', `  ${keywordsMeta}\n    <meta name="description"`);
+  }
+
+  fs.writeFileSync(indexPath, html);
+  console.log('✅ index.html updated with structured data!');
+};
+
+// Main function
+const main = () => {
+  console.log('🚀 Generating SEO files...');
+  
+  try {
+    generateSitemap();
+    generateRobots();
+    updateIndexHTML();
+    console.log('✅ All SEO files generated successfully!');
+  } catch (error) {
+    console.error('❌ Error generating SEO files:', error);
+    process.exit(1);
   }
 };
 
-// Gera os arquivos HTML para cada rota
-Object.entries(routesData).forEach(([route, seoData]) => {
-  const routePath = route === '/' ? 'index.html' : `${route.slice(1)}.html`;
-  const htmlContent = createRouteHTML(route, seoData);
-  
-  fs.writeFileSync(path.join(__dirname, 'dist', routePath), htmlContent);
-  console.log(`✅ Generated ${routePath} with custom SEO data`);
-});
-
-console.log('🎉 All route-specific HTML files generated successfully!');
+main();
