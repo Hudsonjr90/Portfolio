@@ -274,7 +274,7 @@ const Footer = () => {
           loading="eager"
           className={styles.logo_img}
         />
-        <FaRegCopyright /> 2013 - {getCurrentYear()}
+        <FaRegCopyright /> 2012 - {getCurrentYear()}
       </motion.div>
     </motion.footer>
   );
