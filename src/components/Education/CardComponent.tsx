@@ -135,7 +135,7 @@ const CardComponent = () => {
         onClose={() => setSelectedCard(null)}
         title={selectedCard ? t(`education.cardTitles.${selectedCard.titleKey}`) : ""}
         subtitle={selectedCard ? t(`education.cardInstitutions.${selectedCard.institutionKey}`) : ""}
-        description={selectedCard ? t(`education.cardDescriptions.${selectedCard.descriptionKey}`) : ""}
+        
         pdf={selectedCard?.file}
         icon={renderIcon(selectedCard?.type)}
         images={selectedCard?.img ? [selectedCard.img] : []}

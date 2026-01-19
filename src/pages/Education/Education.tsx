@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FaUserGraduate } from "react-icons/fa6";
 
 
-const CardComponent = React.lazy(() => import('../../components/Card/CardComponent'));
+const CardComponent = React.lazy(() => import('../../components/Education/CardComponent'));
 const ParticlesB = React.lazy(() => import('../../components/Particles/ParticlesB'));
 
 const Education = () => {

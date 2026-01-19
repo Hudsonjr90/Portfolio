@@ -77,7 +77,8 @@
       "card21": "Strategia Finanziaria per la Crescita",
       "card22": "Pianificazione Strategica",
       "card23": "Educazione Finanziaria Aziendale",
-      "card24": "Assistente Amministrativo"
+      "card24": "Assistente Amministrativo", 
+      "card25": "Architetto di Soluzioni IA Expert"
     },
     "cardInstitutions": {
       "card1": "Università di Harvard",
@@ -103,7 +104,8 @@
       "card21": "Sebrae",
       "card22": "Sebrae",
       "card23": "Sebrae",
-      "card24": "Corsi 24h"
+      "card24": "Corsi 24h",
+      "card25": "XP Educação"
     },
     "cardDescriptions": {
       "card1": "Programma di laurea magistrale incentrato su Informatica, Ingegneria del Software e Architettura delle Soluzioni.",
@@ -129,7 +131,8 @@
       "card21": "Pianificazione finanziaria strategica.",
       "card22": "Pianificazione strategica per il business.",
       "card23": "Educazione finanziaria applicata alle aziende.",
-      "card24": "Formazione in assistenza amministrativa e gestione."
+      "card24": "Formazione in assistenza amministrativa e gestione.",
+      "card25": "Architetto di Soluzioni IA Expert"
     }
   },
 

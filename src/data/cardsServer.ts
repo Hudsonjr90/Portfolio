@@ -6,7 +6,7 @@ const cardsServer = [
     id: 1,
     img: "/imgs/imgEducation/harvard.webp",
     titleKey: "card1",
-    institutionKey: "card1", 
+    institutionKey: "card1",
     descriptionKey: "card1",
     type: "Mestrado",
     category: "Acadêmico",
@@ -37,6 +37,17 @@ const cardsServer = [
   // ============================
   // 🚀 BOOTCAMP
   // ============================
+
+  {
+    id: 25,
+    img: "/imgs/imgEducation/xp.webp",
+    titleKey: "card25",
+    institutionKey: "card25",
+    descriptionKey: "card25",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/xp.pdf",
+  },
   {
     id: 4,
     img: "/imgs/imgEducation/bootcamp.webp",
@@ -141,7 +152,7 @@ const cardsServer = [
     category: "Técnico",
     file: "/formations/angular8.pdf",
   },
-  {    
+  {
     id: 14,
     img: "/imgs/imgEducation/testes.webp",
     titleKey: "card14",
@@ -151,7 +162,7 @@ const cardsServer = [
     category: "Técnico",
     file: "/formations/testes-automatizados.pdf",
   },
-  {    
+  {
     id: 15,
     img: "/imgs/imgEducation/dio-vue1.webp",
     titleKey: "card15",
@@ -161,7 +172,7 @@ const cardsServer = [
     category: "Técnico",
     file: "/formations/diretivas-vue.pdf",
   },
-  {    
+  {
     id: 16,
     img: "/imgs/imgEducation/dio-vue2.webp",
     titleKey: "card16",
@@ -185,7 +196,6 @@ const cardsServer = [
     category: "Técnico",
     file: "/formations/seguranca-digital.pdf",
   },
-
   // ============================
   // 💼 NEGÓCIOS / GESTÃO
   // ============================

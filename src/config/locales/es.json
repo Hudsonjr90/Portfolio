@@ -77,7 +77,8 @@
       "card21": "Estrategia Financiera para el Crecimiento",
       "card22": "Planificación Estratégica",
       "card23": "Educación Financiera Empresarial",
-      "card24": "Asistente Administrativo"
+      "card24": "Asistente Administrativo", 
+      "card25": "Arquitecto de Soluciones IA Expert"
     },
     "cardInstitutions": {
       "card1": "Universidad de Harvard",
@@ -103,7 +104,8 @@
       "card21": "Sebrae",
       "card22": "Sebrae",
       "card23": "Sebrae",
-      "card24": "Cursos 24h"
+      "card24": "Cursos 24h",
+      "card25": "XP Educación"
     },
     "cardDescriptions": {
       "card1": "Programa de posgrado enfocado en Ciencias de la Computación, Ingeniería de Software y Arquitectura de Soluciones.",
@@ -129,7 +131,8 @@
       "card21": "Planificación financiera estratégica.",
       "card22": "Planificación estratégica para negocios.",
       "card23": "Educación financiera aplicada a empresas.",
-      "card24": "Formación en asistencia administrativa y gestión."
+      "card24": "Formación en asistencia administrativa y gestión.",
+      "card25": "Arquitecto de Soluciones IA Expert"
     }
   },
 

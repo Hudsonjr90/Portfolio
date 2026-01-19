@@ -77,7 +77,8 @@
       "card21": "Financial Strategy for Growth",
       "card22": "Strategic Planning",
       "card23": "Corporate Financial Education",
-      "card24": "Administrative Assistant"
+      "card24": "Administrative Assistant",
+      "card25": "AI Solutions Architect Expert"
     },
     "cardInstitutions": {
       "card1": "Harvard University",
@@ -103,7 +104,8 @@
       "card21": "Sebrae",
       "card22": "Sebrae",
       "card23": "Sebrae",
-      "card24": "Cursos 24h"
+      "card24": "Cursos 24h",
+      "card25": "XP Education"
     },
     "cardDescriptions": {
       "card1": "Graduate program focused on Computer Science, Software Engineering, and Solution Architecture.",
@@ -129,7 +131,8 @@
       "card21": "Strategic financial planning.",
       "card22": "Strategic planning for business.",
       "card23": "Financial education applied to companies.",
-      "card24": "Administrative assistant training and management."
+      "card24": "Administrative assistant training and management.",
+      "card25": "AI Solutions Architect Expert"
     }
   },
 
