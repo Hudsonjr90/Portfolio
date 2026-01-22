@@ -255,7 +255,7 @@ const Portfolio = () => {
               breakLabel={"..."}
               breakClassName={"break-me"}
               pageCount={pageCount}
-              pageRangeDisplayed={4}
+              pageRangeDisplayed={3}
               marginPagesDisplayed={0}
               onPageChange={handlePageClick}
               containerClassName={styles.pagination}

@@ -30,7 +30,7 @@
 
 .filters {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   padding: 3rem;
 }
 
@@ -43,8 +43,8 @@
   background-color: var(--bg_color);
   margin-right: 10px;
   appearance: none;
-  -webkit-appearance: none; 
-  -moz-appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background-image: url("");
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -65,7 +65,7 @@
 
 .customTextField {
   padding: 10px;
-  padding-right: 30px; 
+  padding-right: 30px;
   font-size: 12px;
   border: 1px solid var(--main_color);
   border-radius: 4px;
@@ -93,7 +93,10 @@
   color: var(--main_color);
   font-size: 12px;
   pointer-events: none;
-  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+  transition:
+    top 0.3s ease,
+    font-size 0.3s ease,
+    color 0.3s ease;
 }
 
 .customTextField:focus + .customTextFieldLabel,
@@ -121,11 +124,11 @@
   color: var(--main_color);
   background-color: var(--bg_color);
   margin-right: 10px;
-  appearance: none; 
-  -webkit-appearance: none; 
-  -moz-appearance: none; 
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   position: relative;
-  padding-right: 30px; 
+  padding-right: 30px;
 }
 
 .customSelect:focus {
@@ -141,7 +144,7 @@
   transform: translateY(-50%);
   color: var(--main_color);
   font-size: 2rem !important;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .icons_container {
@@ -191,7 +194,7 @@
 .pagination_container {
   display: flex;
   justify-content: center;
-  margin-top: 5rem; 
+  margin-top: 5rem;
 }
 
 .pagination {
@@ -201,6 +204,7 @@
   padding: 0;
   margin: 0;
   gap: 2rem;
+  z-index: 1000;
 }
 
 .pagination li {
@@ -256,7 +260,6 @@
 .pagination li.activePage a:hover {
   transform: translateY(-1px);
 }
-
 
 .toggle {
   border: none;
@@ -433,10 +436,9 @@
     gap: 1rem;
   }
 
-  .filters{
-   margin-left: 3rem;
+  .filters {
+    margin-left: 3rem;
   }
-  
 
   .icon {
     height: 7rem;
@@ -467,11 +469,11 @@
     text-align: center;
     font-size: 12px;
   }
-  
+
   .pagination li a svg {
     font-size: 10px;
   }
-  
+
   .pagination li:first-child a svg,
   .pagination li:last-child a svg {
     font-size: 12px;
@@ -486,60 +488,61 @@
   }
 
   .selectIcon {
-    top: -2.3rem;
-    left: 11rem;
+    top: 1.8rem;
+    left: -5rem;
   }
   .searchContainer {
     position: relative;
     display: inline-block;
   }
-  .customTextFieldLabel{
-    top: 20px
+  .customTextFieldLabel {
+    top: 20px;
   }
-  .searchIcon{
+  .searchIcon {
     margin-top: 0.1rem;
     margin-right: -1rem;
   }
 
-    .toggleButtons {
+  .toggleButtons {
     gap: 0.5rem;
   }
-  
+
   .viewBtn {
     width: 50px !important;
     height: 50px !important;
   }
-  
+
   .viewBtn svg {
     font-size: 1.2rem !important;
   }
-  
+
   .chartContainer {
     padding: 1rem;
     max-height: 70vh;
     min-height: 400px;
   }
-  
+
   .chartHeader {
     top: 0.5rem;
     left: 0.5rem;
   }
-  
+
   .backButton {
     width: 40px !important;
     height: 40px !important;
   }
-  
+
   .backButton svg {
     font-size: 1rem !important;
   }
 }
 
+
 @media screen and (max-width: 480px) {
   .skills {
     padding: 0 1rem;
   }
-  
+
   .skills .heading {
     font-size: 2.5rem;
     margin: 12rem 0 1rem;
@@ -549,24 +552,41 @@
     margin: 3rem 0;
     justify-content: center;
   }
-  
+
   .viewModeButtons {
     padding: 0.3rem;
   }
-  
+
   .viewButton {
     padding: 8px !important;
   }
-  
+
   .viewButton svg {
     font-size: 1.5rem !important;
   }
-  
+
   .activeView svg {
     font-size: 1.6rem !important;
   }
 
-  .searchIcon{
-    margin-top: 0.1rem;
+  .searchIcon {
+    margin-top: -0.1rem;
+  }
+
+  .selectIcon {
+    top: 1.7rem;
+    left: -4.5rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+ 
+  .searchIcon {
+    margin-top: -1rem;
+  }
+
+  .selectIcon {
+    top: -2rem;
+    left: 8rem;
   }
 }

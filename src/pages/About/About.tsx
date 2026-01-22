@@ -34,7 +34,7 @@ const About = () => {
         <Suspense fallback={<div>{t("home.loading")}</div>}>
           <ParticlesB />
         </Suspense>
-        <div className={styles.container_img} data-tour="about-image">
+        <div className={`${styles.container_img} ${isExpanded ? styles.hidden : ''}`} data-tour="about-image">
           <Suspense fallback={<div>{t("home.loading")}</div>}>
             <motion.div
               initial={false}

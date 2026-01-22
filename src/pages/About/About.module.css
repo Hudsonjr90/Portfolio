@@ -113,4 +113,39 @@
     line-clamp: unset;
     overflow: visible;
   }
+
+
+}
+
+@media screen and (max-width: 480px) {
+  .about {
+    padding: 6rem 2% 2rem; 
+  }
+
+  .container_img img {
+    width: 70vw;
+  }
+
+  .about_content h2 {
+    font-size: 2rem;
+  }
+
+  .about_content p {
+    font-size: 1.4rem;
+  }
+
+    .container_img.hidden {
+    display: none;
+  }
+
+  .about:has(.container_img.hidden) {
+    gap: 1rem;
+    justify-content: flex-start;
+    padding-top: 12rem;
+  }
+
+  .about:has(.container_img.hidden) .about_content {
+    width: 100%;
+    max-width: none;
+  }
 }

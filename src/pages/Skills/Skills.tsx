@@ -76,7 +76,6 @@ const Skills = () => {
     setCurrentPage(0);
   }, [selectedCategory]);
 
-  // Função para ordenar por nível de especialização (Expert > Advanced > Intermediate > Basic)
   const sortByExpertiseLevel = (icons: typeof mainIcons) => {
     const levelOrder = {
       "skills.expert": 4,
@@ -90,7 +89,6 @@ const Skills = () => {
       const bLevel = levelOrder[b.level as keyof typeof levelOrder] || 0;
       
       if (aLevel === bLevel) {
-        // Se o nível for igual, ordena por percentual decrescente
         return b.percentage - a.percentage;
       }
       
@@ -98,7 +96,6 @@ const Skills = () => {
     });
   };
 
-  // Lógica de busca para o grid
   const filteredIcons = useMemo(() => {
     const filtered = mainIcons.filter((icon) => {
       const categoryMatch =
@@ -111,7 +108,6 @@ const Skills = () => {
       return categoryMatch && searchTermMatch;
     });
 
-    // Aplica a ordenação por nível de especialização
     return sortByExpertiseLevel([...filtered]);
   }, [mainIcons, selectedCategory, searchTerm]);
 
@@ -361,7 +357,7 @@ const Skills = () => {
                 >
                   <ReactPaginate
                     pageCount={totalPages}
-                    pageRangeDisplayed={5}
+                    pageRangeDisplayed={3}
                     marginPagesDisplayed={0}
                     onPageChange={({ selected: selectedPage }) => {
                       handlePageClick({ selected: selectedPage });
