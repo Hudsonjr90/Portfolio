@@ -78,7 +78,8 @@
       "card22": "Planification Stratégique",
       "card23": "Éducation Financière d'Entreprise",
       "card24": "Assistant Administratif",
-      "card25": "Architecte de Solutions IA Expert"
+      "card25": "Architecte de Solutions IA Expert",
+      "card26": "Spécialiste en Microservices (Domain-Driven Design)"
     },
     "cardInstitutions": {
       "card1": "Université de Harvard",
@@ -105,34 +106,8 @@
       "card22": "Sebrae",
       "card23": "Sebrae",
       "card24": "Cours 24h",
-      "card25": "XP Éducation"
-    },
-    "cardDescriptions": {
-      "card1": "Programme d'études supérieures axé sur l'informatique, l'ingénierie logicielle et l'architecture de solutions.",
-      "card2": "Spécialisation en génie logiciel, bonnes pratiques, architecture de systèmes et qualité du code.",
-      "card3": "Formation axée sur la gestion, les processus organisationnels et la vision stratégique des affaires.",
-      "card4": "Bootcamp pratique axé sur Angular, l'architecture frontend et les applications d'entreprise.",
-      "card5": "Développement frontend utilisant Adobe Experience Manager.",
-      "card6": "Fondamentaux et pratiques métier avec Adobe Experience Manager Sites.",
-      "card7": "Cours complet sur les fondamentaux, les composants, le cycle de vie et l'architecture Vue.js.",
-      "card8": "Cours complet couvrant JavaScript moderne et TypeScript.",
-      "card9": "Création et réutilisation de composants React.",
-      "card10": "Architecture des composants et gestion de la complexité en frontend.",
-      "card11": "Fondamentaux de la logique de programmation.",
-      "card12": "Fonctionnalités modernes de JavaScript ES6.",
-      "card13": "Angular avancé et bonnes pratiques.",
-      "card14": "Automatisation des tests de bout en bout avec Cypress.",
-      "card15": "Directives et propriétés des composants Vue.js.",
-      "card16": "Composants, méthodes et cycle de vie avec Vue.js.",
-      "card17": "Fondamentaux de la sécurité de l'information.",
-      "card18": "Gestion financière appliquée aux entreprises.",
-      "card19": "Stratégies pour conquérir et fidéliser les clients.",
-      "card20": "Fondamentaux du marketing digital.",
-      "card21": "Planification financière stratégique.",
-      "card22": "Planification stratégique pour les entreprises.",
-      "card23": "Éducation financière appliquée aux entreprises.",
-      "card24": "Formation en assistance administrative et gestion.",
-      "card25": "Architecte de Solutions IA Expert"
+      "card25": "XP Éducation",
+      "card26": "AlgaWorks"
     }
   },
 

@@ -78,7 +78,8 @@
       "card22": "Pianificazione Strategica",
       "card23": "Educazione Finanziaria Aziendale",
       "card24": "Assistente Amministrativo", 
-      "card25": "Architetto di Soluzioni IA Expert"
+      "card25": "Architetto di Soluzioni IA Expert",
+      "card26": "Specialista in Microservizi (Domain-Driven Design)"
     },
     "cardInstitutions": {
       "card1": "Università di Harvard",
@@ -105,34 +106,8 @@
       "card22": "Sebrae",
       "card23": "Sebrae",
       "card24": "Corsi 24h",
-      "card25": "XP Educação"
-    },
-    "cardDescriptions": {
-      "card1": "Programma di laurea magistrale incentrato su Informatica, Ingegneria del Software e Architettura delle Soluzioni.",
-      "card2": "Specializzazione in ingegneria del software, migliori pratiche, architettura di sistemi e qualità del codice.",
-      "card3": "Formazione incentrata su gestione, processi organizzativi e visione strategica del business.",
-      "card4": "Bootcamp pratico incentrato su Angular, architettura frontend e applicazioni aziendali.",
-      "card5": "Sviluppo frontend utilizzando Adobe Experience Manager.",
-      "card6": "Fondamenti e pratiche business con Adobe Experience Manager Sites.",
-      "card7": "Corso completo su fondamenti, componenti, ciclo di vita e architettura Vue.js.",
-      "card8": "Corso completo che copre JavaScript moderno e TypeScript.",
-      "card9": "Creazione e riutilizzo di componenti React.",
-      "card10": "Architettura dei componenti e gestione della complessità nel frontend.",
-      "card11": "Fondamenti della logica di programmazione.",
-      "card12": "Funzionalità moderne di JavaScript ES6.",
-      "card13": "Angular avanzato e migliori pratiche.",
-      "card14": "Automazione dei test end-to-end con Cypress.",
-      "card15": "Direttive e proprietà dei componenti Vue.js.",
-      "card16": "Componenti, metodi e ciclo di vita con Vue.js.",
-      "card17": "Fondamenti della sicurezza informatica.",
-      "card18": "Gestione finanziaria applicata al business.",
-      "card19": "Strategie per conquistare e mantenere i clienti.",
-      "card20": "Fondamenti del marketing digitale.",
-      "card21": "Pianificazione finanziaria strategica.",
-      "card22": "Pianificazione strategica per il business.",
-      "card23": "Educazione finanziaria applicata alle aziende.",
-      "card24": "Formazione in assistenza amministrativa e gestione.",
-      "card25": "Architetto di Soluzioni IA Expert"
+      "card25": "XP Educação",
+      "card26": "AlgaWorks"
     }
   },
 

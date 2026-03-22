@@ -78,7 +78,8 @@
       "card22": "Strategic Planning",
       "card23": "Corporate Financial Education",
       "card24": "Administrative Assistant",
-      "card25": "AI Solutions Architect Expert"
+      "card25": "AI Solutions Architect Expert",
+      "card26": "Microservices Specialist Level 2 (Domain-Driven Design)"
     },
     "cardInstitutions": {
       "card1": "Harvard University",
@@ -105,34 +106,8 @@
       "card22": "Sebrae",
       "card23": "Sebrae",
       "card24": "Cursos 24h",
-      "card25": "XP Education"
-    },
-    "cardDescriptions": {
-      "card1": "Graduate program focused on Computer Science, Software Engineering, and Solution Architecture.",
-      "card2": "Specialization in software engineering, best practices, systems architecture, and code quality.",
-      "card3": "Education focused on management, organizational processes, and strategic business vision.",
-      "card4": "Practical bootcamp focused on Angular, frontend architecture, and corporate applications.",
-      "card5": "Frontend development using Adobe Experience Manager.",
-      "card6": "Business fundamentals and practices with Adobe Experience Manager Sites.",
-      "card7": "Complete course on fundamentals, components, lifecycle, and Vue.js architecture.",
-      "card8": "Complete course covering modern JavaScript and TypeScript.",
-      "card9": "Creating and reusing React components.",
-      "card10": "Component architecture and complexity management in frontend.",
-      "card11": "Fundamentals of programming logic.",
-      "card12": "Modern JavaScript ES6 features.",
-      "card13": "Advanced Angular and best practices.",
-      "card14": "End-to-end test automation with Cypress.",
-      "card15": "Vue.js component directives and properties.",
-      "card16": "Components, methods and lifecycle with Vue.js.",
-      "card17": "Information security fundamentals.",
-      "card18": "Financial management applied to business.",
-      "card19": "Strategies to acquire and retain customers.",
-      "card20": "Digital marketing fundamentals.",
-      "card21": "Strategic financial planning.",
-      "card22": "Strategic planning for business.",
-      "card23": "Financial education applied to companies.",
-      "card24": "Administrative assistant training and management.",
-      "card25": "AI Solutions Architect Expert"
+      "card25": "XP Education",
+      "card26": "AlgaWorks"
     }
   },
 

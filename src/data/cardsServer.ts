@@ -63,6 +63,17 @@ const cardsServer = [
   // 💻 FRONTEND / TÉCNICO
   // ============================
   {
+    id: 26,
+    img: "/imgs/imgEducation/algaworks.webp",
+    titleKey: "card26",
+    institutionKey: "card26",
+    descriptionKey: "card26",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/algaworks.pdf",
+  },
+  
+  {
     id: 5,
     img: "/imgs/imgEducation/aem-front.webp",
     titleKey: "card5",
