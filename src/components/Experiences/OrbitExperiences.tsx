@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./OrbitExperiences.module.css";
 import { Experience } from "../../data/experiencesServer";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Modal from "../Modal/Modal";
 import { FaLaptopCode } from "react-icons/fa";
 
@@ -10,7 +10,22 @@ interface Props {
 }
 
 const OrbitExperiences = ({ experiences }: Props) => {
-  const [active, setActive] = useState<Experience | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  const ORBIT_ITEM_SIZE = 72;
+  const itemOffset = ORBIT_ITEM_SIZE / 2;
+
+  const carouselItems = useMemo(
+    () =>
+      experiences.map((exp) => ({
+        title: exp.title,
+        subtitle: exp.subtitle,
+        description: exp.description,
+        date: `📅 ${exp.date}`,
+        icon: <img src={exp.image} alt={exp.title} width={50} />,
+      })),
+    [experiences]
+  );
 
   const radius = 250;
   const step = (2 * Math.PI) / experiences.length;
@@ -18,8 +33,14 @@ const OrbitExperiences = ({ experiences }: Props) => {
   return (
     <>
       <div className={styles.orbitContainer}>
-        {/* Linhas de conexão */}
-        <svg className={styles.connectionLines}>
+        <motion.svg
+          className={styles.connectionLines}
+          animate={{
+            scale: isCollapsed ? 0 : 1,
+            opacity: isCollapsed ? 0 : 1,
+          }}
+          transition={{ duration: 0.45, ease: "easeInOut" }}
+        >
           {experiences.map((_, index) => {
               const angle = index * step;
               const x = Math.cos(angle) * radius;
@@ -36,45 +57,51 @@ const OrbitExperiences = ({ experiences }: Props) => {
                 />
               );
             })}
-        </svg>
+        </motion.svg>
 
-        {/* Ícone central */}
-        <div className={styles.centerIcon}>
+        <button
+          type="button"
+          className={`${styles.centerIcon} ${isCollapsed ? styles.centerIconCollapsed : ""}`}
+          onClick={() => setIsCollapsed((prev) => !prev)}
+          aria-label={isCollapsed ? "Expand experiences" : "Collapse experiences"}
+          aria-pressed={!isCollapsed}
+        >
          <FaLaptopCode />
-        </div>
+        </button>
 
-        {/* Elementos da órbita */}
-        {experiences.map((exp, index) => {
-          const angle = index * step;
+        <AnimatePresence>
+          {!isCollapsed &&
+            experiences.map((exp, index) => {
+              const angle = index * step;
 
-          const x = Math.cos(angle) * radius;
-          const y = Math.sin(angle) * radius;
+              const x = Math.cos(angle) * radius;
+              const y = Math.sin(angle) * radius;
 
-          return (
-            <motion.div
-              key={index}
-              className={styles.orbitItem}
-              style={{
-                transform: `translate(${x}px, ${y}px)`,
-              }}
-              onClick={() => setActive(exp)}
-            >
-              <img src={exp.image} alt={exp.title} />
-            </motion.div>
-          );
-        })}
+              return (
+                <motion.div
+                  key={index}
+                  className={styles.orbitItem}
+                  initial={{ opacity: 0, scale: 0.5, x: -itemOffset, y: -itemOffset }}
+                  animate={{ opacity: 1, scale: 1, x: x - itemOffset, y: y - itemOffset }}
+                  exit={{ opacity: 0, scale: 0.5, x: -itemOffset, y: -itemOffset }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  onClick={() => setSelectedIndex(index)}
+                >
+                  <img src={exp.image} alt={exp.title} />
+                </motion.div>
+              );
+            })}
+        </AnimatePresence>
       </div>
 
-      {/* MODAL */}
-      {active && (
+  
+      {selectedIndex !== null && (
         <Modal
-          show={!!active}
-          onClose={() => setActive(null)}
-          title={active.title}
-          subtitle={active.subtitle}
-          description={active.description}
-          date={`📅 ${active.date}`}
-          icon={<img src={active.image} alt={active.title} width={50} />}
+          show={selectedIndex !== null}
+          onClose={() => setSelectedIndex(null)}
+          carouselItems={carouselItems}
+          initialPage={selectedIndex}
+          loopNavigation
         />
       )}
     </>

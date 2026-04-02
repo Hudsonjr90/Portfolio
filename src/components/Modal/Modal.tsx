@@ -19,6 +19,17 @@ interface ModalProps {
   images?: string[];
   icon?: React.ReactNode;
   date?: string;
+  carouselItems?: {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    pdf?: string;
+    image?: string;
+    icon?: React.ReactNode;
+    date?: string;
+  }[];
+  initialPage?: number;
+  loopNavigation?: boolean;
 }
 
 const Modal = ({
@@ -31,17 +42,31 @@ const Modal = ({
   images = [],
   icon,
   date,
+  carouselItems = [],
+  initialPage = 0,
+  loopNavigation = false,
 }: ModalProps) => {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
 
+  const hasCarouselItems = carouselItems.length > 0;
+  const totalPages = hasCarouselItems ? carouselItems.length : images.length;
+  const currentItem = hasCarouselItems ? carouselItems[currentPage] : null;
+  const currentImage = hasCarouselItems ? currentItem?.image : images[currentPage];
+  const currentTitle = currentItem?.title ?? title;
+  const currentSubtitle = currentItem?.subtitle ?? subtitle;
+  const currentDescription = currentItem?.description ?? description;
+  const currentDate = currentItem?.date ?? date;
+  const currentIcon = currentItem?.icon ?? icon;
+  const currentPdf = currentItem?.pdf ?? pdf;
+
   // Reset page quando modal abrir
   useEffect(() => {
     if (show) {
-      setCurrentPage(0);
+      setCurrentPage(initialPage);
     }
-  }, [show]);
+  }, [initialPage, show]);
 
   // Scroll para o topo quando mudar de página
   useEffect(() => {
@@ -51,30 +76,46 @@ const Modal = ({
   }, [currentPage]);
 
   const handleDownload = useCallback(() => {
-    if (!pdf) return;
+    if (!currentPdf) return;
 
-    const fileName = pdf.split("/").pop();
-    fetch(pdf)
+    const fileName = currentPdf.split("/").pop();
+    fetch(currentPdf)
       .then((res) => res.blob())
       .then((blob) => saveAs(blob, fileName))
       .catch(console.error);
-  }, [pdf]);
+  }, [currentPdf]);
 
   const handleNextPage = useCallback(() => {
-    if (currentPage < images.length - 1) {
-      setCurrentPage(prev => prev + 1);
+    if (totalPages <= 1) return;
+
+    if (currentPage < totalPages - 1) {
+      setCurrentPage((prev) => prev + 1);
+      return;
     }
-  }, [currentPage, images.length]);
+
+    if (loopNavigation) {
+      setCurrentPage(0);
+    }
+  }, [currentPage, loopNavigation, totalPages]);
 
   const handlePreviousPage = useCallback(() => {
-    if (currentPage > 0) {
-      setCurrentPage(prev => prev - 1);
-    }
-  }, [currentPage]);
+    if (totalPages <= 1) return;
 
-  const hasMultiplePages = images.length > 1;
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1);
+      return;
+    }
+
+    if (loopNavigation) {
+      setCurrentPage(totalPages - 1);
+    }
+  }, [currentPage, loopNavigation, totalPages]);
+
+  const hasMultiplePages = totalPages > 1;
   const isFirstPage = currentPage === 0;
-  const isLastPage = currentPage === images.length - 1;
+  const isLastPage = currentPage === totalPages - 1;
+  const isPrevDisabled = !loopNavigation && isFirstPage;
+  const isNextDisabled = !loopNavigation && isLastPage;
 
   if (!show) return null;
 
@@ -83,15 +124,96 @@ const Modal = ({
       <motion.div className={styles.modal_container}>
         {/* HEADER */}
         <div className={styles.modal_title}>
-          <div className={styles.modal_header_content}>
-            {icon && <span className={styles.modal_icon}>{icon}</span>}
-            <div className={styles.modal_text_content}>
-              {title && <h3 className={styles.modal_title_text}>{title}</h3>}
-              {subtitle && <p className={styles.modal_subtitle}>{subtitle}</p>}
+          <div className={styles.modal_header_top}>
+            <div className={styles.modal_header_identity}>
+              {currentIcon && <span className={styles.modal_icon}>{currentIcon}</span>}
+              {currentTitle && <h3 className={styles.modal_title_text}>{currentTitle}</h3>}
+            </div>
+
+            <div className={styles.modal_actions_mobile}>
+              <ThemeProvider theme={navbarTheme}>
+                {currentPdf && (
+                  <Tooltip
+                    TransitionComponent={Zoom}
+                    title={t("home.download")}
+                    placement="top"
+                    arrow
+                  >
+                    <IconButton
+                      className={styles.down_button}
+                      onClick={handleDownload}
+                    >
+                      <FaDownload className={styles.size_button} />
+                    </IconButton>
+                  </Tooltip>
+                )}
+                <Tooltip
+                  TransitionComponent={Zoom}
+                  title={t("home.close")}
+                  placement="top"
+                  arrow
+                >
+                  <IconButton className={styles.close_button} onClick={onClose}>
+                    <GrClose className={styles.size_button} />
+                  </IconButton>
+                </Tooltip>
+              </ThemeProvider>
             </div>
           </div>
-          
-          <div className={styles.modal_actions}>
+
+          <div className={styles.modal_header_bottom}>
+            {currentSubtitle && <p className={styles.modal_subtitle}>{currentSubtitle}</p>}
+
+            {hasMultiplePages && (
+              <div className={styles.modal_nav_inline}>
+                <ThemeProvider theme={navbarTheme}>
+                  <div className={styles.pagination_controls}>
+                    <Tooltip
+                      TransitionComponent={Zoom}
+                      title={t("home.previous")}
+                      placement="top"
+                      arrow
+                    >
+                      <span>
+                        <IconButton
+                          className={`${styles.nav_button} ${isPrevDisabled ? styles.disabled : ''}`}
+                          onClick={handlePreviousPage}
+                          disabled={isPrevDisabled}
+                        >
+                          <FaChevronLeft className={styles.nav_icon} />
+                        </IconButton>
+                      </span>
+                    </Tooltip>
+
+                    <div className={styles.page_indicator}>
+                      <span className={styles.page_text}>
+                        {currentPage + 1} / {totalPages}
+                      </span>
+                    </div>
+
+                    <Tooltip
+                      TransitionComponent={Zoom}
+                      title={t("home.next")}
+                      placement="top"
+                      arrow
+                    >
+                      <span>
+                        <IconButton
+                          className={`${styles.nav_button} ${isNextDisabled ? styles.disabled : ''}`}
+                          onClick={handleNextPage}
+                          disabled={isNextDisabled}
+                        >
+                          <FaChevronRight className={styles.nav_icon} />
+                        </IconButton>
+                      </span>
+                    </Tooltip>
+                  </div>
+                </ThemeProvider>
+              </div>
+            )}
+          </div>
+
+          <div className={styles.modal_actions_desktop}>
             <ThemeProvider theme={navbarTheme}>
               {hasMultiplePages && (
                 <div className={styles.pagination_controls}>
@@ -103,21 +225,21 @@ const Modal = ({
                   >
                     <span>
                       <IconButton
-                        className={`${styles.nav_button} ${isFirstPage ? styles.disabled : ''}`}
+                        className={`${styles.nav_button} ${isPrevDisabled ? styles.disabled : ''}`}
                         onClick={handlePreviousPage}
-                        disabled={isFirstPage}
+                        disabled={isPrevDisabled}
                       >
                         <FaChevronLeft className={styles.nav_icon} />
                       </IconButton>
                     </span>
                   </Tooltip>
-                  
+
                   <div className={styles.page_indicator}>
                     <span className={styles.page_text}>
-                      {currentPage + 1} / {images.length}
+                      {currentPage + 1} / {totalPages}
                     </span>
                   </div>
-                  
+
                   <Tooltip
                     TransitionComponent={Zoom}
                     title={t("home.next")}
@@ -126,9 +248,9 @@ const Modal = ({
                   >
                     <span>
                       <IconButton
-                        className={`${styles.nav_button} ${isLastPage ? styles.disabled : ''}`}
+                        className={`${styles.nav_button} ${isNextDisabled ? styles.disabled : ''}`}
                         onClick={handleNextPage}
-                        disabled={isLastPage}
+                        disabled={isNextDisabled}
                       >
                         <FaChevronRight className={styles.nav_icon} />
                       </IconButton>
@@ -136,8 +258,8 @@ const Modal = ({
                   </Tooltip>
                 </div>
               )}
-              
-              {pdf && (
+
+              {currentPdf && (
                 <Tooltip
                   TransitionComponent={Zoom}
                   title={t("home.download")}
@@ -167,29 +289,29 @@ const Modal = ({
         </div>
 
         {/* DESCRIÇÃO */}
-        {description && (
+        {currentDescription && (
           <div className={styles.modal_description_container}>
-            <p className={styles.modal_description}>{description}</p>
+            <p className={styles.modal_description}>{currentDescription}</p>
           </div>
         )}
 
-        {date && (
+        {currentDate && (
           <div className={styles.modal_date_container}>
-            <span className={styles.modal_date}>{date}</span>
+            <span className={styles.modal_date}>{currentDate}</span>
           </div>
         )}
 
         {/* CONTEÚDO */}
         <div className={styles.modal_content} ref={contentRef}>
-          {images.length > 0 && (
+          {currentImage && (
             <motion.img
               key={currentPage}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              src={images[currentPage]}
-              alt={`${title} - Página ${currentPage + 1}`}
+              src={currentImage}
+              alt={`${currentTitle ?? "Modal"} - Página ${currentPage + 1}`}
               loading="lazy"
               className={styles.modal_image}
             />

@@ -1,7 +1,4 @@
 const cardsServer = [
-  // ============================
-  // 🎓 FORMAÇÃO ACADÊMICA
-  // ============================
   {
     id: 1,
     img: "/imgs/imgEducation/harvard.webp",
@@ -33,21 +30,6 @@ const cardsServer = [
     category: "Acadêmico",
     file: "/formations/processos-gerenciais.pdf",
   },
-
-  // ============================
-  // 🚀 BOOTCAMP
-  // ============================
-
-  {
-    id: 25,
-    img: "/imgs/imgEducation/xp.webp",
-    titleKey: "card25",
-    institutionKey: "card25",
-    descriptionKey: "card25",
-    type: "Curso",
-    category: "Técnico",
-    file: "/formations/xp.pdf",
-  },
   {
     id: 4,
     img: "/imgs/imgEducation/bootcamp.webp",
@@ -58,36 +40,11 @@ const cardsServer = [
     category: "Técnico",
     file: "/formations/bootcamp.pdf",
   },
-
-  // ============================
-  // 💻 FRONTEND / TÉCNICO
-  // ============================
-  {
-    id: 26,
-    img: "/imgs/imgEducation/algaworks.webp",
-    titleKey: "card26",
-    institutionKey: "card26",
-    descriptionKey: "card26",
-    type: "Curso",
-    category: "Técnico",
-    file: "/formations/algaworks.pdf",
-  },
-  {
-    id: 27,
-    img: "/imgs/imgEducation/fad.webp",
-    titleKey: "card27",
-    institutionKey: "card27",
-    descriptionKey: "card27",
-    type: "Curso",
-    category: "Técnico",
-    file: "/formations/fad.pdf",
-  },
-  
   {
     id: 5,
     img: "/imgs/imgEducation/aem-front.webp",
     titleKey: "card5",
-    institutionKey: "card5",
+    institutionKey: "card6",
     descriptionKey: "card5",
     type: "Curso",
     category: "Técnico",
@@ -127,7 +84,7 @@ const cardsServer = [
     id: 9,
     img: "/imgs/imgEducation/dio-comp.webp",
     titleKey: "card9",
-    institutionKey: "card9",
+    institutionKey: "card5",
     descriptionKey: "card9",
     type: "Curso",
     category: "Técnico",
@@ -137,7 +94,7 @@ const cardsServer = [
     id: 10,
     img: "/imgs/imgEducation/dio-arq.webp",
     titleKey: "card10",
-    institutionKey: "card10",
+    institutionKey: "card5",
     descriptionKey: "card10",
     type: "Curso",
     category: "Técnico",
@@ -147,7 +104,7 @@ const cardsServer = [
     id: 11,
     img: "/imgs/imgEducation/dio-log.webp",
     titleKey: "card11",
-    institutionKey: "card11",
+    institutionKey: "card5",
     descriptionKey: "card11",
     type: "Curso",
     category: "Técnico",
@@ -157,7 +114,7 @@ const cardsServer = [
     id: 12,
     img: "/imgs/imgEducation/dio-es6.webp",
     titleKey: "card12",
-    institutionKey: "card12",
+    institutionKey: "card5",
     descriptionKey: "card12",
     type: "Curso",
     category: "Técnico",
@@ -167,7 +124,7 @@ const cardsServer = [
     id: 13,
     img: "/imgs/imgEducation/dio-ang8.webp",
     titleKey: "card13",
-    institutionKey: "card13",
+    institutionKey: "card5",
     descriptionKey: "card13",
     type: "Curso",
     category: "Técnico",
@@ -177,7 +134,7 @@ const cardsServer = [
     id: 14,
     img: "/imgs/imgEducation/testes.webp",
     titleKey: "card14",
-    institutionKey: "card14",
+    institutionKey: "card5",
     descriptionKey: "card14",
     type: "Curso",
     category: "Técnico",
@@ -187,7 +144,7 @@ const cardsServer = [
     id: 15,
     img: "/imgs/imgEducation/dio-vue1.webp",
     titleKey: "card15",
-    institutionKey: "card15",
+    institutionKey: "card5",
     descriptionKey: "card15",
     type: "Curso",
     category: "Técnico",
@@ -197,34 +154,27 @@ const cardsServer = [
     id: 16,
     img: "/imgs/imgEducation/dio-vue2.webp",
     titleKey: "card16",
-    institutionKey: "card16",
+    institutionKey: "card5",
     descriptionKey: "card16",
     type: "Curso",
     category: "Técnico",
     file: "/formations/componentes-vue.pdf",
   },
-
-  // ============================
-  // 🔒 SEGURANÇA
-  // ============================
   {
     id: 17,
     img: "/imgs/imgEducation/fgv.webp",
     titleKey: "card17",
-    institutionKey: "card17",
+    institutionKey: "card10",
     descriptionKey: "card17",
     type: "Curso",
     category: "Técnico",
     file: "/formations/seguranca-digital.pdf",
   },
-  // ============================
-  // 💼 NEGÓCIOS / GESTÃO
-  // ============================
   {
     id: 18,
     img: "/imgs/imgEducation/sebrae-GF.webp",
     titleKey: "card18",
-    institutionKey: "card18",
+    institutionKey: "card11",
     descriptionKey: "card18",
     type: "Curso",
     category: "Negócio",
@@ -234,7 +184,7 @@ const cardsServer = [
     id: 19,
     img: "/imgs/imgEducation/sebrae-CS.webp",
     titleKey: "card19",
-    institutionKey: "card19",
+    institutionKey: "card11",
     descriptionKey: "card19",
     type: "Curso",
     category: "Negócio",
@@ -244,7 +194,7 @@ const cardsServer = [
     id: 20,
     img: "/imgs/imgEducation/sebrae-MD.webp",
     titleKey: "card20",
-    institutionKey: "card20",
+    institutionKey: "card11",
     descriptionKey: "card20",
     type: "Curso",
     category: "Negócio",
@@ -254,7 +204,7 @@ const cardsServer = [
     id: 21,
     img: "/imgs/imgEducation/sebrae-EFC.webp",
     titleKey: "card21",
-    institutionKey: "card21",
+    institutionKey: "card11",
     descriptionKey: "card21",
     type: "Curso",
     category: "Negócio",
@@ -264,7 +214,7 @@ const cardsServer = [
     id: 22,
     img: "/imgs/imgEducation/sebrae-PE.webp",
     titleKey: "card22",
-    institutionKey: "card22",
+    institutionKey: "card11",
     descriptionKey: "card22",
     type: "Curso",
     category: "Negócio",
@@ -274,25 +224,61 @@ const cardsServer = [
     id: 23,
     img: "/imgs/imgEducation/sebrae-EF.webp",
     titleKey: "card23",
-    institutionKey: "card23",
+    institutionKey: "card11",
     descriptionKey: "card23",
     type: "Curso",
     category: "Negócio",
     file: "/formations/educacao-financeira.pdf",
   },
-
-  // ============================
-  // 💼 ADMINISTRAÇÃO
-  // ============================
   {
     id: 24,
     img: "/imgs/imgEducation/24h.webp",
     titleKey: "card24",
-    institutionKey: "card24",
+    institutionKey: "card12",
     descriptionKey: "card24",
     type: "Curso",
     category: "Administração",
     file: "/formations/auxiliar-administrativo.pdf",
+  },
+  {
+    id: 25,
+    img: "/imgs/imgEducation/xp.webp",
+    titleKey: "card25",
+    institutionKey: "card13",
+    descriptionKey: "card25",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/xp.pdf",
+  },
+    {
+    id: 26,
+    img: "/imgs/imgEducation/algaworks.webp",
+    titleKey: "card26",
+    institutionKey: "card14",
+    descriptionKey: "card26",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/algaworks.pdf",
+  },
+  {
+    id: 27,
+    img: "/imgs/imgEducation/fad.webp",
+    titleKey: "card27",
+    institutionKey: "card15",
+    descriptionKey: "card27",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/fad.pdf",
+  },
+  {
+    id: 28,
+    img: "/imgs/imgEducation/biad.webp",
+    titleKey: "card28",
+    institutionKey: "card15",
+    descriptionKey: "card28",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/biad.pdf",
   },
 ];
 

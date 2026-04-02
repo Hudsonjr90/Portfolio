@@ -53,6 +53,14 @@
     "title": " Minhas",
     "text": " Formações",
     "clickToView": "Ver certificado",
+    "categoriesLabel": "Categorias",
+    "allCategories": "Todas",
+    "categoryLabels": {
+      "academic": "Acadêmico",
+      "technical": "Técnico",
+      "business": "Negócio",
+      "administration": "Administração"
+    },
     "cardTitles": {
       "card1": "Mestrado em Ciência da Computação",
       "card2": "Pós-graduação em Engenharia de Software",
@@ -80,37 +88,25 @@
       "card24": "Auxiliar Administrativo",
       "card25": "Arquiteto de Soluções IA Expert",
       "card26": "Especialista em Microserviços Nível 2 (Domain-Driven Design)",
-      "card27": "Fundamentos de Análise de Dados"
+      "card27": "Fundamentos de Análise de Dados",
+      "card28": "Fundamentos de BI e Análise de Dados"
     },
     "cardInstitutions": {
       "card1": "Universidade de Harvard",
       "card2": "Faculdade Única de MG",
       "card3": "Faculdade Estácio de Sá",
       "card4": "Digital Innovation One · Banco Pan",
-      "card5": "Adobe Professional",
+      "card5": "Digital Innovation One",
       "card6": "Adobe Professional",
       "card7": "VueJS Brasil",
       "card8": "Udemy",
       "card9": "Digital Innovation One",
-      "card10": "Digital Innovation One",
-      "card11": "Digital Innovation One",
-      "card12": "Digital Innovation One",
-      "card13": "Digital Innovation One",
-      "card14": "Digital Innovation One",
-      "card15": "Digital Innovation One",
-      "card16": "Digital Innovation One",
-      "card17": "Fundação Getúlio Vargas",
-      "card18": "Sebrae",
-      "card19": "Sebrae",
-      "card20": "Sebrae",
-      "card21": "Sebrae",
-      "card22": "Sebrae",
-      "card23": "Sebrae",
-      "card24": "Cursos 24h",
-      "card25": "XP Educação",
-      "card26": "AlgaWorks",
-      "card27": "Xperiun"
-
+      "card10": "Fundação Getúlio Vargas",
+      "card11": "Sebrae",
+      "card12": "Cursos 24h",
+      "card13": "XP Educação",
+      "card14": "AlgaWorks",
+      "card15": "Xperiun"
     },
     "see": "Ver certificado",
     "download": "Baixar certificado"

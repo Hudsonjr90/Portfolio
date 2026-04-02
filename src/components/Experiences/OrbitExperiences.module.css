@@ -26,6 +26,18 @@
   color: var(--main_color);
   box-shadow: 0 0 25px rgba(var(--main_color_rgb), 0.4);
   z-index: 10;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.centerIcon:hover {
+  box-shadow: 0 0 30px rgba(var(--main_color_rgb), 0.55);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.centerIconCollapsed {
+  background: var(--second_bg_color);
+  box-shadow: 0 0 35px rgba(var(--main_color_rgb), 0.7);
 }
 
 /* Linhas de conexão */
@@ -58,6 +70,8 @@
 
 .orbitItem {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 72px;
   height: 72px;
   border-radius: 50%;
@@ -76,7 +90,6 @@
   border-color: var(--main_color);
   box-shadow: 0 0 20px rgba(var(--main_color_rgb), 0.5);
   background: var(--second_bg_color);
-  transform: translateZ(0); /* Força hardware acceleration */
 }
 
 .orbitItem img {
