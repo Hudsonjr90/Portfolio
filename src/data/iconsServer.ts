@@ -19,7 +19,7 @@ import {
   FaGitlab,
   FaWordpress,
   FaMagento,
-  FaAws,
+  FaAws,  
 } from "react-icons/fa6";
 import {
   SiTailwindcss,
@@ -41,7 +41,6 @@ import {
   SiJquery,
   SiLess,
   SiSass,
-  SiAdobephotoshop,
   SiGoogleanalytics,
   SiGoogleads,
   SiTerraform,
@@ -53,8 +52,7 @@ import {
   SiPostman,
   SiCypress,
   SiSketch,
-  SiAdobexd,
-  SiNuxtdotjs,
+  SiNuxt,
   SiEslint,
   SiRuby,
   SiRubyonrails,
@@ -85,8 +83,9 @@ import {
   BiLogoHeroku,
   BiBoltCircle,
 } from "react-icons/bi";
+import { DiPhotoshop } from "react-icons/di";
 import { DiRedis } from "react-icons/di";
-import { TbBrandCSharp } from "react-icons/tb";
+import { TbBrandCSharp, TbBrandAdobeXd } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
 import DeviconIcon from "./DeviconIcon";
 
@@ -139,7 +138,7 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Electron: SiElectron,
   Jenkins: SiJenkins,
   Jquery: SiJquery,
-  Photoshop: SiAdobephotoshop,
+  Photoshop: DiPhotoshop,
   Analytics: SiGoogleanalytics,
   ADS: SiGoogleads,
   Terraform: SiTerraform,
@@ -159,8 +158,8 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Cypress: SiCypress,
   AWS: FaAws,
   Sketch: SiSketch,
-  AdobeXD: SiAdobexd,
-  Nuxtjs: SiNuxtdotjs,
+  AdobeXD: TbBrandAdobeXd,
+  Nuxtjs: SiNuxt,
   Eslint: SiEslint,
   Magento: FaMagento,
   Ruby: SiRuby,
