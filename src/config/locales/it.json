@@ -79,7 +79,8 @@
       "card23": "Educazione Finanziaria Aziendale",
       "card24": "Assistente Amministrativo", 
       "card25": "Architetto di Soluzioni IA Expert",
-      "card26": "Specialista in Microservizi (Domain-Driven Design)"
+      "card26": "Specialista in Microservizi (Domain-Driven Design)",
+      "card27": "Fondamenti di Analisi dei Dati"
     },
     "cardInstitutions": {
       "card1": "Università di Harvard",
@@ -107,7 +108,8 @@
       "card23": "Sebrae",
       "card24": "Corsi 24h",
       "card25": "XP Educação",
-      "card26": "AlgaWorks"
+      "card26": "AlgaWorks",
+      "card27": "Xperiun"
     }
   },
 
@@ -253,6 +255,9 @@
       },
       {
         "description": "Un sito per un barbiere, con prenotazione online."
+      },
+      {
+        "description": "Un'applicazione di finanza personale per gestire entrate e uscite."
       }
     ]
   },

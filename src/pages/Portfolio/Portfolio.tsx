@@ -127,7 +127,7 @@ const Portfolio = () => {
                         <h3 className={styles.cardTitle}>{item.name}</h3>
 
                         <p className={styles.cardDescription}>
-                          {t(`projects.data.${item.id}.description`)}
+                          {t(item.descriptionKey)}
                         </p>
 
                         <div className={styles.tech_title}>

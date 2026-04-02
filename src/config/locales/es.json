@@ -79,7 +79,8 @@
       "card23": "Educación Financiera Empresarial",
       "card24": "Asistente Administrativo", 
       "card25": "Arquitecto de Soluciones IA Expert",
-      "card26": "Especialista en Microservicios Nivel 2 (Domain-Driven Design)"
+      "card26": "Especialista en Microservicios Nivel 2 (Domain-Driven Design)",
+      "card27": "Fundamentos de Análisis de Datos"
     },
     "cardInstitutions": {
       "card1": "Universidad de Harvard",
@@ -107,7 +108,8 @@
       "card23": "Sebrae",
       "card24": "Cursos 24h",
       "card25": "XP Educación",
-      "card26": "AlgaWorks"
+      "card26": "AlgaWorks",
+      "card27": "Xperiun"
     }
   },
 
@@ -253,6 +255,9 @@
       },
       {
         "description": "Un sitio para una barbería, con reserva en línea."
+      },
+      {
+        "description": "Una aplicación bancaria simple para gestionar cuentas y transacciones."
       }
     ]
   },

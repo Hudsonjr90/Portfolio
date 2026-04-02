@@ -72,6 +72,16 @@ const cardsServer = [
     category: "Técnico",
     file: "/formations/algaworks.pdf",
   },
+  {
+    id: 27,
+    img: "/imgs/imgEducation/fad.webp",
+    titleKey: "card27",
+    institutionKey: "card27",
+    descriptionKey: "card27",
+    type: "Curso",
+    category: "Técnico",
+    file: "/formations/fad.pdf",
+  },
   
   {
     id: 5,

@@ -3,6 +3,8 @@ declare module "*.css" {
   export default content;
 }
 
+declare module "atropos/css";
+
 declare module "*.webp" {
     const value: any
     export default value

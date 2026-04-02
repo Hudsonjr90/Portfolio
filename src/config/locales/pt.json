@@ -79,7 +79,8 @@
       "card23": "Educação Financeira Empresarial",
       "card24": "Auxiliar Administrativo",
       "card25": "Arquiteto de Soluções IA Expert",
-      "card26": "Especialista em Microserviços Nível 2 (Domain-Driven Design)"
+      "card26": "Especialista em Microserviços Nível 2 (Domain-Driven Design)",
+      "card27": "Fundamentos de Análise de Dados"
     },
     "cardInstitutions": {
       "card1": "Universidade de Harvard",
@@ -107,7 +108,9 @@
       "card23": "Sebrae",
       "card24": "Cursos 24h",
       "card25": "XP Educação",
-      "card26": "AlgaWorks"
+      "card26": "AlgaWorks",
+      "card27": "Xperiun"
+
     },
     "see": "Ver certificado",
     "download": "Baixar certificado"
@@ -255,6 +258,9 @@
       },
       {
         "description": "Um site para um barbearia, com agendamento online."
+      },
+      {
+        "description": "Um aplicativo bancário simples para gerenciar contas e transações."
       }
     ]
   },

@@ -79,7 +79,8 @@
       "card23": "Éducation Financière d'Entreprise",
       "card24": "Assistant Administratif",
       "card25": "Architecte de Solutions IA Expert",
-      "card26": "Spécialiste en Microservices (Domain-Driven Design)"
+      "card26": "Spécialiste en Microservices (Domain-Driven Design)",
+      "card27": "Fondements de l'Analyse de Données"
     },
     "cardInstitutions": {
       "card1": "Université de Harvard",
@@ -107,7 +108,8 @@
       "card23": "Sebrae",
       "card24": "Cours 24h",
       "card25": "XP Éducation",
-      "card26": "AlgaWorks"
+      "card26": "AlgaWorks",
+      "card27": "Xperiun"
     }
   },
 
@@ -253,6 +255,9 @@
       },
       {
         "description": "Un site pour un salon de coiffure, avec réservation en ligne."
+      },
+      {
+        "description": "Une application bancaire simple pour gérer les comptes et les transactions."
       }
     ]
   },

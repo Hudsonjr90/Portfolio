@@ -79,7 +79,8 @@
       "card23": "Corporate Financial Education",
       "card24": "Administrative Assistant",
       "card25": "AI Solutions Architect Expert",
-      "card26": "Microservices Specialist Level 2 (Domain-Driven Design)"
+      "card26": "Microservices Specialist Level 2 (Domain-Driven Design)",
+      "card27": "Data Analysis Fundamentals"
     },
     "cardInstitutions": {
       "card1": "Harvard University",
@@ -107,7 +108,8 @@
       "card23": "Sebrae",
       "card24": "Cursos 24h",
       "card25": "XP Education",
-      "card26": "AlgaWorks"
+      "card26": "AlgaWorks",
+      "card27": "Xperiun"
     }
   },
 
@@ -253,7 +255,10 @@
       },
       {
         "description": "A site for a barbershop, with online booking."
-      }
+      },
+      {
+        "description": "A simple banking app to manage accounts and transactions."
+       }
     ]
   },
 
