@@ -8,12 +8,13 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   background-color: var(--bg_color);
   border-bottom: 1px solid var(--main_color);
   font-weight: 600;
 }
-
 
 .links_list {
   display: flex;
@@ -38,7 +39,7 @@
 }
 
 .links_list a::after {
-  content: ' ';
+  content: " ";
   background: var(--main_color);
   bottom: 0;
   height: 0.3rem;
@@ -63,7 +64,9 @@ label {
 .logo_img {
   width: 8rem;
   height: 8rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
   filter: brightness(0) invert(1);
 }
 
@@ -79,7 +82,6 @@ label {
 :global(.light_mode) .logo_img {
   filter: brightness(0);
 }
-
 
 .input_dark_light_mode {
   cursor: pointer;
@@ -199,7 +201,9 @@ label {
   color: var(--main_color);
   font-size: 2rem;
   padding: 0.5rem;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .drawer_close_btn:hover {
@@ -452,7 +456,7 @@ label {
     display: none;
   }
 
-    .btn_menu {
+  .btn_menu {
     border: none;
     background: none;
     cursor: pointer;
@@ -472,10 +476,10 @@ label {
     margin-left: -30.9rem;
   }
 
-  .lng_btn{
+  .lng_btn {
     font-size: 1.2rem;
     padding: 1.4rem 0.2rem;
-  } 
+  }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1450px) {
@@ -503,17 +507,20 @@ label {
     margin-left: -30.9rem;
   }
 
-  .lng_btn{
+  .lng_btn {
     font-size: 1.2rem;
     padding: 1.4rem 0.2rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
+  .tour_button_desktop {
+    display: none;
+  }
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
-    content: ' ';
+    content: " ";
     height: auto;
     left: 0;
     position: absolute;
@@ -615,10 +622,10 @@ label {
     transition-delay: calc(0.2s * var(--i));
     transform: translateY(0);
   }
-  .separator{
+  .separator {
     display: none;
   }
-  .lng_btn{
+  .lng_btn {
     padding: 2rem 0rem;
   }
 }
@@ -627,7 +634,7 @@ label {
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
-    content: ' ';
+    content: " ";
     height: auto;
     left: 0;
     position: absolute;
@@ -735,7 +742,7 @@ label {
   .header {
     background: var(--bg_color);
     backdrop-filter: blur(80px);
-    content: ' ';
+    content: " ";
     height: auto;
     left: 0;
     position: absolute;
@@ -858,7 +865,3 @@ label {
     margin-left: -20.9rem;
   }
 }
-
-
-
-

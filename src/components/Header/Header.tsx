@@ -395,7 +395,8 @@ const Header = () => {
         }}
       >
         <ThemeProvider theme={navbarTheme}>
-          <TourButton currentPage={location.pathname === '/' ? 'home' : location.pathname.slice(1)} />
+ 
+            <TourButton currentPage={location.pathname === '/' ? 'home' : location.pathname.slice(1)} className={styles.tour_button_desktop} />
 
           <Tooltip title={t("navbar.sound")} placement="bottom" arrow>
             <button

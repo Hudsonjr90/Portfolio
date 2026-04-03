@@ -9,9 +9,10 @@ import styles from '../Header/Header.module.css';
 
 interface TourButtonProps {
   currentPage: string;
+  className?: string;
 }
 
-const TourButton: React.FC<TourButtonProps> = ({ currentPage }) => {
+const TourButton: React.FC<TourButtonProps> = ({ currentPage, className }) => {
   const { t } = useTranslation();
   const { startTour } = usePortfolioTour();
 
@@ -19,9 +20,9 @@ const TourButton: React.FC<TourButtonProps> = ({ currentPage }) => {
     <ThemeProvider theme={navbarTheme}>
       <Tooltip title={t('tour.start')} placement="left" arrow>
         <button 
-          className={styles.tour_icon}
           onClick={() => startTour(currentPage)}
           aria-label={t('tour.start')}
+          className={`${styles.tour_icon} ${className}`}
         >
           <LuRoute />
         </button>
