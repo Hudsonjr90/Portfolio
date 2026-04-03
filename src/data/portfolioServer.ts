@@ -23,6 +23,7 @@ import onda from "/imgs/imgProjects/onda.webp";
 const portfolioServer = [
   {
     id: 0,
+    date: "2022-01",
     image: web,
     name: "React Website",
     descriptionKey: "projects.data.0.description",
@@ -32,6 +33,7 @@ const portfolioServer = [
   },
   {
     id: 1,
+    date: "2023-06",
     image: pokedex,
     name: "Nuxt Vue Pokedex ",
     descriptionKey: "projects.data.1.description",
@@ -41,6 +43,7 @@ const portfolioServer = [
   },
   {
     id: 2,
+    date: "2022-03",
     image: memory,
     name: "Memory React Game",
     descriptionKey: "projects.data.2.description",
@@ -50,6 +53,7 @@ const portfolioServer = [
   },
   {
     id: 3,
+    date: "2022-07",
     image: pacman,
     name: "Pacman Game",
     descriptionKey: "projects.data.3.description",
@@ -59,6 +63,7 @@ const portfolioServer = [
   },
   {
     id: 4,
+    date: "2021-08",
     image: clima,
     name: "Weather API",
     descriptionKey: "projects.data.4.description",
@@ -68,6 +73,7 @@ const portfolioServer = [
   },
   {
     id: 5,
+    date: "2022-02",
     image: clock,
     name: "React Clock",
     descriptionKey: "projects.data.5.description",
@@ -77,6 +83,7 @@ const portfolioServer = [
   },
   {
     id: 6,
+    date: "2023-01",
     image: card,
     name: "CreditCard-Form Vue",
     descriptionKey: "projects.data.6.description",
@@ -86,6 +93,7 @@ const portfolioServer = [
   },
   {
     id: 7,
+    date: "2024-01",
     image: calendar,
     name: "Swiss Calendar Angular17",
     descriptionKey: "projects.data.7.description",
@@ -95,6 +103,7 @@ const portfolioServer = [
   },
   {
     id: 8,
+    date: "2021-06",
     image: login,
     name: "Login Page Screen",
     descriptionKey: "projects.data.8.description",
@@ -104,6 +113,7 @@ const portfolioServer = [
   },
   {
     id: 9,
+    date: "2021-10",
     image: conversor,
     name: "World Currency Converter",
     descriptionKey: "projects.data.9.description",
@@ -113,15 +123,17 @@ const portfolioServer = [
   },
   {
     id: 10,
+    date: "2026-03",
     image: sorteio,
     name: "Soccer Sort",
     descriptionKey: "projects.data.10.description",
-    technologies: ["HTML", "CSS", "JS"],
+    technologies: ["React", "Typescript", "MUI"],
     linkDeploy: "https://sorteiodostimes.vercel.app/",
     linkRepository: "https://github.com/Hudsonjr90/sorteiodostimes",
   },
   {
     id: 11,
+    date: "2023-09",
     image: task,
     name: "Task App",
     descriptionKey: "projects.data.11.description",
@@ -131,6 +143,7 @@ const portfolioServer = [
   },
   {
     id: 12,
+    date: "2023-05",
     image: imc,
     name: "IMC Calculator",
     descriptionKey: "projects.data.12.description",
@@ -140,6 +153,7 @@ const portfolioServer = [
   },
   {
     id: 13,
+    date: "2022-09",
     image: kfc,
     name: "KFC Landing Page",
     descriptionKey: "projects.data.13.description",
@@ -149,6 +163,7 @@ const portfolioServer = [
   },
   {
     id: 14,
+    date: "2022-11",
     image: pokeHistory,
     name: "Poke History",
     descriptionKey: "projects.data.14.description",
@@ -158,6 +173,7 @@ const portfolioServer = [
   },
   {
     id: 15,
+    date: "2024-02",
     image: poll,
     name: "Poll App",
     descriptionKey: "projects.data.15.description",
@@ -178,6 +194,7 @@ const portfolioServer = [
   },
     {
     id: 16,
+    date: "2024-05",
     image: nuxtNews,
     name: "Nuxt News",
     descriptionKey: "projects.data.16.description",
@@ -196,6 +213,7 @@ const portfolioServer = [
   },
     {
     id: 17,
+    date: "2024-08",
     image: finance,
     name: "Finance App",
     descriptionKey: "projects.data.17.description",
@@ -205,6 +223,7 @@ const portfolioServer = [
   },
   {
     id: 18,
+    date: "2025-01",
     image: barberShop,
     name: "Barber shop",
     descriptionKey: "projects.data.18.description",
@@ -214,6 +233,7 @@ const portfolioServer = [
   },
   {
     id: 19,
+    date: "2025-03",
     image: onda,
     name: "Simple Banking App",
     descriptionKey: "projects.data.19.description",

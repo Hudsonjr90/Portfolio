@@ -13,6 +13,10 @@ import ReactPaginate from "react-paginate";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styles from "./Portfolio.module.css";
 import portfolioServer from "../../data/portfolioServer";
+
+const sortedPortfolio = [...portfolioServer].sort((a, b) =>
+  b.date.localeCompare(a.date)
+);
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaCodeCompare } from "react-icons/fa6";
@@ -23,7 +27,7 @@ const ParticlesB = React.lazy(
 
 const Portfolio = () => {
   const { t } = useTranslation();
-  const [currentItems, setCurrentItems] = useState(portfolioServer.slice(0, 3));
+  const [currentItems, setCurrentItems] = useState(sortedPortfolio.slice(0, 3));
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
@@ -44,8 +48,8 @@ const Portfolio = () => {
 
   const updateCurrentItems = useCallback(() => {
     const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(portfolioServer.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(portfolioServer.length / itemsPerPage));
+    setCurrentItems(sortedPortfolio.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(sortedPortfolio.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
   useEffect(() => {
@@ -61,7 +65,7 @@ const Portfolio = () => {
   const handlePageClick = useCallback(
     (event: { selected: number }) => {
       const newOffset =
-        (event.selected * itemsPerPage) % portfolioServer.length;
+        (event.selected * itemsPerPage) % sortedPortfolio.length;
       setItemOffset(newOffset);
       setCurrentPage(event.selected);
     },
