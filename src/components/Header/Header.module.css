@@ -183,6 +183,30 @@ label {
   display: none;
 }
 
+.drawer_close_item {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 1 !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+
+.drawer_close_btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--main_color);
+  font-size: 2rem;
+  padding: 0.5rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.drawer_close_btn:hover {
+  color: var(--main_color);
+  transform: rotate(90deg);
+}
+
 .drawer_overlay {
   position: fixed;
   top: 0;

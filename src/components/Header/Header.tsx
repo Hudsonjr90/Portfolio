@@ -3,6 +3,7 @@ import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import { GrClose } from "react-icons/gr";
 import { HiSparkles } from "react-icons/hi2";
 import { IoSparkles } from "react-icons/io5";
 import styles from "./Header.module.css";
@@ -126,6 +127,17 @@ const Header = () => {
             },
           }}
         >
+          {showMenu && (
+            <li className={styles.drawer_close_item}>
+              <button
+                className={styles.drawer_close_btn}
+                onClick={() => { handleClickButton(); handleAudio(); }}
+                aria-label="Fechar menu"
+              >
+                <GrClose />
+              </button>
+            </li>
+          )}
           <motion.li
             onClick={() => {
               handleLinkClick();
