@@ -455,6 +455,9 @@ label {
   .links_list {
     display: none;
   }
+    .tour_button_desktop {
+    display: none;
+  }
 
   .btn_menu {
     border: none;
@@ -484,6 +487,9 @@ label {
 
 @media screen and (min-width: 1025px) and (max-width: 1450px) {
   .links_list {
+    display: none;
+  }
+    .tour_button_desktop {
     display: none;
   }
 
