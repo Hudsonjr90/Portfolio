@@ -95,7 +95,7 @@ const Header = () => {
       >
         <ThemeProvider theme={logoTheme}>
           <NavLink to="/" onClick={handleAudio}>
-            <Tooltip title={t("menu.home")} placement="right" arrow>
+            <Tooltip title={location.pathname === "/" ? "" : t("menu.home")} placement="right" arrow>
               <img
                 src={logo}
                 alt="Logo"
