@@ -75,6 +75,11 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = showMenu ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [showMenu]);
+
   return (
     <header className={styles.header} data-tour="navbar">
       <motion.div
@@ -361,6 +366,10 @@ const Header = () => {
           </motion.li>
         </motion.ul>
       </nav>
+
+      {showMenu && (
+        <div className={styles.drawer_overlay} onClick={handleClickButton} />
+      )}
 
       <motion.div
         className={styles.icons_container}

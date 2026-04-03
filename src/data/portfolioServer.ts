@@ -223,7 +223,7 @@ const portfolioServer = [
   },
   {
     id: 18,
-    date: "2025-01",
+    date: "2022-01",
     image: barberShop,
     name: "Barber shop",
     descriptionKey: "projects.data.18.description",

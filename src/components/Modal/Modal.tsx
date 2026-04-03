@@ -304,17 +304,19 @@ const Modal = ({
         {/* CONTEÚDO */}
         <div className={styles.modal_content} ref={contentRef}>
           {currentImage && (
-            <motion.img
-              key={currentPage}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              src={currentImage}
-              alt={`${currentTitle ?? "Modal"} - Página ${currentPage + 1}`}
-              loading="lazy"
-              className={styles.modal_image}
-            />
+            <div className={styles.modal_image_container}>
+              <motion.img
+                key={currentPage}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                src={currentImage}
+                alt={`${currentTitle ?? "Modal"} - Página ${currentPage + 1}`}
+                loading="lazy"
+                className={styles.modal_image}
+              />
+            </div>
           )}
         </div>
       </motion.div>
