@@ -57,6 +57,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
   const [themeKey, setThemeKey] = useState(0);
   const [chartType, setChartType] = useState<ChartType>('pie');
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const chartRef = useRef<ReactECharts>(null);
   
   const handleSearchWrapperClick = () => {
     searchInputRef.current?.focus();
@@ -81,6 +82,18 @@ const CircularChart: React.FC<CircularChartProps> = ({
     });
     
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const resizeChart = () => {
+      chartRef.current?.getEchartsInstance()?.resize();
+    };
+
+    window.addEventListener('resize', resizeChart);
+
+    return () => {
+      window.removeEventListener('resize', resizeChart);
+    };
   }, []);
   
   const isDarkMode = useMemo(() => {
@@ -169,6 +182,8 @@ const CircularChart: React.FC<CircularChartProps> = ({
     };
   }, [isDarkMode, isMobile]);
 
+  const isDenseMobilePie = isMobile && chartType === 'pie' && data.length > 8;
+
   const chartOption = useMemo(() => {
     const baseConfig = {
       backgroundColor: 'transparent',
@@ -219,6 +234,17 @@ const CircularChart: React.FC<CircularChartProps> = ({
           
           if (chartType === 'pie') {
             const data = params.data;
+            const isCategoryDetail = showBackButton;
+
+            if (isCategoryDetail) {
+              return `
+                <div style="padding: ${isMobile ? '8px' : '5px'};">
+                  <strong style="color: ${textColor}; font-size: ${isMobile ? '16px' : '16px'};">${data.name}</strong><br/>
+                  ${data.level ? `<span style="opacity: 0.8; color: ${textColor};">${t(data.level)}</span>` : ''}
+                </div>
+              `;
+            }
+
             return `
               <div style="padding: ${isMobile ? '8px' : '5px'};">
                 <strong style="color: ${textColor}; font-size: ${isMobile ? '16px' : '16px'};">${data.name}</strong><br/>
@@ -254,26 +280,32 @@ const CircularChart: React.FC<CircularChartProps> = ({
         return {
           ...baseConfig,
           legend: showLegend ? {
+            type: isMobile ? 'scroll' : 'plain',
             orient: isMobile ? 'horizontal' : 'vertical',
-            right: isMobile ? '15%' : '8%',
-            top: isMobile ? 'bottom' : 'center',
+            right: isMobile ? '4%' : '8%',
+            left: isMobile ? '4%' : undefined,
+            top: isMobile ? (isDenseMobilePie ? '78%' : 'bottom') : 'center',
             textStyle: {
               color: isDarkMode ? '#fff' : '#333',
               fontSize: isMobile ? 10 : 12,
               fontWeight: 'bold',
               fontFamily: 'Poppins, sans-serif',
             },
-            itemGap: isMobile ? 10 : 12,
+            itemGap: isMobile ? 8 : 12,
             icon: 'circle',
             itemWidth: isMobile ? 12 : 16,
             itemHeight: isMobile ? 12 : 16,
+            pageIconColor: mainColor,
+            pageTextStyle: { color: mainColor },
           } : undefined,
           series: [
             {
               name: 'Habilidades',
               type: 'pie',
-              radius: roseType ? ['30%', '75%'] : ['40%', '75%'],
-              center: ['50%', '55%'],
+              radius: isDenseMobilePie
+                ? ['28%', '58%']
+                : (roseType ? ['30%', '75%'] : ['40%', '75%']),
+              center: ['50%', isDenseMobilePie ? '42%' : '55%'],
               roseType: roseType ? 'radius' : false,
               startAngle: 90,
               avoidLabelOverlap: false,
@@ -283,16 +315,22 @@ const CircularChart: React.FC<CircularChartProps> = ({
               },
               label: {
                 show: true,
-                position: isMobile ? 'inside' : 'outside',
+                position: isDenseMobilePie ? 'outside' : (isMobile ? 'inside' : 'outside'),
                 color: mainColor, 
                 padding: isMobile ? [6, 10] : 0,
                 borderRadius: isMobile ? 6 : 0,
                 fontWeight: 'bold',
                 fontFamily: 'Poppins, sans-serif',
-                fontSize: isMobile ? 14 : 12,
+                fontSize: isDenseMobilePie ? 10 : (isMobile ? 14 : 12),
                 formatter: function(params: any) {
+                  if (showBackButton) {
+                    return `${params.name}`;
+                  }
+
                   if (isMobile) {
-                    return `${params.name}\n${params.value}%`;
+                    return isDenseMobilePie
+                      ? `${params.name} ${params.value}%`
+                      : `${params.name}\n${params.value}%`;
                   }
                   return `${params.name}\n${params.value}%\n${params.data.skillCount ? `(${params.data.skillCount})` : ''}`;
                 },
@@ -300,14 +338,14 @@ const CircularChart: React.FC<CircularChartProps> = ({
                 textBorderWidth: isMobile ? 2 : 1,
               },
               labelLine: {
-                show: !isMobile,
+                show: isDenseMobilePie || !isMobile,
                 lineStyle: {
                   color: mainColor,
                   width: 2,
                 },
                 smooth: 0.3,
-                length: 15,
-                length2: 20,
+                length: isDenseMobilePie ? 10 : 15,
+                length2: isDenseMobilePie ? 12 : 20,
               },
               emphasis: {
                 scale: true,
@@ -536,7 +574,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
       default:
         return baseConfig;
     }
-  }, [data, mainColor, isDarkMode, title, subtitle, isMobile, showLegend, roseType, neonColors, categoryColors, t, themeKey, chartType]);
+  }, [data, mainColor, isDarkMode, title, subtitle, isMobile, showLegend, roseType, neonColors, categoryColors, t, themeKey, chartType, isDenseMobilePie]);
 
   return (
     <div className={`${styles.chartContainer} ${isDarkMode ? styles.dark : styles.light}`}>
@@ -593,6 +631,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
       )}
       
       <ReactECharts
+        ref={chartRef}
         option={chartOption}
         style={{ 
           height: `${height}px`, 
@@ -607,6 +646,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         }}
         notMerge={true}
         lazyUpdate={true}
+        autoResize={false}
       /> 
     </div>
   );

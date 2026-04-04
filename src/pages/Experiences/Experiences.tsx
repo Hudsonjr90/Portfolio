@@ -71,6 +71,8 @@ const Experiences = () => {
     date: t(experience.date),
   }));
 
+  const mobileExperiences = [...translatedExperiences].reverse();
+
   return (
     <Transition onAnimationComplete={() => {}}>
       <ParticlesB />
@@ -85,7 +87,7 @@ const Experiences = () => {
 
         {isMobile ? (
           <VerticalTimeline>
-            {translatedExperiences.map((experience, index) => (
+            {mobileExperiences.map((experience, index) => (
               <TimelineElement
                 key={index}
                 title={experience.title}

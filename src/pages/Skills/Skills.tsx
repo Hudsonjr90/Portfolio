@@ -120,7 +120,6 @@ const Skills = () => {
       return mainIcons
         .filter(icon => icon.category.toLowerCase() === selectedPieCategory.toLowerCase())
         .sort((a, b) => b.percentage - a.percentage)
-        .slice(0, 15) 
         .map(skill => ({
           name: skill.name,
           value: skill.percentage,
@@ -181,6 +180,14 @@ const Skills = () => {
     const endIndex = startIndex + itemsPerPage;
     return filteredIcons.slice(startIndex, endIndex);
   }, [currentPage, itemsPerPage, filteredIcons]);
+
+  const mobileChartHeight = useMemo(() => {
+    if (!isMobile) return 500;
+    if (!selectedPieCategory) return 430;
+
+    const extraItems = Math.max(0, circularChartData.length - 8);
+    return Math.min(760, 460 + extraItems * 18);
+  }, [isMobile, selectedPieCategory, circularChartData.length]);
 
   const handleChartClick = (params: any) => {
     if (params.data && params.data.category) {
@@ -392,9 +399,9 @@ const Skills = () => {
                     ? `${circularChartData.length} ${t("skills.text")}`
                     : t("skills.dashboardSubtitle", { count: mainIcons.length })
                   }
-                  height={isMobile ? 400 : 500}
+                  height={mobileChartHeight}
                   onChartClick={handleChartClick}
-                  showLegend={!selectedPieCategory}
+                  showLegend={!selectedPieCategory || isMobile}
                   roseType={!selectedPieCategory}
                   isMobile={isMobile}
                   showBackButton={!!selectedPieCategory}
