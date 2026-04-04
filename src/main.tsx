@@ -17,14 +17,16 @@ initializeTrustedTypes();
 const rootElement = document.getElementById("root")
 
 if (rootElement) {
+  const appTree = (
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Routes>
+        <Route path="/*" element={<App />} />
+      </Routes>
+    </Router>
+  )
+
   ReactDOM.createRoot(rootElement).render(
-    <React.StrictMode>
-      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <Routes>
-          <Route path="/*" element={<App />} />
-        </Routes>
-      </Router>
-    </React.StrictMode>,
+    import.meta.env.DEV ? appTree : <React.StrictMode>{appTree}</React.StrictMode>,
   )
 }
 
