@@ -98,7 +98,7 @@ export const useSEO = () => {
     switch (normalizedPath) {
       case "/":
         return {
-          title: `${t("menu.home")} | Hudson Kennedy - Desenvolvedor Full Stack`,
+          title: `${t("menu.home")} | H.K Dev`,
           description: t("seo.home.description"),
           keywords: t("seo.home.keywords"),
           image: `${baseUrl}/imgs/my.webp`,
@@ -107,7 +107,7 @@ export const useSEO = () => {
 
       case "/about":
         return {
-          title: `${t("menu.about")} | Hudson Kennedy`,
+          title: `${t("menu.about")} | H.K Dev`,
           description: t("seo.about.description"),
           keywords: t("seo.about.keywords"),
           image: `${baseUrl}/imgs/about.webp`,
@@ -116,7 +116,7 @@ export const useSEO = () => {
 
       case "/skills":
         return {
-          title: `${t("menu.skills")} | Hudson Kennedy `,
+          title: `${t("menu.skills")} | H.K Dev`,
           description: t("seo.skills.description"),
           keywords: t("seo.skills.keywords"),
           image: `${baseUrl}/imgs/hkdev.webp`,
@@ -125,7 +125,7 @@ export const useSEO = () => {
 
       case "/portfolio":
         return {
-          title: `${t("menu.portfolio")} | Hudson Kennedy `,
+          title: `${t("menu.portfolio")} | H.K Dev`,
           description: t("seo.portfolio.description"),
           keywords: t("seo.portfolio.keywords"),
           image: `${baseUrl}/imgs/hkdev.webp`,
@@ -134,7 +134,7 @@ export const useSEO = () => {
 
       case "/education":
         return {
-          title: `${t("menu.academic-education")} | Hudson Kennedy `,
+          title: `${t("menu.academic-education")} | H.K Dev`,
           description: t("seo.education.description"),
           keywords: t("seo.education.keywords"),
           image: `${baseUrl}/imgs/hkdev.webp`,
@@ -143,7 +143,7 @@ export const useSEO = () => {
 
       case "/experiences":
         return {
-          title: `${t("menu.experiences")} | Hudson Kennedy `,
+          title: `${t("menu.experiences")} | H.K Dev`,
           description: t("seo.experiences.description"),
           keywords: t("seo.experiences.keywords"),
           image: `${baseUrl}/imgs/hkdev.webp`,
@@ -152,7 +152,7 @@ export const useSEO = () => {
 
       case "/testimonials":
         return {
-          title: `${t("menu.testimonials")} | Hudson Kennedy `,
+          title: `${t("menu.testimonials")} | H.K Dev`,
           description: t("seo.testimonials.description"),
           keywords: t("seo.testimonials.keywords"),
           image: `${baseUrl}/imgs/hkdev.webp`,
@@ -161,7 +161,7 @@ export const useSEO = () => {
 
       case "/contact":
         return {
-          title: `${t("menu.contact")} | Hudson Kennedy `,
+          title: `${t("menu.contact")} | H.K Dev`,
           description: t("seo.contact.description"),
           keywords: t("seo.contact.keywords"),
           image: `${baseUrl}/imgs/hkdev.webp`,

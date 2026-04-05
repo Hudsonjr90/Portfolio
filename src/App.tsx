@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect, Suspense } from 'react'
+import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
 import Header from './components/Header/Header'
@@ -34,39 +34,11 @@ function App() {
 
   usePerformanceMonitoring((metrics) => {
     if (process.env.NODE_ENV === 'production') {
-
       console.log('Performance metrics:', metrics);
     }
   })
   
   useResourceLoading()
-
-  useEffect(() => {
-    const getPageTitle = () => {
-      switch (location.pathname) {
-        case '/':
-          return `${t('menu.home')} | H.K Dev`
-        case '/about':
-          return `${t('menu.about')} | H.K Dev`
-        case '/testimonials':
-          return `${t('menu.testimonials')} | H.K Dev`
-        case '/education':
-          return `${t('menu.academic-education')} | H.K Dev`
-        case '/experiences':
-          return `${t('menu.experiences')} | H.K Dev`
-        case '/skills':
-          return `${t('menu.skills')} | H.K Dev`
-        case '/portfolio':
-          return `${t('menu.portfolio')} | H.K Dev`
-        case '/contact':
-          return `${t('menu.contact')} | H.K Dev`
-        default:
-          return 'H.K Dev'
-      }
-    }
-
-    document.title = getPageTitle()
-  }, [location.pathname, t])
 
   return (
     <ThemeProvider>

@@ -1,21 +1,125 @@
 const fs = require('fs');
 const path = require('path');
 
-// Define all the routes for your portfolio
+const baseUrl = 'https://hudsonkennedy.dev.br';
+
 const routes = [
-  { path: '/', title: 'Hudson Kennedy - Portfolio', description: 'Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas' },
-  { path: '/about', title: 'Sobre - Hudson Kennedy', description: 'Conheça mais sobre Hudson Kennedy, sua experiência e habilidades como Desenvolvedor Full Stack' },
-  { path: '/skills', title: 'Habilidades - Hudson Kennedy', description: 'Tecnologias e habilidades técnicas de Hudson Kennedy em desenvolvimento web e mobile' },
-  { path: '/portfolio', title: 'Portfólio - Hudson Kennedy', description: 'Projetos e trabalhos desenvolvidos por Hudson Kennedy utilizando tecnologias modernas' },
-  { path: '/education', title: 'Educação - Hudson Kennedy', description: 'Formação acadêmica e certificações de Hudson Kennedy' },
-  { path: '/experiences', title: 'Experiências - Hudson Kennedy', description: 'Experiência profissional e trajetória de Hudson Kennedy como desenvolvedor' },
-  { path: '/testimonials', title: 'Depoimentos - Hudson Kennedy', description: 'Depoimentos e recomendações de clientes e colegas sobre o trabalho de Hudson Kennedy' },
-  { path: '/contact', title: 'Contato - Hudson Kennedy', description: 'Entre em contato com Hudson Kennedy para projetos e oportunidades' }
+  {
+    path: '/',
+    title: 'Hudson Kennedy - Portfolio | H.K Dev',
+    description: 'Portfólio de Hudson Kennedy, Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas. 10+ anos de experiência.',
+    keywords: 'Hudson Kennedy, Portfolio, Desenvolvedor Full Stack, React, TypeScript, Vue.js, JavaScript, Node.js, Web Development',
+    image: `${baseUrl}/imgs/my.webp`,
+  },
+  {
+    path: '/about',
+    title: 'Sobre | H.K Dev',
+    description: 'Conheça mais sobre Hudson Kennedy, Cientista da Computação e Desenvolvedor Full Stack com mais de 10 anos de experiência em React, TypeScript e tecnologias modernas.',
+    keywords: 'Sobre Hudson Kennedy, Desenvolvedor Full Stack, Cientista da Computação, React, TypeScript, Vue.js, experiência profissional',
+    image: `${baseUrl}/imgs/about.webp`,
+  },
+  {
+    path: '/skills',
+    title: 'Habilidades | H.K Dev',
+    description: 'Tecnologias e habilidades técnicas de Hudson Kennedy: React, TypeScript, Vue.js, Node.js, Python, Docker, AWS e muito mais.',
+    keywords: 'Habilidades, Skills, React, TypeScript, Vue.js, Node.js, Python, Docker, AWS, desenvolvimento web, frontend, backend',
+    image: `${baseUrl}/imgs/hkdev.webp`,
+  },
+  {
+    path: '/portfolio',
+    title: 'Portfólio | H.K Dev',
+    description: 'Projetos e trabalhos desenvolvidos por Hudson Kennedy utilizando React, TypeScript, Vue.js e outras tecnologias modernas.',
+    keywords: 'Portfólio, Projetos, React, TypeScript, Vue.js, desenvolvimento web, aplicações, Hudson Kennedy',
+    image: `${baseUrl}/imgs/hkdev.webp`,
+  },
+  {
+    path: '/education',
+    title: 'Formação Acadêmica | H.K Dev',
+    description: 'Formação acadêmica e certificações de Hudson Kennedy: Ciência da Computação, MBA, certificações em tecnologias modernas.',
+    keywords: 'Educação, Formação Acadêmica, Ciência da Computação, MBA, certificações, cursos, Hudson Kennedy',
+    image: `${baseUrl}/imgs/hkdev.webp`,
+  },
+  {
+    path: '/experiences',
+    title: 'Experiências | H.K Dev',
+    description: 'Trajetória profissional de Hudson Kennedy como Desenvolvedor Full Stack, com mais de 10 anos de experiência em empresas de tecnologia.',
+    keywords: 'Experiências, Carreira, Desenvolvedor Full Stack, React, TypeScript, empresas de tecnologia, Hudson Kennedy',
+    image: `${baseUrl}/imgs/hkdev.webp`,
+  },
+  {
+    path: '/testimonials',
+    title: 'Depoimentos | H.K Dev',
+    description: 'Depoimentos e recomendações de clientes e colegas sobre o trabalho de Hudson Kennedy como Desenvolvedor Full Stack.',
+    keywords: 'Depoimentos, Recomendações, Avaliações, Hudson Kennedy, Desenvolvedor Full Stack, clientes, colegas',
+    image: `${baseUrl}/imgs/hkdev.webp`,
+  },
+  {
+    path: '/contact',
+    title: 'Contato | H.K Dev',
+    description: 'Entre em contato com Hudson Kennedy para projetos, oportunidades de trabalho ou colaborações em desenvolvimento web.',
+    keywords: 'Contato, Hudson Kennedy, Desenvolvedor Full Stack, projetos, oportunidades, React, TypeScript',
+    image: `${baseUrl}/imgs/hkdev.webp`,
+  },
 ];
 
-// Generate sitemap.xml
+const generateRoutePages = () => {
+  const distPath = path.join(__dirname, 'dist');
+
+  routes.forEach(route => {
+    if (route.path === '/') return; 
+
+    const routeName = route.path.replace('/', ''); 
+    const canonicalUrl = `${baseUrl}${route.path}`;
+
+    const html = `<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Hudson Kennedy">
+  <title>${route.title}</title>
+  <meta name="description" content="${route.description}">
+  <meta name="keywords" content="${route.keywords}">
+  <link rel="canonical" href="${canonicalUrl}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hudson Kennedy - Portfolio">
+  <meta property="og:title" content="${route.title}">
+  <meta property="og:description" content="${route.description}">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:image" content="${route.image}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${route.title}">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@hudsonkennedy">
+  <meta name="twitter:creator" content="@hudsonkennedy">
+  <meta name="twitter:title" content="${route.title}">
+  <meta name="twitter:description" content="${route.description}">
+  <meta name="twitter:image" content="${route.image}">
+  <meta name="twitter:image:alt" content="${route.title}">
+
+  <!-- Redirect browsers to SPA -->
+  <meta http-equiv="refresh" content="0;url=${canonicalUrl}">
+  <script>window.location.replace("${canonicalUrl}");</script>
+</head>
+<body>
+  <p>Redirecionando para <a href="${canonicalUrl}">${route.title}</a>...</p>
+</body>
+</html>`;
+
+    const filePath = path.join(distPath, `${routeName}.html`);
+    fs.writeFileSync(filePath, html, 'utf8');
+    console.log(`✅ ${routeName}.html generated`);
+  });
+};
+
 const generateSitemap = () => {
-  const baseUrl = 'https://hudsonkennedy.dev.br';
   const currentDate = new Date().toISOString().split('T')[0];
   
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -38,7 +142,6 @@ const generateSitemap = () => {
   console.log('✅ sitemap.xml generated successfully!');
 };
 
-// Generate robots.txt
 const generateRobots = () => {
   const robots = `User-agent: *
 Allow: /
@@ -50,7 +153,6 @@ Sitemap: https://hudsonkennedy.dev.br/sitemap.xml`;
   console.log('✅ robots.txt generated successfully!');
 };
 
-// Update index.html with better meta tags
 const updateIndexHTML = () => {
   const indexPath = path.join(__dirname, 'dist', 'index.html');
   
@@ -61,7 +163,6 @@ const updateIndexHTML = () => {
 
   let html = fs.readFileSync(indexPath, 'utf8');
   
-  // Add structured data for better SEO
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -90,11 +191,9 @@ const updateIndexHTML = () => {
   };
 
   const structuredDataScript = `<script type="application/ld+json">${JSON.stringify(structuredData, null, 2)}</script>`;
-  
-  // Insert structured data before closing </head>
+
   html = html.replace('</head>', `  ${structuredDataScript}\n</head>`);
-  
-  // Ensure meta tags are present
+
   if (!html.includes('<meta name="description"')) {
     const descriptionMeta = '<meta name="description" content="Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas">';
     html = html.replace('<title>', `  ${descriptionMeta}\n    <title>`);
@@ -109,7 +208,6 @@ const updateIndexHTML = () => {
   console.log('✅ index.html updated with structured data!');
 };
 
-// Main function
 const main = () => {
   console.log('🚀 Generating SEO files...');
   
@@ -117,6 +215,7 @@ const main = () => {
     generateSitemap();
     generateRobots();
     updateIndexHTML();
+    generateRoutePages();
     console.log('✅ All SEO files generated successfully!');
   } catch (error) {
     console.error('❌ Error generating SEO files:', error);
