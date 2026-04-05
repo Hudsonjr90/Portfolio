@@ -62,56 +62,44 @@ const routes = [
   },
 ];
 
+
 const generateRoutePages = () => {
   const distPath = path.join(__dirname, 'dist');
+  const indexPath = path.join(distPath, 'index.html');
+
+  if (!fs.existsSync(indexPath)) {
+    console.error('❌ dist/index.html not found — run build first');
+    return;
+  }
+
+  const indexHtml = fs.readFileSync(indexPath, 'utf8');
 
   routes.forEach(route => {
-    if (route.path === '/') return; 
+    if (route.path === '/') return;
 
-    const routeName = route.path.replace('/', ''); 
+    const routeName = route.path.replace('/', '');
     const canonicalUrl = `${baseUrl}${route.path}`;
 
-    const html = `<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Hudson Kennedy">
-  <title>${route.title}</title>
-  <meta name="description" content="${route.description}">
-  <meta name="keywords" content="${route.keywords}">
-  <link rel="canonical" href="${canonicalUrl}">
+    let html = indexHtml;
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Hudson Kennedy - Portfolio">
-  <meta property="og:title" content="${route.title}">
-  <meta property="og:description" content="${route.description}">
-  <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:image" content="${route.image}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${route.title}">
-  <meta property="og:locale" content="pt_BR">
+    html = html.replace(/<title>[^<]*<\/title>/, `<title>${route.title}</title>`);
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@hudsonkennedy">
-  <meta name="twitter:creator" content="@hudsonkennedy">
-  <meta name="twitter:title" content="${route.title}">
-  <meta name="twitter:description" content="${route.description}">
-  <meta name="twitter:image" content="${route.image}">
-  <meta name="twitter:image:alt" content="${route.title}">
+    html = html.replace(/(<meta name="description" content=")[^"]*(")/,   `$1${route.description}$2`);
+    html = html.replace(/(<meta name="keywords" content=")[^"]*(")/,      `$1${route.keywords}$2`);
+    html = html.replace(/(<link rel="canonical" href=")[^"]*(")/,         `$1${canonicalUrl}$2`);
 
-  <!-- Redirect browsers to SPA -->
-  <meta http-equiv="refresh" content="0;url=${canonicalUrl}">
-  <script>window.location.replace("${canonicalUrl}");</script>
-</head>
-<body>
-  <p>Redirecionando para <a href="${canonicalUrl}">${route.title}</a>...</p>
-</body>
-</html>`;
+    // Open Graph
+    html = html.replace(/(<meta property="og:title" content=")[^"]*(")/,       `$1${route.title}$2`);
+    html = html.replace(/(<meta property="og:description" content=")[^"]*(")/,  `$1${route.description}$2`);
+    html = html.replace(/(<meta property="og:url" content=")[^"]*(")/,          `$1${canonicalUrl}$2`);
+    html = html.replace(/(<meta property="og:image" content=")[^"]*(")/,        `$1${route.image}$2`);
+    html = html.replace(/(<meta property="og:image:alt" content=")[^"]*(")/,    `$1${route.title}$2`);
+
+    // Twitter Card
+    html = html.replace(/(<meta name="twitter:title" content=")[^"]*(")/,       `$1${route.title}$2`);
+    html = html.replace(/(<meta name="twitter:description" content=")[^"]*(")/,  `$1${route.description}$2`);
+    html = html.replace(/(<meta name="twitter:image" content=")[^"]*(")/,        `$1${route.image}$2`);
+    html = html.replace(/(<meta name="twitter:image:alt" content=")[^"]*(")/,    `$1${route.title}$2`);
 
     const filePath = path.join(distPath, `${routeName}.html`);
     fs.writeFileSync(filePath, html, 'utf8');
