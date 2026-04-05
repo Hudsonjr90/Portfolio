@@ -9,7 +9,7 @@ const routes = [
     title: 'Hudson Kennedy - Portfolio | H.K Dev',
     description: 'Portfólio de Hudson Kennedy, Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas. 10+ anos de experiência.',
     keywords: 'Hudson Kennedy, Portfolio, Desenvolvedor Full Stack, React, TypeScript, Vue.js, JavaScript, Node.js, Web Development',
-    image: `${baseUrl}/imgs/my.webp`,
+    image: `${baseUrl}/imgs/hkdev.webp`,
   },
   {
     path: '/about',
@@ -23,7 +23,7 @@ const routes = [
     title: 'Habilidades | H.K Dev',
     description: 'Tecnologias e habilidades técnicas de Hudson Kennedy: React, TypeScript, Vue.js, Node.js, Python, Docker, AWS e muito mais.',
     keywords: 'Habilidades, Skills, React, TypeScript, Vue.js, Node.js, Python, Docker, AWS, desenvolvimento web, frontend, backend',
-    image: `${baseUrl}/imgs/hkdev.webp`,
+    image: `${baseUrl}/imgs/my.webp`,
   },
   {
     path: '/portfolio',
@@ -58,7 +58,7 @@ const routes = [
     title: 'Contato | H.K Dev',
     description: 'Entre em contato com Hudson Kennedy para projetos, oportunidades de trabalho ou colaborações em desenvolvimento web.',
     keywords: 'Contato, Hudson Kennedy, Desenvolvedor Full Stack, projetos, oportunidades, React, TypeScript',
-    image: `${baseUrl}/imgs/hkdev.webp`,
+    image: `${baseUrl}/imgs/my.webp`,
   },
 ];
 
