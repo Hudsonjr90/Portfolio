@@ -345,8 +345,9 @@ label {
     top: 0;
     right: 0;
     transform: translateX(100%);
-    height: calc(100vh - 0px);
-    max-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
     width: 75vw;
     max-width: 280px;
     overflow-y: auto;
@@ -409,7 +410,7 @@ label {
 
   .header .logo {
     order: 1;
-    margin-left: -90rem;
+    margin-left: 0;
   }
 
   .icons_container {
@@ -530,7 +531,7 @@ label {
     content: " ";
     height: auto;
     left: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -540,7 +541,7 @@ label {
 
   .header .logo {
     order: 1;
-    margin-left: -60rem;
+    margin-left: 0;
   }
 
   .icons_container {
@@ -597,6 +598,7 @@ label {
     right: 0;
     transform: translateX(100%);
     height: 100vh;
+    height: 100dvh;
     width: 75vw;
     max-width: 280px;
     overflow-y: auto;
@@ -644,7 +646,7 @@ label {
     content: " ";
     height: auto;
     left: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -711,6 +713,7 @@ label {
     right: 0;
     transform: translateX(100%);
     height: 100vh;
+    height: 100dvh;
     width: 75vw;
     max-width: 280px;
     overflow-y: auto;
@@ -752,7 +755,7 @@ label {
     content: " ";
     height: auto;
     left: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -762,7 +765,7 @@ label {
 
   .header .logo {
     order: 1;
-    margin-left: -50rem;
+    margin-left: 0;
   }
 
   .icons_container {
@@ -820,6 +823,7 @@ label {
     right: 0;
     transform: translateX(100%);
     height: 100vh;
+    height: 100dvh;
     width: 75vw;
     max-width: 280px;
     overflow-y: auto;
@@ -862,7 +866,7 @@ label {
 
 @media screen and (max-width: 480px) {
   .header .logo {
-    margin-left: -10rem;
+    margin-left: 0;
   }
 
   .sidebar {
