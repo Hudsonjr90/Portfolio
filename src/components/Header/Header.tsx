@@ -147,6 +147,42 @@ const Header = () => {
               </button>
             </li>
           )}
+          <li className={styles.mobile_drawer_actions}>
+            <button
+              onClick={toggleSound}
+              className={styles.sound_icon}
+              aria-label="Toggle Sound"
+            >
+              {soundEnabled ? <FaVolumeUp /> : <FaVolumeMute />}
+            </button>
+
+            <button
+              onClick={() => {
+                toggleParticles();
+                handleAudio();
+              }}
+              className={styles.particles_icon}
+              aria-label="Toggle Particles"
+            >
+              {particlesEnabled ? <HiSparkles /> : <IoSparkles />}
+            </button>
+
+            <label className={styles.mobile_theme_label}>
+              <input
+                type="checkbox"
+                checked={lightMode}
+                className={styles.input_dark_light_mode}
+                onChange={() => {
+                  handleToggleLightMode();
+                  handleAudio();
+                }}
+                aria-label="Alternar modo claro/escuro"
+                role="switch"
+              />
+              <FaMoon className={styles.moon_icon} />
+              <FaSun className={styles.sun_icon} />
+            </label>
+          </li>
           <motion.li
             onClick={() => {
               handleLinkClick();
@@ -410,7 +446,7 @@ const Header = () => {
           <Tooltip title={t("navbar.sound")} placement="bottom" arrow>
             <button
               onClick={toggleSound}
-              className={styles.sound_icon}
+              className={`${styles.sound_icon} ${styles.desktop_only_icon}`}
               aria-label="Toggle Sound"
               data-tour="sound-toggle"
             >
@@ -424,7 +460,7 @@ const Header = () => {
                 toggleParticles();
                 handleAudio();
               }}
-              className={styles.particles_icon}
+              className={`${styles.particles_icon} ${styles.desktop_only_icon}`}
               aria-label="Toggle Particles"
               data-tour="particles-toggle"
             >
@@ -433,7 +469,7 @@ const Header = () => {
           </Tooltip>
 
           <Tooltip title={t("navbar.theme")} placement="bottom" arrow>
-            <label data-tour="theme-toggle">
+            <label className={styles.desktop_only_icon} data-tour="theme-toggle">
               <input
                 type="checkbox"
                 checked={lightMode}

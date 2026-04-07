@@ -1,19 +1,10 @@
 .about {
   align-items: center;
   display: flex;
-  gap: 15rem;
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
   padding: 10rem 6% 2rem;
-}
-
-.container_img img {
-  margin-bottom: 3rem;
-  width: 27vw;
-  border: 1px solid var(--main_color);
-  border-radius: 50%;
-  user-select: none;
 }
 
 .about_content {
@@ -23,7 +14,7 @@
   box-shadow: var(--main_color) 0 0 1rem;
   margin-bottom: 8rem;
   padding: 1rem 2rem;
-  width: 85%;
+  width: min(95rem, 100%);
 }
 
 .about_content h2 {
@@ -45,25 +36,13 @@
   transition: all 0.3s ease;
 }
 
-.toggleButton {
-  background: transparent;
-  border: 2px solid var(--main_color);
-  border-radius: 0 12px 4px 40px;
-  color: var(--main_color);
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  margin-left: auto;
-  padding: 0.8rem 1.5rem;
-  transition: all 0.3s ease;
-  display: none;
+.rainText {
+  line-height: 1.7;
 }
 
-.toggleButton:hover {
-  background: var(--main_color);
-  color: var(--bg_color);
-  transform: translateY(-2px);
+.rainWord {
+  display: inline-block;
+  will-change: transform, opacity, filter;
 }
 
 /* <========== breakpoints ==========> */
@@ -71,18 +50,12 @@
 @media screen and (max-width: 768px) {
   .about {
     flex-direction: column;
-    gap: 3rem;
     padding: 8rem 4% 4rem; 
   }
 
   .about_content {
     width: 100%;
     margin-bottom: 2rem; 
-  }
-
-  .container_img img {
-    width: 60vw;
-    max-width: 300px;
   }
 
   .about_content h2 {
@@ -93,37 +66,14 @@
     font-size: 1.5rem;
   }
 
-  .toggleButton {
-    display: block;
-    width: fit-content;
+  .aboutText {
+    line-height: 1.5;
   }
-
-  .aboutText.collapsed {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.4;
-  }
-
-  .aboutText.expanded {
-    -webkit-line-clamp: unset;
-    line-clamp: unset;
-    overflow: visible;
-  }
-
-
 }
 
 @media screen and (max-width: 480px) {
   .about {
     padding: 6rem 2% 2rem; 
-  }
-
-  .container_img img {
-    width: 70vw;
   }
 
   .about_content h2 {
@@ -132,20 +82,5 @@
 
   .about_content p {
     font-size: 1.4rem;
-  }
-
-    .container_img.hidden {
-    display: none;
-  }
-
-  .about:has(.container_img.hidden) {
-    gap: 1rem;
-    justify-content: flex-start;
-    padding-top: 12rem;
-  }
-
-  .about:has(.container_img.hidden) .about_content {
-    width: 100%;
-    max-width: none;
   }
 }

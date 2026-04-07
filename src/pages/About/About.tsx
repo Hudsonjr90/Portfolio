@@ -1,11 +1,9 @@
 import styles from "./About.module.css";
-import React, { useState, useCallback, Suspense } from "react";
+import React, { useState, useEffect, useMemo, Suspense } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { FaUserAstronaut } from "react-icons/fa6";
-
-const aboutImage = "/imgs/about.webp";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -13,20 +11,28 @@ const ParticlesB = React.lazy(
 
 const About = () => {
   const { t } = useTranslation();
+  const [isMobile, setIsMobile] = useState(false);
 
-  const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
-  const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
+  const aboutText = t("about.text");
 
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const rainWords = useMemo(() => {
+    return aboutText
+      .split(/\s+/)
+      .map((word) => word.trim())
+      .filter(Boolean);
+  }, [aboutText]);
 
-  const setIsLoadedCallback = useCallback(() => {
-    setIsLoaded(true);
-  }, []);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
 
-  const toggleExpanded = useCallback(() => {
-    setIsExpanded(prev => !prev);
+    const updateViewport = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    updateViewport();
+    mediaQuery.addEventListener("change", updateViewport);
+
+    return () => mediaQuery.removeEventListener("change", updateViewport);
   }, []);
 
   return (
@@ -35,61 +41,68 @@ const About = () => {
         <Suspense fallback={<div>{t("home.loading")}</div>}>
           <ParticlesB />
         </Suspense>
-        <div className={`${styles.container_img} ${isExpanded ? styles.hidden : ''}`} data-tour="about-image">
-          <Suspense fallback={<div>{t("home.loading")}</div>}>
-            <motion.div
-              initial={false}
-              animate={
-                isLoaded && isInView
-                  ? { WebkitMaskImage: visibleMask, maskImage: visibleMask } as any
-                  : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask } as any
-              }
-              transition={{ duration: 1, delay: 1 }}
-              viewport={{ once: true }}
-              onViewportEnter={() => setIsInView(true)}
-            >
-              <img
-                src={aboutImage}
-                alt="about_img"
-                onLoad={setIsLoadedCallback}
-                width="100%"
-                height="auto"
-                loading="eager"
-              />
-            </motion.div>
-          </Suspense>
-        </div>
+        <motion.div
+          className={styles.about_content}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1,
+            delay: 0.6,
+            ease: [0.2, 0, 0.2, 1],
+          }}
+          data-tour="about-content"
+        >
+          <h2>
+            {t("about.title")} <span>Hudson Kennedy ? <FaUserAstronaut /></span>
+          </h2>
 
-        <div>
-          <motion.div
-            className={styles.about_content}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 1,
-              delay: 0.6,
-              ease: [0.2, 0, 0.2, 1],
-            }}
-            data-tour="about-content"
-          >
-            <h2>
-              {t("about.title")}  <span>Hudson Kennedy ? <FaUserAstronaut /></span>
-            </h2>
-
-            <div className={styles.textContainer}>
-              <p className={`${styles.aboutText} ${isExpanded ? styles.expanded : styles.collapsed}`}>
-                {t("about.text")}
-              </p>
-              <button 
-                className={styles.toggleButton}
-                onClick={toggleExpanded}
-                aria-label={isExpanded ? t("about.showLess") : t("about.showMore")}
+          <div className={styles.textContainer}>
+            {isMobile ? (
+              <p className={styles.aboutText}>{aboutText}</p>
+            ) : (
+              <motion.p
+                className={`${styles.aboutText} ${styles.rainText}`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.35 }}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.03,
+                      delayChildren: 0.15,
+                    },
+                  },
+                }}
               >
-                {isExpanded ? t("about.showLess") : t("about.showMore")}
-              </button>
-            </div>
-          </motion.div>
-        </div>
+                {rainWords.map((word, index) => (
+                  <motion.span
+                    key={`${word}-${index}`}
+                    className={styles.rainWord}
+                    variants={{
+                      hidden: {
+                        opacity: 0,
+                        y: -28,
+                        filter: "blur(4px)",
+                      },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                        transition: {
+                          duration: 0.45,
+                          ease: [0.22, 1, 0.36, 1],
+                        },
+                      },
+                    }}
+                  >
+                    {word}&nbsp;
+                  </motion.span>
+                ))}
+              </motion.p>
+            )}
+          </div>
+        </motion.div>
       </section>
     </Transition>
   );

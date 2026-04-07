@@ -15,7 +15,7 @@ import { Atropos } from "atropos/react";
 import resumeServer from "../../data/resumeServer";
 import Footer from "../../components/Footer";
 
-const homeImages = ["/imgs/my.webp", "/imgs/model.webp", "/imgs/dev.webp", "/imgs/hkdev.webp"];
+const homeImages = ["/imgs/my.webp", "/imgs/about.webp", "/imgs/model.webp", "/imgs/hkdev.webp"];
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -258,6 +258,8 @@ const Home = React.memo(() => {
             data-tour="profile-image"
             onMouseEnter={() => setIsImageHovered(true)}
             onMouseLeave={() => setIsImageHovered(false)}
+            onPointerEnter={() => setIsImageHovered(true)}
+            onPointerLeave={() => setIsImageHovered(false)}
           >
             <Atropos shadow={false} highlight={false}>
               <img
