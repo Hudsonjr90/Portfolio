@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 import { Engine, IOptions } from 'tsparticles-engine'
@@ -132,26 +132,28 @@ const ParticlesA = React.memo(() => {
   }, [mainColor])
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ 
-        opacity: particlesEnabled ? 1 : 0,
-        visibility: particlesEnabled ? 'visible' : 'hidden'
-      }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: -1,
-        pointerEvents: particlesEnabled ? 'auto' : 'none'
-      }}
-    >
-      <Particles options={particlesConfig} init={particlesInit} />
-    </motion.div>
+    <AnimatePresence>
+      {particlesEnabled && (
+        <motion.div
+          key="particles-a"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: -1,
+            pointerEvents: 'auto'
+          }}
+        >
+          <Particles options={particlesConfig} init={particlesInit} />
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 })
 
