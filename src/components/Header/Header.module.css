@@ -51,6 +51,7 @@
 }
 
 .icons_container {
+  align-items: center;
   display: flex;
   gap: 2rem;
 }
@@ -303,7 +304,7 @@ label {
   color: var(--text_color);
   background-color: var(--bg_color);
   font-size: 3rem;
-  margin-top: 0.9rem;
+  margin-top: 0;
   cursor: pointer;
 }
 
@@ -311,7 +312,7 @@ label {
   color: var(--text_color);
   background-color: var(--bg_color);
   font-size: 3rem;
-  margin-top: 0.9rem;
+  margin-top: 0;
   cursor: pointer;
 }
 
@@ -1106,7 +1107,7 @@ label {
   }
 }
 
-@media screen and (max-width: 1530px) {
+@media screen and (max-width: 1024px) {
   .links_list .mobile_drawer_actions {
     align-items: center;
     display: flex;
