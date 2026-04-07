@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
-import myself from "/imgs/my.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
@@ -15,6 +14,8 @@ import "atropos/css";
 import { Atropos } from "atropos/react";
 import resumeServer from "../../data/resumeServer";
 import Footer from "../../components/Footer";
+
+const homeImages = ["/imgs/my.webp", "/imgs/model.webp", "/imgs/dev.webp", "/imgs/hkdev.webp"];
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -28,6 +29,8 @@ const Home = React.memo(() => {
   const [textAnimation, setTextAnimation] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [initialAnimationComplete, setInitialAnimationComplete] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isImageHovered, setIsImageHovered] = useState(false);
   const targetText = "Hudson Kennedy";
 
   const getResumeLanguage = useCallback(() => {
@@ -148,6 +151,16 @@ const Home = React.memo(() => {
     return () => clearInterval(interval);
   }, [typedStrings.length, textAnimation]);
 
+  useEffect(() => {
+    if (isImageHovered) return;
+
+    const intervalId = window.setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % homeImages.length);
+    }, 3500);
+
+    return () => window.clearInterval(intervalId);
+  }, [isImageHovered]);
+
   return (
     <>
       <Transition onAnimationComplete={() => {}}>
@@ -243,10 +256,12 @@ const Home = React.memo(() => {
               ease: [0.2, 0, 0.2, 1],
             }}
             data-tour="profile-image"
+            onMouseEnter={() => setIsImageHovered(true)}
+            onMouseLeave={() => setIsImageHovered(false)}
           >
             <Atropos shadow={false} highlight={false}>
               <img
-                src={myself}
+                src={homeImages[currentImageIndex]}
                 alt="Hudson Kennedy - Desenvolvedor Full Stack"
                 loading="eager"
               />

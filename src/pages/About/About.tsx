@@ -1,11 +1,11 @@
 import styles from "./About.module.css";
-import React, { useState, useCallback, Suspense, useEffect } from "react";
+import React, { useState, useCallback, Suspense } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { FaUserAstronaut } from "react-icons/fa6";
 
-const aboutImages = ["/imgs/about.webp", "/imgs/hkdev.webp", "/imgs/my.webp"];
+const aboutImage = "/imgs/about.webp";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -20,7 +20,6 @@ const About = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const setIsLoadedCallback = useCallback(() => {
     setIsLoaded(true);
@@ -28,14 +27,6 @@ const About = () => {
 
   const toggleExpanded = useCallback(() => {
     setIsExpanded(prev => !prev);
-  }, []);
-
-  useEffect(() => {
-    const intervalId = window.setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % aboutImages.length);
-    }, 3500);
-
-    return () => window.clearInterval(intervalId);
   }, []);
 
   return (
@@ -58,7 +49,7 @@ const About = () => {
               onViewportEnter={() => setIsInView(true)}
             >
               <img
-                src={aboutImages[currentImageIndex]}
+                src={aboutImage}
                 alt="about_img"
                 onLoad={setIsLoadedCallback}
                 width="100%"
