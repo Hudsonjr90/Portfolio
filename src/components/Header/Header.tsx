@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 import { NavLink, useLocation } from "react-router-dom";
-import { FaMoon, FaSun } from "react-icons/fa6";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { HiSparkles } from "react-icons/hi2";
 import { IoSparkles } from "react-icons/io5";
 import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
-import { logoTheme, navbarTheme, useTheme } from "../../context/ThemeContext";
+import { logoTheme, navbarTheme } from "../../context/ThemeContext";
 import { useParticles } from "../../context/ParticlesContext";
 import { ThemeProvider } from "@mui/material/styles";
 import { useAudio } from "../../hooks/useAudio";
@@ -22,13 +21,8 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const { handleAudio, toggleSound, soundEnabled } = useAudio();
   const location = useLocation();
-  const { setMainColor } = useTheme();
   const { particlesEnabled, toggleParticles } = useParticles();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [lightMode, setLightMode] = useState<boolean>(() => {
-    const savedLightMode = localStorage.getItem("lightMode");
-    return savedLightMode ? JSON.parse(savedLightMode) : false;
-  });
   const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
     return localStorage.getItem("currentLanguage") || "pt";
   });
@@ -37,17 +31,6 @@ const Header = () => {
   const { handleClickButton, handleLinkClick, showMenu } =
     useResponsiveNavbar();
 
-  const handleToggleLightMode = () => {
-    const newLightMode = !lightMode;
-    setLightMode(newLightMode);
-    localStorage.setItem("lightMode", JSON.stringify(newLightMode));
-    setMainColor(newLightMode ? "#f65151" : "#0ef6cc");
-  };
-
-  useEffect(() => {
-    document.body.classList.toggle("light_mode", lightMode);
-    setMainColor(lightMode ? "#f65151" : "#0ef6cc");
-  }, [lightMode, setMainColor]);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -167,21 +150,6 @@ const Header = () => {
               {particlesEnabled ? <HiSparkles /> : <IoSparkles />}
             </button>
 
-            <label className={styles.mobile_theme_label}>
-              <input
-                type="checkbox"
-                checked={lightMode}
-                className={styles.input_dark_light_mode}
-                onChange={() => {
-                  handleToggleLightMode();
-                  handleAudio();
-                }}
-                aria-label="Alternar modo claro/escuro"
-                role="switch"
-              />
-              <FaMoon className={styles.moon_icon} />
-              <FaSun className={styles.sun_icon} />
-            </label>
           </li>
           <motion.li
             onClick={() => {
@@ -466,24 +434,6 @@ const Header = () => {
             >
               {particlesEnabled ? <HiSparkles /> : <IoSparkles />}
             </button>
-          </Tooltip>
-
-          <Tooltip title={t("navbar.theme")} placement="bottom" arrow>
-            <label className={styles.desktop_only_icon} data-tour="theme-toggle">
-              <input
-                type="checkbox"
-                checked={lightMode}
-                className={styles.input_dark_light_mode}
-                onChange={() => {
-                  handleToggleLightMode();
-                  handleAudio();
-                }}
-                aria-label="Alternar modo claro/escuro"
-                role="switch"
-              />
-              <FaMoon className={styles.moon_icon} />
-              <FaSun className={styles.sun_icon} />
-            </label>
           </Tooltip>
 
           <Tooltip title={t("navbar.language")} placement="right" arrow>

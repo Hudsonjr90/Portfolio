@@ -3,7 +3,6 @@ import { createTheme } from '@mui/material/styles';
 
 interface ThemeContextType {
   mainColor: string;
-  setMainColor: React.Dispatch<React.SetStateAction<string>>;
   updateFavicon: (color: string) => void;
 }
 
@@ -11,10 +10,23 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mainColor, setMainColor] = useState(() => {
-    const savedLightMode = localStorage.getItem("lightMode");
-    const isLightMode = savedLightMode ? JSON.parse(savedLightMode) : false;
-    return isLightMode ? "#f65151" : "#0ef6cc";
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? "#f65151" : "#0ef6cc";
   });
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+
+    const applyTheme = (isLight: boolean) => {
+      document.body.classList.toggle("light_mode", isLight);
+      setMainColor(isLight ? "#f65151" : "#0ef6cc");
+    };
+
+    applyTheme(mediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => applyTheme(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   const updateFavicon = (color: string) => {
     const existingFavicon = document.querySelector('link[rel="icon"]');
@@ -62,7 +74,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [mainColor]);
 
   return (
-    <ThemeContext.Provider value={{ mainColor, setMainColor, updateFavicon }}>
+    <ThemeContext.Provider value={{ mainColor, updateFavicon }}>
       {children}
     </ThemeContext.Provider>
   );

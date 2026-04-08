@@ -84,104 +84,6 @@ label {
   filter: brightness(0);
 }
 
-.input_dark_light_mode {
-  cursor: pointer;
-  height: 2rem;
-  position: absolute;
-  opacity: 0;
-  width: 2rem;
-}
-
-.input_dark_light_mode:checked ~ .sun_icon {
-  transition-delay: 0s;
-  transform: rotate(360deg) scale(0);
-}
-
-.sun_icon {
-  color: var(--text_color);
-  font-size: 2.4rem;
-  transition: 0.6s ease;
-  transition-delay: 0.6s;
-}
-
-.input_dark_light_mode:checked ~ .moon_icon {
-  transition-delay: 0.6s;
-  transform: scale(1) rotate(360deg);
-}
-
-.moon_icon {
-  color: var(--text_color);
-  cursor: pointer;
-  font-size: 2.4rem;
-  position: absolute;
-  transform: scale(0);
-  transition: 0.7s ease;
-}
-
-.input_palette_colors {
-  cursor: pointer;
-  height: 2rem;
-  opacity: 0;
-  position: absolute;
-  width: 2rem;
-}
-
-.palette {
-  color: var(--text_color);
-  font-size: 2.4rem;
-}
-
-.toggle_palette_theme {
-  background-color: var(--bg_color);
-  border: none;
-  height: 0;
-  position: absolute;
-  top: 100%;
-  text-align: center;
-  transition: 0.5s ease;
-  width: 3.9rem;
-}
-
-.palette_open {
-  height: 14.9rem;
-  border: 2px solid var(--main_color);
-  margin-top: -1.2rem;
-}
-
-.ball {
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-block;
-  height: 2.3rem;
-  margin: 0.3rem;
-  opacity: 0;
-  transition: 0.6s ease;
-  transform: translateY(-190px);
-  width: 2.3rem;
-}
-
-.input_palette_colors:checked ~ .toggle_palette_theme .ball {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: calc(0.15s * var(--p));
-}
-
-.ball_0 {
-  background-color: #ffb703;
-}
-.ball_1 {
-  background-color: #8ecae6;
-}
-.ball_2 {
-  background-color: #3a86ff;
-}
-.ball_3 {
-  background-color: #eb5e28;
-}
-.ball_4 {
-  background: linear-gradient(to right, #0ef6cc 50%, #fff 50%);
-}
 .btn_menu {
   display: none;
 }
@@ -334,12 +236,6 @@ label {
   display: none;
 }
 
-.mobile_theme_label {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-}
-
 .tour_icon {
   color: var(--text_color);
   background-color: var(--bg_color);
@@ -410,50 +306,6 @@ label {
     padding: 0.7rem;
   }
 
-  .mobile_drawer_actions .mobile_theme_label {
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0.7rem;
-    position: relative;
-  }
-
-  .mobile_drawer_actions .mobile_theme_label input {
-    display: none;
-  }
-
-  .mobile_drawer_actions .moon_icon,
-  .mobile_drawer_actions .sun_icon {
-    color: var(--text_color);
-    font-size: 2.4rem;
-    margin: 0;
-    position: absolute;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .mobile_drawer_actions .sun_icon {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    transition-delay: 0.6s;
-  }
-
-  .mobile_drawer_actions .input_dark_light_mode:checked ~ .sun_icon {
-    opacity: 0;
-    transform: scale(0) rotate(360deg);
-    transition-delay: 0s;
-  }
-
-  .mobile_drawer_actions .moon_icon {
-    opacity: 0;
-    transform: scale(0);
-    transition-delay: 0.6s;
-  }
-
-  .mobile_drawer_actions .input_dark_light_mode:checked ~ .moon_icon {
-    opacity: 1;
-    transform: scale(1) rotate(360deg);
-    transition-delay: 0.6s;
-  }
-
 
   .links_list a {
     margin-left: 0;
@@ -522,6 +374,10 @@ label {
     margin-top: 0.5rem;
   }
 
+  .icons_container .tour_icon {
+    margin-top: 1.5rem;
+  }
+
   .links_list.active {
     transform: translateX(0);
   }
@@ -546,11 +402,10 @@ label {
   }
 
   .lng_btn {
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
+    margin-top: 0.6rem;
   }
 }
-
-
 
 @media screen and (max-width: 1024px) {
   .tour_button_desktop {
@@ -666,19 +521,21 @@ label {
     display: none;
   }
   .lng_btn {
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
+    margin-top: 0.6rem;
   }
 
   .links_list .mobile_drawer_actions {
     align-items: center;
     border-bottom: 1px solid rgba(var(--main_color_rgb), 0.35);
     display: flex;
-    gap: 1.6rem;
+    gap: 1.5rem;
     justify-content: center;
     margin: 0.5rem 1rem 1rem;
     opacity: 1;
     padding-bottom: 1rem;
     transform: none;
+    flex-wrap: nowrap;
   }
 
   .mobile_drawer_actions .sound_icon,
@@ -689,50 +546,12 @@ label {
     font-size: 2.4rem;
     margin-top: 0;
     padding: 0.7rem;
-  }
-
-  .mobile_drawer_actions .mobile_theme_label {
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0.7rem;
-    position: relative;
-  }
-
-  .mobile_drawer_actions .mobile_theme_label input {
-    display: none;
-  }
-
-  .mobile_drawer_actions .moon_icon,
-  .mobile_drawer_actions .sun_icon {
-    color: var(--text_color);
-    font-size: 2.4rem;
-    margin: 0;
-    position: absolute;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .mobile_drawer_actions .sun_icon {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    transition-delay: 0.6s;
-  }
-
-  .mobile_drawer_actions .input_dark_light_mode:checked ~ .sun_icon {
-    opacity: 0;
-    transform: scale(0) rotate(360deg);
-    transition-delay: 0s;
-  }
-
-  .mobile_drawer_actions .moon_icon {
-    opacity: 0;
-    transform: scale(0);
-    transition-delay: 0.6s;
-  }
-
-  .mobile_drawer_actions .input_dark_light_mode:checked ~ .moon_icon {
-    opacity: 1;
-    transform: scale(1) rotate(360deg);
-    transition-delay: 0.6s;
+    align-items: center;
+    display: inline-flex;
+    height: 4rem;
+    justify-content: center;
+    padding: 0;
+    width: 4rem;
   }
 }
 
@@ -866,49 +685,6 @@ label {
     padding: 0.7rem;
   }
 
-  .mobile_drawer_actions .mobile_theme_label {
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0.7rem;
-    position: relative;
-  }
-
-  .mobile_drawer_actions .mobile_theme_label input {
-    display: none;
-  }
-
-  .mobile_drawer_actions .moon_icon,
-  .mobile_drawer_actions .sun_icon {
-    color: var(--text_color);
-    font-size: 2.4rem;
-    margin: 0;
-    position: absolute;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .mobile_drawer_actions .sun_icon {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    transition-delay: 0.6s;
-  }
-
-  .mobile_drawer_actions .input_dark_light_mode:checked ~ .sun_icon {
-    opacity: 0;
-    transform: scale(0) rotate(360deg);
-    transition-delay: 0s;
-  }
-
-  .mobile_drawer_actions .moon_icon {
-    opacity: 0;
-    transform: scale(0);
-    transition-delay: 0.6s;
-  }
-
-  .mobile_drawer_actions .input_dark_light_mode:checked ~ .moon_icon {
-    opacity: 1;
-    transform: scale(1) rotate(360deg);
-    transition-delay: 0.6s;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -940,6 +716,10 @@ label {
   }
 
   .icons_container .sound_icon {
+    margin-top: 0.5rem;
+  }
+
+  .icons_container .lng_btn {
     margin-top: 0.5rem;
   }
 
@@ -1042,50 +822,6 @@ label {
     padding: 0.3rem;
   }
 
-  .mobile_drawer_actions .mobile_theme_label {
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0.7rem;
-    position: relative;
-  }
-
-  .mobile_drawer_actions .mobile_theme_label input {
-    display: none;
-  }
-
-  .mobile_drawer_actions .moon_icon,
-  .mobile_drawer_actions .sun_icon {
-    color: var(--text_color);
-    font-size: 2.4rem;
-    margin: 0;
-    position: absolute;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .mobile_drawer_actions .sun_icon {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    transition-delay: 0.6s;
-  }
-
-  .mobile_drawer_actions .input_dark_light_mode:checked ~ .sun_icon {
-    opacity: 0;
-    transform: scale(0) rotate(360deg);
-    transition-delay: 0s;
-  }
-
-  .mobile_drawer_actions .moon_icon {
-    opacity: 0;
-    transform: scale(0);
-    transition-delay: 0.6s;
-  }
-
-  .mobile_drawer_actions .input_dark_light_mode:checked ~ .moon_icon {
-    opacity: 1;
-    transform: scale(1) rotate(360deg);
-    transition-delay: 0.6s;
-  }
-
   .sidebar {
     width: 37rem;
     height: auto;
@@ -1108,38 +844,6 @@ label {
 }
 
 @media screen and (max-width: 1024px) {
-  .links_list .mobile_drawer_actions {
-    align-items: center;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    justify-content: center;
-  }
 
-  .mobile_drawer_actions .sound_icon,
-  .mobile_drawer_actions .particles_icon {
-    align-items: center;
-    display: inline-flex;
-    height: 4rem;
-    justify-content: center;
-    padding: 0;
-    width: 4rem;
-  }
 
-  .mobile_drawer_actions .mobile_theme_label {
-    align-items: center;
-    display: inline-flex;
-    height: 4rem;
-    justify-content: center;
-    padding: 0;
-    position: relative;
-    width: 4rem;
-  }
-
-  .mobile_drawer_actions .moon_icon,
-  .mobile_drawer_actions .sun_icon {
-    inset: 0;
-    margin: auto;
-    position: absolute;
-  }
 }
