@@ -4,9 +4,11 @@ import * as echarts from 'echarts';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
 import styles from './CircularChart.module.css';
-import { FaArrowLeft, FaSearch, FaChartPie, FaChartBar, FaChartLine } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaSearch, FaChartPie, FaChartBar, FaChartLine } from 'react-icons/fa';
 
 type ChartType = 'pie' | 'bar' | 'line';
+
+const MOBILE_PAGE_SIZE = 8;
 
 interface ChartData {
   name: string;
@@ -56,6 +58,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
   const { mainColor } = useTheme();
   const [themeKey, setThemeKey] = useState(0);
   const [chartType, setChartType] = useState<ChartType>('pie');
+  const [chartPage, setChartPage] = useState(0);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const chartRef = useRef<ReactECharts>(null);
   
@@ -83,6 +86,10 @@ const CircularChart: React.FC<CircularChartProps> = ({
     
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    setChartPage(0);
+  }, [data]);
 
   useEffect(() => {
     const resizeChart = () => {
@@ -182,7 +189,19 @@ const CircularChart: React.FC<CircularChartProps> = ({
     };
   }, [isDarkMode, isMobile]);
 
-  const isDenseMobilePie = isMobile && chartType === 'pie' && data.length > 8;
+  const effectiveChartType: ChartType = isMobile ? 'bar' : chartType;
+
+  const totalChartPages = isMobile && showBackButton
+    ? Math.ceil(data.length / MOBILE_PAGE_SIZE)
+    : 1;
+
+  const activeData = useMemo(() => {
+    if (!isMobile || !showBackButton) return data;
+    const start = chartPage * MOBILE_PAGE_SIZE;
+    return data.slice(start, start + MOBILE_PAGE_SIZE);
+  }, [data, isMobile, showBackButton, chartPage]);
+
+  const isDenseMobilePie = isMobile && effectiveChartType === 'pie' && activeData.length > 8;
 
   const chartOption = useMemo(() => {
     const baseConfig = {
@@ -275,7 +294,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
       animationEasing: 'elasticOut',
     };
 
-    switch (chartType) {
+    switch (effectiveChartType) {
       case 'pie':
         return {
           ...baseConfig,
@@ -366,7 +385,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
               animationEasing: 'elasticOut',
               animationDelay: (idx: number) => idx * 100,
               animationDuration: 1500,
-              data: data.map((item, index) => {
+              data: activeData.map((item, index) => {
                 // Usar cor específica da categoria ou gerar cor única
                 const baseColor = item.category && categoryColors[item.category] ? 
                   categoryColors[item.category] :
@@ -413,7 +432,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         };
 
       case 'bar':
-        const sortedBarData = [...data].sort((a, b) => a.value - b.value);
+        const sortedBarData = [...activeData].sort((a, b) => a.value - b.value);
         return {
           ...baseConfig,
           grid: {
@@ -491,7 +510,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         };
 
       case 'line':
-        const sortedLineData = [...data].sort((a, b) => a.value - b.value);
+        const sortedLineData = [...activeData].sort((a, b) => a.value - b.value);
         return {
           ...baseConfig,
           grid: {
@@ -574,21 +593,27 @@ const CircularChart: React.FC<CircularChartProps> = ({
       default:
         return baseConfig;
     }
-  }, [data, mainColor, isDarkMode, title, subtitle, isMobile, showLegend, roseType, neonColors, categoryColors, t, themeKey, chartType, isDenseMobilePie]);
+  }, [activeData, mainColor, isDarkMode, title, subtitle, isMobile, showLegend, roseType, neonColors, categoryColors, t, themeKey, effectiveChartType, isDenseMobilePie]);
 
   return (
     <div className={`${styles.chartContainer} ${isDarkMode ? styles.dark : styles.light}`}>
       {showBackButton && onBackClick && (
         <button
-          onClick={onBackClick}
+          onClick={() => {
+            if (isMobile && totalChartPages > 1 && chartPage > 0) {
+              setChartPage(p => p - 1);
+            } else {
+              onBackClick();
+            }
+          }}
           className={styles.backButton}
-          aria-label="Voltar ao gráfico principal"
+          aria-label={isMobile && totalChartPages > 1 && chartPage > 0 ? "Página anterior" : "Voltar ao gráfico principal"}
         >
           <FaArrowLeft />
         </button>
       )}
 
-      {showChartTypeToggle && (
+      {showChartTypeToggle && !isMobile && (
         <div className={styles.chartToggle}>
           <button
             onClick={() => setChartType('pie')}
@@ -633,21 +658,38 @@ const CircularChart: React.FC<CircularChartProps> = ({
       <ReactECharts
         ref={chartRef}
         option={chartOption}
-        style={{ 
-          height: `${height}px`, 
+        style={{
+          height: `${height}px`,
           width: '100%',
         }}
         onEvents={onChartClick ? {
           'click': onChartClick
         } : {}}
-        opts={{ 
+        opts={{
           renderer: 'canvas',
           devicePixelRatio: window.devicePixelRatio || 2,
         }}
         notMerge={true}
         lazyUpdate={true}
         autoResize={false}
-      /> 
+      />
+
+      {isMobile && showBackButton && totalChartPages > 1 && (
+        <>
+          <span className={styles.mobilePageIndicator}>
+            {chartPage + 1} / {totalChartPages}
+          </span>
+          {chartPage < totalChartPages - 1 && (
+            <button
+              onClick={() => setChartPage(p => p + 1)}
+              className={styles.mobileNextPage}
+              aria-label="Próxima página"
+            >
+              <FaArrowRight />
+            </button>
+          )}
+        </>
+      )}
     </div>
   );
 };

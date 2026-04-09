@@ -7,7 +7,74 @@
   overflow: hidden;
   background: var(--bg_color);
   box-shadow: var(--main_color) 0 0 1rem;
+  animation: slideInUp 0.8s ease-out;
 }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.chartContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--main_color), transparent, var(--main_color));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.dark .chartContainer {
+  position: relative;
+}
+
+.dark .chartContainer::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg,
+    var(--main_color),
+    transparent,
+    var(--main_color),
+    transparent,
+    var(--main_color)
+  );
+  border-radius: 22px;
+  z-index: -2;
+  opacity: 0.5;
+  filter: blur(6px);
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 0.3;
+    filter: blur(6px);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(8px);
+  }
+}
+
+/* ── Chart type toggle ──────────────────────────────────────── */
 
 .chartToggle {
   position: absolute;
@@ -63,13 +130,11 @@
 }
 
 @keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
+
+/* ── Back / navigation buttons ──────────────────────────────── */
 
 .backButton {
   position: absolute;
@@ -77,6 +142,7 @@
   left: 1rem;
   background: var(--bg_color);
   color: var(--main_color);
+  border: none;
   padding: 0.8rem 1.2rem;
   font-size: 3.5rem;
   font-weight: 600;
@@ -87,79 +153,41 @@
 
 .backButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(var(--main_color), 0.4);
-  background: linear-gradient(135deg, var(--main_color)E6, var(--main_color));
 }
 
-.chartContainer::before {
-  content: '';
+.mobileNextPage {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  padding: 2px;
-  background: linear-gradient(45deg, var(--main_color), transparent, var(--main_color));
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
-  z-index: -1;
-  opacity: 0.3;
+  top: 1rem;
+  right: 1rem;
+  background: var(--bg_color);
+  color: var(--main_color);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
 }
 
-/* Animação de entrada */
-.chartContainer {
-  animation: slideInUp 0.8s ease-out;
+.mobileNextPage:hover {
+  transform: translateY(-2px);
 }
 
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Efeitos especiais para gráficos neon */
-.dark .chartContainer {
-  position: relative;
-}
-
-.dark .chartContainer::after {
-  content: '';
+.mobilePageIndicator {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, 
-    var(--main_color), 
-    transparent, 
-    var(--main_color), 
-    transparent, 
-    var(--main_color)
-  );
-  border-radius: 22px;
-  z-index: -2;
-  opacity: 0.5;
-  filter: blur(6px);
-  animation: neonPulse 3s ease-in-out infinite;
+  top: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--main_color);
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  z-index: 20;
+  pointer-events: none;
 }
 
-@keyframes neonPulse {
-  0%, 100% {
-    opacity: 0.3;
-    filter: blur(6px);
-  }
-  50% {
-    opacity: 0.6;
-    filter: blur(8px);
-  }
-}
+/* ── Search ─────────────────────────────────────────────────── */
 
 .searchContainer {
   position: absolute;
@@ -226,18 +254,19 @@
   font-weight: 400;
 }
 
-/* Efeito neon para o campo de busca */
 .dark .searchWrapper {
-  box-shadow: 
+  box-shadow:
     0 0 10px rgba(var(--main_color_rgb), 0.3),
     inset 0 0 10px rgba(var(--main_color_rgb), 0.1);
 }
 
 .dark .searchWrapper:focus-within {
-  box-shadow: 
+  box-shadow:
     0 0 25px rgba(var(--main_color_rgb), 0.5),
     inset 0 0 15px rgba(var(--main_color_rgb), 0.2);
 }
+
+/* ── Responsive ─────────────────────────────────────────────── */
 
 @media (max-width: 1200px) {
   .searchContainer {
@@ -281,33 +310,14 @@
 }
 
 @media (max-width: 768px) {
-  .searchContainer {
-    max-width: 350px;
-    margin-bottom: 1.5rem;
-  }
-  
-  .searchWrapper {
-    padding: 0.4rem 1.5rem 0.4rem 3.5rem;
-  }
-  
-  .searchIcon {
-    left: 1.2rem;
-    font-size: 1.6rem;
-  }
-  
-  .searchInput {
-    font-size: 1.4rem;
-    padding: 0.6rem 0;
-  }
-
   .chartContainer {
     padding: 1rem;
-    padding-top: 6.6rem;
+    padding-top: 5rem;
     margin: 3rem 0;
     border-radius: 15px;
     overflow: visible;
   }
-  
+
   .chartContainer::before {
     border-radius: 15px;
   }
@@ -325,17 +335,39 @@
     height: 38px;
   }
 
-  .backButton {
+  .backButton,
+  .mobileNextPage {
     top: 0.5rem;
-    left: 0.5rem;
     padding: 0.6rem 1rem;
     font-size: 2.8rem;
+  }
+
+  .backButton  { left: 0.5rem; }
+  .mobileNextPage { right: 0.5rem; }
+
+  .searchContainer {
+    max-width: 350px;
+    margin-bottom: 1.5rem;
+  }
+
+  .searchWrapper {
+    padding: 0.4rem 1.5rem 0.4rem 3.5rem;
+  }
+
+  .searchIcon {
+    left: 1.2rem;
+    font-size: 1.6rem;
+  }
+
+  .searchInput {
+    font-size: 1.4rem;
+    padding: 0.6rem 0;
   }
 }
 
 @media (max-width: 600px) {
   .chartContainer {
-    padding-top: 7rem;
+    padding-top: 5rem;
   }
 
   .chartToggle {
@@ -350,33 +382,12 @@
 }
 
 @media (max-width: 480px) {
-  .searchContainer {
-    max-width: 100%;
-    margin-bottom: 3rem;
-    position: relative;
-  }
-  
-  .searchWrapper {
-    padding: 0.3rem 1rem 0.3rem 3rem;
-    border-radius: 20px;
-  }
-  
-  .searchIcon {
-    left: 1rem;
-    font-size: 1.4rem;
-  }
-  
-  .searchInput {
-    font-size: 1.3rem;
-    padding: 0.5rem 0;
-  }
-
-   .chartContainer {
+  .chartContainer {
     padding: 1rem;
-    padding-top: 7.2rem;
+    padding-top: 5rem;
     border-radius: 12px;
   }
-  
+
   .chartContainer::before {
     border-radius: 12px;
   }
@@ -393,15 +404,37 @@
     height: 32px;
   }
 
-  .backButton {
+  .backButton,
+  .mobileNextPage {
     padding: 0.5rem 0.8rem;
     font-size: 2.4rem;
+  }
+
+  .searchContainer {
+    max-width: 100%;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .searchWrapper {
+    padding: 0.3rem 1rem 0.3rem 3rem;
+    border-radius: 20px;
+  }
+
+  .searchIcon {
+    left: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .searchInput {
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
   }
 }
 
 @media (max-width: 430px) {
   .chartContainer {
-    padding-top: 7.5rem;
+    padding-top: 5rem;
   }
 
   .searchWrapper {
@@ -412,14 +445,15 @@
     font-size: 1.2rem;
   }
 
-  .backButton {
+  .backButton,
+  .mobileNextPage {
     font-size: 2.2rem;
   }
 }
 
 @media (max-width: 360px) {
   .chartContainer {
-    padding-top: 7.8rem;
+    padding-top: 5rem;
   }
 
   .toggleButton {

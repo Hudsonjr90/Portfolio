@@ -3,8 +3,8 @@ import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
-import { HiSparkles } from "react-icons/hi2";
-import { IoSparkles } from "react-icons/io5";
+import { BiAtom } from "react-icons/bi";
+import { TbAtomOff } from "react-icons/tb";
 import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
 import { logoTheme, navbarTheme } from "../../context/ThemeContext";
@@ -147,7 +147,7 @@ const Header = () => {
               className={styles.particles_icon}
               aria-label="Toggle Particles"
             >
-              {particlesEnabled ? <HiSparkles /> : <IoSparkles />}
+              {particlesEnabled ? <BiAtom /> : <TbAtomOff />}
             </button>
 
           </li>
@@ -432,7 +432,7 @@ const Header = () => {
               aria-label="Toggle Particles"
               data-tour="particles-toggle"
             >
-              {particlesEnabled ? <HiSparkles /> : <IoSparkles />}
+              {particlesEnabled ? <BiAtom /> : <TbAtomOff />}
             </button>
           </Tooltip>
 
@@ -488,7 +488,7 @@ const Header = () => {
                     >
                       <div className={styles.flags_name}>
                         <Br className={styles.flags} />
-                        <span>{t("name.br")}</span>
+                        <span>PT-BR</span>
                       </div>
                     </button>
                     <button
@@ -499,7 +499,7 @@ const Header = () => {
                     >
                       <div className={styles.flags_name}>
                         <Us className={styles.flags} />
-                        <span>{t("name.us")}</span>
+                        <span>EN-US</span>
                       </div>
                     </button>
                     <button
@@ -510,7 +510,7 @@ const Header = () => {
                     >
                       <div className={styles.flags_name}>
                         <Fr className={styles.flags} />
-                        <span>{t("name.fr")}</span>
+                        <span>FR-FR</span>
                       </div>
                     </button>
                     <button
@@ -521,7 +521,7 @@ const Header = () => {
                     >
                       <div className={styles.flags_name}>
                         <It className={styles.flags} />
-                        <span>{t("name.it")}</span>
+                        <span>IT-IT</span>
                       </div>
                     </button>
                     <button
@@ -532,7 +532,7 @@ const Header = () => {
                     >
                       <div className={styles.flags_name}>
                         <Es className={styles.flags} />
-                        <span>{t("name.es")}</span>
+                        <span>ES-ES</span>
                       </div>
                     </button>
                   </motion.div>

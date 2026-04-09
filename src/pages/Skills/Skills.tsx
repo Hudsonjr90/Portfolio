@@ -183,11 +183,8 @@ const Skills = () => {
 
   const mobileChartHeight = useMemo(() => {
     if (!isMobile) return 500;
-    if (!selectedPieCategory) return 430;
-
-    const extraItems = Math.max(0, circularChartData.length - 8);
-    return Math.min(760, 460 + extraItems * 18);
-  }, [isMobile, selectedPieCategory, circularChartData.length]);
+    return selectedPieCategory ? 320 : 380;
+  }, [isMobile, selectedPieCategory]);
 
   const handleChartClick = (params: any) => {
     if (params.data && params.data.category) {

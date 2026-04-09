@@ -28,14 +28,6 @@
     "next": "Suivant"
   },
 
-  "name": {
-    "br": "Brésil | PT",
-    "us": "États-Unis | EN",
-    "fr": "France | FR",
-    "it": "Italie | IT",
-    "es": "Espagne | ES"
-  },
-
   "navbar": {
     "effect": "Effet de Particules",
     "sound": "Effet Sonore",

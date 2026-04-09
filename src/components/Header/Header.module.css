@@ -169,16 +169,16 @@ label {
   position: absolute;
   text-align: center;
   transition: height 0.5s ease;
-  width: 33rem;
+  width: 15rem;
   display: flex;
   flex-direction: column;
-  padding: 0 5rem;
-  margin-left: -18.7rem;
+  padding: 0.4rem 2rem;
+  margin-left: -1rem;
   margin-top: 1.2rem;
 }
 
 .sidebar .flags {
-  font-size: 4rem;
+  font-size: 2.8rem;
 }
 
 .sidebar .flags_navbar {
@@ -187,17 +187,21 @@ label {
 
 .sidebar .flags_name {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .flags_name span {
-  margin-top: 1rem;
+  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .sidebar button {
   background-color: var(--bg_color);
   color: var(--main_color);
-  padding: 0.5rem 0rem;
+  padding: 0.15rem 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -306,7 +310,6 @@ label {
     padding: 0.7rem;
   }
 
-
   .links_list a {
     margin-left: 0;
   }
@@ -404,6 +407,12 @@ label {
   .lng_btn {
     padding: 1rem 0rem;
     margin-top: 0.6rem;
+  }
+
+  .sidebar {
+    width: 15rem;
+        margin-top: 2.1rem;
+    margin-left: -3.9rem;
   }
 }
 
@@ -553,6 +562,12 @@ label {
     padding: 0;
     width: 4rem;
   }
+
+  .sidebar {
+    width: 15rem;
+    margin-top: 2.1rem;
+    margin-left: -3.9rem;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -684,7 +699,6 @@ label {
     margin-top: 0;
     padding: 0.7rem;
   }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -823,10 +837,10 @@ label {
   }
 
   .sidebar {
-    width: 37rem;
+    width: 15rem;
     height: auto;
     margin-top: 2.1rem;
-    margin-left: -25.9rem;
+    margin-left: -3.9rem;
   }
 }
 
@@ -836,14 +850,6 @@ label {
   }
 
   .sidebar {
-    width: 30rem;
-    height: auto;
-    margin-top: 2.1rem;
-    margin-left: -20.9rem;
+    margin-left: -5.9rem;
   }
-}
-
-@media screen and (max-width: 1024px) {
-
-
 }
