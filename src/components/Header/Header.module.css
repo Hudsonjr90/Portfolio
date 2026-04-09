@@ -214,6 +214,87 @@ label {
   cursor: pointer;
 }
 
+.volumeControl {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0;
+  line-height: 0;
+}
+
+.volumePopup {
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg_color);
+  border: 2px solid var(--main_color);
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+
+.volumeSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    var(--main_color) 0%,
+    var(--main_color) var(--val, 80%),
+    var(--second_bg_color) var(--val, 80%),
+    var(--second_bg_color) 100%
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.volumePopup .volumeSlider {
+  width: 36px;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  height: 100px;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--main_color);
+  cursor: pointer;
+  border: 2px solid var(--bg_color);
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.volumeSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--main_color);
+  cursor: pointer;
+  border: 2px solid var(--bg_color);
+}
+
+.volumeValue {
+  color: var(--main_color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  min-width: 3.5rem;
+  text-align: center;
+}
+
 .particles_icon {
   color: var(--text_color);
   background-color: var(--bg_color);

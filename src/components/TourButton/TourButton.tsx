@@ -1,5 +1,6 @@
 import React from 'react';
-import { LuRoute } from "react-icons/lu";
+import Icon from "@mdi/react";
+import { mdiCompassOutline } from "@mdi/js";
 import { useTranslation } from 'react-i18next';
 import { usePortfolioTour } from '../../hooks/usePortfolioTour';
 import { navbarTheme } from '../../context/ThemeContext';
@@ -24,7 +25,7 @@ const TourButton: React.FC<TourButtonProps> = ({ currentPage, className }) => {
           aria-label={t('tour.start')}
           className={`${styles.tour_icon} ${className}`}
         >
-          <LuRoute />
+          <Icon path={mdiCompassOutline} size={2} />
         </button>
       </Tooltip>
     </ThemeProvider>

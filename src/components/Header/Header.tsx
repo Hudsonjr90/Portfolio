@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 import { NavLink, useLocation } from "react-router-dom";
-import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import Icon from "@mdi/react";
+import { mdiMusic, mdiMusicOff, mdiAtom } from "@mdi/js";
 import { GrClose } from "react-icons/gr";
 import { BiAtom } from "react-icons/bi";
 import { TbAtomOff } from "react-icons/tb";
@@ -19,10 +20,23 @@ import TourButton from "../TourButton/TourButton";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
-  const { handleAudio, toggleSound, soundEnabled } = useAudio();
+  const { handleAudio, toggleSound, soundEnabled, volume, setVolume } = useAudio();
   const location = useLocation();
   const { particlesEnabled, toggleParticles } = useParticles();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showVolumePopup, setShowVolumePopup] = useState(false);
+  const volumeControlRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = volumeControlRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      setVolume(Math.min(100, Math.max(0, volume + (e.deltaY < 0 ? 5 : -5))));
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, [volume, setVolume]);
   const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
     return localStorage.getItem("currentLanguage") || "pt";
   });
@@ -136,7 +150,7 @@ const Header = () => {
               className={styles.sound_icon}
               aria-label="Toggle Sound"
             >
-              {soundEnabled ? <FaVolumeUp /> : <FaVolumeMute />}
+              {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
             </button>
 
             <button
@@ -411,16 +425,35 @@ const Header = () => {
  
             <TourButton currentPage={location.pathname === '/' ? 'home' : location.pathname.slice(1)} className={styles.tour_button_desktop} />
 
-          <Tooltip title={t("navbar.sound")} placement="bottom" arrow>
+          <div
+            ref={volumeControlRef}
+            className={`${styles.volumeControl} ${styles.desktop_only_icon}`}
+            onMouseEnter={() => setShowVolumePopup(true)}
+            onMouseLeave={() => setShowVolumePopup(false)}
+            data-tour="sound-toggle"
+          >
             <button
-              onClick={toggleSound}
-              className={`${styles.sound_icon} ${styles.desktop_only_icon}`}
-              aria-label="Toggle Sound"
-              data-tour="sound-toggle"
+              className={styles.sound_icon}
+              aria-label="Volume"
             >
-              {soundEnabled ? <FaVolumeUp /> : <FaVolumeMute />}
+              {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
             </button>
-          </Tooltip>
+            {showVolumePopup && (
+              <div className={styles.volumePopup}>
+                <input
+                  type="range"
+                  min={0}
+                  max={100}
+                  value={volume}
+                  onChange={e => setVolume(Number(e.target.value))}
+                  className={styles.volumeSlider}
+                  style={{ '--val': `${volume}%` } as React.CSSProperties}
+                  aria-label="Volume"
+                />
+                <span className={styles.volumeValue}>{volume}%</span>
+              </div>
+            )}
+          </div>
 
           <Tooltip title={t("navbar.effect")} placement="bottom" arrow>
             <button
@@ -432,7 +465,7 @@ const Header = () => {
               aria-label="Toggle Particles"
               data-tour="particles-toggle"
             >
-              {particlesEnabled ? <BiAtom /> : <TbAtomOff />}
+              {particlesEnabled ? <Icon path={mdiAtom} size={2}/> : <TbAtomOff />}
             </button>
           </Tooltip>
 

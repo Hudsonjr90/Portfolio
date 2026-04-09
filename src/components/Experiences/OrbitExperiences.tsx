@@ -17,7 +17,7 @@ const OrbitExperiences = ({ experiences }: Props) => {
 
   const carouselItems = useMemo(
     () =>
-      experiences.map((exp) => ({
+      [...experiences].reverse().map((exp) => ({
         title: exp.title,
         subtitle: exp.subtitle,
         description: exp.description,
@@ -85,7 +85,7 @@ const OrbitExperiences = ({ experiences }: Props) => {
                   animate={{ opacity: 1, scale: 1, x: x - itemOffset, y: y - itemOffset }}
                   exit={{ opacity: 0, scale: 0.5, x: -itemOffset, y: -itemOffset }}
                   transition={{ duration: 0.35, ease: "easeInOut" }}
-                  onClick={() => setSelectedIndex(index)}
+                  onClick={() => setSelectedIndex(experiences.length - 1 - index)}
                 >
                   <img src={exp.image} alt={exp.title} />
                 </motion.div>
