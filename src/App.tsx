@@ -6,7 +6,6 @@ import React from 'react'
 import Header from './components/Header/Header'
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const About = React.lazy(() => import('./pages/About/About'))
-const Testimonials = React.lazy(() => import('./pages/Testimonials/Testimonials'))
 const Education = React.lazy(() => import('./pages/Education/Education'))
 const Experiences = React.lazy(() => import('./pages/Experiences/Experiences'))
 const Portfolio = React.lazy(() => import('./pages/Portfolio/Portfolio'))
@@ -62,7 +61,6 @@ function App() {
                 <Routes location={location} key={location.pathname}>
                   <Route index element={<Home />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/testimonials" element={<Testimonials />} />
                   <Route path="/education" element={<Education />} />
                   <Route path="/experiences" element={<Experiences />} />
                   <Route path="/skills" element={<Skills />} />

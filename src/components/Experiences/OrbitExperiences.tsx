@@ -5,11 +5,19 @@ import { useState, useMemo } from "react";
 import Modal from "../Modal/Modal";
 import { FaLaptopCode } from "react-icons/fa";
 
-interface Props {
-  experiences: Experience[];
+interface TranslatedTestimonial {
+  name: string;
+  text: string;
+  img: string;
+  company: string;
 }
 
-const OrbitExperiences = ({ experiences }: Props) => {
+interface Props {
+  experiences: Experience[];
+  testimonials: TranslatedTestimonial[];
+}
+
+const OrbitExperiences = ({ experiences, testimonials }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isCollapsed, setIsCollapsed] = useState(true);
   const ORBIT_ITEM_SIZE = 72;
@@ -23,8 +31,11 @@ const OrbitExperiences = ({ experiences }: Props) => {
         description: exp.description,
         date: `📅 ${exp.date}`,
         icon: <img src={exp.image} alt={exp.title} width={50} />,
+        testimonials: testimonials
+          .filter((t) => t.company === exp.title)
+          .map(({ name, text, img }) => ({ name, text, img })),
       })),
-    [experiences]
+    [experiences, testimonials]
   );
 
   const radius = 250;
@@ -45,7 +56,7 @@ const OrbitExperiences = ({ experiences }: Props) => {
               const angle = index * step;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
-              
+
               return (
                 <line
                   key={`line-${index}`}
@@ -94,7 +105,7 @@ const OrbitExperiences = ({ experiences }: Props) => {
         </AnimatePresence>
       </div>
 
-  
+
       {selectedIndex !== null && (
         <Modal
           show={selectedIndex !== null}

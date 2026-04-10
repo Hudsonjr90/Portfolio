@@ -57,14 +57,14 @@ const experiencesServer = [
     image: "/imgs/imgExperiences/tdb.png",
   },
   {
-    title: "Cubo Connect",
+    title: "Cubo Connect - SPC Grafeno",
     subtitle: "experiences.subtitle6",
     description: "experiences.description8",
     date: "experiences.date8",
     image: "/imgs/imgExperiences/cubo.png",
   },
   {
-    title: "Afilio / Dynaton",
+    title: "Afilio/Dynaton",
     subtitle: "experiences.subtitle5",
     description: "experiences.description7",
     date: "experiences.date9",

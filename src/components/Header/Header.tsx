@@ -260,40 +260,6 @@ const Header = () => {
             }}
           >
             <NavLink
-              to="/testimonials"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              role="menuitem"
-            >
-              {t("menu.testimonials")}
-            </NavLink>
-          </motion.li>
-          <motion.li
-            onClick={() => {
-              handleLinkClick();
-              handleAudio();
-            }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 3 }}
-            role="none"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-                scale: 0.8,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12,
-                },
-              },
-            }}
-          >
-            <NavLink
               to="/experiences"
               className={({ isActive }) => (isActive ? styles.active : "")}
               role="menuitem"
@@ -307,7 +273,7 @@ const Header = () => {
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 4 }}
+            style={{ ["--i" as any]: 3 }}
             role="none"
             variants={{
               hidden: {
@@ -341,7 +307,7 @@ const Header = () => {
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 5 }}
+            style={{ ["--i" as any]: 4 }}
             role="none"
             variants={{
               hidden: {
@@ -375,16 +341,16 @@ const Header = () => {
               handleAudio();
             }}
             className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 6 }}
+            style={{ ["--i" as any]: 5 }}
             role="none"
             variants={{
-              hidden: { 
-                opacity: 0, 
+              hidden: {
+                opacity: 0,
                 y: -20,
-                scale: 0.8 
+                scale: 0.8
               },
-              visible: { 
-                opacity: 1, 
+              visible: {
+                opacity: 1,
                 y: 0,
                 scale: 1,
                 transition: {

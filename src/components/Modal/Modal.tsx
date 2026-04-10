@@ -1,6 +1,6 @@
 import { useCallback, useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaDownload, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaDownload, FaChevronLeft, FaChevronRight, FaChevronDown, FaUsers } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { ThemeProvider } from "@mui/material/styles";
 import { Tooltip, IconButton, Zoom } from "@mui/material";
@@ -27,6 +27,7 @@ interface ModalProps {
     image?: string;
     icon?: React.ReactNode;
     date?: string;
+    testimonials?: { name: string; text: string; img: string }[];
   }[];
   initialPage?: number;
   loopNavigation?: boolean;
@@ -48,6 +49,8 @@ const Modal = ({
 }: ModalProps) => {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(0);
+  const [showTestimonials, setShowTestimonials] = useState(false);
+  const [expandedTestimonialIndex, setExpandedTestimonialIndex] = useState<number | null>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const hasCarouselItems = carouselItems.length > 0;
@@ -61,14 +64,17 @@ const Modal = ({
   const currentIcon = currentItem?.icon ?? icon;
   const currentPdf = currentItem?.pdf ?? pdf;
 
-  // Reset page quando modal abrir
   useEffect(() => {
     if (show) {
       setCurrentPage(initialPage);
     }
   }, [initialPage, show]);
 
-  // Scroll para o topo quando mudar de página
+  useEffect(() => {
+    setShowTestimonials(false);
+    setExpandedTestimonialIndex(null);
+  }, [currentPage]);
+
   useEffect(() => {
     if (contentRef.current) {
       contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
@@ -122,7 +128,6 @@ const Modal = ({
   return (
     <AnimatePresence>
       <motion.div className={styles.modal_container}>
-        {/* HEADER */}
         <div className={styles.modal_title}>
           <div className={styles.modal_header_top}>
             <div className={styles.modal_header_identity}>
@@ -288,7 +293,6 @@ const Modal = ({
           </div>
         </div>
 
-        {/* DESCRIÇÃO */}
         {currentDescription && (
           <div className={styles.modal_description_container}>
             <p className={styles.modal_description}>{currentDescription}</p>
@@ -301,7 +305,6 @@ const Modal = ({
           </div>
         )}
 
-        {/* CONTEÚDO */}
         <div className={styles.modal_content} ref={contentRef}>
           {currentImage && (
             <div className={styles.modal_image_container}>
@@ -316,6 +319,97 @@ const Modal = ({
                 loading="lazy"
                 className={styles.modal_image}
               />
+            </div>
+          )}
+
+          {currentItem?.testimonials !== undefined && (
+            <div className={styles.modal_testimonials_section}>
+              <button
+                className={styles.modal_testimonials_master}
+                onClick={() => {
+                  setShowTestimonials((prev) => !prev);
+                  setExpandedTestimonialIndex(null);
+                }}
+                aria-expanded={showTestimonials}
+              >
+                <FaUsers className={styles.modal_testimonials_master_icon} />
+                {t("menu.testimonials")}
+                {currentItem.testimonials.length > 0 && (
+                  <span className={styles.modal_testimonials_count}>
+                    ({currentItem.testimonials.length})
+                  </span>
+                )}
+                <FaChevronDown
+                  className={`${styles.modal_testimonials_chevron} ${
+                    showTestimonials ? styles.chevron_open : ""
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {showTestimonials && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className={styles.modal_testimonials_content}
+                  >
+                    {currentItem.testimonials.length === 0 ? (
+                      <p className={styles.modal_testimonials_empty}>
+                        {t("testimonials.noTestimonials")}
+                      </p>
+                    ) : (
+                      <div className={styles.modal_testimonials_list}>
+                        {currentItem.testimonials.map((testimonial, index) => (
+                          <div key={index} className={styles.modal_testimonial_item}>
+                            <button
+                              className={styles.modal_testimonial_header}
+                              onClick={() =>
+                                setExpandedTestimonialIndex((prev) =>
+                                  prev === index ? null : index
+                                )
+                              }
+                              aria-expanded={expandedTestimonialIndex === index}
+                            >
+                              <img
+                                src={testimonial.img}
+                                alt={testimonial.name}
+                                className={styles.modal_testimonial_avatar}
+                              />
+                              <strong className={styles.modal_testimonial_name}>
+                                {testimonial.name}
+                              </strong>
+                              <FaChevronDown
+                                className={`${styles.modal_testimonial_chevron} ${
+                                  expandedTestimonialIndex === index
+                                    ? styles.chevron_open
+                                    : ""
+                                }`}
+                              />
+                            </button>
+                            <AnimatePresence>
+                              {expandedTestimonialIndex === index && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                                  className={styles.modal_testimonial_body}
+                                >
+                                  <p className={styles.modal_testimonial_text}>
+                                    {testimonial.text}
+                                  </p>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           )}
         </div>
