@@ -23,9 +23,14 @@ const OrbitExperiences = ({ experiences, testimonials }: Props) => {
   const ORBIT_ITEM_SIZE = 72;
   const itemOffset = ORBIT_ITEM_SIZE / 2;
 
+  const orderedExperiences = useMemo(
+    () => [...experiences].reverse(),
+    [experiences]
+  );
+
   const carouselItems = useMemo(
     () =>
-      [...experiences].reverse().map((exp) => ({
+      orderedExperiences.map((exp) => ({
         title: exp.title,
         subtitle: exp.subtitle,
         description: exp.description,
@@ -35,11 +40,11 @@ const OrbitExperiences = ({ experiences, testimonials }: Props) => {
           .filter((t) => t.company === exp.title)
           .map(({ name, text, img }) => ({ name, text, img })),
       })),
-    [experiences, testimonials]
+    [orderedExperiences, testimonials]
   );
 
   const radius = 250;
-  const step = (2 * Math.PI) / experiences.length;
+  const step = (2 * Math.PI) / orderedExperiences.length;
 
   return (
     <>
@@ -52,8 +57,8 @@ const OrbitExperiences = ({ experiences, testimonials }: Props) => {
           }}
           transition={{ duration: 0.45, ease: "easeInOut" }}
         >
-          {experiences.map((_, index) => {
-              const angle = index * step;
+          {orderedExperiences.map((_, index) => {
+              const angle = index * step - Math.PI / 2;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
 
@@ -82,9 +87,8 @@ const OrbitExperiences = ({ experiences, testimonials }: Props) => {
 
         <AnimatePresence>
           {!isCollapsed &&
-            experiences.map((exp, index) => {
-              const angle = index * step;
-
+            orderedExperiences.map((exp, index) => {
+              const angle = index * step - Math.PI / 2;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
 
@@ -96,7 +100,7 @@ const OrbitExperiences = ({ experiences, testimonials }: Props) => {
                   animate={{ opacity: 1, scale: 1, x: x - itemOffset, y: y - itemOffset }}
                   exit={{ opacity: 0, scale: 0.5, x: -itemOffset, y: -itemOffset }}
                   transition={{ duration: 0.35, ease: "easeInOut" }}
-                  onClick={() => setSelectedIndex(experiences.length - 1 - index)}
+                  onClick={() => setSelectedIndex(index)}
                 >
                   <img src={exp.image} alt={exp.title} />
                 </motion.div>

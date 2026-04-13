@@ -36,12 +36,12 @@ const testimonialServer: Testimonial[] = [
     img: "/imgs/imgsMobile/linkedin20.webp",
     company: "Cubo Connect - SPC Grafeno"
   },
-  // {
-  //   title: "Leonardo Melo",
-  //   subtitle: "testimonials.subtitle21",
-  //   img: "/imgs/imgsMobile/linkedin21.webp",
-  //   company: "Cubo Connect - SPC Grafeno"
-  // },
+  {
+    title: "Leonardo Melo",
+    subtitle: "testimonials.subtitle21",
+    img: "/imgs/imgsMobile/linkedin21.webp",
+    company: "Cubo Connect - SPC Grafeno"
+  },
   {
     title: "Gustavo Ferrari",
     subtitle: "testimonials.subtitle22",

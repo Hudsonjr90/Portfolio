@@ -42,6 +42,7 @@ const TimelineElement = ({
   onMasterToggle,
 }: TimelineElementProps) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!isOpen) setExpandedIndex(null);
@@ -88,7 +89,7 @@ const TimelineElement = ({
                 isOpen ? styles.chevron_open : ""
               }`}
             />
-            Depoimentos ({testimonials.length})
+            {t("menu.testimonials")} ({testimonials.length})
           </button>
 
           <AnimatePresence>
