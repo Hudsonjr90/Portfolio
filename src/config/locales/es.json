@@ -7,6 +7,7 @@
     "experiences": "Experiencias",
     "skills": "Habilidades",
     "portfolio": "Proyectos",
+    "blog": "Blog",
     "contact": "Contacto"
   },
 
@@ -32,7 +33,80 @@
     "effect": "Efecto de Partículas",
     "sound": "Efecto Sonoro",
     "theme": "Tema",
+    "themeSystem": "Sistema",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
     "language": "Idiomas"
+  },
+
+  "blog": {
+    "eyebrow": "Contenido vivo",
+    "title": "Desarrollo",
+    "text": "y tecnología",
+    "intro": "Un espacio dedicado a artículos, aprendizajes prácticos, arquitectura frontend, rendimiento y temas técnicos que sigo día a día.",
+    "loading": "Cargando feed en vivo...",
+    "liveStatus": "Feed en vivo vía {{source}}",
+    "error": "No se pudo cargar el feed. Mostrando contenido curado.",
+    "empty": "No se encontraron artículos en el feed por ahora.",
+    "setup": "Modo curado activo. Configura el feed en vivo cuando quieras.",
+    "configureTitle": "Publicación continua",
+    "configureText": "Esta sección combina Google News RSS y la API de Hacker News sin clave. Puedes ajustar VITE_GOOGLE_NEWS_QUERY, VITE_GOOGLE_NEWS_LIMIT y VITE_HN_LIMIT.",
+    "sourceLabel": "Fuente",
+    "sourceTagsLabel": "Temas",
+    "updateLabel": "Ritmo",
+    "updateValue": "En vivo cuando el feed esté configurado",
+    "searchPlaceholder": "Buscar por título, extracto o etiqueta",
+    "browseByTag": "Filtrar por etiqueta",
+    "allTags": "Todas",
+    "resultsSummary": "{{count}} artículos encontrados",
+    "clearFilters": "Limpiar filtros",
+    "noResultsTitle": "No hay resultados con este filtro",
+    "noResultsText": "Prueba otra búsqueda o vuelve a todas las etiquetas para ver más contenido.",
+    "publishedAt": "Publicado el {{date}}",
+    "readTime": "{{minutes}} min de lectura",
+    "readDetails": "Ver detalles",
+    "readArticle": "Leer artículo",
+    "comingSoon": "Próximamente",
+    "favoriteOnly": "Favoritos",
+    "addFavorite": "Agregar a favoritos",
+    "removeFavorite": "Quitar de favoritos",
+    "backToList": "Volver al blog",
+    "detailNotFoundTitle": "Noticia no encontrada",
+    "detailNotFoundText": "No se encontró esta noticia en la caché local. Vuelve a la lista y ábrela otra vez.",
+    "liveBadge": "En vivo",
+    "fallbackBadge": "Curado",
+    "sourceGoogle": "Google News",
+    "sourceHackerNews": "Hacker News",
+    "ctaEyebrow": "¿Necesitas algo parecido?",
+    "ctaTitle": "Puedo convertir esto en estrategia de contenido, casos técnicos, charlas o consultoría.",
+    "ctaText": "Si encaja con tu proyecto, también puedo evolucionar este espacio a un flujo editorial real con CMS u otra API.",
+    "ctaButton": "Hablar conmigo",
+    "fallbackPosts": [
+      {
+        "id": "fallback-1",
+        "title": "Cómo crear un portafolio técnico que genere conversaciones reales",
+        "excerpt": "Qué diferencia a un portafolio bonito de uno que realmente demuestra seniority y criterio técnico.",
+        "tags": ["portfolio", "frontend", "carrera"],
+        "publishedAt": "2026-04-17",
+        "readingTimeMinutes": 6
+      },
+      {
+        "id": "fallback-2",
+        "title": "React en producción: ajustes que más mejoran la performance percibida",
+        "excerpt": "Carga progresiva, estabilidad visual, división de bundles y observabilidad práctica para interfaces reales.",
+        "tags": ["react", "performance", "ux"],
+        "publishedAt": "2026-04-16",
+        "readingTimeMinutes": 8
+      },
+      {
+        "id": "fallback-3",
+        "title": "Cuándo basta una API pública en frontend y cuándo conviene una capa propia",
+        "excerpt": "Una mirada pragmática sobre caché, límites, seguridad y gobernanza en sitios estáticos con contenido dinámico.",
+        "tags": ["api", "arquitectura", "web"],
+        "publishedAt": "2026-04-15",
+        "readingTimeMinutes": 7
+      }
+    ]
   },
 
   "about": {
@@ -353,6 +427,14 @@
       "title": "Paginación",
       "description": "Usa estos botones para navegar entre diferentes páginas de proyectos."
     },
+    "blogFeed": {
+      "title": "Feed del Blog",
+      "description": "Esta área muestra contenido técnico con fallback local y soporte para actualizaciones en vivo desde una API pública."
+    },
+    "blogCards": {
+      "title": "Tarjetas de Artículos",
+      "description": "Cada tarjeta muestra fecha, tiempo de lectura, etiquetas y un enlace externo cuando existe un artículo real."
+    },
     "timeline": {
       "title": "Línea de Tiempo",
       "description": "Esta línea de tiempo muestra mi trayectoria profesional con todas las experiencias y posiciones que he ocupado."
@@ -376,6 +458,12 @@
     "contactSocialMedia": {
       "title": "Redes Sociales",
       "description": "Ponte en contacto conmigo a través de mis redes sociales y canales de comunicación."
+    }
+  },
+  "seo": {
+    "blog": {
+      "description": "Artículos y contenidos técnicos de Hudson Kennedy sobre desarrollo de software, frontend, rendimiento y tecnología.",
+      "keywords": "blog, desarrollo, tecnología, frontend, React, TypeScript, arquitectura, ingeniería"
     }
   }
 }

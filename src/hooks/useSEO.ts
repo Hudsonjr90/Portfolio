@@ -95,6 +95,16 @@ export const useSEO = () => {
       location.pathname === "/" ? "/" : location.pathname.replace(/\/$/, "");
     const currentUrl = `${baseUrl}${normalizedPath}`;
 
+    if (normalizedPath.startsWith('/blog/')) {
+      return {
+        title: `${t("menu.blog")} | H.K Dev`,
+        description: t("seo.blog.description"),
+        keywords: t("seo.blog.keywords"),
+        image: `${baseUrl}/imgs/hkdev.webp`,
+        url: currentUrl,
+      };
+    }
+
     switch (normalizedPath) {
       case "/":
         return {
@@ -128,6 +138,15 @@ export const useSEO = () => {
           title: `${t("menu.portfolio")} | H.K Dev`,
           description: t("seo.portfolio.description"),
           keywords: t("seo.portfolio.keywords"),
+          image: `${baseUrl}/imgs/hkdev.webp`,
+          url: currentUrl,
+        };
+
+      case "/blog":
+        return {
+          title: `${t("menu.blog")} | H.K Dev`,
+          description: t("seo.blog.description"),
+          keywords: t("seo.blog.keywords"),
           image: `${baseUrl}/imgs/hkdev.webp`,
           url: currentUrl,
         };

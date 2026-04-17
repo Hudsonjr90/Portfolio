@@ -1,32 +1,72 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { createTheme } from '@mui/material/styles';
 
+export type ThemeMode = 'system' | 'light' | 'dark'
+type ResolvedTheme = 'light' | 'dark'
+
 interface ThemeContextType {
   mainColor: string;
   updateFavicon: (color: string) => void;
+  themeMode: ThemeMode;
+  resolvedTheme: ResolvedTheme;
+  setThemeMode: (mode: ThemeMode) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
+const THEME_STORAGE_KEY = 'theme-mode'
+
+const getSystemTheme = (): ResolvedTheme => {
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+}
+
+const getStoredThemeMode = (): ThemeMode => {
+  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY)
+  return storedTheme === 'light' || storedTheme === 'dark' || storedTheme === 'system'
+    ? storedTheme
+    : 'system'
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [themeMode, setThemeMode] = useState<ThemeMode>(() => getStoredThemeMode())
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(() => {
+    const initialMode = getStoredThemeMode()
+    return initialMode === 'system' ? getSystemTheme() : initialMode
+  })
   const [mainColor, setMainColor] = useState(() => {
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? "#f65151" : "#0ef6cc";
+    const initialResolvedTheme = getStoredThemeMode() === 'system' ? getSystemTheme() : getStoredThemeMode()
+    return initialResolvedTheme === 'light' ? "#f65151" : "#0ef6cc";
   });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
 
-    const applyTheme = (isLight: boolean) => {
+    const applyTheme = (mode: ThemeMode, systemTheme: ResolvedTheme) => {
+      const nextResolvedTheme = mode === 'system'
+        ? systemTheme
+        : mode
+
+      const isLight = nextResolvedTheme === 'light'
       document.body.classList.toggle("light_mode", isLight);
+      setResolvedTheme(nextResolvedTheme)
       setMainColor(isLight ? "#f65151" : "#0ef6cc");
     };
 
-    applyTheme(mediaQuery.matches);
+    applyTheme(themeMode, mediaQuery.matches ? 'light' : 'dark');
 
-    const handleChange = (e: MediaQueryListEvent) => applyTheme(e.matches);
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (themeMode === 'system') {
+        applyTheme('system', e.matches ? 'light' : 'dark')
+      }
+    }
+
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
+  }, [themeMode]);
+
+  useEffect(() => {
+    localStorage.setItem(THEME_STORAGE_KEY, themeMode)
+  }, [themeMode])
 
   const updateFavicon = (color: string) => {
     const existingFavicon = document.querySelector('link[rel="icon"]');
@@ -74,7 +114,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [mainColor]);
 
   return (
-    <ThemeContext.Provider value={{ mainColor, updateFavicon }}>
+    <ThemeContext.Provider value={{ mainColor, updateFavicon, themeMode, resolvedTheme, setThemeMode }}>
       {children}
     </ThemeContext.Provider>
   );

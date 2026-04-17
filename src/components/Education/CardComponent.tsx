@@ -109,7 +109,7 @@ const CardComponent = () => {
   }, []);
 
   const visibleCards = useMemo(
-    () => (isMobileView ? filteredCards.slice(0, 3) : filteredCards.slice(0, DESKTOP_VISIBLE_LIMIT)),
+    () => (isMobileView ? filteredCards.slice(0, 2) : filteredCards.slice(0, DESKTOP_VISIBLE_LIMIT)),
     [DESKTOP_VISIBLE_LIMIT, filteredCards, isMobileView]
   );
 

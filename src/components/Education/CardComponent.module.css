@@ -34,7 +34,7 @@
   border-radius: 8px;
   background: var(--bg_color);
   color: var(--text_color);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -151,7 +151,7 @@
 
 @media screen and (max-width: 768px) {
   .filters_container {
-    margin-top: -1rem;
+    margin-top: 1rem;
   }
 
   .filter_button {
@@ -174,7 +174,6 @@
 
 @media screen and (max-width: 480px) {
   .card_container {
-    margin-top: 1rem;
     padding: 0 1rem;
   }
 

@@ -7,6 +7,7 @@
     "experiences": "Experiences",
     "skills": "Skills",
     "portfolio": "Projects",
+    "blog": "Blog",
     "contact": "Contact"
   },
 
@@ -32,7 +33,80 @@
     "effect": "Particles Effect",
     "sound": "Sound Effect",
     "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
     "language": "Languages"
+  },
+
+  "blog": {
+    "eyebrow": "Always evolving",
+    "title": "Development",
+    "text": "and tech notes",
+    "intro": "A dedicated space for articles, practical lessons, frontend architecture, performance, and ecosystem signals that I keep tracking in daily work.",
+    "loading": "Loading live feed...",
+    "liveStatus": "Live feed via {{source}}",
+    "error": "Live feed unavailable. Showing curated content instead.",
+    "empty": "No articles found in the live feed right now.",
+    "setup": "Curated mode enabled. Configure the live feed whenever you want.",
+    "configureTitle": "Continuous publishing",
+    "configureText": "This section combines Google News RSS and the Hacker News API with no API keys. You can tune it using VITE_GOOGLE_NEWS_QUERY, VITE_GOOGLE_NEWS_LIMIT, and VITE_HN_LIMIT.",
+    "sourceLabel": "Source",
+    "sourceTagsLabel": "Topics",
+    "updateLabel": "Update rhythm",
+    "updateValue": "Live whenever the feed is configured",
+    "searchPlaceholder": "Search by title, excerpt, or tag",
+    "browseByTag": "Browse by tag",
+    "allTags": "All",
+    "resultsSummary": "{{count}} articles found",
+    "clearFilters": "Clear filters",
+    "noResultsTitle": "No results for this filter",
+    "noResultsText": "Try another search or go back to all tags to see more content.",
+    "publishedAt": "Published on {{date}}",
+    "readTime": "{{minutes}} min read",
+    "readDetails": "View details",
+    "readArticle": "Read article",
+    "comingSoon": "Coming soon",
+    "favoriteOnly": "Favorites",
+    "addFavorite": "Add to favorites",
+    "removeFavorite": "Remove from favorites",
+    "backToList": "Back to blog",
+    "detailNotFoundTitle": "Article not found",
+    "detailNotFoundText": "This article was not found in local cache. Go back to the list and open it again.",
+    "liveBadge": "Live",
+    "fallbackBadge": "Curated",
+    "sourceGoogle": "Google News",
+    "sourceHackerNews": "Hacker News",
+    "ctaEyebrow": "Need something similar?",
+    "ctaTitle": "I can turn this into content strategy, technical cases, talks, or consulting.",
+    "ctaText": "If it fits your project, I can also evolve this area into a proper publishing flow backed by a CMS or another API.",
+    "ctaButton": "Contact me",
+    "fallbackPosts": [
+      {
+        "id": "fallback-1",
+        "title": "How to build a technical portfolio that actually starts conversations",
+        "excerpt": "What separates a pretty portfolio from one that communicates seniority: technical decisions, trade-offs, product context, and measurable outcomes.",
+        "tags": ["portfolio", "frontend", "career"],
+        "publishedAt": "2026-04-17",
+        "readingTimeMinutes": 6
+      },
+      {
+        "id": "fallback-2",
+        "title": "React in production: the changes that improve perceived performance the most",
+        "excerpt": "Lazy loading, visual stability, bundle slicing, progressive loading, and practical observability for real interfaces.",
+        "tags": ["react", "performance", "ux"],
+        "publishedAt": "2026-04-16",
+        "readingTimeMinutes": 8
+      },
+      {
+        "id": "fallback-3",
+        "title": "When a public API is enough on the frontend and when a private layer is worth it",
+        "excerpt": "A pragmatic look at cost, caching, rate limits, security, and governance when dynamic content meets static sites.",
+        "tags": ["api", "architecture", "web"],
+        "publishedAt": "2026-04-15",
+        "readingTimeMinutes": 7
+      }
+    ]
   },
 
   "about": {
@@ -353,6 +427,14 @@
       "title": "Pagination",
       "description": "Use these buttons to navigate between different project pages."
     },
+    "blogFeed": {
+      "title": "Blog Feed",
+      "description": "This area highlights technical content, with local fallback content and support for live updates from a public API."
+    },
+    "blogCards": {
+      "title": "Article Cards",
+      "description": "Each card shows publish date, reading time, tags, and an external link whenever a real article exists."
+    },
     "timeline": {
       "title": "Timeline",
       "description": "This timeline shows my professional journey with all the experiences and positions I've held."
@@ -395,6 +477,10 @@
     "portfolio": {
       "description": "Check out projects developed by Hudson Kennedy: modern web applications using React, Vue.js, TypeScript and other technologies.",
       "keywords": "Portfolio, Projects, React, Vue.js, TypeScript, Web Applications, Development, GitHub, Deploy"
+    },
+    "blog": {
+      "description": "Articles and technical notes by Hudson Kennedy about software development, frontend architecture, performance, and technology.",
+      "keywords": "Blog, software development, technology, frontend, React, TypeScript, architecture, engineering"
     },
     "education": {
       "description": "Hudson Kennedy's academic background and certifications: Harvard Master's degree, development specializations and various technical certifications.",

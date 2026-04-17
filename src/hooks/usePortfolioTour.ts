@@ -204,6 +204,26 @@ export const usePortfolioTour = () => {
           }
         }
       ],
+      blog: [
+        {
+          element: '[data-tour="blog-feed"]',
+          popover: {
+            title: t('tour.blogFeed.title'),
+            description: t('tour.blogFeed.description'),
+            side: 'bottom',
+            align: 'center'
+          }
+        },
+        {
+          element: '[data-tour="blog-grid"]',
+          popover: {
+            title: t('tour.blogCards.title'),
+            description: t('tour.blogCards.description'),
+            side: 'top',
+            align: 'center'
+          }
+        }
+      ],
       experiences: [
         {
           element: '[data-tour="timeline"]',

@@ -12,6 +12,10 @@
     ],
     "rewrites": [
         {
+            "source": "/api/google-news-rss",
+            "destination": "/api/google-news-rss"
+        },
+        {
             "source": "/about",
             "destination": "/about.html",
             "has": [
@@ -36,6 +40,17 @@
         {
             "source": "/portfolio",
             "destination": "/portfolio.html",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "user-agent",
+                    "value": ".*(?:facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|WhatsApp|Googlebot|bingbot|Applebot|TelegramBot|SkypeUriPreview|ia_archiver|Yandexbot|DuckDuckBot|facebot).*"
+                }
+            ]
+        },
+        {
+            "source": "/blog",
+            "destination": "/blog.html",
             "has": [
                 {
                     "type": "header",

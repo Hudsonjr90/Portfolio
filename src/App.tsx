@@ -9,6 +9,8 @@ const About = React.lazy(() => import('./pages/About/About'))
 const Education = React.lazy(() => import('./pages/Education/Education'))
 const Experiences = React.lazy(() => import('./pages/Experiences/Experiences'))
 const Portfolio = React.lazy(() => import('./pages/Portfolio/Portfolio'))
+const Blog = React.lazy(() => import('./pages/Blog/Blog'))
+const BlogDetail = React.lazy(() => import('./pages/BlogDetail/BlogDetail'))
 const Skills = React.lazy(() => import('./pages/Skills/Skills'))
 const Contact = React.lazy(() => import('./pages/Contact/Contact'))
 import { ThemeProvider } from './context/ThemeContext'
@@ -65,6 +67,8 @@ function App() {
                   <Route path="/experiences" element={<Experiences />} />
                   <Route path="/skills" element={<Skills />} />
                   <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:postId" element={<BlogDetail />} />
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
               </Suspense>

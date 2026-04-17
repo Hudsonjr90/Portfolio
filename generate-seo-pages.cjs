@@ -33,6 +33,13 @@ const routes = [
     image: `${baseUrl}/imgs/hkdev.webp`,
   },
   {
+    path: '/blog',
+    title: 'Blog | H.K Dev',
+    description: 'Conteúdos sobre desenvolvimento e tecnologia publicados por Hudson Kennedy, com feed preparado para atualização contínua.',
+    keywords: 'Blog, Desenvolvimento, Tecnologia, React, TypeScript, Frontend, Engenharia de Software, Hudson Kennedy',
+    image: `${baseUrl}/imgs/hkdev.webp`,
+  },
+  {
     path: '/education',
     title: 'Formação Acadêmica | H.K Dev',
     description: 'Formação acadêmica e certificações de Hudson Kennedy: Ciência da Computação, MBA, certificações em tecnologias modernas.',

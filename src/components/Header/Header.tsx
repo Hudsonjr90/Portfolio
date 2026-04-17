@@ -1,14 +1,22 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 import { NavLink, useLocation } from "react-router-dom";
 import Icon from "@mdi/react";
-import { mdiMusic, mdiMusicOff, mdiAtom } from "@mdi/js";
+import {
+  mdiAtom,
+  mdiMonitor,
+  mdiMusic,
+  mdiMusicOff,
+  mdiThemeLightDark,
+  mdiWeatherNight,
+  mdiWeatherSunny,
+} from "@mdi/js";
 import { GrClose } from "react-icons/gr";
 import { BiAtom } from "react-icons/bi";
 import { TbAtomOff } from "react-icons/tb";
 import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
-import { logoTheme, navbarTheme } from "../../context/ThemeContext";
+import { logoTheme, navbarTheme, ThemeMode, useTheme } from "../../context/ThemeContext";
 import { useParticles } from "../../context/ParticlesContext";
 import { ThemeProvider } from "@mui/material/styles";
 import { useAudio } from "../../hooks/useAudio";
@@ -21,11 +29,18 @@ import TourButton from "../TourButton/TourButton";
 const Header = () => {
   const { t, i18n } = useTranslation();
   const { handleAudio, toggleSound, soundEnabled, volume, setVolume } = useAudio();
+  const { themeMode, resolvedTheme, setThemeMode } = useTheme();
   const location = useLocation();
   const { particlesEnabled, toggleParticles } = useParticles();
   const [isLoaded, setIsLoaded] = useState(false);
   const [showVolumePopup, setShowVolumePopup] = useState(false);
+  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
+  const [canHoverMenus, setCanHoverMenus] = useState(false);
   const volumeControlRef = useRef<HTMLDivElement>(null);
+  const themeMenuRef = useRef<HTMLDivElement>(null);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
+  const themeCloseTimeoutRef = useRef<number | null>(null);
+  const languageCloseTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const el = volumeControlRef.current;
@@ -45,20 +60,89 @@ const Header = () => {
   const { handleClickButton, handleLinkClick, showMenu } =
     useResponsiveNavbar();
 
+  const navItems = useMemo(
+    () => [
+      { key: "about", path: "/about", label: t("menu.about") },
+      { key: "education", path: "/education", label: t("menu.academic-education") },
+      { key: "experiences", path: "/experiences", label: t("menu.experiences") },
+      { key: "skills", path: "/skills", label: t("menu.skills") },
+      { key: "portfolio", path: "/portfolio", label: t("menu.portfolio") },
+      { key: "blog", path: "/blog", label: t("menu.blog") },
+      { key: "contact", path: "/contact", label: t("menu.contact") },
+    ],
+    [t],
+  )
+
+  const themeOptions: Array<{ value: ThemeMode; label: string; icon: string }> = useMemo(
+    () => [
+      { value: 'system', label: t('navbar.themeSystem'), icon: mdiMonitor },
+      { value: 'light', label: t('navbar.themeLight'), icon: mdiWeatherSunny },
+      { value: 'dark', label: t('navbar.themeDark'), icon: mdiWeatherNight },
+    ],
+    [t],
+  )
+
+  const currentThemeIcon = themeMode === 'system'
+    ? mdiThemeLightDark
+    : resolvedTheme === 'light'
+      ? mdiWeatherSunny
+      : mdiWeatherNight
+
+  const currentPage = location.pathname === '/' ? 'home' : location.pathname.slice(1)
+
+  const languageFlag = useMemo(() => {
+    switch (currentLanguage) {
+      case 'en':
+        return <Us className={styles.flags} />
+      case 'fr':
+        return <Fr className={styles.flags} />
+      case 'it':
+        return <It className={styles.flags} />
+      case 'es':
+        return <Es className={styles.flags} />
+      case 'pt':
+      default:
+        return <Br className={styles.flags} />
+    }
+  }, [currentLanguage])
+
+  const languageOptions = useMemo(
+    () => [
+      { value: 'pt', label: 'PT-BR', flag: <Br className={styles.flags} /> },
+      { value: 'en', label: 'EN-US', flag: <Us className={styles.flags} /> },
+      { value: 'fr', label: 'FR-FR', flag: <Fr className={styles.flags} /> },
+      { value: 'it', label: 'IT-IT', flag: <It className={styles.flags} /> },
+      { value: 'es', label: 'ES-ES', flag: <Es className={styles.flags} /> },
+    ],
+    [],
+  )
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setCurrentLanguage(lng);
     localStorage.setItem("currentLanguage", lng);
+    setSidebarOpen(false);
   };
 
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
+    setSidebarOpen((prev) => !prev);
+    setIsThemeMenuOpen(false);
   };
+
+  const toggleThemeMenu = () => {
+    setIsThemeMenuOpen((prev) => !prev)
+    setSidebarOpen(false)
+  }
 
   useEffect(() => {
     setSidebarOpen(false);
   }, [currentLanguage]);
+
+  useEffect(() => {
+    setSidebarOpen(false)
+    setIsThemeMenuOpen(false)
+    setShowVolumePopup(false)
+  }, [location.pathname])
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("currentLanguage") || "pt";
@@ -74,6 +158,31 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    const updateHoverCapability = (event: MediaQueryList | MediaQueryListEvent) => {
+      setCanHoverMenus(event.matches);
+    };
+
+    updateHoverCapability(mediaQuery);
+    mediaQuery.addEventListener('change', updateHoverCapability);
+
+    return () => mediaQuery.removeEventListener('change', updateHoverCapability);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (themeCloseTimeoutRef.current !== null) {
+        window.clearTimeout(themeCloseTimeoutRef.current);
+      }
+
+      if (languageCloseTimeoutRef.current !== null) {
+        window.clearTimeout(languageCloseTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     if (showMenu) {
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
@@ -86,6 +195,73 @@ const Header = () => {
       document.body.style.overflow = "";
     };
   }, [showMenu]);
+
+  const handleThemeMouseEnter = () => {
+    if (!canHoverMenus) {
+      return;
+    }
+
+    if (themeCloseTimeoutRef.current !== null) {
+      window.clearTimeout(themeCloseTimeoutRef.current);
+      themeCloseTimeoutRef.current = null;
+    }
+
+    setIsThemeMenuOpen(true);
+    setSidebarOpen(false);
+  };
+
+  const handleThemeMouseLeave = () => {
+    if (!canHoverMenus) {
+      return;
+    }
+
+    themeCloseTimeoutRef.current = window.setTimeout(() => {
+      setIsThemeMenuOpen(false);
+      themeCloseTimeoutRef.current = null;
+    }, 160);
+  };
+
+  const handleLanguageMouseEnter = () => {
+    if (!canHoverMenus) {
+      return;
+    }
+
+    if (languageCloseTimeoutRef.current !== null) {
+      window.clearTimeout(languageCloseTimeoutRef.current);
+      languageCloseTimeoutRef.current = null;
+    }
+
+    setSidebarOpen(true);
+    setIsThemeMenuOpen(false);
+  };
+
+  const handleLanguageMouseLeave = () => {
+    if (!canHoverMenus) {
+      return;
+    }
+
+    languageCloseTimeoutRef.current = window.setTimeout(() => {
+      setSidebarOpen(false);
+      languageCloseTimeoutRef.current = null;
+    }, 160);
+  };
+
+  useEffect(() => {
+    const handlePointerDown = (event: MouseEvent) => {
+      const target = event.target as Node
+
+      if (themeMenuRef.current && !themeMenuRef.current.contains(target)) {
+        setIsThemeMenuOpen(false)
+      }
+
+      if (languageMenuRef.current && !languageMenuRef.current.contains(target)) {
+        setSidebarOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handlePointerDown)
+    return () => document.removeEventListener('mousedown', handlePointerDown)
+  }, [])
 
   return (
     <header className={styles.header} data-tour="navbar">
@@ -146,229 +322,64 @@ const Header = () => {
           )}
           <li className={styles.mobile_drawer_actions}>
             <button
-              onClick={toggleSound}
-              className={styles.sound_icon}
-              aria-label="Toggle Sound"
-            >
-              {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
-            </button>
+                onClick={() => {
+                  toggleSound();
+                  handleAudio();
+                }}
+                className={styles.sound_icon}
+                aria-label="Toggle Sound"
+              >
+                {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
+              </button>
 
-            <button
+              <button
+                onClick={() => {
+                  toggleParticles();
+                  handleAudio();
+                }}
+                className={styles.particles_icon}
+                aria-label="Toggle Particles"
+              >
+                {particlesEnabled ? <BiAtom /> : <TbAtomOff />}
+              </button>
+          </li>
+          {navItems.map((item, index) => (
+            <motion.li
+              key={item.key}
               onClick={() => {
-                toggleParticles();
+                handleLinkClick();
                 handleAudio();
               }}
-              className={styles.particles_icon}
-              aria-label="Toggle Particles"
-            >
-              {particlesEnabled ? <BiAtom /> : <TbAtomOff />}
-            </button>
-
-          </li>
-          <motion.li
-            onClick={() => {
-              handleLinkClick();
-              handleAudio();
-            }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 0 }}
-            role="none"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-                scale: 0.8,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12,
+              className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
+              style={{ ["--i" as any]: index }}
+              role="none"
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: -20,
+                  scale: 0.8,
                 },
-              },
-            }}
-          >
-            <NavLink
-              to="/about"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              role="menuitem"
-            >
-              {t("menu.about")}
-            </NavLink>
-          </motion.li>
-          <motion.li
-            onClick={() => {
-              handleLinkClick();
-              handleAudio();
-            }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 1 }}
-            role="none"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-                scale: 0.8,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12,
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 12,
+                  },
                 },
-              },
-            }}
-          >
-            <NavLink
-              to="/education"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              role="menuitem"
+              }}
             >
-              {t("menu.academic-education")}
-            </NavLink>
-          </motion.li>
-          <motion.li
-            onClick={() => {
-              handleLinkClick();
-              handleAudio();
-            }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 2 }}
-            role="none"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-                scale: 0.8,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12,
-                },
-              },
-            }}
-          >
-            <NavLink
-              to="/experiences"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              role="menuitem"
-            >
-              {t("menu.experiences")}
-            </NavLink>
-          </motion.li>
-          <motion.li
-            onClick={() => {
-              handleLinkClick();
-              handleAudio();
-            }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 3 }}
-            role="none"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-                scale: 0.8,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12,
-                },
-              },
-            }}
-          >
-            <NavLink
-              to="/skills"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              role="menuitem"
-            >
-              {t("menu.skills")}
-            </NavLink>
-          </motion.li>
-          <motion.li
-            onClick={() => {
-              handleLinkClick();
-              handleAudio();
-            }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 4 }}
-            role="none"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-                scale: 0.8,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12,
-                },
-              },
-            }}
-          >
-            <NavLink
-              to="/portfolio"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              role="menuitem"
-            >
-              {t("menu.portfolio")}
-            </NavLink>
-          </motion.li>
-          <motion.li
-            onClick={() => {
-              handleLinkClick();
-              handleAudio();
-            }}
-            className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
-            style={{ ["--i" as any]: 5 }}
-            role="none"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -20,
-                scale: 0.8
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12,
-                },
-              },
-            }}
-          >
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              role="menuitem"
-            >
-              {t("menu.contact")}
-            </NavLink>
-          </motion.li>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) => (isActive ? styles.active : "")}
+                role="menuitem"
+              >
+                {item.label}
+              </NavLink>
+            </motion.li>
+          ))}
         </motion.ul>
       </nav>
 
@@ -388,8 +399,7 @@ const Header = () => {
         }}
       >
         <ThemeProvider theme={navbarTheme}>
- 
-            <TourButton currentPage={location.pathname === '/' ? 'home' : location.pathname.slice(1)} className={styles.tour_button_desktop} />
+          <TourButton currentPage={currentPage} className={styles.tour_button_desktop} />
 
           <div
             ref={volumeControlRef}
@@ -401,6 +411,10 @@ const Header = () => {
             <button
               className={styles.sound_icon}
               aria-label="Volume"
+              onClick={() => {
+                toggleSound();
+                handleAudio();
+              }}
             >
               {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
             </button>
@@ -411,7 +425,7 @@ const Header = () => {
                   min={0}
                   max={100}
                   value={volume}
-                  onChange={e => setVolume(Number(e.target.value))}
+                  onChange={(event) => setVolume(Number(event.target.value))}
                   className={styles.volumeSlider}
                   style={{ '--val': `${volume}%` } as React.CSSProperties}
                   aria-label="Volume"
@@ -431,46 +445,88 @@ const Header = () => {
               aria-label="Toggle Particles"
               data-tour="particles-toggle"
             >
-              {particlesEnabled ? <Icon path={mdiAtom} size={2}/> : <TbAtomOff />}
+              {particlesEnabled ? <Icon path={mdiAtom} size={2} /> : <TbAtomOff />}
             </button>
           </Tooltip>
 
+          <Tooltip title={t("navbar.theme")} placement="bottom" arrow>
+            <div
+              className={styles.dropdownBox}
+              ref={themeMenuRef}
+              data-tour="theme-toggle"
+              onMouseEnter={handleThemeMouseEnter}
+              onMouseLeave={handleThemeMouseLeave}
+            >
+              <button
+                className={styles.theme_btn}
+                onClick={() => {
+                  if (canHoverMenus) {
+                    return;
+                  }
+
+                  toggleThemeMenu();
+                  handleAudio();
+                }}
+                aria-label={t('navbar.theme')}
+                aria-expanded={isThemeMenuOpen}
+              >
+                <Icon path={currentThemeIcon} size={1.8} />
+              </button>
+              {isThemeMenuOpen && (
+                <motion.div
+                  className={`${styles.dropdownPanel} ${styles.themePanel}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                >
+                  <div className={styles.dropdownHeader}>
+                    <span>{t('navbar.theme')}</span>
+                    <strong>{themeOptions.find((option) => option.value === themeMode)?.label}</strong>
+                  </div>
+                  {themeOptions.map((option) => (
+                    <button
+                      key={option.value}
+                      className={`${styles.dropdownAction} ${themeMode === option.value ? styles.dropdownActionActive : ''}`}
+                      onClick={() => {
+                        setThemeMode(option.value)
+                        setIsThemeMenuOpen(false)
+                        handleAudio()
+                      }}
+                    >
+                      <span className={styles.dropdownActionIcon}>
+                        <Icon path={option.icon} size={1} />
+                      </span>
+                      <span>{option.label}</span>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </div>
+          </Tooltip>
+
           <Tooltip title={t("navbar.language")} placement="right" arrow>
-            <div className={styles.lng_box} data-tour="language-toggle">
+            <div
+              className={styles.lng_box}
+              ref={languageMenuRef}
+              data-tour="language-toggle"
+              onMouseEnter={handleLanguageMouseEnter}
+              onMouseLeave={handleLanguageMouseLeave}
+            >
               <div className={styles.slide}>
                 <button
                   className={styles.lng_btn}
                   onClick={() => {
+                    if (canHoverMenus) {
+                      return;
+                    }
+
                     toggleSidebar();
                     handleAudio();
                   }}
                   aria-label="Selecionar idioma"
+                  aria-expanded={sidebarOpen}
                 >
-                  {currentLanguage === "pt" && (
-                    <>
-                      <Br className={styles.flags} />
-                    </>
-                  )}
-                  {currentLanguage === "en" && (
-                    <>
-                      <Us className={styles.flags} />
-                    </>
-                  )}
-                  {currentLanguage === "fr" && (
-                    <>
-                      <Fr className={styles.flags} />
-                    </>
-                  )}
-                  {currentLanguage === "it" && (
-                    <>
-                      <It className={styles.flags} />
-                    </>
-                  )}
-                  {currentLanguage === "es" && (
-                    <>
-                      <Es className={styles.flags} />
-                    </>
-                  )}
+                  {languageFlag}
                 </button>
                 {sidebarOpen && (
                   <motion.div
@@ -479,61 +535,20 @@ const Header = () => {
                     animate={{ x: 0 }}
                     transition={{ type: "spring", stiffness: 120 }}
                   >
-                    <button
-                      onClick={() => {
-                        changeLanguage("pt");
-                        handleAudio();
-                      }}
-                    >
-                      <div className={styles.flags_name}>
-                        <Br className={styles.flags} />
-                        <span>PT-BR</span>
-                      </div>
-                    </button>
-                    <button
-                      onClick={() => {
-                        changeLanguage("en");
-                        handleAudio();
-                      }}
-                    >
-                      <div className={styles.flags_name}>
-                        <Us className={styles.flags} />
-                        <span>EN-US</span>
-                      </div>
-                    </button>
-                    <button
-                      onClick={() => {
-                        changeLanguage("fr");
-                        handleAudio();
-                      }}
-                    >
-                      <div className={styles.flags_name}>
-                        <Fr className={styles.flags} />
-                        <span>FR-FR</span>
-                      </div>
-                    </button>
-                    <button
-                      onClick={() => {
-                        changeLanguage("it");
-                        handleAudio();
-                      }}
-                    >
-                      <div className={styles.flags_name}>
-                        <It className={styles.flags} />
-                        <span>IT-IT</span>
-                      </div>
-                    </button>
-                    <button
-                      onClick={() => {
-                        changeLanguage("es");
-                        handleAudio();
-                      }}
-                    >
-                      <div className={styles.flags_name}>
-                        <Es className={styles.flags} />
-                        <span>ES-ES</span>
-                      </div>
-                    </button>
+                    {languageOptions.map((language) => (
+                      <button
+                        key={language.value}
+                        onClick={() => {
+                          changeLanguage(language.value)
+                          handleAudio()
+                        }}
+                      >
+                        <div className={styles.flags_name}>
+                          {language.flag}
+                          <span>{language.label}</span>
+                        </div>
+                      </button>
+                    ))}
                   </motion.div>
                 )}
               </div>
