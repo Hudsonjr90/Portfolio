@@ -248,6 +248,7 @@ label {
   padding: 0.8rem;
   transition: background-color 0.2s ease, color 0.2s ease;
   width: 100%;
+   margin-top: 2px;
 }
 
 .dropdownAction:hover,

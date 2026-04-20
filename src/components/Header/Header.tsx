@@ -36,6 +36,9 @@ const Header = () => {
   const [showVolumePopup, setShowVolumePopup] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [canHoverMenus, setCanHoverMenus] = useState(false);
+  const [systemTheme, setSystemTheme] = useState<'light' | 'dark'>(() => 
+    window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  );
   const volumeControlRef = useRef<HTMLDivElement>(null);
   const themeMenuRef = useRef<HTMLDivElement>(null);
   const languageMenuRef = useRef<HTMLDivElement>(null);
@@ -52,6 +55,17 @@ const Header = () => {
     el.addEventListener('wheel', onWheel, { passive: false });
     return () => el.removeEventListener('wheel', onWheel);
   }, [volume, setVolume]);
+
+  // Listen for system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      setSystemTheme(e.matches ? 'light' : 'dark');
+    };
+    
+    mediaQuery.addEventListener('change', handleSystemThemeChange);
+    return () => mediaQuery.removeEventListener('change', handleSystemThemeChange);
+  }, []);
   const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
     return localStorage.getItem("currentLanguage") || "pt";
   });
@@ -74,12 +88,19 @@ const Header = () => {
   )
 
   const themeOptions: Array<{ value: ThemeMode; label: string; icon: string }> = useMemo(
-    () => [
-      { value: 'system', label: t('navbar.themeSystem'), icon: mdiMonitor },
-      { value: 'light', label: t('navbar.themeLight'), icon: mdiWeatherSunny },
-      { value: 'dark', label: t('navbar.themeDark'), icon: mdiWeatherNight },
-    ],
-    [t],
+    () => {
+      const alternativeTheme = systemTheme === 'light' ? 'dark' : 'light';
+      
+      return [
+        { value: 'system', label: t('navbar.themeSystem'), icon: mdiMonitor },
+        { 
+          value: alternativeTheme, 
+          label: alternativeTheme === 'light' ? t('navbar.themeLight') : t('navbar.themeDark'), 
+          icon: alternativeTheme === 'light' ? mdiWeatherSunny : mdiWeatherNight 
+        },
+      ];
+    },
+    [t, systemTheme],
   )
 
   const currentThemeIcon = themeMode === 'system'
