@@ -3,7 +3,8 @@ import React, { useState, useEffect, useMemo, Suspense } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { FaUserAstronaut } from "react-icons/fa6";
+import Lottie from "lottie-react";
+import animationData from "../../assets/about.json";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB"),
@@ -12,7 +13,6 @@ const ParticlesB = React.lazy(
 const About = () => {
   const { t } = useTranslation();
   const [isMobile, setIsMobile] = useState(false);
-
   const aboutText = t("about.text");
 
   const rainWords = useMemo(() => {
@@ -41,6 +41,47 @@ const About = () => {
         <Suspense fallback={<div>{t("home.loading")}</div>}>
           <ParticlesB />
         </Suspense>
+
+        <div className={styles.container_lottie} data-tour="about-image">
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.8,
+              y: 60,
+              rotate: -8,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              rotate: 0,
+            }}
+            transition={{
+              duration: 1.2,
+              delay: 0.3,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            whileHover={{
+              scale: 1.05,
+              rotate: 2,
+            }}
+            className={styles.lottieMotion}
+          >
+            <motion.div
+              animate={{
+                y: [0, -12, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Lottie animationData={animationData} loop={true} />
+            </motion.div>
+          </motion.div>
+        </div>
+
         <motion.div
           className={styles.about_content}
           initial={{ opacity: 0, scale: 0 }}
@@ -53,10 +94,7 @@ const About = () => {
           data-tour="about-content"
         >
           <h2>
-            {t("about.title")}{" "}
-            <span>
-              Hudson Kennedy ? <FaUserAstronaut />
-            </span>
+            {t("about.title")} <span>Hudson Kennedy ?</span>
           </h2>
 
           <div className={styles.textContainer}>

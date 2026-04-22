@@ -1,10 +1,70 @@
 .about {
   align-items: center;
   display: flex;
+  gap: 3rem;
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
   padding: 10rem 6% 2rem;
+}
+
+.container_lottie {
+  position: relative;
+  margin-bottom: 18rem;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lottieMotion {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+}
+
+.container_lottie::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(var(--main_color_rgb), 0.25) 0%,
+    transparent 70%
+  );
+
+  filter: blur(40px);
+  z-index: 0;
+
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.container_lottie > * {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 12px rgba(var(--main_color_rgb), 0.6));
+}
+
+
+.container_lottie:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
 }
 
 .about_content {
@@ -50,12 +110,19 @@
 @media screen and (max-width: 768px) {
   .about {
     flex-direction: column;
-    padding: 8rem 4% 4rem; 
+    gap: 3rem;
+    padding: 8rem 4% 4rem;
+  }
+
+  .container_lottie  {
+    width: 60vw;
+    max-width: 300px;
+    margin-bottom: -2rem;
   }
 
   .about_content {
     width: 100%;
-    margin-bottom: 2rem; 
+    margin-bottom: 2rem;
   }
 
   .about_content h2 {
@@ -73,7 +140,12 @@
 
 @media screen and (max-width: 480px) {
   .about {
-    padding: 6rem 2% 2rem; 
+    padding: 6rem 2% 2rem;
+  }
+
+  .container_lottie  {
+    width: 70vw;
+    margin-bottom: -3rem;
   }
 
   .about_content h2 {
@@ -82,5 +154,23 @@
 
   .about_content p {
     font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .about_content h2 {
+    font-size: 1.5rem;
+  }
+
+  .about_content p {
+    font-size: 1.2rem;
+  }
+
+  .rainText {
+    line-height: 1.5;
+  }
+
+  .container_lottie {
+   display: none;
   }
 }
