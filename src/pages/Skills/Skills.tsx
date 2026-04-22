@@ -56,7 +56,7 @@ const Skills = () => {
   const [viewMode, setViewMode] = useState<ViewMode>('chart');
   const [currentPage, setCurrentPage] = useState(0);
   const [noResults, setNoResults] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 769);
 
   const handleCategoryChange = (event: {
     target: { value: React.SetStateAction<string> };
@@ -151,7 +151,9 @@ const Skills = () => {
     }
   }, [selectedPieCategory, categoryOptions]);
 
-  const [itemsPerPage, setItemsPerPage] = useState(14);
+  const [itemsPerPage, setItemsPerPage] = useState(() =>
+    window.innerWidth < 769 ? 4 : 14
+  );
 
   useEffect(() => {
     function handleResize() {

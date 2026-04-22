@@ -67,11 +67,12 @@ const Modal = ({
   useEffect(() => {
     if (show) {
       setCurrentPage(initialPage);
+      setShowTestimonials(true);
+      setExpandedTestimonialIndex(null);
     }
   }, [initialPage, show]);
 
   useEffect(() => {
-    setShowTestimonials(false);
     setExpandedTestimonialIndex(null);
   }, [currentPage]);
 

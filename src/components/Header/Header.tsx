@@ -56,7 +56,6 @@ const Header = () => {
     return () => el.removeEventListener('wheel', onWheel);
   }, [volume, setVolume]);
 
-  // Listen for system theme changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
     const handleSystemThemeChange = (e: MediaQueryListEvent) => {
@@ -81,8 +80,8 @@ const Header = () => {
       { key: "experiences", path: "/experiences", label: t("menu.experiences") },
       { key: "skills", path: "/skills", label: t("menu.skills") },
       { key: "portfolio", path: "/portfolio", label: t("menu.portfolio") },
-      { key: "blog", path: "/blog", label: t("menu.blog") },
       { key: "contact", path: "/contact", label: t("menu.contact") },
+      { key: "blog", path: "/blog", label: t("menu.blog") },
     ],
     [t],
   )
@@ -495,7 +494,7 @@ const Header = () => {
 
           <Tooltip title={t("navbar.theme")} placement="bottom" arrow>
             <div
-              className={styles.dropdownBox}
+              className={`${styles.dropdownBox} ${styles.desktop_only_icon}`}
               ref={themeMenuRef}
               data-tour="theme-toggle"
               onMouseEnter={handleThemeMouseEnter}

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { FaUserAstronaut } from "react-icons/fa6";
 
 const ParticlesB = React.lazy(
-  () => import("../../components/Particles/ParticlesB")
+  () => import("../../components/Particles/ParticlesB"),
 );
 
 const About = () => {
@@ -53,7 +53,10 @@ const About = () => {
           data-tour="about-content"
         >
           <h2>
-            {t("about.title")} <span>Hudson Kennedy ? <FaUserAstronaut /></span>
+            {t("about.title")}{" "}
+            <span>
+              Hudson Kennedy ? <FaUserAstronaut />
+            </span>
           </h2>
 
           <div className={styles.textContainer}>
