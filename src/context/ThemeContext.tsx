@@ -4,17 +4,52 @@ import { createTheme } from '@mui/material/styles';
 export type ThemeMode = 'system' | 'light' | 'dark'
 type ResolvedTheme = 'light' | 'dark'
 
+export interface AccessibilitySettings {
+  fontSizeLevel: 1 | 2 | 3 | null;
+  highContrast: boolean;
+}
+
 interface ThemeContextType {
   mainColor: string;
   updateFavicon: (color: string) => void;
   themeMode: ThemeMode;
   resolvedTheme: ResolvedTheme;
   setThemeMode: (mode: ThemeMode) => void;
+  accessibility: AccessibilitySettings;
+  setFontSize: (level: 1 | 2 | 3 | null) => void;
+  toggleHighContrast: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 const THEME_STORAGE_KEY = 'theme-mode'
+const ACCESSIBILITY_STORAGE_KEY = 'accessibility-settings'
+
+const getDefaultAccessibility = (): AccessibilitySettings => ({
+  fontSizeLevel: null,
+  highContrast: false,
+})
+
+const getStoredAccessibility = (): AccessibilitySettings => {
+  try {
+    const stored = localStorage.getItem(ACCESSIBILITY_STORAGE_KEY)
+    if (!stored) {
+      return getDefaultAccessibility()
+    }
+
+    const parsed = JSON.parse(stored) as Partial<AccessibilitySettings> & { fontSizeLevel?: number | null }
+    const fontSizeLevel = parsed.fontSizeLevel === 1 || parsed.fontSizeLevel === 2 || parsed.fontSizeLevel === 3
+      ? parsed.fontSizeLevel
+      : null
+
+    return {
+      fontSizeLevel,
+      highContrast: Boolean(parsed.highContrast),
+    }
+  } catch {
+    return getDefaultAccessibility()
+  }
+}
 
 const getSystemTheme = (): ResolvedTheme => {
   return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
@@ -37,6 +72,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const initialResolvedTheme = getStoredThemeMode() === 'system' ? getSystemTheme() : getStoredThemeMode()
     return initialResolvedTheme === 'light' ? "#f65151" : "#0ef6cc";
   });
+  const [accessibility, setAccessibility] = useState<AccessibilitySettings>(() => getStoredAccessibility())
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
@@ -113,8 +149,42 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     updateFavicon(mainColor);
   }, [mainColor]);
 
+  // Apply accessibility settings
+  useEffect(() => {
+    const root = document.documentElement;
+    const fontSizePercentages: Record<1 | 2 | 3, string> = {
+      1: '68.75%',
+      2: '75%',
+      3: '81.25%',
+    }
+
+    if (accessibility.fontSizeLevel === null) {
+      root.style.removeProperty('font-size');
+    } else {
+      root.style.setProperty('font-size', fontSizePercentages[accessibility.fontSizeLevel]);
+    }
+
+    root.style.setProperty('--main-color', mainColor);
+
+    if (accessibility.highContrast) {
+      document.body.classList.add('high-contrast-mode');
+    } else {
+      document.body.classList.remove('high-contrast-mode');
+    }
+
+    localStorage.setItem(ACCESSIBILITY_STORAGE_KEY, JSON.stringify(accessibility));
+  }, [accessibility, mainColor]);
+
+  const setFontSize = (level: 1 | 2 | 3 | null) => {
+    setAccessibility(prev => ({ ...prev, fontSizeLevel: level }));
+  };
+
+  const toggleHighContrast = () => {
+    setAccessibility(prev => ({ ...prev, highContrast: !prev.highContrast }));
+  };
+
   return (
-    <ThemeContext.Provider value={{ mainColor, updateFavicon, themeMode, resolvedTheme, setThemeMode }}>
+    <ThemeContext.Provider value={{ mainColor, updateFavicon, themeMode, resolvedTheme, setThemeMode, accessibility, setFontSize, toggleHighContrast }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -1,0 +1,274 @@
+.floatingButton {
+  position: fixed;
+  bottom: 6rem;
+  right: 5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--bg_color);
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+  font-weight: bold;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.panel {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 2rem;
+  width: 320px;
+  background: var(--bg_color);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+  border: 1px solid var(--main-color);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  border-bottom: 2px solid var(--main-color);
+  background: var(--bg_color);
+
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+
+.content {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+
+.hint {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+.buttonGroup {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sizeButton {
+  flex: 1;
+  min-width: 50px;
+  padding: 0.6rem;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  position: relative;
+
+  &:nth-child(1) {
+    font-size: 0.85rem;
+  }
+
+  &:nth-child(2) {
+    font-size: 1.1rem;
+  }
+
+  &:nth-child(3) {
+    font-size: 1.4rem;
+  }
+
+  &:hover {
+    border-color: var(--text-color);
+    background: var(--card-bg);
+  }
+
+  &.active {
+    background: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+  }
+}
+
+.toggleButton {
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--text-color);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 0.9rem;
+  }
+
+  &:hover {
+    border-color: var(--main-color);
+    background: var(--card-bg);
+  }
+
+  &.active {
+    border-color: var(--main-color);
+    background: var(--text-color);
+    box-shadow: 0 0 10px var(--main-color);
+  }
+}
+
+:global(.dark_mode) {
+  .panel {
+    background: var(--card-bg);
+  }
+
+  .header {
+    background: var(--card-bg);
+  }
+}
+
+:global(.high-contrast-mode) {
+  .floatingButton {
+    box-shadow: 0 0 0 3px #000;
+    border: 3px solid var(--main-color);
+  }
+
+  .panel {
+    border: 3px solid var(--main-color);
+  }
+
+  .sizeButton,
+  .toggleButton {
+    border-width: 3px;
+    font-weight: 700;
+
+    &.active {
+      box-shadow: 0 0 0 3px var(--main-color);
+    }
+  }
+}
+
+.separator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 2px solid var(--main-color);
+}
+
+@media (max-width: 768px) {
+  .floatingButton {
+    width: 50px;
+    height: 50px;
+    bottom: 8rem;
+    right: 3rem;
+  }
+
+  .panel {
+    bottom: 5rem;
+    right: 1.5rem;
+    width: 90vw;
+    max-width: 300px;
+  }
+
+  .sizeButton {
+    flex: 1;
+    min-width: 40px;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+
+    &:nth-child(1) {
+      font-size: 0.75rem;
+    }
+
+    &:nth-child(2) {
+      font-size: 1rem;
+    }
+
+    &:nth-child(3) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .floatingButton {
+    width: 45px;
+    height: 45px;
+    bottom: 5rem;
+    right: 1rem;
+  }
+
+  .panel {
+    bottom: 4.5rem;
+    right: 1rem;
+    width: 85vw;
+    max-width: 280px;
+  }
+}

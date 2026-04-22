@@ -375,6 +375,10 @@
       "title": "Language Selector",
       "description": "Choose your preferred language. The portfolio is available in 5 different languages."
     },
+    "accessibility": {
+      "title": "Accessibility Panel",
+      "description": "Open this panel to adjust text size, high contrast, and selected text reading."
+    },
     "sound": {
       "title": "Audio Control",
       "description": "Enable or disable sound effects while navigating through the portfolio."
@@ -498,5 +502,30 @@
       "description": "Contact Hudson Kennedy for web development projects, consulting or professional opportunities.",
       "keywords": "Contact, Email, WhatsApp, LinkedIn, GitHub, Project, Consulting, Work, Opportunity"
     }
+  },
+  "accessibility": {
+    "panel": "Accessibility",
+    "openPanel": "Open accessibility panel",
+    "closePanel": "Close panel",
+    "fontSize": "Text Size",
+    "fontSizeHint": "Select desired size",
+    "fontSizeResetHint": "Click the active option again to return to the default size",
+    "fontSizeNormal": "Normal",
+    "fontSizeMedium": "Medium",
+    "fontSizeLarge": "Large",
+    "fontSizeXLarge": "Extra Large",
+    "highContrast": "High Contrast",
+    "highContrastHint": "Increases color contrast",
+    "disableAnimations": "Disable Animations",
+    "disableAnimationsHint": "Removes motion animations",
+    "textReader": "Read Selected Text",
+    "textReaderHint": "Select text and click to listen",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "toggleHighContrast": "Toggle high contrast",
+    "toggleAnimations": "Toggle disable animations",
+    "stopReading": "Stop reading",
+    "readText": "Read selected text",
+    "selectAndClick": "Select and click"
   }
 }

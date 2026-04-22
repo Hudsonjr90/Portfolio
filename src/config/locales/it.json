@@ -375,6 +375,10 @@
       "title": "Selettore Lingua",
       "description": "Scegli la tua lingua preferita. Il portfolio è disponibile in 5 lingue diverse."
     },
+    "accessibility": {
+      "title": "Pannello Accessibilità",
+      "description": "Apri questo pannello per regolare dimensione del testo, alto contrasto e lettura del testo selezionato."
+    },
     "sound": {
       "title": "Controllo Audio",
       "description": "Attiva o disattiva gli effetti sonori durante la navigazione nel portfolio."
@@ -465,5 +469,30 @@
       "description": "Articoli e contenuti tecnici di Hudson Kennedy su sviluppo software, frontend, performance e tecnologia.",
       "keywords": "blog, sviluppo, tecnologia, frontend, React, TypeScript, architettura, ingegneria"
     }
+  },
+  "accessibility": {
+    "panel": "Accessibilità",
+    "openPanel": "Apri pannello di accessibilità",
+    "closePanel": "Chiudi pannello",
+    "fontSize": "Dimensione del Testo",
+    "fontSizeHint": "Seleziona la dimensione desiderata",
+    "fontSizeResetHint": "Fai clic di nuovo sull'opzione attiva per tornare alla dimensione predefinita",
+    "fontSizeNormal": "Normale",
+    "fontSizeMedium": "Medio",
+    "fontSizeLarge": "Grande",
+    "fontSizeXLarge": "Extra Grande",
+    "highContrast": "Alto Contrasto",
+    "highContrastHint": "Aumenta il contrasto dei colori",
+    "disableAnimations": "Senza Animazioni",
+    "disableAnimationsHint": "Rimuove le animazioni di movimento",
+    "textReader": "Leggi Testo Selezionato",
+    "textReaderHint": "Seleziona un testo e fai clic per ascoltare",
+    "enabled": "Abilitato",
+    "disabled": "Disabilitato",
+    "toggleHighContrast": "Attiva/disattiva contrasto elevato",
+    "toggleAnimations": "Attiva/disattiva senza animazioni",
+    "stopReading": "Interrompi lettura",
+    "readText": "Leggi testo selezionato",
+    "selectAndClick": "Seleziona e fai clic"
   }
- }
+}

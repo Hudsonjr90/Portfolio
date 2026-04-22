@@ -93,6 +93,15 @@ export const usePortfolioTour = () => {
           align: 'center'
         }
       },
+      {
+        element: '[data-tour="accessibility-toggle"]',
+        popover: {
+          title: t('tour.accessibility.title'),
+          description: t('tour.accessibility.description'),
+          side: 'left',
+          align: 'center'
+        }
+      },
     
     ];
 
@@ -288,12 +297,10 @@ export const usePortfolioTour = () => {
       ]
     };
 
-    // Para a página home: header + conteúdo + footer
     if (page === 'home') {
       return [...homeHeaderSteps, ...(pageSteps[page] || [])];
     }
     
-    // Para outras páginas: apenas conteúdo específico
     return pageSteps[page] || [];
   };
 

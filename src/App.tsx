@@ -4,6 +4,7 @@ import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
 import Header from './components/Header/Header'
+import AccessibilityPanel from './components/AccessibilityPanel'
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const About = React.lazy(() => import('./pages/About/About'))
 const Education = React.lazy(() => import('./pages/Education/Education'))
@@ -47,6 +48,7 @@ function App() {
         <I18nextProvider i18n={i18n}>
           <SecurityMonitor />
           <Header />
+          <AccessibilityPanel />
           <div className="container" id="container">
             <AnimatePresence mode="wait">
               <Suspense fallback={

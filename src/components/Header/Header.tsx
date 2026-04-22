@@ -109,6 +109,18 @@ const Header = () => {
       ? mdiWeatherSunny
       : mdiWeatherNight
 
+  const getNextThemeMode = (currentMode: ThemeMode): ThemeMode => {
+    if (currentMode === 'system') {
+      return 'light'
+    }
+
+    if (currentMode === 'light') {
+      return 'dark'
+    }
+
+    return 'system'
+  }
+
   const currentPage = location.pathname === '/' ? 'home' : location.pathname.slice(1)
 
   const languageFlag = useMemo(() => {
@@ -362,6 +374,17 @@ const Header = () => {
                 aria-label="Toggle Particles"
               >
                 {particlesEnabled ? <BiAtom /> : <TbAtomOff />}
+              </button>
+
+              <button
+                onClick={() => {
+                  setThemeMode(getNextThemeMode(themeMode));
+                  handleAudio();
+                }}
+                className={styles.particles_icon}
+                aria-label={t('navbar.theme')}
+              >
+                <Icon path={currentThemeIcon} size={2} />
               </button>
           </li>
           {navItems.map((item, index) => (

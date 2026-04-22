@@ -1,6 +1,32 @@
+:root {
+  --main-color: #0ef6cc;
+}
+
 .container {
   min-height: 100vh;
 }
+
+body.high-contrast-mode {
+  background: var(--bg_color) !important;
+  color: var(--text-color) !important;
+}
+
+body.high-contrast-mode button,
+body.high-contrast-mode a {
+  color: var(--text-color) !important;
+  border: 2px solid var(--main-color) !important;
+  font-weight: 700 !important;
+}
+
+body.high-contrast-mode input,
+body.high-contrast-mode textarea,
+body.high-contrast-mode select {
+  border: 3px solid var(--main-color) !important;
+  background: var(--bg_color) !important;
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+}
+
 
 
 

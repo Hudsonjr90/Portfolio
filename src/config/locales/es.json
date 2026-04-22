@@ -375,6 +375,10 @@
       "title": "Selector de Idioma",
       "description": "Elige tu idioma preferido. El portafolio está disponible en 5 idiomas diferentes."
     },
+    "accessibility": {
+      "title": "Panel de Accesibilidad",
+      "description": "Abra este panel para ajustar el tamaño del texto, alto contraste y lectura del texto seleccionado."
+    },
     "sound": {
       "title": "Control de Audio",
       "description": "Activa o desactiva los efectos de sonido mientras navegas por el portafolio."
@@ -465,5 +469,30 @@
       "description": "Artículos y contenidos técnicos de Hudson Kennedy sobre desarrollo de software, frontend, rendimiento y tecnología.",
       "keywords": "blog, desarrollo, tecnología, frontend, React, TypeScript, arquitectura, ingeniería"
     }
+  },
+  "accessibility": {
+    "panel": "Accesibilidad",
+    "openPanel": "Abrir panel de accesibilidad",
+    "closePanel": "Cerrar panel",
+    "fontSize": "Tamaño del Texto",
+    "fontSizeHint": "Seleccione el tamaño deseado",
+    "fontSizeResetHint": "Haga clic nuevamente en la opción activa para volver al tamaño predeterminado",
+    "fontSizeNormal": "Normal",
+    "fontSizeMedium": "Medio",
+    "fontSizeLarge": "Grande",
+    "fontSizeXLarge": "Extra Grande",
+    "highContrast": "Alto Contraste",
+    "highContrastHint": "Aumenta el contraste de colores",
+    "disableAnimations": "Sin Animaciones",
+    "disableAnimationsHint": "Elimina animaciones de movimiento",
+    "textReader": "Leer Texto Seleccionado",
+    "textReaderHint": "Seleccione un texto y haga clic para escuchar",
+    "enabled": "Activado",
+    "disabled": "Desactivado",
+    "toggleHighContrast": "Alternar alto contraste",
+    "toggleAnimations": "Alternar sin animaciones",
+    "stopReading": "Dejar de leer",
+    "readText": "Leer texto seleccionado",
+    "selectAndClick": "Seleccione y haga clic"
   }
 }
