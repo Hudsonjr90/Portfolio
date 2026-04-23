@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import {
   mdiClose,
-  mdiHumanWheelchair,
   mdiTextBox,
   mdiContrast,
   mdiVolumeLow,
   mdiVolumeOff,
+  mdiHuman,
 } from "@mdi/js";
 import Tooltip from "@mui/material/Tooltip";
 import styles from "./AccessibilityPanel.module.css";
@@ -50,7 +50,7 @@ const AccessibilityPanel = () => {
             aria-label={t("accessibility.openPanel")}
             data-tour="accessibility-toggle"
           >
-            <Icon path={mdiHumanWheelchair} size={3} />
+            <Icon path={mdiHuman} size={3} />
           </button>
         </Tooltip>
       )}

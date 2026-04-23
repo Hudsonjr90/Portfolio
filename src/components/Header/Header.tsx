@@ -513,7 +513,7 @@ const Header = () => {
                 aria-label={t('navbar.theme')}
                 aria-expanded={isThemeMenuOpen}
               >
-                <Icon path={currentThemeIcon} size={1.8} />
+                <Icon path={currentThemeIcon} size={2} />
               </button>
               {isThemeMenuOpen && (
                 <motion.div
