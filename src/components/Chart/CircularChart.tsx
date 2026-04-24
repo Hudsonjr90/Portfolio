@@ -102,29 +102,6 @@ const CircularChart: React.FC<CircularChartProps> = ({
       window.removeEventListener('resize', resizeChart);
     };
   }, []);
-
-  useEffect(() => {
-    // Ensures the chart recalculates after mount/transition on mobile and chart mode switches.
-    const rafId = window.requestAnimationFrame(() => {
-      chartRef.current?.getEchartsInstance()?.resize();
-    });
-
-    const timeoutId = window.setTimeout(() => {
-      chartRef.current?.getEchartsInstance()?.resize();
-    }, 120);
-
-    return () => {
-      window.cancelAnimationFrame(rafId);
-      window.clearTimeout(timeoutId);
-    };
-  }, [
-    height,
-    isMobile,
-    showBackButton,
-    chartPage,
-    chartType,
-    data.length,
-  ]);
   
   const isDarkMode = useMemo(() => {
     const hasLightMode = document.body.classList.contains('light_mode');
@@ -190,6 +167,15 @@ const CircularChart: React.FC<CircularChartProps> = ({
       return `hsl(${Math.round(hue)}, ${saturation}%, ${lightness}%)`;
     };
   }, [neonColors, isDarkMode]);
+
+  const withAlpha = useMemo(() => {
+    return (color: string, alpha: number) => {
+      const parsed = echarts.color.parse(color);
+      if (!parsed) return color;
+      const [r, g, b] = parsed;
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    };
+  }, []);
   const categoryColors: { [key: string]: string } = useMemo(() => {
     if (isMobile) {
       return {
@@ -254,7 +240,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         },
       } : undefined,
       tooltip: {
-        trigger: effectiveChartType === 'pie' ? 'item' : 'axis',
+        trigger: chartType === 'pie' ? 'item' : 'axis',
         backgroundColor: isMobile ? 
           (isDarkMode ? 'rgba(0,0,0,0.98)' : 'rgba(255,255,255,0.98)') : 
           (isDarkMode ? 'rgba(0,0,0,0.95)' : 'rgba(255,255,255,0.95)'),
@@ -274,7 +260,7 @@ const CircularChart: React.FC<CircularChartProps> = ({
         formatter: function (params: any) {
           const textColor = isMobile ? (isDarkMode ? '#ffffff' : '#000000') : mainColor;
           
-          if (effectiveChartType === 'pie') {
+          if (chartType === 'pie') {
             const data = params.data;
             const isCategoryDetail = showBackButton;
 
@@ -425,26 +411,26 @@ const CircularChart: React.FC<CircularChartProps> = ({
                     color: isMobile ? 
                       (isDarkMode ? 
                         new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                          { offset: 0, color: baseColor + 'F0' },
-                          { offset: 0.5, color: baseColor + 'D0' }, 
-                          { offset: 1, color: baseColor + 'B0' },   
+                          { offset: 0, color: withAlpha(baseColor, 0.94) },
+                          { offset: 0.5, color: withAlpha(baseColor, 0.82) }, 
+                          { offset: 1, color: withAlpha(baseColor, 0.68) },   
                         ]) :
                         new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                          { offset: 0, color: baseColor + 'F5' },
-                          { offset: 0.5, color: baseColor + 'E0' }, 
-                          { offset: 1, color: baseColor + 'CC' },   
+                          { offset: 0, color: withAlpha(baseColor, 0.96) },
+                          { offset: 0.5, color: withAlpha(baseColor, 0.88) }, 
+                          { offset: 1, color: withAlpha(baseColor, 0.80) },   
                         ])
                       ) :
                       (isDarkMode ? 
                         new echarts.graphic.LinearGradient(0, 0, 1, 1, [
                           { offset: 0, color: baseColor },
-                          { offset: 0.5, color: baseColor + 'CC' },
-                          { offset: 1, color: baseColor + '66' },
+                          { offset: 0.5, color: withAlpha(baseColor, 0.8) },
+                          { offset: 1, color: withAlpha(baseColor, 0.4) },
                         ]) :
                         new echarts.graphic.LinearGradient(0, 0, 1, 1, [
                           { offset: 0, color: baseColor },
-                          { offset: 0.5, color: baseColor + 'E6' },
-                          { offset: 1, color: baseColor + 'B3' },
+                          { offset: 0.5, color: withAlpha(baseColor, 0.9) },
+                          { offset: 1, color: withAlpha(baseColor, 0.7) },
                         ])
                       ),
                   },
@@ -456,24 +442,13 @@ const CircularChart: React.FC<CircularChartProps> = ({
 
       case 'bar':
         const sortedBarData = [...activeData].sort((a, b) => a.value - b.value);
-        const enrichedBarData = sortedBarData.map((item, index) => {
-          const baseColor = item.category && categoryColors[item.category]
-            ? categoryColors[item.category]
-            : generateUniqueColor(index, sortedBarData.length);
-
-          return {
-            ...item,
-            baseColor,
-          };
-        });
-
         return {
           ...baseConfig,
           grid: {
-            left: isMobile ? '10%' : '8%',
-            right: isMobile ? '10%' : '8%',
+            left: '10%',
+            right: '10%',
             top: title ? '20%' : '10%',
-            bottom: isMobile ? '15%' : '12%',
+            bottom: '15%',
             containLabel: true,
           },
           xAxis: {
@@ -515,10 +490,11 @@ const CircularChart: React.FC<CircularChartProps> = ({
             {
               name: 'Proficiência',
               type: 'bar',
-              barWidth: isMobile ? '55%' : 30,
-              barMinHeight: 2,
-              data: enrichedBarData.map((item) => {
-                const baseColor = item.baseColor;
+              data: sortedBarData.map((item, index) => {
+                // Usar cor específica da categoria ou gerar cor única
+                const baseColor = item.category && categoryColors[item.category] ? 
+                  categoryColors[item.category] :
+                  generateUniqueColor(index, sortedBarData.length);
                 
                 return {
                   value: item.value,
@@ -528,99 +504,24 @@ const CircularChart: React.FC<CircularChartProps> = ({
                   skills: item.skills,
                   level: item.level,
                   itemStyle: {
-                    color: isMobile
-                      ? new echarts.graphic.LinearGradient(0, 1, 0, 0, [
-                          { offset: 0, color: baseColor + '80' },
-                          { offset: 0.5, color: baseColor + 'B0' },
-                          { offset: 1, color: baseColor },
-                        ])
-                      : new echarts.graphic.LinearGradient(0, 1, 1, 0, [
-                          { offset: 0, color: baseColor + '75' },
-                          { offset: 0.35, color: baseColor + 'B5' },
-                          { offset: 1, color: baseColor + 'FF' },
-                        ]),
-                    borderRadius: isMobile ? [4, 4, 0, 0] : [6, 6, 2, 2],
-                    borderColor: isMobile ? 'transparent' : baseColor + 'FF',
-                    borderWidth: isMobile ? 0 : 1,
-                    shadowBlur: isMobile ? 0 : 18,
-                    shadowOffsetX: isMobile ? 0 : 9,
-                    shadowOffsetY: isMobile ? 0 : 6,
-                    shadowColor: isMobile
-                      ? 'transparent'
-                      : (isDarkMode ? 'rgba(0, 0, 0, 0.45)' : 'rgba(0, 0, 0, 0.3)'),
+                    color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+                      { offset: 0, color: withAlpha(baseColor, 0.5) },
+                      { offset: 0.5, color: withAlpha(baseColor, 0.7) },
+                      { offset: 1, color: baseColor },
+                    ]),
+                    borderRadius: [4, 4, 0, 0],
                   },
                 };
               }),
               animationDelay: (idx: number) => idx * 100,
-              emphasis: {
-                focus: 'series',
-                itemStyle: {
-                  shadowBlur: isMobile ? 10 : 18,
-                  shadowOffsetX: isMobile ? 0 : 8,
-                  shadowOffsetY: isMobile ? 0 : 6,
-                  shadowColor: isDarkMode
-                    ? 'rgba(255, 255, 255, 0.18)'
-                    : 'rgba(0, 0, 0, 0.35)',
-                },
-              },
             },
-            ...(!isMobile
-              ? [
-                  {
-                    name: 'Depth',
-                    type: 'bar',
-                    silent: true,
-                    tooltip: { show: false },
-                    legendHoverLink: false,
-                    z: 4,
-                    barWidth: 10,
-                    barGap: '0%',
-                    data: enrichedBarData.map((item) => ({
-                      value: item.value,
-                      itemStyle: {
-                        color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
-                          { offset: 0, color: item.baseColor + '55' },
-                          { offset: 1, color: item.baseColor + 'B0' },
-                        ]),
-                        borderRadius: [0, 4, 0, 0],
-                        shadowBlur: 8,
-                        shadowOffsetX: 2,
-                        shadowOffsetY: 3,
-                        shadowColor: isDarkMode ? 'rgba(0, 0, 0, 0.35)' : 'rgba(0, 0, 0, 0.22)',
-                      },
-                    })),
-                  },
-                ]
-              : []),
-            ...(isMobile
-              ? []
-              : [
-                  {
-                    name: 'Top Cap',
-                    type: 'pictorialBar',
-                    symbol: 'diamond',
-                    symbolSize: [30, 14],
-                    symbolOffset: [6, -7],
-                    z: 12,
-                    tooltip: { show: false },
-                    data: enrichedBarData.map((item) => {
-                      return {
-                        value: item.value,
-                        itemStyle: {
-                          color: item.baseColor + 'FF',
-                          opacity: 0.98,
-                        },
-                      };
-                    }),
-                  },
-                ]),
           ],
         };
 
       default:
         return baseConfig;
     }
-  }, [activeData, mainColor, isDarkMode, title, subtitle, isMobile, showLegend, roseType, neonColors, categoryColors, t, themeKey, effectiveChartType, isDenseMobilePie]);
+  }, [activeData, mainColor, isDarkMode, title, subtitle, isMobile, showLegend, roseType, neonColors, categoryColors, t, themeKey, effectiveChartType, isDenseMobilePie, withAlpha]);
 
   return (
     <div className={`${styles.chartContainer} ${isDarkMode ? styles.dark : styles.light}`}>
