@@ -12,9 +12,8 @@ import { MdArrowDropDown } from "react-icons/md";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import IconButton from "@mui/material/IconButton";
-import { ThemeProvider } from "@mui/material/styles";
 import ReactPaginate from "react-paginate";
-import { simpleTheme, useTheme } from "../../context/ThemeContext";
+import { simpleTheme, TooltipThemeProvider, useTheme } from "../../context/ThemeContext";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB")
@@ -206,7 +205,7 @@ const Skills = () => {
         </h2>
         <div className={styles.toggleButtons} data-tour="view-toggles">
           <div className={styles.viewModeButtons}>
-            <ThemeProvider theme={simpleTheme}>
+            <TooltipThemeProvider theme={simpleTheme}>
               <Tooltip
                 TransitionComponent={Zoom}
                 title={t("skills.chart")}
@@ -224,9 +223,9 @@ const Skills = () => {
                   <FaChartBar />
                 </IconButton>
               </Tooltip>
-            </ThemeProvider>
+            </TooltipThemeProvider>
 
-            <ThemeProvider theme={simpleTheme}>
+            <TooltipThemeProvider theme={simpleTheme}>
               <Tooltip
                 TransitionComponent={Zoom}
                 title={t("skills.searchable")}
@@ -244,7 +243,7 @@ const Skills = () => {
                   <FaSearch />
                 </IconButton>
               </Tooltip>
-            </ThemeProvider>
+            </TooltipThemeProvider>
           </div>
         </div>
         {visibleIcons.length === 0 && viewMode === "grid" ? (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme, simpleTheme, TooltipThemeProvider } from "../../context/ThemeContext";
 import { useWebSpeech } from "../../hooks/useWebSpeech";
 import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
@@ -43,7 +43,8 @@ const AccessibilityPanel = () => {
   return (
     <>
       {!isOpen && (
-        <Tooltip title={t("accessibility.panel")}>
+      <TooltipThemeProvider theme={simpleTheme}>
+        <Tooltip title={t("accessibility.panel")} placement="left" arrow>
           <button
             className={styles.floatingButton}
             onClick={() => setIsOpen(true)}
@@ -53,6 +54,7 @@ const AccessibilityPanel = () => {
             <Icon path={mdiHuman} size={3} />
           </button>
         </Tooltip>
+        </TooltipThemeProvider>
       )}
 
       {isOpen && (

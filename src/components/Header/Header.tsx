@@ -16,9 +16,8 @@ import { BiAtom } from "react-icons/bi";
 import { TbAtomOff } from "react-icons/tb";
 import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
-import { logoTheme, navbarTheme, ThemeMode, useTheme } from "../../context/ThemeContext";
+import { logoTheme, navbarTheme, ThemeMode, TooltipThemeProvider, useTheme } from "../../context/ThemeContext";
 import { useParticles } from "../../context/ParticlesContext";
-import { ThemeProvider } from "@mui/material/styles";
 import { useAudio } from "../../hooks/useAudio";
 import { Us, Fr, Br, Es, It } from "react-flags-select";
 import { motion } from "framer-motion";
@@ -307,7 +306,7 @@ const Header = () => {
           delay: 0.1,
         }}
       >
-        <ThemeProvider theme={logoTheme}>
+        <TooltipThemeProvider theme={logoTheme}>
           <NavLink to="/" onClick={handleAudio}>
             <Tooltip title={location.pathname === "/" ? "" : t("menu.home")} placement="right" arrow>
               <img
@@ -321,7 +320,7 @@ const Header = () => {
               />
             </Tooltip>
           </NavLink>
-        </ThemeProvider>
+        </TooltipThemeProvider>
       </motion.div>
 
       <nav>
@@ -441,9 +440,7 @@ const Header = () => {
           delay: 0.2,
         }}
       >
-        <ThemeProvider theme={navbarTheme}>
-          <TourButton currentPage={currentPage} className={styles.tour_button_desktop} />
-
+        <TooltipThemeProvider theme={navbarTheme}>
           <div
             ref={volumeControlRef}
             className={`${styles.volumeControl} ${styles.desktop_only_icon}`}
@@ -451,6 +448,7 @@ const Header = () => {
             onMouseLeave={() => setShowVolumePopup(false)}
             data-tour="sound-toggle"
           >
+            <Tooltip title={t("navbar.sound")} placement="left" arrow>
             <button
               className={styles.sound_icon}
               aria-label="Volume"
@@ -461,6 +459,7 @@ const Header = () => {
             >
               {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
             </button>
+            </Tooltip>
             {showVolumePopup && (
               <div className={styles.volumePopup}>
                 <input
@@ -547,6 +546,8 @@ const Header = () => {
             </div>
           </Tooltip>
 
+           <TourButton currentPage={currentPage} className={styles.tour_button_desktop} />
+
           <Tooltip title={t("navbar.language")} placement="right" arrow>
             <div
               className={styles.lng_box}
@@ -613,7 +614,7 @@ const Header = () => {
               <span className={styles.bar}></span>
             </button>
           </Tooltip>
-        </ThemeProvider>
+        </TooltipThemeProvider>
       </motion.div>
     </header>
   );

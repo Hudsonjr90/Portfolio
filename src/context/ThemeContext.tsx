@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { createTheme } from '@mui/material/styles';
+import { createTheme, ThemeProvider as MuiThemeProvider, Theme as MuiTheme } from '@mui/material/styles';
 
 export type ThemeMode = 'system' | 'light' | 'dark'
 type ResolvedTheme = 'light' | 'dark'
@@ -198,6 +198,15 @@ export function useTheme() {
   }
 
   return context;
+}
+
+interface TooltipThemeProviderProps {
+  children: React.ReactNode;
+  theme: MuiTheme;
+}
+
+export function TooltipThemeProvider({ children, theme }: TooltipThemeProviderProps) {
+  return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
 }
 
 export const whatsappTheme = createTheme({

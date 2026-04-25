@@ -19,7 +19,7 @@ const TourButton: React.FC<TourButtonProps> = ({ currentPage, className }) => {
 
   return (
     <ThemeProvider theme={navbarTheme}>
-      <Tooltip title={t('tour.start')} placement="left" arrow>
+      <Tooltip title={t('tour.start')} placement="bottom" arrow>
         <button 
           onClick={() => startTour(currentPage)}
           aria-label={t('tour.start')}

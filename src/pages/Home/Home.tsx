@@ -14,8 +14,7 @@ import "atropos/css";
 import { Atropos } from "atropos/react";
 import resumeServer from "../../data/resumeServer";
 import Footer from "../../components/Footer";
-
-const homeImages = ["/imgs/my.webp", "/imgs/about.webp", "/imgs/model.webp", "/imgs/hkdev.webp"];
+import { useTheme } from "../../context/ThemeContext";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -23,6 +22,7 @@ const ParticlesA = React.lazy(
 
 const Home = React.memo(() => {
   const { t, i18n } = useTranslation();
+  const { resolvedTheme } = useTheme();
   const [showModal, setShowModal] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -32,6 +32,16 @@ const Home = React.memo(() => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const targetText = "Hudson Kennedy";
+
+  const homeImages = useMemo(
+    () => [
+      "/imgs/my.webp",
+      "/imgs/about.webp",
+      "/imgs/model.webp",
+      resolvedTheme === "light" ? "/imgs/logo.webp" : "/imgs/logow.webp",
+    ],
+    [resolvedTheme],
+  );
 
   const getResumeLanguage = useCallback(() => {
     const currentLang = i18n.language;
@@ -159,7 +169,7 @@ const Home = React.memo(() => {
     }, 3500);
 
     return () => window.clearInterval(intervalId);
-  }, [isImageHovered]);
+  }, [isImageHovered, homeImages.length]);
 
   return (
     <>
