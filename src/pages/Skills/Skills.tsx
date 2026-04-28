@@ -24,6 +24,7 @@ const categoryOptions = [
   { value: "frontend", label: "Frontend" },
   { value: "backend", label: "Backend" },
   { value: "database", label: "Database" },
+  { value: "ia", label: "IA" },
   { value: "tools", label: "Tools" },
   { value: "deploy", label: "Deploy" },
   { value: "design", label: "Design" },

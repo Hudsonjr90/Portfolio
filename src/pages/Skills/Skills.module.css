@@ -175,6 +175,12 @@
   text-align: center;
   font-size: 1.9rem;
   color: var(--main_color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.box_icon:hover .icon_description {
+  opacity: 1;
 }
 
 .indicator {
@@ -449,6 +455,12 @@
   .icon_description {
     left: 40px;
     text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .box_icon:hover .icon_description {
+    opacity: 1;
   }
 
   .icon_wrapper {

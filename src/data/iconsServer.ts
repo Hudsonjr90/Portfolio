@@ -19,7 +19,8 @@ import {
   FaGitlab,
   FaWordpress,
   FaMagento,
-  FaAws,  
+  FaAws,
+  FaRobot,
 } from "react-icons/fa6";
 import {
   SiTailwindcss,
@@ -67,7 +68,9 @@ import {
   SiEclipseide,
   SiFastify,
   SiInsomnia,
-  SiSvelte
+  SiSvelte,
+  SiGooglegemini,
+  SiGithubcopilot
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -83,8 +86,9 @@ import {
   BiLogoHeroku,
   BiBoltCircle,
 } from "react-icons/bi";
-import { DiPhotoshop } from "react-icons/di";
-import { DiRedis } from "react-icons/di";
+import { BsClaude, BsCursor } from "react-icons/bs";
+import { LuCodeXml } from "react-icons/lu";
+import { DiPhotoshop, DiRedis } from "react-icons/di";
 import { TbBrandCSharp, TbBrandAdobeXd } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
 import DeviconIcon from "./DeviconIcon";
@@ -179,6 +183,14 @@ const iconComponents: { [index: string]: React.ElementType } = {
   Insomnia: SiInsomnia,
   Redis: DiRedis,
   Svelte: SiSvelte,
+  Cursor: BsCursor,
+  Codex: LuCodeXml,
+  Claude: BsClaude,
+  Gemini: SiGooglegemini,
+  DeepSeek: FaRobot,
+  ChatGPT: FaRobot,
+  Copilot: SiGithubcopilot,
+  OpenClaw: FaRobot,
 };
 
 export interface Skills {
@@ -186,7 +198,7 @@ export interface Skills {
 }
 
 const getLevelByPercentage = (percentage: number): string => {
-  if (percentage >= 81) return "skills.expert";
+  if (percentage >= 91) return "skills.expert";
   if (percentage >= 71) return "skills.advanced"; 
   if (percentage >= 51) return "skills.intermediate";
   return "skills.basic";
@@ -760,6 +772,62 @@ const skillsData = [
     name: "Svelte",
     category: "Frontend",
     percentage: 61,
+    level: "skills.intermediate",
+  },
+  {
+    id: 81,
+    name: "Cursor",
+    category: "IA",
+    percentage: 56,
+    level: "skills.intermediate",
+  },
+  {
+    id: 82,
+    name: "Codex",
+    category: "IA",
+    percentage: 44,
+    level: "skills.basic",
+  },
+  {
+    id: 83,
+    name: "Claude",
+    category: "IA",
+    percentage: 88,
+    level: "skills.advanced",
+  },
+  {
+    id: 84,
+    name: "Gemini",
+    category: "IA",
+    percentage: 63,
+    level: "skills.intermediate",
+  },
+  {
+    id: 85,
+    name: "DeepSeek",
+    category: "IA",
+    percentage: 42,
+    level: "skills.basic",
+  },
+  {
+    id: 86,
+    name: "ChatGPT",
+    category: "IA",
+    percentage: 90,
+    level: "skills.expert",
+  },
+  {
+    id: 87,
+    name: "Copilot",
+    category: "IA",
+    percentage: 92,
+    level: "skills.expert",
+  },
+  {
+    id: 88,
+    name: "OpenClaw",
+    category: "IA",
+    percentage: 50,
     level: "skills.intermediate",
   },
 
