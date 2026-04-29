@@ -171,18 +171,6 @@
   color: var(--main_color);
 }
 
-.icon_description {
-  text-align: center;
-  font-size: 1.9rem;
-  color: var(--main_color);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.box_icon:hover .icon_description {
-  opacity: 1;
-}
-
 .indicator {
   display: flex;
   justify-content: center;
@@ -193,6 +181,7 @@
   width: 100%;
   height: 100%;
   user-select: none;
+  pointer-events: none;
   font-size: 1.4rem;
   color: var(--main_color);
 }
@@ -450,17 +439,6 @@
     height: 7rem;
     width: 7rem;
     margin-bottom: 1rem;
-  }
-
-  .icon_description {
-    left: 40px;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .box_icon:hover .icon_description {
-    opacity: 1;
   }
 
   .icon_wrapper {

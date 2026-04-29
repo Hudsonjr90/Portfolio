@@ -321,9 +321,6 @@ const Skills = () => {
                         variants={container}
                         className={styles.box_icon}
                       >
-                        <div className={styles.icon_description}>
-                          {t(`${icon.level}`)}
-                        </div>
                         <ProgressBar
                           radius={70}
                           strokeWidth={4}
@@ -338,11 +335,30 @@ const Skills = () => {
                           transition="2.5s ease 0.5s"
                           trackTransition="0s ease"
                         >
-                          <div className={styles.icon_wrapper}>
-                            {IconComponent && (
-                              <IconComponent className={styles.icon} />
-                            )}
-                          </div>
+                          <TooltipThemeProvider theme={simpleTheme}>
+                            <Tooltip
+                              TransitionComponent={Zoom}
+                              title={t(icon.level)}
+                              placement="top"
+                              PopperProps={{
+                                modifiers: [
+                                  {
+                                    name: "offset",
+                                    options: {
+                                      offset: [0, 50],
+                                    },
+                                  },
+                                ],
+                              }}
+                              arrow
+                            >
+                              <div className={styles.icon_wrapper}>
+                                {IconComponent && (
+                                  <IconComponent className={styles.icon} />
+                                )}
+                              </div>
+                            </Tooltip>
+                          </TooltipThemeProvider>
 
                           <div className={styles.indicator}>{icon.name}</div>
                         </ProgressBar>
