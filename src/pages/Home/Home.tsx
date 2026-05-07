@@ -256,7 +256,7 @@ const Home = React.memo(() => {
               <button className={styles.btn} onClick={handleOpenModal}>
                 {t("home.resume")} <FaRegFilePdf />
               </button>
-              <a
+              {/* <a
                 className={`${styles.btn} ${styles.btn_secondary}`}
                 href={blogUrl}
                 target={isExternalBlog ? "_blank" : undefined}
@@ -264,7 +264,7 @@ const Home = React.memo(() => {
                 data-tour="blog-button"
               >
                 {t("menu.blog")} <FaArrowUpRightFromSquare />
-              </a>
+              </a> */}
             </motion.div>
           </motion.div>
 
