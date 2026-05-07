@@ -15,6 +15,7 @@ import { Atropos } from "atropos/react";
 import resumeServer from "../../data/resumeServer";
 import Footer from "../../components/Footer";
 import { useTheme } from "../../context/ThemeContext";
+import { FaArrowUpRightFromSquare, FaRegFilePdf } from "react-icons/fa6";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -32,6 +33,8 @@ const Home = React.memo(() => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const targetText = "Hudson Kennedy";
+  const blogUrl = import.meta.env.VITE_BLOG_URL || "/blog";
+  const isExternalBlog = /^https?:\/\//i.test(blogUrl);
 
   const homeImages = useMemo(
     () => [
@@ -251,8 +254,17 @@ const Home = React.memo(() => {
 
             <motion.div className={styles.btn_box} data-tour="resume-button">
               <button className={styles.btn} onClick={handleOpenModal}>
-                {t("home.resume")}
+                {t("home.resume")} <FaRegFilePdf />
               </button>
+              <a
+                className={`${styles.btn} ${styles.btn_secondary}`}
+                href={blogUrl}
+                target={isExternalBlog ? "_blank" : undefined}
+                rel={isExternalBlog ? "noopener noreferrer" : undefined}
+                data-tour="blog-button"
+              >
+                {t("menu.blog")} <FaArrowUpRightFromSquare />
+              </a>
             </motion.div>
           </motion.div>
 

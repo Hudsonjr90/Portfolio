@@ -142,15 +142,6 @@ export const useSEO = () => {
           url: currentUrl,
         };
 
-      case "/blog":
-        return {
-          title: `${t("menu.blog")} | H.K Dev`,
-          description: t("seo.blog.description"),
-          keywords: t("seo.blog.keywords"),
-          image: `${baseUrl}/imgs/hkdev.webp`,
-          url: currentUrl,
-        };
-
       case "/education":
         return {
           title: `${t("menu.academic-education")} | H.K Dev`,

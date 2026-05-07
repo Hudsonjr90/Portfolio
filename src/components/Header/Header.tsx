@@ -80,7 +80,6 @@ const Header = () => {
       { key: "skills", path: "/skills", label: t("menu.skills") },
       { key: "portfolio", path: "/portfolio", label: t("menu.portfolio") },
       { key: "contact", path: "/contact", label: t("menu.contact") },
-      { key: "blog", path: "/blog", label: t("menu.blog") },
     ],
     [t],
   )

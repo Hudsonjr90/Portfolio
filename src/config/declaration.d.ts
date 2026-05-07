@@ -6,6 +6,7 @@ declare module "*.css" {
 declare module "atropos/css";
 
 interface ImportMetaEnv {
+  readonly VITE_BLOG_URL?: string;
   readonly VITE_GOOGLE_NEWS_ENDPOINT?: string;
   readonly VITE_GOOGLE_NEWS_QUERY?: string;
   readonly VITE_GOOGLE_NEWS_LIMIT?: string;

@@ -48,6 +48,10 @@
 
 .btn_box {
   animation: button_contact 0.8s ease-in-out 1.2s 1 forwards;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  align-items: center;
   position: relative;
   opacity: 0;
   will-change: transform, opacity; /* Optimize for composition */
@@ -69,6 +73,7 @@
   padding: 1.2rem 3.2rem;
   overflow: hidden;
   outline: none;
+  text-decoration: none;
   transition: 0.5s ease;
   z-index: 1;
 }
@@ -92,6 +97,21 @@
 .btn_box .btn:hover {
   box-shadow: none;
   color: var(--main_color);
+}
+
+.btn_box .btn_secondary {
+  background: transparent;
+  box-shadow: none;
+  color: var(--main_color);
+}
+
+.btn_box .btn_secondary::before {
+  background: var(--main_color);
+}
+
+.btn_box .btn_secondary:hover {
+  box-shadow: 0 0 1rem var(--main_color);
+  color: var(--bg_color);
 }
 
 .home_img {
@@ -152,6 +172,7 @@
 
   .btn_box {
     margin-top: 1.5rem;
+    justify-content: center;
   }
 
   .btn_box .btn {
