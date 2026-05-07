@@ -15,7 +15,7 @@ import { Atropos } from "atropos/react";
 import resumeServer from "../../data/resumeServer";
 import Footer from "../../components/Footer";
 import { useTheme } from "../../context/ThemeContext";
-import { FaArrowUpRightFromSquare, FaRegFilePdf } from "react-icons/fa6";
+import { FaRegFilePdf } from "react-icons/fa6";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -33,8 +33,8 @@ const Home = React.memo(() => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageHovered, setIsImageHovered] = useState(false);
   const targetText = "Hudson Kennedy";
-  const blogUrl = import.meta.env.VITE_BLOG_URL || "/blog";
-  const isExternalBlog = /^https?:\/\//i.test(blogUrl);
+  //const blogUrl = import.meta.env.VITE_BLOG_URL || "/blog";
+  //const isExternalBlog = /^https?:\/\//i.test(blogUrl);
 
   const homeImages = useMemo(
     () => [
