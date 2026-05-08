@@ -8,13 +8,16 @@
 }
 
 .hero {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 3rem;
 }
 
 .heroCopy {
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .statusBadge {
@@ -58,8 +61,8 @@
   color: var(--main_color);
   font-size: clamp(3rem, 6vw, 5.4rem);
   line-height: 0.95;
-  margin: 0;
-  max-width: 9ch;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 .heading span {
@@ -72,7 +75,7 @@
   color: var(--text_color);
   font-size: 1.45rem;
   line-height: 1.8;
-  margin: 1.5rem 0 0;
+  margin: 1.5rem auto 0;
   max-width: 60ch;
 }
 

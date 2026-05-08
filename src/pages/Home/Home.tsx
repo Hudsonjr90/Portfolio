@@ -257,6 +257,8 @@ const Home = React.memo(() => {
               <a
                 className={`${styles.btn} ${styles.btn_secondary}`}
                 href="/blog"
+                target="_blank"
+                rel="noopener noreferrer"
                 data-tour="blog-button"
               >
                 {t("menu.blog")} <FaArrowUpRightFromSquare />

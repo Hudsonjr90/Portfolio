@@ -386,9 +386,14 @@ const Blog = () => {
             <p>{t('blog.ctaText')}</p>
           </div>
 
-          <NavLink to="/contact" className={styles.ctaButton}>
+          <a
+            href="/contact"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ctaButton}
+          >
             {t('blog.ctaButton')}
-          </NavLink>
+          </a>
         </motion.div>
       </section>
     </Transition>

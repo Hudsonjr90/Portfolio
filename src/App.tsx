@@ -42,13 +42,15 @@ function App() {
   
   useResourceLoading()
 
+  const isBlogPage = location.pathname === '/blog' || location.pathname.startsWith('/blog/')
+
   return (
     <ThemeProvider>
       <ParticlesProvider>
         <I18nextProvider i18n={i18n}>
           <SecurityMonitor />
-          <Header />
-          <AccessibilityPanel />
+          {!isBlogPage && <Header />}
+          {!isBlogPage && <AccessibilityPanel />}
           <div className="container" id="container">
             <AnimatePresence mode="wait">
               <Suspense fallback={
