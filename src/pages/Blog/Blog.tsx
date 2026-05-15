@@ -200,6 +200,15 @@ const Blog = () => {
               {t('blog.title')} <span>{t('blog.text')}</span>
             </h2>
             <p className={styles.intro}>{t('blog.intro')}</p>
+            <div className={styles.heroActions}>
+              <a
+                href="/"
+                rel="noopener noreferrer"
+                className={styles.heroHomeButton}
+              >
+                {t('menu.backToPortfolio')}
+              </a>
+            </div>
           </div>
         </motion.div>
 
@@ -387,8 +396,7 @@ const Blog = () => {
           </div>
 
           <a
-            href="/contact"
-            target="_blank"
+            href="/contact" 
             rel="noopener noreferrer"
             className={styles.ctaButton}
           >
