@@ -8,7 +8,7 @@ export const useAudio = () => {
 
   const [volume, setVolumeState] = useState<number>(() => {
     const saved = localStorage.getItem("audioVolume");
-    return saved ? Number(saved) : 80;
+    return saved ? Number(saved) : 0;
   });
 
   const handleAudio = () => {
