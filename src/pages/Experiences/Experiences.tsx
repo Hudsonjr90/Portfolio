@@ -21,7 +21,7 @@ import { motion } from "framer-motion";
 interface TranslatedTestimonial {
   name: string;
   text: string;
-  img: string;
+  avatar?: string;
   company: string;
 }
 
@@ -108,11 +108,17 @@ const TimelineElement = ({
                       onClick={() => handleToggle(index)}
                       aria-expanded={expandedIndex === index}
                     >
-                      <img
-                        src={testimonial.img}
-                        alt={testimonial.name}
-                        className={styles.timeline_testimonial_avatar}
-                      />
+                      {testimonial.avatar ? (
+                        <img
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          className={styles.timeline_testimonial_avatar}
+                        />
+                      ) : (
+                        <div className={styles.timeline_testimonial_avatar_fallback}>
+                          {testimonial.name.charAt(0)}
+                        </div>
+                      )}
                       <strong className={styles.timeline_testimonial_name}>
                         {testimonial.name}
                       </strong>
@@ -176,7 +182,7 @@ const Experiences = () => {
     .map((testimonial) => ({
       name: testimonial.title,
       text: t(testimonial.subtitle),
-      img: testimonial.img,
+      avatar: testimonial.avatar,
       company: testimonial.company!,
     }));
 

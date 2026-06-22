@@ -27,7 +27,7 @@ interface ModalProps {
     image?: string;
     icon?: React.ReactNode;
     date?: string;
-    testimonials?: { name: string; text: string; img: string }[];
+    testimonials?: { name: string; text: string; avatar?: string }[];
   }[];
   initialPage?: number;
   loopNavigation?: boolean;
@@ -373,11 +373,17 @@ const Modal = ({
                               }
                               aria-expanded={expandedTestimonialIndex === index}
                             >
-                              <img
-                                src={testimonial.img}
-                                alt={testimonial.name}
-                                className={styles.modal_testimonial_avatar}
-                              />
+                              {testimonial.avatar ? (
+                                <img
+                                  src={testimonial.avatar}
+                                  alt={testimonial.name}
+                                  className={styles.modal_testimonial_avatar}
+                                />
+                              ) : (
+                                <div className={styles.modal_testimonial_avatar_fallback}>
+                                  {testimonial.name.charAt(0)}
+                                </div>
+                              )}
                               <strong className={styles.modal_testimonial_name}>
                                 {testimonial.name}
                               </strong>

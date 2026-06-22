@@ -8,7 +8,7 @@ import { FaLaptopCode } from "react-icons/fa";
 interface TranslatedTestimonial {
   name: string;
   text: string;
-  img: string;
+  avatar?: string;
   company: string;
 }
 
@@ -38,7 +38,7 @@ const OrbitExperiences = ({ experiences, testimonials }: Props) => {
         icon: <img src={exp.image} alt={exp.title} width={50} />,
         testimonials: testimonials
           .filter((t) => t.company === exp.title)
-          .map(({ name, text, img }) => ({ name, text, img })),
+          .map(({ name, text, avatar }) => ({ name, text, avatar })),
       })),
     [orderedExperiences, testimonials]
   );

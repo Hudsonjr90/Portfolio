@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Paginate from "react-paginate";
-import "swiper/css";
+
 import styles from "./TestimonialComponent.module.css";
 import { useTranslation } from "react-i18next";
 import testimonialServer, { Testimonial } from "../../data/testimonialsServer";
@@ -262,11 +262,17 @@ const TestimonialComponent: React.FC = () => {
                   >
                     {/* Frente do card - avatar e nome */}
                     <div className={styles.cardFront}>
-                      <img
-                        src={test.img}
-                        alt={test.title}
-                        className={styles.avatar}
-                      />
+                      {test.avatar ? (
+                        <img
+                          src={test.avatar}
+                          alt={test.title}
+                          className={styles.avatar}
+                        />
+                      ) : (
+                        <div className={styles.avatarFallback}>
+                          {test.title.charAt(0)}
+                        </div>
+                      )}
                       <h3 className={styles.name}>{test.title}</h3>
                       <div className={styles.clickHint}>
                         {t("projects.clickToFlip")}
@@ -341,11 +347,17 @@ const TestimonialComponent: React.FC = () => {
                     }}
                     onClick={() => handleCardClick(globalIndex)}
                   >
-                    <img
-                      src={test.img}
-                      alt={test.title}
-                      className={styles.avatar}
-                    />
+                    {test.avatar ? (
+                      <img
+                        src={test.avatar}
+                        alt={test.title}
+                        className={styles.avatar}
+                      />
+                    ) : (
+                      <div className={styles.avatarFallback}>
+                        {test.title.charAt(0)}
+                      </div>
+                    )}
                     <h3 className={styles.name}>{test.title}</h3>
                     <div
                       className={`${styles.textContainer} ${expandedCard === globalIndex ? styles.showText : ""}`}
@@ -419,11 +431,17 @@ const TestimonialComponent: React.FC = () => {
                   }}
                   onClick={() => handleCardClick(globalIndex)}
                 >
-                  <img
-                    src={test.img}
-                    alt={test.title}
-                    className={styles.avatar}
-                  />
+                  {test.avatar ? (
+                    <img
+                      src={test.avatar}
+                      alt={test.title}
+                      className={styles.avatar}
+                    />
+                  ) : (
+                    <div className={styles.avatarFallback}>
+                      {test.title.charAt(0)}
+                    </div>
+                  )}
                   <h3 className={styles.name}>{test.title}</h3>
                   <div
                     className={`${styles.textContainer} ${expandedCard === globalIndex ? styles.showText : ""}`}
