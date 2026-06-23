@@ -300,10 +300,13 @@ const Contact: React.FC = () => {
           <div
             className={styles.formSection}
             data-tour="contact-form"
-         >
+          >
             <h3 className={styles.formTitle}>
               {t("contact.formTitle")}
             </h3>
+            <p className={styles.formSubtitle}>
+              {t("contact.subtitle")}
+            </p>
             <form className={styles.contactForm} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
                 <label htmlFor="name" className={styles.label}>
