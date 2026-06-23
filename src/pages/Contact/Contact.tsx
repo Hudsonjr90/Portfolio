@@ -2,7 +2,8 @@ import React, { Suspense, useState, useEffect } from "react";
 import styles from "./Contact.module.css";
 import { useTranslation } from "react-i18next";
 import Transition from "../../components/Transition/Transition";
-import LocationMap from "../../components/LocationMap/LocationMap";
+import Lottie from "lottie-react";
+import animationData from "../../assets/about.json";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tooltip from "@mui/material/Tooltip";
@@ -14,8 +15,7 @@ import {
   githubTheme,
 } from "../../context/ThemeContext";
 import { ThemeProvider } from "@mui/material/styles";
-import { FaWhatsapp, FaLinkedin, FaGithub, FaMapMarkerAlt, FaHeadset,  } from "react-icons/fa";
-import { FaCircleXmark } from "react-icons/fa6";
+import { FaWhatsapp, FaLinkedin, FaGithub, FaHeadset } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import IconButton from "@mui/material/IconButton";
 import emailjs from '@emailjs/browser';
@@ -28,8 +28,6 @@ const ParticlesB = React.lazy(
 const Contact: React.FC = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [showMap, setShowMap] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,20 +43,6 @@ const Contact: React.FC = () => {
     }, 200);
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const toggleMapView = () => {
-    setShowMap(!showMap);
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -313,8 +297,8 @@ const Contact: React.FC = () => {
           className={styles.contentContainer}
         >
           {/* Seção do Formulário */}
-          <div 
-            className={`${styles.formSection} ${isMobile && showMap ? styles.hidden : ''}`}
+          <div
+            className={styles.formSection}
             data-tour="contact-form"
          >
             <h3 className={styles.formTitle}>
@@ -417,42 +401,24 @@ const Contact: React.FC = () => {
               )}
             </form>
             
-            {/* Botão para ver localização - apenas no mobile */}
-            {isMobile && (
-              <motion.button
-                className={styles.locationButton}
-                onClick={toggleMapView}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FaMapMarkerAlt />
-                {t('contact.location.view')}
-              </motion.button>
-            )}
           </div>
 
-          {/* Seção do Mapa */}
-          <div 
-            className={`${styles.mapSection} ${isMobile && !showMap ? styles.hidden : ''}`}
-            data-tour="contact-map"
-          >
-            <div className={styles.mapHeader}>
-              <h3 className={styles.mapTitle}>
-                {t("contact.locationTitle")}
-              </h3>
-              {/* Botão para fechar mapa - apenas no mobile */}
-              {isMobile && (
-                <motion.button
-                  className={styles.closeMapButton}
-                  onClick={toggleMapView}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                 <FaCircleXmark />
-                </motion.button>
-              )}
-            </div>
-            <LocationMap height={400} isVisible={!isMobile || showMap} />
+          {/* Seção da Animação */}
+          <div className={styles.mediaSection}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 60, rotate: -8 }}
+              animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
+              transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              className={styles.lottieMotion}
+            >
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Lottie animationData={animationData} loop={true} />
+              </motion.div>
+            </motion.div>
           </div>
         </motion.div>
       </section>

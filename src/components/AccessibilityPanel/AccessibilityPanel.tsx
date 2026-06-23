@@ -10,8 +10,10 @@ import {
   mdiVolumeLow,
   mdiVolumeOff,
   mdiHuman,
+  mdiWheelchairAccessibility,
 } from "@mdi/js";
 import Tooltip from "@mui/material/Tooltip";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./AccessibilityPanel.module.css";
 
 const AccessibilityPanel = () => {
@@ -19,6 +21,7 @@ const AccessibilityPanel = () => {
   const { accessibility, setFontSize, toggleHighContrast } = useTheme();
   const { isSpeaking, isSupported, stop, speakSelectedText } = useWebSpeech();
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const fontSizeLabels = [
     t("accessibility.fontSizeMedium"),
@@ -50,8 +53,40 @@ const AccessibilityPanel = () => {
             onClick={() => setIsOpen(true)}
             aria-label={t("accessibility.openPanel")}
             data-tour="accessibility-toggle"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            <Icon path={mdiHuman} size={3} />
+            <AnimatePresence mode="wait" initial={false}>
+              {isHovered ? (
+                <motion.span
+                  key="wheelchair"
+                  initial={{ x: -24, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 28, opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+                  style={{ display: 'inline-flex' }}
+                >
+                  <motion.span
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 0.45, repeat: Infinity, ease: 'easeInOut' }}
+                    style={{ display: 'inline-flex' }}
+                  >
+                    <Icon path={mdiWheelchairAccessibility} size={3} />
+                  </motion.span>
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="human"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.2 }}
+                  style={{ display: 'inline-flex' }}
+                >
+                  <Icon path={mdiHuman} size={3} />
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
         </Tooltip>
         </TooltipThemeProvider>

@@ -1,10 +1,9 @@
 import styles from "./About.module.css";
-import React, { useState, useEffect, useMemo, Suspense } from "react";
+import React, { useState, useEffect, useMemo, Suspense, useCallback } from "react";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
-import animationData from "../../assets/about.json";
+import about from "/imgs/about-me.webp";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB"),
@@ -13,7 +12,12 @@ const ParticlesB = React.lazy(
 const About = () => {
   const { t } = useTranslation();
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   const aboutText = t("about.text");
+
+  const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
+  const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
   const rainWords = useMemo(() => {
     return aboutText
@@ -35,6 +39,10 @@ const About = () => {
     return () => mediaQuery.removeEventListener("change", updateViewport);
   }, []);
 
+   const setIsLoadedCallback = useCallback(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <Transition onAnimationComplete={() => {}}>
       <section className={styles.about} data-tour="about-section">
@@ -42,44 +50,29 @@ const About = () => {
           <ParticlesB />
         </Suspense>
 
-        <div className={styles.container_lottie} data-tour="about-image">
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-              y: 60,
-              rotate: -8,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              rotate: 0,
-            }}
-            transition={{
-              duration: 1.2,
-              delay: 0.3,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            whileHover={{
-              scale: 1.05,
-              rotate: 2,
-            }}
-            className={styles.lottieMotion}
-          >
+          <div className={styles.container_img} data-tour="about-image">
+          <Suspense fallback={<div>{t("home.loading")}</div>}>
             <motion.div
-              animate={{
-                y: [0, -12, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              initial={false}
+              animate={
+                isLoaded && isInView
+                  ? { WebkitMaskImage: visibleMask, maskImage: visibleMask } as any
+                  : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask } as any
+              }
+              transition={{ duration: 1, delay: 1 }}
+              viewport={{ once: true }}
+              onViewportEnter={() => setIsInView(true)}
             >
-              <Lottie animationData={animationData} loop={true} />
+              <img
+                src={about}
+                alt="about_img"
+                onLoad={setIsLoadedCallback}
+                width="100%"
+                height="auto"
+                loading="eager"
+              />
             </motion.div>
-          </motion.div>
+          </Suspense>
         </div>
 
         <motion.div

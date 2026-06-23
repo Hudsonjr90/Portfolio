@@ -99,19 +99,13 @@
   color: var(--main_color);
 }
 
-.btn_box .btn_secondary {
-  background: transparent;
-  box-shadow: none;
-  color: var(--main_color);
-}
-
-.btn_box .btn_secondary::before {
-  background: var(--main_color);
+.btn_box .btn_secondary:hover::before {
+  width: 100%;
 }
 
 .btn_box .btn_secondary:hover {
-  box-shadow: 0 0 1rem var(--main_color);
-  color: var(--bg_color);
+  box-shadow: none;
+  color: var(--main_color);
 }
 
 .home_img {

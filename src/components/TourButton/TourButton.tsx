@@ -6,6 +6,7 @@ import { usePortfolioTour } from '../../hooks/usePortfolioTour';
 import { navbarTheme } from '../../context/ThemeContext';
 import { ThemeProvider } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
+import { motion } from 'framer-motion';
 import styles from '../Header/Header.module.css';
 
 interface TourButtonProps {
@@ -20,12 +21,19 @@ const TourButton: React.FC<TourButtonProps> = ({ currentPage, className }) => {
   return (
     <ThemeProvider theme={navbarTheme}>
       <Tooltip title={t('tour.start')} placement="bottom" arrow>
-        <button 
+        <button
           onClick={() => startTour(currentPage)}
           aria-label={t('tour.start')}
-          className={`${styles.tour_icon} ${className}`}
+          className={`${styles.tour_icon} ${className ?? ''}`}
         >
-          <Icon path={mdiCompassOutline} size={2} />
+          <motion.span
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse' }}
+            style={{ display: 'inline-flex' }}
+          >
+            <Icon path={mdiCompassOutline} size={2} />
+          </motion.span>
         </button>
       </Tooltip>
     </ThemeProvider>

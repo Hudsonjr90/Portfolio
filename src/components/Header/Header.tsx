@@ -7,7 +7,6 @@ import {
   mdiMonitor,
   mdiMusic,
   mdiMusicOff,
-  mdiThemeLightDark,
   mdiWeatherNight,
   mdiWeatherSunny,
 } from "@mdi/js";
@@ -101,21 +100,14 @@ const Header = () => {
   )
 
   const currentThemeIcon = themeMode === 'system'
-    ? mdiThemeLightDark
+    ?  mdiMonitor
     : resolvedTheme === 'light'
       ? mdiWeatherSunny
       : mdiWeatherNight
 
   const getNextThemeMode = (currentMode: ThemeMode): ThemeMode => {
-    if (currentMode === 'system') {
-      return 'light'
-    }
-
-    if (currentMode === 'light') {
-      return 'dark'
-    }
-
-    return 'system'
+    const alternativeTheme = systemTheme === 'light' ? 'dark' : 'light'
+    return currentMode === 'system' ? alternativeTheme : 'system'
   }
 
   const currentPage = location.pathname === '/' ? 'home' : location.pathname.slice(1)
@@ -359,7 +351,22 @@ const Header = () => {
                 className={styles.sound_icon}
                 aria-label="Toggle Sound"
               >
-                {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
+                <motion.span
+                  key={soundEnabled && volume > 0 ? 'sound-on' : 'sound-off'}
+                  initial={{ scale: 0.8, opacity: 0.6 }}
+                  animate={soundEnabled && volume > 0
+                    ? { scale: 1, opacity: 1, y: [0, -4, 0] }
+                    : { scale: 1, opacity: 1, y: 0 }
+                  }
+                  whileHover={{ scale: 1.2 }}
+                  transition={soundEnabled && volume > 0
+                    ? { scale: { type: 'spring', stiffness: 400, damping: 15 }, opacity: { duration: 0.2 }, y: { duration: 0.5, repeat: Infinity, repeatDelay: 0.5, ease: 'easeInOut' } }
+                    : { type: 'spring', stiffness: 400, damping: 15 }
+                  }
+                  style={{ display: 'inline-flex' }}
+                >
+                  {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
+                </motion.span>
               </button>
 
               <button
@@ -370,7 +377,25 @@ const Header = () => {
                 className={styles.particles_icon}
                 aria-label="Toggle Particles"
               >
-                {particlesEnabled ? <BiAtom /> : <TbAtomOff />}
+                {particlesEnabled ? (
+                  <motion.span
+                    key="particles-on"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                    style={{ display: 'inline-flex' }}
+                  >
+                    <BiAtom />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="particles-off"
+                    whileHover={{ scale: 1.2, rotate: 30 }}
+                    transition={{ type: 'spring', stiffness: 400 }}
+                    style={{ display: 'inline-flex' }}
+                  >
+                    <TbAtomOff />
+                  </motion.span>
+                )}
               </button>
 
               <button
@@ -381,7 +406,23 @@ const Header = () => {
                 className={styles.particles_icon}
                 aria-label={t('navbar.theme')}
               >
-                <Icon path={currentThemeIcon} size={2} />
+                <motion.span
+                  key={themeMode}
+                  initial={{ rotate: -45, scale: 0.7, opacity: 0 }}
+                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                  whileHover={{ scale: 1.15 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 14 }}
+                  style={{ display: 'inline-flex' }}
+                >
+                  <motion.span
+                    initial={{ rotate: -20 }}
+                    animate={{ rotate: 20 }}
+                    transition={{ duration: 0.8, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse' }}
+                    style={{ display: 'inline-flex' }}
+                  >
+                    <Icon path={currentThemeIcon} size={2} />
+                  </motion.span>
+                </motion.span>
               </button>
           </li>
           {navItems.map((item, index) => (
@@ -456,7 +497,22 @@ const Header = () => {
                 handleAudio();
               }}
             >
-              {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
+              <motion.span
+                key={soundEnabled && volume > 0 ? 'sound-on' : 'sound-off'}
+                initial={{ scale: 0.8, opacity: 0.6 }}
+                animate={soundEnabled && volume > 0
+                  ? { scale: 1, opacity: 1, y: [0, -4, 0] }
+                  : { scale: 1, opacity: 1, y: 0 }
+                }
+                whileHover={{ scale: 1.2 }}
+                transition={soundEnabled && volume > 0
+                  ? { scale: { type: 'spring', stiffness: 400, damping: 15 }, opacity: { duration: 0.2 }, y: { duration: 0.5, repeat: Infinity, repeatDelay: 0.5, ease: 'easeInOut' } }
+                  : { type: 'spring', stiffness: 400, damping: 15 }
+                }
+                style={{ display: 'inline-flex' }}
+              >
+                {soundEnabled && volume > 0 ? <Icon path={mdiMusic} size={2} /> : <Icon path={mdiMusicOff} size={2} />}
+              </motion.span>
             </button>
             </Tooltip>
             {showVolumePopup && (
@@ -486,7 +542,25 @@ const Header = () => {
               aria-label="Toggle Particles"
               data-tour="particles-toggle"
             >
-              {particlesEnabled ? <Icon path={mdiAtom} size={2} /> : <TbAtomOff />}
+              {particlesEnabled ? (
+                <motion.span
+                  key="particles-on"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                  style={{ display: 'inline-flex' }}
+                >
+                  <Icon path={mdiAtom} size={2} />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="particles-off"
+                  whileHover={{ scale: 1.2, rotate: 30 }}
+                  transition={{ type: 'spring', stiffness: 400 }}
+                  style={{ display: 'inline-flex' }}
+                >
+                  <TbAtomOff />
+                </motion.span>
+              )}
             </button>
           </Tooltip>
 
@@ -511,7 +585,23 @@ const Header = () => {
                 aria-label={t('navbar.theme')}
                 aria-expanded={isThemeMenuOpen}
               >
-                <Icon path={currentThemeIcon} size={2} />
+                <motion.span
+                  key={themeMode}
+                  initial={{ rotate: -45, scale: 0.7, opacity: 0 }}
+                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                  whileHover={{ scale: 1.15 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 14 }}
+                  style={{ display: 'inline-flex' }}
+                >
+                  <motion.span
+                    initial={{ rotate: -20 }}
+                    animate={{ rotate: 20 }}
+                    transition={{ duration: 0.8, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse' }}
+                    style={{ display: 'inline-flex' }}
+                  >
+                    <Icon path={currentThemeIcon} size={2} />
+                  </motion.span>
+                </motion.span>
               </button>
               {isThemeMenuOpen && (
                 <motion.div
