@@ -1,7 +1,7 @@
 .floatingButton {
   position: fixed;
   bottom: 6rem;
-  right: 5rem;
+  right: max(5rem, calc((100vw - 1700px) / 2 + 2rem));
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -30,7 +30,7 @@
 .panel {
   position: fixed;
   bottom: 5.5rem;
-  right: 2rem;
+  right: max(2rem, calc((100vw - 1700px) / 2 + 2rem));
   width: 320px;
   background: var(--bg_color);
   border-radius: 12px;
