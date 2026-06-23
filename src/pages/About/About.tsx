@@ -3,7 +3,6 @@ import React, { useState, useEffect, useMemo, Suspense, useCallback } from "reac
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import myself from "/imgs/my.webp";
 import about from "/public/imgs/about-me.webp";
 
 const ParticlesB = React.lazy(
@@ -15,7 +14,6 @@ const About = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
-  const [isImageHovered, setIsImageHovered] = useState(false);
   const aboutText = t("about.text");
 
   const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
@@ -66,11 +64,9 @@ const About = () => {
               onViewportEnter={() => setIsInView(true)}
             >
               <img
-                src={isImageHovered ? myself : about}
+                src={about}
                 alt="about_img"
                 onLoad={setIsLoadedCallback}
-                onMouseEnter={() => setIsImageHovered(true)}
-                onMouseLeave={() => setIsImageHovered(false)}
                 width="100%"
                 height="auto"
                 loading="eager"
