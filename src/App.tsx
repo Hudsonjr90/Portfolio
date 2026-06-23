@@ -29,9 +29,9 @@ import 'devicon/devicon.min.css';
 function App() {
   const location = useLocation()
   const { t } = useTranslation()
-  
+
   useSEO()
-  
+
   useStructuredData()
 
   usePerformanceMonitoring((metrics) => {
@@ -39,7 +39,7 @@ function App() {
       console.log('Performance metrics:', metrics);
     }
   })
-  
+
   useResourceLoading()
 
   const isBlogPage = location.pathname === '/blog' || location.pathname.startsWith('/blog/')
@@ -54,12 +54,12 @@ function App() {
           <div className="container" id="container">
             <AnimatePresence mode="wait">
               <Suspense fallback={
-                <div style={{ 
-                  display: 'flex', 
-                  justifyContent: 'center', 
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
                   alignItems: 'center',
                   height: '50vh',
-                  color: 'var(--main_color)' 
+                  color: 'var(--main_color)'
                 }}>
                   {t("home.loading")}
                 </div>

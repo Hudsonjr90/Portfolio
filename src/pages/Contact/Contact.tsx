@@ -362,7 +362,7 @@ const Contact: React.FC = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  rows={6}
+                  rows={13}
                   className={styles.textarea}
                   placeholder={t("contact.messagePlaceholder")}
                   required

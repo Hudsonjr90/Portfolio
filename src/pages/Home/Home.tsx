@@ -13,9 +13,10 @@ import styles from "./Home.module.css";
 import "atropos/css";
 import { Atropos } from "atropos/react";
 import resumeServer from "../../data/resumeServer";
-import Footer from "../../components/Footer";
 import { useTheme } from "../../context/ThemeContext";
 import { FaArrowUpRightFromSquare, FaRegFilePdf } from "react-icons/fa6";
+import { FaRegCopyright } from "react-icons/fa";
+import { getCurrentYear } from "../../utils/functions";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -176,122 +177,129 @@ const Home = React.memo(() => {
     <>
       <Transition onAnimationComplete={() => {}}>
         <motion.section className={styles.home} data-tour="hero-section">
-          <motion.div className={styles.home_content}>
-            <Suspense fallback={<div>{t("home.loading")}</div>}>
-              <ParticlesA />
-            </Suspense>
+          <Suspense fallback={<div>{t("home.loading")}</div>}>
+            <ParticlesA />
+          </Suspense>
 
-            <motion.div
-              animate={{ y: [30, 150, 10], opacity: 1, scale: 1 }}
-              transition={{
-                duration: 3,
-                delay: 0.3,
-                ease: [0.5, 0.71, 1, 1.5],
-              }}
-              initial={{ opacity: 0, scale: 0.5 }}
-              data-tour="name-title"
-            >
-              <h1 
-                className={styles.text_reveal}
-                onMouseEnter={() => initialAnimationComplete && setIsHovered(true)}
-                onMouseLeave={() => initialAnimationComplete && setIsHovered(false)}
-                style={{ 
-                  cursor: initialAnimationComplete ? 'pointer' : 'default',
-                  userSelect: 'none'
+          <div className={`content-wrapper ${styles.hero_wrapper}`}>
+            <motion.div className={styles.home_content}>
+              <motion.div
+                animate={{ y: [30, 150, 10], opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 3,
+                  delay: 0.3,
+                  ease: [0.5, 0.71, 1, 1.5],
                 }}
+                initial={{ opacity: 0, scale: 0.5 }}
+                data-tour="name-title"
               >
-                {displayedText}
-              </h1>
-            </motion.div>
-
-            <motion.div
-              animate={{ x: [30, 150, 10], opacity: 1, scale: 1 }}
-              transition={{
-                duration: 3,
-                delay: 0.3,
-                ease: [0.5, 0.71, 1, 1.5],
-              }}
-              initial={{ opacity: 0, scale: 0.5 }}
-              className={styles.transparent_text}
-              data-tour="typewriter"
-              onAnimationComplete={() => setTextAnimation(true)}
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentTextIndex}
-                  initial={{
-                    opacity: 0,
-                    rotateX: 90,
-                    y: 50,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    rotateX: 0,
-                    y: 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    rotateX: -90,
-                    y: -50,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    ease: "easeInOut",
-                  }}
+                <h1
+                  className={styles.text_reveal}
+                  onMouseEnter={() => initialAnimationComplete && setIsHovered(true)}
+                  onMouseLeave={() => initialAnimationComplete && setIsHovered(false)}
                   style={{
-                    transformOrigin: "center center",
-                    display: "inline-block",
-                    minHeight: "1.2em",
-                    color: "var(--main_color)",
+                    cursor: initialAnimationComplete ? "pointer" : "default",
+                    userSelect: "none",
                   }}
                 >
-                  {typedStrings[currentTextIndex]}
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
+                  {displayedText}
+                </h1>
+              </motion.div>
 
-            <motion.div className={styles.btn_box} data-tour="resume-button">
-              <button className={styles.btn} onClick={handleOpenModal}>
-                {t("home.resume")} <FaRegFilePdf />
-              </button>
-              <a
-                className={`${styles.btn} ${styles.btn_secondary}`}
-                href="/blog"
-                rel="noopener noreferrer"
-                data-tour="blog-button"
+              <motion.div
+                animate={{ x: [30, 150, 10], opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 3,
+                  delay: 0.3,
+                  ease: [0.5, 0.71, 1, 1.5],
+                }}
+                initial={{ opacity: 0, scale: 0.5 }}
+                className={styles.transparent_text}
+                data-tour="typewriter"
+                onAnimationComplete={() => setTextAnimation(true)}
               >
-                {t("menu.blog")} <FaArrowUpRightFromSquare />
-              </a>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentTextIndex}
+                    initial={{
+                      opacity: 0,
+                      rotateX: 90,
+                      y: 50,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      rotateX: 0,
+                      y: 0,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      rotateX: -90,
+                      y: -50,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      ease: "easeInOut",
+                    }}
+                    style={{
+                      transformOrigin: "center center",
+                      display: "inline-block",
+                      minHeight: "1.2em",
+                      color: "var(--main_color)",
+                    }}
+                  >
+                    {typedStrings[currentTextIndex]}
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+
+              <motion.div className={styles.btn_box} data-tour="resume-button">
+                <button className={styles.btn} onClick={handleOpenModal}>
+                  {t("home.resume")} <FaRegFilePdf />
+                </button>
+                <a
+                  className={`${styles.btn} ${styles.btn_secondary}`}
+                  href="/blog"
+                  rel="noopener noreferrer"
+                  data-tour="blog-button"
+                >
+                  {t("menu.blog")} <FaArrowUpRightFromSquare />
+                </a>
+              </motion.div>
+
+              <motion.p
+                className={styles.copyright}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+              >
+                <FaRegCopyright /> 2012 - {getCurrentYear()}
+              </motion.p>
             </motion.div>
-          </motion.div>
 
-          <motion.div
-            className={styles.home_img}
-            initial={{ opacity: 0, y: "100%" }}
-            animate={{ opacity: 1, y: "0%" }}
-            transition={{
-              duration: 2,
-              delay: 0.7,
-              ease: [0.2, 0, 0.2, 1],
-            }}
-            data-tour="profile-image"
-            onMouseEnter={() => setIsImageHovered(true)}
-            onMouseLeave={() => setIsImageHovered(false)}
-            onPointerEnter={() => setIsImageHovered(true)}
-            onPointerLeave={() => setIsImageHovered(false)}
-          >
-            <Atropos shadow={false} highlight={false}>
-              <img
-                src={homeImages[currentImageIndex]}
-                alt="Hudson Kennedy - Desenvolvedor Full Stack"
-                loading="eager"
-              />
-            </Atropos>
-          </motion.div>
-
-          <motion.div>
-            <Footer />
-          </motion.div>
+            <motion.div
+              className={styles.home_img}
+              initial={{ opacity: 0, y: "100%" }}
+              animate={{ opacity: 1, y: "0%" }}
+              transition={{
+                duration: 2,
+                delay: 0.7,
+                ease: [0.2, 0, 0.2, 1],
+              }}
+              data-tour="profile-image"
+              onMouseEnter={() => setIsImageHovered(true)}
+              onMouseLeave={() => setIsImageHovered(false)}
+              onPointerEnter={() => setIsImageHovered(true)}
+              onPointerLeave={() => setIsImageHovered(false)}
+            >
+              <Atropos shadow={false} highlight={false}>
+                <img
+                  src={homeImages[currentImageIndex]}
+                  alt="Hudson Kennedy - Desenvolvedor Full Stack"
+                  loading="eager"
+                />
+              </Atropos>
+            </motion.div>
+          </div>
         </motion.section>
       </Transition>
       <Modal
