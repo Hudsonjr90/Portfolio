@@ -404,21 +404,44 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Seção da Animação */}
-          <div className={styles.mediaSection}>
+          <div className={styles.container_lottie}>
+             <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.8,
+              y: 60,
+              rotate: -8,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              rotate: 0,
+            }}
+            transition={{
+              duration: 1.2,
+              delay: 0.3,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            whileHover={{
+              scale: 1.05,
+              rotate: 2,
+            }}
+            className={styles.lottieMotion}
+          >
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, y: 60, rotate: -8 }}
-              animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
-              transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              className={styles.lottieMotion}
+              animate={{
+                y: [0, -12, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             >
-              <motion.div
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Lottie animationData={animationData} loop={true} />
-              </motion.div>
+              <Lottie animationData={animationData} loop={true} />
             </motion.div>
+          </motion.div>
           </div>
         </motion.div>
       </section>
