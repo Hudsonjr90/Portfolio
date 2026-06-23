@@ -63,10 +63,10 @@
     padding: 8rem 4% 4rem;
   }
 
-  .container_img  {
+  .container_img img {
     width: 60vw;
     max-width: 300px;
-    margin-bottom: -2rem;
+    margin-bottom: 2rem;
   }
 
   .about_content {
@@ -92,10 +92,6 @@
     padding: 6rem 2% 2rem;
   }
 
-  .container_lottie  {
-    width: 70vw;
-    margin-bottom: -3rem;
-  }
 
   .about_content h2 {
     font-size: 2rem;
@@ -119,7 +115,7 @@
     line-height: 1.5;
   }
 
-  .container_lottie {
+  .container_img {
    display: none;
   }
 }
