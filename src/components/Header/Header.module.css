@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   left: 0;
   position: fixed;
-  padding: 0.5rem 5%;
+  padding: 0.5rem max(5%, calc((100% - 1700px) / 2));
   top: 0;
   width: 100%;
   z-index: 1000;
