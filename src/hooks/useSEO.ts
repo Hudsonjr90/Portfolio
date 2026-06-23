@@ -51,7 +51,7 @@ export const useSEO = () => {
     updateMetaTag(
       "name",
       "twitter:image",
-      seoData.image || "https://hudsonkennedy.dev.br/imgs/about.webp"
+      seoData.image || "https://hudsonkennedy.dev.br/imgs/about-me.webp"
     );
     updateMetaTag("name", "twitter:image:alt", seoData.title);
 
