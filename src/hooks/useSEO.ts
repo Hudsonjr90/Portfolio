@@ -120,7 +120,7 @@ export const useSEO = () => {
           title: `${t("menu.about")} | H.K Dev`,
           description: t("seo.about.description"),
           keywords: t("seo.about.keywords"),
-          image: `${baseUrl}/imgs/about.webp`,
+          image: `${baseUrl}/imgs/about-me.webp`,
           url: currentUrl,
         };
 
@@ -129,7 +129,7 @@ export const useSEO = () => {
           title: `${t("menu.skills")} | H.K Dev`,
           description: t("seo.skills.description"),
           keywords: t("seo.skills.keywords"),
-          image: `${baseUrl}/imgs/my.webp`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
