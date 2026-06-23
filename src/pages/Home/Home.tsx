@@ -5,6 +5,7 @@ import React, {
   useEffect,
   Suspense,
 } from "react";
+import { NavLink } from "react-router-dom";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,11 +13,24 @@ import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
 import "atropos/css";
 import { Atropos } from "atropos/react";
+import Tooltip from "@mui/material/Tooltip";
+import Zoom from "@mui/material/Zoom";
+import { ThemeProvider } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
 import resumeServer from "../../data/resumeServer";
-import { useTheme } from "../../context/ThemeContext";
 import { FaArrowUpRightFromSquare, FaRegFilePdf } from "react-icons/fa6";
+import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { FaRegCopyright } from "react-icons/fa";
 import { getCurrentYear } from "../../utils/functions";
+import {
+  whatsappTheme,
+  emailTheme,
+  linkedinTheme,
+  githubTheme,
+} from "../../context/ThemeContext";
+import myself from "/imgs/my.webp";
+import about from "/public/imgs/about-me.webp";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -24,26 +38,17 @@ const ParticlesA = React.lazy(
 
 const Home = React.memo(() => {
   const { t, i18n } = useTranslation();
-  const { resolvedTheme } = useTheme();
   const [showModal, setShowModal] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [textAnimation, setTextAnimation] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isProfileImageHovered, setIsProfileImageHovered] = useState(false);
+  const [isSocialLoaded, setIsSocialLoaded] = useState(false);
   const [initialAnimationComplete, setInitialAnimationComplete] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isImageHovered, setIsImageHovered] = useState(false);
   const targetText = "Hudson Kennedy";
 
-  const homeImages = useMemo(
-    () => [
-      "/imgs/my.webp",
-      "/imgs/about.webp",
-      "/imgs/model.webp",
-      resolvedTheme === "light" ? "/imgs/logo.webp" : "/imgs/logow.webp",
-    ],
-    [resolvedTheme],
-  );
+
 
   const getResumeLanguage = useCallback(() => {
     const currentLang = i18n.language;
@@ -164,14 +169,15 @@ const Home = React.memo(() => {
   }, [typedStrings.length, textAnimation]);
 
   useEffect(() => {
-    if (isImageHovered) return;
+    const timer = setTimeout(() => {
+      setIsSocialLoaded(true);
+    }, 200);
 
-    const intervalId = window.setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % homeImages.length);
-    }, 3500);
+    return () => clearTimeout(timer);
+  }, []);
 
-    return () => window.clearInterval(intervalId);
-  }, [isImageHovered, homeImages.length]);
+
+
 
   return (
     <>
@@ -266,11 +272,193 @@ const Home = React.memo(() => {
                 </a>
               </motion.div>
 
+              <motion.div
+                className={styles.socialMedia}
+                data-tour="home-social-media"
+                initial="hidden"
+                animate={isSocialLoaded ? "visible" : "hidden"}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.2,
+                      delayChildren: 0.3,
+                    },
+                  },
+                }}
+              >
+                <motion.div
+                  variants={{
+                    hidden: {
+                      opacity: 0,
+                      y: 30,
+                      scale: 0.5,
+                      rotate: -45,
+                    },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      rotate: 0,
+                      transition: {
+                        type: "spring",
+                        stiffness: 120,
+                        damping: 8,
+                      },
+                    },
+                  }}
+                >
+                  <ThemeProvider theme={whatsappTheme}>
+                    <NavLink
+                      to="https://api.whatsapp.com/send?phone=5521969609121"
+                      className={styles.whatsapp}
+                      target="_blank"
+                    >
+                      <Tooltip
+                        TransitionComponent={Zoom}
+                        title="Whatsapp"
+                        placement="top"
+                        arrow
+                      >
+                        <IconButton>
+                          <FaWhatsapp className={styles.socialIcon} />
+                        </IconButton>
+                      </Tooltip>
+                    </NavLink>
+                  </ThemeProvider>
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: {
+                      opacity: 0,
+                      y: 30,
+                      scale: 0.5,
+                      rotate: -45,
+                    },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      rotate: 0,
+                      transition: {
+                        type: "spring",
+                        stiffness: 120,
+                        damping: 8,
+                      },
+                    },
+                  }}
+                >
+                  <ThemeProvider theme={emailTheme}>
+                    <NavLink
+                      to="mailto:hudsonhugo90@gmail.com?body=Olá Hudson, podemos conversar?&subject=Contato pelo Portfólio"
+                      className={styles.email}
+                      target="_blank"
+                    >
+                      <Tooltip
+                        TransitionComponent={Zoom}
+                        title="Email"
+                        placement="top"
+                        arrow
+                      >
+                        <IconButton>
+                          <MdEmail className={styles.socialIcon} />
+                        </IconButton>
+                      </Tooltip>
+                    </NavLink>
+                  </ThemeProvider>
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: {
+                      opacity: 0,
+                      y: 30,
+                      scale: 0.5,
+                      rotate: -45,
+                    },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      rotate: 0,
+                      transition: {
+                        type: "spring",
+                        stiffness: 120,
+                        damping: 8,
+                      },
+                    },
+                  }}
+                >
+                  <ThemeProvider theme={linkedinTheme}>
+                    <NavLink
+                      to="https://www.linkedin.com/in/hudsonkennedyjr"
+                      className={styles.linkedin}
+                      target="_blank"
+                    >
+                      <Tooltip
+                        TransitionComponent={Zoom}
+                        title="Linkedin"
+                        placement="top"
+                        arrow
+                      >
+                        <IconButton>
+                          <FaLinkedin className={styles.socialIcon} />
+                        </IconButton>
+                      </Tooltip>
+                    </NavLink>
+                  </ThemeProvider>
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: {
+                      opacity: 0,
+                      y: 30,
+                      scale: 0.5,
+                      rotate: -45,
+                    },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      rotate: 0,
+                      transition: {
+                        type: "spring",
+                        stiffness: 120,
+                        damping: 8,
+                      },
+                    },
+                  }}
+                >
+                  <ThemeProvider theme={githubTheme}>
+                    <NavLink
+                      to="https://github.com/Hudsonjr90"
+                      className={styles.github}
+                      target="_blank"
+                    >
+                      <Tooltip
+                        TransitionComponent={Zoom}
+                        title="Github"
+                        placement="top"
+                        arrow
+                      >
+                        <IconButton>
+                          <FaGithub className={styles.socialIcon} />
+                        </IconButton>
+                      </Tooltip>
+                    </NavLink>
+                  </ThemeProvider>
+                </motion.div>
+              </motion.div>
+
               <motion.p
                 className={styles.copyright}
+                data-tour="home-copyright"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+                transition={{ duration: 0.6, delay: 1.25, ease: "easeOut" }}
               >
                 <FaRegCopyright /> 2012 - {getCurrentYear()}
               </motion.p>
@@ -286,14 +474,12 @@ const Home = React.memo(() => {
                 ease: [0.2, 0, 0.2, 1],
               }}
               data-tour="profile-image"
-              onMouseEnter={() => setIsImageHovered(true)}
-              onMouseLeave={() => setIsImageHovered(false)}
-              onPointerEnter={() => setIsImageHovered(true)}
-              onPointerLeave={() => setIsImageHovered(false)}
+              onMouseEnter={() => setIsProfileImageHovered(true)}
+              onMouseLeave={() => setIsProfileImageHovered(false)}
             >
               <Atropos shadow={false} highlight={false}>
                 <img
-                  src={homeImages[currentImageIndex]}
+                  src={isProfileImageHovered ? myself : about}
                   alt="Hudson Kennedy - Desenvolvedor Full Stack"
                   loading="eager"
                 />

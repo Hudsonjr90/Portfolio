@@ -9,8 +9,8 @@
 }
 
 .container_img img {
+  width: clamp(32rem, 28vw, 52rem);
   margin-bottom: 3rem;
-  width: 20vw;
   border: 1px solid var(--main_color);
   border-radius: 50%;
   user-select: none;
@@ -64,7 +64,7 @@
   }
 
   .container_img img {
-    width: 60vw;
+    width: clamp(32rem, 28vw, 52rem);
     max-width: 300px;
     margin-bottom: 2rem;
   }

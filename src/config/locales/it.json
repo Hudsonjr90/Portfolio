@@ -400,9 +400,13 @@
       "title": "Pulsante CV",
       "description": "Clicca qui per visualizzare o scaricare il mio curriculum completo in formato PDF."
     },
-    "footer": {
-      "title": "Piè di Pagina",
-      "description": "Informazioni sugli anni di carriera e diritti d'autore."
+    "homeSocialMedia": {
+      "title": "Social Media",
+      "description": "Questi sono i miei canali di contatto diretto per conversazioni rapide e networking professionale."
+    },
+    "homeCopyright": {
+      "title": "Copyright",
+      "description": "Questo blocco mostra il periodo della mia attività professionale e le informazioni di copyright del sito."
     },
     "about": {
       "title": "Chi Sono",

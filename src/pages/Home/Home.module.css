@@ -16,7 +16,9 @@
 }
 
 .home_content {
-  height: 30rem;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes animate {
@@ -64,11 +66,63 @@
   will-change: transform, opacity; /* Optimize for composition */
 }
 
+.socialMedia {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+
+.socialMedia a {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialMedia a:hover {
+  transform: translateY(-3px);
+  will-change: transform;
+}
+
+.socialMedia :global(.MuiIconButton-root) {
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 0;
+}
+
+.socialIcon {
+  font-size: 2.2rem !important;
+  transition: all 0.3s ease;
+}
+
+.whatsapp :global(.MuiIconButton-root) {
+  background: #25d366 !important;
+  color: #fff !important;
+}
+
+.email :global(.MuiIconButton-root) {
+  background: #f65151 !important;
+  color: #fff !important;
+}
+
+.linkedin :global(.MuiIconButton-root) {
+  background: #2867b2 !important;
+  color: #fff !important;
+}
+
+.github :global(.MuiIconButton-root) {
+  background: #181717 !important;
+  color: #fff !important;
+}
+
 .copyright {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   margin-top: 1.8rem;
+  padding-bottom: 0.4rem;
   font-size: 1.5rem;
   color: var(--text_color);
 }
@@ -188,6 +242,10 @@
     justify-content: center;
   }
 
+  .socialMedia {
+    justify-content: center;
+  }
+
   .copyright {
     justify-content: center;
     width: 100%;
@@ -225,5 +283,18 @@
   .btn_box .btn {
     font-size: 1.6rem;
     padding: 1.2rem 3rem;
+  }
+
+  .socialMedia {
+    gap: 1rem;
+  }
+
+  .socialMedia :global(.MuiIconButton-root) {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .socialIcon {
+    font-size: 1.9rem !important;
   }
 }

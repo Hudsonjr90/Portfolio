@@ -18,7 +18,6 @@ export const usePortfolioTour = () => {
   const [tourCompleted, setTourCompleted] = useState<boolean>(false);
 
   useEffect(() => {
-    // Verifica se o tour já foi completado
     const tourStatus = localStorage.getItem('portfolio-tour-completed');
     setTourCompleted(tourStatus === 'true');
   }, []);
@@ -46,7 +45,6 @@ export const usePortfolioTour = () => {
   };
 
   const getTourSteps = (page: string): TourStep[] => {
-    // Elementos comuns apenas para a página home
     const homeHeaderSteps: TourStep[] = [
       {
         element: '[data-tour="navbar"]',
@@ -135,12 +133,21 @@ export const usePortfolioTour = () => {
           }
         },
         {
-          element: '[data-tour="footer"]',
+          element: '[data-tour="home-social-media"]',
           popover: {
-            title: t('tour.footer.title'),
-            description: t('tour.footer.description'),
+            title: t('tour.homeSocialMedia.title'),
+            description: t('tour.homeSocialMedia.description'),
             side: 'top',
             align: 'center'
+          }
+        },
+        {
+          element: '[data-tour="home-copyright"]',
+          popover: {
+            title: t('tour.homeCopyright.title'),
+            description: t('tour.homeCopyright.description'),
+            side: 'bottom',
+            align: 'start'
           }
         }
       ],

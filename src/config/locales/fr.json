@@ -400,9 +400,13 @@
       "title": "Bouton CV",
       "description": "Cliquez ici pour voir ou télécharger mon CV complet au format PDF."
     },
-    "footer": {
-      "title": "Pied de Page",
-      "description": "Informations sur les années de carrière et les droits d'auteur."
+    "homeSocialMedia": {
+      "title": "Réseaux Sociaux",
+      "description": "Voici mes canaux de contact direct pour échanger rapidement et développer le networking professionnel."
+    },
+    "homeCopyright": {
+      "title": "Droits d'Auteur",
+      "description": "Ce bloc affiche ma période d'activité professionnelle et les informations de copyright du site."
     },
     "about": {
       "title": "À Propos de Moi",

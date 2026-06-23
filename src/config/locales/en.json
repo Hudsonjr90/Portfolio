@@ -400,9 +400,13 @@
       "title": "Resume Button",
       "description": "Click here to view or download my complete resume in PDF format."
     },
-    "footer": {
-      "title": "Footer Section",
-      "description": "Information about career years and copyright."
+    "homeSocialMedia": {
+      "title": "Social Media",
+      "description": "These are my direct communication channels for quick contact and professional networking."
+    },
+    "homeCopyright": {
+      "title": "Copyright",
+      "description": "This block shows my active professional timeline and the site copyright information."
     },
     "about": {
       "title": "About Me",
