@@ -267,6 +267,19 @@
     "subtitle": "Tecnologías Utilizadas",
     "clickToFlip": "Haz clic para voltear",
     "inDevelopment": "En desarrollo",
+    "featuredTitle": "Proyectos Destacados",
+    "featuredSubtitle": "Una selección curada con mayor impacto visual y técnico.",
+    "filterByStack": "Filtrar proyectos",
+    "filterByStatus": "Estado",
+    "allTechnologies": "Todas las tecnologías",
+    "allStatuses": "Todos los estados",
+    "statusOnline": "En línea",
+    "statusInProgress": "En desarrollo",
+    "clearFilters": "Limpiar filtros",
+    "noResults": "No se encontraron proyectos con los filtros seleccionados.",
+    "pageInfo": "Página {{current}} de {{total}}",
+    "viewDeploy": "Deploy",
+    "viewCode": "Code",
     "data": [
       {
         "description": "Sitio web simple, siguiendo la orientación del curso orientado a objetos en Udemy."

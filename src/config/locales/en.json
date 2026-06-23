@@ -267,6 +267,19 @@
     "subtitle": "Used Technologies",
     "clickToFlip": "Click to flip",
     "inDevelopment": "In development",
+    "featuredTitle": "Featured Projects",
+    "featuredSubtitle": "A curated selection with stronger visual and technical impact.",
+    "filterByStack": "Filter projects",
+    "filterByStatus": "Status",
+    "allTechnologies": "All technologies",
+    "allStatuses": "All statuses",
+    "statusOnline": "Online",
+    "statusInProgress": "In development",
+    "clearFilters": "Clear filters",
+    "noResults": "No projects found for the selected filters.",
+    "pageInfo": "Page {{current}} of {{total}}",
+    "viewDeploy": "Deploy",
+    "viewCode": "Code",
     "data": [
       {
         "description": "Simple website, following object-oriented Course guidance on Udemy."

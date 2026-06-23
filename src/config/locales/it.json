@@ -267,6 +267,19 @@
     "subtitle": "Tecnologie Utilizzate",
     "clickToFlip": "Clicca per girare",
     "inDevelopment": "In sviluppo",
+    "featuredTitle": "Progetti in Evidenza",
+    "featuredSubtitle": "Una selezione curata con maggiore impatto visivo e tecnico.",
+    "filterByStack": "Filtra progetti",
+    "filterByStatus": "Stato",
+    "allTechnologies": "Tutte le tecnologie",
+    "allStatuses": "Tutti gli stati",
+    "statusOnline": "Online",
+    "statusInProgress": "In sviluppo",
+    "clearFilters": "Pulisci filtri",
+    "noResults": "Nessun progetto trovato con i filtri selezionati.",
+    "pageInfo": "Pagina {{current}} di {{total}}",
+    "viewDeploy": "Deploy",
+    "viewCode": "Code",
     "data": [
       {
         "description": "Sito web semplice, seguendo le linee guida del corso orientato agli oggetti su Udemy"
