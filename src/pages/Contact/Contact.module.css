@@ -110,8 +110,8 @@
 .contactForm {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  flex-grow: 1;
+  gap: 1rem;
+  height: 10vh;
 }
 
 .formGroup {
@@ -280,11 +280,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .contact {
-    padding: 0 1rem;
-    min-height: 100vh;
-    padding-bottom: 2rem;
-  }
 
   .contact .heading {
     font-size: 2.8rem;
@@ -301,14 +296,6 @@
     width: 3rem;
   }
 
-  .contentContainer {
-    margin: 2rem auto 3rem;
-    gap: 2rem;
-    max-width: 95%;
-    min-height: 520px;
-    grid-template-columns: 1fr;
-  }
-
   .formSection {
     padding: 1.5rem;
     max-width: 100%;
@@ -316,10 +303,6 @@
     box-sizing: border-box;
     height: 100%;
     min-height: 520px;
-  }
-
-  .container_lottie {
-    display: none;
   }
 
   .formTitle {
@@ -349,17 +332,23 @@
     font-size: 2.4rem;
     margin-top: 12rem;
   }
+ 
+
+   .container_lottie {
+    display: none;
+  }
+
 
   .social_media a {
     height: 2.8rem;
     width: 2.8rem;
   }
 
-  .contentContainer {
-    margin: 1.5rem auto 2rem;
-    gap: 1.8rem;
-    max-width: 100%;
-    min-height: 500px;
+   .contentContainer {
+    margin: 2rem auto 3rem;
+    gap: 2rem;
+    max-width: 95%;
+    grid-template-columns: 1fr;
   }
 
   .formSection {
