@@ -265,6 +265,7 @@
   .home_img img {
     width: 220px;
     height: 220px;
+    margin-top: 10rem;
   }
 
   .home_content {

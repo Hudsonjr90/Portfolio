@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo, Suspense, useCallback } from "reac
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import about from "/public/imgs/about-me.webp";
+import about from "/imgs/about-me.webp";
 
 const ParticlesB = React.lazy(
   () => import("../../components/Particles/ParticlesB"),

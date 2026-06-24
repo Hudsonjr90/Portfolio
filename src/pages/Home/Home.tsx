@@ -30,7 +30,7 @@ import {
   githubTheme,
 } from "../../context/ThemeContext";
 import myself from "/imgs/my.webp";
-import about from "/public/imgs/about-me.webp";
+import about from "/imgs/about-me.webp";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")

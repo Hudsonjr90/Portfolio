@@ -890,7 +890,7 @@ label {
     width: 100%;
     z-index: 1000;
     justify-content: space-between;
-    padding: 0.5rem 3%;
+    padding: 0.1rem 3%;
   }
 
   .header .logo {
