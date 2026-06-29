@@ -88,6 +88,13 @@
 }
 
 @media screen and (max-width: 480px) {
+    .container_img img {
+    width: clamp(25rem, 28vw, 52rem);
+    max-width: 250px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
   .about {
     padding: 6rem 2% 2rem;
   }
@@ -103,6 +110,7 @@
 }
 
 @media screen and (max-width: 380px) {
+
   .about_content h2 {
     font-size: 1.5rem;
   }
