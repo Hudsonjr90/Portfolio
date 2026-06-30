@@ -16,9 +16,6 @@
   transform: translateX(-50%);
   width: min(120rem, 92vw);
   height: 60rem;
-  background:
-    radial-gradient(circle at 18% 24%, rgba(var(--main_color_rgb), 0.2), transparent 48%),
-    radial-gradient(circle at 84% 65%, rgba(var(--main_color_rgb), 0.16), transparent 50%);
   pointer-events: none;
   filter: blur(2px);
   z-index: 0;
@@ -146,11 +143,10 @@
 .formTitle {
   font-size: clamp(1.9rem, 2.3vw, 2.3rem);
   color: var(--main_color);
-  margin-bottom: 1.8rem;
+  margin-bottom: 2.5rem;
   font-weight: 700;
   text-align: left;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
   position: relative;
   z-index: 1;
 }
@@ -184,7 +180,6 @@
   font-weight: 700;
   color: var(--text_color);
   font-size: 1.05rem;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
   opacity: 0.9;
 }
@@ -231,7 +226,6 @@
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   margin-top: 0.8rem;
@@ -379,7 +373,7 @@
     width: 100%;
     box-sizing: border-box;
     height: 100%;
-    min-height: 540px;
+    min-height: 450px;
   }
 
   .formTitle {
@@ -425,10 +419,12 @@
   .social_media a {
     height: 3.2rem;
     width: 3.2rem;
+    margin-top: -3rem;
+    margin-bottom: 2rem;
   }
 
    .contentContainer {
-    margin: 2rem auto 3rem;
+    margin: -3rem auto 3rem;
     gap: 2rem;
     max-width: 95%;
     grid-template-columns: 1fr;
@@ -436,7 +432,7 @@
 
   .formSection {
     padding: 1.2rem;
-    min-height: 520px;
+    height: 250px;
   }
 
   .formTitle {
