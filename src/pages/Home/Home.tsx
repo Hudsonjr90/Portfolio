@@ -29,8 +29,7 @@ import {
   linkedinTheme,
   githubTheme,
 } from "../../context/ThemeContext";
-import myself from "/imgs/my.webp";
-import about from "/imgs/about-me.webp";
+import about from "/imgs/home.webp";
 
 const ParticlesA = React.lazy(
   () => import("../../components/Particles/ParticlesA")
@@ -43,7 +42,6 @@ const Home = React.memo(() => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [textAnimation, setTextAnimation] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [isProfileImageHovered, setIsProfileImageHovered] = useState(false);
   const [isSocialLoaded, setIsSocialLoaded] = useState(false);
   const [initialAnimationComplete, setInitialAnimationComplete] = useState(false);
   const targetText = "Hudson Kennedy";
@@ -474,12 +472,10 @@ const Home = React.memo(() => {
                 ease: [0.2, 0, 0.2, 1],
               }}
               data-tour="profile-image"
-              onMouseEnter={() => setIsProfileImageHovered(true)}
-              onMouseLeave={() => setIsProfileImageHovered(false)}
             >
               <Atropos shadow={false} highlight={false}>
                 <img
-                  src={isProfileImageHovered ? myself : about}
+                  src={about}
                   alt="Hudson Kennedy - Desenvolvedor Full Stack"
                   loading="eager"
                 />
