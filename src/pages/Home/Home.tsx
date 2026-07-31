@@ -9,7 +9,6 @@ import { NavLink } from "react-router-dom";
 import Transition from "../../components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-import Modal from "../../components/Modal/Modal";
 import styles from "./Home.module.css";
 import "atropos/css";
 import { Atropos } from "atropos/react";
@@ -37,7 +36,6 @@ const ParticlesA = React.lazy(
 
 const Home = React.memo(() => {
   const { t, i18n } = useTranslation();
-  const [showModal, setShowModal] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [textAnimation, setTextAnimation] = useState(false);
@@ -69,14 +67,6 @@ const Home = React.memo(() => {
     const lang = getResumeLanguage();
     return resumeServer[lang];
   }, [getResumeLanguage]);
-
-  const handleOpenModal = useCallback(() => {
-    setShowModal(true);
-  }, []);
-
-  const handleCloseModal = useCallback(() => {
-    setShowModal(false);
-  }, []);
 
   const typedStrings = useMemo(() => {
     const result = t("home.roles", { returnObjects: true });
@@ -257,9 +247,9 @@ const Home = React.memo(() => {
               </motion.div>
 
               <motion.div className={styles.btn_box} data-tour="resume-button">
-                <button className={styles.btn} onClick={handleOpenModal}>
+                <a className={styles.btn} href={currentResume.pdf} download>
                   {t("home.resume")} <FaRegFilePdf />
-                </button>
+                </a>
                 <a
                   className={`${styles.btn} ${styles.btn_secondary}`}
                   href="/blog"
@@ -484,14 +474,6 @@ const Home = React.memo(() => {
           </div>
         </motion.section>
       </Transition>
-      <Modal
-        show={showModal}
-        onClose={handleCloseModal}
-        title={t("home.resume")}
-        subtitle={t("home.resumeSubtitle")}
-        images={currentResume.images}
-        pdf={currentResume.pdf}
-      />
     </>
   );
 });
