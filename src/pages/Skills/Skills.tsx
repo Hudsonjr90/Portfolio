@@ -21,13 +21,14 @@ const ParticlesB = React.lazy(
 
 const categoryOptions = [
   { value: "all", label: "All" },
-  { value: "frontend", label: "Frontend" },
   { value: "backend", label: "Backend" },
   { value: "database", label: "Database" },
-  { value: "ia", label: "IA" },
-  { value: "tools", label: "Tools" },
   { value: "deploy", label: "Deploy" },
   { value: "design", label: "Design" },
+  { value: "devops", label: "DevOps" },
+  { value: "frontend", label: "Frontend" },
+  { value: "ia", label: "IA" },
+  { value: "tools", label: "Tools" },
 ];
 
 type ViewMode = 'chart' | 'grid';
@@ -247,126 +248,140 @@ const Skills = () => {
             </TooltipThemeProvider>
           </div>
         </div>
-        {visibleIcons.length === 0 && viewMode === "grid" ? (
-          <motion.div
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            transition={{
-              duration: 2.5,
-              delay: 0.3,
-              ease: [0.3, 0, 0.2, 1],
-            }}
-            className={styles.no_results}
-          >
-            {noResults && <p>{t("skills.noResults")}</p>}
-          </motion.div>
-        ) : (
-          <AnimatePresence mode="wait">
-            {viewMode === "grid" && (
-              <>
-                <motion.div
-                  initial={{ opacity: 0, x: "-100%" }}
-                  animate={{ opacity: 1, x: "0%" }}
-                  transition={{
-                    duration: 2.5,
-                    delay: 0.3,
-                    ease: [0.3, 0, 0.2, 1],
-                  }}
-                  className={styles.filters}
-                >
-                  <div className={styles.selectContainer}>
-                    <select
-                      value={selectedCategory}
-                      onChange={handleCategoryChange}
-                      className={styles.customSelect}
-                    >
-                      {categoryOptions.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
-                    <MdArrowDropDown className={styles.selectIcon} />
-                  </div>
-                  
-                  <div className={styles.searchContainer}>
-                    <input
-                      type="text"
-                      value={searchTerm}
-                      onChange={handleSearchTermChange}
-                      placeholder=" "
-                      className={styles.customTextField}
-                    />
-                    <label className={styles.customTextFieldLabel}>
-                      {t("skills.search")}
-                    </label>
-                    <FaSearch className={styles.searchIcon} />
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  key="grid"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
-                  className={styles.icons_container}
-                  variants={container}
-                >
-                  {visibleIcons.map((icon) => {
-                    const IconComponent = iconComponents[icon.name];
-                    return (
-                      <motion.div
-                        key={icon.id}
-                        variants={container}
-                        className={styles.box_icon}
-                      >
-                        <ProgressBar
-                          radius={70}
-                          strokeWidth={4}
-                          strokeColor={mainColor}
-                          trackStrokeWidth={9}
-                          trackStrokeColor="var(--second_bg_color)"
-                          pointerRadius={6}
-                          pointerStrokeWidth={5}
-                          pointerStrokeColor={mainColor}
-                          progress={icon.percentage}
-                          initialAnimation={true}
-                          transition="2.5s ease 0.5s"
-                          trackTransition="0s ease"
-                        >
-                          <TooltipThemeProvider theme={simpleTheme}>
-                            <Tooltip
-                              TransitionComponent={Zoom}
-                              title={t(icon.level)}
-                              placement="top"
-                              PopperProps={{
-                                modifiers: [
-                                  {
-                                    name: "offset",
-                                    options: {
-                                      offset: [0, 50],
-                                    },
-                                  },
-                                ],
-                              }}
-                              arrow
-                            >
-                              <div className={styles.icon_wrapper}>
-                                {IconComponent && (
-                                  <IconComponent className={styles.icon} />
-                                )}
-                              </div>
-                            </Tooltip>
-                          </TooltipThemeProvider>
+        <AnimatePresence mode="wait">
+          {viewMode === "grid" && (
+            <>
+              <motion.div
+                initial={{ opacity: 0, x: "-100%" }}
+                animate={{ opacity: 1, x: "0%" }}
+                transition={{
+                  duration: 2.5,
+                  delay: 0.3,
+                  ease: [0.3, 0, 0.2, 1],
+                }}
+                className={styles.filters}
+              >
+                <div className={styles.selectContainer}>
+                  <select
+                    value={selectedCategory}
+                    onChange={handleCategoryChange}
+                    className={styles.customSelect}
+                  >
+                    {categoryOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                  <MdArrowDropDown className={styles.selectIcon} />
+                </div>
 
-                          <div className={styles.indicator}>{icon.name}</div>
-                        </ProgressBar>
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
-                
+                <div className={styles.searchContainer}>
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleSearchTermChange}
+                    placeholder=" "
+                    className={styles.customTextField}
+                  />
+                  <label className={styles.customTextFieldLabel}>
+                    {t("skills.search")}
+                  </label>
+                  <FaSearch className={styles.searchIcon} />
+                </div>
+              </motion.div>
+
+              {visibleIcons.length > 0 ? (
+                <>
+                  <motion.div
+                    key="grid"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.5 }}
+                    className={styles.icons_container}
+                    variants={container}
+                  >
+                    {visibleIcons.map((icon) => {
+                      const IconComponent = iconComponents[icon.name];
+                      return (
+                        <motion.div
+                          key={icon.id}
+                          variants={container}
+                          className={styles.box_icon}
+                        >
+                          <ProgressBar
+                            radius={70}
+                            strokeWidth={4}
+                            strokeColor={mainColor}
+                            trackStrokeWidth={9}
+                            trackStrokeColor="var(--second_bg_color)"
+                            pointerRadius={6}
+                            pointerStrokeWidth={5}
+                            pointerStrokeColor={mainColor}
+                            progress={icon.percentage}
+                            initialAnimation={true}
+                            transition="2.5s ease 0.5s"
+                            trackTransition="0s ease"
+                          >
+                            <TooltipThemeProvider theme={simpleTheme}>
+                              <Tooltip
+                                TransitionComponent={Zoom}
+                                title={t(icon.level)}
+                                placement="top"
+                                PopperProps={{
+                                  modifiers: [
+                                    {
+                                      name: "offset",
+                                      options: {
+                                        offset: [0, 50],
+                                      },
+                                    },
+                                  ],
+                                }}
+                                arrow
+                              >
+                                <div className={styles.icon_wrapper}>
+                                  {IconComponent && (
+                                    <IconComponent className={styles.icon} />
+                                  )}
+                                </div>
+                              </Tooltip>
+                            </TooltipThemeProvider>
+
+                            <div className={styles.indicator}>{icon.name}</div>
+                          </ProgressBar>
+                        </motion.div>
+                      );
+                    })}
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: "-100%" }}
+                    animate={{ opacity: 1, x: "0%" }}
+                    transition={{
+                      duration: 2.5,
+                      delay: 0.3,
+                      ease: [0.3, 0, 0.2, 1],
+                    }}
+                    className={styles.pagination_container}
+                  >
+                    <ReactPaginate
+                      pageCount={totalPages}
+                      pageRangeDisplayed={3}
+                      marginPagesDisplayed={0}
+                      onPageChange={({ selected: selectedPage }) => {
+                        handlePageClick({ selected: selectedPage });
+                      }}
+                      containerClassName={styles.pagination}
+                      activeClassName={styles.activePage}
+                      previousLabel={<FaChevronLeft />}
+                      nextLabel={<FaChevronRight />}
+                      forcePage={currentPage}
+                    />
+                  </motion.div>
+                </>
+              ) : (
                 <motion.div
                   initial={{ opacity: 0, x: "-100%" }}
                   animate={{ opacity: 1, x: "0%" }}
@@ -375,26 +390,15 @@ const Skills = () => {
                     delay: 0.3,
                     ease: [0.3, 0, 0.2, 1],
                   }}
-                  className={styles.pagination_container}
+                  className={styles.no_results}
                 >
-                  <ReactPaginate
-                    pageCount={totalPages}
-                    pageRangeDisplayed={3}
-                    marginPagesDisplayed={0}
-                    onPageChange={({ selected: selectedPage }) => {
-                      handlePageClick({ selected: selectedPage });
-                    }}
-                    containerClassName={styles.pagination}
-                    activeClassName={styles.activePage}
-                    previousLabel={<FaChevronLeft />}
-                    nextLabel={<FaChevronRight />}
-                    forcePage={currentPage}
-                  />
+                  {noResults && <p>{t("skills.noResults")}</p>}
                 </motion.div>
-              </>
-            )}
-            
-            {viewMode === "chart" && (
+              )}
+            </>
+          )}
+
+          {viewMode === "chart" && (
               <motion.div
                 key="chart"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -427,8 +431,7 @@ const Skills = () => {
                 />
               </motion.div>
             )}
-          </AnimatePresence>
-        )}
+        </AnimatePresence>
       </section>
     </Transition>
   );

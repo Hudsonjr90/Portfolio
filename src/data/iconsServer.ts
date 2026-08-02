@@ -477,7 +477,7 @@ const skillsData = [
   {
     id: 40,
     name: "Jenkins",
-    category: "Tools",
+    category: "DevOps",
     percentage: 10,
     level: "skills.basic",
   },
@@ -512,21 +512,21 @@ const skillsData = [
   {
     id: 45,
     name: "Terraform",
-    category: "Tools",
+    category: "DevOps",
     percentage: 12,
     level: "skills.basic",
   },
   {
     id: 46,
     name: "Ansible",
-    category: "Tools",
+    category: "DevOps",
     percentage: 11,
     level: "skills.basic",
   },
   {
     id: 47,
     name: "Kubernetes",
-    category: "Tools",
+    category: "DevOps",
     percentage: 13,
     level: "skills.basic",
   },
@@ -617,7 +617,7 @@ const skillsData = [
   {
     id: 60,
     name: "AWS",
-    category: "Tools",
+    category: "DevOps",
     percentage: 10,
     level: "skills.basic",
   },
@@ -830,6 +830,20 @@ const skillsData = [
     percentage: 50,
     level: "skills.intermediate",
   },
+  {
+    id: 89,
+    name: "Docker",
+    category: "DevOps",
+    percentage: 70,
+    level: "skills.intermediate",
+  },
+  {
+    id: 90,
+    name: "Redis",
+    category: "DevOps",
+    percentage: 55,
+    level: "skills.intermediate",
+  }
 
 ];
 
