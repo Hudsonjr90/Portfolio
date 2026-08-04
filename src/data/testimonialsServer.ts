@@ -31,6 +31,12 @@ const testimonialServer: Testimonial[] = [
     company: "Afilio/Dynaton"
   },
   {
+    title: "Lucas Meyble",
+    subtitle: "testimonials.subtitle23",
+    avatar: "/imgs/imgsMobile/linkedin23.webp",
+    company: "Afilio/Dynaton"
+  },
+  {
     title: "Marcos Cordeiro",
     subtitle: "testimonials.subtitle20",
     avatar: "/imgs/imgsMobile/linkedin20.webp",
