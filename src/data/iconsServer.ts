@@ -21,6 +21,7 @@ import {
   FaMagento,
   FaAws,
   FaRobot,
+  FaGolang
 } from "react-icons/fa6";
 import {
   SiTailwindcss,
@@ -70,7 +71,8 @@ import {
   SiInsomnia,
   SiSvelte,
   SiGooglegemini,
-  SiGithubcopilot
+  SiGithubcopilot,
+  SiGoland
 } from "react-icons/si";
 import {
   BiLogoTypescript,
@@ -191,6 +193,9 @@ const iconComponents: { [index: string]: React.ElementType } = {
   ChatGPT: FaRobot,
   Copilot: SiGithubcopilot,
   OpenClaw: FaRobot,
+  GoLand: SiGoland,
+  GoLang: FaGolang
+
 };
 
 export interface Skills {
@@ -762,7 +767,7 @@ const skillsData = [
   },
   {
     id: 79,
-    name: "Redis",
+    name: "GoLand",
     category: "Tools",
     percentage: 21,
     level: "skills.basic",
@@ -843,6 +848,13 @@ const skillsData = [
     category: "DevOps",
     percentage: 55,
     level: "skills.intermediate",
+  },
+  {
+    id: 91,
+    name: "GoLang",
+    category: "Backend",
+    percentage: 30,
+    level: "skills.basic",
   }
 
 ];
