@@ -111,7 +111,7 @@ export const useSEO = () => {
           title: `${t("menu.home")} | H.K Dev`,
           description: t("seo.home.description"),
           keywords: t("seo.home.keywords"),
-          image: `${baseUrl}/imgs/hkdev.webp`,
+          image: `${baseUrl}/imgs/preview.png`,
           url: currentUrl,
         };
 
@@ -120,7 +120,7 @@ export const useSEO = () => {
           title: `${t("menu.about")} | H.K Dev`,
           description: t("seo.about.description"),
           keywords: t("seo.about.keywords"),
-          image: `${baseUrl}/imgs/about-me.webp`,
+          image: `${baseUrl}/imgs/about.webp`,
           url: currentUrl,
         };
 
@@ -194,7 +194,7 @@ export const useSEO = () => {
             "Portfólio de Hudson Kennedy, Cientista da Computação e Desenvolvedor Full Stack especializado em React, TypeScript, Vue.js e tecnologias modernas.",
           keywords:
             "Hudson Kennedy, Desenvolvedor, Full Stack, React, TypeScript, Vue.js, JavaScript, Portfolio",
-          image: `${baseUrl}/imgs/my.webp`,  
+          image: `${baseUrl}/imgs/preview.png`,
           url: currentUrl,
         };
     }
