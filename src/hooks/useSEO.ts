@@ -156,7 +156,7 @@ export const useSEO = () => {
           title: `${t("menu.experiences")} | H.K Dev`,
           description: t("seo.experiences.description"),
           keywords: t("seo.experiences.keywords"),
-          image: `${baseUrl}/imgs/hkdev.webp`,
+          image: `${baseUrl}/imgs/logow.webp`,
           url: currentUrl,
         };
 
@@ -165,7 +165,7 @@ export const useSEO = () => {
           title: `${t("menu.testimonials")} | H.K Dev`,
           description: t("seo.testimonials.description"),
           keywords: t("seo.testimonials.keywords"),
-          image: `${baseUrl}/imgs/hkdev.webp`,
+          image: `${baseUrl}/imgs/logow.webp`,
           url: currentUrl,
         };
 
@@ -174,7 +174,7 @@ export const useSEO = () => {
           title: `${t("menu.contact")} | H.K Dev`,
           description: t("seo.contact.description"),
           keywords: t("seo.contact.keywords"),
-          image: `${baseUrl}/imgs/my.webp`,
+          image: `${baseUrl}/imgs/preview.png`,
           url: currentUrl,
         };
 
