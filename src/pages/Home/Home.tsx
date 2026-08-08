@@ -73,6 +73,38 @@ const Home = React.memo(() => {
     return Array.isArray(result) ? result : [];
   }, [t]);
 
+  const handleResumeDownload = useCallback(
+    (event: React.MouseEvent<HTMLAnchorElement>) => {
+      const pdfUrl = currentResume.pdf;
+      if (!pdfUrl) return;
+
+      event.preventDefault();
+
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = "HudsonKennedy-CV.pdf";
+      link.target = isMobileDevice ? "_blank" : "_self";
+      link.rel = "noopener noreferrer";
+      link.style.display = "none";
+      document.body.appendChild(link);
+
+      try {
+        link.click();
+      } finally {
+        document.body.removeChild(link);
+      }
+
+      if (isMobileDevice) {
+        window.open(pdfUrl, "_blank", "noopener,noreferrer");
+      }
+    },
+    [currentResume.pdf]
+  );
+
   useEffect(() => {
     const randomChars =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -247,7 +279,14 @@ const Home = React.memo(() => {
               </motion.div>
 
               <motion.div className={styles.btn_box} data-tour="resume-button">
-                <a className={styles.btn} href={currentResume.pdf} download>
+                <a
+                  className={styles.btn}
+                  href={currentResume.pdf}
+                  download="HudsonKennedy-CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleResumeDownload}
+                >
                   {t("home.resume")} <FaRegFilePdf />
                 </a>
                 <a
