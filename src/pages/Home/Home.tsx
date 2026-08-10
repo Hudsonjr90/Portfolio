@@ -338,7 +338,7 @@ const Home = React.memo(() => {
                 >
                   <ThemeProvider theme={whatsappTheme}>
                     <NavLink
-                      to="https://api.whatsapp.com/send?phone=5521969609121"
+                      to="https://api.whatsapp.com/send?phone=5521969609121&text=Ol%C3%A1%2C%20vim%20pelo%20portf%C3%B3lio"
                       className={styles.whatsapp}
                       target="_blank"
                     >
