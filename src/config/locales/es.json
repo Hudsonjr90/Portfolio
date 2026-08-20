@@ -5,7 +5,7 @@
     "academic-education": "Académica",
     "testimonials": "Deposiciones",
     "experiences": "Experiencias",
-    "skills": "Habilidades",
+    "skills": "Tecnologías",
     "portfolio": "Proyectos",
     "blog": "Blog",
     "contact": "Contacto",
@@ -237,8 +237,8 @@
   },
 
   "skills": {
-    "title": " Mis",
-    "text": " Habilidades",
+    "title": " Tecnologías y",
+    "text": " conocimientos",
     "search": "Buscar...",
     "noResults": "No se encontraron habilidades",
     "cloudWord": "Nube de palabras",
@@ -394,14 +394,6 @@
     "accessibility": {
       "title": "Panel de Accesibilidad",
       "description": "Abra este panel para ajustar el tamaño del texto, alto contraste y lectura del texto seleccionado."
-    },
-    "sound": {
-      "title": "Control de Audio",
-      "description": "Activa o desactiva los efectos de sonido mientras navegas por el portafolio."
-    },
-    "particles": {
-      "title": "Efectos de Partículas",
-      "description": "Activa o desactiva los efectos de partículas animadas en el fondo para mejorar la experiencia visual."
     },
     "hero": {
       "title": "Sección Principal",

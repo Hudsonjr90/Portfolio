@@ -3,7 +3,7 @@ import { useResponsiveNavbar } from "../../hooks/useResponsiveNavbar";
 import { NavLink, useLocation } from "react-router-dom";
 import Icon from "@mdi/react";
 import {
-  mdiAtom,
+  // mdiAtom,
   mdiMonitor,
   mdiMusic,
   mdiMusicOff,
@@ -11,12 +11,12 @@ import {
   mdiWeatherSunny,
 } from "@mdi/js";
 import { GrClose } from "react-icons/gr";
-import { BiAtom } from "react-icons/bi";
-import { TbAtomOff } from "react-icons/tb";
+//import { BiAtom } from "react-icons/bi";
+//import { TbAtomOff } from "react-icons/tb";
 import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
 import { logoTheme, navbarTheme, ThemeMode, TooltipThemeProvider, useTheme } from "../../context/ThemeContext";
-import { useParticles } from "../../context/ParticlesContext";
+//import { useParticles } from "../../context/ParticlesContext";
 import { useAudio } from "../../hooks/useAudio";
 import { Us, Fr, Br, Es, It } from "react-flags-select";
 import { motion } from "framer-motion";
@@ -29,9 +29,9 @@ const Header = () => {
   const { handleAudio, toggleSound, soundEnabled, volume, setVolume } = useAudio();
   const { themeMode, resolvedTheme, setThemeMode } = useTheme();
   const location = useLocation();
-  const { particlesEnabled, toggleParticles } = useParticles();
+  // const { particlesEnabled, toggleParticles } = useParticles();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [showVolumePopup, setShowVolumePopup] = useState(false);
+  // const [showVolumePopup, setShowVolumePopup] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [canHoverMenus, setCanHoverMenus] = useState(false);
   const [systemTheme, setSystemTheme] = useState<'light' | 'dark'>(() => 
@@ -77,7 +77,7 @@ const Header = () => {
       { key: "education", path: "/education", label: t("menu.academic-education") },
       { key: "experiences", path: "/experiences", label: t("menu.experiences") },
       { key: "skills", path: "/skills", label: t("menu.skills") },
-      { key: "portfolio", path: "/portfolio", label: t("menu.portfolio") },
+      // { key: "portfolio", path: "/portfolio", label: t("menu.portfolio") },
       { key: "contact", path: "/contact", label: t("menu.contact") },
     ],
     [t],
@@ -163,7 +163,7 @@ const Header = () => {
   useEffect(() => {
     setSidebarOpen(false)
     setIsThemeMenuOpen(false)
-    setShowVolumePopup(false)
+    // setShowVolumePopup(false)
   }, [location.pathname])
 
   useEffect(() => {
@@ -335,7 +335,7 @@ const Header = () => {
             <li className={styles.drawer_close_item}>
               <button
                 className={styles.drawer_close_btn}
-                onClick={() => { handleClickButton(); handleAudio(); }}
+                onClick={() => { handleClickButton();  }}
                 aria-label="Fechar menu"
               >
                 <GrClose />
@@ -346,7 +346,7 @@ const Header = () => {
             <button
                 onClick={() => {
                   toggleSound();
-                  handleAudio();
+                  
                 }}
                 className={styles.sound_icon}
                 aria-label="Toggle Sound"
@@ -369,7 +369,7 @@ const Header = () => {
                 </motion.span>
               </button>
 
-              <button
+              {/* <button
                 onClick={() => {
                   toggleParticles();
                   handleAudio();
@@ -396,12 +396,12 @@ const Header = () => {
                     <TbAtomOff />
                   </motion.span>
                 )}
-              </button>
+              </button> */}
 
               <button
                 onClick={() => {
                   setThemeMode(getNextThemeMode(themeMode));
-                  handleAudio();
+                  
                 }}
                 className={styles.particles_icon}
                 aria-label={t('navbar.theme')}
@@ -430,7 +430,7 @@ const Header = () => {
               key={item.key}
               onClick={() => {
                 handleLinkClick();
-                handleAudio();
+                
               }}
               className={`${styles.active_menu} ${showMenu ? styles.animation_menu : ""}`}
               style={{ ["--i" as any]: index }}
@@ -481,7 +481,7 @@ const Header = () => {
         }}
       >
         <TooltipThemeProvider theme={navbarTheme}>
-          <div
+          {/* <div
             ref={volumeControlRef}
             className={`${styles.volumeControl} ${styles.desktop_only_icon}`}
             onMouseEnter={() => setShowVolumePopup(true)}
@@ -494,7 +494,7 @@ const Header = () => {
               aria-label="Volume"
               onClick={() => {
                 toggleSound();
-                handleAudio();
+                
               }}
             >
               <motion.span
@@ -530,13 +530,13 @@ const Header = () => {
                 <span className={styles.volumeValue}>{volume}%</span>
               </div>
             )}
-          </div>
+          </div> */}
 
-          <Tooltip title={t("navbar.effect")} placement="bottom" arrow>
+          {/* <Tooltip title={t("navbar.effect")} placement="bottom" arrow>
             <button
               onClick={() => {
                 toggleParticles();
-                handleAudio();
+                
               }}
               className={`${styles.particles_icon} ${styles.desktop_only_icon}`}
               aria-label="Toggle Particles"
@@ -562,7 +562,7 @@ const Header = () => {
                 </motion.span>
               )}
             </button>
-          </Tooltip>
+          </Tooltip> */}
 
           <Tooltip title={t("navbar.theme")} placement="bottom" arrow>
             <div
@@ -580,7 +580,7 @@ const Header = () => {
                   }
 
                   toggleThemeMenu();
-                  handleAudio();
+                  
                 }}
                 aria-label={t('navbar.theme')}
                 aria-expanded={isThemeMenuOpen}
@@ -654,7 +654,7 @@ const Header = () => {
                     }
 
                     toggleSidebar();
-                    handleAudio();
+                    
                   }}
                   aria-label="Selecionar idioma"
                   aria-expanded={sidebarOpen}
@@ -692,7 +692,7 @@ const Header = () => {
             <button
               onClick={() => {
                 handleClickButton();
-                handleAudio();
+                
               }}
               className={`${styles.btn_menu} ${showMenu ? styles.active : ""}`}
               role="button"

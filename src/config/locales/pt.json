@@ -5,7 +5,7 @@
     "academic-education": "Formações",
     "testimonials": "Depoimentos",
     "experiences": "Experiências",
-    "skills": "Habilidades",
+    "skills": "Tecnologias",
     "portfolio": "Projetos",
     "blog": "Blog",
     "contact": "Contato",
@@ -240,8 +240,8 @@
   },
 
   "skills": {
-    "title": " Minhas",
-    "text": " Habilidades",
+    "title": "Tecnologias e",
+    "text": " conhecimentos",
     "search": "Buscar...",
     "noResults": "Nenhuma habilidade encontrada",
     "cloudWord": "Nuvem de palavras",
@@ -251,7 +251,7 @@
     "advanced": "Avançado",
     "intermediate": "Intermediário",
     "basic": "Básico",
-    "dashboardTitle": "Gráfico de Habilidades",
+    "dashboardTitle": "Gráfico de tecnologias",
     "dashboardSubtitle": "{{count}} habilidades de proficiência",
     "proficiency": "Proficiência",
     "category": "Categoria",
@@ -397,14 +397,6 @@
     "accessibility": {
       "title": "Painel de Acessibilidade",
       "description": "Abra este painel para ajustar tamanho de texto, alto contraste e leitura de texto selecionado."
-    },
-    "sound": {
-      "title": "Controle de Áudio",
-      "description": "Ative ou desative os efeitos sonoros durante a navegação pelo portfólio."
-    },
-    "particles": {
-      "title": "Efeito de Partículas",
-      "description": "Ative ou desative o efeito de partículas animadas no fundo para melhorar a experiência visual."
     },
     "hero": {
       "title": "Seção Principal",

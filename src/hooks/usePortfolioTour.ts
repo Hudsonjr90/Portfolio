@@ -56,24 +56,6 @@ export const usePortfolioTour = () => {
         }
       },
       {
-        element: '[data-tour="sound-toggle"]',
-        popover: {
-          title: t('tour.sound.title'),
-          description: t('tour.sound.description'),
-          side: 'bottom',
-          align: 'center'
-        }
-      },
-        {
-        element: '[data-tour="particles-toggle"]',
-        popover: {
-          title: t('tour.particles.title'),
-          description: t('tour.particles.description'),
-          side: 'bottom',
-          align: 'center'
-        }
-      },
-      {
         element: '[data-tour="theme-toggle"]',
         popover: {
           title: t('tour.theme.title'),

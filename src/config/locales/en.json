@@ -5,7 +5,7 @@
     "academic-education": "Academics",
     "testimonials": "Testimonials",
     "experiences": "Experiences",
-    "skills": "Skills",
+    "skills": "Technologies",
     "portfolio": "Projects",
     "blog": "Blog",
     "contact": "Contact",
@@ -237,8 +237,8 @@
   },
 
   "skills": {
-    "title": " My",
-    "text": " Skills",
+    "title": " Technologies and",
+    "text": " knowledge",
     "search": "Search...",
     "noResults": "No skills found",
     "cloudWord": "Word Cloud",
@@ -248,7 +248,7 @@
     "advanced": "Advanced",
     "intermediate": "Intermediate",
     "basic": "Basic",
-    "dashboardTitle": "Skills Dashboard",
+    "dashboardTitle": "Technologies Dashboard",
     "dashboardSubtitle": "{{count}} skills of proficiency",
     "proficiency": "Proficiency",
     "category": "Category",
@@ -394,14 +394,6 @@
     "accessibility": {
       "title": "Accessibility Panel",
       "description": "Open this panel to adjust text size, high contrast, and selected text reading."
-    },
-    "sound": {
-      "title": "Audio Control",
-      "description": "Enable or disable sound effects while navigating through the portfolio."
-    },
-    "particles": {
-      "title": "Particle Effects",
-      "description": "Enable or disable animated particle effects in the background to enhance the visual experience."
     },
     "hero": {
       "title": "Hero Section",
